@@ -42,14 +42,39 @@ class Agent(ABC):
         if tool_name not in self.tools:
             raise ValueError(f"Tool '{tool_name}' not found. Available: {list(self.tools.keys())}")
         result = self.tools[tool_name].run(**kwargs)
-        self.log("tool_call", {"tool": tool_name, "args": kwargs, "result_type": type(result).__name__})
+        self.log("tool_call", {
+            "tool": tool_name,
+            "input": {k: str(v)[:200] for k, v in kwargs.items()},
+            "output": str(result)[:500] if result else None,
+            "result_type": type(result).__name__
+        })
         return result
 
     def llm_decide(self, system_prompt: str, user_prompt: str, max_tokens: int = 512) -> dict:
         if self.llm is None:
             return {}
         response = self.llm.generate(system_prompt, user_prompt, max_tokens)
-        return self.llm._parse_json(response)
+        if not response:
+            return {}
+        # Handle RunPod LLM response format
+        if hasattr(self.llm, 'parse_json'):
+            return self.llm.parse_json(response)
+        # Handle local LLMEngine response format
+        if hasattr(self.llm, '_parse_json'):
+            return self.llm._parse_json(response)
+        # Fallback JSON parsing
+        import json
+        import re
+        try:
+            return json.loads(response.strip())
+        except:
+            m = re.search(r"\{.*\}", response, re.DOTALL)
+            if m:
+                try:
+                    return json.loads(m.group())
+                except:
+                    pass
+            return {}
 
     @abstractmethod
     def run(self, context):

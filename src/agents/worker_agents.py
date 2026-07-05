@@ -1,6 +1,7 @@
 from typing import Any, Dict, List, Optional
 import sys
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent))
@@ -99,20 +100,38 @@ Return JSON: {"isNegated": bool, "isFamily": bool, "isHistorical": bool}"""
     def run(self, ctx: AgentContext) -> AgentContext:
         self.log("start", {"mentions": len(ctx.mentions)})
 
-        for m in ctx.mentions:
+        # First pass: rule-based assertions (sequential, fast)
+        uncertain_indices = []
+        for i, m in enumerate(ctx.mentions):
             start, end = m["position"][0], m["position"][1]
             assertions = self.call_tool("check_assertion", text=ctx.text, start=start, end=end)
-
+            m["assertions"] = assertions
             if self._is_uncertain(assertions) and self.llm:
-                llm_result = self.call_tool("llm_assertion",
+                uncertain_indices.append(i)
+
+        # Second pass: LLM assertions in parallel (slow, batched)
+        if uncertain_indices and self.llm:
+            self.log("parallel_llm", {"count": len(uncertain_indices)})
+
+            def _check_one(idx):
+                m = ctx.mentions[idx]
+                start, end = m["position"][0], m["position"][1]
+                result = self.call_tool("llm_assertion",
                     mention=m.get("text", ""), mtype=m.get("type", ""),
                     context=ctx.text[max(0, start - 150):end + 150])
-                if llm_result:
-                    assertions = llm_result
+                return idx, result
 
-            m["assertions"] = assertions
+            with ThreadPoolExecutor(max_workers=min(4, len(uncertain_indices))) as executor:
+                futures = [executor.submit(_check_one, idx) for idx in uncertain_indices]
+                for future in as_completed(futures):
+                    try:
+                        idx, result = future.result()
+                        if result:
+                            ctx.mentions[idx]["assertions"] = result
+                    except Exception as e:
+                        self.log("llm_error", {"error": str(e)})
 
-        self.log("complete", {"processed": len(ctx.mentions)})
+        self.log("complete", {"processed": len(ctx.mentions), "llm_checked": len(uncertain_indices)})
         return ctx
 
 
@@ -164,29 +183,51 @@ Return JSON: {{"selected": ["code1"], "reason": "brief"}}"""
     def run(self, ctx: AgentContext) -> AgentContext:
         self.log("start", {"mentions": len(ctx.mentions)})
 
-        for m in ctx.mentions:
+        import re
+        to_rerank = []
+
+        # First pass: search candidates (sequential, fast)
+        for i, m in enumerate(ctx.mentions):
             mtype = m.get("type", "")
             text = m.get("text", "")
             if mtype == "CHẨN_ĐOÁN":
                 candidates = self.call_tool("search_icd10", query=text)
-                ctx_start = max(0, m["position"][0] - 150)
-                ctx_end = min(len(ctx.text), m["position"][1] + 150)
-                context = ctx.text[ctx_start:ctx_end]
-                if candidates and self.llm:
-                    candidates = self.call_tool("rerank", mention=text, context=context, candidates=candidates, code_type="icd10")
                 m["candidates"] = candidates
+                if candidates and self.llm:
+                    to_rerank.append((i, "icd10"))
             elif mtype == "THUỐC":
-                import re
                 ingredient = re.sub(r"\d+(?:\.\d+)?\s*(?:mg|ml|g|mcg|IU|U)\b", "", text, flags=re.IGNORECASE).strip()
                 candidates = self.call_tool("search_rxnorm", query=ingredient or text)
+                m["candidates"] = candidates
+                if candidates and self.llm:
+                    to_rerank.append((i, "rxnorm"))
+
+        # Second pass: LLM reranking in parallel (slow, batched)
+        if to_rerank and self.llm:
+            self.log("parallel_rerank", {"count": len(to_rerank)})
+
+            def _rerank_one(idx_code_type):
+                idx, code_type = idx_code_type
+                m = ctx.mentions[idx]
+                text = m.get("text", "")
                 ctx_start = max(0, m["position"][0] - 150)
                 ctx_end = min(len(ctx.text), m["position"][1] + 150)
                 context = ctx.text[ctx_start:ctx_end]
-                if candidates and self.llm:
-                    candidates = self.call_tool("rerank", mention=text, context=context, candidates=candidates, code_type="rxnorm")
-                m["candidates"] = candidates
+                result = self.call_tool("rerank", mention=text, context=context, candidates=m.get("candidates", []), code_type=code_type)
+                return idx, result
 
-        self.log("complete", {"linked": len([m for m in ctx.mentions if m.get("candidates")])})
+            with ThreadPoolExecutor(max_workers=min(4, len(to_rerank))) as executor:
+                futures = [executor.submit(_rerank_one, item) for item in to_rerank]
+                for future in as_completed(futures):
+                    try:
+                        idx, result = future.result()
+                        if result:
+                            ctx.mentions[idx]["candidates"] = result
+                    except Exception as e:
+                        self.log("rerank_error", {"error": str(e)})
+
+        linked = len([m for m in ctx.mentions if m.get("candidates")])
+        self.log("complete", {"linked": linked, "reranked": len(to_rerank)})
         return ctx
 
 

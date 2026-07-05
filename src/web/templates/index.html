@@ -8,77 +8,123 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0d1117; color: #c9d1d9; }
         .container { display: flex; height: 100vh; }
-        .sidebar { width: 280px; background: #161b22; border-right: 1px solid #30363d; padding: 16px; overflow-y: auto; }
-        .main { flex: 1; display: flex; flex-direction: column; }
-        .header { padding: 16px 24px; background: #161b22; border-bottom: 1px solid #30363d; display: flex; align-items: center; gap: 12px; }
+        .sidebar { width: 280px; background: #161b22; border-right: 1px solid #30363d; padding: 12px; overflow-y: auto; flex-shrink: 0; }
+        .main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+        .header { padding: 12px 20px; background: #161b22; border-bottom: 1px solid #30363d; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
         .content { flex: 1; display: flex; overflow: hidden; }
-        .panel { flex: 1; display: flex; flex-direction: column; border-right: 1px solid #30363d; }
+        .panel { display: flex; flex-direction: column; border-right: 1px solid #30363d; min-width: 0; }
+        .panel-left { flex: 1; }
+        .panel-right { width: 420px; flex-shrink: 0; }
         .panel:last-child { border-right: none; }
-        .panel-header { padding: 12px 16px; background: #161b22; border-bottom: 1px solid #30363d; font-weight: 600; font-size: 14px; }
-        .panel-body { flex: 1; overflow-y: auto; padding: 16px; }
+        .panel-header { padding: 10px 14px; background: #161b22; border-bottom: 1px solid #30363d; font-weight: 600; font-size: 13px; flex-shrink: 0; display: flex; align-items: center; gap: 8px; }
+        .panel-body { flex: 1; overflow-y: auto; padding: 14px; }
 
-        h1 { font-size: 18px; color: #58a6ff; }
-        h2 { font-size: 14px; color: #8b949e; margin-bottom: 12px; }
+        h1 { font-size: 16px; color: #58a6ff; }
+
+        /* Tabs */
+        .tab-bar { display: flex; background: #0d1117; border-bottom: 1px solid #30363d; overflow-x: auto; flex-shrink: 0; min-height: 36px; }
+        .tab-bar::-webkit-scrollbar { height: 4px; }
+        .tab-bar::-webkit-scrollbar-thumb { background: #30363d; border-radius: 2px; }
+        .tab { padding: 6px 14px; font-size: 12px; cursor: pointer; border-right: 1px solid #21262d; display: flex; align-items: center; gap: 6px; white-space: nowrap; color: #8b949e; background: #0d1117; position: relative; min-width: 80px; }
+        .tab:hover { background: #161b22; }
+        .tab.active { background: #161b22; color: #c9d1d9; border-bottom: 2px solid #58a6ff; }
+        .tab .tab-name { max-width: 120px; overflow: hidden; text-overflow: ellipsis; }
+        .tab .tab-close { font-size: 14px; line-height: 1; padding: 2px; border-radius: 3px; color: #484f58; cursor: pointer; }
+        .tab .tab-close:hover { background: #21262d; color: #c9d1d9; }
+        .tab .tab-status { width: 8px; height: 8px; border-radius: 50%; }
+        .tab .tab-status.done { background: #3fb950; }
+        .tab .tab-status.pending { background: #484f58; }
+        .tab .tab-status.loading { background: #58a6ff; animation: pulse 1s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        /* Tab content areas - only active tab visible */
+        .tab-content { display: none; flex-direction: column; flex: 1; overflow: hidden; }
+        .tab-content.active { display: flex; }
 
         .file-list { list-style: none; }
-        .file-list li { padding: 8px 12px; cursor: pointer; border-radius: 6px; margin-bottom: 2px; font-size: 13px; }
+        .file-list li { padding: 6px 10px; cursor: pointer; border-radius: 4px; margin-bottom: 1px; font-size: 12px; display: flex; justify-content: space-between; align-items: center; }
         .file-list li:hover { background: #21262d; }
-        .file-list li.active { background: #1f6feb; color: white; }
+        .file-list li .file-status { font-size: 10px; }
+        .file-list li .file-status.done { color: #3fb950; }
+        .file-list li .file-status.pending { color: #484f58; }
 
-        .btn { padding: 8px 16px; border: 1px solid #30363d; background: #21262d; color: #c9d1d9; border-radius: 6px; cursor: pointer; font-size: 13px; }
+        .btn { padding: 6px 14px; border: 1px solid #30363d; background: #21262d; color: #c9d1d9; border-radius: 4px; cursor: pointer; font-size: 12px; }
         .btn:hover { background: #30363d; }
         .btn-primary { background: #1f6feb; border-color: #1f6feb; color: white; }
         .btn-primary:hover { background: #388bfd; }
-        .btn-sm { padding: 4px 10px; font-size: 12px; }
+        .btn-sm { padding: 3px 8px; font-size: 11px; }
 
-        textarea { width: 100%; height: 200px; background: #0d1117; border: 1px solid #30363d; color: #c9d1d9; padding: 12px; border-radius: 6px; font-family: monospace; font-size: 13px; resize: vertical; }
+        textarea { width: 100%; height: 160px; background: #0d1117; border: 1px solid #30363d; color: #c9d1d9; padding: 10px; border-radius: 4px; font-family: monospace; font-size: 12px; resize: vertical; }
         textarea:focus { outline: none; border-color: #1f6feb; }
 
-        .log-entry { padding: 6px 10px; margin-bottom: 4px; border-radius: 4px; font-family: monospace; font-size: 12px; border-left: 3px solid #30363d; background: #161b22; }
+        .log-entry { padding: 6px 8px; margin-bottom: 3px; border-radius: 3px; font-size: 11px; border-left: 3px solid #30363d; background: #161b22; }
         .log-entry.extraction { border-left-color: #f0883e; }
         .log-entry.assertion { border-left-color: #a371f7; }
         .log-entry.linking { border-left-color: #3fb950; }
         .log-entry.verifier { border-left-color: #58a6ff; }
+        .log-entry.orchestrator { border-left-color: #db6d28; }
+        .log-entry.system { border-left-color: #8b949e; }
         .log-entry.error { border-left-color: #f85149; background: #2d1215; }
-        .log-entry .agent { color: #8b949e; font-size: 11px; }
-        .log-entry .action { color: #58a6ff; }
-        .log-entry .ts { color: #484f58; font-size: 10px; }
+        .log-entry .log-header { display: flex; justify-content: space-between; align-items: center; }
+        .log-entry .agent { color: #8b949e; font-size: 10px; font-weight: 600; }
+        .log-entry .action { color: #58a6ff; font-weight: 600; }
+        .log-entry .ts { color: #484f58; font-size: 9px; }
+        .log-entry .log-io { background: #0d1117; border: 1px solid #21262d; border-radius: 3px; padding: 4px 6px; margin-top: 3px; font-family: monospace; font-size: 10px; }
+        .log-entry .log-label { color: #8b949e; font-size: 9px; text-transform: uppercase; margin-bottom: 1px; }
+        .log-entry .log-value { color: #c9d1d9; word-break: break-all; white-space: pre-wrap; max-height: 100px; overflow-y: auto; }
+        .log-entry .log-value.output { color: #3fb950; }
 
-        .mention-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 12px; margin-bottom: 8px; }
-        .mention-card .text { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
-        .mention-card .type { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+        .mention-card { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 10px; margin-bottom: 6px; }
+        .mention-card .text { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+        .mention-card .type { display: inline-block; padding: 2px 6px; border-radius: 10px; font-size: 10px; font-weight: 600; }
         .type-THUỐC { background: #1f6feb22; color: #58a6ff; border: 1px solid #1f6feb44; }
         .type-TRIỆU_CHỨNG { background: #f0883e22; color: #f0883e; border: 1px solid #f0883e44; }
         .type-CHẨN_ĐOÁN { background: #3fb95022; color: #3fb950; border: 1px solid #3fb95044; }
         .type-TÊN_XÉT_NGHIỆM { background: #a371f722; color: #a371f7; border: 1px solid #a371f744; }
         .type-KẾT_QUẢ_XÉT_NGHIỆM { background: #db6d2822; color: #db6d28; border: 1px solid #db6d2844; }
 
-        .assertions { display: flex; gap: 6px; margin-top: 8px; }
-        .assertion-tag { padding: 2px 6px; border-radius: 4px; font-size: 10px; background: #21262d; }
+        .assertions { display: flex; gap: 4px; margin-top: 6px; }
+        .assertion-tag { padding: 1px 5px; border-radius: 3px; font-size: 9px; background: #21262d; }
         .assertion-tag.active { background: #f8514922; color: #f85149; }
 
-        .candidates { margin-top: 8px; }
-        .candidate { display: inline-block; padding: 2px 8px; margin: 2px; border-radius: 4px; font-size: 11px; background: #1f6feb22; color: #58a6ff; font-family: monospace; }
+        .candidates { margin-top: 6px; }
+        .candidate { display: inline-block; padding: 1px 6px; margin: 2px; border-radius: 3px; font-size: 10px; background: #1f6feb22; color: #58a6ff; font-family: monospace; }
 
-        .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }
-        .stat { padding: 12px; background: #0d1117; border-radius: 6px; text-align: center; }
-        .stat .value { font-size: 24px; font-weight: 700; color: #58a6ff; }
-        .stat .label { font-size: 11px; color: #8b949e; margin-top: 4px; }
+        .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 12px; }
+        .stat { padding: 8px; background: #0d1117; border-radius: 4px; text-align: center; }
+        .stat .value { font-size: 18px; font-weight: 700; color: #58a6ff; }
+        .stat .label { font-size: 10px; color: #8b949e; margin-top: 2px; }
 
-        .controls { padding: 12px 16px; background: #161b22; border-top: 1px solid #30363d; display: flex; gap: 8px; align-items: center; }
-        .toggle { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+        .controls { padding: 8px 14px; background: #161b22; border-top: 1px solid #30363d; display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+        .toggle { display: flex; align-items: center; gap: 4px; font-size: 11px; }
         .toggle input { accent-color: #1f6feb; }
 
-        .spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid #30363d; border-top-color: #58a6ff; border-radius: 50%; animation: spin 0.8s linear infinite; }
+        .spinner { display: inline-block; width: 12px; height: 12px; border: 2px solid #30363d; border-top-color: #58a6ff; border-radius: 50%; animation: spin 0.8s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        .empty { color: #484f58; font-style: italic; font-size: 13px; text-align: center; padding: 40px; }
+        .empty { color: #484f58; font-style: italic; font-size: 12px; text-align: center; padding: 30px; }
+
+        .highlighted-text { background: #0d1117; border: 1px solid #30363d; border-radius: 4px; padding: 12px; font-family: monospace; font-size: 12px; line-height: 1.7; white-space: pre-wrap; word-wrap: break-word; max-height: 250px; overflow-y: auto; margin-bottom: 10px; }
+
+        .cite-THUỐC { background: #1f6feb33; border-bottom: 2px solid #58a6ff; padding: 1px 2px; border-radius: 2px; }
+        .cite-TRIỆU_CHỨNG { background: #f0883e33; border-bottom: 2px solid #f0883e; padding: 1px 2px; border-radius: 2px; }
+        .cite-CHẨN_ĐOÁN { background: #3fb95033; border-bottom: 2px solid #3fb950; padding: 1px 2px; border-radius: 2px; }
+        .cite-TÊN_XÉT_NGHIỆM { background: #a371f733; border-bottom: 2px solid #a371f7; padding: 1px 2px; border-radius: 2px; }
+        .cite-KẾT_QUẢ_XÉT_NGHIỆM { background: #db6d2833; border-bottom: 2px solid #db6d28; padding: 1px 2px; border-radius: 2px; }
+
+        .cite-legend { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; font-size: 10px; }
+        .cite-legend-item { display: flex; align-items: center; gap: 3px; }
+        .cite-legend-dot { width: 10px; height: 10px; border-radius: 2px; }
+
+        .result-info { display: flex; gap: 10px; align-items: center; margin-bottom: 10px; padding: 6px 10px; background: #161b22; border-radius: 4px; font-size: 11px; }
+        .result-info .label { color: #8b949e; }
+        .result-info .value { color: #3fb950; font-weight: 600; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="sidebar">
-            <h2 style="margin-bottom: 16px;">Input Files</h2>
+            <h2 style="margin-bottom: 12px; font-size: 13px; color: #8b949e;">Files</h2>
             <div class="stats" id="stats">
                 <div class="stat"><div class="value" id="stat-icd10">-</div><div class="label">ICD-10</div></div>
                 <div class="stat"><div class="value" id="stat-rxnorm">-</div><div class="label">RxNorm</div></div>
@@ -90,32 +136,46 @@
         <div class="main">
             <div class="header">
                 <h1>Vietnamese Medical NER</h1>
-                <span style="color: #8b949e; font-size: 13px;">Agentic Pipeline</span>
+                <span style="color: #8b949e; font-size: 12px;">Agentic Pipeline</span>
                 <div style="flex:1"></div>
                 <div class="toggle">
                     <input type="checkbox" id="use-llm">
-                    <label for="use-llm">Use LLM</label>
+                    <label for="use-llm">RunPod LLM</label>
                 </div>
             </div>
-            <div class="content">
-                <div class="panel" style="flex: 1;">
+            <div class="tab-bar" id="tab-bar"></div>
+            <div class="content" id="tab-contents">
+                <div class="panel panel-left tab-content" id="tab-default" style="display:flex">
                     <div class="panel-header">Input & Results</div>
                     <div class="panel-body">
-                        <textarea id="input-text" placeholder="Enter Vietnamese clinical text or select a file..."></textarea>
-                        <div style="margin: 12px 0; display: flex; gap: 8px;">
-                            <button class="btn btn-primary" id="extract-btn" onclick="runExtract()">Extract</button>
-                            <button class="btn" onclick="clearAll()">Clear</button>
-                            <span id="status" style="font-size: 12px; color: #8b949e; align-self: center;"></span>
+                        <textarea id="input-default" placeholder="Enter Vietnamese clinical text or select a file from the sidebar..."></textarea>
+                        <div style="margin: 10px 0; display: flex; gap: 8px;">
+                            <button class="btn btn-primary" onclick="runExtract('default')">Extract</button>
+                            <span id="status-default" style="font-size: 11px; color: #8b949e; align-self: center;"></span>
                         </div>
-                        <div id="results"></div>
+                        <div id="result-info-default" class="result-info" style="display:none">
+                            <span><span class="label">Mentions:</span> <span class="value" id="ri-count-default">-</span></span>
+                            <span><span class="label">Time:</span> <span class="value" id="ri-elapsed-default">-</span></span>
+                        </div>
+                        <div class="cite-legend">
+                            <div class="cite-legend-item"><div class="cite-legend-dot" style="background:#58a6ff"></div> THUỐC</div>
+                            <div class="cite-legend-item"><div class="cite-legend-dot" style="background:#f0883e"></div> TRIỆU_CHỨNG</div>
+                            <div class="cite-legend-item"><div class="cite-legend-dot" style="background:#3fb950"></div> CHẨN_ĐOÁN</div>
+                            <div class="cite-legend-item"><div class="cite-legend-dot" style="background:#a371f7"></div> TÊN_XÉT_NGHIỆM</div>
+                            <div class="cite-legend-item"><div class="cite-legend-dot" style="background:#db6d28"></div> KẾT_QUẢ_XÉT_NGHIỆM</div>
+                        </div>
+                        <div id="highlighted-default" class="highlighted-text" style="display:none"></div>
+                        <div id="results-default"></div>
                     </div>
                 </div>
-                <div class="panel" style="flex: 1;">
+                <div class="panel panel-right tab-content" id="tab-default-logs" style="display:flex">
                     <div class="panel-header">
                         Agent Logs
-                        <span id="log-count" style="color: #8b949e; font-size: 12px; margin-left: 8px;"></span>
+                        <span id="log-count-default" style="color: #8b949e; font-size: 11px;"></span>
+                        <div style="flex:1"></div>
+                        <button class="btn btn-sm" onclick="toggleLogDetail()">Detail</button>
                     </div>
-                    <div class="panel-body" id="logs">
+                    <div class="panel-body" id="logs-default">
                         <div class="empty">Agent logs will appear here...</div>
                     </div>
                 </div>
@@ -124,8 +184,9 @@
     </div>
 
     <script>
-        let currentFile = null;
-        let logEntries = [];
+        let activeTab = 'default';
+        let showLogDetail = true;
+        const tabs = { default: { name: 'New', fileId: null, mentions: [], logs: [] } };
 
         async function loadStats() {
             try {
@@ -135,7 +196,7 @@
                 document.getElementById('stat-rxnorm').textContent = data.rxnorm_concepts?.toLocaleString() || '-';
                 document.getElementById('stat-files').textContent = data.input_files || '-';
                 document.getElementById('stat-outputs').textContent = data.output_files || '-';
-            } catch (e) { console.error(e); }
+            } catch (e) {}
         }
 
         async function loadFiles() {
@@ -143,72 +204,260 @@
                 const resp = await fetch('/api/files');
                 const files = await resp.json();
                 const list = document.getElementById('file-list');
-                list.innerHTML = files.map(f => `<li onclick="selectFile('${f.id}')">${f.name}</li>`).join('');
-            } catch (e) { console.error(e); }
+                list.innerHTML = files.map(function(f) {
+                    let status = f.cached ? '<span class="file-status done">&#10003;' + f.count + '</span>' :
+                                 f.has_output ? '<span class="file-status done">&#10003;</span>' :
+                                 '<span class="file-status pending">&#9679;</span>';
+                    return '<li onclick="openTab(' + "'" + f.id + "'" + ')">' +
+                        '<span>' + f.name + '</span>' +
+                        '<span>' + status + '</span></li>';
+                }).join('');
+            } catch (e) {}
         }
 
-        async function selectFile(id) {
-            try {
-                const resp = await fetch(`/api/file/${id}`);
-                const data = await resp.json();
-                document.getElementById('input-text').value = data.text;
-                currentFile = id;
-                document.querySelectorAll('.file-list li').forEach(li => li.classList.remove('active'));
-                event.target.classList.add('active');
-            } catch (e) { console.error(e); }
+        function openTab(fileId) {
+            const tabId = 'file-' + fileId;
+
+            // If tab already exists, switch to it
+            if (tabs[tabId]) {
+                switchTab(tabId);
+                return;
+            }
+
+            // Fetch file data then create tab
+            fetch('/api/file/' + fileId)
+                .then(function(resp) { return resp.json(); })
+                .then(function(data) {
+                    createTab(tabId, fileId, data);
+                    switchTab(tabId);
+                });
         }
 
-        function addLog(entry) {
-            const logsDiv = document.getElementById('logs');
+        function createTab(tabId, fileId, data) {
+            tabs[tabId] = {
+                name: 'File ' + fileId,
+                fileId: fileId,
+                text: data.text,
+                mentions: data.result ? (data.result.mentions || []) : [],
+                elapsed: data.result ? data.result.elapsed : null,
+                logs: []
+            };
+
+            // Add tab button
+            const tabBar = document.getElementById('tab-bar');
+            const tab = document.createElement('div');
+            tab.className = 'tab';
+            tab.id = 'tab-btn-' + tabId;
+            tab.onclick = function() { switchTab(tabId); };
+            const statusClass = tabs[tabId].mentions.length > 0 ? 'done' : 'pending';
+            tab.innerHTML = '<div class="tab-status ' + statusClass + '"></div>' +
+                '<span class="tab-name">File ' + fileId + '</span>' +
+                '<span class="tab-close" onclick="event.stopPropagation(); closeTab(' + "'" + tabId + "'" + ')">&times;</span>';
+            tabBar.appendChild(tab);
+
+            // Add tab content (left panel)
+            const contents = document.getElementById('tab-contents');
+            const leftPanel = document.createElement('div');
+            leftPanel.className = 'panel panel-left tab-content';
+            leftPanel.id = 'tab-' + tabId;
+            leftPanel.innerHTML = buildLeftPanelHtml(tabId);
+            contents.appendChild(leftPanel);
+
+            // Add tab content (right panel)
+            const rightPanel = document.createElement('div');
+            rightPanel.className = 'panel panel-right tab-content';
+            rightPanel.id = 'tab-' + tabId + '-logs';
+            rightPanel.innerHTML = buildRightPanelHtml(tabId);
+            contents.appendChild(rightPanel);
+
+            // Populate content
+            document.getElementById('input-' + tabId).value = data.text || '';
+            if (tabs[tabId].mentions.length > 0) {
+                showCachedResult(tabId, {
+                    mentions: tabs[tabId].mentions,
+                    elapsed: tabs[tabId].elapsed
+                });
+            }
+        }
+
+        function buildLeftPanelHtml(tabId) {
+            return '<div class="panel-header">Input & Results</div>' +
+                '<div class="panel-body">' +
+                '<textarea id="input-' + tabId + '" placeholder="Vietnamese clinical text..."></textarea>' +
+                '<div style="margin: 10px 0; display: flex; gap: 8px;">' +
+                '<button class="btn btn-primary" onclick="runExtract(' + "'" + tabId + "'" + ')">Extract</button>' +
+                '<span id="status-' + tabId + '" style="font-size: 11px; color: #8b949e; align-self: center;"></span>' +
+                '</div>' +
+                '<div id="result-info-' + tabId + '" class="result-info" style="display:none">' +
+                '<span><span class="label">Mentions:</span> <span class="value" id="ri-count-' + tabId + '">-</span></span>' +
+                '<span><span class="label">Time:</span> <span class="value" id="ri-elapsed-' + tabId + '">-</span></span>' +
+                '</div>' +
+                '<div class="cite-legend">' +
+                '<div class="cite-legend-item"><div class="cite-legend-dot" style="background:#58a6ff"></div> THUỐC</div>' +
+                '<div class="cite-legend-item"><div class="cite-legend-dot" style="background:#f0883e"></div> TRIỆU_CHỨNG</div>' +
+                '<div class="cite-legend-item"><div class="cite-legend-dot" style="background:#3fb950"></div> CHẨN_ĐOÁN</div>' +
+                '<div class="cite-legend-item"><div class="cite-legend-dot" style="background:#a371f7"></div> TÊN_XÉT_NGHIỆM</div>' +
+                '<div class="cite-legend-item"><div class="cite-legend-dot" style="background:#db6d28"></div> KẾT_QUẢ_XÉT_NGHIỆM</div>' +
+                '</div>' +
+                '<div id="highlighted-' + tabId + '" class="highlighted-text" style="display:none"></div>' +
+                '<div id="results-' + tabId + '"></div>' +
+                '</div>';
+        }
+
+        function buildRightPanelHtml(tabId) {
+            return '<div class="panel-header">' +
+                'Agent Logs' +
+                '<span id="log-count-' + tabId + '" style="color: #8b949e; font-size: 11px;"></span>' +
+                '<div style="flex:1"></div>' +
+                '<button class="btn btn-sm" onclick="toggleLogDetail()">Detail</button>' +
+                '</div>' +
+                '<div class="panel-body" id="logs-' + tabId + '">' +
+                '<div class="empty">Agent logs will appear here...</div>' +
+                '</div>';
+        }
+
+        function switchTab(tabId) {
+            // Deactivate all tabs
+            document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+            document.querySelectorAll('.tab-content').forEach(function(c) { c.style.display = 'none'; });
+
+            // Activate selected tab
+            const tabBtn = document.getElementById('tab-btn-' + tabId);
+            if (tabBtn) tabBtn.classList.add('active');
+
+            const leftPanel = document.getElementById('tab-' + tabId);
+            if (leftPanel) leftPanel.style.display = 'flex';
+
+            const rightPanel = document.getElementById('tab-' + tabId + '-logs');
+            if (rightPanel) rightPanel.style.display = 'flex';
+
+            activeTab = tabId;
+        }
+
+        function closeTab(tabId) {
+            if (tabId === 'default') return;
+
+            // Remove tab button
+            const tabBtn = document.getElementById('tab-btn-' + tabId);
+            if (tabBtn) tabBtn.remove();
+
+            // Remove tab content
+            const leftPanel = document.getElementById('tab-' + tabId);
+            if (leftPanel) leftPanel.remove();
+            const rightPanel = document.getElementById('tab-' + tabId + '-logs');
+            if (rightPanel) rightPanel.remove();
+
+            delete tabs[tabId];
+
+            // Switch to another tab
+            const remaining = Object.keys(tabs);
+            if (remaining.length > 0) {
+                switchTab(remaining[remaining.length - 1]);
+            }
+        }
+
+        function showCachedResult(tabId, result) {
+            const mentions = result.mentions || [];
+            const elapsed = result.elapsed;
+
+            document.getElementById('result-info-' + tabId).style.display = 'flex';
+            document.getElementById('ri-count-' + tabId).textContent = mentions.length;
+            document.getElementById('ri-elapsed-' + tabId).textContent = elapsed ? elapsed + 's' : '-';
+
+            renderResults(tabId, mentions);
+        }
+
+        function addLog(tabId, entry) {
+            const logsDiv = document.getElementById('logs-' + tabId);
+            if (!logsDiv) return;
             if (logsDiv.querySelector('.empty')) logsDiv.innerHTML = '';
-            logEntries.push(entry);
+
+            if (tabs[tabId]) tabs[tabId].logs.push(entry);
 
             const div = document.createElement('div');
             const agent = entry.agent || 'system';
-            div.className = `log-entry ${agent}`;
-            div.innerHTML = `
-                <span class="agent">[${agent}]</span>
-                <span class="action">${entry.action || ''}</span>
-                ${entry.tool ? `<span style="color:#8b949e"> tool=${entry.tool}</span>` : ''}
-                ${entry.mentions !== undefined ? `<span style="color:#8b949e"> mentions=${entry.mentions}</span>` : ''}
-                ${entry.linked !== undefined ? `<span style="color:#8b949e"> linked=${entry.linked}</span>` : ''}
-                ${entry.message ? `<span style="color:#f85149"> ${entry.message}</span>` : ''}
-                <span class="ts">${new Date(entry.ts * 1000).toLocaleTimeString()}</span>
-            `;
+            const action = entry.action || '';
+            const input = entry.input || null;
+            const output = entry.output || null;
+            const message = entry.message || entry.error || '';
+
+            let detailHtml = '';
+            if (showLogDetail && (input || output)) {
+                detailHtml = '<div class="log-detail">';
+                if (input) {
+                    const inputStr = typeof input === 'object' ? JSON.stringify(input, null, 2) : String(input);
+                    detailHtml += '<div class="log-io"><div class="log-label">Input</div><div class="log-value">' + escapeHtml(inputStr) + '</div></div>';
+                }
+                if (output) {
+                    const outputStr = typeof output === 'object' ? JSON.stringify(output, null, 2) : String(output);
+                    detailHtml += '<div class="log-io"><div class="log-label">Output</div><div class="log-value output">' + escapeHtml(outputStr) + '</div></div>';
+                }
+                detailHtml += '</div>';
+            }
+
+            let metaHtml = '';
+            if (message) metaHtml += ' <span style="color:#f85149"> ' + message + '</span>';
+
+            div.className = 'log-entry ' + agent;
+            div.innerHTML = '<div class="log-header">' +
+                '<span><span class="agent">[' + agent + ']</span> <span class="action">' + action + '</span>' + metaHtml + '</span>' +
+                '<span class="ts">' + new Date(entry.ts * 1000).toLocaleTimeString() + '</span>' +
+                '</div>' + detailHtml;
+
             logsDiv.appendChild(div);
             logsDiv.scrollTop = logsDiv.scrollHeight;
-            document.getElementById('log-count').textContent = `${logEntries.length} logs`;
+
+            const countEl = document.getElementById('log-count-' + tabId);
+            if (countEl && tabs[tabId]) countEl.textContent = tabs[tabId].logs.length + ' logs';
         }
 
-        function renderResults(mentions) {
-            const resultsDiv = document.getElementById('results');
+        function toggleLogDetail() {
+            showLogDetail = !showLogDetail;
+            document.querySelectorAll('.log-detail').forEach(function(el) {
+                el.style.display = showLogDetail ? 'block' : 'none';
+            });
+        }
+
+        function highlightText(tabId, text, mentions) {
+            const el = document.getElementById('highlighted-' + tabId);
+            if (!mentions || mentions.length === 0) { el.style.display = 'none'; return; }
+
+            const sorted = [...mentions].sort(function(a, b) { return b.position[0] - a.position[0]; });
+            let html = escapeHtml(text);
+            for (const m of sorted) {
+                const start = m.position[0];
+                const end = m.position[1];
+                const mentionText = escapeHtml(text.substring(start, end));
+                html = html.substring(0, start) + '<span class="cite-' + m.type + '" title="' + m.type + '">' + mentionText + '</span>' + html.substring(end);
+            }
+            el.innerHTML = html;
+            el.style.display = 'block';
+        }
+
+        function renderResults(tabId, mentions) {
+            const resultsDiv = document.getElementById('results-' + tabId);
             if (!mentions || mentions.length === 0) {
                 resultsDiv.innerHTML = '<div class="empty">No mentions found</div>';
                 return;
             }
 
-            resultsDiv.innerHTML = mentions.map(m => {
-                const typeClass = `type-${m.type}`;
+            const inputText = document.getElementById('input-' + tabId).value;
+            highlightText(tabId, inputText, mentions);
+
+            resultsDiv.innerHTML = mentions.map(function(m) {
                 const assertions = m.assertions || {};
                 const candidates = m.candidates || [];
-
-                return `
-                    <div class="mention-card">
-                        <div class="text">${escapeHtml(m.text)}</div>
-                        <span class="type ${typeClass}">${m.type}</span>
-                        <span style="color:#484f58; font-size:11px; margin-left:8px">[${m.position[0]}, ${m.position[1]}]</span>
-                        <div class="assertions">
-                            <span class="assertion-tag ${assertions.isNegated ? 'active' : ''}">negated</span>
-                            <span class="assertion-tag ${assertions.isFamily ? 'active' : ''}">family</span>
-                            <span class="assertion-tag ${assertions.isHistorical ? 'active' : ''}">historical</span>
-                        </div>
-                        ${candidates.length > 0 ? `
-                            <div class="candidates">
-                                ${candidates.map(c => `<span class="candidate">${c}</span>`).join('')}
-                            </div>
-                        ` : ''}
-                    </div>
-                `;
+                return '<div class="mention-card">' +
+                    '<div class="text">' + escapeHtml(m.text) + '</div>' +
+                    '<span class="type type-' + m.type + '">' + m.type + '</span>' +
+                    '<span style="color:#484f58; font-size:10px; margin-left:6px">[' + m.position[0] + ',' + m.position[1] + ']</span>' +
+                    '<div class="assertions">' +
+                    '<span class="assertion-tag ' + (assertions.isNegated ? 'active' : '') + '">neg</span>' +
+                    '<span class="assertion-tag ' + (assertions.isFamily ? 'active' : '') + '">fam</span>' +
+                    '<span class="assertion-tag ' + (assertions.isHistorical ? 'active' : '') + '">hist</span>' +
+                    '</div>' +
+                    (candidates.length > 0 ? '<div class="candidates">' + candidates.map(function(c) { return '<span class="candidate">' + c + '</span>'; }).join('') + '</div>' : '') +
+                    '</div>';
             }).join('');
         }
 
@@ -218,26 +467,34 @@
             return div.innerHTML;
         }
 
-        async function runExtract() {
-            const text = document.getElementById('input-text').value.trim();
+        async function runExtract(tabId) {
+            const text = document.getElementById('input-' + tabId).value.trim();
             if (!text) return;
 
             const useLlm = document.getElementById('use-llm').checked;
-            const btn = document.getElementById('extract-btn');
-            const status = document.getElementById('status');
+            const status = document.getElementById('status-' + tabId);
+            const fileId = tabs[tabId] ? tabs[tabId].fileId : null;
 
-            btn.disabled = true;
-            btn.innerHTML = '<span class="spinner"></span> Processing...';
             status.textContent = 'Running...';
-            logEntries = [];
-            document.getElementById('logs').innerHTML = '';
-            document.getElementById('results').innerHTML = '';
+            document.getElementById('logs-' + tabId).innerHTML = '';
+            document.getElementById('results-' + tabId).innerHTML = '';
+            document.getElementById('highlighted-' + tabId).style.display = 'none';
+            document.getElementById('result-info-' + tabId).style.display = 'none';
+
+            // Update tab status
+            const tabBtn = document.getElementById('tab-btn-' + tabId);
+            if (tabBtn) {
+                const statusDot = tabBtn.querySelector('.tab-status');
+                if (statusDot) { statusDot.className = 'tab-status loading'; }
+            }
+
+            const startTime = Date.now();
 
             try {
                 const resp = await fetch('/api/extract', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ text, use_llm: useLlm })
+                    body: JSON.stringify({ text: text, use_llm: useLlm, file_id: fileId })
                 });
 
                 const reader = resp.body.getReader();
@@ -245,44 +502,54 @@
                 let buffer = '';
 
                 while (true) {
-                    const { done, value } = await reader.read();
-                    if (done) break;
-
-                    buffer += decoder.decode(value, { stream: true });
+                    const result = await reader.read();
+                    if (result.done) break;
+                    buffer += decoder.decode(result.value, { stream: true });
                     const lines = buffer.split('\n');
                     buffer = lines.pop();
 
-                    for (const line of lines) {
+                    for (var i = 0; i < lines.length; i++) {
+                        var line = lines[i];
                         if (!line.trim()) continue;
                         try {
                             const msg = JSON.parse(line);
-                            if (msg.type === 'log') addLog(msg.data);
-                            else if (msg.type === 'result') {
-                                renderResults(msg.data.mentions);
-                                status.textContent = `Found ${msg.data.count} mentions`;
-                            }
-                            else if (msg.type === 'error') {
-                                addLog({ agent: 'error', action: msg.data.message, ts: Date.now() / 1000 });
+                            if (msg.type === 'log') {
+                                addLog(tabId, msg.data);
+                            } else if (msg.type === 'result') {
+                                const elapsed = msg.data.elapsed || ((Date.now() - startTime) / 1000).toFixed(1);
+                                renderResults(tabId, msg.data.mentions);
+                                status.textContent = msg.data.count + ' mentions (' + elapsed + 's)';
+
+                                document.getElementById('result-info-' + tabId).style.display = 'flex';
+                                document.getElementById('ri-count-' + tabId).textContent = msg.data.count;
+                                document.getElementById('ri-elapsed-' + tabId).textContent = elapsed + 's';
+
+                                // Update tab status
+                                if (tabBtn) {
+                                    const statusDot = tabBtn.querySelector('.tab-status');
+                                    if (statusDot) statusDot.className = 'tab-status done';
+                                }
+
+                                if (tabs[tabId]) {
+                                    tabs[tabId].mentions = msg.data.mentions;
+                                    tabs[tabId].elapsed = elapsed;
+                                }
+
+                                loadFiles();
+                            } else if (msg.type === 'error') {
+                                addLog(tabId, { agent: 'error', action: msg.data.message, ts: Date.now() / 1000 });
                                 status.textContent = 'Error';
+                                if (tabBtn) {
+                                    const statusDot = tabBtn.querySelector('.tab-status');
+                                    if (statusDot) statusDot.className = 'tab-status pending';
+                                }
                             }
-                        } catch (e) { }
+                        } catch (e) {}
                     }
                 }
             } catch (e) {
                 status.textContent = 'Error: ' + e.message;
-            } finally {
-                btn.disabled = false;
-                btn.textContent = 'Extract';
             }
-        }
-
-        function clearAll() {
-            document.getElementById('input-text').value = '';
-            document.getElementById('results').innerHTML = '';
-            document.getElementById('logs').innerHTML = '<div class="empty">Agent logs will appear here...</div>';
-            document.getElementById('status').textContent = '';
-            logEntries = [];
-            document.getElementById('log-count').textContent = '';
         }
 
         loadStats();

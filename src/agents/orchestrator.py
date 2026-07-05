@@ -35,21 +35,30 @@ class OrchestratorAgent(Agent):
         if self.on_log:
             self.on_log(entry)
 
+    def _flush_agent_logs(self, agent):
+        for entry in agent.trace:
+            if self.on_log:
+                self.on_log(entry)
+        agent.trace.clear()
+
     def _run_extraction(self, ctx: AgentContext) -> AgentContext:
         self._emit_log({"agent": "orchestrator", "action": "call_tool", "tool": "extract", "ts": time.time()})
         ctx = self.extraction.run(ctx)
+        self._flush_agent_logs(self.extraction)
         self._emit_log({"agent": "extraction", "action": "complete", "mentions": len(ctx.mentions), "ts": time.time()})
         return ctx
 
     def _run_assertion(self, ctx: AgentContext) -> AgentContext:
         self._emit_log({"agent": "orchestrator", "action": "call_tool", "tool": "assert", "ts": time.time()})
         ctx = self.assertion.run(ctx)
+        self._flush_agent_logs(self.assertion)
         self._emit_log({"agent": "assertion", "action": "complete", "ts": time.time()})
         return ctx
 
     def _run_linking(self, ctx: AgentContext) -> AgentContext:
         self._emit_log({"agent": "orchestrator", "action": "call_tool", "tool": "link", "ts": time.time()})
         ctx = self.linking.run(ctx)
+        self._flush_agent_logs(self.linking)
         linked = len([m for m in ctx.mentions if m.get("candidates")])
         self._emit_log({"agent": "linking", "action": "complete", "linked": linked, "ts": time.time()})
         return ctx

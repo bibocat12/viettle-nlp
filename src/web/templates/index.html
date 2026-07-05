@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vietnamese Medical NER - Agentic Pipeline</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0d1117; color: #c9d1d9; }
+        .container { display: flex; height: 100vh; }
+        .sidebar { width: 280px; background: #161b22; border-right: 1px solid #30363d; padding: 16px; overflow-y: auto; }
+        .main { flex: 1; display: flex; flex-direction: column; }
+        .header { padding: 16px 24px; background: #161b22; border-bottom: 1px solid #30363d; display: flex; align-items: center; gap: 12px; }
+        .content { flex: 1; display: flex; overflow: hidden; }
+        .panel { flex: 1; display: flex; flex-direction: column; border-right: 1px solid #30363d; }
+        .panel:last-child { border-right: none; }
+        .panel-header { padding: 12px 16px; background: #161b22; border-bottom: 1px solid #30363d; font-weight: 600; font-size: 14px; }
+        .panel-body { flex: 1; overflow-y: auto; padding: 16px; }
+
+        h1 { font-size: 18px; color: #58a6ff; }
+        h2 { font-size: 14px; color: #8b949e; margin-bottom: 12px; }
+
+        .file-list { list-style: none; }
+        .file-list li { padding: 8px 12px; cursor: pointer; border-radius: 6px; margin-bottom: 2px; font-size: 13px; }
+        .file-list li:hover { background: #21262d; }
+        .file-list li.active { background: #1f6feb; color: white; }
+
+        .btn { padding: 8px 16px; border: 1px solid #30363d; background: #21262d; color: #c9d1d9; border-radius: 6px; cursor: pointer; font-size: 13px; }
+        .btn:hover { background: #30363d; }
+        .btn-primary { background: #1f6feb; border-color: #1f6feb; color: white; }
+        .btn-primary:hover { background: #388bfd; }
+        .btn-sm { padding: 4px 10px; font-size: 12px; }
+
+        textarea { width: 100%; height: 200px; background: #0d1117; border: 1px solid #30363d; color: #c9d1d9; padding: 12px; border-radius: 6px; font-family: monospace; font-size: 13px; resize: vertical; }
+        textarea:focus { outline: none; border-color: #1f6feb; }
+
+        .log-entry { padding: 6px 10px; margin-bottom: 4px; border-radius: 4px; font-family: monospace; font-size: 12px; border-left: 3px solid #30363d; background: #161b22; }
+        .log-entry.extraction { border-left-color: #f0883e; }
+        .log-entry.assertion { border-left-color: #a371f7; }
+        .log-entry.linking { border-left-color: #3fb950; }
+        .log-entry.verifier { border-left-color: #58a6ff; }
+        .log-entry.error { border-left-color: #f85149; background: #2d1215; }
+        .log-entry .agent { color: #8b949e; font-size: 11px; }
+        .log-entry .action { color: #58a6ff; }
+        .log-entry .ts { color: #484f58; font-size: 10px; }
+
+        .mention-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 12px; margin-bottom: 8px; }
+        .mention-card .text { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+        .mention-card .type { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+        .type-THUỐC { background: #1f6feb22; color: #58a6ff; border: 1px solid #1f6feb44; }
+        .type-TRIỆU_CHỨNG { background: #f0883e22; color: #f0883e; border: 1px solid #f0883e44; }
+        .type-CHẨN_ĐOÁN { background: #3fb95022; color: #3fb950; border: 1px solid #3fb95044; }
+        .type-TÊN_XÉT_NGHIỆM { background: #a371f722; color: #a371f7; border: 1px solid #a371f744; }
+        .type-KẾT_QUẢ_XÉT_NGHIỆM { background: #db6d2822; color: #db6d28; border: 1px solid #db6d2844; }
+
+        .assertions { display: flex; gap: 6px; margin-top: 8px; }
+        .assertion-tag { padding: 2px 6px; border-radius: 4px; font-size: 10px; background: #21262d; }
+        .assertion-tag.active { background: #f8514922; color: #f85149; }
+
+        .candidates { margin-top: 8px; }
+        .candidate { display: inline-block; padding: 2px 8px; margin: 2px; border-radius: 4px; font-size: 11px; background: #1f6feb22; color: #58a6ff; font-family: monospace; }
+
+        .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }
+        .stat { padding: 12px; background: #0d1117; border-radius: 6px; text-align: center; }
+        .stat .value { font-size: 24px; font-weight: 700; color: #58a6ff; }
+        .stat .label { font-size: 11px; color: #8b949e; margin-top: 4px; }
+
+        .controls { padding: 12px 16px; background: #161b22; border-top: 1px solid #30363d; display: flex; gap: 8px; align-items: center; }
+        .toggle { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+        .toggle input { accent-color: #1f6feb; }
+
+        .spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid #30363d; border-top-color: #58a6ff; border-radius: 50%; animation: spin 0.8s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .empty { color: #484f58; font-style: italic; font-size: 13px; text-align: center; padding: 40px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2 style="margin-bottom: 16px;">Input Files</h2>
+            <div class="stats" id="stats">
+                <div class="stat"><div class="value" id="stat-icd10">-</div><div class="label">ICD-10</div></div>
+                <div class="stat"><div class="value" id="stat-rxnorm">-</div><div class="label">RxNorm</div></div>
+                <div class="stat"><div class="value" id="stat-files">-</div><div class="label">Files</div></div>
+                <div class="stat"><div class="value" id="stat-outputs">-</div><div class="label">Outputs</div></div>
+            </div>
+            <ul class="file-list" id="file-list"></ul>
+        </div>
+        <div class="main">
+            <div class="header">
+                <h1>Vietnamese Medical NER</h1>
+                <span style="color: #8b949e; font-size: 13px;">Agentic Pipeline</span>
+                <div style="flex:1"></div>
+                <div class="toggle">
+                    <input type="checkbox" id="use-llm">
+                    <label for="use-llm">Use LLM</label>
+                </div>
+            </div>
+            <div class="content">
+                <div class="panel" style="flex: 1;">
+                    <div class="panel-header">Input & Results</div>
+                    <div class="panel-body">
+                        <textarea id="input-text" placeholder="Enter Vietnamese clinical text or select a file..."></textarea>
+                        <div style="margin: 12px 0; display: flex; gap: 8px;">
+                            <button class="btn btn-primary" id="extract-btn" onclick="runExtract()">Extract</button>
+                            <button class="btn" onclick="clearAll()">Clear</button>
+                            <span id="status" style="font-size: 12px; color: #8b949e; align-self: center;"></span>
+                        </div>
+                        <div id="results"></div>
+                    </div>
+                </div>
+                <div class="panel" style="flex: 1;">
+                    <div class="panel-header">
+                        Agent Logs
+                        <span id="log-count" style="color: #8b949e; font-size: 12px; margin-left: 8px;"></span>
+                    </div>
+                    <div class="panel-body" id="logs">
+                        <div class="empty">Agent logs will appear here...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentFile = null;
+        let logEntries = [];
+
+        async function loadStats() {
+            try {
+                const resp = await fetch('/api/stats');
+                const data = await resp.json();
+                document.getElementById('stat-icd10').textContent = data.icd10_codes?.toLocaleString() || '-';
+                document.getElementById('stat-rxnorm').textContent = data.rxnorm_concepts?.toLocaleString() || '-';
+                document.getElementById('stat-files').textContent = data.input_files || '-';
+                document.getElementById('stat-outputs').textContent = data.output_files || '-';
+            } catch (e) { console.error(e); }
+        }
+
+        async function loadFiles() {
+            try {
+                const resp = await fetch('/api/files');
+                const files = await resp.json();
+                const list = document.getElementById('file-list');
+                list.innerHTML = files.map(f => `<li onclick="selectFile('${f.id}')">${f.name}</li>`).join('');
+            } catch (e) { console.error(e); }
+        }
+
+        async function selectFile(id) {
+            try {
+                const resp = await fetch(`/api/file/${id}`);
+                const data = await resp.json();
+                document.getElementById('input-text').value = data.text;
+                currentFile = id;
+                document.querySelectorAll('.file-list li').forEach(li => li.classList.remove('active'));
+                event.target.classList.add('active');
+            } catch (e) { console.error(e); }
+        }
+
+        function addLog(entry) {
+            const logsDiv = document.getElementById('logs');
+            if (logsDiv.querySelector('.empty')) logsDiv.innerHTML = '';
+            logEntries.push(entry);
+
+            const div = document.createElement('div');
+            const agent = entry.agent || 'system';
+            div.className = `log-entry ${agent}`;
+            div.innerHTML = `
+                <span class="agent">[${agent}]</span>
+                <span class="action">${entry.action || ''}</span>
+                ${entry.tool ? `<span style="color:#8b949e"> tool=${entry.tool}</span>` : ''}
+                ${entry.mentions !== undefined ? `<span style="color:#8b949e"> mentions=${entry.mentions}</span>` : ''}
+                ${entry.linked !== undefined ? `<span style="color:#8b949e"> linked=${entry.linked}</span>` : ''}
+                ${entry.message ? `<span style="color:#f85149"> ${entry.message}</span>` : ''}
+                <span class="ts">${new Date(entry.ts * 1000).toLocaleTimeString()}</span>
+            `;
+            logsDiv.appendChild(div);
+            logsDiv.scrollTop = logsDiv.scrollHeight;
+            document.getElementById('log-count').textContent = `${logEntries.length} logs`;
+        }
+
+        function renderResults(mentions) {
+            const resultsDiv = document.getElementById('results');
+            if (!mentions || mentions.length === 0) {
+                resultsDiv.innerHTML = '<div class="empty">No mentions found</div>';
+                return;
+            }
+
+            resultsDiv.innerHTML = mentions.map(m => {
+                const typeClass = `type-${m.type}`;
+                const assertions = m.assertions || {};
+                const candidates = m.candidates || [];
+
+                return `
+                    <div class="mention-card">
+                        <div class="text">${escapeHtml(m.text)}</div>
+                        <span class="type ${typeClass}">${m.type}</span>
+                        <span style="color:#484f58; font-size:11px; margin-left:8px">[${m.position[0]}, ${m.position[1]}]</span>
+                        <div class="assertions">
+                            <span class="assertion-tag ${assertions.isNegated ? 'active' : ''}">negated</span>
+                            <span class="assertion-tag ${assertions.isFamily ? 'active' : ''}">family</span>
+                            <span class="assertion-tag ${assertions.isHistorical ? 'active' : ''}">historical</span>
+                        </div>
+                        ${candidates.length > 0 ? `
+                            <div class="candidates">
+                                ${candidates.map(c => `<span class="candidate">${c}</span>`).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        async function runExtract() {
+            const text = document.getElementById('input-text').value.trim();
+            if (!text) return;
+
+            const useLlm = document.getElementById('use-llm').checked;
+            const btn = document.getElementById('extract-btn');
+            const status = document.getElementById('status');
+
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span> Processing...';
+            status.textContent = 'Running...';
+            logEntries = [];
+            document.getElementById('logs').innerHTML = '';
+            document.getElementById('results').innerHTML = '';
+
+            try {
+                const resp = await fetch('/api/extract', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text, use_llm: useLlm })
+                });
+
+                const reader = resp.body.getReader();
+                const decoder = new TextDecoder();
+                let buffer = '';
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+
+                    buffer += decoder.decode(value, { stream: true });
+                    const lines = buffer.split('\n');
+                    buffer = lines.pop();
+
+                    for (const line of lines) {
+                        if (!line.trim()) continue;
+                        try {
+                            const msg = JSON.parse(line);
+                            if (msg.type === 'log') addLog(msg.data);
+                            else if (msg.type === 'result') {
+                                renderResults(msg.data.mentions);
+                                status.textContent = `Found ${msg.data.count} mentions`;
+                            }
+                            else if (msg.type === 'error') {
+                                addLog({ agent: 'error', action: msg.data.message, ts: Date.now() / 1000 });
+                                status.textContent = 'Error';
+                            }
+                        } catch (e) { }
+                    }
+                }
+            } catch (e) {
+                status.textContent = 'Error: ' + e.message;
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Extract';
+            }
+        }
+
+        function clearAll() {
+            document.getElementById('input-text').value = '';
+            document.getElementById('results').innerHTML = '';
+            document.getElementById('logs').innerHTML = '<div class="empty">Agent logs will appear here...</div>';
+            document.getElementById('status').textContent = '';
+            logEntries = [];
+            document.getElementById('log-count').textContent = '';
+        }
+
+        loadStats();
+        loadFiles();
+    </script>
+</body>
+</html>

@@ -85,15 +85,21 @@ DRUG_PATTERN = re.compile(
 
 TEST_PATTERNS = [
     r"điện tâm đồ", r"ecg", r"ECG", r"chụp x-quang", r"x-quang",
-    r"siêu âm tim qua thành ngực", r"siêu âm", r"chụp cắt lớp vi tính",
-    r"CT", r"MRI", r"mri", r"monitor holter", r"holter",
-    r"phân tích nước tiểu", r"bảng công thức sinh hóa máu",
-    r"bảng công thức máu", r"bảng chức năng gan", r"bản phân tích nước tiểu",
+    r"siêu âm tim qua thành ngực", r"siêu âm tim", r"siêu âm",
+    r"chụp cắt lớp vi tính", r"CT", r"MRI", r"mri",
+    r"monitor holter", r"holter",
+    r"phân tích nước tiểu", r"nước tiểu",
+    r"bảng công thức sinh hóa máu", r"bảng công thức máu",
+    r"bảng chức năng gan", r"bản phân tích nước tiểu",
     r"troponin", r"creatinine", r"canxi", r"bilirubin",
     r"hemoglobin", r"Hb", r"hematocrit", r"Hct",
     r"tiểu cầu", r"bạch cầu", r"hồng cầu", r"đường huyết",
     r"glucose", r"BUN", r"ure", r"sodium", r"potassium", r"chloride",
     r"protein", r"albumin", r"canxi toàn phần", r"canxi ion hóa",
+    # Medical procedures
+    r"đặt shunt", r"dẫn lưu", r"shunt dẫn lưu",
+    r"đặt stent", r"nội soi", r"mổ", r"phẫu thuật",
+    r"siêu âm tim", r"thông tim", r"chụp mạch",
 ]
 
 LAB_VALUE_PATTERNS = [

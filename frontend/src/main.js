@@ -35,7 +35,7 @@ async function init() {
             <div class="panel-body">
               <textarea id="input-text" placeholder="Enter Vietnamese clinical text..."></textarea>
               <div class="controls">
-                <button class="btn btn-primary" id="extract-btn" onclick="runExtract()">Extract</button>
+                <button class="btn btn-primary" id="extract-btn">Extract</button>
                 <span id="status"></span>
               </div>
               <div id="result-info" class="result-info hidden">
@@ -51,7 +51,7 @@ async function init() {
               Agent Logs
               <span id="log-count"></span>
               <div class="spacer"></div>
-              <button class="btn btn-sm" onclick="toggleDetail()">Detail</button>
+                <button class="btn btn-sm" id="detail-btn">Detail</button>
             </div>
             <div class="panel-body" id="logs">
               <div class="empty">Agent logs will appear here...</div>
@@ -97,7 +97,7 @@ async function loadFiles() {
   files = await apiGet('/files')
   const list = document.getElementById('file-list')
   list.innerHTML = files.map(f => `
-    <li onclick="selectFile('${f.id}')" data-id="${f.id}">
+    <li data-id="${f.id}">
       <span>${f.name}</span>
       <span class="file-status ${f.cached ? 'done' : 'pending'}">${f.cached ? '✓' + f.count : '●'}</span>
     </li>
@@ -320,3 +320,18 @@ function escapeHtml(text) {
 
 // Initialize
 init()
+
+// Event delegation for file list clicks
+document.addEventListener('click', async (e) => {
+  const li = e.target.closest('.file-list li')
+  if (li) {
+    const id = li.dataset.id
+    if (id) await selectFile(id)
+  }
+})
+
+// Extract button
+document.getElementById('extract-btn').addEventListener('click', runExtract)
+
+// Detail button
+document.getElementById('detail-btn').addEventListener('click', toggleDetail)

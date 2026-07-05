@@ -76,21 +76,7 @@ class Orchestrator:
                   input={"text_len": len(text)},
                   output={"sentences": len(preprocessed["sentences"]), "normalized_len": len(normalized)})
 
-        # 2. Rule extraction
-        rule_result = rule_extract(normalized)
-        rule_mentions = rule_result["mentions"]
-        assertion_cues = rule_result["assertion_cues"]
-        self._log("orchestrator", "rule_extracted",
-                  input={"text_len": len(normalized)},
-                  output={"mentions": len(rule_mentions), "cues": len(assertion_cues),
-                          "mention_types": {m.get("type"): sum(1 for x in rule_mentions if x.get("type") == m.get("type")) for m in rule_mentions}})
-
-        for m in rule_mentions:
-            self._log("rules", "found",
-                      input={"text": m.get("text", "")},
-                      output={"type": m.get("type"), "position": m.get("position"), "confidence": m.get("confidence", 0)})
-
-        # 3. NER extraction
+        # 2. LLM-FIRST NER extraction (with rules verification built-in)
         ner_result = ner_and_type(normalized, llm=self.llm)
         ner_mentions = ner_result["mentions"]
         self._log("orchestrator", "ner_extracted",
@@ -102,6 +88,19 @@ class Orchestrator:
             self._log("ner", "found",
                       input={"text": m.get("text", ""), "source": m.get("source", "")},
                       output={"type": mtype, "position": m.get("position"), "candidates": m.get("type_candidates", [])})
+
+        # 3. Rule extraction (secondary — catches high-precision patterns LLM might miss)
+        rule_result = rule_extract(normalized)
+        rule_mentions = rule_result["mentions"]
+        assertion_cues = rule_result["assertion_cues"]
+        self._log("orchestrator", "rule_extracted",
+                  input={"text_len": len(normalized)},
+                  output={"mentions": len(rule_mentions), "cues": len(assertion_cues)})
+
+        for m in rule_mentions[:5]:
+            self._log("rules", "found",
+                      input={"text": m.get("text", "")},
+                      output={"type": m.get("type"), "position": m.get("position"), "confidence": m.get("confidence", 0)})
 
         # 4. Merge mentions
         merged = self._merge_mentions(rule_mentions, ner_mentions)

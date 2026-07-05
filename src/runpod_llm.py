@@ -154,27 +154,51 @@ class RunPodLLM:
     def parse_json(self, response: str) -> dict:
         # First extract text from RunPod format
         text = self._extract_text(response)
-        
+
         # Try direct JSON parse
         try:
             return json.loads(text)
         except json.JSONDecodeError:
             pass
-        
+
         # Try with single quotes replaced
         try:
             return json.loads(text.replace("'", '"'))
         except:
             pass
-        
-        # Try to find JSON array
-        m = re.search(r'\[.*\]', text, re.DOTALL)
-        if m:
-            try:
-                return json.loads(m.group())
-            except:
-                pass
-        
+
+        # Find first valid JSON array — try progressively shorter matches
+        start = text.find('[')
+        if start >= 0:
+            # Try full text first
+            end = len(text)
+            while end > start:
+                candidate = text[start:end]
+                # Fix truncated JSON: add missing closing bracket
+                if not candidate.rstrip().endswith(']'):
+                    open_count = candidate.count('[')
+                    close_count = candidate.count(']')
+                    if open_count > close_count:
+                        candidate += ']' * (open_count - close_count)
+                try:
+                    return json.loads(candidate)
+                except json.JSONDecodeError:
+                    pass
+                # Try with last } as boundary
+                last_brace = text.rfind('}', start, end)
+                if last_brace > start:
+                    candidate = text[start:last_brace+1]
+                    if not candidate.endswith(']'):
+                        open_count = candidate.count('[')
+                        close_count = candidate.count(']')
+                        if open_count > close_count:
+                            candidate += ']' * (open_count - close_count)
+                    try:
+                        return json.loads(candidate)
+                    except:
+                        pass
+                break  # Only try full text and last-brace boundary
+
         # Try to find JSON object
         m = re.search(r'\{.*\}', text, re.DOTALL)
         if m:
@@ -182,7 +206,7 @@ class RunPodLLM:
                 return json.loads(m.group())
             except:
                 pass
-        
+
         return {}
 
     def extract_text_from_response(self, response: str) -> str:

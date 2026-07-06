@@ -18,6 +18,10 @@ BASE_DIR = Path(__file__).parent.parent.parent
 DB_DIR = BASE_DIR / "database-stuff"
 INPUT_DIR = BASE_DIR / "input"
 OUTPUT_DIR = BASE_DIR / "outputs"
+OUTPUT_DIRS = {
+    "outputs": BASE_DIR / "outputs",
+    "outputs_new": BASE_DIR / "outputs_new",
+}
 
 kb = None
 runpod_llm = None
@@ -55,6 +59,8 @@ def extract():
     text = data.get("text", "")
     use_llm = data.get("use_llm", False)
     file_id = data.get("file_id", None)
+    folder = data.get("folder", "outputs")
+    output_dir = OUTPUT_DIRS.get(folder, OUTPUT_DIR)
 
     if not text:
         return jsonify({"error": "No text provided"}), 400
@@ -129,8 +135,8 @@ def extract():
                         "use_llm": use_llm,
                     }
                     # Also save to disk
-                    out_path = OUTPUT_DIR / f"{file_id}.json"
-                    OUTPUT_DIR.mkdir(exist_ok=True)
+                    out_path = output_dir / f"{file_id}.json"
+                    output_dir.mkdir(exist_ok=True)
                     with open(out_path, "w", encoding="utf-8") as f:
                         json.dump(result, f, ensure_ascii=False, indent=2)
 
@@ -149,56 +155,154 @@ def extract():
     return Response(generate(), mimetype="text/event-stream")
 
 
+@app.route("/api/run_all", methods=["POST"])
+def run_all():
+    data = request.json or {}
+    use_llm = data.get("use_llm", False)
+    folder = data.get("folder", "outputs_new")
+    output_dir = OUTPUT_DIRS.get(folder, Path(BASE_DIR / folder))
+
+    def generate():
+        yield json.dumps({"type": "start", "data": {"folder": folder, "total": len(list(INPUT_DIR.glob("*.txt")))}}) + "\n"
+
+        kb_inst = get_kb()
+        llm_inst = None
+        if use_llm:
+            from runpod_llm import get_runpod_llm as _get_llm
+            llm_inst = _get_llm()
+            yield json.dumps({"type": "log", "data": {"agent": "system", "action": "runpod_ready", "llm": llm_inst.is_available(), "ts": time.time()}}) + "\n"
+
+        from orchestrator import run_pipeline
+
+        files = sorted(INPUT_DIR.glob("*.txt"), key=lambda p: int(p.stem))
+        total = len(files)
+        completed = 0
+        total_mentions = 0
+
+        output_dir.mkdir(exist_ok=True)
+
+        for f in files:
+            fid = f.stem
+            t0 = time.time()
+            try:
+                text = f.read_text()
+                out_queue = queue.Queue()
+                def on_log(e): out_queue.put(e)
+                result = run_pipeline(fid, text, kb=kb_inst, llm=llm_inst, on_log=on_log)
+                mentions = result.get("mentions", [])
+                stats = result.get("stats", {})
+                elapsed = time.time() - t0
+
+                # Save
+                (output_dir / f"{fid}.json").write_text(
+                    __import__('json').dumps(mentions, ensure_ascii=False, indent=2))
+
+                total_mentions += len(mentions)
+                completed += 1
+
+                yield json.dumps({
+                    "type": "progress",
+                    "data": {
+                        "file": fid, "mentions": len(mentions), "elapsed": round(elapsed, 1),
+                        "completed": completed, "total": total,
+                        "stats": {
+                            "rule": stats.get("rule_mentions", 0),
+                            "qwen": stats.get("ner_qwen_mentions", 0),
+                            "healthbert": stats.get("ner_healthbert_mentions", 0),
+                            "llm_corrected": stats.get("llm_corrected", 0),
+                        },
+                    }
+                }) + "\n"
+
+                # Flush logs
+                while not out_queue.empty():
+                    yield json.dumps({"type": "log", "data": out_queue.get_nowait()}) + "\n"
+
+            except Exception as e:
+                completed += 1
+                yield json.dumps({"type": "error", "data": {"file": fid, "message": str(e)}}) + "\n"
+
+        yield json.dumps({
+            "type": "complete",
+            "data": {"total": total, "completed": completed, "total_mentions": total_mentions, "folder": folder}
+        }) + "\n"
+
+    return Response(generate(), mimetype="text/event-stream")
+
+
+@app.route("/api/folders", methods=["GET"])
+def list_folders():
+    folders = []
+    for name, path in OUTPUT_DIRS.items():
+        if path.exists():
+            outputs = list(path.glob("*.json"))
+            entries = sum(1 for f in outputs if json.loads(f.read_text()) if isinstance(json.loads(f.read_text()), list))
+            folders.append({
+                "name": name,
+                "path": str(path),
+                "file_count": len(outputs),
+                "mention_count": 0,
+            })
+    return jsonify(folders)
+
+
 @app.route("/api/files", methods=["GET"])
 def list_files():
+    folder = request.args.get("folder", "outputs")
+    output_dir = OUTPUT_DIRS.get(folder, OUTPUT_DIR)
+
     files = sorted(INPUT_DIR.glob("*.txt"), key=lambda p: int(p.stem))
     result = []
+    total_mentions = 0
     for f in files:
         fid = f.stem
-        has_output = (OUTPUT_DIR / f"{fid}.json").exists()
+        out_path = output_dir / f"{fid}.json"
+        has_output = out_path.exists()
         cached = fid in result_cache
         entry = {
             "name": f.name,
             "id": fid,
             "has_output": has_output,
             "cached": cached,
+            "count": 0,
         }
         if cached:
             entry["count"] = result_cache[fid]["count"]
             entry["elapsed"] = result_cache[fid]["elapsed"]
-            entry["timestamp"] = result_cache[fid]["timestamp"]
         elif has_output:
             try:
-                with open(OUTPUT_DIR / f"{fid}.json", "r", encoding="utf-8") as fh:
+                with open(out_path, "r", encoding="utf-8") as fh:
                     data = json.load(fh)
-                entry["count"] = len(data)
-                entry["timestamp"] = (OUTPUT_DIR / f"{fid}.json").stat().st_mtime
+                entry["count"] = len(data) if isinstance(data, list) else 0
+                entry["timestamp"] = out_path.stat().st_mtime
             except:
                 entry["count"] = 0
+        total_mentions += entry["count"]
         result.append(entry)
-    return jsonify(result)
+    return jsonify({"files": result, "total": total_mentions, "folder": folder})
 
 
 @app.route("/api/file/<file_id>", methods=["GET"])
 def get_file(file_id):
+    folder = request.args.get("folder", "outputs")
+    output_dir = OUTPUT_DIRS.get(folder, OUTPUT_DIR)
+
     fpath = INPUT_DIR / f"{file_id}.txt"
     if not fpath.exists():
         return jsonify({"error": "File not found"}), 404
     with open(fpath, "r", encoding="utf-8") as f:
         text = f.read()
 
-    # Include cached result if available
     cached = result_cache.get(file_id)
     if cached is None:
-        # Try loading from disk
-        out_path = OUTPUT_DIR / f"{file_id}.json"
+        out_path = output_dir / f"{file_id}.json"
         if out_path.exists():
             try:
                 with open(out_path, "r", encoding="utf-8") as fh:
                     mentions = json.load(fh)
                 cached = {
                     "mentions": mentions,
-                    "count": len(mentions),
+                    "count": len(mentions) if isinstance(mentions, list) else 0,
                     "timestamp": out_path.stat().st_mtime,
                     "elapsed": None,
                     "use_llm": False,
@@ -210,6 +314,7 @@ def get_file(file_id):
         "id": file_id,
         "text": text,
         "result": cached,
+        "folder": folder,
     })
 
 
@@ -231,12 +336,27 @@ def extract_file(file_id):
 def get_stats():
     kb_inst = get_kb()
     files = list(INPUT_DIR.glob("*.txt"))
-    outputs = list(OUTPUT_DIR.glob("*.json"))
+    folder_stats = {}
+    for fname, fpath in OUTPUT_DIRS.items():
+        if fpath.exists():
+            outputs = list(fpath.glob("*.json"))
+            total_mentions = 0
+            for o in outputs:
+                try:
+                    data = json.loads(o.read_text())
+                    if isinstance(data, list):
+                        total_mentions += len(data)
+                except:
+                    pass
+            folder_stats[fname] = {
+                "count": len(outputs),
+                "mentions": total_mentions,
+            }
     return jsonify({
         "icd10_codes": len(kb_inst.icd10),
         "rxnorm_concepts": len(kb_inst.rxnorm_concepts),
         "input_files": len(files),
-        "output_files": len(outputs),
+        "folders": folder_stats,
     })
 
 

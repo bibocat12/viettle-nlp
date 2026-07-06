@@ -127,35 +127,18 @@ def _verify_with_rules(text: str, mentions: list) -> list:
             s, e = m.start(), m.end()
             if any(s < existing_e and e > existing_s for existing_s, existing_e in existing_spans):
                 continue
-            # Expand to full procedure text (from start of line to end of line)
-            line_start = text.rfind('\n', 0, s)
-            if line_start < 0:
-                line_start = 0
-            else:
-                line_start += 1  # Skip the newline
-            line_end = text.find('\n', s)
-            if line_end < 0:
-                line_end = len(text)
-            full_text = text[line_start:line_end].strip()
-            # Remove colon-prefixed label (e.g., "Các thủ thuật đã thực hiện: ")
-            colon_idx = full_text.find(':')
-            if colon_idx >= 0 and colon_idx < 50:
-                after_colon = full_text[colon_idx+1:].strip()
-                if after_colon and len(after_colon) > len(full_text) * 0.3:
-                    full_text = after_colon
-            start_pos = line_start + (full_text.find(text[s:e]) if full_text.find(text[s:e]) >= 0 else (s - line_start))
-            if full_text.find(text[s:e]) >= 0:
-                start_pos = line_start + full_text.find(text[s:e])
-            else:
-                start_pos = s
+            # Only capture the match itself, NOT the full line
+            match_text = text[s:e].strip()
+            if len(match_text) < 3:
+                continue
             verified.append({
-                "text": full_text,
-                "position": [line_start, line_start + len(full_text)],
+                "text": match_text,
+                "position": [s, e],
                 "type": "TÊN_XÉT_NGHIỆM",
                 "type_candidates": [{"label": "TÊN_XÉT_NGHIỆM", "score": 0.95}],
                 "source": "rule_verified",
             })
-            existing_spans.add((line_start, line_start + len(full_text)))
+            existing_spans.add((s, e))
 
     # Filter out remaining section headers and fragments
     filtered = []
@@ -270,7 +253,7 @@ def ner_and_type(text: str, llm=None) -> dict:
         # Split into chunks
         chunks = [text[i:i+600] for i in range(0, len(text), 600)]
         for chunk_idx, chunk in enumerate(chunks):
-            chunk_offset = chunk_idx * 1200
+            chunk_offset = chunk_idx * 600
             if len(chunk.strip()) < 20:
                 continue
 

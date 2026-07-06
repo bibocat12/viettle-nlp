@@ -1,22 +1,31 @@
 import './style.css'
 
 const API_BASE = '/api'
-
-// State
 let currentFile = null
-let files = []
+let currentFolder = 'outputs'
 let extracting = false
 
-// DOM Elements
 const app = document.getElementById('app')
 
-// Initialize
 async function init() {
   app.innerHTML = `
     <div class="container">
       <aside class="sidebar">
         <h2>Files</h2>
+        <div class="folder-bar">
+          <select id="folder-select" class="folder-select">
+            <option value="outputs">outputs</option>
+            <option value="outputs_new">outputs_new</option>
+          </select>
+          <button class="btn btn-sm" onclick="refreshFiles()">⟳</button>
+          <button class="btn btn-sm btn-primary" id="run-all-btn">▶ Run All</button>
+        </div>
+        <div id="run-progress" class="run-progress hidden">
+          <div class="run-progress-bar" id="run-progress-bar"></div>
+          <div class="run-progress-text" id="run-progress-text"></div>
+        </div>
         <div class="stats" id="stats"></div>
+        <div class="stats-summary" id="stats-summary"></div>
         <ul class="file-list" id="file-list"></ul>
       </aside>
       <main class="main">
@@ -51,7 +60,7 @@ async function init() {
               Agent Logs
               <span id="log-count"></span>
               <div class="spacer"></div>
-                <button class="btn btn-sm" id="detail-btn">Detail</button>
+              <button class="btn btn-sm" id="detail-btn">Detail</button>
             </div>
             <div class="panel-body" id="logs">
               <div class="empty">Agent logs will appear here...</div>
@@ -62,86 +71,125 @@ async function init() {
     </div>
   `
 
+  document.getElementById('folder-select').addEventListener('change', async (e) => {
+    currentFolder = e.target.value
+    await loadFiles()
+  })
+
+  document.getElementById('extract-btn').addEventListener('click', runExtract)
+  document.getElementById('detail-btn').addEventListener('click', toggleDetail)
+  document.addEventListener('click', async (e) => {
+    const li = e.target.closest('.file-list li')
+    if (li) {
+      const id = li.dataset.id
+      if (id) await selectFile(id)
+    }
+  })
+
   await loadStats()
   await loadFiles()
 }
 
-// API calls
+function escapeHtml(text) {
+  const div = document.createElement('div')
+  div.textContent = text
+  return div.innerHTML
+}
+
 async function apiGet(path) {
   const resp = await fetch(API_BASE + path)
   return resp.json()
 }
 
 async function apiPost(path, data) {
-  const resp = await fetch(API_BASE + path, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
-  })
-  return resp
+  return fetch(API_BASE + path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
 }
 
-// Load stats
 async function loadStats() {
   const stats = await apiGet('/stats')
-  document.getElementById('stats').innerHTML = `
-    <div class="stat"><div class="value">${stats.icd10_codes?.toLocaleString() || '-'}</div><div class="label">ICD-10</div></div>
+  const folders = stats.folders || {}
+  let html = `<div class="stat"><div class="value">${stats.icd10_codes?.toLocaleString() || '-'}</div><div class="label">ICD-10</div></div>
     <div class="stat"><div class="value">${stats.rxnorm_concepts?.toLocaleString() || '-'}</div><div class="label">RxNorm</div></div>
-    <div class="stat"><div class="value">${stats.input_files || '-'}</div><div class="label">Files</div></div>
-    <div class="stat"><div class="value">${stats.output_files || '-'}</div><div class="label">Outputs</div></div>
-  `
+    <div class="stat"><div class="value">${stats.input_files || '-'}</div><div class="label">Files</div></div>`
+  document.getElementById('stats').innerHTML = html
+
+  // Folder summary
+  let summaryHtml = ''
+  for (const [name, info] of Object.entries(folders)) {
+    const active = name === currentFolder ? 'active' : ''
+    summaryHtml += `<div class="folder-stat ${active}" onclick="switchFolder('${name}')">
+      <span class="folder-name">${name}</span>
+      <span class="folder-count">${info.count || 0} files, ${(info.mentions || 0).toLocaleString()} mentions</span>
+    </div>`
+  }
+  document.getElementById('stats-summary').innerHTML = summaryHtml
+  document.getElementById('folder-select').value = currentFolder
 }
 
-// Load files
+async function switchFolder(name) {
+  currentFolder = name
+  document.getElementById('folder-select').value = name
+  document.getElementById('stats-summary').querySelectorAll('.folder-stat').forEach(el => el.classList.remove('active'))
+  await loadFiles()
+  await loadStats()
+}
+
 async function loadFiles() {
-  files = await apiGet('/files')
+  const resp = await fetch(`${API_BASE}/files?folder=${currentFolder}`)
+  const data = await resp.json()
+  const files = data.files || []
+  document.getElementById('stats-summary').querySelectorAll('.folder-stat').forEach(el => {
+    if (el.querySelector('.folder-name')?.textContent === currentFolder) {
+      el.querySelector('.folder-count').textContent = `${files.length} files, ${data.total?.toLocaleString() || 0} mentions`
+    }
+  })
   const list = document.getElementById('file-list')
   list.innerHTML = files.map(f => `
     <li data-id="${f.id}">
       <span>${f.name}</span>
-      <span class="file-status ${f.cached ? 'done' : 'pending'}">${f.cached ? '✓' + f.count : '●'}</span>
+      <span class="file-status ${f.has_output ? 'done' : 'pending'}">${f.has_output ? '✓' + f.count : '●'}</span>
     </li>
   `).join('')
 }
 
-// Select file
+window.refreshFiles = async function() {
+  await loadFiles()
+}
+
 async function selectFile(id) {
-  const data = await apiGet('/file/' + id)
+  const resp = await fetch(`${API_BASE}/file/${id}?folder=${currentFolder}`)
+  const data = await resp.json()
   document.getElementById('input-text').value = data.text
   currentFile = id
 
-  // Highlight selected file
   document.querySelectorAll('.file-list li').forEach(li => li.classList.remove('active'))
   document.querySelector(`.file-list li[data-id="${id}"]`)?.classList.add('active')
 
-  // Show cached result
   if (data.result) {
-    showResult(data.result.mentions, data.result.elapsed)
+    showResult(data.result.mentions || [], data.result.elapsed)
   } else {
     clearResults()
   }
 }
 
-// Run extraction
 async function runExtract() {
   const text = document.getElementById('input-text').value.trim()
   if (!text || extracting) return
 
   extracting = true
   const btn = document.getElementById('extract-btn')
-  const status = document.getElementById('status')
+  const statusEl = document.getElementById('status')
   btn.disabled = true
   btn.innerHTML = '<span class="spinner"></span> Processing...'
-  status.textContent = 'Running...'
+  statusEl.textContent = 'Running...'
 
   clearResults()
   clearLogs()
-
   const useLlm = document.getElementById('use-llm').checked
   const startTime = Date.now()
 
   try {
-    const resp = await apiPost('/extract', { text, use_llm: useLlm, file_id: currentFile })
+    const resp = await apiPost('/extract', { text, use_llm: useLlm, file_id: currentFile, folder: currentFolder })
     const reader = resp.body.getReader()
     const decoder = new TextDecoder()
     let buffer = ''
@@ -149,7 +197,6 @@ async function runExtract() {
     while (true) {
       const { done, value } = await reader.read()
       if (done) break
-
       buffer += decoder.decode(value, { stream: true })
       const lines = buffer.split('\n')
       buffer = lines.pop()
@@ -158,22 +205,22 @@ async function runExtract() {
         if (!line.trim()) continue
         try {
           const msg = JSON.parse(line)
-          if (msg.type === 'log') {
-            addLog(msg.data)
-          } else if (msg.type === 'result') {
+          if (msg.type === 'log') addLog(msg.data)
+          else if (msg.type === 'result') {
             const elapsed = msg.data.elapsed || ((Date.now() - startTime) / 1000).toFixed(1)
             showResult(msg.data.mentions, elapsed)
-            status.textContent = `${msg.data.count} mentions (${elapsed}s)`
+            statusEl.textContent = `${msg.data.count} mentions (${elapsed}s)`
             loadFiles()
+            loadStats()
           } else if (msg.type === 'error') {
             addLog({ agent: 'error', action: msg.data.message, ts: Date.now() / 1000 })
-            status.textContent = 'Error'
+            statusEl.textContent = 'Error'
           }
         } catch (e) {}
       }
     }
   } catch (e) {
-    status.textContent = 'Error: ' + e.message
+    statusEl.textContent = 'Error: ' + e.message
   } finally {
     btn.disabled = false
     btn.textContent = 'Extract'
@@ -181,27 +228,35 @@ async function runExtract() {
   }
 }
 
-// Show result
 function showResult(mentions, elapsed) {
   const resultsDiv = document.getElementById('results')
   const highlightedDiv = document.getElementById('highlighted')
   const resultInfo = document.getElementById('result-info')
 
-  if (!mentions || mentions.length === 0) {
+  if (!mentions?.length) {
     resultsDiv.innerHTML = '<div class="empty">No mentions found</div>'
     return
   }
 
-  // Update result info
   resultInfo.classList.remove('hidden')
   document.getElementById('ri-count').textContent = mentions.length
-  document.getElementById('ri-elapsed').textContent = elapsed + 's'
+  document.getElementById('ri-elapsed').textContent = (elapsed || '-') + 's'
 
-  // Highlight text
+  // Type breakdown bar
+  const types = {}
+  mentions.forEach(m => { types[m.type] = (types[m.type] || 0) + 1 })
+  const barHtml = Object.entries(types).map(([t, c]) => {
+    const pct = (c / mentions.length * 100).toFixed(0)
+    return `<div class="type-bar-item" style="flex:${c}">
+      <div class="type-bar-fill type-${t}" style="width:${pct}%"></div>
+      <span class="type-bar-label">${t}: ${c}</span>
+    </div>`
+  }).join('')
+  resultInfo.innerHTML += `<div class="type-bar">${barHtml}</div>`
+
   const text = document.getElementById('input-text').value
   highlightText(text, mentions)
 
-  // Render mention cards
   resultsDiv.innerHTML = mentions.map(m => `
     <div class="mention-card">
       <div class="text">${escapeHtml(m.text)}</div>
@@ -212,52 +267,34 @@ function showResult(mentions, elapsed) {
         <span class="assertion-tag ${m.assertions?.isFamily ? 'active' : ''}">fam</span>
         <span class="assertion-tag ${m.assertions?.isHistorical ? 'active' : ''}">hist</span>
       </div>
-      ${m.candidates?.length ? `
-        <div class="candidates">
-          ${m.candidates.map(c => `<span class="candidate">${c}</span>`).join('')}
-        </div>
-      ` : ''}
+      ${m.candidates?.length ? `<div class="candidates">${m.candidates.map(c => `<span class="candidate">${c}</span>`).join('')}</div>` : ''}
     </div>
   `).join('')
 }
 
-// Highlight text with colored citations
 function highlightText(text, mentions) {
-  const highlightedDiv = document.getElementById('highlighted')
-  if (!mentions?.length) {
-    highlightedDiv.classList.add('hidden')
-    return
-  }
-
+  const el = document.getElementById('highlighted')
+  if (!mentions?.length) { el.classList.add('hidden'); return }
   const sorted = [...mentions].sort((a, b) => b.position[0] - a.position[0])
   let html = escapeHtml(text)
-
   for (const m of sorted) {
-    const start = m.position[0]
-    const end = m.position[1]
-    const mentionText = escapeHtml(text.substring(start, end))
-    const cssClass = `cite-${m.type}`
-    const before = html.substring(0, start)
-    const after = html.substring(end)
-    html = `${before}<span class="${cssClass}" title="${m.type}: ${mentionText}">${mentionText}</span>${after}`
+    const st = m.position[0], en = m.position[1]
+    const mt = escapeHtml(text.substring(st, en))
+    html = html.substring(0, st) + `<span class="cite-${m.type}" title="${m.type}">${mt}</span>` + html.substring(en)
   }
-
-  highlightedDiv.innerHTML = html
-  highlightedDiv.classList.remove('hidden')
+  el.innerHTML = html
+  el.classList.remove('hidden')
 }
 
-// Clear results
 function clearResults() {
   document.getElementById('results').innerHTML = ''
   document.getElementById('highlighted').classList.add('hidden')
   document.getElementById('result-info').classList.add('hidden')
 }
 
-// Add log entry
 function addLog(entry) {
   const logsDiv = document.getElementById('logs')
   if (logsDiv.querySelector('.empty')) logsDiv.innerHTML = ''
-
   const agent = entry.agent || 'system'
   const action = entry.action || ''
   const input = entry.input || null
@@ -268,70 +305,103 @@ function addLog(entry) {
   if (input || output) {
     detailHtml = '<div class="log-detail">'
     if (input) {
-      const inputStr = typeof input === 'object' ? JSON.stringify(input, null, 2) : String(input)
-      detailHtml += `<div class="log-io"><div class="log-label">Input</div><div class="log-value">${escapeHtml(inputStr)}</div></div>`
+      const inpStr = typeof input === 'object' ? JSON.stringify(input, null, 2) : String(input)
+      detailHtml += `<div class="log-io"><div class="log-label">Input</div><div class="log-value">${escapeHtml(inpStr)}</div></div>`
     }
     if (output) {
-      const outputStr = typeof output === 'object' ? JSON.stringify(output, null, 2) : String(output)
-      detailHtml += `<div class="log-io"><div class="log-label">Output</div><div class="log-value output">${escapeHtml(outputStr)}</div></div>`
+      const outStr = typeof output === 'object' ? JSON.stringify(output, null, 2) : String(output)
+      detailHtml += `<div class="log-io"><div class="log-label">Output</div><div class="log-value output">${escapeHtml(outStr)}</div></div>`
     }
     detailHtml += '</div>'
   }
 
   const div = document.createElement('div')
   div.className = `log-entry ${agent}`
-  div.innerHTML = `
-    <div class="log-header">
-      <span>
-        <span class="agent">[${agent}]</span>
-        <span class="action">${action}</span>
-        ${message ? `<span class="error">${message}</span>` : ''}
-      </span>
-      <span class="ts">${new Date(entry.ts * 1000).toLocaleTimeString()}</span>
-    </div>
-    ${detailHtml}
-  `
-
+  div.innerHTML = `<div class="log-header">
+    <span><span class="agent">[${agent}]</span> <span class="action">${action}</span>${message ? ` <span class="error">${message}</span>` : ''}</span>
+    <span class="ts">${new Date(entry.ts * 1000).toLocaleTimeString()}</span>
+  </div>${detailHtml}`
   logsDiv.appendChild(div)
   logsDiv.scrollTop = logsDiv.scrollHeight
-
   document.getElementById('log-count').textContent = `${logsDiv.children.length} logs`
 }
 
-// Clear logs
 function clearLogs() {
   document.getElementById('logs').innerHTML = '<div class="empty">Agent logs will appear here...</div>'
   document.getElementById('log-count').textContent = ''
 }
 
-// Toggle detail visibility
 function toggleDetail() {
   document.querySelectorAll('.log-detail').forEach(el => {
     el.style.display = el.style.display === 'none' ? 'block' : 'none'
   })
 }
 
-// Escape HTML
-function escapeHtml(text) {
-  const div = document.createElement('div')
-  div.textContent = text
-  return div.innerHTML
+// Run All files
+let runningAll = false
+async function runAll() {
+  if (runningAll) return
+  runningAll = true
+  const btn = document.getElementById('run-all-btn')
+  const progress = document.getElementById('run-progress')
+  const bar = document.getElementById('run-progress-bar')
+  const text = document.getElementById('run-progress-text')
+  const useLlm = document.getElementById('use-llm').checked
+  const folder = document.getElementById('folder-select').value
+
+  btn.disabled = true
+  btn.textContent = '■ Stop'
+  progress.classList.remove('hidden')
+  text.textContent = 'Starting...'
+  bar.style.width = '0%'
+  clearLogs()
+
+  const resp = await fetch('/api/run_all', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ use_llm: useLlm, folder })
+  })
+  const reader = resp.body.getReader()
+  const decoder = new TextDecoder()
+  let buffer = ''
+
+  while (true) {
+    const { done, value } = await reader.read()
+    if (done) break
+    buffer += decoder.decode(value, { stream: true })
+    const lines = buffer.split('\n')
+    buffer = lines.pop()
+
+    for (const line of lines) {
+      if (!line.trim()) continue
+      try {
+        const msg = JSON.parse(line)
+        if (msg.type === 'progress') {
+          const d = msg.data
+          const pct = Math.round(d.completed / d.total * 100)
+          bar.style.width = pct + '%'
+          text.textContent = `[${d.completed}/${d.total}] File ${d.file}: ${d.mentions} mentions (${d.elapsed}s) | Qwen=${d.stats?.qwen || 0} HB=${d.stats?.healthbert || 0} Rules=${d.stats?.rule || 0} LLMc=${d.stats?.llm_corrected || 0}`
+        } else if (msg.type === 'log') {
+          addLog(msg.data)
+        } else if (msg.type === 'complete') {
+          const d = msg.data
+          bar.style.width = '100%'
+          text.textContent = `Complete: ${d.completed} files, ${d.total_mentions} total mentions → ${d.folder}`
+          await loadFiles()
+          await loadStats()
+        } else if (msg.type === 'error') {
+          addLog({ agent: 'system', action: `Error: ${msg.data.file}`, message: msg.data.message, ts: Date.now() / 1000 })
+        }
+      } catch (e) {}
+    }
+  }
+
+  btn.disabled = false
+  btn.textContent = '▶ Run All'
+  runningAll = false
 }
 
-// Initialize
 init()
 
-// Event delegation for file list clicks
-document.addEventListener('click', async (e) => {
-  const li = e.target.closest('.file-list li')
-  if (li) {
-    const id = li.dataset.id
-    if (id) await selectFile(id)
-  }
-})
-
-// Extract button
-document.getElementById('extract-btn').addEventListener('click', runExtract)
-
-// Detail button
-document.getElementById('detail-btn').addEventListener('click', toggleDetail)
+// Event listeners
+document.getElementById('run-all-btn').addEventListener('click', runAll)

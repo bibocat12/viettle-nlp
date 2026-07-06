@@ -3,6 +3,7 @@ import sys
 import time
 from typing import Callable, Dict, List, Optional
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 sys.path.insert(0, str(Path(__file__).parent))
 
@@ -11,6 +12,16 @@ from ner_tool import ner_and_type
 from assertion_agent import classify_assertions
 from linker_agent import link_candidates
 from verifier_agent import verify_all
+from healthbert import classify_type as healthbert_classify_type
+from healthbert import classify_assertion as healthbert_classify_assertion
+
+
+NER_LLM_VERIFY_SYSTEM = """Bạn là chuyên gia kiểm tra phân loại thực thể y khoa.
+Một hệ thống keyword-based đã phân loại một mention. Hãy xác nhận hoặc sửa lại.
+
+5 loại: THUỐC, TRIỆU_CHỨNG, CHẨN_ĐOÁN, TÊN_XÉT_NGHIỆM, KẾT_QUẢ_XÉT_NGHIỆM
+
+Trả về JSON: {"correct": true/false, "corrected_type": "...", "reason": "..."}"""
 
 
 class Orchestrator:
@@ -25,31 +36,18 @@ class Orchestrator:
             self.on_log(entry)
         return entry
 
-    def _merge_mentions(self, rule_mentions: list, ner_mentions: list) -> list:
+    def _merge_mentions(self, mentions_list: List[list]) -> list:
+        """Merge mentions from multiple sources, deduplicating by position."""
         all_mentions = []
-        for m in rule_mentions:
-            m["source"] = "rule"
-            all_mentions.append(m)
-        for m in ner_mentions:
-            if "type_candidates" in m and "type" not in m:
-                candidates = m["type_candidates"]
-                if candidates:
-                    best = max(candidates, key=lambda x: x.get("score", 0))
-                    m["type"] = best.get("label", "TRIỆU_CHỨNG")
-                    m["confidence"] = best.get("score", 0.6)
-                else:
-                    m["type"] = "TRIỆU_CHỨNG"
-                    m["confidence"] = 0.6
-            overlap = False
-            for existing in all_mentions:
-                es, ee = existing["position"]
-                ns, ne = m["position"]
-                if ns < ee and ne > es:
-                    overlap = True
-                    break
-            if not overlap:
-                m["source"] = "ner"
+        seen_positions = set()
+        for mentions in mentions_list:
+            for m in mentions:
+                pos = tuple(m.get("position", [0, 0]))
+                if pos in seen_positions:
+                    continue
+                seen_positions.add(pos)
                 all_mentions.append(m)
+
         all_mentions.sort(key=lambda x: x["position"][0])
         result = []
         for m in all_mentions:
@@ -66,49 +64,147 @@ class Orchestrator:
                     result[-1] = m
         return result
 
-    def run(self, note_id: str, text: str) -> dict:
-        self._log("orchestrator", "start", input={"note_id": note_id, "text_len": len(text), "text_preview": text[:200]})
+    def _llm_verify_healthbert(self, mention: dict, context: str) -> dict:
+        """Use LLM to verify/correct ViHealthBERT keyword-based type classification."""
+        if not self.llm or not self.llm.is_available():
+            return mention
 
-        # 1. Preprocess
+        text = mention.get("text", "")
+        mtype = mention.get("type", "")
+
+        user = f"""Mention: "{text}"
+Keyword-classified as: {mtype}
+Context: "{context[:200]}"
+
+Is this classification correct?"""
+
+        response = self.llm.generate(NER_LLM_VERIFY_SYSTEM, user, 200)
+        result = self.llm.parse_json(response)
+
+        if isinstance(result, dict) and not result.get("correct", True):
+            corrected = result.get("corrected_type", "")
+            if corrected in ("THUỐC", "TRIỆU_CHỨNG", "CHẨN_ĐOÁN", "TÊN_XÉT_NGHIỆM", "KẾT_QUẢ_XÉT_NGHIỆM"):
+                mention["type"] = corrected
+                mention["type_candidates"] = [{"label": corrected, "score": 0.85}]
+                mention["llm_corrected"] = True
+                self._log("llm_verify", "corrected",
+                          input={"text": text, "old_type": mtype},
+                          output={"new_type": corrected, "reason": result.get("reason", "")})
+        return mention
+
+    def run(self, note_id: str, text: str) -> dict:
+        self._log("orchestrator", "start", input={"note_id": note_id, "text_len": len(text)})
+
         preprocessed = preprocess_note(note_id, text)
         normalized = preprocessed["normalized_text"]
-        self._log("orchestrator", "preprocessed",
-                  input={"text_len": len(text)},
-                  output={"sentences": len(preprocessed["sentences"]), "normalized_len": len(normalized)})
+        self._log("orchestrator", "preprocessed", input={}, output={"len": len(normalized)})
 
-        # 2. LLM-FIRST NER extraction (with rules verification built-in)
-        ner_result = ner_and_type(normalized, llm=self.llm)
-        ner_mentions = ner_result["mentions"]
-        self._log("orchestrator", "ner_extracted",
-                  input={"text_len": len(normalized), "llm_used": self.llm is not None},
-                  output={"mentions": len(ner_mentions)})
+        # ===== PARALLEL EXTRACTION =====
+        # Run all extraction methods simultaneously
+        results = {"rule": None, "ner_qwen": None, "ner_healthbert": None}
+        errors = []
 
-        for m in ner_mentions[:10]:
-            mtype = m.get("type", m.get("type_candidates", [{}])[0].get("label", ""))
-            self._log("ner", "found",
-                      input={"text": m.get("text", ""), "source": m.get("source", "")},
-                      output={"type": mtype, "position": m.get("position"), "candidates": m.get("type_candidates", [])})
+        def run_rule():
+            r = rule_extract(normalized)
+            self._log("orchestrator", "rule_extracted", output={"mentions": len(r["mentions"])})
+            return r["mentions"]
 
-        # 3. Rule extraction (secondary — catches high-precision patterns LLM might miss)
-        rule_result = rule_extract(normalized)
-        rule_mentions = rule_result["mentions"]
-        assertion_cues = rule_result["assertion_cues"]
-        self._log("orchestrator", "rule_extracted",
-                  input={"text_len": len(normalized)},
-                  output={"mentions": len(rule_mentions), "cues": len(assertion_cues)})
+        def run_ner_qwen():
+            r = ner_and_type(normalized, llm=self.llm)
+            self._log("orchestrator", "ner_qwen_extracted", output={"mentions": len(r["mentions"])})
+            return r["mentions"]
 
-        for m in rule_mentions[:5]:
-            self._log("rules", "found",
-                      input={"text": m.get("text", "")},
-                      output={"type": m.get("type"), "position": m.get("position"), "confidence": m.get("confidence", 0)})
+        def run_ner_healthbert():
+            import re
+            mentions = []
+            # Only capture longer, more specific phrases (3-6 words)
+            # Skip sentence fragments
+            skip_starts = {'tiền sử', 'bệnh sử', 'kết quả', 'các', 'đặc điểm', 'thời điểm',
+                          'tình trạng', 'lý do', 'triệu chứng', 'yếu tố', 'thuốc trước',
+                          'các bệnh', 'các yếu tố', 'các triệu chứng', 'các diễn biến',
+                          'các sự kiện', 'các thủ thuật', 'đánh giá', 'xử trí'}
+            cand_pattern = re.compile(
+                r'(?:^|[\s,;:\-\(\)])([A-ZÀ-ỹ][a-zà-ỹ]+(?:\s+[a-zà-ỹ]+){2,5})(?=[\s,;:\-\.\)]|$)'
+            )
+            seen = set()
+            for m in cand_pattern.finditer(normalized):
+                span_text = m.group(1).strip()
+                if len(span_text) < 8 or len(span_text) > 60:
+                    continue
+                first_word = span_text.lower().split()[0] if span_text.split() else ''
+                if first_word in skip_starts:
+                    continue
+                s, e = m.start(1), m.end(1)
+                pos_key = (s, e)
+                if pos_key in seen:
+                    continue
+                seen.add(pos_key)
+                ctx_start = max(0, s - 50)
+                ctx_end = min(len(normalized), e + 50)
+                context = normalized[ctx_start:ctx_end]
+                result = healthbert_classify_type(span_text, context)
+                mentions.append({
+                    "text": span_text,
+                    "position": [s, e],
+                    "type": result["type"],
+                    "type_candidates": [{"label": result["type"], "score": result["score"]}],
+                    "source": "healthbert",
+                    "confidence": result["score"],
+                })
+                if len(mentions) >= 15:
+                    break
+            self._log("orchestrator", "ner_healthbert_extracted", output={"mentions": len(mentions)})
+            return mentions
 
-        # 4. Merge mentions
-        merged = self._merge_mentions(rule_mentions, ner_mentions)
-        self._log("orchestrator", "merged",
-                  input={"rule_count": len(rule_mentions), "ner_count": len(ner_mentions)},
-                  output={"merged_count": len(merged), "dropped": len(rule_mentions) + len(ner_mentions) - len(merged)})
+        with ThreadPoolExecutor(max_workers=3) as ex:
+            futures = {
+                ex.submit(run_rule): "rule",
+                ex.submit(run_ner_qwen): "ner_qwen",
+                ex.submit(run_ner_healthbert): "ner_healthbert",
+            }
+            for future in as_completed(futures):
+                name = futures[future]
+                try:
+                    results[name] = future.result()
+                except Exception as e:
+                    errors.append(f"{name}: {e}")
+                    results[name] = []
+                    self._log("error", f"{name}_failed", message=str(e))
 
-        # 5. Classify assertions for each mention
+        if errors:
+            self._log("orchestrator", "parallel_errors", errors=errors)
+
+        # ===== MERGE =====
+        # Convert type_candidates to type for mentions that don't have 'type'
+        all_mentions = []
+        for source_name, mentions in results.items():
+            if mentions:
+                for m in mentions:
+                    if "type_candidates" in m and "type" not in m:
+                        candidates = m["type_candidates"]
+                        if candidates:
+                            best = max(candidates, key=lambda x: x.get("score", 0))
+                            m["type"] = best.get("label", "TRIỆU_CHỨNG")
+                    m["extraction_source"] = source_name
+                    all_mentions.append(m)
+
+        merged = self._merge_mentions([all_mentions])
+        self._log("orchestrator", "merged", output={"total": len(merged), "from": {k: len(v or []) for k, v in results.items()}})
+
+        # ===== LLM REASONING on ViHealthBERT output (only low-confidence) =====
+        llm_corrected = 0
+        for i, m in enumerate(merged):
+            if m.get("confidence", 1.0) < 0.85 and m.get("extraction_source") == "ner_healthbert":
+                ctx_start = max(0, m["position"][0] - 50)
+                ctx_end = min(len(normalized), m["position"][1] + 50)
+                context = normalized[ctx_start:ctx_end]
+                self._llm_verify_healthbert(m, context)
+                if m.get("llm_corrected"):
+                    llm_corrected += 1
+
+        self._log("orchestrator", "llm_verified", output={"healthbert_mentions": sum(1 for m in merged if m.get("extraction_source") == "ner_healthbert"), "corrected": llm_corrected})
+
+        # ===== ASSERTION =====
         for i, mention in enumerate(merged):
             assertion_result = classify_assertions(normalized, mention, llm=self.llm)
             mention["assertions"] = {
@@ -117,15 +213,10 @@ class Orchestrator:
                 "isHistorical": assertion_result["isHistorical"],
             }
             mention["assertion_confidence"] = assertion_result.get("confidence", 0.85)
-            mention["assertion_evidence"] = assertion_result.get("evidence", "")
 
-            self._log("assertion", "classified",
-                      input={"mention": mention.get("text", ""), "type": mention.get("type", ""),
-                             "context": normalized[max(0, mention["position"][0]-50):mention["position"][1]+50]},
-                      output={"assertions": mention["assertions"], "confidence": mention["assertion_confidence"],
-                              "evidence": mention.get("assertion_evidence", "")})
+        self._log("orchestrator", "assertions_classified", count=len(merged))
 
-        # 6. Link candidates for CHẨN_ĐOÁN and THUỐC
+        # ===== LINKING =====
         for i, mention in enumerate(merged):
             mtype = mention.get("type", "")
             if mtype in ("CHẨN_ĐOÁN", "THUỐC"):
@@ -137,24 +228,15 @@ class Orchestrator:
                 mention["candidates"] = link_result.get("candidates", [])
                 mention["link_confidence"] = link_result.get("confidence", 0)
 
-                self._log("linker", "linked",
-                          input={"mention": mention.get("text", ""), "type": mtype, "context": context[:200]},
-                          output={"candidates": mention["candidates"][:5], "confidence": mention["link_confidence"]})
+        self._log("orchestrator", "linked", count=len([m for m in merged if m.get("candidates")]))
 
-        self._log("orchestrator", "linked",
-                  input={"total_mentions": len(merged)},
-                  output={"linked_count": len([m for m in merged if m.get("candidates")])})
-
-        # 7. Verify all mentions
+        # ===== VERIFICATION =====
         verify_result = verify_all(merged, normalized, llm=self.llm)
         final_mentions = verify_result["final_predictions"]
         dropped = verify_result["dropped"]
-        self._log("orchestrator", "verified",
-                  input={"total": len(merged)},
-                  output={"kept": len(final_mentions), "dropped": dropped,
-                          "actions": [r.get("action") for r in verify_result.get("actions", [])]})
+        self._log("orchestrator", "verified", kept=len(final_mentions), dropped=dropped)
 
-        # 8. Build output
+        # ===== OUTPUT =====
         output_mentions = []
         for m in final_mentions:
             out = {
@@ -171,35 +253,22 @@ class Orchestrator:
                 out["candidates"] = m.get("candidates", [])
             output_mentions.append(out)
 
-        # 9. Validate output
         validation = validate_output(output_mentions)
-        self._log("orchestrator", "validated",
-                  input={"mention_count": len(output_mentions)},
-                  output={"is_valid": validation["is_valid"], "errors": validation["errors"], "warnings": validation["warnings"]})
-
-        if not validation["is_valid"]:
-            self._log("orchestrator", "validation_failed", errors=validation["errors"])
-
-        self._log("orchestrator", "complete",
-                  input={"note_id": note_id},
-                  output={"total_mentions": len(output_mentions), "stats": {
-                      "rule_mentions": len(rule_mentions),
-                      "ner_mentions": len(ner_mentions),
-                      "merged": len(merged),
-                      "final": len(output_mentions),
-                      "dropped": dropped,
-                  }})
+        self._log("orchestrator", "validated", is_valid=validation["is_valid"], errors=len(validation["errors"]))
+        self._log("orchestrator", "complete", total_mentions=len(output_mentions))
 
         return {
             "note_id": note_id,
             "mentions": output_mentions,
             "validation": validation,
             "stats": {
-                "rule_mentions": len(rule_mentions),
-                "ner_mentions": len(ner_mentions),
+                "rule_mentions": len(results.get("rule", [])),
+                "ner_qwen_mentions": len(results.get("ner_qwen", [])),
+                "ner_healthbert_mentions": len(results.get("ner_healthbert", [])),
                 "merged": len(merged),
                 "final": len(output_mentions),
                 "dropped": dropped,
+                "llm_corrected": llm_corrected,
             },
         }
 

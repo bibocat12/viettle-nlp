@@ -1,4 +1,5 @@
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -8,23 +9,35 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import numpy as np
 import torch
+
+# transformers 5.x validates repo IDs strictly.
+# Monkey-patch to allow local absolute paths like /kaggle/...
+import huggingface_hub.utils._validators as _hub_val
+_hub_val.validate_repo_id = lambda repo_id: None
+
 from transformers import AutoTokenizer, AutoModel
 
 
 _model = None
 _tokenizer = None
+_device = "cpu"
 
 
-def _load_model():
-    global _model, _tokenizer
+def _load_model(device: str = "cpu"):
+    global _model, _tokenizer, _device
     if _model is not None:
         return
-    model_path = str(Path(__file__).parent.parent / "models" / "vipubmed-deberta-base")
-    _tokenizer = AutoTokenizer.from_pretrained(model_path)
-    _model = AutoModel.from_pretrained(model_path)
+    _device = device
+    base = os.environ.get("VIETTLE_MODELS_DIR", str(Path(__file__).parent.parent / "models"))
+    model_path = os.path.join(base, "vipubmed-deberta-base")
+    # transformers 5.x validates repo IDs strictly; bypass hub entirely
+    os.environ.setdefault("HF_HUB_OFFLINE", "1")
+    _tokenizer = AutoTokenizer.from_pretrained(model_path, local_files_only=True)
+    _model = AutoModel.from_pretrained(model_path, local_files_only=True)
     _model.eval()
-    if torch.cuda.is_available():
+    if device == "cuda" and torch.cuda.is_available():
         _model = _model.cuda()
+        _device = "cuda"
 
 
 @torch.no_grad()
@@ -37,7 +50,7 @@ def _encode(texts: List[str], max_length: int = 128) -> np.ndarray:
     for i in range(0, len(texts), batch_size):
         batch = texts[i:i+batch_size]
         inputs = _tokenizer(batch, return_tensors="pt", padding=True, truncation=True, max_length=max_length)
-        if torch.cuda.is_available():
+        if _device == "cuda":
             inputs = {k: v.cuda() for k, v in inputs.items()}
         outputs = _model(**inputs)
         attention_mask = inputs["attention_mask"]

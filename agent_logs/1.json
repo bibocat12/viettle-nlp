@@ -1,0 +1,717 @@
+{
+  "file_id": "1",
+  "timestamp": 1783351898.802159,
+  "elapsed": 316.57,
+  "model": "runpod",
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 2942,
+      "ts": 1783351586.3809314
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783351586.3810492
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 2942
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 2942
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n"
+        },
+        "output": "{'rule': [{'text': 'metoprolol 25mg', 'position': [53, 75], 'type': 'THUỐC', 'confidence': 0.98, 'source': 'rule'}, {'text': 'monitor holter', 'position': [1631, 1645], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'metoprolol 25mg', 'position': [1772, 1794], 'type': 'THUỐC', 'confidence': 0.98, 'source': 'rule'}, {'text': 'siêu âm tim qua thành ngực', 'position': [1929, 1955], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'aspirin 325mg', ",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 18,
+          "qwen": 13,
+          "healthbert": 32,
+          "errors": 0
+        },
+        "total": 54
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'metoprolol 25mg', 'position': [53, 75], 'type': 'THUỐC', 'confidence': 0.98, 'source': 'rule', 'extraction_source': 'rule'}, {'text': 'monitor holter', 'position': [1631, 1645], 'type': 'TÊ"
+        },
+        "output": "[{'text': 'metoprolol 25mg', 'position': [53, 75], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.95}], 'confidence': 0.95, 'vote_count': 4, 'max_type_votes': 3, 'voters': {'ner_llm_relocated': 3, 'rule': 1}, 'type_votes': {'THUỐC': 3, 'CHẨN_ĐOÁN': 1}, 'needs_review': False}, {'text': 'doxycycline', 'position': [82, 115], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.8}], 'confidence': 0.8, 'vote_count': 3, 'max_type_votes': 2, 'voters': {'ner_llm_relocat",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 42
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'metoprolol 25mg', 'position': [53, 75], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.95}], 'confidence': 0.95, 'vote_count': 4, 'max_type_votes': 3, 'voters': {'ner_ll",
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n"
+        },
+        "output": "[{'text': 'metoprolol 25mg', 'position': [53, 75], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.95}], 'confidence': 0.95, 'vote_count': 4, 'max_type_votes': 3, 'voters': {'ner_llm_relocated': 3, 'rule': 1}, 'type_votes': {'THUỐC': 3, 'CHẨN_ĐOÁN': 1}, 'needs_review': False}, {'text': 'doxycycline', 'position': [82, 115], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.8}], 'confidence': 0.8, 'vote_count': 3, 'max_type_votes': 2, 'voters': {'ner_llm_relocat",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'metoprolol 25mg', 'position': [53, 68], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.95}], 'confidence': 0.95, 'vote_count': 4, 'max_type_votes': 3, 'voters': {'ner_ll",
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n"
+        },
+        "output": "[{'text': 'metoprolol 25mg', 'position': [53, 68], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.95}], 'confidence': 0.95, 'vote_count': 4, 'max_type_votes': 3, 'voters': {'ner_llm_relocated': 3, 'rule': 1}, 'type_votes': {'THUỐC': 3, 'CHẨN_ĐOÁN': 1}, 'needs_review': False, 'position_fixed': False}, {'text': 'doxycycline', 'position': [82, 93], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.8}], 'confidence': 0.8, 'vote_count': 3, 'max_type_votes': 2, 'vo",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 13
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 42,
+      "ts": 1783351705.7590714
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783351705.7591083
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 42
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "53",
+          "end": "68"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "metoprolol 25mg",
+          "mtype": "THUỐC",
+          "context": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False, 'confidence': 1.0, 'reason': 'Luyện tập từ trường hợp thực tế'}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "82",
+          "end": "93"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "doxycycline",
+          "mtype": "THUỐC",
+          "context": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False, 'confidence': 1.0, 'reason': 'Đó là thông tin về thuốc  mà bệnh nhân đang sử dụng'}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "122",
+          "end": "130"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "atenolol",
+          "mtype": "THUỐC",
+          "context": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True, 'confidence': 0.9, 'reason': 'atenolol được nhắc đến trong liệt kê thuốc trước khi nhập viện, cung cấp thông tin về tiền sử bệnh của bệnh nhân'}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "132",
+          "end": "144"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "uống hôm nay",
+          "mtype": "THUỐC",
+          "context": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False, 'confidence': 1.0, 'reason': 'uống hôm nay là thuốc hiện đang sử dụng tại thời điểm này tại bệnh viện, ngay lập tức sau khi nêu xong các thuốc khác.'}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "226",
+          "end": "259"
+        },
+        "output": "{'isNegated': False, 'isFamily': True, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "326",
+          "end": "352"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "uống hàng chục tách cà phê",
+          "mtype": "THUỐC",
+          "context": "an\n    - Theo lời bệnh nhân kể lại bệnh nhân có   Căng thẳng  nhiều trong công việc\n    - Mất việc làm 8 ngày trước\n    -  Một ngày người bệnh có thể uống hàng chục tách cà phê có caffeine\n    -  và 1"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False, 'confidence': 1.0, 'reason': 'Một ngày người bệnh có thể uống hàng chục tách cà phê'}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "497",
+          "end": "512"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "497",
+          "end": "512"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "688",
+          "end": "707"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "714",
+          "end": "742"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "869",
+          "end": "895"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "896",
+          "end": "919"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "926",
+          "end": "952"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "497",
+          "end": "512"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "1166",
+          "end": "1187"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "714",
+          "end": "737"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "1301",
+          "end": "1319"
+        },
+        "output": "{'isNegated': True, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "1454",
+          "end": "1469"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "53",
+          "end": "68"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "metoprolol 25mg",
+          "mtype": "THUỐC",
+          "context": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False, 'confidence': 0.9, 'reason': 'Thuốc metoprolol 25mg được liệt kê trong lịch sử lâm sàng trước đó của bệnh nhân'}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "2090",
+          "end": "2110"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "2199",
+          "end": "2212"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "aspirin 325mg",
+          "mtype": "THUỐC",
+          "context": " cảm giác thắt chặt ngực vùng trước tim, tăng đánh trống ngực, và khó thở kéo dài 20 giây\n    - Sau đó Đến Khoa Cấp cứu\n    - Được chỉ định điều trị  aspirin 325mg x 1\n    - chụp x-quang ngực không gh"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n",
+          "start": "1305",
+          "end": "1319"
+        },
+        "output": "{'isNegated': True, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 42,
+        "llm_checked": 6
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783351739.0799673
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783351739.0800083
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 42
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'metoprolol 25mg', 'position': [53, 68], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.95}], 'confidence': 0.95, 'vote_count': 4, 'max_type_votes': 3, 'voters': {'ner_llm",
+          "context": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n"
+        },
+        "output": "{'candidates': ['1163524', '2712144', '1163523', '6918', '102313'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'doxycycline', 'position': [82, 93], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.8}], 'confidence': 0.8, 'vote_count': 3, 'max_type_votes': 2, 'voters': {'ner_llm_reloc",
+          "context": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n"
+        },
+        "output": "{'candidates': ['3640', '371965', '1160779', '236647', '371966'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'atenolol', 'type': 'THUỐC', 'source': 'ner_llm_relocated', 'position': [122, 130], 'type_candidates': [{'label': 'THUỐC', 'score': 0.85}], 'extraction_source': 'qwen', 'vote_count': 1, 'vote",
+          "context": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n"
+        },
+        "output": "{'candidates': ['1202', '1154378', '370619', '756436', '315437'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'uống hôm nay', 'position': [132, 144], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.85}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], ",
+          "context": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'uống hàng chục tách cà phê', 'position': [326, 352], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.85}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['",
+          "context": "an\n    - Theo lời bệnh nhân kể lại bệnh nhân có   Căng thẳng  nhiều trong công việc\n    - Mất việc làm 8 ngày trước\n    -  Một ngày người bệnh có thể uống hàng chục tách cà phê có caffeine\n    -  và 1"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'metoprolol 25mg', 'position': [53, 68], 'type': 'THUỐC', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': True, 'asser",
+          "context": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n"
+        },
+        "output": "{'candidates': ['1163524', '2712144', '1163523', '6918', '102313'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'aspirin 325mg', 'position': [2199, 2212], 'type': 'THUỐC', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False, 'as",
+          "context": " cảm giác thắt chặt ngực vùng trước tim, tăng đánh trống ngực, và khó thở kéo dài 20 giây\n    - Sau đó Đến Khoa Cấp cứu\n    - Được chỉ định điều trị  aspirin 325mg x 1\n    - chụp x-quang ngực không gh"
+        },
+        "output": "{'candidates': ['1154070', '350460', '335990', '315422', '329294'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 5
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 5,
+      "ts": 1783351898.7087255
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783351898.7087483
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 42
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'metoprolol 25mg', 'position': [53, 68], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.95}], 'confidence': 0.95, 'vote_count': 4, 'max_type_votes': 3, 'voters': {'ner_ll",
+          "text": "1.  Tiền sử bệnh\n    Thuốc trước khi nhập viện\n    - metoprolol 25mg po bid\n    - doxycycline cho viêm tuyến mồ hôi\n    - atenolol (uống hôm nay)\n    Các yếu tố nguy cơ liên quan\n    - Theo lời bệnh n"
+        },
+        "output": "{'actions': [{'action': 'drop_prediction', 'reason': 'invalid assertion key: confidence'}, {'action': 'drop_prediction', 'reason': 'invalid assertion key: confidence'}, {'action': 'drop_prediction', 'reason': 'invalid assertion key: confidence'}, {'action': 'drop_prediction', 'reason': 'invalid assertion key: confidence'}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'drop_prediction', 'reason': 'invalid assertion key: confidence'}, {'action': 'accept', 'fixes': [], 'warnings': ",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 27,
+        "dropped": 15
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 27,
+      "ts": 1783351898.709403
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 27,
+      "elapsed": 312.33,
+      "ts": 1783351898.709417
+    }
+  ],
+  "stats": null
+}

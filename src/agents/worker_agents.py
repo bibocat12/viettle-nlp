@@ -4,47 +4,206 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-sys.path.insert(0, str(Path(__file__).parent))
 
 from agents import Agent, Tool, AgentContext
+from tools import preprocess_note, rule_extract, validate_output
+from ner_tool import ner_and_type
+from healthbert import classify_type as healthbert_classify_type
+from position_fix import fix_positions
+from voting import merge_with_voting, llm_resolve_conflicts
+from assertion_agent import classify_assertions
+from linker_agent import link_candidates
+from verifier_agent import verify_all
 
 
 class ExtractionAgent(Agent):
+    HEALTHBERT_SKIP_STARTS = {
+        'tiền sử', 'bệnh sử', 'kết quả', 'các', 'đặc điểm', 'thời điểm',
+        'tình trạng', 'lý do', 'triệu chứng', 'yếu tố', 'thuốc trước',
+        'các bệnh', 'các yếu tố', 'các triệu chứng', 'các diễn biến',
+        'các sự kiện', 'các thủ thuật', 'đánh giá', 'xử trí',
+    }
+
     def __init__(self, llm=None):
         tools = [
-            Tool("rule_extract", "Extract mentions using regex rules", self._rule_extract),
-            Tool("classify_type", "Classify mention type using LLM", self._classify_type),
+            Tool("parallel_extract", "Run all 3 extraction models in parallel", self._parallel_extract),
+            Tool("vote_merge", "Merge mentions with voting-based confidence", self._vote_merge),
+            Tool("resolve_conflicts", "LLM resolve low-confidence mentions", self._resolve_conflicts),
+            Tool("fix_positions", "Re-locate positions in original text", self._fix_positions),
+            Tool("llm_verify", "LLM verify low-confidence types", self._llm_verify),
         ]
         super().__init__("extraction", llm, tools)
 
-    def _rule_extract(self, text: str) -> list:
-        import sys
-        sys.path.insert(0, str(__import__('pathlib').Path(__file__).parent.parent))
-        from rules import extract_rules
-        return extract_rules(text)
+    def _run_rule(self, text: str) -> list:
+        return rule_extract(text)["mentions"]
 
-    def _classify_type(self, mention: str, context: str) -> dict:
+    def _run_qwen(self, text: str) -> list:
         if self.llm is None:
-            return {"type": "TRIỆU_CHỨNG"}
-        system = """Classify this Vietnamese medical mention into one of:
-- THUỐC: Medications
-- TRIỆU_CHỨNG: Symptoms
-- CHẨN_ĐOÁN: Diagnoses
-- TÊN_XÉT_NGHIỆM: Test names
-- KẾT_QUẢ_XÉT_NGHIỆM: Test results
+            return []
+        result = ner_and_type(text, llm=self.llm)
+        return result.get("mentions", [])
 
-Return JSON: {"type": "TYPE", "confidence": 0.0-1.0}"""
-        user = f"Mention: \"{mention}\"\nContext: \"{context[:300]}\""
-        return self.llm_decide(system, user, 100)
+    def _run_healthbert(self, text: str) -> list:
+        import re
+        mentions = []
+        cand_pattern = re.compile(
+            r'(?:^|[\s,;:\(\)"])([A-ZÀ-ỹa-zà-ỹ][a-zà-ỹ]+(?:\s+[a-zà-ỹ]+){2,5})(?=[\s,;:\-\.\)]|$)'
+        )
+        seen = set()
+        for m in cand_pattern.finditer(text):
+            span_text = m.group(1).strip()
+            if len(span_text) < 8 or len(span_text) > 60:
+                continue
+            first_word = span_text.lower().split()[0] if span_text.split() else ''
+            if first_word in self.HEALTHBERT_SKIP_STARTS:
+                continue
+            s, e = m.start(1), m.end(1)
+            pos_key = (s, e)
+            if pos_key in seen:
+                continue
+            seen.add(pos_key)
+            ctx_start = max(0, s - 50)
+            ctx_end = min(len(text), e + 50)
+            context = text[ctx_start:ctx_end]
+            result = healthbert_classify_type(span_text, context)
+            mtype = result.get("type", "TRIỆU_CHỨNG")
+            if mtype == "KHÔNG_PHẢI":
+                continue
+            mentions.append({
+                "text": span_text,
+                "position": [s, e],
+                "type": mtype,
+                "type_candidates": [{"label": mtype, "score": result.get("score", 0.5)}],
+            })
+        return mentions
+
+    def _parallel_extract(self, text: str) -> dict:
+        results = {"rule": None, "qwen": None, "healthbert": None}
+        errors = []
+
+        with ThreadPoolExecutor(max_workers=3) as ex:
+            futures = {
+                ex.submit(self._run_rule, text): "rule",
+                ex.submit(self._run_qwen, text): "qwen",
+                ex.submit(self._run_healthbert, text): "healthbert",
+            }
+            for future in as_completed(futures):
+                name = futures[future]
+                try:
+                    results[name] = future.result()
+                except Exception as e:
+                    errors.append(f"{name}: {e}")
+                    results[name] = []
+
+        return {
+            "rule": results["rule"] or [],
+            "qwen": results["qwen"] or [],
+            "healthbert": results["healthbert"] or [],
+            "errors": errors,
+        }
+
+    def _vote_merge(self, all_mentions: list) -> list:
+        return merge_with_voting(all_mentions)
+
+    def _resolve_conflicts(self, merged: list, text: str) -> list:
+        vote_conflicts = sum(1 for m in merged if m.get("needs_review"))
+        if vote_conflicts > 0 and self.llm:
+            return llm_resolve_conflicts(merged, text, self.llm)
+        return merged
+
+    def _fix_positions(self, mentions: list, text: str) -> list:
+        return fix_positions(mentions, text)
+
+    def _llm_verify(self, mention: dict, context: str) -> bool:
+        if self.llm is None:
+            return False
+        system = """Bạn là chuyên gia kiểm tra phân loại thực thể y khoa.
+Một hệ thống keyword-based đã phân loại một mention. Hãy xác nhận hoặc sửa lại.
+
+5 loại: THUỐC, TRIỆU_CHỨNG, CHẨN_ĐOÁN, TÊN_XÉT_NGHIỆM, KẾT_QUẢ_XÉT_NGHIỆM
+
+Trả về JSON: {"correct": true/false, "corrected_type": "...", "reason": "..."}"""
+        user = f"Mention: \"{mention['text']}\"\nCurrent type: {mention['type']}\nContext: \"{context}\""
+        result = self.llm_decide(system, user, 150)
+        if isinstance(result, dict) and result.get("correct") is False and result.get("corrected_type"):
+            valid = ("THUỐC", "TRIỆU_CHỨNG", "CHẨN_ĐOÁN", "TÊN_XÉT_NGHIỆM", "KẾT_QUẢ_XÉT_NGHIỆM")
+            if result["corrected_type"] in valid:
+                mention["type"] = result["corrected_type"]
+                mention["llm_corrected"] = True
+                return True
+        return False
 
     def run(self, ctx: AgentContext) -> AgentContext:
         self.log("start", {"text_len": len(ctx.text)})
 
-        rules = self.call_tool("rule_extract", text=ctx.normalized)
-        ctx.rules = rules
-        ctx.mentions = rules
+        preprocessed = preprocess_note(ctx.text, ctx.text)
+        normalized = preprocessed["normalized_text"]
+        ctx.normalized = normalized
+        self.log("preprocessed", {"normalized_len": len(normalized)})
 
-        self.log("complete", {"rule_mentions": len(rules)})
+        parallel = self.call_tool("parallel_extract", text=normalized)
+
+        # Flatten all mentions with source tracking
+        all_mentions = []
+        for source_name in ("rule", "qwen", "healthbert"):
+            for m in parallel.get(source_name, []):
+                if "type_candidates" in m and "type" not in m:
+                    candidates = m["type_candidates"]
+                    if candidates:
+                        best = max(candidates, key=lambda x: x.get("score", 0))
+                        m["type"] = best.get("label", "TRIỆU_CHỨNG")
+                m["extraction_source"] = source_name
+                all_mentions.append(m)
+
+        # Filter: remove healthbert mentions that cross entity boundaries.
+        # If a healthbert mention overlaps with a rules mention AND starts
+        # before the rules mention, it likely captured extra preceding context.
+        rule_spans = [(m.get("position", [0, 0])[0], m.get("position", [0, 0])[1])
+                      for m in parallel.get("rule", [])]
+        cleaned = []
+        for m in all_mentions:
+            if m.get("extraction_source") == "healthbert":
+                s, e = m.get("position", [0, 0])
+                # Check if this healthbert mention starts at or before any rules entity
+                # that it overlaps with (boundary crossing)
+                skip = False
+                for rs, re in rule_spans:
+                    overlap = min(e, re) - max(s, rs)
+                    if overlap > 0 and s <= rs:
+                        skip = True
+                        break
+                if skip:
+                    continue
+            cleaned.append(m)
+        all_mentions = cleaned
+
+        source_counts = {k: len(v or []) for k, v in parallel.items()}
+        self.log("extracted", {"sources": source_counts, "total": len(all_mentions)})
+
+        # Voting merge
+        merged = self.call_tool("vote_merge", all_mentions=all_mentions)
+        self.log("voted", {"merged": len(merged)})
+
+        # LLM resolve conflicts
+        merged = self.call_tool("resolve_conflicts", merged=merged, text=normalized)
+
+        # Position fix
+        merged = self.call_tool("fix_positions", mentions=merged, text=normalized)
+        n_fixed = sum(1 for m in merged if m.get("position_fixed"))
+        self.log("positions_fixed", {"fixed": n_fixed})
+
+        # LLM verify low-confidence
+        llm_corrected = 0
+        for m in merged:
+            if m.get("needs_review") and not m.get("llm_resolved"):
+                ctx_start = max(0, m["position"][0] - 50)
+                ctx_end = min(len(normalized), m["position"][1] + 50)
+                context = normalized[ctx_start:ctx_end]
+                if self.call_tool("llm_verify", mention=m, context=context):
+                    llm_corrected += 1
+        self.log("llm_verified", {"corrected": llm_corrected})
+
+        ctx.mentions = merged
         return ctx
 
 
@@ -59,79 +218,61 @@ class AssertionAgent(Agent):
 
     def __init__(self, llm=None):
         tools = [
-            Tool("check_assertion", "Check assertions using rules", self._check_rules),
-            Tool("llm_assertion", "LLM-based assertion for hard cases", self._check_llm),
+            Tool("rule_assert", "Rule-based assertion check", self._rule_assert),
+            Tool("llm_assert", "LLM assertion for all mentions", self._llm_assert),
         ]
         super().__init__("assertion", llm, tools)
 
-    def _check_rules(self, text: str, start: int, end: int, window: int = 40) -> dict:
+    def _rule_assert(self, text: str, start: int, end: int) -> dict:
         import re
+        window = 60
         ctx_start = max(0, start - window)
-        ctx_end = min(len(text), end + window)
         prefix = text[ctx_start:start].lower()
-        is_neg = any(re.search(p, prefix) for p in self.NEGATION)
-        is_fam = any(re.search(p, prefix) for p in self.FAMILY)
-        is_hist = any(re.search(p, prefix) for p in self.HISTORICAL)
-        return {"isNegated": is_neg, "isFamily": is_fam, "isHistorical": is_hist}
+        return {
+            "isNegated": any(re.search(p, prefix) for p in self.NEGATION),
+            "isFamily": any(re.search(p, prefix) for p in self.FAMILY),
+            "isHistorical": any(re.search(p, prefix) for p in self.HISTORICAL),
+        }
 
-    def _check_llm(self, mention: str, mtype: str, context: str) -> dict:
+    def _llm_assert(self, mention: str, mtype: str, context: str) -> dict:
         if self.llm is None:
             return {"isNegated": False, "isFamily": False, "isHistorical": False}
-        system = """Determine assertions for Vietnamese medical mention:
-- isNegated: negated (không, chưa)
-- isFamily: family history (bố, mẹ, người nhà)
-- isHistorical: past/historical (tiền sử, trước đây)
+        system = """Xác định assertion cho thực thể y khoa tiếng Việt:
+- isNegated: phủ định (không, chưa)
+- isFamily: tiền sử gia đình (bố, mẹ, người nhà)
+- isHistorical: tiền sử bản thân (tiền sử, trước đây)
 
-Return JSON: {"isNegated": bool, "isFamily": bool, "isHistorical": bool}"""
-        user = f"Mention: \"{mention}\"\nType: {mtype}\nContext: \"{context[:400]}\""
-        result = self.llm_decide(system, user, 100)
+Trả về JSON: {"isNegated": bool, "isFamily": bool, "isHistorical": bool,
+"confidence": 0.0-1.0, "reason": "..."}"""
+        user = f"Thực thể: \"{mention}\"\nLoại: {mtype}\nNgữ cảnh: \"{context[:400]}\""
+        result = self.llm_decide(system, user, 150)
         if isinstance(result, dict) and "isNegated" in result:
             return result
         return {"isNegated": False, "isFamily": False, "isHistorical": False}
 
-    def _is_uncertain(self, assertions: dict) -> bool:
-        neg, fam, hist = assertions.get("isNegated"), assertions.get("isFamily"), assertions.get("isHistorical")
-        if fam and hist:
-            return True
-        if neg and (fam or hist):
-            return True
-        return False
-
     def run(self, ctx: AgentContext) -> AgentContext:
         self.log("start", {"mentions": len(ctx.mentions)})
 
-        # First pass: rule-based assertions (sequential, fast)
-        uncertain_indices = []
-        for i, m in enumerate(ctx.mentions):
-            start, end = m["position"][0], m["position"][1]
-            assertions = self.call_tool("check_assertion", text=ctx.text, start=start, end=end)
-            m["assertions"] = assertions
-            if self._is_uncertain(assertions) and self.llm:
-                uncertain_indices.append(i)
+        for m in ctx.mentions:
+            if m.get("type") not in ("CHẨN_ĐOÁN", "THUỐC", "TRIỆU_CHỨNG"):
+                m["assertions"] = {"isNegated": False, "isFamily": False, "isHistorical": False}
+                continue
 
-        # Second pass: LLM assertions in parallel (slow, batched)
-        if uncertain_indices and self.llm:
-            self.log("parallel_llm", {"count": len(uncertain_indices)})
+            rule_assert = self.call_tool("rule_assert",
+                text=ctx.normalized, start=m["position"][0], end=m["position"][1])
 
-            def _check_one(idx):
-                m = ctx.mentions[idx]
-                start, end = m["position"][0], m["position"][1]
-                result = self.call_tool("llm_assertion",
-                    mention=m.get("text", ""), mtype=m.get("type", ""),
-                    context=ctx.text[max(0, start - 150):end + 150])
-                return idx, result
+            if self.llm and m.get("type") in ("CHẨN_ĐOÁN", "THUỐC"):
+                ctx_start = max(0, m["position"][0] - 150)
+                ctx_end = min(len(ctx.normalized), m["position"][1] + 150)
+                context = ctx.normalized[ctx_start:ctx_end]
+                llm_result = self.call_tool("llm_assert",
+                    mention=m["text"], mtype=m["type"], context=context)
+                m["assertions"] = llm_result
+            else:
+                m["assertions"] = rule_assert
+            m["assertion_confidence"] = m.get("assertions", {}).get("confidence", 0.85)
 
-            with ThreadPoolExecutor(max_workers=min(4, len(uncertain_indices))) as executor:
-                futures = [executor.submit(_check_one, idx) for idx in uncertain_indices]
-                for future in as_completed(futures):
-                    try:
-                        idx, result = future.result()
-                        if result:
-                            ctx.mentions[idx]["assertions"] = result
-                    except Exception as e:
-                        self.log("llm_error", {"error": str(e)})
-
-        self.log("complete", {"processed": len(ctx.mentions), "llm_checked": len(uncertain_indices)})
+        self.log("complete", {"processed": len(ctx.mentions), "llm_checked": sum(1 for m in ctx.mentions if m.get("assertions", {}).get("reason"))})
         return ctx
 
 
@@ -139,95 +280,33 @@ class LinkingAgent(Agent):
     def __init__(self, llm=None, kb=None):
         self.kb = kb
         tools = [
-            Tool("search_icd10", "Search ICD-10 candidates", self._search_icd10),
-            Tool("search_rxnorm", "Search RxNorm candidates", self._search_rxnorm),
-            Tool("rerank", "LLM rerank candidates", self._rerank),
+            Tool("link_entity", "Link entity to ICD-10 or RxNorm", self._link_entity),
         ]
         super().__init__("linking", llm, tools)
 
-    def _search_icd10(self, query: str, top_k: int = 5) -> list:
+    def _link_entity(self, mention: dict, context: str) -> dict:
         if self.kb is None:
-            return []
-        results = self.kb.search_icd10(query, top_k)
-        return [r["code"] for r in results]
-
-    def _search_rxnorm(self, query: str, top_k: int = 5) -> list:
-        if self.kb is None:
-            return []
-        results = self.kb.search_rxnorm(query, top_k)
-        return [r["rxcui"] for r in results]
-
-    def _rerank(self, mention: str, context: str, candidates: list, code_type: str) -> list:
-        if self.llm is None or not candidates:
-            return candidates[:3]
-        if len(candidates) <= 1:
-            return candidates
-
-        if code_type == "icd10" and self.kb:
-            cand_desc = "\n".join([f"- {c}: {self.kb.get_icd10_code(c).get('vietnamese_name', '')[:50]}" for c in candidates[:6]])
-        elif code_type == "rxnorm" and self.kb:
-            cand_desc = "\n".join([f"- {c}: {self.kb.get_rxnorm_concept(c).get('prefLabel', '')[:50]}" for c in candidates[:6]])
-        else:
-            cand_desc = "\n".join([f"- {c}" for c in candidates[:6]])
-
-        system = f"""Select best code(s) from candidates for this {code_type} mention.
-Return JSON: {{"selected": ["code1"], "reason": "brief"}}"""
-        user = f"Mention: \"{mention}\"\nContext: \"{context[:200]}\"\nCandidates:\n{cand_desc}"
-        result = self.llm_decide(system, user, 200)
-        if isinstance(result, dict) and "selected" in result:
-            valid = [c for c in result["selected"] if c in candidates]
-            if valid:
-                return valid[:3]
-        return candidates[:3]
+            return {"candidates": [], "confidence": 0}
+        return link_candidates(mention, context, self.kb, llm=self.llm)
 
     def run(self, ctx: AgentContext) -> AgentContext:
         self.log("start", {"mentions": len(ctx.mentions)})
 
-        import re
-        to_rerank = []
-
-        # First pass: search candidates (sequential, fast)
-        for i, m in enumerate(ctx.mentions):
+        linked = 0
+        for m in ctx.mentions:
             mtype = m.get("type", "")
-            text = m.get("text", "")
-            if mtype == "CHẨN_ĐOÁN":
-                candidates = self.call_tool("search_icd10", query=text)
-                m["candidates"] = candidates
-                if candidates and self.llm:
-                    to_rerank.append((i, "icd10"))
-            elif mtype == "THUỐC":
-                ingredient = re.sub(r"\d+(?:\.\d+)?\s*(?:mg|ml|g|mcg|IU|U)\b", "", text, flags=re.IGNORECASE).strip()
-                candidates = self.call_tool("search_rxnorm", query=ingredient or text)
-                m["candidates"] = candidates
-                if candidates and self.llm:
-                    to_rerank.append((i, "rxnorm"))
+            if mtype not in ("CHẨN_ĐOÁN", "THUỐC"):
+                continue
+            ctx_start = max(0, m["position"][0] - 150)
+            ctx_end = min(len(ctx.normalized), m["position"][1] + 150)
+            context = ctx.normalized[ctx_start:ctx_end]
+            result = self.call_tool("link_entity", mention=m, context=context)
+            m["candidates"] = result.get("candidates", [])
+            m["link_confidence"] = result.get("confidence", 0)
+            if m["candidates"]:
+                linked += 1
 
-        # Second pass: LLM reranking in parallel (slow, batched)
-        if to_rerank and self.llm:
-            self.log("parallel_rerank", {"count": len(to_rerank)})
-
-            def _rerank_one(idx_code_type):
-                idx, code_type = idx_code_type
-                m = ctx.mentions[idx]
-                text = m.get("text", "")
-                ctx_start = max(0, m["position"][0] - 150)
-                ctx_end = min(len(ctx.text), m["position"][1] + 150)
-                context = ctx.text[ctx_start:ctx_end]
-                result = self.call_tool("rerank", mention=text, context=context, candidates=m.get("candidates", []), code_type=code_type)
-                return idx, result
-
-            with ThreadPoolExecutor(max_workers=min(4, len(to_rerank))) as executor:
-                futures = [executor.submit(_rerank_one, item) for item in to_rerank]
-                for future in as_completed(futures):
-                    try:
-                        idx, result = future.result()
-                        if result:
-                            ctx.mentions[idx]["candidates"] = result
-                    except Exception as e:
-                        self.log("rerank_error", {"error": str(e)})
-
-        linked = len([m for m in ctx.mentions if m.get("candidates")])
-        self.log("complete", {"linked": linked, "reranked": len(to_rerank)})
+        self.log("complete", {"linked": linked})
         return ctx
 
 
@@ -236,52 +315,29 @@ class VerifierAgent(Agent):
 
     def __init__(self, llm=None):
         tools = [
-            Tool("validate_schema", "Validate output schema", self._validate),
-            Tool("fix_mention", "LLM fix invalid mention", self._fix_llm),
+            Tool("verify_schema", "Validate and fix output", self._verify),
         ]
         super().__init__("verifier", llm, tools)
 
-    def _validate(self, mentions: list) -> dict:
-        issues = []
-        for i, m in enumerate(mentions):
-            if m.get("type") not in self.VALID_TYPES:
-                issues.append({"idx": i, "issue": f"invalid type: {m.get('type')}"})
-            pos = m.get("position", [0, 0])
-            if not isinstance(pos, list) or len(pos) != 2 or pos[1] <= pos[0]:
-                issues.append({"idx": i, "issue": "invalid position"})
-            if m.get("type") in ("CHẨN_ĐOÁN", "THUỐC") and not m.get("candidates"):
-                issues.append({"idx": i, "issue": "missing candidates"})
-        return {"valid": len(issues) == 0, "issues": issues}
-
-    def _fix_llm(self, mention: dict, issue: str) -> dict:
-        if self.llm is None:
-            return mention
-        system = f"""Fix this invalid medical mention extraction.
-Valid types: {', '.join(self.VALID_TYPES)}
-Issue: {issue}
-Return JSON with fixed fields: {{"type": "...", "assertions": {{...}}, "candidates": [...]}}"""
-        user = f"Mention: {mention}"
-        result = self.llm_decide(system, user, 200)
-        if isinstance(result, dict):
-            if result.get("type") in self.VALID_TYPES:
-                mention["type"] = result["type"]
-            if "assertions" in result:
-                mention["assertions"] = result["assertions"]
-            if "candidates" in result and isinstance(result["candidates"], list):
-                mention["candidates"] = result["candidates"]
-        return mention
+    def _verify(self, mentions: list, text: str) -> dict:
+        return verify_all(mentions, text, llm=self.llm)
 
     def run(self, ctx: AgentContext) -> AgentContext:
         self.log("start", {"mentions": len(ctx.mentions)})
 
-        validation = self.call_tool("validate_schema", mentions=ctx.mentions)
-        if not validation["valid"]:
-            self.log("issues_found", {"count": len(validation["issues"])})
-            for issue in validation["issues"]:
-                idx = issue["idx"]
-                if idx < len(ctx.mentions):
-                    ctx.mentions[idx] = self.call_tool("fix_mention", mention=ctx.mentions[idx], issue=issue["issue"])
+        result = self.call_tool("verify_schema", mentions=ctx.mentions, text=ctx.normalized)
+        kept = result.get("final_predictions", [])
+        dropped = result.get("dropped", 0)
 
-        final_validation = self.call_tool("validate_schema", mentions=ctx.mentions)
-        self.log("complete", {"valid": final_validation["valid"], "issues": len(final_validation["issues"])})
+        # Dedup by position: keep highest confidence mention per exact position
+        seen = {}
+        for m in kept:
+            key = tuple(m.get("position", [0, 0]))
+            if key not in seen or m.get("confidence", 0) > seen[key].get("confidence", 0):
+                seen[key] = m
+        deduped = list(seen.values())
+        extra_dropped = len(kept) - len(deduped)
+
+        self.log("validated", {"kept": len(deduped), "dropped": (dropped if isinstance(dropped, int) else len(dropped)) + extra_dropped})
+        ctx.mentions = deduped
         return ctx

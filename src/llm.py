@@ -1,4 +1,5 @@
 import json
+import os
 import re
 from typing import List, Dict, Optional
 
@@ -16,17 +17,23 @@ class LLMEngine:
         self.model = None
         self.tokenizer = None
 
+    def is_available(self) -> bool:
+        return True
+
     def load(self):
         if self.model is not None:
             return
-        self.tokenizer = AutoTokenizer.from_pretrained(self.model_path, trust_remote_code=True)
+        os.environ.setdefault("HF_HUB_OFFLINE", "1")
+        self.tokenizer = AutoTokenizer.from_pretrained(self.model_path, trust_remote_code=True, local_files_only=True)
+        torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
+        device_map = "auto" if self.device == "cuda" and torch.cuda.is_available() else None
         self.model = AutoModelForCausalLM.from_pretrained(
             self.model_path,
             trust_remote_code=True,
-            torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
-            device_map=self.device if torch.cuda.is_available() else None,
+            torch_dtype=torch_dtype,
+            device_map=device_map,
         )
-        if not torch.cuda.is_available():
+        if not torch.cuda.is_available() or self.device != "cuda":
             self.model = self.model.eval()
 
     def generate(self, system_prompt: str, user_prompt: str, max_new_tokens: int = 512) -> str:
@@ -76,6 +83,9 @@ class LLMEngine:
             except json.JSONDecodeError:
                 pass
         return {}
+
+    def parse_json(self, response: str) -> dict:
+        return self._parse_json(response)
 
 
 _llm_instance: Optional[LLMEngine] = None

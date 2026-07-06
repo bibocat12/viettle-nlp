@@ -1,4 +1,5 @@
 import json
+import os
 import re
 from typing import List, Dict, Optional
 
@@ -85,10 +86,12 @@ class QwenNER:
     def load(self):
         if self.model is not None:
             return
-        self.tokenizer = AutoTokenizer.from_pretrained(self.model_path, trust_remote_code=True)
+        os.environ.setdefault("HF_HUB_OFFLINE", "1")
+        self.tokenizer = AutoTokenizer.from_pretrained(self.model_path, trust_remote_code=True, local_files_only=True)
         self.model = AutoModelForCausalLM.from_pretrained(
             self.model_path,
             trust_remote_code=True,
+            local_files_only=True,
             torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
             device_map=self.device if torch.cuda.is_available() else None,
         )

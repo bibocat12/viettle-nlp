@@ -122,6 +122,8 @@ class AgentContext:
                 "text": m.get("text", ""),
                 "position": pos,
                 "type": m["type"],
+                "confidence": m.get("confidence", 0.5),
+                "voters": m.get("voters", {}),
                 "assertions": {
                     "isNegated": bool(m.get("assertions", {}).get("isNegated", False)),
                     "isFamily": bool(m.get("assertions", {}).get("isFamily", False)),

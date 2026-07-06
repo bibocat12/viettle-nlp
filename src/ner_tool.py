@@ -2,37 +2,14 @@ import json
 import re
 import sys
 from pathlib import Path
-from typing import Dict, List, Optional
+from difflib import SequenceMatcher
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-NER_SYSTEM_PROMPT = """Bạn là hệ thống trích xuất thực thể y khoa tiếng Việt.
-
-CHỈ ĐƯỢC sử dụng 5 loại thực thể sau:
-- THUỐC: tên thuốc + liều + đường dùng + tần suất (VD: "metoprolol 25mg po bid")
-- TRIỆU_CHỨNG: triệu chứng, dấu hiệu lâm sàng (VD: "đau ngực", "khó thở", "sốt")
-- CHẨN_ĐOÁN: chẩn đoán bệnh (VD: "tăng huyết áp", "viêm phổi", "đái tháo đường")
-- TÊN_XÉT_NGHIỆM: tên xét nghiệm (VD: "điện tâm đồ", "troponin")
-- KẾT_QUẢ_XÉT_NGHIỆM: giá trị kết quả (VD: "bình thường", "0.01")
-
-QUAN TRỌNG:
-1. THUỐC phải bao gồm tên + liều (VD: "metoprolol 25mg", KHÔNG tách riêng)
-2. KHÔNG dùng loại thực thể khác ngoài 5 loại trên
-3. KHÔNG trích xuất các tiêu đề phần:
-   "Tiền sử bệnh", "Các bệnh lý mãn tính", "Triệu chứng hiện tại",
-   "Các sự kiện trước khi nhập viện", "Đánh giá tại bệnh viện",
-   "Các thủ thuật đã thực hiện", "Kết quả xét nghiệm", "Các yếu tố nguy cơ"
-4. KHÔNG trích xuất các metadata:
-   "Vị trí:", "Mức độ:", "Thời gian:", "Chiếu xạ:"
-5. KHÔNG trích xuất câu không hoàn chỉnh (thiếu chủ ngữ/vị ngữ)
-6. Mỗi thực thể phải là một khái niệm y tế HOÀN CHỈNH
-7. Trích xuất TẤT CẢ thực thể y tế có trong văn bản
-
-Trả về JSON array:
-[{"entity": "...", "type": "..."}]"""
+from prompt import NER_PROMPT as NER_SYSTEM_PROMPT
 
 
-# Section headers to filter out from LLM output
+# Section headers to filter
 SECTION_HEADERS = [
     "tiền sử bệnh", "bệnh sử hiện tại", "bệnh sử", "đánh giá tại bệnh viện",
     "kết quả xét nghiệm", "kết quả hình ảnh", "kết quả khám lâm sàng",
@@ -40,13 +17,11 @@ SECTION_HEADERS = [
     "lý do nhập viện", "thời điểm khởi phát", "tình trạng ngay trước",
     "các yếu tố nguy cơ", "thuốc trước khi nhập viện", "các bệnh lý nội khoa",
     "các tập kinh lâm sàng", "kết quả chẩn đoán", "xử trí thuốc",
-    "các bệnh đã điều trị trước đây",
-    # Additional headers
     "triệu chứng hiện tại", "các bệnh lý mãn tính",
     "các sự kiện trước khi nhập viện", "các thủ thuật đã thực hiện",
     "tiền sử bệnh nội khoa", "các yếu tố nguy cơ liên quan",
     "đặc điểm triệu chứng khi khám", "kết quả chẩn đoán hình ảnh",
-    "bệnh sử hiện tại", "triệu chứng",
+    "bệnh sử hiện tại", "triệu chứng", "các thủ thuật",
 ]
 
 
@@ -58,266 +33,231 @@ def _is_section_header(text: str) -> bool:
     return False
 
 
-# Drug regex patterns for verification
-DRUG_PATTERN = re.compile(
-    r"(?P<name>[A-Za-zÀ-ỹ]{3,25})"
-    r"\s+(?P<dose>\d+(?:\.\d+)?)\s*(?P<unit>mg|ml|mcg|IU|U)\b"
-    r"(?:\s+(?P<route>po|iv|im|sc|sl|tiêm|uống|đặt|nhỏ|bôi|thoa))?"
-    r"(?:\s+(?P<freq>bid|tid|qd|qid|prn|x\s*\d+))?",
-    re.IGNORECASE
-)
+def _rule_find_position(entity_text: str, full_text: str) -> list:
+    """Find entity position in original text using rules, not LLM."""
+    entity_text = entity_text.strip()
+    if not entity_text or len(entity_text) < 2:
+        return None
 
-TEST_PATTERNS = [
-    r"điện tâm đồ", r"ecg", r"chụp x-quang", r"x-quang",
-    r"siêu âm tim", r"siêu âm", r"chụp cắt lớp vi tính", r"CT",
-    r"MRI", r"holter", r"monitor holter",
-    r"phân tích nước tiểu", r"bảng công thức máu",
-    r"bảng công thức sinh hóa", r"bảng chức năng gan",
-    r"troponin", r"creatinine", r"canxi", r"canxi toàn phần",
-    # Medical procedures
-    r"đặt shunt", r"dẫn lưu", r"shunt dẫn lưu",
-    r"đặt stent", r"nội soi", r"mổ", r"phẫu thuật",
-]
+    # Strategy 1: Exact match
+    idx = full_text.find(entity_text)
+    if idx >= 0:
+        return [idx, idx + len(entity_text)]
 
-NORMAL_RESULTS = [
-    r"bình thường", r"không ghi nhận gì bất thường",
-    r"không có gì đáng chú ý", r"không có gì bất thường",
-]
+    # Strategy 2: Case-insensitive
+    idx = full_text.lower().find(entity_text.lower())
+    if idx >= 0:
+        return [idx, idx + len(entity_text)]
 
+    # Strategy 3: Fuzzy — find first and last token
+    tokens = entity_text.split()
+    if len(tokens) >= 2:
+        first = re.escape(tokens[0])
+        last = re.escape(tokens[-1])
+        starts = [m.start() for m in re.finditer(first, full_text, re.IGNORECASE)]
+        for s in starts:
+            search_end = min(s + len(entity_text) * 2, len(full_text))
+            ends = [m.start() for m in re.finditer(last, full_text[s:search_end], re.IGNORECASE)]
+            for e in ends:
+                end_abs = s + e + len(tokens[-1])
+                candidate = full_text[s:end_abs]
+                score = SequenceMatcher(None, entity_text.lower(), candidate.lower()).ratio()
+                if score > 0.6:
+                    return [s, end_abs]
 
-def _verify_with_rules(text: str, mentions: list) -> list:
-    """LLM-first: rules verify and correct LLM output.
+    # Strategy 4: Find first token only
+    first_token = re.escape(tokens[0]) if tokens else re.escape(entity_text[:4])
+    m = re.search(first_token, full_text, re.IGNORECASE)
+    if m:
+        return [m.start(), m.end()]
 
-    - Rules catch structured patterns LLMs often miss (drugs, tests)
-    - Rules correct wrong types from LLM
-    - Rules add missing high-precision mentions
-    """
-    verified = list(mentions)
-    existing_spans = set()
-    for m in verified:
-        s, e = m["position"]
-        existing_spans.add((s, e))
-
-    # Add drugs LLM might have missed
-    for m in DRUG_PATTERN.finditer(text):
-        name = m.group("name").strip()
-        if len(name) < 3:
-            continue
-        dose = m.group("dose") or ""
-        unit = m.group("unit") or ""
-        drug_text = f"{name} {dose}{unit}".strip()
-        s, e = m.start(), m.end()
-
-        # Skip if already covered
-        if any(s < existing_e and e > existing_s for existing_s, existing_e in existing_spans):
-            continue
-
-        verified.append({
-            "text": drug_text,
-            "position": [s, e],
-            "type": "THUỐC",
-            "type_candidates": [{"label": "THUỐC", "score": 0.98}],
-            "source": "rule_verified",
-        })
-        existing_spans.add((s, e))
-
-    # Add test names and medical procedures LLM might have missed
-    for pattern in TEST_PATTERNS:
-        for m in re.finditer(re.escape(pattern), text, re.IGNORECASE):
-            s, e = m.start(), m.end()
-            if any(s < existing_e and e > existing_s for existing_s, existing_e in existing_spans):
-                continue
-            # Only capture the match itself, NOT the full line
-            match_text = text[s:e].strip()
-            if len(match_text) < 3:
-                continue
-            verified.append({
-                "text": match_text,
-                "position": [s, e],
-                "type": "TÊN_XÉT_NGHIỆM",
-                "type_candidates": [{"label": "TÊN_XÉT_NGHIỆM", "score": 0.95}],
-                "source": "rule_verified",
-            })
-            existing_spans.add((s, e))
-
-    # Filter out remaining section headers and fragments
-    filtered = []
-    for m in verified:
-        text = m.get("text", "").strip()
-        text_lower = text.lower()
-
-        # Skip section headers
-        if _is_section_header(text):
-            continue
-
-        # Skip fragments (too short, starts mid-word)
-        if len(text) < 3:
-            continue
-        # Fragment starts with lowercase Vietnamese char (cut mid-word like "ệnh")
-        vn_lower = "àáãạảăắằẳẵặâấầẩẫậèéẹẻẽêềếểễệđìíĩỉịòóõọỏôốồổỗộơớờởỡợùúũụủưứừửữựỳýỹỷỵ"
-        if text[0] in vn_lower and len(text) < 10:
-            continue
-        # Fragment is a single letter + optional chars (like "ình", "ăm")
-        if len(text) < 5 and text[0].islower() and not any(c.isdigit() for c in text):
-            continue
-        # Numeric-only values without test context
-        if re.match(r'^\d+\.?\d*$', text) and len(text) > 10:
-            continue
-
-        # Fix wrong types with rules
-        mtype = m.get("type", m.get("type_candidates", [{}])[0].get("label", ""))
-        text_lower = m.get("text", "").lower()
-
-        # Drug pattern detected but LLM classified wrong
-        if DRUG_PATTERN.match(m.get("text", "")):
-            if mtype != "THUỐC":
-                m["type"] = "THUỐC"
-                m["type_candidates"] = [{"label": "THUỐC", "score": 0.95}]
-
-        # Normal results
-        for pattern in NORMAL_RESULTS:
-            if re.match(pattern, text_lower):
-                if mtype != "KẾT_QUẢ_XÉT_NGHIỆM":
-                    m["type"] = "KẾT_QUẢ_XÉT_NGHIỆM"
-                    m["type_candidates"] = [{"label": "KẾT_QUẢ_XÉT_NGHIỆM", "score": 0.90}]
-
-        # Diagnoses classified wrong — fix
-        diag_kw = ['hội chứng', 'viêm', 'ung thư', 'bệnh', 'suy ', 'tăng huyết áp',
-                   'đái tháo', 'nhồi máu', 'rung nhĩ', 'xơ vữa', 'phình', 'loét',
-                   'nhiễm trùng', 'viêm phổi', 'viêm gan', 'xơ gan', 'xơ',
-                   'viêm thận', 'viêm khớp', 'viêm màng não', 'lao', 'hen']
-        if mtype in ("THUỐC", "TRIỆU_CHỨNG"):
-            for kw in diag_kw:
-                if kw in text_lower:
-                    m["type"] = "CHẨN_ĐOÁN"
-                    m["type_candidates"] = [{"label": "CHẨN_ĐOÁN", "score": 0.80}]
-                    break
-
-        filtered.append(m)
-
-    return filtered
+    return None
 
 
-def _extract_candidate_spans(text: str) -> list:
-    """Fallback heuristic extraction when no LLM available."""
-    spans = []
-    segments = re.split(r'(?<=[.!?\n])\s+', text)
-    offset = 0
-    for seg in segments:
-        start = text.find(seg, offset)
-        if start < 0:
-            offset += len(seg) + 1
-            continue
-        for m in re.finditer(r'[A-ZÀ-ỹ][a-zà-ỹ]+(?:\s+[a-zà-ỹ]+){0,5}', seg):
-            span_text = m.group()
-            if len(span_text) >= 3 and not _is_section_header(span_text):
-                spans.append({
-                    "text": span_text,
-                    "position": [start + m.start(), start + m.end()],
-                })
-        offset = start + len(seg)
-    return spans
+def _rule_verify_type(entity_text: str, llm_type: str) -> str:
+    """Rule-based type verification/correction. Returns None for non-medical text."""
+    text_lower = entity_text.lower()
 
+    # Filter out non-medical administrative text
+    skip_patterns = [
+        'tiền sử bệnh nội khoa', 'tiền sử bệnh hiện tại', 'tiền sử bệnh',
+        'bệnh nhân có tiền sử', 'bệnh nhân được', 'bệnh nhân nhập viện',
+        'bệnh nhân không', 'bệnh nhân có',
+        'được theo dõi', 'ghi nhận trên', 'tình trạng ngay',
+        'chỉ định', 'đánh giá', 'nguy cơ', 'ích điều trị',
+        'định kỳ', 'chuyên khoa', 'khoa nội', 'khoa ngoại',
+        'đến bệnh viện', 'nhập viện', 'chuyển viện',
+        'các bệnh lý mãn tính', 'các yếu tố nguy cơ',
+        'các sự kiện', 'các thủ thuật', 'đã thực hiện',
+        'bệnh nhân được chuyển',
+        'có tiền sử', 'triệu chứng hiện tại',
+        'đánh giá tại bệnh viện',
+    ]
+    for pat in skip_patterns:
+        if pat in text_lower:
+            return None
 
-def _classify_type_heuristic(text: str) -> str:
-    text_lower = text.lower()
-    if DRUG_PATTERN.match(text):
+    # Skip sentence fragments (start with certain words)
+    frag_starts = ['đến', 'bệnh nhân', 'để', 'có thể', 'cần', 'sau', 'trước',
+                   'trong', 'với', 'vào', 'ngày', 'khoa', 'được', 'đã',
+                   'các', 'những', 'một', 'khi']
+    first_word = text_lower.split()[0] if text_lower.split() else ''
+    if first_word in frag_starts and len(text_lower) > 20:
+        return None
+
+    # Skip overly long mentions (sentence fragments)
+    if len(entity_text) > 50:
+        return None
+
+    # Drug patterns override everything
+    if re.search(r'\d+\s*(?:mg|ml|mcg|IU|U)\b', text_lower):
         return "THUỐC"
-    test_kw = ['điện tâm đồ', 'ecg', 'x-quang', 'siêu âm', 'holter',
-               'troponin', 'creatinine', 'canxi', 'bảng công thức', 'chụp cắt lớp']
+
+    # Test names
+    test_kw = ['điện tâm đồ', 'ecg', 'x-quang', 'siêu âm', 'holter', 'chụp cắt lớp',
+               'troponin', 'creatinine', 'canxi', 'bảng công thức', 'mri',
+               'shunt', 'dẫn lưu', 'nội soi', 'phẫu thuật']
     for kw in test_kw:
         if kw in text_lower:
             return "TÊN_XÉT_NGHIỆM"
-    if re.match(r'^[\d\.]+$', text.strip()):
-        return "KẾT_QUẢ_XÉT_NGHIỆM"
-    result_kw = ['bình thường', 'không ghi nhận', 'không có gì', 'bất thường']
+
+    # Results
+    result_kw = ['bình thường', 'không ghi nhận', 'không có gì', 'bất thường', 'tim to']
     for kw in result_kw:
         if kw in text_lower:
             return "KẾT_QUẢ_XÉT_NGHIỆM"
-    diag_kw = ['viêm', 'ung thư', 'bệnh', 'hội chứng', 'suy', 'tăng huyết áp',
-               'đái tháo', 'nhồi máu', 'rung nhĩ', 'xơ vữa', 'phình']
+    if re.match(r'^\d+\.?\d*$', text_lower.strip()):
+        return "KẾT_QUẢ_XÉT_NGHIỆM"
+
+    # Diagnoses
+    diag_kw = ['viêm', 'ung thư', 'bệnh', 'hội chứng', 'suy', 'rối loạn',
+               'tăng huyết áp', 'đái tháo', 'nhồi máu', 'rung nhĩ', 'xơ vữa',
+               'phình', 'xơ gan', 'loét', 'nhiễm trùng', 'xuất huyết',
+               'sỏi', 'trào ngược', 'thoát vị', 'trĩ', 'u xơ', 'u nang', 'polyp']
     for kw in diag_kw:
         if kw in text_lower:
             return "CHẨN_ĐOÁN"
-    return "TRIỆU_CHỨNG"
+
+    return llm_type  # Keep LLM's type if no rule override
+
+
+def _llm_verify_type(entity_text: str, rule_type: str, context: str, llm) -> str:
+    """LLM verification of type classification."""
+    if not llm or not llm.is_available():
+        return rule_type
+
+    from prompt import TYPE_VERIFY_PROMPT
+    system = TYPE_VERIFY_PROMPT
+    user = f'Mention: "{entity_text}"\nRule-classified as: {rule_type}\nContext: "{context[:200]}"'
+    response = llm.generate(system, user, 150)
+    result = llm.parse_json(response)
+
+    if isinstance(result, dict) and not result.get("correct", True):
+        corrected = result.get("corrected_type", "")
+        valid = ("THUỐC", "TRIỆU_CHỨNG", "CHẨN_ĐOÁN", "TÊN_XÉT_NGHIỆM", "KẾT_QUẢ_XÉT_NGHIỆM")
+        if corrected in valid:
+            return corrected
+    return rule_type
 
 
 def ner_and_type(text: str, llm=None) -> dict:
-    """LLM-first extraction with rules verification.
-
-    Strategy: LLM extracts everything first, then rules verify and correct.
-    """
+    """LLM extracts keywords → rules find positions → rules verify → LLM verifies."""
     mentions = []
 
+    # Step 1: LLM extracts keywords (NO positions)
     if llm and llm.is_available():
-        # Split into chunks
-        chunks = [text[i:i+600] for i in range(0, len(text), 600)]
+        chunks = [text[i:i+500] for i in range(0, len(text), 500)]
         for chunk_idx, chunk in enumerate(chunks):
-            chunk_offset = chunk_idx * 600
             if len(chunk.strip()) < 20:
                 continue
 
-            user_prompt = f"Trích xuất thực thể y tế từ văn bản lâm sàng sau:\n\n{chunk}"
-            response = llm.generate(NER_SYSTEM_PROMPT, user_prompt, 3072)
+            user_prompt = f"Trích xuất keywords y tế từ:\n\n{chunk}"
+            response = llm.generate(NER_SYSTEM_PROMPT, user_prompt, 2048)
+            parsed = llm.parse_json(response)
+            entities = parsed if isinstance(parsed, list) else []
 
-            try:
-                parsed = llm.parse_json(response)
-                entities = parsed if isinstance(parsed, list) else parsed.get("entities", []) if isinstance(parsed, dict) else []
+            for ent in entities:
+                if not isinstance(ent, dict):
+                    continue
+                entity_text = ent.get("entity", "").strip()
+                entity_type = ent.get("type", "").strip().upper()
 
-                for ent in entities:
-                    if not isinstance(ent, dict):
-                        continue
-                    entity_text = ent.get("entity", "").strip()
-                    entity_type = ent.get("type", "").strip().upper()
-                    start = ent.get("start", -1)
-                    end = ent.get("end", -1)
+                if not entity_text or len(entity_text) < 2:
+                    continue
+                if _is_section_header(entity_text):
+                    continue
 
-                    if not entity_text or len(entity_text) < 2:
-                        continue
-                    if _is_section_header(entity_text):
-                        continue
+                # Normalize entity type (uppercase, handle Vietnamese diacritics)
+                entity_type = ent.get("type", "").strip()
+                # Convert to uppercase using Unicode case folding
+                entity_type = entity_type.upper().replace('Ả', 'Ả').replace('Ẩ', 'Ẩ').replace('Ẳ', 'Ẳ').replace('Ẵ', 'Ẵ').replace('Ặ', 'Ặ')
+                type_map = {
+                    "THUỐC": "THUỐC", "TRIỆU_CHỨNG": "TRIỆU_CHỨNG",
+                    "CHẨN_ĐOÁN": "CHẨN_ĐOÁN", "TÊN_XÉT_NGHIỆM": "TÊN_XÉT_NGHIỆM",
+                    "KẾT_QUẢ_XÉT_NGHIỆM": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "DRUG": "THUỐC", "SYMPTOM": "TRIỆU_CHỨNG", "DISEASE": "CHẨN_ĐOÁN",
+                    "DIAGNOSIS": "CHẨN_ĐOÁN", "TEST": "TÊN_XÉT_NGHIỆM",
+                    "RESULT": "KẾT_QUẢ_XÉT_NGHIỆM", "SYMPTOM_AND_DISEASE": "TRIỆU_CHỨNG",
+                    "MEDICAL_PROCEDURE": "TÊN_XÉT_NGHIỆM",
+                }
+                mtype = type_map.get(entity_type, "TRIỆU_CHỨNG")
 
-                    # Always use text search for positions (LLM positions are unreliable)
-                    idx = chunk.find(entity_text)
-                    if idx < 0:
-                        idx = chunk.lower().find(entity_text.lower())
-                    if idx < 0:
-                        continue
-                    pos = [chunk_offset + idx, chunk_offset + idx + len(entity_text)]
+                mentions.append({
+                    "text": entity_text,
+                    "type": mtype,
+                    "source": "ner_llm",
+                })
 
-                    type_map = {
-                        "THUỐC": "THUỐC", "TRIỆU_CHỨNG": "TRIỆU_CHỨNG",
-                        "CHẨN_ĐOÁN": "CHẨN_ĐOÁN", "TÊN_XÉT_NGHIỆM": "TÊN_XÉT_NGHIỆM",
-                        "KẾT_QUẢ_XÉT_NGHIỆM": "KẾT_QUẢ_XÉT_NGHIỆM",
-                        "DRUG": "THUỐC", "SYMPTOM": "TRIỆU_CHỨNG", "DISEASE": "CHẨN_ĐOÁN",
-                        "DIAGNOSIS": "CHẨN_ĐOÁN", "TEST": "TÊN_XÉT_NGHIỆM",
-                        "RESULT": "KẾT_QUẢ_XÉT_NGHIỆM", "SYMPTOM_AND_DISEASE": "TRIỆU_CHỨNG",
-                        "MEDICAL_PROCEDURE": "TÊN_XÉT_NGHIỆM",
-                    }
-                    mtype = type_map.get(entity_type, _classify_type_heuristic(entity_text))
+    # Step 2: Rule-based position finding
+    for m in mentions:
+        pos = _rule_find_position(m["text"], text)
+        if pos:
+            m["position"] = pos
+        else:
+            # Can't find position — skip this mention
+            m["position"] = None
 
-                    mentions.append({
-                        "text": entity_text,
-                        "position": pos,
-                        "type_candidates": [{"label": mtype, "score": 0.85}],
-                        "source": "ner",
-                    })
-            except Exception as e:
-                print(f"NER parse error: {e}", file=sys.stderr)
+    # Remove mentions without valid positions
+    mentions = [m for m in mentions if m.get("position") is not None]
 
-        # LLM-first: rules verify and add missing structured mentions
-        mentions = _verify_with_rules(text, mentions)
+    # Step 3: Rule-based type verification (skip non-medical text)
+    filtered = []
+    for m in mentions:
+        ctx_start = max(0, m["position"][0] - 50)
+        ctx_end = min(len(text), m["position"][1] + 50)
+        context = text[ctx_start:ctx_end]
+        rule_type = _rule_verify_type(m["text"], m["type"])
+        if rule_type is None:
+            continue  # Non-medical text, skip
+        m["type"] = rule_type
+        m["type_candidates"] = [{"label": rule_type, "score": 0.85}]
+        m["source"] = "ner_llm_relocated"
+        filtered.append(m)
+    mentions = filtered
 
-    # Fallback: heuristic only if no LLM
-    if not mentions:
-        spans = _extract_candidate_spans(text)
-        for span in spans[:50]:
-            mtype = _classify_type_heuristic(span["text"])
-            mentions.append({
-                "text": span["text"],
-                "position": span["position"],
-                "type_candidates": [{"label": mtype, "score": 0.70}],
-                "source": "ner_heuristic",
-            })
+    # Step 4: LLM verification of types (only for uncertain/ambiguous cases)
+    for m in mentions:
+        mtype = m["type"]
+        # Only verify types that might be ambiguous
+        if mtype in ("TRIỆU_CHỨNG", "CHẨN_ĐOÁN"):
+            ctx_start = max(0, m["position"][0] - 100)
+            ctx_end = min(len(text), m["position"][1] + 100)
+            context = text[ctx_start:ctx_end]
+            verified = _llm_verify_type(m["text"], mtype, context, llm)
+            if verified != mtype:
+                m["type"] = verified
+                m["type_candidates"] = [{"label": verified, "score": 0.90}]
+                m["llm_corrected"] = True
+
+    # Step 5: Deduplicate
+    seen_positions = set()
+    unique = []
+    for m in mentions:
+        pos = tuple(m.get("position", [0, 0]))
+        if pos in seen_positions:
+            continue
+        seen_positions.add(pos)
+        unique.append(m)
+    mentions = unique
 
     return {"mentions": mentions}

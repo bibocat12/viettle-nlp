@@ -1,0 +1,770 @@
+{
+  "file_id": "70",
+  "timestamp": 1783352755.054508,
+  "elapsed": 369.11,
+  "model": "runpod",
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 2360,
+      "ts": 1783352385.9420624
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783352385.942293
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 2360
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 2360
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1"
+        },
+        "output": "{'rule': [{'text': 'acetaminophen 500mg', 'position': [171, 190], 'type': 'THUỐC', 'confidence': 0.98, 'source': 'rule'}, {'text': 'bilirubin', 'position': [692, 701], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'acetaminophen 500mg', 'position': [1183, 1202], 'type': 'THUỐC', 'confidence': 0.98, 'source': 'rule'}, {'text': 'bilirubin', 'position': [1334, 1343], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'bilirubin', 'position': [1376,",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 11,
+          "qwen": 14,
+          "healthbert": 33,
+          "errors": 0
+        },
+        "total": 49
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'acetaminophen 500mg', 'position': [171, 190], 'type': 'THUỐC', 'confidence': 0.98, 'source': 'rule', 'extraction_source': 'rule'}, {'text': 'bilirubin', 'position': [692, 701], 'type': 'TÊN"
+        },
+        "output": "[{'text': 'khó chịu', 'type': 'TRIỆU_CHỨNG', 'source': 'ner_llm_relocated', 'position': [52, 60], 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.85}], 'extraction_source': 'qwen', 'vote_count': 1, 'voters': ['ner_llm_relocated'], 'confidence': 0.5}, {'text': 'luôn thuyên giảm khi dùng thuốc', 'position': [85, 116], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6287633180618286}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 40
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'khó chịu', 'type': 'TRIỆU_CHỨNG', 'source': 'ner_llm_relocated', 'position': [52, 60], 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.85}], 'extraction_source': 'qwen', 'vote_count",
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1"
+        },
+        "output": "[{'text': 'khó chịu', 'type': 'TRIỆU_CHỨNG', 'source': 'ner_llm_relocated', 'position': [52, 60], 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.85}], 'extraction_source': 'qwen', 'vote_count': 1, 'voters': ['ner_llm_relocated'], 'confidence': 0.5}, {'text': 'luôn thuyên giảm khi dùng thuốc', 'position': [85, 116], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6287633180618286}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'khó chịu', 'type': 'TRIỆU_CHỨNG', 'source': 'ner_llm_relocated', 'position': [52, 60], 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.85}], 'extraction_source': 'qwen', 'vote_count",
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1"
+        },
+        "output": "[{'text': 'khó chịu', 'type': 'TRIỆU_CHỨNG', 'source': 'ner_llm_relocated', 'position': [52, 60], 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.85}], 'extraction_source': 'qwen', 'vote_count': 1, 'voters': ['ner_llm_relocated'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'luôn thuyên giảm khi dùng thuốc', 'position': [85, 116], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6287633180618286}], 'extraction_source': 'healthbert', 'vote_count': 1",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 14
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_verify",
+        "input": {
+          "mention": "{'text': 'ceruloplasmin vẫn đang chờ kết quả', 'position': [1999, 2033], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'type_candidates': [{'label': 'KẾT_QUẢ_XÉT_NGHIỆM', 'score': 0.5}], 'confidence': 0.5, 'vote_coun",
+          "context": " gan virus là âm tính\n- ferritin là bình thường\n- ceruloplasmin vẫn đang chờ kết quả đang chờ kết quả tại thời điểm chuyển viện\nKết qu"
+        },
+        "output": null,
+        "result_type": "bool"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 40,
+      "ts": 1783352590.5927212
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783352590.5927553
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 40
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "52",
+          "end": "60"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "85",
+          "end": "116"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "171",
+          "end": "184"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "acetaminophen",
+          "mtype": "THUỐC",
+          "context": "ập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 10 pills at a time khi"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False, 'confidence': 0.9, 'reason': 'acetaminophen là thuốc hạ sốt.'}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "285",
+          "end": "302"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "ấy bằng cách uống",
+          "mtype": "THUỐC",
+          "context": "ập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 10 pills at a time khi cơn đau dữ dội, thường 4 viên mỗi giờ\n- làm hỏng dạ dày của cô ấy bằng cách uống 2 chai thuốc an thần trong quá k"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "376",
+          "end": "384"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "444",
+          "end": "472"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "376",
+          "end": "399"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "491",
+          "end": "508"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "952",
+          "end": "969"
+        },
+        "output": "{'isNegated': True, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "1016",
+          "end": "1024"
+        },
+        "output": "{'isNegated': True, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "1027",
+          "end": "1039"
+        },
+        "output": "{'isNegated': True, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "1090",
+          "end": "1101"
+        },
+        "output": "{'isNegated': True, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "171",
+          "end": "190"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "acetaminophen 500mg",
+          "mtype": "THUỐC",
+          "context": "ập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 10 pills at a time khi"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "285",
+          "end": "302"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "ấy bằng cách uống",
+          "mtype": "THUỐC",
+          "context": "ập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 10 pills at a time khi cơn đau dữ dội, thường 4 viên mỗi giờ\n- làm hỏng dạ dày của cô ấy bằng cách uống 2 chai thuốc an thần trong quá k"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True, 'confidence': 1.0, 'reason': 'Lấy thông tin từ câu \"được biết cô ấy thỉnh thoảng sử dụng việc làm hỏng dạ dày nhờ uống một lượng lớn thuốc an thần \" được đưa ra ở trên'}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "1516",
+          "end": "1519"
+        },
+        "output": "{'isNegated': True, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "nac",
+          "mtype": "THUỐC",
+          "context": " alp 185, bilirubin toàn phần 0.9\n- âm tính siêu âm bụng có doppler\n- âm tính chụp hida\n- Chưa từng xét nghiệm nồng độ acetaminophen\n- Chưa từng dùng nac\n- Chuyển tạm thời để thực hiện ercp\n- ercp cho"
+        },
+        "output": "{'isNegated': True, 'isFamily': False, 'isHistorical': False, 'confidence': 0.9, 'reason': 'Chưa từng dùng nac'}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "1558",
+          "end": "1584"
+        },
+        "output": "{'isNegated': True, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "1682",
+          "end": "1701"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "ra một viên sỏi mật",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": " thời để thực hiện ercp\n- ercp cho thấy túi mật giãn nở rõ rệt nhưng không có sỏi hoặc bệnh lý khác\n- Chuyển lại bệnh viện OSH và được cho là đã tống ra một viên sỏi mật\nTình trạng ngay trước khi nhập"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True, 'confidence': 0.9, 'reason': 'Việc tống ra một viên sỏi mật được coi là một sự kiện đáng tin cậy để có được tiền sử buồn nội tạng nên được đánh giá là bản tính bệnh lý'}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "1770",
+          "end": "1781"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "1929",
+          "end": "1959"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "bảng xét nghiệm viêm gan virus",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": "ài\n\n3. Đánh giá tại bệnh viện\nKết quả xét nghiệm\n- ast 421\n- alt 336\n- alp 185\n- bilirubin toàn phần 0.9\n- total bili bắt đầu tăng lên đạt đỉnh 6.7\n- bảng xét nghiệm viêm gan virus là âm tính\n- ferrit"
+        },
+        "output": "{'isNegated': True, 'isFamily': False, 'isHistorical': False, 'confidence': 1.0, 'reason': 'Viêm gan virus là âm tính'}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "1595",
+          "end": "1623"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "nhưng không có sỏi hoặc bệnh",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": "hụp hida\n- Chưa từng xét nghiệm nồng độ acetaminophen\n- Chưa từng dùng nac\n- Chuyển tạm thời để thực hiện ercp\n- ercp cho thấy túi mật giãn nở rõ rệt nhưng không có sỏi hoặc bệnh lý khác\n- Chuyển lại "
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False, 'confidence': 0.9, 'reason': 'Từ \"không có sỏi hoặc bệnh\" không thể xác định là đau nhi không đau nên để là \"không có sỏi hoặc bệnh\"'}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1",
+          "start": "642",
+          "end": "654"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "tăng men gan",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": "au bụng liên tục\nDiễn biến bệnh\n- Tiền sử 2 tháng đau bụng liên tục\n- 2 ngày trước khi nhập viện, đau bụng trở nên tồi tệ hơn\n- Diễn biến trong viện: tăng men gan bắt đầu có xu hướng giảm mặc dù tổng "
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False, 'confidence': 0.8, 'reason': 'Dựa vào việc bệnh nhân tăng men gan có xu hướng giảm trong quá trình điều trị tại bệnh viện, có kết luận học các dấu hiệu của bệnh nhân có thể bị tăng men gan.'}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 40,
+        "llm_checked": 7
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783352631.925416
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783352631.9254596
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 40
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'acetaminophen', 'position': [171, 184], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.8}], 'confidence': 0.8, 'vote_count': 2, 'max_type_votes': 2, 'voters': {'ner_llm_r",
+          "context": "ập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 10 pills at a time khi"
+        },
+        "output": "{'candidates': ['161', '332815', '1152843', '330892', '315263'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'ấy bằng cách uống', 'position': [285, 302], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.85}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthber",
+          "context": "ập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 10 pills at a time khi cơn đau dữ dội, thường 4 viên mỗi giờ\n- làm hỏng dạ dày của cô ấy bằng cách uống 2 chai thuốc an thần trong quá k"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'acetaminophen 500mg', 'position': [171, 190], 'type': 'THUỐC', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': True, ",
+          "context": "ập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 10 pills at a time khi"
+        },
+        "output": "{'candidates': ['161', '332815', '1152843', '315259', '315263'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'ấy bằng cách uống', 'position': [285, 302], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.85}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthber",
+          "context": "ập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 10 pills at a time khi cơn đau dữ dội, thường 4 viên mỗi giờ\n- làm hỏng dạ dày của cô ấy bằng cách uống 2 chai thuốc an thần trong quá k"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'nac', 'type': 'THUỐC', 'source': 'ner_llm_relocated', 'position': [1516, 1519], 'type_candidates': [{'label': 'THUỐC', 'score': 0.85}], 'extraction_source': 'qwen', 'vote_count': 1, 'voters'",
+          "context": " alp 185, bilirubin toàn phần 0.9\n- âm tính siêu âm bụng có doppler\n- âm tính chụp hida\n- Chưa từng xét nghiệm nồng độ acetaminophen\n- Chưa từng dùng nac\n- Chuyển tạm thời để thực hiện ercp\n- ercp cho"
+        },
+        "output": "{'candidates': ['613876', '215255', '215256', '33717', '35351'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'ra một viên sỏi mật', 'position': [1682, 1701], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters':",
+          "context": " thời để thực hiện ercp\n- ercp cho thấy túi mật giãn nở rõ rệt nhưng không có sỏi hoặc bệnh lý khác\n- Chuyển lại bệnh viện OSH và được cho là đã tống ra một viên sỏi mật\nTình trạng ngay trước khi nhập"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'bảng xét nghiệm viêm gan virus', 'position': [1929, 1959], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1",
+          "context": "ài\n\n3. Đánh giá tại bệnh viện\nKết quả xét nghiệm\n- ast 421\n- alt 336\n- alp 185\n- bilirubin toàn phần 0.9\n- total bili bắt đầu tăng lên đạt đỉnh 6.7\n- bảng xét nghiệm viêm gan virus là âm tính\n- ferrit"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'nhưng không có sỏi hoặc bệnh', 'position': [1595, 1623], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, ",
+          "context": "hụp hida\n- Chưa từng xét nghiệm nồng độ acetaminophen\n- Chưa từng dùng nac\n- Chuyển tạm thời để thực hiện ercp\n- ercp cho thấy túi mật giãn nở rõ rệt nhưng không có sỏi hoặc bệnh lý khác\n- Chuyển lại "
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'tăng men gan', 'position': [642, 654], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6771164536476135}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vot",
+          "context": "au bụng liên tục\nDiễn biến bệnh\n- Tiền sử 2 tháng đau bụng liên tục\n- 2 ngày trước khi nhập viện, đau bụng trở nên tồi tệ hơn\n- Diễn biến trong viện: tăng men gan bắt đầu có xu hướng giảm mặc dù tổng "
+        },
+        "output": "{'candidates': ['O14.2'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 4
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 4,
+      "ts": 1783352755.0419276
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783352755.0419872
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 40
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'khó chịu', 'type': 'TRIỆU_CHỨNG', 'source': 'ner_llm_relocated', 'position': [52, 60], 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.85}], 'extraction_source': 'qwen', 'vote_count",
+          "text": "1. Tiền sử bệnh\nCác tập tương tự trước đây: Từng bị khó chịu tương tự trong quá khứ, luôn thuyên giảm khi dùng thuốc\nThuốc trước khi nhập viện\n- Tự điều trị bằng liều cao acetaminophen 500mg, taking 1"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'drop_prediction', 'reason': 'invalid assertion key: confidence'}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'wa",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 25,
+        "dropped": 15
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 25,
+      "ts": 1783352755.0436378
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 25,
+      "elapsed": 369.1,
+      "ts": 1783352755.0436792
+    }
+  ],
+  "stats": null
+}

@@ -1,0 +1,302 @@
+{
+  "file_id": "2",
+  "timestamp": 1783348778.082609,
+  "elapsed": 335.26,
+  "model": "runpod",
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 593,
+      "ts": 1783348442.8219843
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783348442.8222106
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 593
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 593
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng"
+        },
+        "output": "{'rule': [{'text': 'shunt dẫn lưu', 'position': [559, 572], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}], 'qwen': [{'text': 'xơ gan', 'type': 'CHẨN_ĐOÁN', 'source': 'ner_llm_relocated', 'position': [61, 67], 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.85}]}, {'text': 'xơ gan do rượu', 'type': 'CHẨN_ĐOÁN', 'source': 'ner_llm_relocated', 'position': [61, 75], 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.85}]}, {'text': 'hội chứng não gan', 'type': 'CHẨN_ĐOÁN'",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 1,
+          "qwen": 4,
+          "healthbert": 0,
+          "errors": 0
+        },
+        "total": 5
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'shunt dẫn lưu', 'position': [559, 572], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule', 'extraction_source': 'rule'}, {'text': 'xơ gan', 'type': 'CHẨN_ĐOÁN', 'source': 'ner_"
+        },
+        "output": "[{'text': 'xơ gan', 'position': [61, 75], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.8}], 'confidence': 0.8, 'vote_count': 2, 'max_type_votes': 2, 'voters': {'ner_llm_relocated': 2}, 'type_votes': {'CHẨN_ĐOÁN': 2}, 'needs_review': False}, {'text': 'hội chứng não gan', 'type': 'CHẨN_ĐOÁN', 'source': 'ner_llm_relocated', 'position': [191, 208], 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.85}], 'extraction_source': 'qwen', 'vote_count': 1, 'voters': ['ner_l",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 3
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'xơ gan', 'position': [61, 75], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.8}], 'confidence': 0.8, 'vote_count': 2, 'max_type_votes': 2, 'voters': {'ner_llm_r",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng"
+        },
+        "output": "[{'text': 'xơ gan', 'position': [61, 75], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.8}], 'confidence': 0.8, 'vote_count': 2, 'max_type_votes': 2, 'voters': {'ner_llm_relocated': 2}, 'type_votes': {'CHẨN_ĐOÁN': 2}, 'needs_review': False}, {'text': 'hội chứng não gan', 'type': 'CHẨN_ĐOÁN', 'source': 'ner_llm_relocated', 'position': [191, 208], 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.85}], 'extraction_source': 'qwen', 'vote_count': 1, 'voters': ['ner_l",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'xơ gan', 'position': [61, 67], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.8}], 'confidence': 0.8, 'vote_count': 2, 'max_type_votes': 2, 'voters': {'ner_llm_r",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng"
+        },
+        "output": "[{'text': 'xơ gan', 'position': [61, 67], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.8}], 'confidence': 0.8, 'vote_count': 2, 'max_type_votes': 2, 'voters': {'ner_llm_relocated': 2}, 'type_votes': {'CHẨN_ĐOÁN': 2}, 'needs_review': False, 'position_fixed': False}, {'text': 'hội chứng não gan', 'type': 'CHẨN_ĐOÁN', 'source': 'ner_llm_relocated', 'position': [191, 208], 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.85}], 'extraction_source': 'qwen', 'vote_cou",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 3,
+      "ts": 1783348739.1895003
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783348739.1895351
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 3
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng",
+          "start": "61",
+          "end": "67"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "xơ gan",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False, 'confidence': 0.9, 'reason': 'xơ gan do rượu là một loại bệnh lý, và không được phủ định. Tiếp đến các yếu tố nguy cơ liên quan là tiền sử sử dụng rượu bia, đây là tiền sử gia đình chứ không phải là một bệnh lý nên được đưa vào trường hợp không phủ định và không gia đình'}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng",
+          "start": "191",
+          "end": "208"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "hội chứng não gan",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": " mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập v"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True, 'confidence': 0.9, 'reason': 'Thực thể \"hội chứng não gan\" xuất hiện trong phần tiền sử bệnh hiện tại và các sự kiện trước khi nhập viện, thể hiện thông tin về một dấu hiệu bệnh lý đã xảy ra trước đó nhưng không có bất cứ dấu hiệu phủ định nào.'}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 3,
+        "llm_checked": 2
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783348749.3600461
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783348749.3600874
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 3
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'xơ gan', 'position': [61, 67], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.8}], 'confidence': 0.8, 'vote_count': 2, 'max_type_votes': 2, 'voters': {'ner_llm_re",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng"
+        },
+        "output": "{'candidates': ['K70.1', 'K74', 'K74.4', 'K74.6', 'K70.3'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'hội chứng não gan', 'type': 'CHẨN_ĐOÁN', 'source': 'ner_llm_relocated', 'position': [191, 208], 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.85}], 'extraction_source': 'qwen', 'vote",
+          "context": " mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập v"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 1,
+      "ts": 1783348778.023764
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783348778.023822
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 3
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'xơ gan', 'position': [61, 67], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.8}], 'confidence': 0.8, 'vote_count': 2, 'max_type_votes': 2, 'voters': {'ner_llm_r",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng"
+        },
+        "output": "{'actions': [{'action': 'drop_prediction', 'reason': 'invalid assertion key: confidence'}, {'action': 'drop_prediction', 'reason': 'invalid assertion key: confidence'}, {'action': 'accept', 'fixes': [], 'warnings': []}], 'final_predictions': [{'text': 'đặt shunt dẫn lưu tĩnh mạch cửa qua da', 'position': [555, 593], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.8}], 'confidence': 0.8, 'vote_count': 2, 'max_type_votes': 2, 'voters': {'ner_llm_relocated': 1, ",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 1,
+        "dropped": 2
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 1,
+      "ts": 1783348778.024183
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 1,
+      "elapsed": 335.2,
+      "ts": 1783348778.0242262
+    }
+  ],
+  "stats": null
+}

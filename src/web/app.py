@@ -6,6 +6,9 @@ import threading
 import queue
 from pathlib import Path
 
+# transformers 5.x validates repo IDs strictly; use local files only
+os.environ.setdefault("HF_HUB_OFFLINE", "1")
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from flask import Flask, render_template, request, jsonify, Response
@@ -18,6 +21,9 @@ BASE_DIR = Path(__file__).parent.parent.parent
 DB_DIR = BASE_DIR / "database-stuff"
 INPUT_DIR = BASE_DIR / "input"
 OUTPUT_DIR = BASE_DIR / "outputs"
+MODELS_DIR = BASE_DIR / "models"
+AGENT_LOGS_DIR = BASE_DIR / "agent_logs"
+AGENT_LOGS_DIR.mkdir(exist_ok=True)
 OUTPUT_DIRS = {
     "outputs": BASE_DIR / "outputs",
     "outputs_new": BASE_DIR / "outputs_new",
@@ -25,6 +31,7 @@ OUTPUT_DIRS = {
 
 kb = None
 runpod_llm = None
+local_llm = None
 
 # In-memory cache: file_id -> {mentions, count, timestamp, elapsed}
 result_cache = {}
@@ -48,6 +55,16 @@ def get_runpod_llm():
     return runpod_llm
 
 
+def get_local_llm():
+    global local_llm
+    if local_llm is None:
+        from llm import LLMEngine
+        model_path = MODELS_DIR / "Qwen2.5-7B-Vietnamese-Medical-NER-GRPO"
+        local_llm = LLMEngine(model_path=str(model_path))
+        local_llm.load()
+    return local_llm
+
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -58,6 +75,7 @@ def extract():
     data = request.json
     text = data.get("text", "")
     use_llm = data.get("use_llm", False)
+    model_type = data.get("model", "runpod")
     file_id = data.get("file_id", None)
     folder = data.get("folder", "outputs")
     output_dir = OUTPUT_DIRS.get(folder, OUTPUT_DIR)
@@ -67,9 +85,11 @@ def extract():
 
     def generate():
         log_queue = queue.Queue()
+        all_logs = []  # Collect all logs for saving
 
         def on_log(entry):
             log_queue.put(entry)
+            all_logs.append(entry)
             # Debug: print to stderr
             import sys
             print(f"[LOG] {entry.get('agent', '')} {entry.get('action', '')} tool={entry.get('tool', entry.get('data', {}).get('tool', ''))}", file=sys.stderr)
@@ -85,13 +105,18 @@ def extract():
 
             llm_inst = None
             if use_llm:
-                yield json.dumps({"type": "log", "data": {"agent": "system", "action": "loading_runpod_llm", "ts": time.time()}}) + "\n"
-                llm_inst = get_runpod_llm()
-                if llm_inst.is_available():
-                    yield json.dumps({"type": "log", "data": {"agent": "system", "action": "runpod_llm_ready", "ts": time.time()}}) + "\n"
+                if model_type == "local":
+                    yield json.dumps({"type": "log", "data": {"agent": "system", "action": "loading_local_llm", "ts": time.time()}}) + "\n"
+                    llm_inst = get_local_llm()
+                    yield json.dumps({"type": "log", "data": {"agent": "system", "action": "local_llm_ready", "ts": time.time()}}) + "\n"
                 else:
-                    yield json.dumps({"type": "log", "data": {"agent": "system", "action": "runpod_llm_unavailable", "ts": time.time()}}) + "\n"
-                    llm_inst = None
+                    yield json.dumps({"type": "log", "data": {"agent": "system", "action": "loading_runpod_llm", "ts": time.time()}}) + "\n"
+                    llm_inst = get_runpod_llm()
+                    if llm_inst.is_available():
+                        yield json.dumps({"type": "log", "data": {"agent": "system", "action": "runpod_llm_ready", "ts": time.time()}}) + "\n"
+                    else:
+                        yield json.dumps({"type": "log", "data": {"agent": "system", "action": "runpod_llm_unavailable", "ts": time.time()}}) + "\n"
+                        llm_inst = None
 
             note_id = file_id or "manual"
             result_container = [None]
@@ -139,6 +164,17 @@ def extract():
                     output_dir.mkdir(exist_ok=True)
                     with open(out_path, "w", encoding="utf-8") as f:
                         json.dump(result, f, ensure_ascii=False, indent=2)
+                    # Save agent logs
+                    log_path = AGENT_LOGS_DIR / f"{file_id}.json"
+                    with open(log_path, "w", encoding="utf-8") as f:
+                        json.dump({
+                            "file_id": file_id,
+                            "timestamp": time.time(),
+                            "elapsed": round(elapsed, 2),
+                            "model": model_type,
+                            "logs": all_logs,
+                            "stats": result.get("stats") if isinstance(result, dict) else None,
+                        }, f, ensure_ascii=False, indent=2)
 
                 yield json.dumps({"type": "result", "data": {
                     "mentions": result,
@@ -159,6 +195,7 @@ def extract():
 def run_all():
     data = request.json or {}
     use_llm = data.get("use_llm", False)
+    model_type = data.get("model", "runpod")
     folder = data.get("folder", "outputs_new")
     output_dir = OUTPUT_DIRS.get(folder, Path(BASE_DIR / folder))
 
@@ -168,9 +205,13 @@ def run_all():
         kb_inst = get_kb()
         llm_inst = None
         if use_llm:
-            from runpod_llm import get_runpod_llm as _get_llm
-            llm_inst = _get_llm()
-            yield json.dumps({"type": "log", "data": {"agent": "system", "action": "runpod_ready", "llm": llm_inst.is_available(), "ts": time.time()}}) + "\n"
+            if model_type == "local":
+                yield json.dumps({"type": "log", "data": {"agent": "system", "action": "loading_local_llm", "ts": time.time()}}) + "\n"
+                llm_inst = get_local_llm()
+            else:
+                from runpod_llm import get_runpod_llm as _get_llm
+                llm_inst = _get_llm()
+            yield json.dumps({"type": "log", "data": {"agent": "system", "action": "llm_ready", "model": model_type, "available": llm_inst.is_available() if hasattr(llm_inst, 'is_available') else True, "ts": time.time()}}) + "\n"
 
         from orchestrator import run_pipeline
 
@@ -228,6 +269,18 @@ def run_all():
         }) + "\n"
 
     return Response(generate(), mimetype="text/event-stream")
+
+
+@app.route("/api/logs/<file_id>", methods=["GET"])
+def get_logs(file_id):
+    log_path = AGENT_LOGS_DIR / f"{file_id}.json"
+    if log_path.exists():
+        try:
+            data = json.loads(log_path.read_text())
+            return jsonify({"exists": True, "logs": data.get("logs", []), "file_id": file_id})
+        except:
+            return jsonify({"exists": False, "logs": [], "file_id": file_id})
+    return jsonify({"exists": False, "logs": [], "file_id": file_id})
 
 
 @app.route("/api/folders", methods=["GET"])

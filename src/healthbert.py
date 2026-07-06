@@ -1,46 +1,161 @@
+import os
 import sys
 from pathlib import Path
 from typing import Dict, List, Optional
 
 sys.path.insert(0, str(Path(__file__).parent))
 
+import numpy as np
 import torch
+
+# transformers 5.x validates repo IDs strictly.
+# Monkey-patch to allow local absolute paths like /kaggle/...
+import huggingface_hub.utils._validators as _hub_val
+_hub_val.validate_repo_id = lambda repo_id: None
+
 from transformers import AutoTokenizer, AutoModel
 
 
 _model = None
 _tokenizer = None
+_type_prototypes = {}
+_device = "cpu"
 
 
 def _load_model():
     global _model, _tokenizer
     if _model is not None:
         return
-    model_path = str(Path(__file__).parent.parent / "models" / "vihealthbert-base-word")
-    _tokenizer = AutoTokenizer.from_pretrained(model_path)
-    _model = AutoModel.from_pretrained(model_path)
+    base = os.environ.get("VIETTLE_MODELS_DIR", str(Path(__file__).parent.parent / "models"))
+    model_path = os.path.join(base, "vihealthbert-base-word")
+    os.environ.setdefault("HF_HUB_OFFLINE", "1")
+    _tokenizer = AutoTokenizer.from_pretrained(model_path, local_files_only=True)
+    _model = AutoModel.from_pretrained(model_path, local_files_only=True)
     _model.eval()
     if torch.cuda.is_available():
         _model = _model.cuda()
 
 
 @torch.no_grad()
-def _get_embedding(text: str) -> list:
+def _get_embedding(text: str) -> np.ndarray:
     _load_model()
     inputs = _tokenizer(text, return_tensors="pt", truncation=True, max_length=256, padding=True)
     if torch.cuda.is_available():
         inputs = {k: v.cuda() for k, v in inputs.items()}
     outputs = _model(**inputs)
-    # CLS pooling
-    cls_emb = outputs.last_hidden_state[:, 0, :].cpu().numpy()
-    return cls_emb[0].tolist()
+    # Mean pooling over all tokens (better than CLS for sentence similarity)
+    attention_mask = inputs["attention_mask"]
+    token_embeddings = outputs.last_hidden_state
+    mask_expanded = attention_mask.unsqueeze(-1).expand(token_embeddings.size()).float()
+    sum_emb = torch.sum(token_embeddings * mask_expanded, 1)
+    sum_mask = torch.clamp(mask_expanded.sum(1), min=1e-9)
+    emb = (sum_emb / sum_mask).cpu().numpy()[0]
+    return emb
 
 
-# Comprehensive keyword patterns for Vietnamese medical text
+def _build_prototypes():
+    """Build ViHealthBERT embedding prototypes for each type."""
+    global _type_prototypes
+    if _type_prototypes:
+        return
+
+    type_descriptions = {
+        "THUỐC": [
+            "thuốc metoprolol 25mg uống",
+            "aspirin 325mg", "amoxicillin 500mg",
+            "tiêm insulin", "truyền dịch",
+        ],
+        "TRIỆU_CHỨNG": [
+            "đau ngực", "khó thở", "sốt cao",
+            "đau đầu", "chóng mặt", "buồn nôn",
+            "mệt mỏi", "ho khan", "đau bụng",
+            "căng thẳng", "lo âu", "hồi hộp",
+            "đánh trống ngực", "nhịp tim nhanh",
+            "mất ngủ", "chán ăn", "sụt cân",
+            "tê bì", "yếu cơ", "đau khớp",
+            "phù chân", "đau lưng", "khó nuốt",
+            "thắt chặt ngực", "gắng sức",
+            "khó chịu vùng ngực",
+            "tăng đánh trống ngực",
+        ],
+        "CHẨN_ĐOÁN": [
+            "tăng huyết áp", "viêm phổi", "đái tháo đường",
+            "suy tim", "nhồi máu cơ tim", "rung nhĩ",
+            "xơ gan", "ung thư phổi", "viêm gan B",
+        ],
+        "TÊN_XÉT_NGHIỆM": [
+            "chụp X-quang ngực", "điện tâm đồ",
+            "xét nghiệm máu", "siêu âm tim",
+            "chụp cắt lớp vi tính", "nội soi dạ dày",
+        ],
+        "KẾT_QUẢ_XÉT_NGHIỆM": [
+            "kết quả bình thường", "troponin 0.01",
+            "không ghi nhận bất thường", "âm tính",
+            "huyết áp 120/80", "nhịp tim 80 lần/phút",
+        ],
+        "NON_MEDICAL": [
+            "Lý do nhập viện", "Tiền sử bệnh", "Triệu chứng hiện tại",
+            "Thời điểm khởi phát", "Mức độ nghiêm trọng",
+            "Tình trạng ngay trước", "Kết quả xét nghiệm",
+            "Kết quả hình ảnh", "Kết quả chẩn đoán hình ảnh",
+            "Đặc điểm triệu chứng", "Tiếp tục cảm thấy",
+            "Mất việc làm",
+            "Ngày hôm nay khoảng", "Đi bộ vài chặng",
+            "Không cảm nhận được triệu chứng",
+            "Lên lịch tái khám", "Quyết định rằng",
+            "được phục vụ tốt hơn", "ổn định và không có phàn",
+            "Nhập viện khoa", "Mắt cá chân",
+            "đầu là mạch", "độ bão hòa oxy",
+            "ứng thất nhanh mới", "đó là nhịp tim chậm",
+            "đáp ứng thất nhanh", "đặc hiệu thay đổi sóng",
+            "đổi sóng t không đặc hiệu",
+            "Bệnh nhân vào viện", "Theo lời bệnh nhân",
+            "Một ngày người bệnh",
+        ],
+    }
+
+    for type_name, examples in type_descriptions.items():
+        embs = np.array([_get_embedding(ex) for ex in examples])
+        _type_prototypes[type_name] = embs.mean(axis=0)
+
+    # Normalize prototypes
+    for type_name in _type_prototypes:
+        norm = np.linalg.norm(_type_prototypes[type_name])
+        if norm > 0:
+            _type_prototypes[type_name] /= norm
+
+
+def classify_type_embedding(mention_text: str) -> Dict:
+    """Classify type using ViHealthBERT semantic similarity."""
+    _load_model()
+    _build_prototypes()
+
+    mention_emb = _get_embedding(mention_text)
+    norm = np.linalg.norm(mention_emb)
+    if norm > 0:
+        mention_emb /= norm
+
+    best_type = "TRIỆU_CHỨNG"
+    best_score = -1
+
+    for type_name, proto in _type_prototypes.items():
+        score = float(np.dot(mention_emb, proto))
+        if score > best_score:
+            best_score = score
+            best_type = type_name
+
+    # If best match is NON_MEDICAL or score is too low, reject
+    if best_type == "NON_MEDICAL" or best_score < 0.35:
+        return {"type": "KHÔNG_PHẢI", "score": best_score, "source": "healthbert_embedding"}
+
+    return {"type": best_type, "score": best_score, "source": "healthbert_embedding"}
+
+
+# Keyword-based fallback patterns
 TYPE_KEYWORDS = {
     "THUỐC": [
         r'\d+\s*(?:mg|ml|mcg|IU|U)\b',
-        r'(?:po|iv|im|sc|sl|tiêm|uống|đặt|nhỏ|bôi|thoa)\b',
+        r'\b(?:po|iv|im|sc|sl|tiêm|uống|đặt|nhỏ|bôi|thoa)\b',
         r'metoprolol|aspirin|atenolol|doxycycline|amoxicillin|chlorpheniramine|Laxis|nitroglycerin',
         r'paracetamol|ibuprofen|omeprazole|ranitidine|furosemide|enalapril|losartan|simvastatin',
         r'warfarin|heparin|insulin|glucose\s+\d+|metformin|glipizide|levothyroxine|prednisolone',
@@ -117,13 +232,11 @@ HISTORICAL_WORDS = ['tiền sử', 'trước đây', 'trước khi', 'trước n
 
 
 def classify_type(mention_text: str, context: str = "") -> Dict:
-    """Classify mention type using ViHealthBERT + keyword fallback."""
+    """Classify mention type — keyword first (drugs/tests/results), then embedding."""
     import re
-
     text_lower = mention_text.lower()
 
-    # Quick keyword checks first (fast path)
-    import re
+    # 1. Strong keyword matches (high precision, never filtered)
     for kw in TYPE_KEYWORDS["THUỐC"]:
         if re.search(kw, text_lower):
             return {"type": "THUỐC", "score": 0.85, "source": "keyword"}
@@ -135,16 +248,34 @@ def classify_type(mention_text: str, context: str = "") -> Dict:
     for kw in TYPE_KEYWORDS["TÊN_XÉT_NGHIỆM"]:
         if kw in text_lower:
             return {"type": "TÊN_XÉT_NGHIỆM", "score": 0.85, "source": "keyword"}
+
+    # 2. ViHealthBERT embedding (including non-medical rejection)
+    result = None
+    try:
+        result = classify_type_embedding(mention_text)
+        if result["type"] == "KHÔNG_PHẢI":
+            return result
+    except Exception as e:
+        print(f"ViHealthBERT embedding error: {e}", file=__import__('sys').stderr)
+
+    # 3. Diagnosis keywords (lower precision, use after embedding non-medical filter)
     for kw in TYPE_KEYWORDS["CHẨN_ĐOÁN"]:
         if kw in text_lower:
             return {"type": "CHẨN_ĐOÁN", "score": 0.75, "source": "keyword"}
 
-    # Default
-    return {"type": "TRIỆU_CHỨNG", "score": 0.60, "source": "keyword"}
+    # 4. Fall back to embedding result
+    try:
+        if result and result["score"] > 0.3:
+            return result
+    except Exception:
+        pass
+
+    # 5. Default
+    return {"type": "TRIỆU_CHỨNG", "score": 0.60, "source": "default"}
 
 
 def classify_assertion(mention_text: str, context: str) -> Dict:
-    """Classify assertion using keyword patterns (fast, no LLM needed)."""
+    """Classify assertion using keyword patterns."""
     import re
     ctx_lower = context.lower()
 

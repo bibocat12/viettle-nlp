@@ -1,0 +1,466 @@
+{
+  "file_id": "69",
+  "timestamp": 1783352914.315752,
+  "elapsed": 92.53,
+  "model": "runpod",
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 983,
+      "ts": 1783352821.7841647
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783352821.784384
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 983
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 983
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - Cắt bỏ thận trái do ung thư biểu mô tế bào thận\n    - Cắt tuyến giáp với Dr. do ung thư biểu mô tuyến giật nhú\n\n2.  Tiền sử bệnh hiện"
+        },
+        "output": "{'rule': [{'text': 'phẫu thuật', 'position': [38, 48], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'Nội soi', 'position': [421, 428], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'chụp cắt lớp vi tính', 'position': [639, 659], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'nội soi', 'position': [749, 756], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}], 'qwen': [{'text': 'ung thư biểu mô tế b",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 4,
+          "qwen": 7,
+          "healthbert": 16,
+          "errors": 0
+        },
+        "total": 23
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'phẫu thuật', 'position': [38, 48], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'Nội soi', 'pos"
+        },
+        "output": "[{'text': 'phẫu thuật', 'position': [38, 48], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'Cắt bỏ thận trái', 'position': [67, 114], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.8}], 'confidence': 0.8, 'vote_count': 4, 'max_type_votes': 2, 'voters': {'ner_llm_relocated': 2, 'healthbert': 2}, 'type_votes': {'TÊN_XÉT_NGHIỆM': 2, 'CHẨN_ĐOÁN': 2}, 'needs_review': Fal",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 15
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'phẫu thuật', 'position': [38, 48], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'Cắt bỏ thận tr",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - Cắt bỏ thận trái do ung thư biểu mô tế bào thận\n    - Cắt tuyến giáp với Dr. do ung thư biểu mô tuyến giật nhú\n\n2.  Tiền sử bệnh hiện"
+        },
+        "output": "[{'text': 'phẫu thuật', 'position': [38, 48], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'Cắt bỏ thận trái', 'position': [67, 114], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.8}], 'confidence': 0.8, 'vote_count': 4, 'max_type_votes': 2, 'voters': {'ner_llm_relocated': 2, 'healthbert': 2}, 'type_votes': {'TÊN_XÉT_NGHIỆM': 2, 'CHẨN_ĐOÁN': 2}, 'needs_review': Fal",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'phẫu thuật', 'position': [38, 48], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False},",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - Cắt bỏ thận trái do ung thư biểu mô tế bào thận\n    - Cắt tuyến giáp với Dr. do ung thư biểu mô tuyến giật nhú\n\n2.  Tiền sử bệnh hiện"
+        },
+        "output": "[{'text': 'phẫu thuật', 'position': [38, 48], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False}, {'text': 'Cắt bỏ thận trái', 'position': [67, 83], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.8}], 'confidence': 0.8, 'vote_count': 4, 'max_type_votes': 2, 'voters': {'ner_llm_relocated': 2, 'healthbert': 2}, 'type_votes': {'TÊN_XÉT_NGHIỆM': 2, 'CHẨN_ĐOÁN':",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 4
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_verify",
+        "input": {
+          "mention": "{'text': 'thiếu máu', 'position': [247, 256], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'KẾT_QUẢ_XÉT_NGHIỆM', 'score': 0.5}], 'confidence': 0.5, 'vote_count': 2, 'max_type_votes': 1, 'voter",
+          "context": "iện tại\n    Lý do nhập viện: đến khám vì mệt mỏi, thiếu máu và phân có guaiac dương tính đến\n\n    Triệu chứng"
+        },
+        "output": "True",
+        "result_type": "bool"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 15,
+      "ts": 1783352857.9998615
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783352857.9999006
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 15
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - Cắt bỏ thận trái do ung thư biểu mô tế bào thận\n    - Cắt tuyến giáp với Dr. do ung thư biểu mô tuyến giật nhú\n\n2.  Tiền sử bệnh hiện",
+          "start": "144",
+          "end": "168"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "do ung thư biểu mô tuyến",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - Cắt bỏ thận trái do ung thư biểu mô tế bào thận\n    - Cắt tuyến giáp với Dr. do ung thư biểu mô tuyến giật nhú\n\n2.  Tiền sử bệnh hiện"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True, 'confidence': 0.8, 'reason': 'Tiền sử cơ sở có ung thư biểu mô tuyến thân thận và tuyến giáp, trước đó đã trải qua phẫu thuật cắt bỏ chức năng thận và tuyến giáp do ung thư biểu mô tuyến giật nhú'}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - Cắt bỏ thận trái do ung thư biểu mô tế bào thận\n    - Cắt tuyến giáp với Dr. do ung thư biểu mô tuyến giật nhú\n\n2.  Tiền sử bệnh hiện",
+          "start": "226",
+          "end": "245"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - Cắt bỏ thận trái do ung thư biểu mô tế bào thận\n    - Cắt tuyến giáp với Dr. do ung thư biểu mô tuyến giật nhú\n\n2.  Tiền sử bệnh hiện",
+          "start": "247",
+          "end": "256"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - Cắt bỏ thận trái do ung thư biểu mô tế bào thận\n    - Cắt tuyến giáp với Dr. do ung thư biểu mô tuyến giật nhú\n\n2.  Tiền sử bệnh hiện",
+          "start": "473",
+          "end": "484"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "chỗ uốn gan",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": "ệt mỏi\n    - thiếu máu\n    - phân có guaiac dương tính\n\n    Các sự kiện trước khi nhập viện\n    - Nội soi đại tràng sau xuất viện cho thấy một khối ở chỗ uốn gan\n    - sinh thiết dương tính với ung th"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False, 'confidence': 0.9, 'reason': 'Khối ở chỗ uốn gan được sinh thiết dương tính với ung thư biểu mô tuyến'}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - Cắt bỏ thận trái do ung thư biểu mô tế bào thận\n    - Cắt tuyến giáp với Dr. do ung thư biểu mô tuyến giật nhú\n\n2.  Tiền sử bệnh hiện",
+          "start": "849",
+          "end": "875"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "ung thư biểu mô tuyến trên",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": "hiệu bệnh lan rộng\n\n    Thủ thuật thực hiện\n    - nội soi đại tràng\n    - sinh thiết\n\n    Các phát hiện chẩn đoán khác\n    - khối ở chỗ uốn gan\n    - ung thư biểu mô tuyến trên sinh thiết\n    - tiền s"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - Cắt bỏ thận trái do ung thư biểu mô tế bào thận\n    - Cắt tuyến giáp với Dr. do ung thư biểu mô tuyến giật nhú\n\n2.  Tiền sử bệnh hiện",
+          "start": "87",
+          "end": "109"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "ung thư biểu mô tế bào",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - Cắt bỏ thận trái do ung thư biểu mô tế bào thận\n    - Cắt tuyến giáp với Dr. do ung thư biểu mô tuyến giật nhú\n\n2.  Tiền sử bệnh hiện"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True, 'confidence': 1.0, 'reason': 'Tiền sử cắt bỏ thận trái và tuyến giáp do ung thư biểu mô tế bào thận và tuyến giáp nên xác định tiền sử đạt 100%'}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - Cắt bỏ thận trái do ung thư biểu mô tế bào thận\n    - Cắt tuyến giáp với Dr. do ung thư biểu mô tuyến giật nhú\n\n2.  Tiền sử bệnh hiện",
+          "start": "147",
+          "end": "173"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "ung thư biểu mô tuyến giật",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - Cắt bỏ thận trái do ung thư biểu mô tế bào thận\n    - Cắt tuyến giáp với Dr. do ung thư biểu mô tuyến giật nhú\n\n2.  Tiền sử bệnh hiện"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False, 'confidence': 1.0, 'reason': 'Thực thể cụ thể trong bảng tử vong'}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 15,
+        "llm_checked": 4
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783352881.075738
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783352881.0757782
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 15
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'do ung thư biểu mô tuyến', 'position': [144, 168], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.95}], 'confidence': 0.95, 'vote_count': 3, 'max_type_votes': 3, ",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - Cắt bỏ thận trái do ung thư biểu mô tế bào thận\n    - Cắt tuyến giáp với Dr. do ung thư biểu mô tuyến giật nhú\n\n2.  Tiền sử bệnh hiện"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'chỗ uốn gan', 'position': [473, 484], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.5527534484863281}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vote",
+          "context": "ệt mỏi\n    - thiếu máu\n    - phân có guaiac dương tính\n\n    Các sự kiện trước khi nhập viện\n    - Nội soi đại tràng sau xuất viện cho thấy một khối ở chỗ uốn gan\n    - sinh thiết dương tính với ung th"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'ung thư biểu mô tuyến trên', 'position': [849, 875], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vot",
+          "context": "hiệu bệnh lan rộng\n\n    Thủ thuật thực hiện\n    - nội soi đại tràng\n    - sinh thiết\n\n    Các phát hiện chẩn đoán khác\n    - khối ở chỗ uốn gan\n    - ung thư biểu mô tuyến trên sinh thiết\n    - tiền s"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'ung thư biểu mô tế bào', 'position': [87, 109], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters':",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - Cắt bỏ thận trái do ung thư biểu mô tế bào thận\n    - Cắt tuyến giáp với Dr. do ung thư biểu mô tuyến giật nhú\n\n2.  Tiền sử bệnh hiện"
+        },
+        "output": "{'candidates': ['C22.0'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'ung thư biểu mô tuyến giật', 'position': [147, 173], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vot",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - Cắt bỏ thận trái do ung thư biểu mô tế bào thận\n    - Cắt tuyến giáp với Dr. do ung thư biểu mô tuyến giật nhú\n\n2.  Tiền sử bệnh hiện"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 1,
+      "ts": 1783352914.3064606
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783352914.306508
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 15
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'phẫu thuật', 'position': [38, 48], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False, ",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - Cắt bỏ thận trái do ung thư biểu mô tế bào thận\n    - Cắt tuyến giáp với Dr. do ung thư biểu mô tuyến giật nhú\n\n2.  Tiền sử bệnh hiện"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'drop_prediction', 'reason': 'invalid assertion key: confidence'}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'drop_prediction', 'reason': 'invalid ass",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 11,
+        "dropped": 4
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 11,
+      "ts": 1783352914.3072975
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 11,
+      "elapsed": 92.52,
+      "ts": 1783352914.3073356
+    }
+  ],
+  "stats": null
+}

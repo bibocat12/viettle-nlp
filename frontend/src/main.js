@@ -33,10 +33,11 @@ async function init() {
           <h1>Vietnamese Medical NER</h1>
           <span class="subtitle">Agentic Pipeline</span>
           <div class="spacer"></div>
-          <label class="toggle">
-            <input type="checkbox" id="use-llm" />
-            <span>RunPod LLM</span>
-          </label>
+          <select id="model-select" class="folder-select" style="width:auto">
+            <option value="">No LLM</option>
+            <option value="runpod" selected>RunPod</option>
+            <option value="local">Local (models/)</option>
+          </select>
         </header>
         <div class="content">
           <div class="panel panel-left">
@@ -61,6 +62,7 @@ async function init() {
               <span id="log-count"></span>
               <div class="spacer"></div>
               <button class="btn btn-sm" id="detail-btn">Detail</button>
+              <button class="btn btn-sm" id="list-btn">List</button>
             </div>
             <div class="panel-body" id="logs">
               <div class="empty">Agent logs will appear here...</div>
@@ -78,6 +80,7 @@ async function init() {
 
   document.getElementById('extract-btn').addEventListener('click', runExtract)
   document.getElementById('detail-btn').addEventListener('click', toggleDetail)
+  document.getElementById('list-btn').addEventListener('click', toggleList)
   document.addEventListener('click', async (e) => {
     const li = e.target.closest('.file-list li')
     if (li) {
@@ -170,6 +173,26 @@ async function selectFile(id) {
   } else {
     clearResults()
   }
+
+  // Load cached agent logs
+  loadCachedLogs(id)
+}
+
+async function loadCachedLogs(fileId) {
+  clearLogs()
+  try {
+    const resp = await fetch(`${API_BASE}/logs/${fileId}`)
+    const data = await resp.json()
+    if (data.exists && data.logs?.length > 0) {
+      // Show system message
+      addLog({ agent: 'system', action: `Loaded ${data.logs.length} cached logs`, ts: Date.now() / 1000 })
+      for (const entry of data.logs) {
+        addLog(entry)
+      }
+    }
+  } catch (e) {
+    // No cached logs - fine
+  }
 }
 
 async function runExtract() {
@@ -185,11 +208,12 @@ async function runExtract() {
 
   clearResults()
   clearLogs()
-  const useLlm = document.getElementById('use-llm').checked
+  const modelType = document.getElementById('model-select').value
+  const useLlm = modelType !== ''
   const startTime = Date.now()
 
   try {
-    const resp = await apiPost('/extract', { text, use_llm: useLlm, file_id: currentFile, folder: currentFolder })
+    const resp = await apiPost('/extract', { text, use_llm: useLlm, model: modelType, file_id: currentFile, folder: currentFolder })
     const reader = resp.body.getReader()
     const decoder = new TextDecoder()
     let buffer = ''
@@ -316,7 +340,12 @@ function addLog(entry) {
   }
 
   const div = document.createElement('div')
-  div.className = `log-entry ${agent}`
+  let extraClass = ''
+  if (agent === 'llm_verify') extraClass = ' llm_verify'
+  if (action === 'rule_extracted' || action === 'ner_qwen_extracted' || 
+      action === 'ner_healthbert_extracted' || action === 'merged' ||
+      action === 'positions_fixed' || action === 'llm_verified') extraClass = ' extraction-summary'
+  div.className = `log-entry ${agent}${extraClass}`
   div.innerHTML = `<div class="log-header">
     <span><span class="agent">[${agent}]</span> <span class="action">${action}</span>${message ? ` <span class="error">${message}</span>` : ''}</span>
     <span class="ts">${new Date(entry.ts * 1000).toLocaleTimeString()}</span>
@@ -337,6 +366,12 @@ function toggleDetail() {
   })
 }
 
+function toggleList() {
+  document.querySelectorAll('.llm_verify, .extraction-summary').forEach(el => {
+    el.style.display = el.style.display === 'none' ? '' : 'none'
+  })
+}
+
 // Run All files
 let runningAll = false
 async function runAll() {
@@ -346,7 +381,8 @@ async function runAll() {
   const progress = document.getElementById('run-progress')
   const bar = document.getElementById('run-progress-bar')
   const text = document.getElementById('run-progress-text')
-  const useLlm = document.getElementById('use-llm').checked
+  const modelType = document.getElementById('model-select').value
+  const useLlm = modelType !== ''
   const folder = document.getElementById('folder-select').value
 
   btn.disabled = true
@@ -359,7 +395,7 @@ async function runAll() {
   const resp = await fetch('/api/run_all', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ use_llm: useLlm, folder })
+    body: JSON.stringify({ use_llm: useLlm, model: modelType, folder })
   })
   const reader = resp.body.getReader()
   const decoder = new TextDecoder()

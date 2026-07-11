@@ -1,0 +1,407 @@
+{
+  "note_id": "60",
+  "mentions": [
+    {
+      "text": "phẫu thuật",
+      "position": [
+        38,
+        48
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "Trào ngược dạ dày thực quản",
+      "position": [
+        149,
+        176
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      },
+      "candidates": []
+    },
+    {
+      "text": "triệu chứng trào ngược",
+      "position": [
+        242,
+        264
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    },
+    {
+      "text": "gồm đáy vị và một phần",
+      "position": [
+        760,
+        782
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "của lớp băng cuốn lên lồng",
+      "position": [
+        783,
+        809
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "dạ dày thực tế có vẻ",
+      "position": [
+        845,
+        865
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "bình thường",
+      "position": [
+        866,
+        877
+      ],
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [
+      "[1] CHẨN_ĐOÁN has no candidates",
+      "[2] CHẨN_ĐOÁN has no candidates"
+    ]
+  },
+  "stats": {
+    "total_mentions": 7,
+    "final": 7,
+    "validation_errors": 0,
+    "elapsed": 2.42
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 879,
+      "ts": 1783398272.5084798
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398272.5084891
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 879
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 879
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bện"
+        },
+        "output": "{'rule': [{'text': 'phẫu thuật', 'position': [38, 48], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'phẫu thuật', 'position': [62, 72], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'bình thường', 'position': [866, 877], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'confidence': 0.9, 'source': 'rule'}], 'qwen': [], 'healthbert': [{'text': 'Tiền sử phẫu thuật', 'position': [30, 48], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM',",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 3,
+          "qwen": 0,
+          "healthbert": 7,
+          "errors": 0
+        },
+        "total": 8
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'phẫu thuật', 'position': [38, 48], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'phẫu thuật', '"
+        },
+        "output": "[{'text': 'phẫu thuật', 'position': [38, 48], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'phẫu thuật', 'position': [62, 72], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'Trào ngược dạ dày thực quản', 'position': [149, 176], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'ext",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 8
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'phẫu thuật', 'position': [38, 48], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'phẫu thuật', '",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bện"
+        },
+        "output": "[{'text': 'phẫu thuật', 'position': [38, 48], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'phẫu thuật', 'position': [62, 72], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'Trào ngược dạ dày thực quản', 'position': [149, 176], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'ext",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'phẫu thuật', 'position': [38, 48], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False},",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bện"
+        },
+        "output": "[{'text': 'phẫu thuật', 'position': [38, 48], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False}, {'text': 'phẫu thuật', 'position': [38, 48], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': True}, {'text': 'Trào ngược dạ dày thực quản', 'position': [149, 176], 'type': 'CHẨN_ĐOÁN', 'type_candidate",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 2
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 8,
+      "ts": 1783398274.9210014
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398274.921035
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 8
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bện",
+          "start": "149",
+          "end": "176"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bện",
+          "start": "242",
+          "end": "264"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 8,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398274.9211857
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398274.9211993
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 8
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'Trào ngược dạ dày thực quản', 'position': [149, 176], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vo",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bện"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'triệu chứng trào ngược', 'position': [242, 264], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters'",
+          "context": "ication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm th"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1783398274.9317605
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398274.931792
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 8
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'phẫu thuật', 'position': [38, 48], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False, ",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bện"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}], 'final_predictions': [{'text': 'phẫu thuật', 'po",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 7,
+        "dropped": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 7,
+      "ts": 1783398274.9320912
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 7,
+      "elapsed": 2.42,
+      "ts": 1783398274.932107
+    }
+  ]
+}

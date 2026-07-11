@@ -1,0 +1,425 @@
+{
+  "note_id": "85",
+  "mentions": [
+    {
+      "text": "phẫu thuật",
+      "position": [
+        110,
+        120
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "bệnh mạch máu ngoại biên",
+      "position": [
+        168,
+        192
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    },
+    {
+      "text": "bệnh phổi tắc nghẽn mạn tính",
+      "position": [
+        199,
+        227
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": [
+        "J44.9",
+        "J44.8",
+        "J44",
+        "C96.8",
+        "J44.1"
+      ]
+    },
+    {
+      "text": "Ung thư biểu mô tế bào",
+      "position": [
+        287,
+        309
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": [
+        "C22.0"
+      ]
+    },
+    {
+      "text": "sau cắt bao quy đầu với",
+      "position": [
+        350,
+        373
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "bờ diện cắt dương tính",
+      "position": [
+        374,
+        396
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [
+      "[1] CHẨN_ĐOÁN has no candidates"
+    ]
+  },
+  "stats": {
+    "total_mentions": 6,
+    "final": 6,
+    "validation_errors": 0,
+    "elapsed": 3.62
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 611,
+      "ts": 1783398379.6521904
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398379.6522007
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 611
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 611
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính\n    - Đái tháo đường type II\n    - bệnh động mạch vành sau phẫu thuật bắc cầu nối động mạch vành\n    - suy tim\n    - bệnh mạch máu ngoại biên\n    - b"
+        },
+        "output": "{'rule': [{'text': 'phẫu thuật', 'position': [110, 120], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'phẫu thuật', 'position': [410, 420], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'phẫu thuật', 'position': [440, 450], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'phẫu thuật', 'position': [484, 494], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}], 'qwen': [], 'healthbert': [{'text': 'bệnh",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 4,
+          "qwen": 0,
+          "healthbert": 9,
+          "errors": 0
+        },
+        "total": 9
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'phẫu thuật', 'position': [110, 120], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'phẫu thuật',"
+        },
+        "output": "[{'text': 'phẫu thuật', 'position': [110, 120], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'bệnh mạch máu ngoại biên', 'position': [168, 192], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'bệnh phổi tắc nghẽn mạn tính', 'position': [199, 227], 'type': 'CHẨN_ĐOÁ",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 9
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'phẫu thuật', 'position': [110, 120], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'bệnh mạch má",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính\n    - Đái tháo đường type II\n    - bệnh động mạch vành sau phẫu thuật bắc cầu nối động mạch vành\n    - suy tim\n    - bệnh mạch máu ngoại biên\n    - b"
+        },
+        "output": "[{'text': 'phẫu thuật', 'position': [110, 120], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'bệnh mạch máu ngoại biên', 'position': [168, 192], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'bệnh phổi tắc nghẽn mạn tính', 'position': [199, 227], 'type': 'CHẨN_ĐOÁ",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'phẫu thuật', 'position': [110, 120], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính\n    - Đái tháo đường type II\n    - bệnh động mạch vành sau phẫu thuật bắc cầu nối động mạch vành\n    - suy tim\n    - bệnh mạch máu ngoại biên\n    - b"
+        },
+        "output": "[{'text': 'phẫu thuật', 'position': [110, 120], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False}, {'text': 'bệnh mạch máu ngoại biên', 'position': [168, 192], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'bệnh phổi tắc nghẽn mạ",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 3
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 9,
+      "ts": 1783398381.374343
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398381.374382
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 9
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính\n    - Đái tháo đường type II\n    - bệnh động mạch vành sau phẫu thuật bắc cầu nối động mạch vành\n    - suy tim\n    - bệnh mạch máu ngoại biên\n    - b",
+          "start": "168",
+          "end": "192"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính\n    - Đái tháo đường type II\n    - bệnh động mạch vành sau phẫu thuật bắc cầu nối động mạch vành\n    - suy tim\n    - bệnh mạch máu ngoại biên\n    - b",
+          "start": "199",
+          "end": "227"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính\n    - Đái tháo đường type II\n    - bệnh động mạch vành sau phẫu thuật bắc cầu nối động mạch vành\n    - suy tim\n    - bệnh mạch máu ngoại biên\n    - b",
+          "start": "287",
+          "end": "309"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 9,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398381.3746123
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398381.374627
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 9
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'bệnh mạch máu ngoại biên', 'position': [168, 192], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voter",
+          "context": "ội khoa\n    Các bệnh lý mãn tính\n    - Đái tháo đường type II\n    - bệnh động mạch vành sau phẫu thuật bắc cầu nối động mạch vành\n    - suy tim\n    - bệnh mạch máu ngoại biên\n    - bệnh phổi tắc nghẽn"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'bệnh phổi tắc nghẽn mạn tính', 'position': [199, 227], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'v",
+          "context": "h\n    - Đái tháo đường type II\n    - bệnh động mạch vành sau phẫu thuật bắc cầu nối động mạch vành\n    - suy tim\n    - bệnh mạch máu ngoại biên\n    - bệnh phổi tắc nghẽn mạn tính\n    - Ngưng thở khi n"
+        },
+        "output": "{'candidates': ['J44.9', 'J44.8', 'J44', 'C96.8', 'J44.1'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'Ung thư biểu mô tế bào', 'position': [287, 309], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters'",
+          "context": " mạch vành\n    - suy tim\n    - bệnh mạch máu ngoại biên\n    - bệnh phổi tắc nghẽn mạn tính\n    - Ngưng thở khi ngủ do tắc nghẽn đang dùng BiPAP\n    - Ung thư biểu mô tế bào vảy xâm nhập của dương vậtb"
+        },
+        "output": "{'candidates': ['C22.0'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 2
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 2,
+      "ts": 1783398383.2690961
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398383.269134
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 9
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'phẫu thuật', 'position': [110, 120], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính\n    - Đái tháo đường type II\n    - bệnh động mạch vành sau phẫu thuật bắc cầu nối động mạch vành\n    - suy tim\n    - bệnh mạch máu ngoại biên\n    - b"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}], 'final_predi",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 6,
+        "dropped": 3
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 6,
+      "ts": 1783398383.2695222
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 6,
+      "elapsed": 3.62,
+      "ts": 1783398383.2695405
+    }
+  ]
+}

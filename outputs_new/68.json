@@ -1,0 +1,297 @@
+{
+  "note_id": "68",
+  "mentions": [
+    {
+      "text": "bệnh phổi tắc nghẽn mạn tính",
+      "position": [
+        57,
+        85
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      },
+      "candidates": [
+        "J44.9",
+        "J44.8",
+        "J44",
+        "C96.8",
+        "J44.1"
+      ]
+    },
+    {
+      "text": "tâm thần phân liệt",
+      "position": [
+        108,
+        126
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "stats": {
+    "total_mentions": 2,
+    "final": 2,
+    "validation_errors": 0,
+    "elapsed": 1.6
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 297,
+      "ts": 1783398301.117427
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398301.1174362
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 297
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 297
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính\n    - bệnh phổi tắc nghẽn mạn tính, không xác định\n    - tâm thần phân liệt\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: yếu\n    Các triệu chứng h"
+        },
+        "output": "{'rule': [], 'qwen': [], 'healthbert': [{'text': 'bệnh phổi tắc nghẽn mạn tính', 'position': [57, 85], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}]}, {'text': 'tâm thần phân liệt', 'position': [108, 126], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6541697978973389}]}], 'errors': []}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 0,
+          "healthbert": 2,
+          "errors": 0
+        },
+        "total": 2
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'bệnh phổi tắc nghẽn mạn tính', 'position': [57, 85], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vo"
+        },
+        "output": "[{'text': 'bệnh phổi tắc nghẽn mạn tính', 'position': [57, 85], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'tâm thần phân liệt', 'position': [108, 126], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6541697978973389}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}]",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 2
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'bệnh phổi tắc nghẽn mạn tính', 'position': [57, 85], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vo",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính\n    - bệnh phổi tắc nghẽn mạn tính, không xác định\n    - tâm thần phân liệt\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: yếu\n    Các triệu chứng h"
+        },
+        "output": "[{'text': 'bệnh phổi tắc nghẽn mạn tính', 'position': [57, 85], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'tâm thần phân liệt', 'position': [108, 126], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6541697978973389}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}]",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'bệnh phổi tắc nghẽn mạn tính', 'position': [57, 85], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vo",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính\n    - bệnh phổi tắc nghẽn mạn tính, không xác định\n    - tâm thần phân liệt\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: yếu\n    Các triệu chứng h"
+        },
+        "output": "[{'text': 'bệnh phổi tắc nghẽn mạn tính', 'position': [57, 85], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'tâm thần phân liệt', 'position': [108, 126], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6541697978973389}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbe",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 2,
+      "ts": 1783398301.8474467
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398301.8474758
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 2
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính\n    - bệnh phổi tắc nghẽn mạn tính, không xác định\n    - tâm thần phân liệt\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: yếu\n    Các triệu chứng h",
+          "start": "57",
+          "end": "85"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 2,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398301.847583
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398301.8475966
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 2
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'bệnh phổi tắc nghẽn mạn tính', 'position': [57, 85], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vot",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính\n    - bệnh phổi tắc nghẽn mạn tính, không xác định\n    - tâm thần phân liệt\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: yếu\n    Các triệu chứng h"
+        },
+        "output": "{'candidates': ['J44.9', 'J44.8', 'J44', 'C96.8', 'J44.1'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 1,
+      "ts": 1783398302.7197742
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398302.7198067
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 2
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'bệnh phổi tắc nghẽn mạn tính', 'position': [57, 85], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vo",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính\n    - bệnh phổi tắc nghẽn mạn tính, không xác định\n    - tâm thần phân liệt\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: yếu\n    Các triệu chứng h"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}], 'final_predictions': [{'text': 'bệnh phổi tắc nghẽn mạn tính', 'position': [57, 85], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False, 'assertions': {'isNegated': False, 'isFamily': False, 'isHistorical': True}, 'assertion_confiden",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 2,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 2,
+      "ts": 1783398302.7199945
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 2,
+      "elapsed": 1.6,
+      "ts": 1783398302.7200131
+    }
+  ]
+}

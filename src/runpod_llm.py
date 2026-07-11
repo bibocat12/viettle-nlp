@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 
 load_dotenv(Path(__file__).parent.parent / ".env")
 
-RUNPOD_API_URL = "https://api.runpod.ai/v2/c4qbicuam59iw1"
+RUNPOD_API_URL = os.getenv("RUNPOD_URL", "https://api.runpod.ai/v2/c4qbicuam59iw1")
 RUNPOD_API_KEY = os.getenv("RUNPOD_APIKEY", "")
 
 SYS_START = chr(10022) + "im_start" + chr(10022) + "system\n"

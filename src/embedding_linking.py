@@ -30,7 +30,6 @@ def _load_model(device: str = "cpu"):
     _device = device
     base = os.environ.get("VIETTLE_MODELS_DIR", str(Path(__file__).parent.parent / "models"))
     model_path = os.path.join(base, "vipubmed-deberta-base")
-    # transformers 5.x validates repo IDs strictly; bypass hub entirely
     os.environ.setdefault("HF_HUB_OFFLINE", "1")
     _tokenizer = AutoTokenizer.from_pretrained(model_path, local_files_only=True)
     _model = AutoModel.from_pretrained(model_path, local_files_only=True)
@@ -41,7 +40,7 @@ def _load_model(device: str = "cpu"):
 
 
 @torch.no_grad()
-def _encode(texts: List[str], max_length: int = 128) -> np.ndarray:
+def _encode(texts, max_length: int = 128) -> np.ndarray:
     _load_model()
     if isinstance(texts, str):
         texts = [texts]
@@ -63,49 +62,27 @@ def _encode(texts: List[str], max_length: int = 128) -> np.ndarray:
     return np.vstack(all_embeddings)
 
 
-def get_embedding(text: str) -> List[float]:
-    """Get DeBERTa embedding for a single text."""
-    emb = _encode(text)
-    return emb[0].tolist()
+# ─── Reranking (existing) ───────────────────────────────────────────
 
 
 def rerank_icd10(query: str, candidates: List[Dict], kb, top_k: int = 5) -> List[Dict]:
-    """Rerank ICD-10 candidates using semantic embeddings.
-    
-    Args:
-        query: The mention text
-        candidates: List of candidate dicts with 'code' key from kb.search_icd10
-        kb: KnowledgeBase instance
-        
-    Returns:
-        Reranked list of candidates with updated scores
-    """
     if not candidates:
         return []
-    
-    # Build texts for each candidate
     cand_texts = []
     for c in candidates:
         code = c["code"]
         info = kb.get_icd10_code(code)
         name = info.get("vietnamese_name", "") or info.get("english_name", "") or ""
-        # Combine Vietnamese + English for better matching
         en = info.get("english_name", "")
         text = name
         if en and en != name:
             text += " " + en
         cand_texts.append(text if text else code)
-    
-    # Encode query and candidates
     query_emb = _encode(query)
     cand_embs = _encode(cand_texts)
-    
-    # Compute cosine similarity
     scores = np.dot(cand_embs, query_emb.T).squeeze()
     if len(cand_texts) == 1:
         scores = np.array([float(scores)])
-    
-    # Rerank
     results = []
     for i, c in enumerate(candidates):
         results.append({
@@ -114,29 +91,24 @@ def rerank_icd10(query: str, candidates: List[Dict], kb, top_k: int = 5) -> List
             "score": float(scores[i]),
             "old_score": c.get("score", 0),
         })
-    
     results.sort(key=lambda x: x["score"], reverse=True)
     return results[:top_k]
 
 
 def rerank_rxnorm(query: str, candidates: List[Dict], kb, top_k: int = 5) -> List[Dict]:
-    """Rerank RxNorm candidates using semantic embeddings."""
     if not candidates:
         return []
-    
     cand_texts = []
     for c in candidates:
         cui = c["rxcui"]
         info = kb.get_rxnorm_concept(cui)
         name = info.get("prefLabel", "") if info else ""
         cand_texts.append(name if name else cui)
-    
     query_emb = _encode(query)
     cand_embs = _encode(cand_texts)
     scores = np.dot(cand_embs, query_emb.T).squeeze()
     if len(cand_texts) == 1:
         scores = np.array([float(scores)])
-    
     results = []
     for i, c in enumerate(candidates):
         results.append({
@@ -145,6 +117,71 @@ def rerank_rxnorm(query: str, candidates: List[Dict], kb, top_k: int = 5) -> Lis
             "score": float(scores[i]),
             "old_score": c.get("score", 0),
         })
-    
     results.sort(key=lambda x: x["score"], reverse=True)
     return results[:top_k]
+
+
+# ─── Full KB embedding search (new) ─────────────────────────────────
+
+_icd10_embeddings = None
+_icd10_codes: List[str] = []
+_icd10_names: List[str] = []
+_rxnorm_embeddings = None
+_rxnorm_codes: List[str] = []
+_rxnorm_names: List[str] = []
+
+
+def _build_icd10_index(kb):
+    global _icd10_embeddings, _icd10_codes, _icd10_names
+    if _icd10_embeddings is not None:
+        return
+    codes, names = [], []
+    for code, info in kb.icd10.items():
+        name = info.get("vietnamese_name", "") or info.get("english_name", "")
+        if name:
+            codes.append(code)
+            names.append(name)
+    _icd10_codes = codes
+    _icd10_names = names
+    _icd10_embeddings = _encode(names)
+
+
+def _build_rxnorm_index(kb):
+    global _rxnorm_embeddings, _rxnorm_codes, _rxnorm_names
+    if _rxnorm_embeddings is not None:
+        return
+    codes, names = [], []
+    for cui, info in kb.rxnorm_concepts.items():
+        name = info.get("prefLabel", "")
+        if name:
+            codes.append(cui)
+            names.append(name)
+    _rxnorm_codes = codes
+    _rxnorm_names = names
+    _rxnorm_embeddings = _encode(names)
+
+
+def search_icd10_embedding(query: str, kb, top_k: int = 15) -> List[Dict]:
+    """Full KB embedding search for ICD-10. Replaces fuzzy search."""
+    _load_model()
+    _build_icd10_index(kb)
+    q_emb = _encode(query)
+    scores = np.dot(_icd10_embeddings, q_emb.T).squeeze()
+    top_idx = np.argsort(scores)[-top_k:][::-1]
+    return [
+        {"code": _icd10_codes[i], "score": float(scores[i]), "name": _icd10_names[i]}
+        for i in top_idx if scores[i] > 0.1
+    ]
+
+
+def search_rxnorm_embedding(query: str, kb, top_k: int = 15) -> List[Dict]:
+    """Full KB embedding search for RxNorm. Replaces fuzzy search."""
+    _load_model()
+    _build_rxnorm_index(kb)
+    q_emb = _encode(query)
+    scores = np.dot(_rxnorm_embeddings, q_emb.T).squeeze()
+    top_idx = np.argsort(scores)[-top_k:][::-1]
+    return [
+        {"rxcui": _rxnorm_codes[i], "score": float(scores[i]), "name": _rxnorm_names[i]}
+        for i in top_idx if scores[i] > 0.1
+    ]

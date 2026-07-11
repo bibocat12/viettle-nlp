@@ -1,0 +1,4529 @@
+{
+  "file_id": "10",
+  "timestamp": 1783527093.1547098,
+  "elapsed": 129.57,
+  "model": "runpod",
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 784,
+      "ts": 1783526963.5827174
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783526963.5829322
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 784
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 784
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1. Tiền sử bệnh nội khoa\nChưa phát hiện bệnh lý bất thường\n2. Tiền sử bệnh hiện tại\nTriệu chứng hiện tại\n- Đờm\n- ho\n- đôi khi đau bụng quặn\n- tiêu chảy\n- đôi khi đi ngoài ra máu\n- không tăng cân nhiều\n3. Đánh giá tại bệnh viện\nKết quả xét nghiệm: cea (kháng nguyên ung thư phôi) tăng nhẹ lên 4.9\nKết quả chẩn đoán hình ảnh\n- mri vùng chậu thực tế không chẩn đoán được do không có mỡ nào trong cơ thể\n- siêu âm hôm nay cũng rất khó khăn, nhưng cho thấy có thể có một tổn thương t2 tốt nhất, nhưng một số vùng không thể đánh giá tốt\nThủ thuật thực hiện\n- sinh thiết (trước đây)\n- siêu âm hôm nay\nCác phát hiện chẩn đoán khác\n- khối u trực tràng với hình ảnh của một u ác trực tràng đáng kể\n- sinh thiết chỉ cho thấy một u tuyến\n- đến khám để phân giai đoạn phẫu thuật với tem (viết tắt)"
+        },
+        "output": {
+          "rule": [],
+          "qwen": [
+            {
+              "text": "Chưa phát hiện bệnh lý bất thường",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                25,
+                58
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "cea",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                247,
+                250
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ung thư phôi",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                265,
+                277
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "mri vùng chậu",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                324,
+                337
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "siêu âm",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                401,
+                408
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "u tuyến",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                718,
+                725
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.8,
+              "candidates": [
+                "D44.8",
+                "D35.8",
+                "E04",
+                "E03.9",
+                "C75.8"
+              ],
+              "link_confidence": 0.8
+            },
+            {
+              "text": "phẫu thuật",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                755,
+                765
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "tem",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                770,
+                773
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Đờm",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                107,
+                110
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.9
+            },
+            {
+              "text": "ho",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                21,
+                23
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.9
+            },
+            {
+              "text": "đau bụng quặn",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                125,
+                138
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "tiêu chảy",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                142,
+                151
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "healthbert": [
+            {
+              "text": "đôi khi đau bụng quặn",
+              "position": [
+                118,
+                139
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.5648576021194458
+                }
+              ],
+              "extraction_source": "healthbert"
+            },
+            {
+              "text": "không tăng cân nhiều",
+              "position": [
+                180,
+                200
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.5613130331039429
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "mri vùng chậu thực tế không",
+              "position": [
+                325,
+                352
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert"
+            },
+            {
+              "text": "chẩn đoán được do không có",
+              "position": [
+                353,
+                379
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.7053505182266235
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "siêu âm hôm nay cũng rất",
+              "position": [
+                402,
+                426
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert"
+            },
+            {
+              "text": "siêu âm hôm nay",
+              "position": [
+                402,
+                417
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 12,
+          "healthbert": 6
+        },
+        "total": 18
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "Chưa phát hiện bệnh lý bất thường",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                25,
+                58
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "cea",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                247,
+                250
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ung thư phôi",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                265,
+                277
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "mri vùng chậu",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                324,
+                337
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "siêu âm",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                401,
+                408
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "u tuyến",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                718,
+                725
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.8,
+              "candidates": [
+                "D44.8",
+                "D35.8",
+                "E04",
+                "E03.9",
+                "C75.8"
+              ],
+              "link_confidence": 0.8
+            },
+            {
+              "text": "phẫu thuật",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                755,
+                765
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "tem",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                770,
+                773
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Đờm",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                107,
+                110
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.9
+            },
+            {
+              "text": "ho",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                21,
+                23
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.9
+            },
+            {
+              "text": "đau bụng quặn",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                125,
+                138
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "tiêu chảy",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                142,
+                151
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đôi khi đau bụng quặn",
+              "position": [
+                118,
+                139
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.5648576021194458
+                }
+              ],
+              "extraction_source": "healthbert"
+            },
+            {
+              "text": "không tăng cân nhiều",
+              "position": [
+                180,
+                200
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.5613130331039429
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "mri vùng chậu thực tế không",
+              "position": [
+                325,
+                352
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert"
+            },
+            {
+              "text": "chẩn đoán được do không có",
+              "position": [
+                353,
+                379
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.7053505182266235
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "siêu âm hôm nay cũng rất",
+              "position": [
+                402,
+                426
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert"
+            },
+            {
+              "text": "siêu âm hôm nay",
+              "position": [
+                402,
+                417
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "Chưa phát hiện bệnh lý bất thường",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              25,
+              58
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "Đờm",
+            "type": "TRIỆU_CHỨNG",
+            "source": "ner_llm_relocated",
+            "position": [
+              107,
+              110
+            ],
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.9
+          },
+          {
+            "text": "ho",
+            "type": "TRIỆU_CHỨNG",
+            "source": "ner_llm_relocated",
+            "position": [
+              21,
+              23
+            ],
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.9
+          },
+          {
+            "text": "đôi khi đau bụng quặn",
+            "position": [
+              118,
+              139
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "healthbert": 1,
+              "ner_llm_relocated": 1
+            },
+            "type_votes": {
+              "TRIỆU_CHỨNG": 2
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.9
+          },
+          {
+            "text": "tiêu chảy",
+            "type": "TRIỆU_CHỨNG",
+            "source": "ner_llm_relocated",
+            "position": [
+              142,
+              151
+            ],
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "không tăng cân nhiều",
+            "position": [
+              180,
+              200
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.5613130331039429
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "cea",
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              247,
+              250
+            ],
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "ung thư phôi",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              265,
+              277
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "mri vùng chậu",
+            "position": [
+              325,
+              338
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "ner_llm_relocated": 1,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 2
+            },
+            "needs_review": false,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chẩn đoán được do không có",
+            "position": [
+              353,
+              379
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.7053505182266235
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "siêu âm",
+            "position": [
+              402,
+              409
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "ner_llm_relocated": 1,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 2
+            },
+            "needs_review": false,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "siêu âm hôm nay",
+            "position": [
+              402,
+              417
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "u tuyến",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              718,
+              725
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.9
+              }
+            ],
+            "llm_corrected": true,
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.8,
+            "candidates": [
+              "D44.8",
+              "D35.8",
+              "E04",
+              "E03.9",
+              "C75.8"
+            ],
+            "link_confidence": 0.8
+          },
+          {
+            "text": "phẫu thuật",
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              755,
+              765
+            ],
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "tem",
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              770,
+              773
+            ],
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 15
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "Chưa phát hiện bệnh lý bất thường",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                25,
+                58
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Đờm",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                107,
+                110
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.9
+            },
+            {
+              "text": "ho",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                21,
+                23
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.9
+            },
+            {
+              "text": "đôi khi đau bụng quặn",
+              "position": [
+                118,
+                139
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "healthbert": 1,
+                "ner_llm_relocated": 1
+              },
+              "type_votes": {
+                "TRIỆU_CHỨNG": 2
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.9
+            },
+            {
+              "text": "tiêu chảy",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                142,
+                151
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "không tăng cân nhiều",
+              "position": [
+                180,
+                200
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.5613130331039429
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "cea",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                247,
+                250
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ung thư phôi",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                265,
+                277
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "mri vùng chậu",
+              "position": [
+                325,
+                338
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "ner_llm_relocated": 1,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 2
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chẩn đoán được do không có",
+              "position": [
+                353,
+                379
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.7053505182266235
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                402,
+                409
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "ner_llm_relocated": 1,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 2
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "siêu âm hôm nay",
+              "position": [
+                402,
+                417
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "u tuyến",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                718,
+                725
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.8,
+              "candidates": [
+                "D44.8",
+                "D35.8",
+                "E04",
+                "E03.9",
+                "C75.8"
+              ],
+              "link_confidence": 0.8
+            },
+            {
+              "text": "phẫu thuật",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                755,
+                765
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "tem",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                770,
+                773
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1. Tiền sử bệnh nội khoa\nChưa phát hiện bệnh lý bất thường\n2. Tiền sử bệnh hiện tại\nTriệu chứng hiện tại\n- Đờm\n- ho\n- đôi khi đau bụng quặn\n- tiêu chảy\n- đôi khi đi ngoài ra máu\n- không tăng cân nhiều\n3. Đánh giá tại bệnh viện\nKết quả xét nghiệm: cea (kháng nguyên ung thư phôi) tăng nhẹ lên 4.9\nKết quả chẩn đoán hình ảnh\n- mri vùng chậu thực tế không chẩn đoán được do không có mỡ nào trong cơ thể\n- siêu âm hôm nay cũng rất khó khăn, nhưng cho thấy có thể có một tổn thương t2 tốt nhất, nhưng một số vùng không thể đánh giá tốt\nThủ thuật thực hiện\n- sinh thiết (trước đây)\n- siêu âm hôm nay\nCác phát hiện chẩn đoán khác\n- khối u trực tràng với hình ảnh của một u ác trực tràng đáng kể\n- sinh thiết chỉ cho thấy một u tuyến\n- đến khám để phân giai đoạn phẫu thuật với tem (viết tắt)"
+        },
+        "output": [
+          {
+            "text": "Chưa phát hiện bệnh lý bất thường",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              25,
+              58
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "Đờm",
+            "type": "TRIỆU_CHỨNG",
+            "source": "ner_llm_relocated",
+            "position": [
+              107,
+              110
+            ],
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.9
+          },
+          {
+            "text": "ho",
+            "type": "TRIỆU_CHỨNG",
+            "source": "ner_llm_relocated",
+            "position": [
+              21,
+              23
+            ],
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.9
+          },
+          {
+            "text": "đôi khi đau bụng quặn",
+            "position": [
+              118,
+              139
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "healthbert": 1,
+              "ner_llm_relocated": 1
+            },
+            "type_votes": {
+              "TRIỆU_CHỨNG": 2
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.9
+          },
+          {
+            "text": "tiêu chảy",
+            "type": "TRIỆU_CHỨNG",
+            "source": "ner_llm_relocated",
+            "position": [
+              142,
+              151
+            ],
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "không tăng cân nhiều",
+            "position": [
+              180,
+              200
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.5613130331039429
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "cea",
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              247,
+              250
+            ],
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "ung thư phôi",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              265,
+              277
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "mri vùng chậu",
+            "position": [
+              325,
+              338
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "ner_llm_relocated": 1,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 2
+            },
+            "needs_review": false,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chẩn đoán được do không có",
+            "position": [
+              353,
+              379
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.7053505182266235
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "siêu âm",
+            "position": [
+              402,
+              409
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "ner_llm_relocated": 1,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 2
+            },
+            "needs_review": false,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "siêu âm hôm nay",
+            "position": [
+              402,
+              417
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "u tuyến",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              718,
+              725
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.9
+              }
+            ],
+            "llm_corrected": true,
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.8,
+            "candidates": [
+              "D44.8",
+              "D35.8",
+              "E04",
+              "E03.9",
+              "C75.8"
+            ],
+            "link_confidence": 0.8
+          },
+          {
+            "text": "phẫu thuật",
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              755,
+              765
+            ],
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "tem",
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              770,
+              773
+            ],
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "Chưa phát hiện bệnh lý bất thường",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                25,
+                58
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Đờm",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                107,
+                110
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.9
+            },
+            {
+              "text": "ho",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                21,
+                23
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.9
+            },
+            {
+              "text": "đôi khi đau bụng quặn",
+              "position": [
+                118,
+                139
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "healthbert": 1,
+                "ner_llm_relocated": 1
+              },
+              "type_votes": {
+                "TRIỆU_CHỨNG": 2
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.9
+            },
+            {
+              "text": "tiêu chảy",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                142,
+                151
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "không tăng cân nhiều",
+              "position": [
+                180,
+                200
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.5613130331039429
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "cea",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                247,
+                250
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ung thư phôi",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                265,
+                277
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "mri vùng chậu",
+              "position": [
+                325,
+                338
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "ner_llm_relocated": 1,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 2
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chẩn đoán được do không có",
+              "position": [
+                353,
+                379
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.7053505182266235
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                402,
+                409
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "ner_llm_relocated": 1,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 2
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "siêu âm hôm nay",
+              "position": [
+                402,
+                417
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "u tuyến",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                718,
+                725
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.8,
+              "candidates": [
+                "D44.8",
+                "D35.8",
+                "E04",
+                "E03.9",
+                "C75.8"
+              ],
+              "link_confidence": 0.8
+            },
+            {
+              "text": "phẫu thuật",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                755,
+                765
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "tem",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                770,
+                773
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1. Tiền sử bệnh nội khoa\nChưa phát hiện bệnh lý bất thường\n2. Tiền sử bệnh hiện tại\nTriệu chứng hiện tại\n- Đờm\n- ho\n- đôi khi đau bụng quặn\n- tiêu chảy\n- đôi khi đi ngoài ra máu\n- không tăng cân nhiều\n3. Đánh giá tại bệnh viện\nKết quả xét nghiệm: cea (kháng nguyên ung thư phôi) tăng nhẹ lên 4.9\nKết quả chẩn đoán hình ảnh\n- mri vùng chậu thực tế không chẩn đoán được do không có mỡ nào trong cơ thể\n- siêu âm hôm nay cũng rất khó khăn, nhưng cho thấy có thể có một tổn thương t2 tốt nhất, nhưng một số vùng không thể đánh giá tốt\nThủ thuật thực hiện\n- sinh thiết (trước đây)\n- siêu âm hôm nay\nCác phát hiện chẩn đoán khác\n- khối u trực tràng với hình ảnh của một u ác trực tràng đáng kể\n- sinh thiết chỉ cho thấy một u tuyến\n- đến khám để phân giai đoạn phẫu thuật với tem (viết tắt)"
+        },
+        "output": [
+          {
+            "text": "Chưa phát hiện bệnh lý bất thường",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              25,
+              58
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "Đờm",
+            "type": "TRIỆU_CHỨNG",
+            "source": "ner_llm_relocated",
+            "position": [
+              107,
+              110
+            ],
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.9
+          },
+          {
+            "text": "ho",
+            "type": "TRIỆU_CHỨNG",
+            "source": "ner_llm_relocated",
+            "position": [
+              21,
+              23
+            ],
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.9
+          },
+          {
+            "text": "đôi khi đau bụng quặn",
+            "position": [
+              118,
+              139
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "healthbert": 1,
+              "ner_llm_relocated": 1
+            },
+            "type_votes": {
+              "TRIỆU_CHỨNG": 2
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.9
+          },
+          {
+            "text": "tiêu chảy",
+            "type": "TRIỆU_CHỨNG",
+            "source": "ner_llm_relocated",
+            "position": [
+              142,
+              151
+            ],
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "không tăng cân nhiều",
+            "position": [
+              180,
+              200
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.5613130331039429
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "cea",
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              247,
+              250
+            ],
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "ung thư phôi",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              265,
+              277
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "mri vùng chậu",
+            "position": [
+              325,
+              338
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "ner_llm_relocated": 1,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 2
+            },
+            "needs_review": false,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chẩn đoán được do không có",
+            "position": [
+              353,
+              379
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.7053505182266235
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "siêu âm",
+            "position": [
+              402,
+              409
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "ner_llm_relocated": 1,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 2
+            },
+            "needs_review": false,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "siêu âm hôm nay",
+            "position": [
+              402,
+              417
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "u tuyến",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              718,
+              725
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.9
+              }
+            ],
+            "llm_corrected": true,
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.8,
+            "candidates": [
+              "D44.8",
+              "D35.8",
+              "E04",
+              "E03.9",
+              "C75.8"
+            ],
+            "link_confidence": 0.8
+          },
+          {
+            "text": "phẫu thuật",
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              755,
+              765
+            ],
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "tem",
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              770,
+              773
+            ],
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 11
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 15,
+      "ts": 1783527042.768682
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783527042.7687163
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 15
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh nội khoa\nChưa phát hiện bệnh lý bất thường\n2. Tiền sử bệnh hiện tại\nTriệu chứng hiện tại\n- Đờm\n- ho\n- đôi khi đau bụng quặn\n- tiêu chảy\n- đôi khi đi ngoài ra máu\n- không tăng cân nhiều\n3. Đánh giá tại bệnh viện\nKết quả xét nghiệm: cea (kháng nguyên ung thư phôi) tăng nhẹ lên 4.9\nKết quả chẩn đoán hình ảnh\n- mri vùng chậu thực tế không chẩn đoán được do không có mỡ nào trong cơ thể\n- siêu âm hôm nay cũng rất khó khăn, nhưng cho thấy có thể có một tổn thương t2 tốt nhất, nhưng một số vùng không thể đánh giá tốt\nThủ thuật thực hiện\n- sinh thiết (trước đây)\n- siêu âm hôm nay\nCác phát hiện chẩn đoán khác\n- khối u trực tràng với hình ảnh của một u ác trực tràng đáng kể\n- sinh thiết chỉ cho thấy một u tuyến\n- đến khám để phân giai đoạn phẫu thuật với tem (viết tắt)",
+          "start": 107,
+          "end": 110
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "Đờm",
+          "mtype": "TRIỆU_CHỨNG",
+          "context": "1. Tiền sử bệnh nội khoa\nChưa phát hiện bệnh lý bất thường\n2. Tiền sử bệnh hiện tại\nTriệu chứng hiện tại\n- Đờm\n- ho\n- đôi khi đau bụng quặn\n- tiêu chảy\n- đôi khi đi ngoài ra máu\n- không tăng cân nhiều\n3. Đánh giá tại bệnh viện\nKết quả xét nghiệm: cea (kháng ng"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh nội khoa\nChưa phát hiện bệnh lý bất thường\n2. Tiền sử bệnh hiện tại\nTriệu chứng hiện tại\n- Đờm\n- ho\n- đôi khi đau bụng quặn\n- tiêu chảy\n- đôi khi đi ngoài ra máu\n- không tăng cân nhiều\n3. Đánh giá tại bệnh viện\nKết quả xét nghiệm: cea (kháng nguyên ung thư phôi) tăng nhẹ lên 4.9\nKết quả chẩn đoán hình ảnh\n- mri vùng chậu thực tế không chẩn đoán được do không có mỡ nào trong cơ thể\n- siêu âm hôm nay cũng rất khó khăn, nhưng cho thấy có thể có một tổn thương t2 tốt nhất, nhưng một số vùng không thể đánh giá tốt\nThủ thuật thực hiện\n- sinh thiết (trước đây)\n- siêu âm hôm nay\nCác phát hiện chẩn đoán khác\n- khối u trực tràng với hình ảnh của một u ác trực tràng đáng kể\n- sinh thiết chỉ cho thấy một u tuyến\n- đến khám để phân giai đoạn phẫu thuật với tem (viết tắt)",
+          "start": 21,
+          "end": 23
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "ho",
+          "mtype": "TRIỆU_CHỨNG",
+          "context": "1. Tiền sử bệnh nội khoa\nChưa phát hiện bệnh lý bất thường\n2. Tiền sử bệnh hiện tại\nTriệu chứng hiện tại\n- Đờm\n- ho\n- đôi khi đau bụng quặn\n- tiêu chảy\n- đôi khi đi ngoài ra"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh nội khoa\nChưa phát hiện bệnh lý bất thường\n2. Tiền sử bệnh hiện tại\nTriệu chứng hiện tại\n- Đờm\n- ho\n- đôi khi đau bụng quặn\n- tiêu chảy\n- đôi khi đi ngoài ra máu\n- không tăng cân nhiều\n3. Đánh giá tại bệnh viện\nKết quả xét nghiệm: cea (kháng nguyên ung thư phôi) tăng nhẹ lên 4.9\nKết quả chẩn đoán hình ảnh\n- mri vùng chậu thực tế không chẩn đoán được do không có mỡ nào trong cơ thể\n- siêu âm hôm nay cũng rất khó khăn, nhưng cho thấy có thể có một tổn thương t2 tốt nhất, nhưng một số vùng không thể đánh giá tốt\nThủ thuật thực hiện\n- sinh thiết (trước đây)\n- siêu âm hôm nay\nCác phát hiện chẩn đoán khác\n- khối u trực tràng với hình ảnh của một u ác trực tràng đáng kể\n- sinh thiết chỉ cho thấy một u tuyến\n- đến khám để phân giai đoạn phẫu thuật với tem (viết tắt)",
+          "start": 118,
+          "end": 139
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "đôi khi đau bụng quặn",
+          "mtype": "TRIỆU_CHỨNG",
+          "context": "1. Tiền sử bệnh nội khoa\nChưa phát hiện bệnh lý bất thường\n2. Tiền sử bệnh hiện tại\nTriệu chứng hiện tại\n- Đờm\n- ho\n- đôi khi đau bụng quặn\n- tiêu chảy\n- đôi khi đi ngoài ra máu\n- không tăng cân nhiều\n3. Đánh giá tại bệnh viện\nKết quả xét nghiệm: cea (kháng nguyên ung thư phôi) tăng nhẹ l"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh nội khoa\nChưa phát hiện bệnh lý bất thường\n2. Tiền sử bệnh hiện tại\nTriệu chứng hiện tại\n- Đờm\n- ho\n- đôi khi đau bụng quặn\n- tiêu chảy\n- đôi khi đi ngoài ra máu\n- không tăng cân nhiều\n3. Đánh giá tại bệnh viện\nKết quả xét nghiệm: cea (kháng nguyên ung thư phôi) tăng nhẹ lên 4.9\nKết quả chẩn đoán hình ảnh\n- mri vùng chậu thực tế không chẩn đoán được do không có mỡ nào trong cơ thể\n- siêu âm hôm nay cũng rất khó khăn, nhưng cho thấy có thể có một tổn thương t2 tốt nhất, nhưng một số vùng không thể đánh giá tốt\nThủ thuật thực hiện\n- sinh thiết (trước đây)\n- siêu âm hôm nay\nCác phát hiện chẩn đoán khác\n- khối u trực tràng với hình ảnh của một u ác trực tràng đáng kể\n- sinh thiết chỉ cho thấy một u tuyến\n- đến khám để phân giai đoạn phẫu thuật với tem (viết tắt)",
+          "start": 142,
+          "end": 151
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh nội khoa\nChưa phát hiện bệnh lý bất thường\n2. Tiền sử bệnh hiện tại\nTriệu chứng hiện tại\n- Đờm\n- ho\n- đôi khi đau bụng quặn\n- tiêu chảy\n- đôi khi đi ngoài ra máu\n- không tăng cân nhiều\n3. Đánh giá tại bệnh viện\nKết quả xét nghiệm: cea (kháng nguyên ung thư phôi) tăng nhẹ lên 4.9\nKết quả chẩn đoán hình ảnh\n- mri vùng chậu thực tế không chẩn đoán được do không có mỡ nào trong cơ thể\n- siêu âm hôm nay cũng rất khó khăn, nhưng cho thấy có thể có một tổn thương t2 tốt nhất, nhưng một số vùng không thể đánh giá tốt\nThủ thuật thực hiện\n- sinh thiết (trước đây)\n- siêu âm hôm nay\nCác phát hiện chẩn đoán khác\n- khối u trực tràng với hình ảnh của một u ác trực tràng đáng kể\n- sinh thiết chỉ cho thấy một u tuyến\n- đến khám để phân giai đoạn phẫu thuật với tem (viết tắt)",
+          "start": 180,
+          "end": 200
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh nội khoa\nChưa phát hiện bệnh lý bất thường\n2. Tiền sử bệnh hiện tại\nTriệu chứng hiện tại\n- Đờm\n- ho\n- đôi khi đau bụng quặn\n- tiêu chảy\n- đôi khi đi ngoài ra máu\n- không tăng cân nhiều\n3. Đánh giá tại bệnh viện\nKết quả xét nghiệm: cea (kháng nguyên ung thư phôi) tăng nhẹ lên 4.9\nKết quả chẩn đoán hình ảnh\n- mri vùng chậu thực tế không chẩn đoán được do không có mỡ nào trong cơ thể\n- siêu âm hôm nay cũng rất khó khăn, nhưng cho thấy có thể có một tổn thương t2 tốt nhất, nhưng một số vùng không thể đánh giá tốt\nThủ thuật thực hiện\n- sinh thiết (trước đây)\n- siêu âm hôm nay\nCác phát hiện chẩn đoán khác\n- khối u trực tràng với hình ảnh của một u ác trực tràng đáng kể\n- sinh thiết chỉ cho thấy một u tuyến\n- đến khám để phân giai đoạn phẫu thuật với tem (viết tắt)",
+          "start": 265,
+          "end": 277
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "ung thư phôi",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": "\n- đôi khi đau bụng quặn\n- tiêu chảy\n- đôi khi đi ngoài ra máu\n- không tăng cân nhiều\n3. Đánh giá tại bệnh viện\nKết quả xét nghiệm: cea (kháng nguyên ung thư phôi) tăng nhẹ lên 4.9\nKết quả chẩn đoán hình ảnh\n- mri vùng chậu thực tế không chẩn đoán được do không có mỡ nào trong cơ thể\n- siêu âm hôm nay cũng rất "
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh nội khoa\nChưa phát hiện bệnh lý bất thường\n2. Tiền sử bệnh hiện tại\nTriệu chứng hiện tại\n- Đờm\n- ho\n- đôi khi đau bụng quặn\n- tiêu chảy\n- đôi khi đi ngoài ra máu\n- không tăng cân nhiều\n3. Đánh giá tại bệnh viện\nKết quả xét nghiệm: cea (kháng nguyên ung thư phôi) tăng nhẹ lên 4.9\nKết quả chẩn đoán hình ảnh\n- mri vùng chậu thực tế không chẩn đoán được do không có mỡ nào trong cơ thể\n- siêu âm hôm nay cũng rất khó khăn, nhưng cho thấy có thể có một tổn thương t2 tốt nhất, nhưng một số vùng không thể đánh giá tốt\nThủ thuật thực hiện\n- sinh thiết (trước đây)\n- siêu âm hôm nay\nCác phát hiện chẩn đoán khác\n- khối u trực tràng với hình ảnh của một u ác trực tràng đáng kể\n- sinh thiết chỉ cho thấy một u tuyến\n- đến khám để phân giai đoạn phẫu thuật với tem (viết tắt)",
+          "start": 718,
+          "end": 725
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "u tuyến",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": "ớc đây)\n- siêu âm hôm nay\nCác phát hiện chẩn đoán khác\n- khối u trực tràng với hình ảnh của một u ác trực tràng đáng kể\n- sinh thiết chỉ cho thấy một u tuyến\n- đến khám để phân giai đoạn phẫu thuật với tem (viết tắt)"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 15,
+        "llm_checked": 4
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783527063.6431582
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783527063.6431823
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 15
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "ung thư phôi",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              265,
+              277
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          "context": "\n- đôi khi đau bụng quặn\n- tiêu chảy\n- đôi khi đi ngoài ra máu\n- không tăng cân nhiều\n3. Đánh giá tại bệnh viện\nKết quả xét nghiệm: cea (kháng nguyên ung thư phôi) tăng nhẹ lên 4.9\nKết quả chẩn đoán hình ảnh\n- mri vùng chậu thực tế không chẩn đoán được do không có mỡ nào trong cơ thể\n- siêu âm hôm nay cũng rất "
+        },
+        "output": {
+          "candidates": [],
+          "confidence": 0.0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "u tuyến",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              718,
+              725
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.9
+              }
+            ],
+            "llm_corrected": true,
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.8,
+            "candidates": [
+              "D44.8",
+              "D35.8",
+              "E04",
+              "E03.9",
+              "C75.8"
+            ],
+            "link_confidence": 0.8
+          },
+          "context": "ớc đây)\n- siêu âm hôm nay\nCác phát hiện chẩn đoán khác\n- khối u trực tràng với hình ảnh của một u ác trực tràng đáng kể\n- sinh thiết chỉ cho thấy một u tuyến\n- đến khám để phân giai đoạn phẫu thuật với tem (viết tắt)"
+        },
+        "output": {
+          "candidates": [
+            "D44.8",
+            "D35.8",
+            "E04",
+            "E03.9",
+            "C75.8"
+          ],
+          "confidence": 0.8
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 1,
+      "ts": 1783527093.136228
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783527093.1362517
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 15
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "Chưa phát hiện bệnh lý bất thường",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                25,
+                58
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Đờm",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                107,
+                110
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.9
+            },
+            {
+              "text": "ho",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                21,
+                23
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.9
+            },
+            {
+              "text": "đôi khi đau bụng quặn",
+              "position": [
+                118,
+                139
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "healthbert": 1,
+                "ner_llm_relocated": 1
+              },
+              "type_votes": {
+                "TRIỆU_CHỨNG": 2
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.9
+            },
+            {
+              "text": "tiêu chảy",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                142,
+                151
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "không tăng cân nhiều",
+              "position": [
+                180,
+                200
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.5613130331039429
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "cea",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                247,
+                250
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ung thư phôi",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                265,
+                277
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "mri vùng chậu",
+              "position": [
+                325,
+                338
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "ner_llm_relocated": 1,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 2
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chẩn đoán được do không có",
+              "position": [
+                353,
+                379
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.7053505182266235
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                402,
+                409
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "ner_llm_relocated": 1,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 2
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "siêu âm hôm nay",
+              "position": [
+                402,
+                417
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "u tuyến",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                718,
+                725
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.8,
+              "candidates": [
+                "D44.8",
+                "D35.8",
+                "E04",
+                "E03.9",
+                "C75.8"
+              ],
+              "link_confidence": 0.8
+            },
+            {
+              "text": "phẫu thuật",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                755,
+                765
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "tem",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                770,
+                773
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1. Tiền sử bệnh nội khoa\nChưa phát hiện bệnh lý bất thường\n2. Tiền sử bệnh hiện tại\nTriệu chứng hiện tại\n- Đờm\n- ho\n- đôi khi đau bụng quặn\n- tiêu chảy\n- đôi khi đi ngoài ra máu\n- không tăng cân nhiều\n3. Đánh giá tại bệnh viện\nKết quả xét nghiệm: cea (kháng nguyên ung thư phôi) tăng nhẹ lên 4.9\nKết quả chẩn đoán hình ảnh\n- mri vùng chậu thực tế không chẩn đoán được do không có mỡ nào trong cơ thể\n- siêu âm hôm nay cũng rất khó khăn, nhưng cho thấy có thể có một tổn thương t2 tốt nhất, nhưng một số vùng không thể đánh giá tốt\nThủ thuật thực hiện\n- sinh thiết (trước đây)\n- siêu âm hôm nay\nCác phát hiện chẩn đoán khác\n- khối u trực tràng với hình ảnh của một u ác trực tràng đáng kể\n- sinh thiết chỉ cho thấy một u tuyến\n- đến khám để phân giai đoạn phẫu thuật với tem (viết tắt)"
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": [
+                "no candidates"
+              ]
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "Chưa phát hiện bệnh lý bất thường",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                25,
+                58
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Đờm",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                107,
+                110
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.9
+            },
+            {
+              "text": "ho",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                21,
+                23
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.9
+            },
+            {
+              "text": "đôi khi đau bụng quặn",
+              "position": [
+                118,
+                139
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "healthbert": 1,
+                "ner_llm_relocated": 1
+              },
+              "type_votes": {
+                "TRIỆU_CHỨNG": 2
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.9
+            },
+            {
+              "text": "tiêu chảy",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                142,
+                151
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "không tăng cân nhiều",
+              "position": [
+                180,
+                200
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.5613130331039429
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "cea",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                247,
+                250
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ung thư phôi",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                265,
+                277
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "mri vùng chậu",
+              "position": [
+                325,
+                338
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "ner_llm_relocated": 1,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 2
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chẩn đoán được do không có",
+              "position": [
+                353,
+                379
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.7053505182266235
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                402,
+                409
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "ner_llm_relocated": 1,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 2
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "siêu âm hôm nay",
+              "position": [
+                402,
+                417
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "u tuyến",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                718,
+                725
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.8,
+              "candidates": [
+                "D44.8",
+                "D35.8",
+                "E04",
+                "E03.9",
+                "C75.8"
+              ],
+              "link_confidence": 0.8
+            },
+            {
+              "text": "phẫu thuật",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                755,
+                765
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "tem",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                770,
+                773
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 14,
+        "dropped": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 14,
+      "ts": 1783527093.1364176
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 14,
+      "elapsed": 129.55,
+      "ts": 1783527093.136441
+    }
+  ],
+  "stats": {
+    "total_mentions": 14,
+    "final": 14,
+    "validation_errors": 0,
+    "elapsed": 129.55,
+    "rule": 0,
+    "qwen": 12,
+    "healthbert": 6
+  }
+}

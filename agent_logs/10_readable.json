@@ -1,0 +1,419 @@
+{
+  "file_id": "10",
+  "timestamp": 1783527093.136531,
+  "elapsed": 129.55,
+  "model": "runpod",
+  "mention_count": 14,
+  "stats": {
+    "total_mentions": 14,
+    "final": 14,
+    "validation_errors": 0,
+    "elapsed": 129.55,
+    "rule": 0,
+    "qwen": 12,
+    "healthbert": 6
+  },
+  "log_summary": [
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "parallel_extract"
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "vote_merge"
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "resolve_conflicts"
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "fix_positions"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "llm_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "llm_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "llm_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "llm_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "llm_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "verify_schema"
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "ts": 1783527093.136441,
+      "tool": null
+    }
+  ],
+  "mentions": [
+    {
+      "text": "ho",
+      "position": [
+        21,
+        23
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": {
+        "ner_llm_relocated": 1
+      },
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      }
+    },
+    {
+      "text": "Chưa phát hiện bệnh lý bất thường",
+      "position": [
+        25,
+        58
+      ],
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": {
+        "ner_llm_relocated": 1
+      },
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "Đờm",
+      "position": [
+        107,
+        110
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": {
+        "ner_llm_relocated": 1
+      },
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      }
+    },
+    {
+      "text": "đôi khi đau bụng quặn",
+      "position": [
+        118,
+        139
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.8,
+      "voters": {
+        "healthbert": 1,
+        "ner_llm_relocated": 1
+      },
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      }
+    },
+    {
+      "text": "tiêu chảy",
+      "position": [
+        142,
+        151
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": {
+        "ner_llm_relocated": 1
+      },
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "không tăng cân nhiều",
+      "position": [
+        180,
+        200
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": {
+        "healthbert": 1
+      },
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "cea",
+      "position": [
+        247,
+        250
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": {
+        "ner_llm_relocated": 1
+      },
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "ung thư phôi",
+      "position": [
+        265,
+        277
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": {
+        "ner_llm_relocated": 1
+      },
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    },
+    {
+      "text": "mri vùng chậu",
+      "position": [
+        325,
+        338
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.8,
+      "voters": {
+        "ner_llm_relocated": 1,
+        "healthbert": 1
+      },
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "chẩn đoán được do không có",
+      "position": [
+        353,
+        379
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": {
+        "healthbert": 1
+      },
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "siêu âm",
+      "position": [
+        402,
+        409
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.8,
+      "voters": {
+        "ner_llm_relocated": 1,
+        "healthbert": 1
+      },
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "u tuyến",
+      "position": [
+        718,
+        725
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": {
+        "ner_llm_relocated": 1
+      },
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      },
+      "candidates": [
+        "D44.8",
+        "D35.8",
+        "E04",
+        "E03.9",
+        "C75.8"
+      ]
+    },
+    {
+      "text": "phẫu thuật",
+      "position": [
+        755,
+        765
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": {
+        "ner_llm_relocated": 1
+      },
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "tem",
+      "position": [
+        770,
+        773
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": {
+        "ner_llm_relocated": 1
+      },
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    }
+  ]
+}

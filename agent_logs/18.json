@@ -1,0 +1,3524 @@
+{
+  "file_id": "18",
+  "timestamp": 1783588730.5935392,
+  "elapsed": 110.27,
+  "model": "runpod",
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 833,
+      "ts": 1783588620.3248103
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783588620.324877
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 833
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 833
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: nữ, nhiều lần Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau ngực trái cấp tính và đau sau xương ức lan ra sau lưng\n    Thời điểm khởi phát triệu chứng: cấp tính\n    Triệu chứng hiện tại\n    - đau ngực trái\n    - đau sau xương ức\n    - đau lan ra sau lưng\n    Tình trạng ngay trước khi nhập viện: Vẫn còn đau ngực lan ra sau lưng khi đến\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện để đánh giá tắc mạch phổi, kết quả Không thấy hình ảnh thuyên tắc mạch phổi. Phát hiện tổn thương bóc tách động mạch chủ Stanford loại B \n    Các thủ thuật đã thực hiện: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện\n    Các phát hiện chẩn đoán khác: bóc tách động mạch chủ loại B"
+        },
+        "output": {
+          "rule": [],
+          "qwen": [
+            {
+              "text": "chụp cắt lớp vi tính mạch máu",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                485,
+                514
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "ctma",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                517,
+                521
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                63,
+                108
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "đau ngực trái cấp tính",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                155,
+                177
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau sau xương ức lan ra sau lưng",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                181,
+                213
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau ngực trái",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                155,
+                168
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau sau xương ức",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                181,
+                197
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ],
+          "healthbert": [
+            {
+              "text": "đau ngực trái cấp tính và",
+              "position": [
+                156,
+                181
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.7431015968322754
+                }
+              ],
+              "extraction_source": "healthbert"
+            },
+            {
+              "text": "đau sau xương ức lan ra",
+              "position": [
+                182,
+                205
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.5356537699699402
+                }
+              ],
+              "extraction_source": "healthbert"
+            },
+            {
+              "text": "đau ngực trái",
+              "position": [
+                156,
+                169
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.7132635116577148
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau sau xương ức",
+              "position": [
+                182,
+                198
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.6013482213020325
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau lan ra sau lưng",
+              "position": [
+                335,
+                354
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.5664516687393188
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Vẫn còn đau ngực lan ra",
+              "position": [
+                396,
+                419
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.6198475360870361
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 1.0
+            },
+            {
+              "text": "chụp cắt lớp vi tính mạch",
+              "position": [
+                486,
+                511
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert"
+            },
+            {
+              "text": "giá tắc mạch phổi",
+              "position": [
+                551,
+                568
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.6969829201698303
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 1.0,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "chụp cắt lớp vi tính mạch",
+              "position": [
+                486,
+                511
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 7,
+          "healthbert": 9
+        },
+        "total": 16
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "chụp cắt lớp vi tính mạch máu",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                485,
+                514
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "ctma",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                517,
+                521
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                63,
+                108
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "đau ngực trái cấp tính",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                155,
+                177
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau sau xương ức lan ra sau lưng",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                181,
+                213
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau ngực trái",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                155,
+                168
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau sau xương ức",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                181,
+                197
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau ngực trái cấp tính và",
+              "position": [
+                156,
+                181
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.7431015968322754
+                }
+              ],
+              "extraction_source": "healthbert"
+            },
+            {
+              "text": "đau sau xương ức lan ra",
+              "position": [
+                182,
+                205
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.5356537699699402
+                }
+              ],
+              "extraction_source": "healthbert"
+            },
+            {
+              "text": "đau ngực trái",
+              "position": [
+                156,
+                169
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.7132635116577148
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau sau xương ức",
+              "position": [
+                182,
+                198
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.6013482213020325
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau lan ra sau lưng",
+              "position": [
+                335,
+                354
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.5664516687393188
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Vẫn còn đau ngực lan ra",
+              "position": [
+                396,
+                419
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.6198475360870361
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 1.0
+            },
+            {
+              "text": "chụp cắt lớp vi tính mạch",
+              "position": [
+                486,
+                511
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert"
+            },
+            {
+              "text": "giá tắc mạch phổi",
+              "position": [
+                551,
+                568
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.6969829201698303
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 1.0,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "chụp cắt lớp vi tính mạch",
+              "position": [
+                486,
+                511
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              63,
+              108
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.95,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "đau ngực trái",
+            "position": [
+              156,
+              169
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.95
+              }
+            ],
+            "confidence": 0.95,
+            "vote_count": 3,
+            "max_type_votes": 3,
+            "voters": {
+              "ner_llm_relocated": 2,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "TRIỆU_CHỨNG": 3
+            },
+            "needs_review": false,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 1.0
+          },
+          {
+            "text": "đau sau xương ức",
+            "position": [
+              182,
+              198
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.95
+              }
+            ],
+            "confidence": 0.95,
+            "vote_count": 3,
+            "max_type_votes": 3,
+            "voters": {
+              "ner_llm_relocated": 2,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "TRIỆU_CHỨNG": 3
+            },
+            "needs_review": false,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau ngực trái",
+            "position": [
+              156,
+              169
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.7132635116577148
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau sau xương ức",
+            "position": [
+              182,
+              198
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.6013482213020325
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau lan ra sau lưng",
+            "position": [
+              335,
+              354
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.5664516687393188
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "Vẫn còn đau ngực lan ra",
+            "position": [
+              396,
+              419
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.6198475360870361
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 1.0
+          },
+          {
+            "text": "chụp cắt lớp vi tính mạch máu",
+            "position": [
+              486,
+              515
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "ner_llm_relocated": 1,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 2
+            },
+            "needs_review": false,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "ctma",
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              517,
+              521
+            ],
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "giá tắc mạch phổi",
+            "position": [
+              551,
+              568
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.6969829201698303
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 1.0,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "chụp cắt lớp vi tính mạch",
+            "position": [
+              486,
+              511
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 11
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                63,
+                108
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "đau ngực trái",
+              "position": [
+                156,
+                169
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.95
+                }
+              ],
+              "confidence": 0.95,
+              "vote_count": 3,
+              "max_type_votes": 3,
+              "voters": {
+                "ner_llm_relocated": 2,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TRIỆU_CHỨNG": 3
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 1.0
+            },
+            {
+              "text": "đau sau xương ức",
+              "position": [
+                182,
+                198
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.95
+                }
+              ],
+              "confidence": 0.95,
+              "vote_count": 3,
+              "max_type_votes": 3,
+              "voters": {
+                "ner_llm_relocated": 2,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TRIỆU_CHỨNG": 3
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau ngực trái",
+              "position": [
+                156,
+                169
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.7132635116577148
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau sau xương ức",
+              "position": [
+                182,
+                198
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.6013482213020325
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau lan ra sau lưng",
+              "position": [
+                335,
+                354
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.5664516687393188
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Vẫn còn đau ngực lan ra",
+              "position": [
+                396,
+                419
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.6198475360870361
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 1.0
+            },
+            {
+              "text": "chụp cắt lớp vi tính mạch máu",
+              "position": [
+                486,
+                515
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "ner_llm_relocated": 1,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 2
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ctma",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                517,
+                521
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "giá tắc mạch phổi",
+              "position": [
+                551,
+                568
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.6969829201698303
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 1.0,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "chụp cắt lớp vi tính mạch",
+              "position": [
+                486,
+                511
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: nữ, nhiều lần Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau ngực trái cấp tính và đau sau xương ức lan ra sau lưng\n    Thời điểm khởi phát triệu chứng: cấp tính\n    Triệu chứng hiện tại\n    - đau ngực trái\n    - đau sau xương ức\n    - đau lan ra sau lưng\n    Tình trạng ngay trước khi nhập viện: Vẫn còn đau ngực lan ra sau lưng khi đến\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện để đánh giá tắc mạch phổi, kết quả Không thấy hình ảnh thuyên tắc mạch phổi. Phát hiện tổn thương bóc tách động mạch chủ Stanford loại B \n    Các thủ thuật đã thực hiện: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện\n    Các phát hiện chẩn đoán khác: bóc tách động mạch chủ loại B"
+        },
+        "output": [
+          {
+            "text": "Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              63,
+              108
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.95,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "đau ngực trái",
+            "position": [
+              156,
+              169
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.95
+              }
+            ],
+            "confidence": 0.95,
+            "vote_count": 3,
+            "max_type_votes": 3,
+            "voters": {
+              "ner_llm_relocated": 2,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "TRIỆU_CHỨNG": 3
+            },
+            "needs_review": false,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 1.0
+          },
+          {
+            "text": "đau sau xương ức",
+            "position": [
+              182,
+              198
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.95
+              }
+            ],
+            "confidence": 0.95,
+            "vote_count": 3,
+            "max_type_votes": 3,
+            "voters": {
+              "ner_llm_relocated": 2,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "TRIỆU_CHỨNG": 3
+            },
+            "needs_review": false,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau ngực trái",
+            "position": [
+              156,
+              169
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.7132635116577148
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau sau xương ức",
+            "position": [
+              182,
+              198
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.6013482213020325
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau lan ra sau lưng",
+            "position": [
+              335,
+              354
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.5664516687393188
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "Vẫn còn đau ngực lan ra",
+            "position": [
+              396,
+              419
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.6198475360870361
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 1.0
+          },
+          {
+            "text": "chụp cắt lớp vi tính mạch máu",
+            "position": [
+              486,
+              515
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "ner_llm_relocated": 1,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 2
+            },
+            "needs_review": false,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "ctma",
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              517,
+              521
+            ],
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "giá tắc mạch phổi",
+            "position": [
+              551,
+              568
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.6969829201698303
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 1.0,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "chụp cắt lớp vi tính mạch",
+            "position": [
+              486,
+              511
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                63,
+                108
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "đau ngực trái",
+              "position": [
+                156,
+                169
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.95
+                }
+              ],
+              "confidence": 0.95,
+              "vote_count": 3,
+              "max_type_votes": 3,
+              "voters": {
+                "ner_llm_relocated": 2,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TRIỆU_CHỨNG": 3
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 1.0
+            },
+            {
+              "text": "đau sau xương ức",
+              "position": [
+                182,
+                198
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.95
+                }
+              ],
+              "confidence": 0.95,
+              "vote_count": 3,
+              "max_type_votes": 3,
+              "voters": {
+                "ner_llm_relocated": 2,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TRIỆU_CHỨNG": 3
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau ngực trái",
+              "position": [
+                156,
+                169
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.7132635116577148
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau sau xương ức",
+              "position": [
+                182,
+                198
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.6013482213020325
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau lan ra sau lưng",
+              "position": [
+                335,
+                354
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.5664516687393188
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Vẫn còn đau ngực lan ra",
+              "position": [
+                396,
+                419
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.6198475360870361
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 1.0
+            },
+            {
+              "text": "chụp cắt lớp vi tính mạch máu",
+              "position": [
+                486,
+                515
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "ner_llm_relocated": 1,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 2
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ctma",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                517,
+                521
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "giá tắc mạch phổi",
+              "position": [
+                551,
+                568
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.6969829201698303
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 1.0,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "chụp cắt lớp vi tính mạch",
+              "position": [
+                486,
+                511
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: nữ, nhiều lần Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau ngực trái cấp tính và đau sau xương ức lan ra sau lưng\n    Thời điểm khởi phát triệu chứng: cấp tính\n    Triệu chứng hiện tại\n    - đau ngực trái\n    - đau sau xương ức\n    - đau lan ra sau lưng\n    Tình trạng ngay trước khi nhập viện: Vẫn còn đau ngực lan ra sau lưng khi đến\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện để đánh giá tắc mạch phổi, kết quả Không thấy hình ảnh thuyên tắc mạch phổi. Phát hiện tổn thương bóc tách động mạch chủ Stanford loại B \n    Các thủ thuật đã thực hiện: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện\n    Các phát hiện chẩn đoán khác: bóc tách động mạch chủ loại B"
+        },
+        "output": [
+          {
+            "text": "Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              63,
+              108
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.95,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "đau ngực trái",
+            "position": [
+              156,
+              169
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.95
+              }
+            ],
+            "confidence": 0.95,
+            "vote_count": 3,
+            "max_type_votes": 3,
+            "voters": {
+              "ner_llm_relocated": 2,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "TRIỆU_CHỨNG": 3
+            },
+            "needs_review": false,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 1.0
+          },
+          {
+            "text": "đau sau xương ức",
+            "position": [
+              182,
+              198
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.95
+              }
+            ],
+            "confidence": 0.95,
+            "vote_count": 3,
+            "max_type_votes": 3,
+            "voters": {
+              "ner_llm_relocated": 2,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "TRIỆU_CHỨNG": 3
+            },
+            "needs_review": false,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau ngực trái",
+            "position": [
+              156,
+              169
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.7132635116577148
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau sau xương ức",
+            "position": [
+              182,
+              198
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.6013482213020325
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau lan ra sau lưng",
+            "position": [
+              335,
+              354
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.5664516687393188
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "Vẫn còn đau ngực lan ra",
+            "position": [
+              396,
+              419
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.6198475360870361
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 1.0
+          },
+          {
+            "text": "chụp cắt lớp vi tính mạch máu",
+            "position": [
+              486,
+              515
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "ner_llm_relocated": 1,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 2
+            },
+            "needs_review": false,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "ctma",
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              517,
+              521
+            ],
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "giá tắc mạch phổi",
+            "position": [
+              551,
+              568
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.6969829201698303
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 1.0,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "chụp cắt lớp vi tính mạch",
+            "position": [
+              486,
+              511
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 7
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 11,
+      "ts": 1783588706.8277428
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783588706.8277535
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 11
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: nữ, nhiều lần Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau ngực trái cấp tính và đau sau xương ức lan ra sau lưng\n    Thời điểm khởi phát triệu chứng: cấp tính\n    Triệu chứng hiện tại\n    - đau ngực trái\n    - đau sau xương ức\n    - đau lan ra sau lưng\n    Tình trạng ngay trước khi nhập viện: Vẫn còn đau ngực lan ra sau lưng khi đến\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện để đánh giá tắc mạch phổi, kết quả Không thấy hình ảnh thuyên tắc mạch phổi. Phát hiện tổn thương bóc tách động mạch chủ Stanford loại B \n    Các thủ thuật đã thực hiện: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện\n    Các phát hiện chẩn đoán khác: bóc tách động mạch chủ loại B",
+          "start": 63,
+          "end": 108
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: nữ, nhiều lần Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau ngực trái cấp tính và đau sau xương ức lan ra sau lưng\n    Thời điểm khởi phát triệu chứng: cấp tí"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: nữ, nhiều lần Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau ngực trái cấp tính và đau sau xương ức lan ra sau lưng\n    Thời điểm khởi phát triệu chứng: cấp tính\n    Triệu chứng hiện tại\n    - đau ngực trái\n    - đau sau xương ức\n    - đau lan ra sau lưng\n    Tình trạng ngay trước khi nhập viện: Vẫn còn đau ngực lan ra sau lưng khi đến\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện để đánh giá tắc mạch phổi, kết quả Không thấy hình ảnh thuyên tắc mạch phổi. Phát hiện tổn thương bóc tách động mạch chủ Stanford loại B \n    Các thủ thuật đã thực hiện: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện\n    Các phát hiện chẩn đoán khác: bóc tách động mạch chủ loại B",
+          "start": 156,
+          "end": 169
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "đau ngực trái",
+          "mtype": "TRIỆU_CHỨNG",
+          "context": "ền sử bệnh nội khoa\n    Các bệnh mãn tính: nữ, nhiều lần Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau ngực trái cấp tính và đau sau xương ức lan ra sau lưng\n    Thời điểm khởi phát triệu chứng: cấp tính\n    Triệu chứng hiện tại\n    - đau ngực trái\n    - đau sau"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: nữ, nhiều lần Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau ngực trái cấp tính và đau sau xương ức lan ra sau lưng\n    Thời điểm khởi phát triệu chứng: cấp tính\n    Triệu chứng hiện tại\n    - đau ngực trái\n    - đau sau xương ức\n    - đau lan ra sau lưng\n    Tình trạng ngay trước khi nhập viện: Vẫn còn đau ngực lan ra sau lưng khi đến\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện để đánh giá tắc mạch phổi, kết quả Không thấy hình ảnh thuyên tắc mạch phổi. Phát hiện tổn thương bóc tách động mạch chủ Stanford loại B \n    Các thủ thuật đã thực hiện: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện\n    Các phát hiện chẩn đoán khác: bóc tách động mạch chủ loại B",
+          "start": 182,
+          "end": 198
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: nữ, nhiều lần Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau ngực trái cấp tính và đau sau xương ức lan ra sau lưng\n    Thời điểm khởi phát triệu chứng: cấp tính\n    Triệu chứng hiện tại\n    - đau ngực trái\n    - đau sau xương ức\n    - đau lan ra sau lưng\n    Tình trạng ngay trước khi nhập viện: Vẫn còn đau ngực lan ra sau lưng khi đến\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện để đánh giá tắc mạch phổi, kết quả Không thấy hình ảnh thuyên tắc mạch phổi. Phát hiện tổn thương bóc tách động mạch chủ Stanford loại B \n    Các thủ thuật đã thực hiện: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện\n    Các phát hiện chẩn đoán khác: bóc tách động mạch chủ loại B",
+          "start": 156,
+          "end": 169
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "đau ngực trái",
+          "mtype": "TRIỆU_CHỨNG",
+          "context": "ền sử bệnh nội khoa\n    Các bệnh mãn tính: nữ, nhiều lần Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau ngực trái cấp tính và đau sau xương ức lan ra sau lưng\n    Thời điểm khởi phát triệu chứng: cấp tính\n    Triệu chứng hiện tại\n    - đau ngực trái\n    - đau sau"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: nữ, nhiều lần Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau ngực trái cấp tính và đau sau xương ức lan ra sau lưng\n    Thời điểm khởi phát triệu chứng: cấp tính\n    Triệu chứng hiện tại\n    - đau ngực trái\n    - đau sau xương ức\n    - đau lan ra sau lưng\n    Tình trạng ngay trước khi nhập viện: Vẫn còn đau ngực lan ra sau lưng khi đến\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện để đánh giá tắc mạch phổi, kết quả Không thấy hình ảnh thuyên tắc mạch phổi. Phát hiện tổn thương bóc tách động mạch chủ Stanford loại B \n    Các thủ thuật đã thực hiện: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện\n    Các phát hiện chẩn đoán khác: bóc tách động mạch chủ loại B",
+          "start": 182,
+          "end": 198
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: nữ, nhiều lần Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau ngực trái cấp tính và đau sau xương ức lan ra sau lưng\n    Thời điểm khởi phát triệu chứng: cấp tính\n    Triệu chứng hiện tại\n    - đau ngực trái\n    - đau sau xương ức\n    - đau lan ra sau lưng\n    Tình trạng ngay trước khi nhập viện: Vẫn còn đau ngực lan ra sau lưng khi đến\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện để đánh giá tắc mạch phổi, kết quả Không thấy hình ảnh thuyên tắc mạch phổi. Phát hiện tổn thương bóc tách động mạch chủ Stanford loại B \n    Các thủ thuật đã thực hiện: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện\n    Các phát hiện chẩn đoán khác: bóc tách động mạch chủ loại B",
+          "start": 335,
+          "end": 354
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: nữ, nhiều lần Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau ngực trái cấp tính và đau sau xương ức lan ra sau lưng\n    Thời điểm khởi phát triệu chứng: cấp tính\n    Triệu chứng hiện tại\n    - đau ngực trái\n    - đau sau xương ức\n    - đau lan ra sau lưng\n    Tình trạng ngay trước khi nhập viện: Vẫn còn đau ngực lan ra sau lưng khi đến\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện để đánh giá tắc mạch phổi, kết quả Không thấy hình ảnh thuyên tắc mạch phổi. Phát hiện tổn thương bóc tách động mạch chủ Stanford loại B \n    Các thủ thuật đã thực hiện: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện\n    Các phát hiện chẩn đoán khác: bóc tách động mạch chủ loại B",
+          "start": 396,
+          "end": 419
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "Vẫn còn đau ngực lan ra",
+          "mtype": "TRIỆU_CHỨNG",
+          "context": "hứng: cấp tính\n    Triệu chứng hiện tại\n    - đau ngực trái\n    - đau sau xương ức\n    - đau lan ra sau lưng\n    Tình trạng ngay trước khi nhập viện: Vẫn còn đau ngực lan ra sau lưng khi đến\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện để đánh giá tắc mạch phổi,"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: nữ, nhiều lần Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau ngực trái cấp tính và đau sau xương ức lan ra sau lưng\n    Thời điểm khởi phát triệu chứng: cấp tính\n    Triệu chứng hiện tại\n    - đau ngực trái\n    - đau sau xương ức\n    - đau lan ra sau lưng\n    Tình trạng ngay trước khi nhập viện: Vẫn còn đau ngực lan ra sau lưng khi đến\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện để đánh giá tắc mạch phổi, kết quả Không thấy hình ảnh thuyên tắc mạch phổi. Phát hiện tổn thương bóc tách động mạch chủ Stanford loại B \n    Các thủ thuật đã thực hiện: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện\n    Các phát hiện chẩn đoán khác: bóc tách động mạch chủ loại B",
+          "start": 551,
+          "end": 568
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "giá tắc mạch phổi",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": "òn đau ngực lan ra sau lưng khi đến\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện để đánh giá tắc mạch phổi, kết quả Không thấy hình ảnh thuyên tắc mạch phổi. Phát hiện tổn thương bóc tách động mạch chủ Stanford loại B \n    Các thủ thuật đã thực hiện: chụp "
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 11,
+        "llm_checked": 4
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783588730.4958055
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783588730.4958332
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 11
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              63,
+              108
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.95,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: nữ, nhiều lần Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau ngực trái cấp tính và đau sau xương ức lan ra sau lưng\n    Thời điểm khởi phát triệu chứng: cấp tí"
+        },
+        "output": {
+          "candidates": [],
+          "confidence": 0.0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "giá tắc mạch phổi",
+            "position": [
+              551,
+              568
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.6969829201698303
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 1.0,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          "context": "òn đau ngực lan ra sau lưng khi đến\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện để đánh giá tắc mạch phổi, kết quả Không thấy hình ảnh thuyên tắc mạch phổi. Phát hiện tổn thương bóc tách động mạch chủ Stanford loại B \n    Các thủ thuật đã thực hiện: chụp "
+        },
+        "output": {
+          "candidates": [],
+          "confidence": 0.0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1783588730.505207
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783588730.505235
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 11
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                63,
+                108
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "đau ngực trái",
+              "position": [
+                156,
+                169
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.95
+                }
+              ],
+              "confidence": 0.95,
+              "vote_count": 3,
+              "max_type_votes": 3,
+              "voters": {
+                "ner_llm_relocated": 2,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TRIỆU_CHỨNG": 3
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 1.0
+            },
+            {
+              "text": "đau sau xương ức",
+              "position": [
+                182,
+                198
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.95
+                }
+              ],
+              "confidence": 0.95,
+              "vote_count": 3,
+              "max_type_votes": 3,
+              "voters": {
+                "ner_llm_relocated": 2,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TRIỆU_CHỨNG": 3
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau ngực trái",
+              "position": [
+                156,
+                169
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.7132635116577148
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau sau xương ức",
+              "position": [
+                182,
+                198
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.6013482213020325
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau lan ra sau lưng",
+              "position": [
+                335,
+                354
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.5664516687393188
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Vẫn còn đau ngực lan ra",
+              "position": [
+                396,
+                419
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.6198475360870361
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 1.0
+            },
+            {
+              "text": "chụp cắt lớp vi tính mạch máu",
+              "position": [
+                486,
+                515
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "ner_llm_relocated": 1,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 2
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ctma",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                517,
+                521
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "giá tắc mạch phổi",
+              "position": [
+                551,
+                568
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.6969829201698303
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 1.0,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "chụp cắt lớp vi tính mạch",
+              "position": [
+                486,
+                511
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: nữ, nhiều lần Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau ngực trái cấp tính và đau sau xương ức lan ra sau lưng\n    Thời điểm khởi phát triệu chứng: cấp tính\n    Triệu chứng hiện tại\n    - đau ngực trái\n    - đau sau xương ức\n    - đau lan ra sau lưng\n    Tình trạng ngay trước khi nhập viện: Vẫn còn đau ngực lan ra sau lưng khi đến\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện để đánh giá tắc mạch phổi, kết quả Không thấy hình ảnh thuyên tắc mạch phổi. Phát hiện tổn thương bóc tách động mạch chủ Stanford loại B \n    Các thủ thuật đã thực hiện: chụp cắt lớp vi tính mạch máu (ctma) ngực được thực hiện\n    Các phát hiện chẩn đoán khác: bóc tách động mạch chủ loại B"
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": [
+                "no candidates"
+              ]
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": [
+                "no candidates"
+              ]
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                63,
+                108
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "đau ngực trái",
+              "position": [
+                156,
+                169
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.95
+                }
+              ],
+              "confidence": 0.95,
+              "vote_count": 3,
+              "max_type_votes": 3,
+              "voters": {
+                "ner_llm_relocated": 2,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TRIỆU_CHỨNG": 3
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 1.0
+            },
+            {
+              "text": "đau sau xương ức",
+              "position": [
+                182,
+                198
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.95
+                }
+              ],
+              "confidence": 0.95,
+              "vote_count": 3,
+              "max_type_votes": 3,
+              "voters": {
+                "ner_llm_relocated": 2,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TRIỆU_CHỨNG": 3
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau ngực trái",
+              "position": [
+                156,
+                169
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.7132635116577148
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau sau xương ức",
+              "position": [
+                182,
+                198
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.6013482213020325
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau lan ra sau lưng",
+              "position": [
+                335,
+                354
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.5664516687393188
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Vẫn còn đau ngực lan ra",
+              "position": [
+                396,
+                419
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.6198475360870361
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 1.0
+            },
+            {
+              "text": "chụp cắt lớp vi tính mạch máu",
+              "position": [
+                486,
+                515
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "ner_llm_relocated": 1,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 2
+              },
+              "needs_review": false,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ctma",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                517,
+                521
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "giá tắc mạch phổi",
+              "position": [
+                551,
+                568
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.6969829201698303
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 1.0,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "chụp cắt lớp vi tính mạch",
+              "position": [
+                486,
+                511
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 8,
+        "dropped": 3
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 8,
+      "ts": 1783588730.5054169
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 8,
+      "elapsed": 110.18,
+      "ts": 1783588730.505448
+    }
+  ],
+  "stats": {
+    "total_mentions": 8,
+    "final": 8,
+    "validation_errors": 0,
+    "elapsed": 110.18,
+    "rule": 0,
+    "qwen": 7,
+    "healthbert": 9
+  }
+}

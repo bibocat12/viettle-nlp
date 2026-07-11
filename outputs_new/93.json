@@ -1,0 +1,344 @@
+{
+  "note_id": "93",
+  "mentions": [
+    {
+      "text": "tràn dịch màng phổi trái tái",
+      "position": [
+        44,
+        72
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      },
+      "candidates": []
+    },
+    {
+      "text": "tràn dịch màng ngoài tim mức",
+      "position": [
+        156,
+        184
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "độ trung bình",
+      "position": [
+        185,
+        198
+      ],
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "dẫn lưu",
+      "position": [
+        304,
+        311
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "phổi bằng talc",
+      "position": [
+        358,
+        372
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [
+      "[0] CHẨN_ĐOÁN has no candidates"
+    ]
+  },
+  "stats": {
+    "total_mentions": 5,
+    "final": 5,
+    "validation_errors": 0,
+    "elapsed": 1.49
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 373,
+      "ts": 1783398408.6434498
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398408.6434622
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 373
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 373
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1. Tiền sử bệnh nội khoa\nUng thư vú di căn, tràn dịch màng phổi trái tái phát\n\n2. Bệnh sử hiện tại\nLý do vào việni: khó thở\n3. Khám tại bệnh viện\nLâm sàng: tràn dịch màng ngoài tim mức độ trung bình\nK"
+        },
+        "output": "{'rule': [{'text': 'dẫn lưu', 'position': [304, 311], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}], 'qwen': [], 'healthbert': [{'text': 'tràn dịch màng phổi trái tái', 'position': [44, 72], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6884482502937317}]}, {'text': 'tràn dịch màng ngoài tim mức', 'position': [156, 184], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6465867161750793}]}, {'text': 'độ trung bình",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 1,
+          "qwen": 0,
+          "healthbert": 5,
+          "errors": 0
+        },
+        "total": 5
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'dẫn lưu', 'position': [304, 311], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'tràn dịch màng "
+        },
+        "output": "[{'text': 'tràn dịch màng phổi trái tái', 'position': [44, 72], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6884482502937317}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'tràn dịch màng ngoài tim mức', 'position': [156, 184], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6465867161750793}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthber",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 5
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'tràn dịch màng phổi trái tái', 'position': [44, 72], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6884482502937317}], 'extraction_source': 'healthbert', 'vote_",
+          "text": "1. Tiền sử bệnh nội khoa\nUng thư vú di căn, tràn dịch màng phổi trái tái phát\n\n2. Bệnh sử hiện tại\nLý do vào việni: khó thở\n3. Khám tại bệnh viện\nLâm sàng: tràn dịch màng ngoài tim mức độ trung bình\nK"
+        },
+        "output": "[{'text': 'tràn dịch màng phổi trái tái', 'position': [44, 72], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6884482502937317}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'tràn dịch màng ngoài tim mức', 'position': [156, 184], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6465867161750793}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthber",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'tràn dịch màng phổi trái tái', 'position': [44, 72], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6884482502937317}], 'extraction_source': 'healthbert', 'vote_",
+          "text": "1. Tiền sử bệnh nội khoa\nUng thư vú di căn, tràn dịch màng phổi trái tái phát\n\n2. Bệnh sử hiện tại\nLý do vào việni: khó thở\n3. Khám tại bệnh viện\nLâm sàng: tràn dịch màng ngoài tim mức độ trung bình\nK"
+        },
+        "output": "[{'text': 'tràn dịch màng phổi trái tái', 'position': [44, 72], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6884482502937317}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'tràn dịch màng ngoài tim mức', 'position': [156, 184], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6465867161750793}], 'extraction_source': 'healthbert', 'vote_count':",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 5,
+      "ts": 1783398410.1298916
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398410.1299553
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 5
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh nội khoa\nUng thư vú di căn, tràn dịch màng phổi trái tái phát\n\n2. Bệnh sử hiện tại\nLý do vào việni: khó thở\n3. Khám tại bệnh viện\nLâm sàng: tràn dịch màng ngoài tim mức độ trung bình\nK",
+          "start": "44",
+          "end": "72"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 5,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398410.1300702
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398410.130082
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 5
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'tràn dịch màng phổi trái tái', 'position': [44, 72], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6884482502937317}], 'extraction_source': 'healthbert', 'vote_c",
+          "context": "1. Tiền sử bệnh nội khoa\nUng thư vú di căn, tràn dịch màng phổi trái tái phát\n\n2. Bệnh sử hiện tại\nLý do vào việni: khó thở\n3. Khám tại bệnh viện\nLâm sàng: tràn dịch màng ngoài tim mức độ trung bình\nK"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1783398410.136684
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398410.1367247
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 5
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'tràn dịch màng phổi trái tái', 'position': [44, 72], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6884482502937317}], 'extraction_source': 'healthbert', 'vote_",
+          "text": "1. Tiền sử bệnh nội khoa\nUng thư vú di căn, tràn dịch màng phổi trái tái phát\n\n2. Bệnh sử hiện tại\nLý do vào việni: khó thở\n3. Khám tại bệnh viện\nLâm sàng: tràn dịch màng ngoài tim mức độ trung bình\nK"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}], 'final_predictions': [{'text': 'tràn dịch màng phổi trái tái', 'position': [44, 72], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6884482502937317}], 'extraction_source': 'healthbert', '",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 5,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 5,
+      "ts": 1783398410.1370544
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 5,
+      "elapsed": 1.49,
+      "ts": 1783398410.1370742
+    }
+  ]
+}

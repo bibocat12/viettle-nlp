@@ -1,0 +1,331 @@
+{
+  "note_id": "65",
+  "mentions": [
+    {
+      "text": "đại tiện ra máu đỏ tươi",
+      "position": [
+        99,
+        122
+      ],
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "qua đường hậu môn",
+      "position": [
+        273,
+        290
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "loạn đông máu",
+      "position": [
+        493,
+        506
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      },
+      "candidates": [
+        "D68.8",
+        "O72.3",
+        "P61.6",
+        "O46.0",
+        "O45.0"
+      ]
+    },
+    {
+      "text": "Cr theo phòng cấp cứu",
+      "position": [
+        536,
+        557
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "stats": {
+    "total_mentions": 4,
+    "final": 4,
+    "validation_errors": 0,
+    "elapsed": 2.3
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 646,
+      "ts": 1783398291.688489
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398291.688498
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 646
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 646
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "Thuốc trước khi nhập viện: chỉ dùng để chống đông máu\n\n2. Bệnh sử hiện tại\nLý do nhập viện: 3 ngày đại tiện ra máu đỏ tươi gián đoạn\nThời điểm khởi phát triệu chứng: 3 ngày\nTriệu chứng hiện tại\n- đại "
+        },
+        "output": "{'rule': [], 'qwen': [], 'healthbert': [{'text': 'đại tiện ra máu đỏ tươi', 'position': [196, 219], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'type_candidates': [{'label': 'KẾT_QUẢ_XÉT_NGHIỆM', 'score': 0.5951581001281738}]}, {'text': 'qua đường hậu môn', 'position': [273, 290], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6388774514198303}]}, {'text': 'loạn đông máu', 'position': [493, 506], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.7",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 0,
+          "healthbert": 5,
+          "errors": 0
+        },
+        "total": 5
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'đại tiện ra máu đỏ tươi', 'position': [196, 219], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'type_candidates': [{'label': 'KẾT_QUẢ_XÉT_NGHIỆM', 'score': 0.5951581001281738}], 'extraction_source': 'heal"
+        },
+        "output": "[{'text': 'đại tiện ra máu đỏ tươi', 'position': [196, 219], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'type_candidates': [{'label': 'KẾT_QUẢ_XÉT_NGHIỆM', 'score': 0.5951581001281738}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'qua đường hậu môn', 'position': [273, 290], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6388774514198303}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healt",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 5
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'đại tiện ra máu đỏ tươi', 'position': [196, 219], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'type_candidates': [{'label': 'KẾT_QUẢ_XÉT_NGHIỆM', 'score': 0.5951581001281738}], 'extraction_source': 'heal",
+          "text": "Thuốc trước khi nhập viện: chỉ dùng để chống đông máu\n\n2. Bệnh sử hiện tại\nLý do nhập viện: 3 ngày đại tiện ra máu đỏ tươi gián đoạn\nThời điểm khởi phát triệu chứng: 3 ngày\nTriệu chứng hiện tại\n- đại "
+        },
+        "output": "[{'text': 'đại tiện ra máu đỏ tươi', 'position': [196, 219], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'type_candidates': [{'label': 'KẾT_QUẢ_XÉT_NGHIỆM', 'score': 0.5951581001281738}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'qua đường hậu môn', 'position': [273, 290], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6388774514198303}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healt",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'đại tiện ra máu đỏ tươi', 'position': [99, 122], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'type_candidates': [{'label': 'KẾT_QUẢ_XÉT_NGHIỆM', 'score': 0.5951581001281738}], 'extraction_source': 'healt",
+          "text": "Thuốc trước khi nhập viện: chỉ dùng để chống đông máu\n\n2. Bệnh sử hiện tại\nLý do nhập viện: 3 ngày đại tiện ra máu đỏ tươi gián đoạn\nThời điểm khởi phát triệu chứng: 3 ngày\nTriệu chứng hiện tại\n- đại "
+        },
+        "output": "[{'text': 'đại tiện ra máu đỏ tươi', 'position': [99, 122], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'type_candidates': [{'label': 'KẾT_QUẢ_XÉT_NGHIỆM', 'score': 0.5951581001281738}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': True}, {'text': 'qua đường hậu môn', 'position': [273, 290], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6388774514198303}], 'extraction_source': 'healthbert', 'vote_count",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 2
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 5,
+      "ts": 1783398293.0472302
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398293.0472624
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 5
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "Thuốc trước khi nhập viện: chỉ dùng để chống đông máu\n\n2. Bệnh sử hiện tại\nLý do nhập viện: 3 ngày đại tiện ra máu đỏ tươi gián đoạn\nThời điểm khởi phát triệu chứng: 3 ngày\nTriệu chứng hiện tại\n- đại ",
+          "start": "493",
+          "end": "506"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 5,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398293.047369
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398293.0473819
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 5
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'loạn đông máu', 'position': [493, 506], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.7263261079788208}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vo",
+          "context": "\nCác sự kiện trước khi nhập viện\n- Bệnh nhân được khám tại phòng cấp cứu\n- inr là 2.0\nTình trạng ngay trước khi nhập viện\n- nhập viện để đánh giá rối loạn đông máu\n- nhập viện để đánh giá tăng Cr theo"
+        },
+        "output": "{'candidates': ['D68.8', 'O72.3', 'P61.6', 'O46.0', 'O45.0'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 1,
+      "ts": 1783398293.9855084
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398293.9855378
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 5
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'đại tiện ra máu đỏ tươi', 'position': [99, 122], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'type_candidates': [{'label': 'KẾT_QUẢ_XÉT_NGHIỆM', 'score': 0.5951581001281738}], 'extraction_source': 'healt",
+          "text": "Thuốc trước khi nhập viện: chỉ dùng để chống đông máu\n\n2. Bệnh sử hiện tại\nLý do nhập viện: 3 ngày đại tiện ra máu đỏ tươi gián đoạn\nThời điểm khởi phát triệu chứng: 3 ngày\nTriệu chứng hiện tại\n- đại "
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}], 'final_predictions': [{'text': 'đại tiện ra máu đỏ tươi', 'position': [99, 122], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'type_candidates': [{'label': 'KẾT_QUẢ_XÉT_NGHIỆM', 'score': 0.5951581001281738}], 'extraction_source': 'healthbert', 'v",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 4,
+        "dropped": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 4,
+      "ts": 1783398293.9858057
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 4,
+      "elapsed": 2.3,
+      "ts": 1783398293.985825
+    }
+  ]
+}

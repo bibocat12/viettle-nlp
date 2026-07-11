@@ -1,212 +1,314 @@
-[
-  {
-    "text": "Tiền sử bệnh nội khoa",
-    "position": [
-      4,
-      25
-    ],
-    "type": "CHẨN_ĐOÁN",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
+{
+  "note_id": "6",
+  "mentions": [
+    {
+      "text": "khoa tim mạch",
+      "position": [
+        112,
+        125
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
     },
-    "candidates": []
-  },
-  {
-    "text": "Bệnh nhân có tiền sử",
-    "position": [
-      29,
-      49
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": true
-    }
-  },
-  {
-    "text": "Nghẽn tắc và hẹp động mạch",
-    "position": [
-      50,
-      76
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": true
-    }
-  },
-  {
-    "text": "được theo dõi định kỳ chuyên",
-    "position": [
-      83,
-      111
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "Tiền sử bệnh hiện tại",
-    "position": [
-      143,
-      164
-    ],
-    "type": "CHẨN_ĐOÁN",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
+    {
+      "text": "siêu âm",
+      "position": [
+        235,
+        242
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
     },
-    "candidates": []
-  },
-  {
-    "text": "Được theo dõi định kỳ bằng",
-    "position": [
-      207,
-      233
-    ],
-    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": true
+    {
+      "text": "hẹp động mạch cảnh",
+      "position": [
+        63,
+        81
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "doppler hai chiều gần đây có",
+      "position": [
+        328,
+        356
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "động mạch cảnh sau khi đã",
+      "position": [
+        487,
+        512
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
     }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": []
   },
-  {
-    "text": "siêu âm",
-    "position": [
-      235,
-      242
-    ],
-    "type": "TÊN_XÉT_NGHIỆM",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
+  "stats": {
+    "total_mentions": 5,
+    "final": 5,
+    "validation_errors": 0,
+    "elapsed": 1.73
   },
-  {
-    "text": "Doppler động mạchcho nghẽn tắc và",
-    "position": [
-      243,
-      276
-    ],
-    "type": "TÊN_XÉT_NGHIỆM",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 584,
+      "ts": 1783397913.7496533
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783397913.74967
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 584
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 584
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n   Bệnh nhân có tiền sử Nghẽn tắc và hẹp động mạch cảnh, được theo dõi định kỳ chuyên khoa tim mạch - mạch máu.\n\n2.  Tiền sử bệnh hiện tại\n    Các sự kiện trước khi nhập viện"
+        },
+        "output": "{'rule': [{'text': 'siêu âm', 'position': [235, 242], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'siêu âm', 'position': [320, 327], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}], 'qwen': [], 'healthbert': [{'text': 'khoa tim mạch', 'position': [112, 125], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6609413623809814}]}, {'text': 'hẹp động mạch cảnh', 'position': [277, 295], 'type': 'TÊN_XÉT_NGHIỆM', 'type_c",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 2,
+          "qwen": 0,
+          "healthbert": 5,
+          "errors": 0
+        },
+        "total": 6
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'siêu âm', 'position': [235, 242], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'siêu âm', 'posi"
+        },
+        "output": "[{'text': 'khoa tim mạch', 'position': [112, 125], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6609413623809814}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'siêu âm', 'position': [235, 242], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'hẹp động mạch cảnh', 'position': [277, 295], 'type': 'TÊN_XÉT_",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 6
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'khoa tim mạch', 'position': [112, 125], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6609413623809814}], 'extraction_source': 'healthbert', 'vote_cou",
+          "text": "1.  Tiền sử bệnh nội khoa\n   Bệnh nhân có tiền sử Nghẽn tắc và hẹp động mạch cảnh, được theo dõi định kỳ chuyên khoa tim mạch - mạch máu.\n\n2.  Tiền sử bệnh hiện tại\n    Các sự kiện trước khi nhập viện"
+        },
+        "output": "[{'text': 'khoa tim mạch', 'position': [112, 125], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6609413623809814}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'siêu âm', 'position': [235, 242], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'hẹp động mạch cảnh', 'position': [277, 295], 'type': 'TÊN_XÉT_",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'khoa tim mạch', 'position': [112, 125], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6609413623809814}], 'extraction_source': 'healthbert', 'vote_cou",
+          "text": "1.  Tiền sử bệnh nội khoa\n   Bệnh nhân có tiền sử Nghẽn tắc và hẹp động mạch cảnh, được theo dõi định kỳ chuyên khoa tim mạch - mạch máu.\n\n2.  Tiền sử bệnh hiện tại\n    Các sự kiện trước khi nhập viện"
+        },
+        "output": "[{'text': 'khoa tim mạch', 'position': [112, 125], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6609413623809814}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'siêu âm', 'position': [235, 242], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False}, {'text': 'hẹp động mạc",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 2
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 6,
+      "ts": 1783397915.4789584
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783397915.478983
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 6
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 6,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783397915.4789965
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783397915.4790046
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 6
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1783397915.479012
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783397915.4790192
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 6
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'khoa tim mạch', 'position': [112, 125], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6609413623809814}], 'extraction_source': 'healthbert', 'vote_cou",
+          "text": "1.  Tiền sử bệnh nội khoa\n   Bệnh nhân có tiền sử Nghẽn tắc và hẹp động mạch cảnh, được theo dõi định kỳ chuyên khoa tim mạch - mạch máu.\n\n2.  Tiền sử bệnh hiện tại\n    Các sự kiện trước khi nhập viện"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}], 'final_predictions': [{'text': 'khoa tim mạch', 'position': [112, 125], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6609413623809814}], 'ex",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 5,
+        "dropped": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 5,
+      "ts": 1783397915.4792063
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 5,
+      "elapsed": 1.73,
+      "ts": 1783397915.4792185
     }
-  },
-  {
-    "text": "động mạch cảnh",
-    "position": [
-      281,
-      295
-    ],
-    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "Ghi nhận trên các siêu âm",
-    "position": [
-      302,
-      327
-    ],
-    "type": "TÊN_XÉT_NGHIỆM",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "đây có hẹp nặng",
-    "position": [
-      350,
-      365
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "Tình trạng ngay trước khi nhập",
-    "position": [
-      416,
-      446
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "Chỉ định can thiệp tái thông",
-    "position": [
-      458,
-      486
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": true
-    }
-  },
-  {
-    "text": "động mạch cảnh sau khi đã",
-    "position": [
-      487,
-      512
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "đánh giá đầy đủ nguy cơ",
-    "position": [
-      513,
-      536
-    ],
-    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "ích điều trị",
-    "position": [
-      544,
-      556
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  }
-]
+  ]
+}

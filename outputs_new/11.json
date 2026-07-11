@@ -1,66 +1,492 @@
-[
-  {
-    "text": "tăng huyết áp",
-    "position": [
-      57,
-      70
-    ],
-    "type": "CHẨN_ĐOÁN",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
+{
+  "note_id": "11",
+  "mentions": [
+    {
+      "text": "tăng huyết áp",
+      "position": [
+        57,
+        70
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      },
+      "candidates": [
+        "I15.0",
+        "O16",
+        "O11",
+        "I27.0",
+        "I67.5"
+      ]
     },
-    "candidates": [
-      "P29.2",
-      "I12",
-      "I15.8"
+    {
+      "text": "bệnh thận mạn",
+      "position": [
+        107,
+        120
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": true,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": [
+        "N18.9",
+        "N18.4",
+        "N18.2",
+        "N18.1",
+        "N18"
+      ]
+    },
+    {
+      "text": "ung thư đại tràng",
+      "position": [
+        143,
+        160
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": true,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    },
+    {
+      "text": "Bệnh nhân xơ gan mất bù",
+      "position": [
+        181,
+        204
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": true,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    },
+    {
+      "text": "cổ trướng và tràn dịch màng",
+      "position": [
+        235,
+        262
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "liệu pháp lợi tiểu",
+      "position": [
+        308,
+        326
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "chọc dò màng phổi",
+      "position": [
+        443,
+        460
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "chọc dò dịch ổ bụng",
+      "position": [
+        471,
+        490
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [
+      "[2] CHẨN_ĐOÁN has no candidates",
+      "[3] CHẨN_ĐOÁN has no candidates"
     ]
   },
-  {
-    "text": "bệnh gút không đặc hiệu",
-    "position": [
-      77,
-      100
-    ],
-    "type": "CHẨN_ĐOÁN",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    },
-    "candidates": []
+  "stats": {
+    "total_mentions": 8,
+    "final": 8,
+    "validation_errors": 0,
+    "elapsed": 4.44
   },
-  {
-    "text": "bệnh thận mạn",
-    "position": [
-      107,
-      120
-    ],
-    "type": "CHẨN_ĐOÁN",
-    "assertions": {
-      "isNegated": true,
-      "isFamily": false,
-      "isHistorical": false
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 514,
+      "ts": 1783397932.2635546
     },
-    "candidates": [
-      "N18.1",
-      "N18.2",
-      "N18.4"
-    ]
-  },
-  {
-    "text": "ung thư đại tràng",
-    "position": [
-      143,
-      160
-    ],
-    "type": "CHẨN_ĐOÁN",
-    "assertions": {
-      "isNegated": true,
-      "isFamily": false,
-      "isHistorical": false
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783397932.2635684
     },
-    "candidates": []
-  }
-]
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 514
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 514
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mấ"
+        },
+        "output": "{'rule': [], 'qwen': [], 'healthbert': [{'text': 'tăng huyết áp', 'position': [57, 70], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}]}, {'text': 'bệnh thận mạn', 'position': [107, 120], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}]}, {'text': 'ung thư đại tràng', 'position': [143, 160], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}]}, {'text': 'Bệnh nhân xơ gan mất bù', 'position': [181, 204], 't",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 0,
+          "healthbert": 8,
+          "errors": 0
+        },
+        "total": 8
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'tăng huyết áp', 'position': [57, 70], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['health"
+        },
+        "output": "[{'text': 'tăng huyết áp', 'position': [57, 70], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'bệnh thận mạn', 'position': [107, 120], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'ung thư đại tràng', 'position': [",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 8
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'tăng huyết áp', 'position': [57, 70], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['health",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mấ"
+        },
+        "output": "[{'text': 'tăng huyết áp', 'position': [57, 70], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'bệnh thận mạn', 'position': [107, 120], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'ung thư đại tràng', 'position': [",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'tăng huyết áp', 'position': [57, 70], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['health",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mấ"
+        },
+        "output": "[{'text': 'tăng huyết áp', 'position': [57, 70], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'bệnh thận mạn', 'position': [107, 120], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': F",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 8,
+      "ts": 1783397933.8043518
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783397933.8043756
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 8
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mấ",
+          "start": "57",
+          "end": "70"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mấ",
+          "start": "107",
+          "end": "120"
+        },
+        "output": "{'isNegated': True, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mấ",
+          "start": "143",
+          "end": "160"
+        },
+        "output": "{'isNegated': True, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mấ",
+          "start": "181",
+          "end": "204"
+        },
+        "output": "{'isNegated': True, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 8,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783397933.8045259
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783397933.8045344
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 8
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'tăng huyết áp', 'position': [57, 70], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthb",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mấ"
+        },
+        "output": "{'candidates': ['I15.0', 'O16', 'O11', 'I27.0', 'I67.5'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'bệnh thận mạn', 'position': [107, 120], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healt",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mấ"
+        },
+        "output": "{'candidates': ['N18.9', 'N18.4', 'N18.2', 'N18.1', 'N18'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'ung thư đại tràng', 'position': [143, 160], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['h",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mấ"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'Bệnh nhân xơ gan mất bù', 'position': [181, 204], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters",
+          "context": "ác bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch c"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 2
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 2,
+      "ts": 1783397936.703342
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783397936.7033935
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 8
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'tăng huyết áp', 'position': [57, 70], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['health",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mấ"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}], 'final_predictions': [{'text': 'tăng huyết áp', ",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 8,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 8,
+      "ts": 1783397936.704061
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 8,
+      "elapsed": 4.44,
+      "ts": 1783397936.704101
+    }
+  ]
+}

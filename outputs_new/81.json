@@ -1,0 +1,388 @@
+{
+  "note_id": "81",
+  "mentions": [
+    {
+      "text": "vết thương thấu bụng giữa bên",
+      "position": [
+        37,
+        66
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    },
+    {
+      "text": "chụp cắt lớp vi tính",
+      "position": [
+        257,
+        277
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "ct",
+      "position": [
+        279,
+        281
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "mổ",
+      "position": [
+        293,
+        295
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "dày niêm mạc xoang hàm dày",
+      "position": [
+        308,
+        334
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "nội soi",
+      "position": [
+        438,
+        445
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [
+      "[0] CHẨN_ĐOÁN has no candidates"
+    ]
+  },
+  "stats": {
+    "total_mentions": 6,
+    "final": 6,
+    "validation_errors": 0,
+    "elapsed": 0.91
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 462,
+      "ts": 1783398368.4196434
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398368.4196496
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 462
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 462
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến"
+        },
+        "output": "{'rule': [{'text': 'chụp cắt lớp vi tính', 'position': [257, 277], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'ct', 'position': [279, 281], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'mổ', 'position': [293, 295], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'chụp cắt lớp vi tính', 'position': [379, 399], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'ct', 'position': [401, 403],",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 6,
+          "qwen": 0,
+          "healthbert": 7,
+          "errors": 0
+        },
+        "total": 9
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'chụp cắt lớp vi tính', 'position': [257, 277], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'ct"
+        },
+        "output": "[{'text': 'vết thương thấu bụng giữa bên', 'position': [37, 66], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6122069954872131}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'vết thương thấu bụng giữa bên', 'position': [95, 124], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6122069954872131}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'con",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 9
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'vết thương thấu bụng giữa bên', 'position': [37, 66], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6122069954872131}], 'extraction_source': 'healthbert', 'vote",
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến"
+        },
+        "output": "[{'text': 'vết thương thấu bụng giữa bên', 'position': [37, 66], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6122069954872131}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'vết thương thấu bụng giữa bên', 'position': [95, 124], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6122069954872131}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'con",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'vết thương thấu bụng giữa bên', 'position': [37, 66], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6122069954872131}], 'extraction_source': 'healthbert', 'vote",
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến"
+        },
+        "output": "[{'text': 'vết thương thấu bụng giữa bên', 'position': [37, 66], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6122069954872131}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'vết thương thấu bụng giữa bên', 'position': [37, 66], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6122069954872131}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voter",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 3
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 9,
+      "ts": 1783398369.3221605
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398369.3221831
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 9
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến",
+          "start": "37",
+          "end": "66"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến",
+          "start": "37",
+          "end": "66"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 9,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398369.3222964
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398369.3223038
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 9
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'vết thương thấu bụng giữa bên', 'position': [37, 66], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6122069954872131}], 'extraction_source': 'healthbert', 'vote_",
+          "context": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'vết thương thấu bụng giữa bên', 'position': [37, 66], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6122069954872131}], 'extraction_source': 'healthbert', 'vote_",
+          "context": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1783398369.3319933
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398369.332024
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 9
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'vết thương thấu bụng giữa bên', 'position': [37, 66], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6122069954872131}], 'extraction_source': 'healthbert', 'vote",
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 6,
+        "dropped": 3
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 6,
+      "ts": 1783398369.3322906
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 6,
+      "elapsed": 0.91,
+      "ts": 1783398369.3323083
+    }
+  ]
+}

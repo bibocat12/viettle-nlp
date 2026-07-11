@@ -1,33 +1,339 @@
-[
-  {
-    "text": "béo phì",
-    "position": [
-      52,
-      59
-    ],
-    "type": "CHẨN_ĐOÁN",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": true
+{
+  "note_id": "26",
+  "mentions": [
+    {
+      "text": "phẫu thuật",
+      "position": [
+        131,
+        141
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
     },
-    "candidates": [
-      "E65",
-      "R63.5",
-      "G47.3"
-    ]
-  },
-  {
-    "text": "phẫu thuật",
-    "position": [
-      131,
-      141
-    ],
-    "type": "TÊN_XÉT_NGHIỆM",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
+    {
+      "text": "nhiều lần cố gắng giảm cân",
+      "position": [
+        184,
+        210
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      }
+    },
+    {
+      "text": "và tăng cân trở lại",
+      "position": [
+        211,
+        230
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      }
+    },
+    {
+      "text": "pound nhưng sau đó có  tăng",
+      "position": [
+        312,
+        339
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
     }
-  }
-]
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "stats": {
+    "total_mentions": 4,
+    "final": 4,
+    "validation_errors": 0,
+    "elapsed": 1.64
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 378,
+      "ts": 1783398040.6315699
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398040.6315832
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 378
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 378
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: béo phì\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật\n    Các sự kiện trước khi nhập viện\n    - nhiều lần cố gắn"
+        },
+        "output": "{'rule': [{'text': 'phẫu thuật', 'position': [131, 141], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}], 'qwen': [], 'healthbert': [{'text': 'nhiều lần cố gắng giảm cân', 'position': [184, 210], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.4682627320289612}]}, {'text': 'và tăng cân trở lại', 'position': [211, 230], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.542976438999176}]}, {'text': 'pound nhưng sau đó có ",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 1,
+          "qwen": 0,
+          "healthbert": 3,
+          "errors": 0
+        },
+        "total": 4
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'phẫu thuật', 'position': [131, 141], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'nhiều lần cố"
+        },
+        "output": "[{'text': 'phẫu thuật', 'position': [131, 141], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'nhiều lần cố gắng giảm cân', 'position': [184, 210], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.4682627320289612}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'và tăng cân trở lại', 'position': [211, 230], 'type'",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 4
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'phẫu thuật', 'position': [131, 141], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'nhiều lần cố",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: béo phì\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật\n    Các sự kiện trước khi nhập viện\n    - nhiều lần cố gắn"
+        },
+        "output": "[{'text': 'phẫu thuật', 'position': [131, 141], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'nhiều lần cố gắng giảm cân', 'position': [184, 210], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.4682627320289612}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'và tăng cân trở lại', 'position': [211, 230], 'type'",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'phẫu thuật', 'position': [131, 141], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: béo phì\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật\n    Các sự kiện trước khi nhập viện\n    - nhiều lần cố gắn"
+        },
+        "output": "[{'text': 'phẫu thuật', 'position': [131, 141], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False}, {'text': 'nhiều lần cố gắng giảm cân', 'position': [184, 210], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.4682627320289612}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'và",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 4,
+      "ts": 1783398042.2663777
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398042.2664096
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 4
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: béo phì\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật\n    Các sự kiện trước khi nhập viện\n    - nhiều lần cố gắn",
+          "start": "184",
+          "end": "210"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: béo phì\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật\n    Các sự kiện trước khi nhập viện\n    - nhiều lần cố gắn",
+          "start": "211",
+          "end": "230"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: béo phì\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật\n    Các sự kiện trước khi nhập viện\n    - nhiều lần cố gắn",
+          "start": "312",
+          "end": "339"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 4,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398042.2666302
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398042.2666466
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 4
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1783398042.2666574
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398042.266668
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 4
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'phẫu thuật', 'position': [131, 141], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: béo phì\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật\n    Các sự kiện trước khi nhập viện\n    - nhiều lần cố gắn"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}], 'final_predictions': [{'text': 'phẫu thuật', 'position': [131, 141], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False, 'assertions': {'isNegated': False, 'isFamily': False, 'isHi",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 4,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 4,
+      "ts": 1783398042.266875
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 4,
+      "elapsed": 1.64,
+      "ts": 1783398042.2668977
+    }
+  ]
+}

@@ -1,0 +1,499 @@
+{
+  "note_id": "72",
+  "mentions": [
+    {
+      "text": "vàng da không đau",
+      "position": [
+        118,
+        135
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "bilirubin",
+      "position": [
+        218,
+        227
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "siêu âm",
+      "position": [
+        294,
+        301
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "dẫn mật trong gan ở ống",
+      "position": [
+        322,
+        345
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    },
+    {
+      "text": "nội soi",
+      "position": [
+        386,
+        393
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "khối u lân cận",
+      "position": [
+        499,
+        513
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "của ống mật chủ",
+      "position": [
+        574,
+        589
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "lấy mẫu tế bào bằng chổi",
+      "position": [
+        592,
+        616
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "biểu mô tuyến",
+      "position": [
+        661,
+        674
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "cho thấy một khối phình to",
+      "position": [
+        425,
+        451
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [
+      "[3] CHẨN_ĐOÁN has no candidates",
+      "[9] CHẨN_ĐOÁN has no candidates"
+    ]
+  },
+  "stats": {
+    "total_mentions": 10,
+    "final": 10,
+    "validation_errors": 0,
+    "elapsed": 4.35
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 1497,
+      "ts": 1783398319.6408212
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398319.6408362
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 1497
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 1497
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\nThời điểm khởi phát triệu chứng: giữa\nCác triệu chứng hiện tại\n- vàng da không đau\n- ngứa\nCác sự kiện trước khi nhập viện\n- tăngtăng các xét nghiệm"
+        },
+        "output": "{'rule': [{'text': 'bilirubin', 'position': [218, 227], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'siêu âm', 'position': [294, 301], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'nội soi', 'position': [386, 393], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'bilirubin', 'position': [862, 871], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'siêu âm', 'position': [1013, 1020], 'typ",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 6,
+          "qwen": 0,
+          "healthbert": 17,
+          "errors": 0
+        },
+        "total": 18
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'bilirubin', 'position': [218, 227], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'siêu âm', 'po"
+        },
+        "output": "[{'text': 'vàng da không đau', 'position': [118, 135], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6015973091125488}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'bilirubin', 'position': [218, 227], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'siêu âm', 'position': [294, 301], 'type': 'TÊN_XÉT_NGHIỆM', 'c",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 18
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'vàng da không đau', 'position': [118, 135], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6015973091125488}], 'extraction_source': 'healthbert', 'vote_count",
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\nThời điểm khởi phát triệu chứng: giữa\nCác triệu chứng hiện tại\n- vàng da không đau\n- ngứa\nCác sự kiện trước khi nhập viện\n- tăngtăng các xét nghiệm"
+        },
+        "output": "[{'text': 'vàng da không đau', 'position': [118, 135], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6015973091125488}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'bilirubin', 'position': [218, 227], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'siêu âm', 'position': [294, 301], 'type': 'TÊN_XÉT_NGHIỆM', 'c",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'vàng da không đau', 'position': [118, 135], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6015973091125488}], 'extraction_source': 'healthbert', 'vote_count",
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\nThời điểm khởi phát triệu chứng: giữa\nCác triệu chứng hiện tại\n- vàng da không đau\n- ngứa\nCác sự kiện trước khi nhập viện\n- tăngtăng các xét nghiệm"
+        },
+        "output": "[{'text': 'vàng da không đau', 'position': [118, 135], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6015973091125488}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'bilirubin', 'position': [218, 227], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False}, {'text': 'siêu âm', 'p",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 9
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 18,
+      "ts": 1783398323.961673
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398323.9617214
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 18
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\nThời điểm khởi phát triệu chứng: giữa\nCác triệu chứng hiện tại\n- vàng da không đau\n- ngứa\nCác sự kiện trước khi nhập viện\n- tăngtăng các xét nghiệm",
+          "start": "118",
+          "end": "135"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\nThời điểm khởi phát triệu chứng: giữa\nCác triệu chứng hiện tại\n- vàng da không đau\n- ngứa\nCác sự kiện trước khi nhập viện\n- tăngtăng các xét nghiệm",
+          "start": "322",
+          "end": "345"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\nThời điểm khởi phát triệu chứng: giữa\nCác triệu chứng hiện tại\n- vàng da không đau\n- ngứa\nCác sự kiện trước khi nhập viện\n- tăngtăng các xét nghiệm",
+          "start": "322",
+          "end": "345"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\nThời điểm khởi phát triệu chứng: giữa\nCác triệu chứng hiện tại\n- vàng da không đau\n- ngứa\nCác sự kiện trước khi nhập viện\n- tăngtăng các xét nghiệm",
+          "start": "425",
+          "end": "451"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 18,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398323.9620142
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398323.96203
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 18
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'dẫn mật trong gan ở ống', 'position': [322, 345], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.5974467992782593}], 'extraction_source': 'healthbert', 'vote_coun",
+          "context": "ện\n- tăngtăng các xét nghiệm chức năng gan và bilirubin khi khám\n- âm tính đánh giá từ xét nghiệm huyết thanh của cô ấy\n- siêu âm cho thấy giãn đường dẫn mật trong gan ở ống mật chủ 15 mm tại mức tuyế"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'dẫn mật trong gan ở ống', 'position': [322, 345], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.5974467992782593}], 'extraction_source': 'healthbert', 'vote_coun",
+          "context": "ện\n- tăngtăng các xét nghiệm chức năng gan và bilirubin khi khám\n- âm tính đánh giá từ xét nghiệm huyết thanh của cô ấy\n- siêu âm cho thấy giãn đường dẫn mật trong gan ở ống mật chủ 15 mm tại mức tuyế"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'cho thấy một khối phình to', 'position': [425, 451], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vot",
+          "context": " thanh của cô ấy\n- siêu âm cho thấy giãn đường dẫn mật trong gan ở ống mật chủ 15 mm tại mức tuyến tụy\n- ercp (nội soi mật tụy ngược dòng) bởi Bác sĩ cho thấy một khối phình to 2 cm ở nhúm tá tràng lớ"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1783398323.98554
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398323.9855707
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 18
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'vàng da không đau', 'position': [118, 135], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6015973091125488}], 'extraction_source': 'healthbert', 'vote_count",
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\nThời điểm khởi phát triệu chứng: giữa\nCác triệu chứng hiện tại\n- vàng da không đau\n- ngứa\nCác sự kiện trước khi nhập viện\n- tăngtăng các xét nghiệm"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'a",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 10,
+        "dropped": 8
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 10,
+      "ts": 1783398323.9862146
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 10,
+      "elapsed": 4.35,
+      "ts": 1783398323.986243
+    }
+  ]
+}

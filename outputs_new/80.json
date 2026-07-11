@@ -1,0 +1,409 @@
+{
+  "note_id": "80",
+  "mentions": [
+    {
+      "text": "chấn thương gãy xương sườn trái",
+      "position": [
+        134,
+        165
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "đập ngực xuống đường",
+      "position": [
+        258,
+        278
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "Cận lâm sàng",
+      "position": [
+        339,
+        351
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "chụp cắt lớp vi tính",
+      "position": [
+        359,
+        379
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "ct",
+      "position": [
+        381,
+        383
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "Hình ảnh gãy",
+      "position": [
+        461,
+        473
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "xương sườn thứ",
+      "position": [
+        500,
+        514
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "một vùng nhu mô phổi nhỏ",
+      "position": [
+        542,
+        566
+      ],
+      "type": "THUỐC",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [
+      "[7] THUỐC has no candidates"
+    ]
+  },
+  "stats": {
+    "total_mentions": 8,
+    "final": 8,
+    "validation_errors": 0,
+    "elapsed": 1.53
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 581,
+      "ts": 1783398366.892694
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398366.8927076
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 581
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 581
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: nam giới khỏe mạnh, không có bệnh lý khác\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: chấn thương gãy xương sườn trái sau tai nạn trượt ván giao thông\nB"
+        },
+        "output": "{'rule': [{'text': 'chụp cắt lớp vi tính', 'position': [359, 379], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'ct', 'position': [381, 383], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'chụp cắt lớp vi tính', 'position': [425, 445], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'ct', 'position': [447, 449], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}], 'qwen': [], 'healthbert': [{'text': '",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 4,
+          "qwen": 0,
+          "healthbert": 9,
+          "errors": 0
+        },
+        "total": 11
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'chụp cắt lớp vi tính', 'position': [359, 379], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'ct"
+        },
+        "output": "[{'text': 'chấn thương gãy xương sườn trái', 'position': [134, 165], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.5856814384460449}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'đập ngực xuống đường', 'position': [258, 278], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.640734076499939}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthber",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 11
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'chấn thương gãy xương sườn trái', 'position': [134, 165], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.5856814384460449}], 'extraction_source': 'heal",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: nam giới khỏe mạnh, không có bệnh lý khác\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: chấn thương gãy xương sườn trái sau tai nạn trượt ván giao thông\nB"
+        },
+        "output": "[{'text': 'chấn thương gãy xương sườn trái', 'position': [134, 165], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.5856814384460449}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'đập ngực xuống đường', 'position': [258, 278], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.640734076499939}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthber",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'chấn thương gãy xương sườn trái', 'position': [134, 165], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.5856814384460449}], 'extraction_source': 'heal",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: nam giới khỏe mạnh, không có bệnh lý khác\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: chấn thương gãy xương sườn trái sau tai nạn trượt ván giao thông\nB"
+        },
+        "output": "[{'text': 'chấn thương gãy xương sườn trái', 'position': [134, 165], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.5856814384460449}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'đập ngực xuống đường', 'position': [258, 278], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.640734076499939}], 'extraction_source': 'healthbert', 'vote_count':",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 3
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 11,
+      "ts": 1783398368.4021318
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398368.4021587
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 11
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: nam giới khỏe mạnh, không có bệnh lý khác\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: chấn thương gãy xương sườn trái sau tai nạn trượt ván giao thông\nB",
+          "start": "258",
+          "end": "278"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: nam giới khỏe mạnh, không có bệnh lý khác\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: chấn thương gãy xương sườn trái sau tai nạn trượt ván giao thông\nB",
+          "start": "542",
+          "end": "566"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 11,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398368.4022765
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398368.4022841
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 11
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'một vùng nhu mô phổi nhỏ', 'position': [542, 566], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.85}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['he",
+          "context": "g cổ không thấy tổn thương\n    - chụp cắt lớp vi tính (ct) lồng ngực Hình ảnh gãy 3 xương sườn 9, 10 và 11, xương sườn thứ 10 bị gãy vụn gây đụng dập một vùng nhu mô phổi nhỏ tại vị trí gãy"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1783398368.4184306
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398368.4184542
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 11
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'chấn thương gãy xương sườn trái', 'position': [134, 165], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.5856814384460449}], 'extraction_source': 'heal",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: nam giới khỏe mạnh, không có bệnh lý khác\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: chấn thương gãy xương sườn trái sau tai nạn trượt ván giao thông\nB"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes'",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 8,
+        "dropped": 3
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 8,
+      "ts": 1783398368.418755
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 8,
+      "elapsed": 1.53,
+      "ts": 1783398368.4187684
+    }
+  ]
+}

@@ -10,6 +10,7 @@ from prompt import LINKER_RERANK_SYSTEM, LINKER_AGENT_SYSTEM
 
 
 def _search_icd10(mention_text: str, kb, top_k: int = 15) -> list:
+    # Fuzzy string search (fast, default)
     results = kb.search_icd10(mention_text, top_k=top_k)
     return [{"code": r["code"], "name": r.get("name", ""), "score": r.get("score", 0)} for r in results]
 

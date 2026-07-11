@@ -1,64 +1,382 @@
-[
-  {
-    "text": "bệnh mạch máu",
-    "position": [
-      34,
-      47
-    ],
-    "type": "CHẨN_ĐOÁN",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": true
+{
+  "note_id": "22",
+  "mentions": [
+    {
+      "text": "bệnh mạch máu",
+      "position": [
+        34,
+        47
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      },
+      "candidates": [
+        "I67.9",
+        "F01.9",
+        "I73.9",
+        "F01.8",
+        "I73.8"
+      ]
     },
-    "candidates": [
-      "I69",
-      "I73",
-      "T69.1"
-    ]
-  },
-  {
-    "text": "aspirin 325mg",
-    "position": [
-      75,
-      88
-    ],
-    "type": "THUỐC",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": true
+    {
+      "text": "aspirin 325mg",
+      "position": [
+        75,
+        88
+      ],
+      "type": "THUỐC",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      },
+      "candidates": [
+        "1154070",
+        "350460",
+        "335990",
+        "315422",
+        "329294"
+      ]
     },
-    "candidates": [
-      "1191",
-      "1154070",
-      "215568"
-    ]
-  },
-  {
-    "text": "ct",
-    "position": [
-      229,
-      231
-    ],
-    "type": "TÊN_XÉT_NGHIỆM",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
+    {
+      "text": "ct",
+      "position": [
+        229,
+        231
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "Hình ảnh  khối máu tụ dưới",
+      "position": [
+        261,
+        287
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "màng cứng bán cấp hai bên",
+      "position": [
+        288,
+        313
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
     }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": []
   },
-  {
-    "text": "ct",
-    "position": [
-      347,
-      349
-    ],
-    "type": "TÊN_XÉT_NGHIỆM",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
+  "stats": {
+    "total_mentions": 5,
+    "final": 5,
+    "validation_errors": 0,
+    "elapsed": 12.05
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 379,
+      "ts": 1783398007.3264694
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398007.3264825
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 379
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 379
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết "
+        },
+        "output": "{'rule': [{'text': 'aspirin 325mg', 'position': [75, 88], 'type': 'THUỐC', 'confidence': 0.98, 'source': 'rule'}, {'text': 'ct', 'position': [229, 231], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'ct', 'position': [347, 349], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}], 'qwen': [], 'healthbert': [{'text': 'bệnh mạch máu', 'position': [34, 47], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}]}, {'text': 'chụp ct sọ",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 3,
+          "qwen": 0,
+          "healthbert": 5,
+          "errors": 0
+        },
+        "total": 6
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'aspirin 325mg', 'position': [75, 88], 'type': 'THUỐC', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'ct', 'position': [22"
+        },
+        "output": "[{'text': 'bệnh mạch máu', 'position': [34, 47], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'aspirin 325mg', 'position': [75, 88], 'type': 'THUỐC', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'ct', 'position': [229, 231], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', '",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 6
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'bệnh mạch máu', 'position': [34, 47], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['health",
+          "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết "
+        },
+        "output": "[{'text': 'bệnh mạch máu', 'position': [34, 47], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'aspirin 325mg', 'position': [75, 88], 'type': 'THUỐC', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'ct', 'position': [229, 231], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', '",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'bệnh mạch máu', 'position': [34, 47], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['health",
+          "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết "
+        },
+        "output": "[{'text': 'bệnh mạch máu', 'position': [34, 47], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'aspirin 325mg', 'position': [75, 88], 'type': 'THUỐC', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False}, {'text': 'ct', 'position': [229, 231], 'type': 'TÊN_X",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 1
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 6,
+      "ts": 1783398009.3881292
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398009.3881578
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 6
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết ",
+          "start": "34",
+          "end": "47"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết ",
+          "start": "75",
+          "end": "88"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 6,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398009.388298
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398009.388308
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 6
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'bệnh mạch máu', 'position': [34, 47], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthb",
+          "context": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nK"
+        },
+        "output": "{'candidates': ['I67.9', 'F01.9', 'I73.9', 'F01.8', 'I73.8'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'aspirin 325mg', 'position': [75, 88], 'type': 'THUỐC', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False, 'assert",
+          "context": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết "
+        },
+        "output": "{'candidates': ['1154070', '350460', '335990', '315422', '329294'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 2
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 2,
+      "ts": 1783398019.3711145
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398019.3711522
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 6
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'bệnh mạch máu', 'position': [34, 47], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['health",
+          "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết "
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}], 'final_predictions': [{'text': 'bệnh mạch máu', 'position': [34, 47], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthb",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 5,
+        "dropped": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 5,
+      "ts": 1783398019.3714514
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 5,
+      "elapsed": 12.04,
+      "ts": 1783398019.37147
     }
-  }
-]
+  ]
+}

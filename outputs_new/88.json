@@ -1,0 +1,395 @@
+{
+  "note_id": "88",
+  "mentions": [
+    {
+      "text": "Viêm gan virus",
+      "position": [
+        115,
+        129
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": [
+        "B18.8",
+        "P35.3",
+        "B17.2",
+        "B17",
+        "B17.8"
+      ]
+    },
+    {
+      "text": "độ trung bình",
+      "position": [
+        170,
+        183
+      ],
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "lympho không hodgkin tế",
+      "position": [
+        191,
+        214
+      ],
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "phẫu thuật",
+      "position": [
+        245,
+        255
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "Phẫu thuật",
+      "position": [
+        270,
+        280
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "chảy dịch vàng và có hoại",
+      "position": [
+        868,
+        893
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [
+      "[5] CHẨN_ĐOÁN has no candidates"
+    ]
+  },
+  "stats": {
+    "total_mentions": 6,
+    "final": 6,
+    "validation_errors": 0,
+    "elapsed": 5.38
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 964,
+      "ts": 1783398390.0838418
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398390.083852
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 964
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 964
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường típ 1 có biến chứng viêm thần kinh ngoại biên\n    - Viêm gan virus C và B\n    - Tăng áp động mạch phổi mức độ trung bình\n    -U lympho kh"
+        },
+        "output": "{'rule': [{'text': 'phẫu thuật', 'position': [245, 255], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'Phẫu thuật', 'position': [270, 280], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}], 'qwen': [], 'healthbert': [{'text': 'Viêm gan virus', 'position': [115, 129], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}]}, {'text': 'độ trung bình', 'position': [170, 183], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'type_candidates': [{'lab",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 2,
+          "qwen": 0,
+          "healthbert": 6,
+          "errors": 0
+        },
+        "total": 6
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'phẫu thuật', 'position': [245, 255], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'Phẫu thuật',"
+        },
+        "output": "[{'text': 'Viêm gan virus', 'position': [115, 129], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'độ trung bình', 'position': [170, 183], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'type_candidates': [{'label': 'KẾT_QUẢ_XÉT_NGHIỆM', 'score': 0.6524878740310669}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text':",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 6
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'Viêm gan virus', 'position': [115, 129], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['hea",
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường típ 1 có biến chứng viêm thần kinh ngoại biên\n    - Viêm gan virus C và B\n    - Tăng áp động mạch phổi mức độ trung bình\n    -U lympho kh"
+        },
+        "output": "[{'text': 'Viêm gan virus', 'position': [115, 129], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'độ trung bình', 'position': [170, 183], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'type_candidates': [{'label': 'KẾT_QUẢ_XÉT_NGHIỆM', 'score': 0.6524878740310669}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text':",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'Viêm gan virus', 'position': [115, 129], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['hea",
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường típ 1 có biến chứng viêm thần kinh ngoại biên\n    - Viêm gan virus C và B\n    - Tăng áp động mạch phổi mức độ trung bình\n    -U lympho kh"
+        },
+        "output": "[{'text': 'Viêm gan virus', 'position': [115, 129], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'độ trung bình', 'position': [170, 183], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'type_candidates': [{'label': 'KẾT_QUẢ_XÉT_NGHIỆM', 'score': 0.6524878740310669}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'co",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 6,
+      "ts": 1783398392.7205904
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398392.7206204
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 6
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường típ 1 có biến chứng viêm thần kinh ngoại biên\n    - Viêm gan virus C và B\n    - Tăng áp động mạch phổi mức độ trung bình\n    -U lympho kh",
+          "start": "115",
+          "end": "129"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường típ 1 có biến chứng viêm thần kinh ngoại biên\n    - Viêm gan virus C và B\n    - Tăng áp động mạch phổi mức độ trung bình\n    -U lympho kh",
+          "start": "868",
+          "end": "893"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 6,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398392.7207782
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398392.7207909
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 6
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'Viêm gan virus', 'position': [115, 129], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['heal",
+          "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường típ 1 có biến chứng viêm thần kinh ngoại biên\n    - Viêm gan virus C và B\n    - Tăng áp động mạch phổi mức độ trung bình\n    -U lympho kh"
+        },
+        "output": "{'candidates': ['B18.8', 'P35.3', 'B17.2', 'B17', 'B17.8'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'chảy dịch vàng và có hoại', 'position': [868, 893], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6413370966911316}], 'extraction_source': 'healthbert', 'vote_co",
+          "context": "phù chân và hoại tử nặng lên, chưa xử trí gì, vào viện.\nTình trạng lúc khám vào viện:\nBệnh nhân tỉnh, tiếp xúc được\nPhù 2 chân nặng, Loét 2 bàn chân, chảy dịch vàng và có hoại tử đen kích thước 2*4 cm"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 1,
+      "ts": 1783398395.466298
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398395.4663458
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 6
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'Viêm gan virus', 'position': [115, 129], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['hea",
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường típ 1 có biến chứng viêm thần kinh ngoại biên\n    - Viêm gan virus C và B\n    - Tăng áp động mạch phổi mức độ trung bình\n    -U lympho kh"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}], 'final_predictions': [{'text': 'Viêm gan virus', 'position': [115, 129], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 6,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 6,
+      "ts": 1783398395.4667432
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 6,
+      "elapsed": 5.38,
+      "ts": 1783398395.466772
+    }
+  ]
+}

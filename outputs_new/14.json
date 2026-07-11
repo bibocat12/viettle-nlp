@@ -1,74 +1,466 @@
-[
-  {
-    "text": "đau ngực trái",
-    "position": [
-      69,
-      82
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": true
-    }
-  },
-  {
-    "text": "khó thở",
-    "position": [
-      92,
-      99
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "phẫu thuật",
-    "position": [
-      646,
-      656
-    ],
-    "type": "TÊN_XÉT_NGHIỆM",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": true
-    }
-  },
-  {
-    "text": "Bệnh động mạch vành mạn tính",
-    "position": [
-      699,
-      727
-    ],
-    "type": "CHẨN_ĐOÁN",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
+{
+  "note_id": "14",
+  "mentions": [
+    {
+      "text": "đau ngực tráikèm theo  khó thở",
+      "position": [
+        69,
+        99
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      }
     },
-    "candidates": [
-      "C96.8"
+    {
+      "text": "đau ngực trái",
+      "position": [
+        69,
+        82
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      }
+    },
+    {
+      "text": "Xạ hình tưới máu cơ tim",
+      "position": [
+        472,
+        495
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "gần đây cho thấy thiếu máu",
+      "position": [
+        496,
+        522
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      },
+      "candidates": []
+    },
+    {
+      "text": "cơ tim vùng dưới và thành",
+      "position": [
+        523,
+        548
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "Chụp động mạch vành",
+      "position": [
+        553,
+        572
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "phẫu thuật",
+      "position": [
+        646,
+        656
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "có thiếu máu cơ tim",
+      "position": [
+        728,
+        747
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [
+      "[3] CHẨN_ĐOÁN has no candidates",
+      "[7] CHẨN_ĐOÁN has no candidates"
     ]
   },
-  {
-    "text": "thiếu máu cơ tim",
-    "position": [
-      731,
-      747
-    ],
-    "type": "CHẨN_ĐOÁN",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
+  "stats": {
+    "total_mentions": 8,
+    "final": 8,
+    "validation_errors": 0,
+    "elapsed": 2.7
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 798,
+      "ts": 1783397955.8010764
     },
-    "candidates": [
-      "I25.6",
-      "P29.4"
-    ]
-  }
-]
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783397955.8010914
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 798
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 798
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n2.  Tiền sử bệnh hiện tại\nLý do nhập viện: đau ngực tráikèm theo  khó thở\nTriệu chứng hiện tại\n- đau ngực trái\n- khó thở\n- chóng mặt\nĐặc điểm triệu chứng\n- đau ngực trái: giá"
+        },
+        "output": "{'rule': [{'text': 'phẫu thuật', 'position': [646, 656], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}], 'qwen': [], 'healthbert': [{'text': 'đau ngực tráikèm theo  khó thở', 'position': [69, 99], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6915444731712341}]}, {'text': 'đau ngực trái', 'position': [123, 136], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.7132635116577148}]}, {'text': 'đau ngực trái', 'position",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 1,
+          "qwen": 0,
+          "healthbert": 8,
+          "errors": 0
+        },
+        "total": 9
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'phẫu thuật', 'position': [646, 656], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'đau ngực trá"
+        },
+        "output": "[{'text': 'đau ngực tráikèm theo  khó thở', 'position': [69, 99], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6915444731712341}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'đau ngực trái', 'position': [123, 136], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.7132635116577148}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidenc",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 9
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'đau ngực tráikèm theo  khó thở', 'position': [69, 99], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6915444731712341}], 'extraction_source': 'healthbert', ",
+          "text": "1.  Tiền sử bệnh nội khoa\n2.  Tiền sử bệnh hiện tại\nLý do nhập viện: đau ngực tráikèm theo  khó thở\nTriệu chứng hiện tại\n- đau ngực trái\n- khó thở\n- chóng mặt\nĐặc điểm triệu chứng\n- đau ngực trái: giá"
+        },
+        "output": "[{'text': 'đau ngực tráikèm theo  khó thở', 'position': [69, 99], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6915444731712341}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'đau ngực trái', 'position': [123, 136], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.7132635116577148}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidenc",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'đau ngực tráikèm theo  khó thở', 'position': [69, 99], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6915444731712341}], 'extraction_source': 'healthbert', ",
+          "text": "1.  Tiền sử bệnh nội khoa\n2.  Tiền sử bệnh hiện tại\nLý do nhập viện: đau ngực tráikèm theo  khó thở\nTriệu chứng hiện tại\n- đau ngực trái\n- khó thở\n- chóng mặt\nĐặc điểm triệu chứng\n- đau ngực trái: giá"
+        },
+        "output": "[{'text': 'đau ngực tráikèm theo  khó thở', 'position': [69, 99], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6915444731712341}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'đau ngực trái', 'position': [69, 82], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.7132635116577148}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['h",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 2
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 9,
+      "ts": 1783397958.4917407
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783397958.4917662
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 9
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n2.  Tiền sử bệnh hiện tại\nLý do nhập viện: đau ngực tráikèm theo  khó thở\nTriệu chứng hiện tại\n- đau ngực trái\n- khó thở\n- chóng mặt\nĐặc điểm triệu chứng\n- đau ngực trái: giá",
+          "start": "69",
+          "end": "99"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n2.  Tiền sử bệnh hiện tại\nLý do nhập viện: đau ngực tráikèm theo  khó thở\nTriệu chứng hiện tại\n- đau ngực trái\n- khó thở\n- chóng mặt\nĐặc điểm triệu chứng\n- đau ngực trái: giá",
+          "start": "69",
+          "end": "82"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n2.  Tiền sử bệnh hiện tại\nLý do nhập viện: đau ngực tráikèm theo  khó thở\nTriệu chứng hiện tại\n- đau ngực trái\n- khó thở\n- chóng mặt\nĐặc điểm triệu chứng\n- đau ngực trái: giá",
+          "start": "69",
+          "end": "82"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n2.  Tiền sử bệnh hiện tại\nLý do nhập viện: đau ngực tráikèm theo  khó thở\nTriệu chứng hiện tại\n- đau ngực trái\n- khó thở\n- chóng mặt\nĐặc điểm triệu chứng\n- đau ngực trái: giá",
+          "start": "496",
+          "end": "522"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n2.  Tiền sử bệnh hiện tại\nLý do nhập viện: đau ngực tráikèm theo  khó thở\nTriệu chứng hiện tại\n- đau ngực trái\n- khó thở\n- chóng mặt\nĐặc điểm triệu chứng\n- đau ngực trái: giá",
+          "start": "728",
+          "end": "747"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 9,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783397958.4920437
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783397958.4920547
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 9
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'gần đây cho thấy thiếu máu', 'position': [496, 522], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vot",
+          "context": "ợt kéo dài vài phút, đến rồi đi\nCác sự kiện trước khi nhập viện\n- Các nghiệm pháp gắng sức trước đây cho kết quả bất thường\n- Xạ hình tưới máu cơ tim gần đây cho thấy thiếu máu cơ tim vùng dưới và thà"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'có thiếu máu cơ tim', 'position': [728, 747], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': [",
+          "context": "60% đoạn gần động mạch liên thất trước trái.\nĐược chỉ định đánh giá phẫu thuật bắc cầu động mạch vành.\nChẩn đoán sơ bộ : Bệnh động mạch vành mạn tính có thiếu máu cơ tim, hẹp 60% đoạn gần động mạch li"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1783397958.5008335
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783397958.5008688
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 9
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'đau ngực tráikèm theo  khó thở', 'position': [69, 99], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6915444731712341}], 'extraction_source': 'healthbert', ",
+          "text": "1.  Tiền sử bệnh nội khoa\n2.  Tiền sử bệnh hiện tại\nLý do nhập viện: đau ngực tráikèm theo  khó thở\nTriệu chứng hiện tại\n- đau ngực trái\n- khó thở\n- chóng mặt\nĐặc điểm triệu chứng\n- đau ngực trái: giá"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 8,
+        "dropped": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 8,
+      "ts": 1783397958.501355
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 8,
+      "elapsed": 2.7,
+      "ts": 1783397958.5013819
+    }
+  ]
+}

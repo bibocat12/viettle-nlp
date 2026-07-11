@@ -1,54 +1,447 @@
-[
-  {
-    "text": "phù hai bên",
-    "position": [
-      321,
-      332
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
+{
+  "note_id": "42",
+  "mentions": [
+    {
+      "text": "đang dùng methadone",
+      "position": [
+        152,
+        171
+      ],
+      "type": "THUỐC",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      },
+      "candidates": [
+        "6813"
+      ]
+    },
+    {
+      "text": "và đau tăng dần khi đi",
+      "position": [
+        259,
+        281
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "phù hai bên",
+      "position": [
+        321,
+        332
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    },
+    {
+      "text": "đau tăng dần khi đi lại",
+      "position": [
+        262,
+        285
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "đau tăng dần",
+      "position": [
+        262,
+        274
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "phủ nhận khó thở",
+      "position": [
+        857,
+        873
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
     }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [
+      "[2] CHẨN_ĐOÁN has no candidates"
+    ]
   },
-  {
-    "text": "ban đỏ",
-    "position": [
-      339,
-      345
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
+  "stats": {
+    "total_mentions": 6,
+    "final": 6,
+    "validation_errors": 0,
+    "elapsed": 2.86
   },
-  {
-    "text": "lơ mơ",
-    "position": [
-      713,
-      718
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": true
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 925,
+      "ts": 1783398167.647573
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398167.647582
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 925
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 925
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Không có tiền sử bệnh tim mạch hoặc thận bệnh nào được biết đến\n    Thuốc trước khi nhập viện lần này: đang dùng methadone\n\n2.  Tiền sử bệnh hiện tại\n "
+        },
+        "output": "{'rule': [], 'qwen': [], 'healthbert': [{'text': 'đang dùng methadone', 'position': [152, 171], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.6412774920463562}]}, {'text': 'và đau tăng dần khi đi', 'position': [259, 281], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6296706199645996}]}, {'text': 'phù hai bên', 'position': [321, 332], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.5267918705940247}]}, {'text': 'đau",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 0,
+          "healthbert": 6,
+          "errors": 0
+        },
+        "total": 6
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'đang dùng methadone', 'position': [152, 171], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.6412774920463562}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vot"
+        },
+        "output": "[{'text': 'đang dùng methadone', 'position': [152, 171], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.6412774920463562}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'và đau tăng dần khi đi', 'position': [259, 281], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6296706199645996}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 6
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'đang dùng methadone', 'position': [152, 171], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.6412774920463562}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vot",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Không có tiền sử bệnh tim mạch hoặc thận bệnh nào được biết đến\n    Thuốc trước khi nhập viện lần này: đang dùng methadone\n\n2.  Tiền sử bệnh hiện tại\n "
+        },
+        "output": "[{'text': 'đang dùng methadone', 'position': [152, 171], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.6412774920463562}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'và đau tăng dần khi đi', 'position': [259, 281], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6296706199645996}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'đang dùng methadone', 'position': [152, 171], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.6412774920463562}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vot",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Không có tiền sử bệnh tim mạch hoặc thận bệnh nào được biết đến\n    Thuốc trước khi nhập viện lần này: đang dùng methadone\n\n2.  Tiền sử bệnh hiện tại\n "
+        },
+        "output": "[{'text': 'đang dùng methadone', 'position': [152, 171], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.6412774920463562}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'và đau tăng dần khi đi', 'position': [259, 281], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.6296706199645996}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 2
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 6,
+      "ts": 1783398170.0467036
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398170.0467274
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 6
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Không có tiền sử bệnh tim mạch hoặc thận bệnh nào được biết đến\n    Thuốc trước khi nhập viện lần này: đang dùng methadone\n\n2.  Tiền sử bệnh hiện tại\n ",
+          "start": "152",
+          "end": "171"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Không có tiền sử bệnh tim mạch hoặc thận bệnh nào được biết đến\n    Thuốc trước khi nhập viện lần này: đang dùng methadone\n\n2.  Tiền sử bệnh hiện tại\n ",
+          "start": "259",
+          "end": "281"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Không có tiền sử bệnh tim mạch hoặc thận bệnh nào được biết đến\n    Thuốc trước khi nhập viện lần này: đang dùng methadone\n\n2.  Tiền sử bệnh hiện tại\n ",
+          "start": "321",
+          "end": "332"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Không có tiền sử bệnh tim mạch hoặc thận bệnh nào được biết đến\n    Thuốc trước khi nhập viện lần này: đang dùng methadone\n\n2.  Tiền sử bệnh hiện tại\n ",
+          "start": "262",
+          "end": "285"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Không có tiền sử bệnh tim mạch hoặc thận bệnh nào được biết đến\n    Thuốc trước khi nhập viện lần này: đang dùng methadone\n\n2.  Tiền sử bệnh hiện tại\n ",
+          "start": "262",
+          "end": "274"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Không có tiền sử bệnh tim mạch hoặc thận bệnh nào được biết đến\n    Thuốc trước khi nhập viện lần này: đang dùng methadone\n\n2.  Tiền sử bệnh hiện tại\n ",
+          "start": "857",
+          "end": "873"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 6,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398170.046998
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398170.0470076
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 6
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'đang dùng methadone', 'position': [152, 171], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.6412774920463562}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vote",
+          "context": "  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Không có tiền sử bệnh tim mạch hoặc thận bệnh nào được biết đến\n    Thuốc trước khi nhập viện lần này: đang dùng methadone\n\n2.  Tiền sử bệnh hiện tại\n   "
+        },
+        "output": "{'candidates': ['6813'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'phù hai bên', 'position': [321, 332], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.5267918705940247}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vote",
+          "context": "\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Đánh giá phù, chủ quan sốt và ớn lạnh, và đau tăng dần khi đi lại\n    Các triệu chứng hiện tại\n    - phù hai bên\n    - ban đỏ, RL\n    - chủ quan sốt\n  "
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 1,
+      "ts": 1783398170.5090663
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398170.5091054
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 6
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'đang dùng methadone', 'position': [152, 171], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.6412774920463562}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vot",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Không có tiền sử bệnh tim mạch hoặc thận bệnh nào được biết đến\n    Thuốc trước khi nhập viện lần này: đang dùng methadone\n\n2.  Tiền sử bệnh hiện tại\n "
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}], 'final_predictions': [{'text': 'đang dùng methadone', 'position': [152, 171], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.6412774920463562}], ",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 6,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 6,
+      "ts": 1783398170.5094702
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 6,
+      "elapsed": 2.86,
+      "ts": 1783398170.5094922
     }
-  },
-  {
-    "text": "ban đỏ",
-    "position": [
-      816,
-      822
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  }
-]
+  ]
+}

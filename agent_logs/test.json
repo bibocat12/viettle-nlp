@@ -1,0 +1,985 @@
+{
+  "file_id": "test",
+  "timestamp": 1783441892.9939687,
+  "elapsed": 5.98,
+  "model": "rules",
+  "result": {
+    "note_id": "test",
+    "mentions": [
+      {
+        "text": "ecg bình thường",
+        "position": [
+          36,
+          51
+        ],
+        "type": "TÊN_XÉT_NGHIỆM",
+        "confidence": 0.5,
+        "voters": [
+          "healthbert"
+        ],
+        "assertions": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        }
+      }
+    ],
+    "validation": {
+      "is_valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stats": {
+      "total_mentions": 1,
+      "final": 1,
+      "validation_errors": 0,
+      "elapsed": 5.98,
+      "rule": 0,
+      "qwen": 0,
+      "healthbert": 1,
+      "errors": 0
+    },
+    "logs": [
+      {
+        "agent": "orchestrator",
+        "action": "start",
+        "text_len": 51,
+        "ts": 1783441887.0122936
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_start",
+        "ts": 1783441887.012307
+      },
+      {
+        "agent": "extraction",
+        "action": "start",
+        "data": {
+          "text_len": 51
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "preprocessed",
+        "data": {
+          "normalized_len": 51
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "parallel_extract",
+          "input": {
+            "text": "bệnh nhân đau ngực, phẫu thuật tim, ecg bình thường"
+          },
+          "output": {
+            "rule": [],
+            "qwen": [],
+            "healthbert": [
+              {
+                "text": "ecg bình thường",
+                "position": [
+                  36,
+                  51
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "healthbert",
+                "vote_count": 1,
+                "voters": [
+                  "healthbert"
+                ],
+                "confidence": 0.5,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "errors": []
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "extracted",
+        "data": {
+          "sources": {
+            "rule": 0,
+            "qwen": 0,
+            "healthbert": 1,
+            "errors": 0
+          },
+          "total": 1
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "vote_merge",
+          "input": {
+            "all_mentions": [
+              {
+                "text": "ecg bình thường",
+                "position": [
+                  36,
+                  51
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "healthbert",
+                "vote_count": 1,
+                "voters": [
+                  "healthbert"
+                ],
+                "confidence": 0.5,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ]
+          },
+          "output": [
+            {
+              "text": "ecg bình thường",
+              "position": [
+                36,
+                51
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "voted",
+        "data": {
+          "merged": 1
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "resolve_conflicts",
+          "input": {
+            "merged": [
+              {
+                "text": "ecg bình thường",
+                "position": [
+                  36,
+                  51
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "healthbert",
+                "vote_count": 1,
+                "voters": [
+                  "healthbert"
+                ],
+                "confidence": 0.5,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "bệnh nhân đau ngực, phẫu thuật tim, ecg bình thường"
+          },
+          "output": [
+            {
+              "text": "ecg bình thường",
+              "position": [
+                36,
+                51
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "fix_positions",
+          "input": {
+            "mentions": [
+              {
+                "text": "ecg bình thường",
+                "position": [
+                  36,
+                  51
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "healthbert",
+                "vote_count": 1,
+                "voters": [
+                  "healthbert"
+                ],
+                "confidence": 0.5,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "bệnh nhân đau ngực, phẫu thuật tim, ecg bình thường"
+          },
+          "output": [
+            {
+              "text": "ecg bình thường",
+              "position": [
+                36,
+                51
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "positions_fixed",
+        "data": {
+          "fixed": 0
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "llm_verified",
+        "data": {
+          "corrected": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_complete",
+        "mentions": 1,
+        "ts": 1783441892.9938588
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_start",
+        "ts": 1783441892.9938693
+      },
+      {
+        "agent": "assertion",
+        "action": "start",
+        "data": {
+          "mentions": 1
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "complete",
+        "data": {
+          "processed": 1,
+          "llm_checked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_complete",
+        "ts": 1783441892.9938798
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_start",
+        "ts": 1783441892.9938853
+      },
+      {
+        "agent": "linking",
+        "action": "start",
+        "data": {
+          "mentions": 1
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "complete",
+        "data": {
+          "linked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_complete",
+        "linked": 0,
+        "ts": 1783441892.9938922
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_start",
+        "ts": 1783441892.993896
+      },
+      {
+        "agent": "verifier",
+        "action": "start",
+        "data": {
+          "mentions": 1
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "tool_call",
+        "data": {
+          "tool": "verify_schema",
+          "input": {
+            "mentions": [
+              {
+                "text": "ecg bình thường",
+                "position": [
+                  36,
+                  51
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "healthbert",
+                "vote_count": 1,
+                "voters": [
+                  "healthbert"
+                ],
+                "confidence": 0.5,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "bệnh nhân đau ngực, phẫu thuật tim, ecg bình thường"
+          },
+          "output": {
+            "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              }
+            ],
+            "final_predictions": [
+              {
+                "text": "ecg bình thường",
+                "position": [
+                  36,
+                  51
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "healthbert",
+                "vote_count": 1,
+                "voters": [
+                  "healthbert"
+                ],
+                "confidence": 0.5,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "dropped": 0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "validated",
+        "data": {
+          "kept": 1,
+          "dropped": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_complete",
+        "kept": 1,
+        "ts": 1783441892.9939263
+      },
+      {
+        "agent": "orchestrator",
+        "action": "complete",
+        "total_mentions": 1,
+        "elapsed": 5.98,
+        "ts": 1783441892.9939408
+      }
+    ]
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 51,
+      "ts": 1783441887.0122936
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783441887.012307
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 51
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 51
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "bệnh nhân đau ngực, phẫu thuật tim, ecg bình thường"
+        },
+        "output": {
+          "rule": [],
+          "qwen": [],
+          "healthbert": [
+            {
+              "text": "ecg bình thường",
+              "position": [
+                36,
+                51
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 0,
+          "healthbert": 1,
+          "errors": 0
+        },
+        "total": 1
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "ecg bình thường",
+              "position": [
+                36,
+                51
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "ecg bình thường",
+            "position": [
+              36,
+              51
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": [
+              "healthbert"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 1
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "ecg bình thường",
+              "position": [
+                36,
+                51
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "bệnh nhân đau ngực, phẫu thuật tim, ecg bình thường"
+        },
+        "output": [
+          {
+            "text": "ecg bình thường",
+            "position": [
+              36,
+              51
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": [
+              "healthbert"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "ecg bình thường",
+              "position": [
+                36,
+                51
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "bệnh nhân đau ngực, phẫu thuật tim, ecg bình thường"
+        },
+        "output": [
+          {
+            "text": "ecg bình thường",
+            "position": [
+              36,
+              51
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": [
+              "healthbert"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 1,
+      "ts": 1783441892.9938588
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783441892.9938693
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 1
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 1,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783441892.9938798
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783441892.9938853
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 1
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1783441892.9938922
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783441892.993896
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 1
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "ecg bình thường",
+              "position": [
+                36,
+                51
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "bệnh nhân đau ngực, phẫu thuật tim, ecg bình thường"
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "ecg bình thường",
+              "position": [
+                36,
+                51
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 1,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 1,
+      "ts": 1783441892.9939263
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 1,
+      "elapsed": 5.98,
+      "ts": 1783441892.9939408
+    }
+  ]
+}

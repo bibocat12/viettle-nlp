@@ -58,13 +58,11 @@ Return JSON only."""
 
 def _check_pattern(text_lower: str, start: int, end: int, patterns: list, window: int = 50) -> bool:
     ctx_start = max(0, start - window)
-    ctx_end = min(len(text_lower), end + window)
     prefix = text_lower[ctx_start:start]
-    suffix = text_lower[end:ctx_end]
-    # Check both prefix and nearby suffix
-    search_zone = prefix + "|" + suffix[:20]
+    # Only check prefix (before entity), not suffix (after entity)
+    # Negation must precede the entity: "không X" not "X không"
     for pattern, _ in patterns:
-        if re.search(pattern, search_zone):
+        if re.search(pattern, prefix):
             return True
     return False
 

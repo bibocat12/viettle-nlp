@@ -42,10 +42,19 @@ class Agent(ABC):
         if tool_name not in self.tools:
             raise ValueError(f"Tool '{tool_name}' not found. Available: {list(self.tools.keys())}")
         result = self.tools[tool_name].run(**kwargs)
+        inp = {}
+        for k, v in kwargs.items():
+            if isinstance(v, str) and len(v) > 5000:
+                inp[k] = v[:5000] + f"... [{len(v)} chars total]"
+            else:
+                inp[k] = v
+        out = result
+        if isinstance(out, str) and len(out) > 5000:
+            out = out[:5000] + f"... [{len(out)} chars total]"
         self.log("tool_call", {
             "tool": tool_name,
-            "input": {k: str(v)[:200] for k, v in kwargs.items()},
-            "output": str(result)[:500] if result else None,
+            "input": inp,
+            "output": out,
             "result_type": type(result).__name__
         })
         return result

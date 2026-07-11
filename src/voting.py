@@ -76,7 +76,8 @@ def _merge_group(group: List[Dict]) -> Dict:
     if len(group) == 1:
         m = group[0]
         m["vote_count"] = 1
-        m["voters"] = [m.get("source", m.get("extraction_source", "unknown"))]
+        src = m.get("source", m.get("extraction_source", "unknown"))
+        m["voters"] = {src: 1}
         m["confidence"] = VOTE_CONFIDENCE[1]
         return m
 

@@ -65,6 +65,11 @@ def get_local_llm():
     return local_llm
 
 
+def get_featherless_llm():
+    from featherless_llm import get_featherless_llm as _get
+    return _get()
+
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -76,6 +81,7 @@ def extract():
     text = data.get("text", "")
     use_llm = data.get("use_llm", False)
     model_type = data.get("model", "runpod")
+    mode_type = data.get("mode", "voting")
     file_id = data.get("file_id", None)
     folder = data.get("folder", "outputs")
     output_dir = OUTPUT_DIRS.get(folder, OUTPUT_DIR)
@@ -109,6 +115,10 @@ def extract():
                     yield json.dumps({"type": "log", "data": {"agent": "system", "action": "loading_local_llm", "ts": time.time()}}) + "\n"
                     llm_inst = get_local_llm()
                     yield json.dumps({"type": "log", "data": {"agent": "system", "action": "local_llm_ready", "ts": time.time()}}) + "\n"
+                elif model_type == "featherless":
+                    yield json.dumps({"type": "log", "data": {"agent": "system", "action": "loading_featherless_llm", "ts": time.time()}}) + "\n"
+                    llm_inst = get_featherless_llm()
+                    yield json.dumps({"type": "log", "data": {"agent": "system", "action": "featherless_llm_ready", "ts": time.time()}}) + "\n"
                 else:
                     yield json.dumps({"type": "log", "data": {"agent": "system", "action": "loading_runpod_llm", "ts": time.time()}}) + "\n"
                     llm_inst = get_runpod_llm()
@@ -124,8 +134,8 @@ def extract():
 
             def run_pipeline_thread():
                 try:
-                    result = run_pipeline(note_id, text, kb=kb_inst, llm=llm_inst, on_log=on_log)
-                    result_container[0] = result.get("mentions", [])
+                    result = run_pipeline(note_id, text, kb=kb_inst, llm=llm_inst, on_log=on_log, mode=mode_type)
+                    result_container[0] = result  # Store full result dict
                 except Exception as e:
                     error_container[0] = str(e)
 
@@ -150,11 +160,12 @@ def extract():
                 yield json.dumps({"type": "error", "data": {"message": error_container[0]}}) + "\n"
             else:
                 result = result_container[0]
+                mentions = result.get("mentions", []) if isinstance(result, dict) else result
                 # Cache the result
                 if file_id:
                     result_cache[file_id] = {
-                        "mentions": result,
-                        "count": len(result),
+                        "mentions": mentions,
+                        "count": len(mentions),
                         "timestamp": time.time(),
                         "elapsed": round(elapsed, 2),
                         "use_llm": use_llm,
@@ -163,7 +174,7 @@ def extract():
                     out_path = output_dir / f"{file_id}.json"
                     output_dir.mkdir(exist_ok=True)
                     with open(out_path, "w", encoding="utf-8") as f:
-                        json.dump(result, f, ensure_ascii=False, indent=2)
+                        json.dump(mentions, f, ensure_ascii=False, indent=2)
                     # Save agent logs
                     log_path = AGENT_LOGS_DIR / f"{file_id}.json"
                     with open(log_path, "w", encoding="utf-8") as f:
@@ -177,8 +188,8 @@ def extract():
                         }, f, ensure_ascii=False, indent=2)
 
                 yield json.dumps({"type": "result", "data": {
-                    "mentions": result,
-                    "count": len(result),
+                    "mentions": mentions,
+                    "count": len(mentions),
                     "elapsed": round(elapsed, 2),
                     "file_id": file_id,
                 }}) + "\n"

@@ -1,0 +1,460 @@
+{
+  "note_id": "56",
+  "mentions": [
+    {
+      "text": "Tăng huyết áp",
+      "position": [
+        73,
+        86
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      },
+      "candidates": [
+        "I15.0",
+        "I27.0",
+        "O11",
+        "O16",
+        "I15.8"
+      ]
+    },
+    {
+      "text": "tăng huyết áp vô căn",
+      "position": [
+        88,
+        108
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      },
+      "candidates": [
+        "I10",
+        "O10.0"
+      ]
+    },
+    {
+      "text": "khó chịu vùng ngực gián đoạn",
+      "position": [
+        294,
+        322
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "điện tâm đồ",
+      "position": [
+        820,
+        831
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "bình thường",
+      "position": [
+        832,
+        843
+      ],
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "không thở oxy",
+      "position": [
+        992,
+        1005
+      ],
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "ống nội khí quản",
+      "position": [
+        1154,
+        1170
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "với thiếu máu cơ tim cục",
+      "position": [
+        1272,
+        1296
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [
+      "[7] CHẨN_ĐOÁN has no candidates"
+    ]
+  },
+  "stats": {
+    "total_mentions": 8,
+    "final": 8,
+    "validation_errors": 0,
+    "elapsed": 4.83
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 1499,
+      "ts": 1783398251.252963
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398251.2529726
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 1499
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 1499
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "Các bệnh lý mãn tính\n- tiền sử Đái tháo đường (tiền sử Đái tháo đường)\n- Tăng huyết áp (tăng huyết áp vô căn (nguyên phát))\n\n2. Tiền sử bệnh bệnh hiện tại\nLý do nhập viện: xét nghiệm gắng sức bất thườ"
+        },
+        "output": "{'rule': [{'text': 'điện tâm đồ', 'position': [820, 831], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'bình thường', 'position': [832, 843], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'confidence': 0.9, 'source': 'rule'}], 'qwen': [], 'healthbert': [{'text': 'Tăng huyết áp', 'position': [73, 86], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}]}, {'text': 'tăng huyết áp vô căn', 'position': [88, 108], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'labe",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 2,
+          "qwen": 0,
+          "healthbert": 7,
+          "errors": 0
+        },
+        "total": 8
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'điện tâm đồ', 'position': [820, 831], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'bình thường"
+        },
+        "output": "[{'text': 'Tăng huyết áp', 'position': [73, 86], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'tăng huyết áp vô căn', 'position': [88, 108], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'khó chịu vùng ngực gián đoạ",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 8
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'Tăng huyết áp', 'position': [73, 86], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['health",
+          "text": "Các bệnh lý mãn tính\n- tiền sử Đái tháo đường (tiền sử Đái tháo đường)\n- Tăng huyết áp (tăng huyết áp vô căn (nguyên phát))\n\n2. Tiền sử bệnh bệnh hiện tại\nLý do nhập viện: xét nghiệm gắng sức bất thườ"
+        },
+        "output": "[{'text': 'Tăng huyết áp', 'position': [73, 86], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'tăng huyết áp vô căn', 'position': [88, 108], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'khó chịu vùng ngực gián đoạ",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'Tăng huyết áp', 'position': [73, 86], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['health",
+          "text": "Các bệnh lý mãn tính\n- tiền sử Đái tháo đường (tiền sử Đái tháo đường)\n- Tăng huyết áp (tăng huyết áp vô căn (nguyên phát))\n\n2. Tiền sử bệnh bệnh hiện tại\nLý do nhập viện: xét nghiệm gắng sức bất thườ"
+        },
+        "output": "[{'text': 'Tăng huyết áp', 'position': [73, 86], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'tăng huyết áp vô căn', 'position': [88, 108], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fix",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 8,
+      "ts": 1783398254.0582783
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398254.0584228
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 8
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "Các bệnh lý mãn tính\n- tiền sử Đái tháo đường (tiền sử Đái tháo đường)\n- Tăng huyết áp (tăng huyết áp vô căn (nguyên phát))\n\n2. Tiền sử bệnh bệnh hiện tại\nLý do nhập viện: xét nghiệm gắng sức bất thườ",
+          "start": "73",
+          "end": "86"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "Các bệnh lý mãn tính\n- tiền sử Đái tháo đường (tiền sử Đái tháo đường)\n- Tăng huyết áp (tăng huyết áp vô căn (nguyên phát))\n\n2. Tiền sử bệnh bệnh hiện tại\nLý do nhập viện: xét nghiệm gắng sức bất thườ",
+          "start": "88",
+          "end": "108"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "Các bệnh lý mãn tính\n- tiền sử Đái tháo đường (tiền sử Đái tháo đường)\n- Tăng huyết áp (tăng huyết áp vô căn (nguyên phát))\n\n2. Tiền sử bệnh bệnh hiện tại\nLý do nhập viện: xét nghiệm gắng sức bất thườ",
+          "start": "1272",
+          "end": "1296"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 8,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398254.058617
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398254.0586302
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 8
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'Tăng huyết áp', 'position': [73, 86], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthb",
+          "context": "Các bệnh lý mãn tính\n- tiền sử Đái tháo đường (tiền sử Đái tháo đường)\n- Tăng huyết áp (tăng huyết áp vô căn (nguyên phát))\n\n2. Tiền sử bệnh bệnh hiện tại\nLý do nhập viện: xét nghiệm gắng sức bất thườ"
+        },
+        "output": "{'candidates': ['I15.0', 'I27.0', 'O11', 'O16', 'I15.8'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'tăng huyết áp vô căn', 'position': [88, 108], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': [",
+          "context": "Các bệnh lý mãn tính\n- tiền sử Đái tháo đường (tiền sử Đái tháo đường)\n- Tăng huyết áp (tăng huyết áp vô căn (nguyên phát))\n\n2. Tiền sử bệnh bệnh hiện tại\nLý do nhập viện: xét nghiệm gắng sức bất thườ"
+        },
+        "output": "{'candidates': ['I10', 'O10.0'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'với thiếu máu cơ tim cục', 'position': [1272, 1296], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vot",
+          "context": "ời)\nCác thủ thuật đã thực hiện: ống nội khí quản (nghiệm pháp gắng sức trên máy chạy bộ)\nCác phát hiện chẩn đoán khác\nNghiệm pháp gắng sức dương tính với thiếu máu cơ tim cục bộ, biểu hiện ST chênh xu"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 2
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 2,
+      "ts": 1783398256.0785627
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398256.078597
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 8
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'Tăng huyết áp', 'position': [73, 86], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['health",
+          "text": "Các bệnh lý mãn tính\n- tiền sử Đái tháo đường (tiền sử Đái tháo đường)\n- Tăng huyết áp (tăng huyết áp vô căn (nguyên phát))\n\n2. Tiền sử bệnh bệnh hiện tại\nLý do nhập viện: xét nghiệm gắng sức bất thườ"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}], 'final_predictions': [{'text': 'Tăng huyết áp', 'position': [73",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 8,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 8,
+      "ts": 1783398256.0790021
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 8,
+      "elapsed": 4.83,
+      "ts": 1783398256.0790207
+    }
+  ]
+}

@@ -1,18 +1,303 @@
-[
-  {
-    "text": "xuất huyết nội sọ không do chấn thương",
-    "position": [
-      37,
-      75
-    ],
-    "type": "CHẨN_ĐOÁN",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
+{
+  "note_id": "15",
+  "mentions": [
+    {
+      "text": "xuất huyết nội sọ không do",
+      "position": [
+        37,
+        63
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": [
+        "P52"
+      ]
+    }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "stats": {
+    "total_mentions": 1,
+    "final": 1,
+    "validation_errors": 0,
+    "elapsed": 2.78
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 281,
+      "ts": 1783397958.502717
     },
-    "candidates": [
-      "P52"
-    ]
-  }
-]
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783397958.502729
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 281
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 281
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: xuất huyết nội sọ không do chấn thương, không đặc hiệu\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật thực hiện: Truyền dịch yếu tố IX đậm đặc\nCác phát hiện chẩn đoán kh"
+        },
+        "output": "{'rule': [], 'qwen': [], 'healthbert': [{'text': 'xuất huyết nội sọ không do', 'position': [37, 63], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}]}, {'text': 'xuất huyết nội sọ không do', 'position': [205, 231], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}]}], 'errors': []}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 0,
+          "healthbert": 2,
+          "errors": 0
+        },
+        "total": 2
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'xuất huyết nội sọ không do', 'position': [37, 63], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vote"
+        },
+        "output": "[{'text': 'xuất huyết nội sọ không do', 'position': [37, 63], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'xuất huyết nội sọ không do', 'position': [205, 231], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}]",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 2
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'xuất huyết nội sọ không do', 'position': [37, 63], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vote",
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: xuất huyết nội sọ không do chấn thương, không đặc hiệu\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật thực hiện: Truyền dịch yếu tố IX đậm đặc\nCác phát hiện chẩn đoán kh"
+        },
+        "output": "[{'text': 'xuất huyết nội sọ không do', 'position': [37, 63], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'xuất huyết nội sọ không do', 'position': [205, 231], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}]",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'xuất huyết nội sọ không do', 'position': [37, 63], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vote",
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: xuất huyết nội sọ không do chấn thương, không đặc hiệu\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật thực hiện: Truyền dịch yếu tố IX đậm đặc\nCác phát hiện chẩn đoán kh"
+        },
+        "output": "[{'text': 'xuất huyết nội sọ không do', 'position': [37, 63], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'xuất huyết nội sọ không do', 'position': [37, 63], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': ",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 1
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 2,
+      "ts": 1783397959.4437149
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783397959.4437404
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 2
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: xuất huyết nội sọ không do chấn thương, không đặc hiệu\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật thực hiện: Truyền dịch yếu tố IX đậm đặc\nCác phát hiện chẩn đoán kh",
+          "start": "37",
+          "end": "63"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: xuất huyết nội sọ không do chấn thương, không đặc hiệu\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật thực hiện: Truyền dịch yếu tố IX đậm đặc\nCác phát hiện chẩn đoán kh",
+          "start": "37",
+          "end": "63"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 2,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783397959.4438567
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783397959.4438648
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 2
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'xuất huyết nội sọ không do', 'position': [37, 63], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voter",
+          "context": "2. Bệnh sử hiện tại\nLý do nhập viện: xuất huyết nội sọ không do chấn thương, không đặc hiệu\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật thực hiện: Truyền dịch yếu tố IX đậm đặc\nCác phát hiện chẩn đoán kh"
+        },
+        "output": "{'candidates': ['P52'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'xuất huyết nội sọ không do', 'position': [37, 63], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voter",
+          "context": "2. Bệnh sử hiện tại\nLý do nhập viện: xuất huyết nội sọ không do chấn thương, không đặc hiệu\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật thực hiện: Truyền dịch yếu tố IX đậm đặc\nCác phát hiện chẩn đoán kh"
+        },
+        "output": "{'candidates': ['P52'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 2
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 2,
+      "ts": 1783397961.2812705
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783397961.2813046
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 2
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'xuất huyết nội sọ không do', 'position': [37, 63], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vote",
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: xuất huyết nội sọ không do chấn thương, không đặc hiệu\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật thực hiện: Truyền dịch yếu tố IX đậm đặc\nCác phát hiện chẩn đoán kh"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}], 'final_predictions': [{'text': 'xuất huyết nội sọ không do', 'position': [37, 63], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False, 'assertions': {'isNegated': False, 'isFamily': False, 'isHistorical': False}, 'assertion_confidenc",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 1,
+        "dropped": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 1,
+      "ts": 1783397961.2814355
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 1,
+      "elapsed": 2.78,
+      "ts": 1783397961.2814512
+    }
+  ]
+}

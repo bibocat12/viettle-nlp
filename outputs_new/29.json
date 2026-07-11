@@ -1,28 +1,310 @@
-[
-  {
-    "text": "tiểu tiện không tự chủ",
-    "position": [
-      70,
-      92
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": true
+{
+  "note_id": "29",
+  "mentions": [
+    {
+      "text": "tiểu tiện không tự chủ và",
+      "position": [
+        70,
+        95
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      },
+      "candidates": []
+    },
+    {
+      "text": "sa âm đạo",
+      "position": [
+        96,
+        105
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "bàng quang căng",
+      "position": [
+        214,
+        229
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
     }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [
+      "[0] CHẨN_ĐOÁN has no candidates"
+    ]
   },
-  {
-    "text": "sa âm đạo",
-    "position": [
-      96,
-      105
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": true,
-      "isFamily": false,
-      "isHistorical": false
+  "stats": {
+    "total_mentions": 3,
+    "final": 3,
+    "validation_errors": 0,
+    "elapsed": 1.65
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 373,
+      "ts": 1783398062.368236
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398062.3682454
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 373
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 373
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\nLý do nhập viện: tiểu tiện không tự chủ và sa âm đạo\nThời điểm khởi phát triệu chứng: khoảng vài năm\nTriệu chứng hiện tại\n- tiểu tiện không tự chủ\n"
+        },
+        "output": "{'rule': [], 'qwen': [], 'healthbert': [{'text': 'tiểu tiện không tự chủ và', 'position': [70, 95], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6500277519226074}]}, {'text': 'sa âm đạo', 'position': [96, 105], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6051915884017944}]}, {'text': 'sa âm đạo', 'position': [202, 211], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6051915884017944}]}, {",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 0,
+          "healthbert": 4,
+          "errors": 0
+        },
+        "total": 4
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'tiểu tiện không tự chủ và', 'position': [70, 95], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6500277519226074}], 'extraction_source': 'healthbert', 'vote_cou"
+        },
+        "output": "[{'text': 'tiểu tiện không tự chủ và', 'position': [70, 95], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6500277519226074}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'sa âm đạo', 'position': [96, 105], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6051915884017944}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 4
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'tiểu tiện không tự chủ và', 'position': [70, 95], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6500277519226074}], 'extraction_source': 'healthbert', 'vote_cou",
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\nLý do nhập viện: tiểu tiện không tự chủ và sa âm đạo\nThời điểm khởi phát triệu chứng: khoảng vài năm\nTriệu chứng hiện tại\n- tiểu tiện không tự chủ\n"
+        },
+        "output": "[{'text': 'tiểu tiện không tự chủ và', 'position': [70, 95], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6500277519226074}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'sa âm đạo', 'position': [96, 105], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6051915884017944}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'tiểu tiện không tự chủ và', 'position': [70, 95], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6500277519226074}], 'extraction_source': 'healthbert', 'vote_cou",
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\nLý do nhập viện: tiểu tiện không tự chủ và sa âm đạo\nThời điểm khởi phát triệu chứng: khoảng vài năm\nTriệu chứng hiện tại\n- tiểu tiện không tự chủ\n"
+        },
+        "output": "[{'text': 'tiểu tiện không tự chủ và', 'position': [70, 95], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6500277519226074}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'sa âm đạo', 'position': [96, 105], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6051915884017944}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthb",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 1
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 4,
+      "ts": 1783398064.0115244
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398064.0115542
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 4
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\nLý do nhập viện: tiểu tiện không tự chủ và sa âm đạo\nThời điểm khởi phát triệu chứng: khoảng vài năm\nTriệu chứng hiện tại\n- tiểu tiện không tự chủ\n",
+          "start": "70",
+          "end": "95"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 4,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398064.011636
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398064.0116444
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 4
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'tiểu tiện không tự chủ và', 'position': [70, 95], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6500277519226074}], 'extraction_source': 'healthbert', 'vote_coun",
+          "context": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\nLý do nhập viện: tiểu tiện không tự chủ và sa âm đạo\nThời điểm khởi phát triệu chứng: khoảng vài năm\nTriệu chứng hiện tại\n- tiểu tiện không tự chủ\n"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1783398064.0173619
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398064.017393
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 4
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'tiểu tiện không tự chủ và', 'position': [70, 95], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6500277519226074}], 'extraction_source': 'healthbert', 'vote_cou",
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\nLý do nhập viện: tiểu tiện không tự chủ và sa âm đạo\nThời điểm khởi phát triệu chứng: khoảng vài năm\nTriệu chứng hiện tại\n- tiểu tiện không tự chủ\n"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}], 'final_predictions': [{'text': 'tiểu tiện không tự chủ và', 'position': [70, 95], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6500277519226074}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence'",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 3,
+        "dropped": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 3,
+      "ts": 1783398064.0176177
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 3,
+      "elapsed": 1.65,
+      "ts": 1783398064.0176356
     }
-  }
-]
+  ]
+}

@@ -1,0 +1,1323 @@
+{
+  "file_id": "6",
+  "timestamp": 1783523735.1576817,
+  "elapsed": 141.38,
+  "model": "runpod",
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 584,
+      "ts": 1783523593.7752686
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783523593.7755067
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 584
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 584
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n   Bệnh nhân có tiền sử Nghẽn tắc và hẹp động mạch cảnh, được theo dõi định kỳ chuyên khoa tim mạch - mạch máu.\n\n2.  Tiền sử bệnh hiện tại\n    Các sự kiện trước khi nhập viện\n    - Được theo dõi định kỳ bằng  siêu âm Doppler động mạchcho nghẽn tắc và hẹp động mạch cảnh\n    - Ghi nhận trên các siêu âm doppler hai chiều gần đây có hẹp nặng, tỷ số PSV/EDV > 7, vận tốc dòng chảy tăng rõ\n    Tình trạng ngay trước khi nhập viện\n    - Chỉ định can thiệp tái thông động mạch cảnh sau khi đã đánh giá đầy đủ nguy cơ và lợi ích điều trị.\n3.  Đánh giá tại bệnh viện"
+        },
+        "output": {
+          "rule": [],
+          "qwen": [
+            {
+              "text": "Nghẽn tắc và hẹp động mạch cảnh",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                50,
+                81
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "tái thông động mạch cản",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                477,
+                500
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "healthbert": [
+            {
+              "text": "khoa tim mạch",
+              "position": [
+                112,
+                125
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.6784632802009583
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Ghi nhận trên các siêu âm",
+              "position": [
+                302,
+                327
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 2,
+          "healthbert": 2
+        },
+        "total": 4
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "Nghẽn tắc và hẹp động mạch cảnh",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                50,
+                81
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "tái thông động mạch cản",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                477,
+                500
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "khoa tim mạch",
+              "position": [
+                112,
+                125
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.6784632802009583
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Ghi nhận trên các siêu âm",
+              "position": [
+                302,
+                327
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "Nghẽn tắc và hẹp động mạch cảnh",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              50,
+              81
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.95,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "khoa tim mạch",
+            "position": [
+              112,
+              125
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.6784632802009583
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": [
+              "healthbert"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "Ghi nhận trên các siêu âm",
+            "position": [
+              302,
+              327
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": [
+              "healthbert"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "tái thông động mạch cản",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              477,
+              500
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 4
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "Nghẽn tắc và hẹp động mạch cảnh",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                50,
+                81
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "khoa tim mạch",
+              "position": [
+                112,
+                125
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.6784632802009583
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Ghi nhận trên các siêu âm",
+              "position": [
+                302,
+                327
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "tái thông động mạch cản",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                477,
+                500
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n   Bệnh nhân có tiền sử Nghẽn tắc và hẹp động mạch cảnh, được theo dõi định kỳ chuyên khoa tim mạch - mạch máu.\n\n2.  Tiền sử bệnh hiện tại\n    Các sự kiện trước khi nhập viện\n    - Được theo dõi định kỳ bằng  siêu âm Doppler động mạchcho nghẽn tắc và hẹp động mạch cảnh\n    - Ghi nhận trên các siêu âm doppler hai chiều gần đây có hẹp nặng, tỷ số PSV/EDV > 7, vận tốc dòng chảy tăng rõ\n    Tình trạng ngay trước khi nhập viện\n    - Chỉ định can thiệp tái thông động mạch cảnh sau khi đã đánh giá đầy đủ nguy cơ và lợi ích điều trị.\n3.  Đánh giá tại bệnh viện"
+        },
+        "output": [
+          {
+            "text": "Nghẽn tắc và hẹp động mạch cảnh",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              50,
+              81
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.95,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "khoa tim mạch",
+            "position": [
+              112,
+              125
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.6784632802009583
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": [
+              "healthbert"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "Ghi nhận trên các siêu âm",
+            "position": [
+              302,
+              327
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": [
+              "healthbert"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "tái thông động mạch cản",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              477,
+              500
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "Nghẽn tắc và hẹp động mạch cảnh",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                50,
+                81
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "khoa tim mạch",
+              "position": [
+                112,
+                125
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.6784632802009583
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Ghi nhận trên các siêu âm",
+              "position": [
+                302,
+                327
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "tái thông động mạch cản",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                477,
+                500
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n   Bệnh nhân có tiền sử Nghẽn tắc và hẹp động mạch cảnh, được theo dõi định kỳ chuyên khoa tim mạch - mạch máu.\n\n2.  Tiền sử bệnh hiện tại\n    Các sự kiện trước khi nhập viện\n    - Được theo dõi định kỳ bằng  siêu âm Doppler động mạchcho nghẽn tắc và hẹp động mạch cảnh\n    - Ghi nhận trên các siêu âm doppler hai chiều gần đây có hẹp nặng, tỷ số PSV/EDV > 7, vận tốc dòng chảy tăng rõ\n    Tình trạng ngay trước khi nhập viện\n    - Chỉ định can thiệp tái thông động mạch cảnh sau khi đã đánh giá đầy đủ nguy cơ và lợi ích điều trị.\n3.  Đánh giá tại bệnh viện"
+        },
+        "output": [
+          {
+            "text": "Nghẽn tắc và hẹp động mạch cảnh",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              50,
+              81
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.95,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "khoa tim mạch",
+            "position": [
+              112,
+              125
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.6784632802009583
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": [
+              "healthbert"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "Ghi nhận trên các siêu âm",
+            "position": [
+              302,
+              327
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": [
+              "healthbert"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "tái thông động mạch cản",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              477,
+              500
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 4,
+      "ts": 1783523729.9901195
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783523729.9901385
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 4
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n   Bệnh nhân có tiền sử Nghẽn tắc và hẹp động mạch cảnh, được theo dõi định kỳ chuyên khoa tim mạch - mạch máu.\n\n2.  Tiền sử bệnh hiện tại\n    Các sự kiện trước khi nhập viện\n    - Được theo dõi định kỳ bằng  siêu âm Doppler động mạchcho nghẽn tắc và hẹp động mạch cảnh\n    - Ghi nhận trên các siêu âm doppler hai chiều gần đây có hẹp nặng, tỷ số PSV/EDV > 7, vận tốc dòng chảy tăng rõ\n    Tình trạng ngay trước khi nhập viện\n    - Chỉ định can thiệp tái thông động mạch cảnh sau khi đã đánh giá đầy đủ nguy cơ và lợi ích điều trị.\n3.  Đánh giá tại bệnh viện",
+          "start": 50,
+          "end": 81
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "Nghẽn tắc và hẹp động mạch cảnh",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": "1.  Tiền sử bệnh nội khoa\n   Bệnh nhân có tiền sử Nghẽn tắc và hẹp động mạch cảnh, được theo dõi định kỳ chuyên khoa tim mạch - mạch máu.\n\n2.  Tiền sử bệnh hiện tại\n    Các sự kiện trước khi nhập viện\n    - Được theo dõi định kỳ bằ"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 4,
+        "llm_checked": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783523735.0763874
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783523735.0764031
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 4
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "Nghẽn tắc và hẹp động mạch cảnh",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              50,
+              81
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.95,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          "context": "1.  Tiền sử bệnh nội khoa\n   Bệnh nhân có tiền sử Nghẽn tắc và hẹp động mạch cảnh, được theo dõi định kỳ chuyên khoa tim mạch - mạch máu.\n\n2.  Tiền sử bệnh hiện tại\n    Các sự kiện trước khi nhập viện\n    - Được theo dõi định kỳ bằ"
+        },
+        "output": {
+          "candidates": [],
+          "confidence": 0.0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1783523735.0783782
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783523735.0783956
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 4
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "Nghẽn tắc và hẹp động mạch cảnh",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                50,
+                81
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "khoa tim mạch",
+              "position": [
+                112,
+                125
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.6784632802009583
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Ghi nhận trên các siêu âm",
+              "position": [
+                302,
+                327
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "tái thông động mạch cản",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                477,
+                500
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n   Bệnh nhân có tiền sử Nghẽn tắc và hẹp động mạch cảnh, được theo dõi định kỳ chuyên khoa tim mạch - mạch máu.\n\n2.  Tiền sử bệnh hiện tại\n    Các sự kiện trước khi nhập viện\n    - Được theo dõi định kỳ bằng  siêu âm Doppler động mạchcho nghẽn tắc và hẹp động mạch cảnh\n    - Ghi nhận trên các siêu âm doppler hai chiều gần đây có hẹp nặng, tỷ số PSV/EDV > 7, vận tốc dòng chảy tăng rõ\n    Tình trạng ngay trước khi nhập viện\n    - Chỉ định can thiệp tái thông động mạch cảnh sau khi đã đánh giá đầy đủ nguy cơ và lợi ích điều trị.\n3.  Đánh giá tại bệnh viện"
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": [
+                "no candidates"
+              ]
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "Nghẽn tắc và hẹp động mạch cảnh",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                50,
+                81
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "khoa tim mạch",
+              "position": [
+                112,
+                125
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.6784632802009583
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Ghi nhận trên các siêu âm",
+              "position": [
+                302,
+                327
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "tái thông động mạch cản",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                477,
+                500
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 4,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 4,
+      "ts": 1783523735.0784633
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 4,
+      "elapsed": 141.3,
+      "ts": 1783523735.0784824
+    }
+  ],
+  "stats": null
+}

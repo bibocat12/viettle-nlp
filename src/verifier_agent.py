@@ -41,11 +41,11 @@ def verify_mention(mention: dict, original_text: str, llm=None) -> dict:
         if mention.get("text", "") not in nearby:
             return {"action": "drop_prediction", "reason": "span text mismatch"}
 
-    # Check assertions
+    # Check assertions — strip extra keys instead of dropping
     assertions = mention.get("assertions", {})
-    for key in assertions:
+    for key in list(assertions.keys()):
         if key not in VALID_ASSERTIONS:
-            return {"action": "drop_prediction", "reason": f"invalid assertion key: {key}"}
+            del assertions[key]
 
     # Check candidates
     if mtype in ("CHẨN_ĐOÁN", "THUỐC"):
@@ -54,7 +54,7 @@ def verify_mention(mention: dict, original_text: str, llm=None) -> dict:
             warnings.append("no candidates")
 
     # Check assertion confidence
-    assertion_conf = assertions.get("confidence", 1.0)
+    assertion_conf = mention.get("assertion_confidence", 1.0)
     if assertion_conf < 0.6:
         return {"action": "retry_assertion", "reason": "low assertion confidence"}
 

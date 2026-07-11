@@ -1,0 +1,263 @@
+{
+  "note_id": "90",
+  "mentions": [
+    {
+      "text": "tổn thương dây thanh quản thật",
+      "position": [
+        113,
+        143
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "nạo vét tổn thương dây thanh",
+      "position": [
+        202,
+        230
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "stats": {
+    "total_mentions": 2,
+    "final": 2,
+    "validation_errors": 0,
+    "elapsed": 0.58
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 235,
+      "ts": 1783398398.5887206
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398398.5887299
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 235
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 235
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện"
+        },
+        "output": "{'rule': [], 'qwen': [], 'healthbert': [{'text': 'tổn thương dây thanh quản thật', 'position': [113, 143], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6974453330039978}]}, {'text': 'nạo vét tổn thương dây thanh', 'position': [202, 230], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6297180652618408}]}], 'errors': []}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 0,
+          "healthbert": 2,
+          "errors": 0
+        },
+        "total": 2
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'tổn thương dây thanh quản thật', 'position': [113, 143], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6974453330039978}], 'extraction_source': 'healt"
+        },
+        "output": "[{'text': 'tổn thương dây thanh quản thật', 'position': [113, 143], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6974453330039978}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'nạo vét tổn thương dây thanh', 'position': [202, 230], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6297180652618408}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 2
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'tổn thương dây thanh quản thật', 'position': [113, 143], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6974453330039978}], 'extraction_source': 'healt",
+          "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện"
+        },
+        "output": "[{'text': 'tổn thương dây thanh quản thật', 'position': [113, 143], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6974453330039978}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'nạo vét tổn thương dây thanh', 'position': [202, 230], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6297180652618408}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'tổn thương dây thanh quản thật', 'position': [113, 143], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6974453330039978}], 'extraction_source': 'healt",
+          "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện"
+        },
+        "output": "[{'text': 'tổn thương dây thanh quản thật', 'position': [113, 143], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6974453330039978}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'nạo vét tổn thương dây thanh', 'position': [202, 230], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6297180652618408}], 'extraction_source': 'healthbert',",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 2,
+      "ts": 1783398399.170982
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398399.1710134
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 2
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 2,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398399.1710262
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398399.171034
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 2
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1783398399.1710415
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398399.171049
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 2
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'tổn thương dây thanh quản thật', 'position': [113, 143], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6974453330039978}], 'extraction_source': 'healt",
+          "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}], 'final_predictions': [{'text': 'tổn thương dây thanh quản thật', 'position': [113, 143], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6974453330039978}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False, 'assertions': {'isNegated': False, 'isFamily': False, 'isHistorical'",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 2,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 2,
+      "ts": 1783398399.1711514
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 2,
+      "elapsed": 0.58,
+      "ts": 1783398399.1711645
+    }
+  ]
+}

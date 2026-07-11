@@ -1,0 +1,500 @@
+{
+  "note_id": "87",
+  "mentions": [
+    {
+      "text": "tổn thương chi dưới do tự",
+      "position": [
+        179,
+        204
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "uống nhiều rượu",
+      "position": [
+        325,
+        340
+      ],
+      "type": "THUỐC",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    },
+    {
+      "text": "hút cần sa",
+      "position": [
+        341,
+        351
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "Phẫu thuật",
+      "position": [
+        678,
+        688
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "bên trên gối  và cắt cụt",
+      "position": [
+        707,
+        731
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "biến chứng thuyên tắc phổi hai",
+      "position": [
+        757,
+        787
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    },
+    {
+      "text": "nhiễm trùng chi dưới bên phải",
+      "position": [
+        795,
+        824
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    },
+    {
+      "text": "Enterococcus kháng vancomycin\n    Điều trị",
+      "position": [
+        828,
+        870
+      ],
+      "type": "THUỐC",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": [
+        "11124"
+      ]
+    },
+    {
+      "text": "phẫu thuật",
+      "position": [
+        877,
+        887
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [
+      "[1] THUỐC has no candidates",
+      "[5] CHẨN_ĐOÁN has no candidates",
+      "[6] CHẨN_ĐOÁN has no candidates"
+    ]
+  },
+  "stats": {
+    "total_mentions": 9,
+    "final": 9,
+    "validation_errors": 0,
+    "elapsed": 3.98
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 1177,
+      "ts": 1783398386.0986507
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398386.0986571
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 1177
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 1177
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Nhiều lần có ý định tự tử trước đây do chia tay bạn trai cũ\n    Bệnh lý mãn tính\n    - trầm cảm và  rối loạn lo âu\n2.  Bệnh sử hiện tại\n    Lý do nhập viện:  tổn thương chi dưới d"
+        },
+        "output": "{'rule': [{'text': 'Phẫu thuật', 'position': [678, 688], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'phẫu thuật', 'position': [877, 887], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}], 'qwen': [], 'healthbert': [{'text': 'tổn thương chi dưới do tự', 'position': [179, 204], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6026513576507568}]}, {'text': 'uống nhiều rượu', 'position': [325, 340], 'type': 'THUỐC', '",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 2,
+          "qwen": 0,
+          "healthbert": 9,
+          "errors": 0
+        },
+        "total": 9
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'Phẫu thuật', 'position': [678, 688], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'phẫu thuật',"
+        },
+        "output": "[{'text': 'tổn thương chi dưới do tự', 'position': [179, 204], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6026513576507568}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'uống nhiều rượu', 'position': [325, 340], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.85}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'h",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 9
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'tổn thương chi dưới do tự', 'position': [179, 204], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6026513576507568}], 'extraction_source': 'healthbert",
+          "text": "1.  Tiền sử bệnh\n    Nhiều lần có ý định tự tử trước đây do chia tay bạn trai cũ\n    Bệnh lý mãn tính\n    - trầm cảm và  rối loạn lo âu\n2.  Bệnh sử hiện tại\n    Lý do nhập viện:  tổn thương chi dưới d"
+        },
+        "output": "[{'text': 'tổn thương chi dưới do tự', 'position': [179, 204], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6026513576507568}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'uống nhiều rượu', 'position': [325, 340], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.85}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'h",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'tổn thương chi dưới do tự', 'position': [179, 204], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6026513576507568}], 'extraction_source': 'healthbert",
+          "text": "1.  Tiền sử bệnh\n    Nhiều lần có ý định tự tử trước đây do chia tay bạn trai cũ\n    Bệnh lý mãn tính\n    - trầm cảm và  rối loạn lo âu\n2.  Bệnh sử hiện tại\n    Lý do nhập viện:  tổn thương chi dưới d"
+        },
+        "output": "[{'text': 'tổn thương chi dưới do tự', 'position': [179, 204], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6026513576507568}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'uống nhiều rượu', 'position': [325, 340], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.85}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confi",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 9,
+      "ts": 1783398389.549106
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398389.549134
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 9
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Nhiều lần có ý định tự tử trước đây do chia tay bạn trai cũ\n    Bệnh lý mãn tính\n    - trầm cảm và  rối loạn lo âu\n2.  Bệnh sử hiện tại\n    Lý do nhập viện:  tổn thương chi dưới d",
+          "start": "325",
+          "end": "340"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Nhiều lần có ý định tự tử trước đây do chia tay bạn trai cũ\n    Bệnh lý mãn tính\n    - trầm cảm và  rối loạn lo âu\n2.  Bệnh sử hiện tại\n    Lý do nhập viện:  tổn thương chi dưới d",
+          "start": "757",
+          "end": "787"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Nhiều lần có ý định tự tử trước đây do chia tay bạn trai cũ\n    Bệnh lý mãn tính\n    - trầm cảm và  rối loạn lo âu\n2.  Bệnh sử hiện tại\n    Lý do nhập viện:  tổn thương chi dưới d",
+          "start": "795",
+          "end": "824"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Nhiều lần có ý định tự tử trước đây do chia tay bạn trai cũ\n    Bệnh lý mãn tính\n    - trầm cảm và  rối loạn lo âu\n2.  Bệnh sử hiện tại\n    Lý do nhập viện:  tổn thương chi dưới d",
+          "start": "828",
+          "end": "870"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 9,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398389.549337
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398389.549346
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 9
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'uống nhiều rượu', 'position': [325, 340], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.85}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'",
+          "context": "n:  tổn thương chi dưới do tự tử không thành\n    Theo lời người nhà kể lại bệnh nhân bị sốc khi chia tay bạn trai cũ, bị bạn bè trêu chọc, buồn chán, uống nhiều rượu,hút cần sa. Sau đó lái xe đến một "
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'biến chứng thuyên tắc phổi hai', 'position': [757, 787], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.7258682250976562}], 'extraction_source': 'healthbert', 'vo",
+          "context": "\n Khám thấy bị tổn thương tổn thương chi dưới nghiêm trọng.\nChẩn đoán: Phẫu thuật cắt cụt chân trái bên trên gối  và cắt cụt chân phải bên dưới gối / biến chứng thuyên tắc phổi hai bên  - nhiễm trùng "
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'nhiễm trùng chi dưới bên phải', 'position': [795, 824], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, '",
+          "context": "hi dưới nghiêm trọng.\nChẩn đoán: Phẫu thuật cắt cụt chân trái bên trên gối  và cắt cụt chân phải bên dưới gối / biến chứng thuyên tắc phổi hai bên  - nhiễm trùng chi dưới bên phải do Enterococcus khán"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'Enterococcus kháng vancomycin\\n    Điều trị', 'position': [828, 870], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.5766301155090332}], 'extraction_source': 'healthbert'",
+          "context": "Phẫu thuật cắt cụt chân trái bên trên gối  và cắt cụt chân phải bên dưới gối / biến chứng thuyên tắc phổi hai bên  - nhiễm trùng chi dưới bên phải do Enterococcus kháng vancomycin\n    Điều trị :\n Đã p"
+        },
+        "output": "{'candidates': ['11124'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 1,
+      "ts": 1783398390.08205
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398390.0820818
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 9
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'tổn thương chi dưới do tự', 'position': [179, 204], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6026513576507568}], 'extraction_source': 'healthbert",
+          "text": "1.  Tiền sử bệnh\n    Nhiều lần có ý định tự tử trước đây do chia tay bạn trai cũ\n    Bệnh lý mãn tính\n    - trầm cảm và  rối loạn lo âu\n2.  Bệnh sử hiện tại\n    Lý do nhập viện:  tổn thương chi dưới d"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], ",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 9,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 9,
+      "ts": 1783398390.0824907
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 9,
+      "elapsed": 3.98,
+      "ts": 1783398390.0825078
+    }
+  ]
+}

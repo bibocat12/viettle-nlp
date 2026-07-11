@@ -1,0 +1,310 @@
+{
+  "note_id": "98",
+  "mentions": [
+    {
+      "text": "tiền sử tăng huyết áp",
+      "position": [
+        45,
+        66
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      },
+      "candidates": []
+    },
+    {
+      "text": "CT",
+      "position": [
+        237,
+        239
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "hình ảnh tổn thương tiêu xương",
+      "position": [
+        240,
+        270
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [
+      "[0] CHẨN_ĐOÁN has no candidates"
+    ]
+  },
+  "stats": {
+    "total_mentions": 3,
+    "final": 3,
+    "validation_errors": 0,
+    "elapsed": 1.18
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 499,
+      "ts": 1783398426.7475312
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398426.7475445
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 499
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 499
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mãn tính: tiền sử tăng huyết áp\n2.  Bệnh sử\nLý do nhập viện: Theo hẹn hóa trị huy động tế bào gốc.\n    Triệu chứng hiện tại\n    - ho\n    - đau lưng\n    Cận lâm sàng "
+        },
+        "output": "{'rule': [{'text': 'CT', 'position': [237, 239], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}], 'qwen': [], 'healthbert': [{'text': 'tiền sử tăng huyết áp', 'position': [45, 66], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}]}, {'text': 'hình ảnh tổn thương tiêu xương', 'position': [240, 270], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6748289465904236}]}], 'errors': []}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 1,
+          "qwen": 0,
+          "healthbert": 2,
+          "errors": 0
+        },
+        "total": 3
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'CT', 'position': [237, 239], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'tiền sử tăng huyết á"
+        },
+        "output": "[{'text': 'tiền sử tăng huyết áp', 'position': [45, 66], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'CT', 'position': [237, 239], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'hình ảnh tổn thương tiêu xương', 'position': [240, 270], 'type': 'TÊN_XÉT_NGHIỆM', 't",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 3
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'tiền sử tăng huyết áp', 'position': [45, 66], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mãn tính: tiền sử tăng huyết áp\n2.  Bệnh sử\nLý do nhập viện: Theo hẹn hóa trị huy động tế bào gốc.\n    Triệu chứng hiện tại\n    - ho\n    - đau lưng\n    Cận lâm sàng "
+        },
+        "output": "[{'text': 'tiền sử tăng huyết áp', 'position': [45, 66], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'CT', 'position': [237, 239], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'hình ảnh tổn thương tiêu xương', 'position': [240, 270], 'type': 'TÊN_XÉT_NGHIỆM', 't",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'tiền sử tăng huyết áp', 'position': [45, 66], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mãn tính: tiền sử tăng huyết áp\n2.  Bệnh sử\nLý do nhập viện: Theo hẹn hóa trị huy động tế bào gốc.\n    Triệu chứng hiện tại\n    - ho\n    - đau lưng\n    Cận lâm sàng "
+        },
+        "output": "[{'text': 'tiền sử tăng huyết áp', 'position': [45, 66], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'CT', 'position': [237, 239], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False}, {'text': 'hình ảnh tổn thương tiêu xương', 'p",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 3,
+      "ts": 1783398427.9217975
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398427.9218261
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 3
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mãn tính: tiền sử tăng huyết áp\n2.  Bệnh sử\nLý do nhập viện: Theo hẹn hóa trị huy động tế bào gốc.\n    Triệu chứng hiện tại\n    - ho\n    - đau lưng\n    Cận lâm sàng ",
+          "start": "45",
+          "end": "66"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 3,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398427.9219594
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398427.9219735
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 3
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'tiền sử tăng huyết áp', 'position': [45, 66], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': [",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Bệnh mãn tính: tiền sử tăng huyết áp\n2.  Bệnh sử\nLý do nhập viện: Theo hẹn hóa trị huy động tế bào gốc.\n    Triệu chứng hiện tại\n    - ho\n    - đau lưng\n    Cận lâm sàng "
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1783398427.9264665
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398427.926501
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 3
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'tiền sử tăng huyết áp', 'position': [45, 66], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mãn tính: tiền sử tăng huyết áp\n2.  Bệnh sử\nLý do nhập viện: Theo hẹn hóa trị huy động tế bào gốc.\n    Triệu chứng hiện tại\n    - ho\n    - đau lưng\n    Cận lâm sàng "
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}], 'final_predictions': [{'text': 'tiền sử tăng huyết áp', 'position': [45, 66], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False, 'assertions': {'isNegated': False, 'i",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 3,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 3,
+      "ts": 1783398427.9266903
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 3,
+      "elapsed": 1.18,
+      "ts": 1783398427.9267075
+    }
+  ]
+}

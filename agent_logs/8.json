@@ -1,0 +1,3134 @@
+{
+  "file_id": "8",
+  "timestamp": 1783582671.9277027,
+  "elapsed": 170.36,
+  "model": "runpod",
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 964,
+      "ts": 1783582501.5534976
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783582501.5535703
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 964
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 964
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "Bệnh sử \nBệnh nhân được chỉ định nhập viện để đánh giá và xử trí tình trạng kết quả chọc hút bất thường của nốt tuyến giáp thùy trái.\nQua thăm khám và cận lâm sàng trước nhập viện, ghi nhận nốt tuyến giáp thùy trái kích thước khoảng 1 cm. \nBệnh nhân đã được thực hiện thủ thuật chọc hút bằng kim nhỏ  đối với tổn thương này. \nKết quả xét nghiệm tế bào học từ dịch chọc hút ghi nhận bất thường, cần tiếp tục đánh giá chuyên sâu để xác định bản chất tổn thương và hướng điều trị phù hợp.\nTại thời điểm nhập viện, bệnh nhân không ghi nhận triệu chứng chèn ép vùng cổ như khó nuốt, khó thở hoặc khàn tiếng. Lý do nhập viện chủ yếu là theo dõi và đánh giá kết quả chọc hút bất thường của nốt tuyến giáp trái.\nKết quả khám tại bệnh viện\nKết quả xét nghiệm: Kết quả tế bào học từ dịch chọc hút nốt tuyến giáp trái ghi nhận bất thường.\nThủ thuật đã thực hiện: Chọc hút bằng kim nhỏ  nốt tuyến giáp trái.Tổn thương ghi nhận: Nốt tuyến giáp thùy trái kích thước khoảng 1 cm."
+        },
+        "output": {
+          "rule": [],
+          "qwen": [
+            {
+              "text": "chọc hút bất thường của nốt tuyến giáp thùy trái",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                84,
+                132
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "nốt tuyến giáp thùy trái kích thước khoảng 1 cm",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                190,
+                237
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "khó nuốt",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                568,
+                576
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                578,
+                585
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "khàn tiếng",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                591,
+                601
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chọc hút bất thường của nốt tuyến giáp trái",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                659,
+                702
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "healthbert": [
+            {
+              "text": "giáp thùy trái",
+              "position": [
+                118,
+                132
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.6193565130233765
+                }
+              ],
+              "extraction_source": "healthbert"
+            },
+            {
+              "text": "nhỏ  đối với tổn thương này",
+              "position": [
+                296,
+                323
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "khó thở hoặc khàn tiếng",
+              "position": [
+                578,
+                601
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.5752766132354736
+                }
+              ],
+              "extraction_source": "healthbert"
+            },
+            {
+              "text": "Chọc hút bằng kim nhỏ  nốt",
+              "position": [
+                852,
+                878
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "tuyến giáp trái",
+              "position": [
+                687,
+                702
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.5757595896720886
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "thương ghi nhận",
+              "position": [
+                899,
+                914
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.6370118856430054
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 6,
+          "healthbert": 6
+        },
+        "total": 12
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "chọc hút bất thường của nốt tuyến giáp thùy trái",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                84,
+                132
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "nốt tuyến giáp thùy trái kích thước khoảng 1 cm",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                190,
+                237
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "khó nuốt",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                568,
+                576
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                578,
+                585
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "khàn tiếng",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                591,
+                601
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chọc hút bất thường của nốt tuyến giáp trái",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                659,
+                702
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "giáp thùy trái",
+              "position": [
+                118,
+                132
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.6193565130233765
+                }
+              ],
+              "extraction_source": "healthbert"
+            },
+            {
+              "text": "nhỏ  đối với tổn thương này",
+              "position": [
+                296,
+                323
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "khó thở hoặc khàn tiếng",
+              "position": [
+                578,
+                601
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.5752766132354736
+                }
+              ],
+              "extraction_source": "healthbert"
+            },
+            {
+              "text": "Chọc hút bằng kim nhỏ  nốt",
+              "position": [
+                852,
+                878
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "tuyến giáp trái",
+              "position": [
+                687,
+                702
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.5757595896720886
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "thương ghi nhận",
+              "position": [
+                899,
+                914
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.6370118856430054
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "chọc hút bất thường của nốt tuyến giáp thùy trái",
+            "position": [
+              84,
+              132
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.5
+              }
+            ],
+            "confidence": 0.5,
+            "vote_count": 2,
+            "max_type_votes": 1,
+            "voters": {
+              "ner_llm_relocated": 1,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "KẾT_QUẢ_XÉT_NGHIỆM": 1,
+              "TÊN_XÉT_NGHIỆM": 1
+            },
+            "needs_review": true,
+            "position_fixed": false,
+            "llm_corrected": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.95,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "nốt tuyến giáp thùy trái kích thước khoảng 1 cm",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              190,
+              237
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "nhỏ  đối với tổn thương này",
+            "position": [
+              296,
+              323
+            ],
+            "type": "THUỐC",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "khó nuốt",
+            "type": "TRIỆU_CHỨNG",
+            "source": "ner_llm_relocated",
+            "position": [
+              568,
+              576
+            ],
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "khó thở",
+            "position": [
+              578,
+              585
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.95
+              }
+            ],
+            "confidence": 0.95,
+            "vote_count": 3,
+            "max_type_votes": 3,
+            "voters": {
+              "ner_llm_relocated": 2,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "TRIỆU_CHỨNG": 3
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "chọc hút bất thường của nốt tuyến giáp trái",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              659,
+              702
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "Chọc hút bằng kim nhỏ  nốt",
+            "position": [
+              852,
+              878
+            ],
+            "type": "THUỐC",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "tuyến giáp trái",
+            "position": [
+              687,
+              702
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.5757595896720886
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "thương ghi nhận",
+            "position": [
+              899,
+              914
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.6370118856430054
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 9
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "chọc hút bất thường của nốt tuyến giáp thùy trái",
+              "position": [
+                84,
+                132
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.5
+                }
+              ],
+              "confidence": 0.5,
+              "vote_count": 2,
+              "max_type_votes": 1,
+              "voters": {
+                "ner_llm_relocated": 1,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "KẾT_QUẢ_XÉT_NGHIỆM": 1,
+                "TÊN_XÉT_NGHIỆM": 1
+              },
+              "needs_review": true,
+              "position_fixed": false,
+              "llm_corrected": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "nốt tuyến giáp thùy trái kích thước khoảng 1 cm",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                190,
+                237
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "nhỏ  đối với tổn thương này",
+              "position": [
+                296,
+                323
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "khó nuốt",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                568,
+                576
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                578,
+                585
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.95
+                }
+              ],
+              "confidence": 0.95,
+              "vote_count": 3,
+              "max_type_votes": 3,
+              "voters": {
+                "ner_llm_relocated": 2,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TRIỆU_CHỨNG": 3
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "chọc hút bất thường của nốt tuyến giáp trái",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                659,
+                702
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Chọc hút bằng kim nhỏ  nốt",
+              "position": [
+                852,
+                878
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "tuyến giáp trái",
+              "position": [
+                687,
+                702
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.5757595896720886
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "thương ghi nhận",
+              "position": [
+                899,
+                914
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.6370118856430054
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "Bệnh sử \nBệnh nhân được chỉ định nhập viện để đánh giá và xử trí tình trạng kết quả chọc hút bất thường của nốt tuyến giáp thùy trái.\nQua thăm khám và cận lâm sàng trước nhập viện, ghi nhận nốt tuyến giáp thùy trái kích thước khoảng 1 cm. \nBệnh nhân đã được thực hiện thủ thuật chọc hút bằng kim nhỏ  đối với tổn thương này. \nKết quả xét nghiệm tế bào học từ dịch chọc hút ghi nhận bất thường, cần tiếp tục đánh giá chuyên sâu để xác định bản chất tổn thương và hướng điều trị phù hợp.\nTại thời điểm nhập viện, bệnh nhân không ghi nhận triệu chứng chèn ép vùng cổ như khó nuốt, khó thở hoặc khàn tiếng. Lý do nhập viện chủ yếu là theo dõi và đánh giá kết quả chọc hút bất thường của nốt tuyến giáp trái.\nKết quả khám tại bệnh viện\nKết quả xét nghiệm: Kết quả tế bào học từ dịch chọc hút nốt tuyến giáp trái ghi nhận bất thường.\nThủ thuật đã thực hiện: Chọc hút bằng kim nhỏ  nốt tuyến giáp trái.Tổn thương ghi nhận: Nốt tuyến giáp thùy trái kích thước khoảng 1 cm."
+        },
+        "output": [
+          {
+            "text": "chọc hút bất thường của nốt tuyến giáp thùy trái",
+            "position": [
+              84,
+              132
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.5
+              }
+            ],
+            "confidence": 0.5,
+            "vote_count": 2,
+            "max_type_votes": 1,
+            "voters": {
+              "ner_llm_relocated": 1,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "KẾT_QUẢ_XÉT_NGHIỆM": 1,
+              "TÊN_XÉT_NGHIỆM": 1
+            },
+            "needs_review": true,
+            "position_fixed": false,
+            "llm_corrected": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.95,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "nốt tuyến giáp thùy trái kích thước khoảng 1 cm",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              190,
+              237
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "nhỏ  đối với tổn thương này",
+            "position": [
+              296,
+              323
+            ],
+            "type": "THUỐC",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "khó nuốt",
+            "type": "TRIỆU_CHỨNG",
+            "source": "ner_llm_relocated",
+            "position": [
+              568,
+              576
+            ],
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "khó thở",
+            "position": [
+              578,
+              585
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.95
+              }
+            ],
+            "confidence": 0.95,
+            "vote_count": 3,
+            "max_type_votes": 3,
+            "voters": {
+              "ner_llm_relocated": 2,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "TRIỆU_CHỨNG": 3
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "chọc hút bất thường của nốt tuyến giáp trái",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              659,
+              702
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "Chọc hút bằng kim nhỏ  nốt",
+            "position": [
+              852,
+              878
+            ],
+            "type": "THUỐC",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "tuyến giáp trái",
+            "position": [
+              687,
+              702
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.5757595896720886
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "thương ghi nhận",
+            "position": [
+              899,
+              914
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.6370118856430054
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "chọc hút bất thường của nốt tuyến giáp thùy trái",
+              "position": [
+                84,
+                132
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.5
+                }
+              ],
+              "confidence": 0.5,
+              "vote_count": 2,
+              "max_type_votes": 1,
+              "voters": {
+                "ner_llm_relocated": 1,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "KẾT_QUẢ_XÉT_NGHIỆM": 1,
+                "TÊN_XÉT_NGHIỆM": 1
+              },
+              "needs_review": true,
+              "position_fixed": false,
+              "llm_corrected": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "nốt tuyến giáp thùy trái kích thước khoảng 1 cm",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                190,
+                237
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "nhỏ  đối với tổn thương này",
+              "position": [
+                296,
+                323
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "khó nuốt",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                568,
+                576
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                578,
+                585
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.95
+                }
+              ],
+              "confidence": 0.95,
+              "vote_count": 3,
+              "max_type_votes": 3,
+              "voters": {
+                "ner_llm_relocated": 2,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TRIỆU_CHỨNG": 3
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "chọc hút bất thường của nốt tuyến giáp trái",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                659,
+                702
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Chọc hút bằng kim nhỏ  nốt",
+              "position": [
+                852,
+                878
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "tuyến giáp trái",
+              "position": [
+                687,
+                702
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.5757595896720886
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "thương ghi nhận",
+              "position": [
+                899,
+                914
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.6370118856430054
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "Bệnh sử \nBệnh nhân được chỉ định nhập viện để đánh giá và xử trí tình trạng kết quả chọc hút bất thường của nốt tuyến giáp thùy trái.\nQua thăm khám và cận lâm sàng trước nhập viện, ghi nhận nốt tuyến giáp thùy trái kích thước khoảng 1 cm. \nBệnh nhân đã được thực hiện thủ thuật chọc hút bằng kim nhỏ  đối với tổn thương này. \nKết quả xét nghiệm tế bào học từ dịch chọc hút ghi nhận bất thường, cần tiếp tục đánh giá chuyên sâu để xác định bản chất tổn thương và hướng điều trị phù hợp.\nTại thời điểm nhập viện, bệnh nhân không ghi nhận triệu chứng chèn ép vùng cổ như khó nuốt, khó thở hoặc khàn tiếng. Lý do nhập viện chủ yếu là theo dõi và đánh giá kết quả chọc hút bất thường của nốt tuyến giáp trái.\nKết quả khám tại bệnh viện\nKết quả xét nghiệm: Kết quả tế bào học từ dịch chọc hút nốt tuyến giáp trái ghi nhận bất thường.\nThủ thuật đã thực hiện: Chọc hút bằng kim nhỏ  nốt tuyến giáp trái.Tổn thương ghi nhận: Nốt tuyến giáp thùy trái kích thước khoảng 1 cm."
+        },
+        "output": [
+          {
+            "text": "chọc hút bất thường của nốt tuyến giáp thùy trái",
+            "position": [
+              84,
+              132
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.5
+              }
+            ],
+            "confidence": 0.5,
+            "vote_count": 2,
+            "max_type_votes": 1,
+            "voters": {
+              "ner_llm_relocated": 1,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "KẾT_QUẢ_XÉT_NGHIỆM": 1,
+              "TÊN_XÉT_NGHIỆM": 1
+            },
+            "needs_review": true,
+            "position_fixed": false,
+            "llm_corrected": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.95,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "nốt tuyến giáp thùy trái kích thước khoảng 1 cm",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              190,
+              237
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "nhỏ  đối với tổn thương này",
+            "position": [
+              296,
+              323
+            ],
+            "type": "THUỐC",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "khó nuốt",
+            "type": "TRIỆU_CHỨNG",
+            "source": "ner_llm_relocated",
+            "position": [
+              568,
+              576
+            ],
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "khó thở",
+            "position": [
+              578,
+              585
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.95
+              }
+            ],
+            "confidence": 0.95,
+            "vote_count": 3,
+            "max_type_votes": 3,
+            "voters": {
+              "ner_llm_relocated": 2,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "TRIỆU_CHỨNG": 3
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "chọc hút bất thường của nốt tuyến giáp trái",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              659,
+              702
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "ner_llm_relocated": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "Chọc hút bằng kim nhỏ  nốt",
+            "position": [
+              852,
+              878
+            ],
+            "type": "THUỐC",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "tuyến giáp trái",
+            "position": [
+              687,
+              702
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.5757595896720886
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "thương ghi nhận",
+            "position": [
+              899,
+              914
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.6370118856430054
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 1
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_verify",
+        "input": {
+          "mention": {
+            "text": "chọc hút bất thường của nốt tuyến giáp thùy trái",
+            "position": [
+              84,
+              132
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.5
+              }
+            ],
+            "confidence": 0.5,
+            "vote_count": 2,
+            "max_type_votes": 1,
+            "voters": {
+              "ner_llm_relocated": 1,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "KẾT_QUẢ_XÉT_NGHIỆM": 1,
+              "TÊN_XÉT_NGHIỆM": 1
+            },
+            "needs_review": true,
+            "position_fixed": false,
+            "llm_corrected": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.95,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          "context": "hập viện để đánh giá và xử trí tình trạng kết quả chọc hút bất thường của nốt tuyến giáp thùy trái.\nQua thăm khám và cận lâm sàng trước nhập viện, g"
+        },
+        "output": true,
+        "result_type": "bool"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 9,
+      "ts": 1783582642.7764835
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783582642.7765253
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 9
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "Bệnh sử \nBệnh nhân được chỉ định nhập viện để đánh giá và xử trí tình trạng kết quả chọc hút bất thường của nốt tuyến giáp thùy trái.\nQua thăm khám và cận lâm sàng trước nhập viện, ghi nhận nốt tuyến giáp thùy trái kích thước khoảng 1 cm. \nBệnh nhân đã được thực hiện thủ thuật chọc hút bằng kim nhỏ  đối với tổn thương này. \nKết quả xét nghiệm tế bào học từ dịch chọc hút ghi nhận bất thường, cần tiếp tục đánh giá chuyên sâu để xác định bản chất tổn thương và hướng điều trị phù hợp.\nTại thời điểm nhập viện, bệnh nhân không ghi nhận triệu chứng chèn ép vùng cổ như khó nuốt, khó thở hoặc khàn tiếng. Lý do nhập viện chủ yếu là theo dõi và đánh giá kết quả chọc hút bất thường của nốt tuyến giáp trái.\nKết quả khám tại bệnh viện\nKết quả xét nghiệm: Kết quả tế bào học từ dịch chọc hút nốt tuyến giáp trái ghi nhận bất thường.\nThủ thuật đã thực hiện: Chọc hút bằng kim nhỏ  nốt tuyến giáp trái.Tổn thương ghi nhận: Nốt tuyến giáp thùy trái kích thước khoảng 1 cm.",
+          "start": 84,
+          "end": 132
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "chọc hút bất thường của nốt tuyến giáp thùy trái",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": "Bệnh sử \nBệnh nhân được chỉ định nhập viện để đánh giá và xử trí tình trạng kết quả chọc hút bất thường của nốt tuyến giáp thùy trái.\nQua thăm khám và cận lâm sàng trước nhập viện, ghi nhận nốt tuyến giáp thùy trái kích thước khoảng 1 cm. \nBệnh nhân đã được thực hiện thủ thuật chọc"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "Bệnh sử \nBệnh nhân được chỉ định nhập viện để đánh giá và xử trí tình trạng kết quả chọc hút bất thường của nốt tuyến giáp thùy trái.\nQua thăm khám và cận lâm sàng trước nhập viện, ghi nhận nốt tuyến giáp thùy trái kích thước khoảng 1 cm. \nBệnh nhân đã được thực hiện thủ thuật chọc hút bằng kim nhỏ  đối với tổn thương này. \nKết quả xét nghiệm tế bào học từ dịch chọc hút ghi nhận bất thường, cần tiếp tục đánh giá chuyên sâu để xác định bản chất tổn thương và hướng điều trị phù hợp.\nTại thời điểm nhập viện, bệnh nhân không ghi nhận triệu chứng chèn ép vùng cổ như khó nuốt, khó thở hoặc khàn tiếng. Lý do nhập viện chủ yếu là theo dõi và đánh giá kết quả chọc hút bất thường của nốt tuyến giáp trái.\nKết quả khám tại bệnh viện\nKết quả xét nghiệm: Kết quả tế bào học từ dịch chọc hút nốt tuyến giáp trái ghi nhận bất thường.\nThủ thuật đã thực hiện: Chọc hút bằng kim nhỏ  nốt tuyến giáp trái.Tổn thương ghi nhận: Nốt tuyến giáp thùy trái kích thước khoảng 1 cm.",
+          "start": 296,
+          "end": 323
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "nhỏ  đối với tổn thương này",
+          "mtype": "THUỐC",
+          "context": "m và cận lâm sàng trước nhập viện, ghi nhận nốt tuyến giáp thùy trái kích thước khoảng 1 cm. \nBệnh nhân đã được thực hiện thủ thuật chọc hút bằng kim nhỏ  đối với tổn thương này. \nKết quả xét nghiệm tế bào học từ dịch chọc hút ghi nhận bất thường, cần tiếp tục đánh giá chuyên sâu để xác định bản chất tổn thương và hướng điều "
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "Bệnh sử \nBệnh nhân được chỉ định nhập viện để đánh giá và xử trí tình trạng kết quả chọc hút bất thường của nốt tuyến giáp thùy trái.\nQua thăm khám và cận lâm sàng trước nhập viện, ghi nhận nốt tuyến giáp thùy trái kích thước khoảng 1 cm. \nBệnh nhân đã được thực hiện thủ thuật chọc hút bằng kim nhỏ  đối với tổn thương này. \nKết quả xét nghiệm tế bào học từ dịch chọc hút ghi nhận bất thường, cần tiếp tục đánh giá chuyên sâu để xác định bản chất tổn thương và hướng điều trị phù hợp.\nTại thời điểm nhập viện, bệnh nhân không ghi nhận triệu chứng chèn ép vùng cổ như khó nuốt, khó thở hoặc khàn tiếng. Lý do nhập viện chủ yếu là theo dõi và đánh giá kết quả chọc hút bất thường của nốt tuyến giáp trái.\nKết quả khám tại bệnh viện\nKết quả xét nghiệm: Kết quả tế bào học từ dịch chọc hút nốt tuyến giáp trái ghi nhận bất thường.\nThủ thuật đã thực hiện: Chọc hút bằng kim nhỏ  nốt tuyến giáp trái.Tổn thương ghi nhận: Nốt tuyến giáp thùy trái kích thước khoảng 1 cm.",
+          "start": 568,
+          "end": 576
+        },
+        "output": {
+          "isNegated": true,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "khó nuốt",
+          "mtype": "TRIỆU_CHỨNG",
+          "context": "uyên sâu để xác định bản chất tổn thương và hướng điều trị phù hợp.\nTại thời điểm nhập viện, bệnh nhân không ghi nhận triệu chứng chèn ép vùng cổ như khó nuốt, khó thở hoặc khàn tiếng. Lý do nhập viện chủ yếu là theo dõi và đánh giá kết quả chọc hút bất thường của nốt tuyến giáp trái.\nKết quả khám tại bệnh "
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "Bệnh sử \nBệnh nhân được chỉ định nhập viện để đánh giá và xử trí tình trạng kết quả chọc hút bất thường của nốt tuyến giáp thùy trái.\nQua thăm khám và cận lâm sàng trước nhập viện, ghi nhận nốt tuyến giáp thùy trái kích thước khoảng 1 cm. \nBệnh nhân đã được thực hiện thủ thuật chọc hút bằng kim nhỏ  đối với tổn thương này. \nKết quả xét nghiệm tế bào học từ dịch chọc hút ghi nhận bất thường, cần tiếp tục đánh giá chuyên sâu để xác định bản chất tổn thương và hướng điều trị phù hợp.\nTại thời điểm nhập viện, bệnh nhân không ghi nhận triệu chứng chèn ép vùng cổ như khó nuốt, khó thở hoặc khàn tiếng. Lý do nhập viện chủ yếu là theo dõi và đánh giá kết quả chọc hút bất thường của nốt tuyến giáp trái.\nKết quả khám tại bệnh viện\nKết quả xét nghiệm: Kết quả tế bào học từ dịch chọc hút nốt tuyến giáp trái ghi nhận bất thường.\nThủ thuật đã thực hiện: Chọc hút bằng kim nhỏ  nốt tuyến giáp trái.Tổn thương ghi nhận: Nốt tuyến giáp thùy trái kích thước khoảng 1 cm.",
+          "start": 578,
+          "end": 585
+        },
+        "output": {
+          "isNegated": true,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "khó thở",
+          "mtype": "TRIỆU_CHỨNG",
+          "context": "ể xác định bản chất tổn thương và hướng điều trị phù hợp.\nTại thời điểm nhập viện, bệnh nhân không ghi nhận triệu chứng chèn ép vùng cổ như khó nuốt, khó thở hoặc khàn tiếng. Lý do nhập viện chủ yếu là theo dõi và đánh giá kết quả chọc hút bất thường của nốt tuyến giáp trái.\nKết quả khám tại bệnh viện\nKết "
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "Bệnh sử \nBệnh nhân được chỉ định nhập viện để đánh giá và xử trí tình trạng kết quả chọc hút bất thường của nốt tuyến giáp thùy trái.\nQua thăm khám và cận lâm sàng trước nhập viện, ghi nhận nốt tuyến giáp thùy trái kích thước khoảng 1 cm. \nBệnh nhân đã được thực hiện thủ thuật chọc hút bằng kim nhỏ  đối với tổn thương này. \nKết quả xét nghiệm tế bào học từ dịch chọc hút ghi nhận bất thường, cần tiếp tục đánh giá chuyên sâu để xác định bản chất tổn thương và hướng điều trị phù hợp.\nTại thời điểm nhập viện, bệnh nhân không ghi nhận triệu chứng chèn ép vùng cổ như khó nuốt, khó thở hoặc khàn tiếng. Lý do nhập viện chủ yếu là theo dõi và đánh giá kết quả chọc hút bất thường của nốt tuyến giáp trái.\nKết quả khám tại bệnh viện\nKết quả xét nghiệm: Kết quả tế bào học từ dịch chọc hút nốt tuyến giáp trái ghi nhận bất thường.\nThủ thuật đã thực hiện: Chọc hút bằng kim nhỏ  nốt tuyến giáp trái.Tổn thương ghi nhận: Nốt tuyến giáp thùy trái kích thước khoảng 1 cm.",
+          "start": 852,
+          "end": 878
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "Chọc hút bằng kim nhỏ  nốt",
+          "mtype": "THUỐC",
+          "context": ".\nKết quả khám tại bệnh viện\nKết quả xét nghiệm: Kết quả tế bào học từ dịch chọc hút nốt tuyến giáp trái ghi nhận bất thường.\nThủ thuật đã thực hiện: Chọc hút bằng kim nhỏ  nốt tuyến giáp trái.Tổn thương ghi nhận: Nốt tuyến giáp thùy trái kích thước khoảng 1 cm."
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "Bệnh sử \nBệnh nhân được chỉ định nhập viện để đánh giá và xử trí tình trạng kết quả chọc hút bất thường của nốt tuyến giáp thùy trái.\nQua thăm khám và cận lâm sàng trước nhập viện, ghi nhận nốt tuyến giáp thùy trái kích thước khoảng 1 cm. \nBệnh nhân đã được thực hiện thủ thuật chọc hút bằng kim nhỏ  đối với tổn thương này. \nKết quả xét nghiệm tế bào học từ dịch chọc hút ghi nhận bất thường, cần tiếp tục đánh giá chuyên sâu để xác định bản chất tổn thương và hướng điều trị phù hợp.\nTại thời điểm nhập viện, bệnh nhân không ghi nhận triệu chứng chèn ép vùng cổ như khó nuốt, khó thở hoặc khàn tiếng. Lý do nhập viện chủ yếu là theo dõi và đánh giá kết quả chọc hút bất thường của nốt tuyến giáp trái.\nKết quả khám tại bệnh viện\nKết quả xét nghiệm: Kết quả tế bào học từ dịch chọc hút nốt tuyến giáp trái ghi nhận bất thường.\nThủ thuật đã thực hiện: Chọc hút bằng kim nhỏ  nốt tuyến giáp trái.Tổn thương ghi nhận: Nốt tuyến giáp thùy trái kích thước khoảng 1 cm.",
+          "start": 687,
+          "end": 702
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "tuyến giáp trái",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": "riệu chứng chèn ép vùng cổ như khó nuốt, khó thở hoặc khàn tiếng. Lý do nhập viện chủ yếu là theo dõi và đánh giá kết quả chọc hút bất thường của nốt tuyến giáp trái.\nKết quả khám tại bệnh viện\nKết quả xét nghiệm: Kết quả tế bào học từ dịch chọc hút nốt tuyến giáp trái ghi nhận bất thường.\nThủ thuật đã thực hiện: "
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 9,
+        "llm_checked": 2
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783582671.8357856
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783582671.8358142
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 9
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "chọc hút bất thường của nốt tuyến giáp thùy trái",
+            "position": [
+              84,
+              132
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.5
+              }
+            ],
+            "confidence": 0.5,
+            "vote_count": 2,
+            "max_type_votes": 1,
+            "voters": {
+              "ner_llm_relocated": 1,
+              "healthbert": 1
+            },
+            "type_votes": {
+              "KẾT_QUẢ_XÉT_NGHIỆM": 1,
+              "TÊN_XÉT_NGHIỆM": 1
+            },
+            "needs_review": true,
+            "position_fixed": false,
+            "llm_corrected": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.95,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          "context": "Bệnh sử \nBệnh nhân được chỉ định nhập viện để đánh giá và xử trí tình trạng kết quả chọc hút bất thường của nốt tuyến giáp thùy trái.\nQua thăm khám và cận lâm sàng trước nhập viện, ghi nhận nốt tuyến giáp thùy trái kích thước khoảng 1 cm. \nBệnh nhân đã được thực hiện thủ thuật chọc"
+        },
+        "output": {
+          "candidates": [],
+          "confidence": 0.0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "nhỏ  đối với tổn thương này",
+            "position": [
+              296,
+              323
+            ],
+            "type": "THUỐC",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          "context": "m và cận lâm sàng trước nhập viện, ghi nhận nốt tuyến giáp thùy trái kích thước khoảng 1 cm. \nBệnh nhân đã được thực hiện thủ thuật chọc hút bằng kim nhỏ  đối với tổn thương này. \nKết quả xét nghiệm tế bào học từ dịch chọc hút ghi nhận bất thường, cần tiếp tục đánh giá chuyên sâu để xác định bản chất tổn thương và hướng điều "
+        },
+        "output": {
+          "candidates": [],
+          "confidence": 0.0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "Chọc hút bằng kim nhỏ  nốt",
+            "position": [
+              852,
+              878
+            ],
+            "type": "THUỐC",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          "context": ".\nKết quả khám tại bệnh viện\nKết quả xét nghiệm: Kết quả tế bào học từ dịch chọc hút nốt tuyến giáp trái ghi nhận bất thường.\nThủ thuật đã thực hiện: Chọc hút bằng kim nhỏ  nốt tuyến giáp trái.Tổn thương ghi nhận: Nốt tuyến giáp thùy trái kích thước khoảng 1 cm."
+        },
+        "output": {
+          "candidates": [],
+          "confidence": 0.0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "tuyến giáp trái",
+            "position": [
+              687,
+              702
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.5757595896720886
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": {
+              "healthbert": 1
+            },
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          "context": "riệu chứng chèn ép vùng cổ như khó nuốt, khó thở hoặc khàn tiếng. Lý do nhập viện chủ yếu là theo dõi và đánh giá kết quả chọc hút bất thường của nốt tuyến giáp trái.\nKết quả khám tại bệnh viện\nKết quả xét nghiệm: Kết quả tế bào học từ dịch chọc hút nốt tuyến giáp trái ghi nhận bất thường.\nThủ thuật đã thực hiện: "
+        },
+        "output": {
+          "candidates": [],
+          "confidence": 0.0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1783582671.881019
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783582671.8810427
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 9
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "chọc hút bất thường của nốt tuyến giáp thùy trái",
+              "position": [
+                84,
+                132
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.5
+                }
+              ],
+              "confidence": 0.5,
+              "vote_count": 2,
+              "max_type_votes": 1,
+              "voters": {
+                "ner_llm_relocated": 1,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "KẾT_QUẢ_XÉT_NGHIỆM": 1,
+                "TÊN_XÉT_NGHIỆM": 1
+              },
+              "needs_review": true,
+              "position_fixed": false,
+              "llm_corrected": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "nốt tuyến giáp thùy trái kích thước khoảng 1 cm",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                190,
+                237
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "nhỏ  đối với tổn thương này",
+              "position": [
+                296,
+                323
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "khó nuốt",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                568,
+                576
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                578,
+                585
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.95
+                }
+              ],
+              "confidence": 0.95,
+              "vote_count": 3,
+              "max_type_votes": 3,
+              "voters": {
+                "ner_llm_relocated": 2,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TRIỆU_CHỨNG": 3
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "chọc hút bất thường của nốt tuyến giáp trái",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                659,
+                702
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Chọc hút bằng kim nhỏ  nốt",
+              "position": [
+                852,
+                878
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "tuyến giáp trái",
+              "position": [
+                687,
+                702
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.5757595896720886
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "thương ghi nhận",
+              "position": [
+                899,
+                914
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.6370118856430054
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "Bệnh sử \nBệnh nhân được chỉ định nhập viện để đánh giá và xử trí tình trạng kết quả chọc hút bất thường của nốt tuyến giáp thùy trái.\nQua thăm khám và cận lâm sàng trước nhập viện, ghi nhận nốt tuyến giáp thùy trái kích thước khoảng 1 cm. \nBệnh nhân đã được thực hiện thủ thuật chọc hút bằng kim nhỏ  đối với tổn thương này. \nKết quả xét nghiệm tế bào học từ dịch chọc hút ghi nhận bất thường, cần tiếp tục đánh giá chuyên sâu để xác định bản chất tổn thương và hướng điều trị phù hợp.\nTại thời điểm nhập viện, bệnh nhân không ghi nhận triệu chứng chèn ép vùng cổ như khó nuốt, khó thở hoặc khàn tiếng. Lý do nhập viện chủ yếu là theo dõi và đánh giá kết quả chọc hút bất thường của nốt tuyến giáp trái.\nKết quả khám tại bệnh viện\nKết quả xét nghiệm: Kết quả tế bào học từ dịch chọc hút nốt tuyến giáp trái ghi nhận bất thường.\nThủ thuật đã thực hiện: Chọc hút bằng kim nhỏ  nốt tuyến giáp trái.Tổn thương ghi nhận: Nốt tuyến giáp thùy trái kích thước khoảng 1 cm."
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": [
+                "no candidates"
+              ]
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": [
+                "no candidates"
+              ]
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": [
+                "no candidates"
+              ]
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": [
+                "no candidates"
+              ]
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "chọc hút bất thường của nốt tuyến giáp thùy trái",
+              "position": [
+                84,
+                132
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.5
+                }
+              ],
+              "confidence": 0.5,
+              "vote_count": 2,
+              "max_type_votes": 1,
+              "voters": {
+                "ner_llm_relocated": 1,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "KẾT_QUẢ_XÉT_NGHIỆM": 1,
+                "TÊN_XÉT_NGHIỆM": 1
+              },
+              "needs_review": true,
+              "position_fixed": false,
+              "llm_corrected": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "nốt tuyến giáp thùy trái kích thước khoảng 1 cm",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                190,
+                237
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "nhỏ  đối với tổn thương này",
+              "position": [
+                296,
+                323
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "khó nuốt",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                568,
+                576
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                578,
+                585
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.95
+                }
+              ],
+              "confidence": 0.95,
+              "vote_count": 3,
+              "max_type_votes": 3,
+              "voters": {
+                "ner_llm_relocated": 2,
+                "healthbert": 1
+              },
+              "type_votes": {
+                "TRIỆU_CHỨNG": 3
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "chọc hút bất thường của nốt tuyến giáp trái",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                659,
+                702
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "ner_llm_relocated": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Chọc hút bằng kim nhỏ  nốt",
+              "position": [
+                852,
+                878
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "tuyến giáp trái",
+              "position": [
+                687,
+                702
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.5757595896720886
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "thương ghi nhận",
+              "position": [
+                899,
+                914
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.6370118856430054
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": {
+                "healthbert": 1
+              },
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 8,
+        "dropped": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 8,
+      "ts": 1783582671.8811688
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 8,
+      "elapsed": 170.33,
+      "ts": 1783582671.8811984
+    }
+  ],
+  "stats": {
+    "total_mentions": 8,
+    "final": 8,
+    "validation_errors": 0,
+    "elapsed": 170.33,
+    "rule": 0,
+    "qwen": 6,
+    "healthbert": 6
+  }
+}

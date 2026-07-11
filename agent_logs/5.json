@@ -1,0 +1,3534 @@
+{
+  "file_id": "5",
+  "timestamp": 1783446603.2095478,
+  "elapsed": 208.55,
+  "model": "runpod",
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 1420,
+      "ts": 1783446403.146729
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783446403.1469486
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 1420
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 1420
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - bệnh tim mạch do xơ vữa động mạch\n    - Tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - bệnh trào ngược dạ dày- thực quản không có viêm thực quản\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau bụng\n    Thời điểm khởi phát triệu chứng\n    - Tiền sử 1 ngày\n    - Khởi phát trong khi ăn tối\n    Triệu chứng chính\n    - đau bụng vùng thượng vị\n    - buồn nôn\n    Các triệu chứng liên quan: Không có sốt, ớn lạnh, nôn, táo bón, ho, tiểu khó, hoặc các triệu chứng khác\n\n3.  Đánh giá tại bệnh viện\n    Dấu hiệu lâm sàng\n    - sốt đến 101.4\n    - Tăng lên 101.8 trước thủ thuật\n    - hạ huyết áp, không đặc hiệu trong khi thủ thuật\n    - chỉ số huyết áp tâm thu trên đường A-line (khi đến MICU)\n    Kết quả xét nghiệm\n    - viêm gan do men\n    - ast (aspartate aminotransferase) là 319\n    - alt (alanine aminotransferase) là 690\n    - phosphatase kiềm (ap) là 983\n    - bilirubin toàn phần (tbili) là 2.4\n    - bạch cầu (wbc) 11.6\n    - Đã lấy cấy máu\n Kết quả chẩn đoán hình ảnh: \nSiêu âm gan mật  ghi nhận tình trạng giãn đường mật, gợi ý tắc nghẽn đường mật cần tiếp tục đánh giá và can thiệp.\nCác thủ thuật đã thực hiện:Nội soi mật tụy ngược dòng \nĐặt stent đường mật để dẫn lưu và giải áp đường mật.\nĐặt nội khí quản nhằm \nĐặt catheter động mạch (\nĐặt đường truyền tĩnh mạch ngoại vi \n    - levophed\n    - propofol để an thần\n    - Đã đặt phentolamine"
+        },
+        "output": {
+          "rule": [],
+          "qwen": [
+            {
+              "text": "bệnh tim mạch do xơ vữa động mạch",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                57,
+                90
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 1.0,
+                "reason": "Bệnh tim mạch do xơ vữa động mạch được ghi nhận trong phần tiền sử bệnh nội khoa, là một bệnh lý mạn tính, được mô tả rõ ràng và không có dấu hiệu phủ định nào"
+              },
+              "assertion_confidence": 1.0,
+              "candidates": [
+                "I25.0",
+                "I25.1"
+              ],
+              "link_confidence": 0.8
+            },
+            {
+              "text": "Tăng huyết áp",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                97,
+                110
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 0.95,
+                "reason": "Tăng huyết áp được liệt kê trong phần tiền sử bệnh mạn tính, đây là tiền sử bản thân bệnh nhân đã có từ trước."
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [
+                "I15.0",
+                "I27.0",
+                "O11",
+                "O16",
+                "I15.8"
+              ],
+              "link_confidence": 0.8
+            },
+            {
+              "text": "tăng lipid máu",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                117,
+                131
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                503,
+                506
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                466,
+                469
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "101.4",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                598,
+                603
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "101.8",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                619,
+                624
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "cấy máu",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                1008,
+                1015
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Siêu âm gan mật",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                1046,
+                1061
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "giãn đường mật",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                1083,
+                1097
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 0.9,
+                "reason": "Giãn đường mật là một kết quả chẩn đoán được đề cập trong đoạn văn, cho thấy tình trạng bệnh của bệnh nhân."
+              },
+              "assertion_confidence": 0.9,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "tắc nghẽn đường mật",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                1105,
+                1124
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 1.0,
+                "reason": "Tắc nghẽn đường mật đã được đề cập và chẩn đoán trong ngữ cảnh của kết quả chẩn đoán hình ảnh và các thủ thuật đã thực hiện."
+              },
+              "assertion_confidence": 1.0,
+              "candidates": [],
+              "link_confidence": 0.0
+            }
+          ],
+          "healthbert": [],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 11,
+          "healthbert": 0
+        },
+        "total": 11
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "bệnh tim mạch do xơ vữa động mạch",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                57,
+                90
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 1.0,
+                "reason": "Bệnh tim mạch do xơ vữa động mạch được ghi nhận trong phần tiền sử bệnh nội khoa, là một bệnh lý mạn tính, được mô tả rõ ràng và không có dấu hiệu phủ định nào"
+              },
+              "assertion_confidence": 1.0,
+              "candidates": [
+                "I25.0",
+                "I25.1"
+              ],
+              "link_confidence": 0.8
+            },
+            {
+              "text": "Tăng huyết áp",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                97,
+                110
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 0.95,
+                "reason": "Tăng huyết áp được liệt kê trong phần tiền sử bệnh mạn tính, đây là tiền sử bản thân bệnh nhân đã có từ trước."
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [
+                "I15.0",
+                "I27.0",
+                "O11",
+                "O16",
+                "I15.8"
+              ],
+              "link_confidence": 0.8
+            },
+            {
+              "text": "tăng lipid máu",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                117,
+                131
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                503,
+                506
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                466,
+                469
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "101.4",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                598,
+                603
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "101.8",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                619,
+                624
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "cấy máu",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                1008,
+                1015
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Siêu âm gan mật",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                1046,
+                1061
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "giãn đường mật",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                1083,
+                1097
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 0.9,
+                "reason": "Giãn đường mật là một kết quả chẩn đoán được đề cập trong đoạn văn, cho thấy tình trạng bệnh của bệnh nhân."
+              },
+              "assertion_confidence": 0.9,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "tắc nghẽn đường mật",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                1105,
+                1124
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 1.0,
+                "reason": "Tắc nghẽn đường mật đã được đề cập và chẩn đoán trong ngữ cảnh của kết quả chẩn đoán hình ảnh và các thủ thuật đã thực hiện."
+              },
+              "assertion_confidence": 1.0,
+              "candidates": [],
+              "link_confidence": 0.0
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "bệnh tim mạch do xơ vữa động mạch",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              57,
+              90
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true,
+              "confidence": 1.0,
+              "reason": "Bệnh tim mạch do xơ vữa động mạch được ghi nhận trong phần tiền sử bệnh nội khoa, là một bệnh lý mạn tính, được mô tả rõ ràng và không có dấu hiệu phủ định nào"
+            },
+            "assertion_confidence": 1.0,
+            "candidates": [
+              "I25.0",
+              "I25.1"
+            ],
+            "link_confidence": 0.8
+          },
+          {
+            "text": "Tăng huyết áp",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              97,
+              110
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true,
+              "confidence": 0.95,
+              "reason": "Tăng huyết áp được liệt kê trong phần tiền sử bệnh mạn tính, đây là tiền sử bản thân bệnh nhân đã có từ trước."
+            },
+            "assertion_confidence": 0.95,
+            "candidates": [
+              "I15.0",
+              "I27.0",
+              "O11",
+              "O16",
+              "I15.8"
+            ],
+            "link_confidence": 0.8
+          },
+          {
+            "text": "tăng lipid máu",
+            "type": "TRIỆU_CHỨNG",
+            "source": "ner_llm_relocated",
+            "position": [
+              117,
+              131
+            ],
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.9
+              }
+            ],
+            "llm_corrected": true,
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "sốt",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              466,
+              469
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.9
+              }
+            ],
+            "llm_corrected": true,
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "khó",
+            "type": "TRIỆU_CHỨNG",
+            "source": "ner_llm_relocated",
+            "position": [
+              503,
+              506
+            ],
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "101.4",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              598,
+              603
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "101.8",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              619,
+              624
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "cấy máu",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              1008,
+              1015
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "Siêu âm gan mật",
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              1046,
+              1061
+            ],
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "giãn đường mật",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              1083,
+              1097
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.9
+              }
+            ],
+            "llm_corrected": true,
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true,
+              "confidence": 0.9,
+              "reason": "Giãn đường mật là một kết quả chẩn đoán được đề cập trong đoạn văn, cho thấy tình trạng bệnh của bệnh nhân."
+            },
+            "assertion_confidence": 0.9,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "tắc nghẽn đường mật",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              1105,
+              1124
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.9
+              }
+            ],
+            "llm_corrected": true,
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true,
+              "confidence": 1.0,
+              "reason": "Tắc nghẽn đường mật đã được đề cập và chẩn đoán trong ngữ cảnh của kết quả chẩn đoán hình ảnh và các thủ thuật đã thực hiện."
+            },
+            "assertion_confidence": 1.0,
+            "candidates": [],
+            "link_confidence": 0.0
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 11
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "bệnh tim mạch do xơ vữa động mạch",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                57,
+                90
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 1.0,
+                "reason": "Bệnh tim mạch do xơ vữa động mạch được ghi nhận trong phần tiền sử bệnh nội khoa, là một bệnh lý mạn tính, được mô tả rõ ràng và không có dấu hiệu phủ định nào"
+              },
+              "assertion_confidence": 1.0,
+              "candidates": [
+                "I25.0",
+                "I25.1"
+              ],
+              "link_confidence": 0.8
+            },
+            {
+              "text": "Tăng huyết áp",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                97,
+                110
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 0.95,
+                "reason": "Tăng huyết áp được liệt kê trong phần tiền sử bệnh mạn tính, đây là tiền sử bản thân bệnh nhân đã có từ trước."
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [
+                "I15.0",
+                "I27.0",
+                "O11",
+                "O16",
+                "I15.8"
+              ],
+              "link_confidence": 0.8
+            },
+            {
+              "text": "tăng lipid máu",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                117,
+                131
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                466,
+                469
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "khó",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                503,
+                506
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "101.4",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                598,
+                603
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "101.8",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                619,
+                624
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "cấy máu",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                1008,
+                1015
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Siêu âm gan mật",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                1046,
+                1061
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "giãn đường mật",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                1083,
+                1097
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 0.9,
+                "reason": "Giãn đường mật là một kết quả chẩn đoán được đề cập trong đoạn văn, cho thấy tình trạng bệnh của bệnh nhân."
+              },
+              "assertion_confidence": 0.9,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "tắc nghẽn đường mật",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                1105,
+                1124
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 1.0,
+                "reason": "Tắc nghẽn đường mật đã được đề cập và chẩn đoán trong ngữ cảnh của kết quả chẩn đoán hình ảnh và các thủ thuật đã thực hiện."
+              },
+              "assertion_confidence": 1.0,
+              "candidates": [],
+              "link_confidence": 0.0
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - bệnh tim mạch do xơ vữa động mạch\n    - Tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - bệnh trào ngược dạ dày- thực quản không có viêm thực quản\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau bụng\n    Thời điểm khởi phát triệu chứng\n    - Tiền sử 1 ngày\n    - Khởi phát trong khi ăn tối\n    Triệu chứng chính\n    - đau bụng vùng thượng vị\n    - buồn nôn\n    Các triệu chứng liên quan: Không có sốt, ớn lạnh, nôn, táo bón, ho, tiểu khó, hoặc các triệu chứng khác\n\n3.  Đánh giá tại bệnh viện\n    Dấu hiệu lâm sàng\n    - sốt đến 101.4\n    - Tăng lên 101.8 trước thủ thuật\n    - hạ huyết áp, không đặc hiệu trong khi thủ thuật\n    - chỉ số huyết áp tâm thu trên đường A-line (khi đến MICU)\n    Kết quả xét nghiệm\n    - viêm gan do men\n    - ast (aspartate aminotransferase) là 319\n    - alt (alanine aminotransferase) là 690\n    - phosphatase kiềm (ap) là 983\n    - bilirubin toàn phần (tbili) là 2.4\n    - bạch cầu (wbc) 11.6\n    - Đã lấy cấy máu\n Kết quả chẩn đoán hình ảnh: \nSiêu âm gan mật  ghi nhận tình trạng giãn đường mật, gợi ý tắc nghẽn đường mật cần tiếp tục đánh giá và can thiệp.\nCác thủ thuật đã thực hiện:Nội soi mật tụy ngược dòng \nĐặt stent đường mật để dẫn lưu và giải áp đường mật.\nĐặt nội khí quản nhằm \nĐặt catheter động mạch (\nĐặt đường truyền tĩnh mạch ngoại vi \n    - levophed\n    - propofol để an thần\n    - Đã đặt phentolamine"
+        },
+        "output": [
+          {
+            "text": "bệnh tim mạch do xơ vữa động mạch",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              57,
+              90
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true,
+              "confidence": 1.0,
+              "reason": "Bệnh tim mạch do xơ vữa động mạch được ghi nhận trong phần tiền sử bệnh nội khoa, là một bệnh lý mạn tính, được mô tả rõ ràng và không có dấu hiệu phủ định nào"
+            },
+            "assertion_confidence": 1.0,
+            "candidates": [
+              "I25.0",
+              "I25.1"
+            ],
+            "link_confidence": 0.8
+          },
+          {
+            "text": "Tăng huyết áp",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              97,
+              110
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true,
+              "confidence": 0.95,
+              "reason": "Tăng huyết áp được liệt kê trong phần tiền sử bệnh mạn tính, đây là tiền sử bản thân bệnh nhân đã có từ trước."
+            },
+            "assertion_confidence": 0.95,
+            "candidates": [
+              "I15.0",
+              "I27.0",
+              "O11",
+              "O16",
+              "I15.8"
+            ],
+            "link_confidence": 0.8
+          },
+          {
+            "text": "tăng lipid máu",
+            "type": "TRIỆU_CHỨNG",
+            "source": "ner_llm_relocated",
+            "position": [
+              117,
+              131
+            ],
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.9
+              }
+            ],
+            "llm_corrected": true,
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "sốt",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              466,
+              469
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.9
+              }
+            ],
+            "llm_corrected": true,
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "khó",
+            "type": "TRIỆU_CHỨNG",
+            "source": "ner_llm_relocated",
+            "position": [
+              503,
+              506
+            ],
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "101.4",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              598,
+              603
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "101.8",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              619,
+              624
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "cấy máu",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              1008,
+              1015
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "Siêu âm gan mật",
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              1046,
+              1061
+            ],
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "giãn đường mật",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              1083,
+              1097
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.9
+              }
+            ],
+            "llm_corrected": true,
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true,
+              "confidence": 0.9,
+              "reason": "Giãn đường mật là một kết quả chẩn đoán được đề cập trong đoạn văn, cho thấy tình trạng bệnh của bệnh nhân."
+            },
+            "assertion_confidence": 0.9,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "tắc nghẽn đường mật",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              1105,
+              1124
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.9
+              }
+            ],
+            "llm_corrected": true,
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true,
+              "confidence": 1.0,
+              "reason": "Tắc nghẽn đường mật đã được đề cập và chẩn đoán trong ngữ cảnh của kết quả chẩn đoán hình ảnh và các thủ thuật đã thực hiện."
+            },
+            "assertion_confidence": 1.0,
+            "candidates": [],
+            "link_confidence": 0.0
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "bệnh tim mạch do xơ vữa động mạch",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                57,
+                90
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 1.0,
+                "reason": "Bệnh tim mạch do xơ vữa động mạch được ghi nhận trong phần tiền sử bệnh nội khoa, là một bệnh lý mạn tính, được mô tả rõ ràng và không có dấu hiệu phủ định nào"
+              },
+              "assertion_confidence": 1.0,
+              "candidates": [
+                "I25.0",
+                "I25.1"
+              ],
+              "link_confidence": 0.8
+            },
+            {
+              "text": "Tăng huyết áp",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                97,
+                110
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 0.95,
+                "reason": "Tăng huyết áp được liệt kê trong phần tiền sử bệnh mạn tính, đây là tiền sử bản thân bệnh nhân đã có từ trước."
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [
+                "I15.0",
+                "I27.0",
+                "O11",
+                "O16",
+                "I15.8"
+              ],
+              "link_confidence": 0.8
+            },
+            {
+              "text": "tăng lipid máu",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                117,
+                131
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                466,
+                469
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "khó",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                503,
+                506
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "101.4",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                598,
+                603
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "101.8",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                619,
+                624
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "cấy máu",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                1008,
+                1015
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Siêu âm gan mật",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                1046,
+                1061
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "giãn đường mật",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                1083,
+                1097
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 0.9,
+                "reason": "Giãn đường mật là một kết quả chẩn đoán được đề cập trong đoạn văn, cho thấy tình trạng bệnh của bệnh nhân."
+              },
+              "assertion_confidence": 0.9,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "tắc nghẽn đường mật",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                1105,
+                1124
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 1.0,
+                "reason": "Tắc nghẽn đường mật đã được đề cập và chẩn đoán trong ngữ cảnh của kết quả chẩn đoán hình ảnh và các thủ thuật đã thực hiện."
+              },
+              "assertion_confidence": 1.0,
+              "candidates": [],
+              "link_confidence": 0.0
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - bệnh tim mạch do xơ vữa động mạch\n    - Tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - bệnh trào ngược dạ dày- thực quản không có viêm thực quản\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau bụng\n    Thời điểm khởi phát triệu chứng\n    - Tiền sử 1 ngày\n    - Khởi phát trong khi ăn tối\n    Triệu chứng chính\n    - đau bụng vùng thượng vị\n    - buồn nôn\n    Các triệu chứng liên quan: Không có sốt, ớn lạnh, nôn, táo bón, ho, tiểu khó, hoặc các triệu chứng khác\n\n3.  Đánh giá tại bệnh viện\n    Dấu hiệu lâm sàng\n    - sốt đến 101.4\n    - Tăng lên 101.8 trước thủ thuật\n    - hạ huyết áp, không đặc hiệu trong khi thủ thuật\n    - chỉ số huyết áp tâm thu trên đường A-line (khi đến MICU)\n    Kết quả xét nghiệm\n    - viêm gan do men\n    - ast (aspartate aminotransferase) là 319\n    - alt (alanine aminotransferase) là 690\n    - phosphatase kiềm (ap) là 983\n    - bilirubin toàn phần (tbili) là 2.4\n    - bạch cầu (wbc) 11.6\n    - Đã lấy cấy máu\n Kết quả chẩn đoán hình ảnh: \nSiêu âm gan mật  ghi nhận tình trạng giãn đường mật, gợi ý tắc nghẽn đường mật cần tiếp tục đánh giá và can thiệp.\nCác thủ thuật đã thực hiện:Nội soi mật tụy ngược dòng \nĐặt stent đường mật để dẫn lưu và giải áp đường mật.\nĐặt nội khí quản nhằm \nĐặt catheter động mạch (\nĐặt đường truyền tĩnh mạch ngoại vi \n    - levophed\n    - propofol để an thần\n    - Đã đặt phentolamine"
+        },
+        "output": [
+          {
+            "text": "bệnh tim mạch do xơ vữa động mạch",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              57,
+              90
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true,
+              "confidence": 1.0,
+              "reason": "Bệnh tim mạch do xơ vữa động mạch được ghi nhận trong phần tiền sử bệnh nội khoa, là một bệnh lý mạn tính, được mô tả rõ ràng và không có dấu hiệu phủ định nào"
+            },
+            "assertion_confidence": 1.0,
+            "candidates": [
+              "I25.0",
+              "I25.1"
+            ],
+            "link_confidence": 0.8
+          },
+          {
+            "text": "Tăng huyết áp",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              97,
+              110
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true,
+              "confidence": 0.95,
+              "reason": "Tăng huyết áp được liệt kê trong phần tiền sử bệnh mạn tính, đây là tiền sử bản thân bệnh nhân đã có từ trước."
+            },
+            "assertion_confidence": 0.95,
+            "candidates": [
+              "I15.0",
+              "I27.0",
+              "O11",
+              "O16",
+              "I15.8"
+            ],
+            "link_confidence": 0.8
+          },
+          {
+            "text": "tăng lipid máu",
+            "type": "TRIỆU_CHỨNG",
+            "source": "ner_llm_relocated",
+            "position": [
+              117,
+              131
+            ],
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.9
+              }
+            ],
+            "llm_corrected": true,
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "sốt",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              466,
+              469
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.9
+              }
+            ],
+            "llm_corrected": true,
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "khó",
+            "type": "TRIỆU_CHỨNG",
+            "source": "ner_llm_relocated",
+            "position": [
+              503,
+              506
+            ],
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "101.4",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              598,
+              603
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "101.8",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              619,
+              624
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "cấy máu",
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              1008,
+              1015
+            ],
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "Siêu âm gan mật",
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "ner_llm_relocated",
+            "position": [
+              1046,
+              1061
+            ],
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "giãn đường mật",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              1083,
+              1097
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.9
+              }
+            ],
+            "llm_corrected": true,
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true,
+              "confidence": 0.9,
+              "reason": "Giãn đường mật là một kết quả chẩn đoán được đề cập trong đoạn văn, cho thấy tình trạng bệnh của bệnh nhân."
+            },
+            "assertion_confidence": 0.9,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "tắc nghẽn đường mật",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              1105,
+              1124
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.9
+              }
+            ],
+            "llm_corrected": true,
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true,
+              "confidence": 1.0,
+              "reason": "Tắc nghẽn đường mật đã được đề cập và chẩn đoán trong ngữ cảnh của kết quả chẩn đoán hình ảnh và các thủ thuật đã thực hiện."
+            },
+            "assertion_confidence": 1.0,
+            "candidates": [],
+            "link_confidence": 0.0
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 1
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 11,
+      "ts": 1783446522.8907769
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783446522.8908005
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 11
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - bệnh tim mạch do xơ vữa động mạch\n    - Tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - bệnh trào ngược dạ dày- thực quản không có viêm thực quản\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau bụng\n    Thời điểm khởi phát triệu chứng\n    - Tiền sử 1 ngày\n    - Khởi phát trong khi ăn tối\n    Triệu chứng chính\n    - đau bụng vùng thượng vị\n    - buồn nôn\n    Các triệu chứng liên quan: Không có sốt, ớn lạnh, nôn, táo bón, ho, tiểu khó, hoặc các triệu chứng khác\n\n3.  Đánh giá tại bệnh viện\n    Dấu hiệu lâm sàng\n    - sốt đến 101.4\n    - Tăng lên 101.8 trước thủ thuật\n    - hạ huyết áp, không đặc hiệu trong khi thủ thuật\n    - chỉ số huyết áp tâm thu trên đường A-line (khi đến MICU)\n    Kết quả xét nghiệm\n    - viêm gan do men\n    - ast (aspartate aminotransferase) là 319\n    - alt (alanine aminotransferase) là 690\n    - phosphatase kiềm (ap) là 983\n    - bilirubin toàn phần (tbili) là 2.4\n    - bạch cầu (wbc) 11.6\n    - Đã lấy cấy máu\n Kết quả chẩn đoán hình ảnh: \nSiêu âm gan mật  ghi nhận tình trạng giãn đường mật, gợi ý tắc nghẽn đường mật cần tiếp tục đánh giá và can thiệp.\nCác thủ thuật đã thực hiện:Nội soi mật tụy ngược dòng \nĐặt stent đường mật để dẫn lưu và giải áp đường mật.\nĐặt nội khí quản nhằm \nĐặt catheter động mạch (\nĐặt đường truyền tĩnh mạch ngoại vi \n    - levophed\n    - propofol để an thần\n    - Đã đặt phentolamine",
+          "start": 57,
+          "end": 90
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "bệnh tim mạch do xơ vữa động mạch",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - bệnh tim mạch do xơ vữa động mạch\n    - Tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - bệnh trào ngược dạ dày- thực quản không có viêm thực quản\n\n2.  Tiền sử bệnh hiện tại\n "
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true,
+          "confidence": 1.0,
+          "reason": "Bệnh tim mạch do xơ vữa động mạch được ghi nhận trong phần tiền sử bệnh nội khoa, là một bệnh lý mạn tính, được mô tả rõ ràng và không có dấu hiệu phủ định nào"
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - bệnh tim mạch do xơ vữa động mạch\n    - Tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - bệnh trào ngược dạ dày- thực quản không có viêm thực quản\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau bụng\n    Thời điểm khởi phát triệu chứng\n    - Tiền sử 1 ngày\n    - Khởi phát trong khi ăn tối\n    Triệu chứng chính\n    - đau bụng vùng thượng vị\n    - buồn nôn\n    Các triệu chứng liên quan: Không có sốt, ớn lạnh, nôn, táo bón, ho, tiểu khó, hoặc các triệu chứng khác\n\n3.  Đánh giá tại bệnh viện\n    Dấu hiệu lâm sàng\n    - sốt đến 101.4\n    - Tăng lên 101.8 trước thủ thuật\n    - hạ huyết áp, không đặc hiệu trong khi thủ thuật\n    - chỉ số huyết áp tâm thu trên đường A-line (khi đến MICU)\n    Kết quả xét nghiệm\n    - viêm gan do men\n    - ast (aspartate aminotransferase) là 319\n    - alt (alanine aminotransferase) là 690\n    - phosphatase kiềm (ap) là 983\n    - bilirubin toàn phần (tbili) là 2.4\n    - bạch cầu (wbc) 11.6\n    - Đã lấy cấy máu\n Kết quả chẩn đoán hình ảnh: \nSiêu âm gan mật  ghi nhận tình trạng giãn đường mật, gợi ý tắc nghẽn đường mật cần tiếp tục đánh giá và can thiệp.\nCác thủ thuật đã thực hiện:Nội soi mật tụy ngược dòng \nĐặt stent đường mật để dẫn lưu và giải áp đường mật.\nĐặt nội khí quản nhằm \nĐặt catheter động mạch (\nĐặt đường truyền tĩnh mạch ngoại vi \n    - levophed\n    - propofol để an thần\n    - Đã đặt phentolamine",
+          "start": 97,
+          "end": 110
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "Tăng huyết áp",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - bệnh tim mạch do xơ vữa động mạch\n    - Tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - bệnh trào ngược dạ dày- thực quản không có viêm thực quản\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: "
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true,
+          "confidence": 0.95,
+          "reason": "Tăng huyết áp được liệt kê trong phần tiền sử bệnh mạn tính, đây là tiền sử bản thân bệnh nhân đã có từ trước."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - bệnh tim mạch do xơ vữa động mạch\n    - Tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - bệnh trào ngược dạ dày- thực quản không có viêm thực quản\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau bụng\n    Thời điểm khởi phát triệu chứng\n    - Tiền sử 1 ngày\n    - Khởi phát trong khi ăn tối\n    Triệu chứng chính\n    - đau bụng vùng thượng vị\n    - buồn nôn\n    Các triệu chứng liên quan: Không có sốt, ớn lạnh, nôn, táo bón, ho, tiểu khó, hoặc các triệu chứng khác\n\n3.  Đánh giá tại bệnh viện\n    Dấu hiệu lâm sàng\n    - sốt đến 101.4\n    - Tăng lên 101.8 trước thủ thuật\n    - hạ huyết áp, không đặc hiệu trong khi thủ thuật\n    - chỉ số huyết áp tâm thu trên đường A-line (khi đến MICU)\n    Kết quả xét nghiệm\n    - viêm gan do men\n    - ast (aspartate aminotransferase) là 319\n    - alt (alanine aminotransferase) là 690\n    - phosphatase kiềm (ap) là 983\n    - bilirubin toàn phần (tbili) là 2.4\n    - bạch cầu (wbc) 11.6\n    - Đã lấy cấy máu\n Kết quả chẩn đoán hình ảnh: \nSiêu âm gan mật  ghi nhận tình trạng giãn đường mật, gợi ý tắc nghẽn đường mật cần tiếp tục đánh giá và can thiệp.\nCác thủ thuật đã thực hiện:Nội soi mật tụy ngược dòng \nĐặt stent đường mật để dẫn lưu và giải áp đường mật.\nĐặt nội khí quản nhằm \nĐặt catheter động mạch (\nĐặt đường truyền tĩnh mạch ngoại vi \n    - levophed\n    - propofol để an thần\n    - Đã đặt phentolamine",
+          "start": 117,
+          "end": 131
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - bệnh tim mạch do xơ vữa động mạch\n    - Tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - bệnh trào ngược dạ dày- thực quản không có viêm thực quản\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau bụng\n    Thời điểm khởi phát triệu chứng\n    - Tiền sử 1 ngày\n    - Khởi phát trong khi ăn tối\n    Triệu chứng chính\n    - đau bụng vùng thượng vị\n    - buồn nôn\n    Các triệu chứng liên quan: Không có sốt, ớn lạnh, nôn, táo bón, ho, tiểu khó, hoặc các triệu chứng khác\n\n3.  Đánh giá tại bệnh viện\n    Dấu hiệu lâm sàng\n    - sốt đến 101.4\n    - Tăng lên 101.8 trước thủ thuật\n    - hạ huyết áp, không đặc hiệu trong khi thủ thuật\n    - chỉ số huyết áp tâm thu trên đường A-line (khi đến MICU)\n    Kết quả xét nghiệm\n    - viêm gan do men\n    - ast (aspartate aminotransferase) là 319\n    - alt (alanine aminotransferase) là 690\n    - phosphatase kiềm (ap) là 983\n    - bilirubin toàn phần (tbili) là 2.4\n    - bạch cầu (wbc) 11.6\n    - Đã lấy cấy máu\n Kết quả chẩn đoán hình ảnh: \nSiêu âm gan mật  ghi nhận tình trạng giãn đường mật, gợi ý tắc nghẽn đường mật cần tiếp tục đánh giá và can thiệp.\nCác thủ thuật đã thực hiện:Nội soi mật tụy ngược dòng \nĐặt stent đường mật để dẫn lưu và giải áp đường mật.\nĐặt nội khí quản nhằm \nĐặt catheter động mạch (\nĐặt đường truyền tĩnh mạch ngoại vi \n    - levophed\n    - propofol để an thần\n    - Đã đặt phentolamine",
+          "start": 503,
+          "end": 506
+        },
+        "output": {
+          "isNegated": true,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - bệnh tim mạch do xơ vữa động mạch\n    - Tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - bệnh trào ngược dạ dày- thực quản không có viêm thực quản\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau bụng\n    Thời điểm khởi phát triệu chứng\n    - Tiền sử 1 ngày\n    - Khởi phát trong khi ăn tối\n    Triệu chứng chính\n    - đau bụng vùng thượng vị\n    - buồn nôn\n    Các triệu chứng liên quan: Không có sốt, ớn lạnh, nôn, táo bón, ho, tiểu khó, hoặc các triệu chứng khác\n\n3.  Đánh giá tại bệnh viện\n    Dấu hiệu lâm sàng\n    - sốt đến 101.4\n    - Tăng lên 101.8 trước thủ thuật\n    - hạ huyết áp, không đặc hiệu trong khi thủ thuật\n    - chỉ số huyết áp tâm thu trên đường A-line (khi đến MICU)\n    Kết quả xét nghiệm\n    - viêm gan do men\n    - ast (aspartate aminotransferase) là 319\n    - alt (alanine aminotransferase) là 690\n    - phosphatase kiềm (ap) là 983\n    - bilirubin toàn phần (tbili) là 2.4\n    - bạch cầu (wbc) 11.6\n    - Đã lấy cấy máu\n Kết quả chẩn đoán hình ảnh: \nSiêu âm gan mật  ghi nhận tình trạng giãn đường mật, gợi ý tắc nghẽn đường mật cần tiếp tục đánh giá và can thiệp.\nCác thủ thuật đã thực hiện:Nội soi mật tụy ngược dòng \nĐặt stent đường mật để dẫn lưu và giải áp đường mật.\nĐặt nội khí quản nhằm \nĐặt catheter động mạch (\nĐặt đường truyền tĩnh mạch ngoại vi \n    - levophed\n    - propofol để an thần\n    - Đã đặt phentolamine",
+          "start": 1083,
+          "end": 1097
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "giãn đường mật",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": " bilirubin toàn phần (tbili) là 2.4\n    - bạch cầu (wbc) 11.6\n    - Đã lấy cấy máu\n Kết quả chẩn đoán hình ảnh: \nSiêu âm gan mật  ghi nhận tình trạng giãn đường mật, gợi ý tắc nghẽn đường mật cần tiếp tục đánh giá và can thiệp.\nCác thủ thuật đã thực hiện:Nội soi mật tụy ngược dòng \nĐặt stent đường mật để dẫn lưu "
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true,
+          "confidence": 0.9,
+          "reason": "Giãn đường mật là một kết quả chẩn đoán được đề cập trong đoạn văn, cho thấy tình trạng bệnh của bệnh nhân."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - bệnh tim mạch do xơ vữa động mạch\n    - Tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - bệnh trào ngược dạ dày- thực quản không có viêm thực quản\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau bụng\n    Thời điểm khởi phát triệu chứng\n    - Tiền sử 1 ngày\n    - Khởi phát trong khi ăn tối\n    Triệu chứng chính\n    - đau bụng vùng thượng vị\n    - buồn nôn\n    Các triệu chứng liên quan: Không có sốt, ớn lạnh, nôn, táo bón, ho, tiểu khó, hoặc các triệu chứng khác\n\n3.  Đánh giá tại bệnh viện\n    Dấu hiệu lâm sàng\n    - sốt đến 101.4\n    - Tăng lên 101.8 trước thủ thuật\n    - hạ huyết áp, không đặc hiệu trong khi thủ thuật\n    - chỉ số huyết áp tâm thu trên đường A-line (khi đến MICU)\n    Kết quả xét nghiệm\n    - viêm gan do men\n    - ast (aspartate aminotransferase) là 319\n    - alt (alanine aminotransferase) là 690\n    - phosphatase kiềm (ap) là 983\n    - bilirubin toàn phần (tbili) là 2.4\n    - bạch cầu (wbc) 11.6\n    - Đã lấy cấy máu\n Kết quả chẩn đoán hình ảnh: \nSiêu âm gan mật  ghi nhận tình trạng giãn đường mật, gợi ý tắc nghẽn đường mật cần tiếp tục đánh giá và can thiệp.\nCác thủ thuật đã thực hiện:Nội soi mật tụy ngược dòng \nĐặt stent đường mật để dẫn lưu và giải áp đường mật.\nĐặt nội khí quản nhằm \nĐặt catheter động mạch (\nĐặt đường truyền tĩnh mạch ngoại vi \n    - levophed\n    - propofol để an thần\n    - Đã đặt phentolamine",
+          "start": 1105,
+          "end": 1124
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "llm_assert",
+        "input": {
+          "mention": "tắc nghẽn đường mật",
+          "mtype": "CHẨN_ĐOÁN",
+          "context": "tbili) là 2.4\n    - bạch cầu (wbc) 11.6\n    - Đã lấy cấy máu\n Kết quả chẩn đoán hình ảnh: \nSiêu âm gan mật  ghi nhận tình trạng giãn đường mật, gợi ý tắc nghẽn đường mật cần tiếp tục đánh giá và can thiệp.\nCác thủ thuật đã thực hiện:Nội soi mật tụy ngược dòng \nĐặt stent đường mật để dẫn lưu và giải áp đường mật.\nĐặt n"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true,
+          "confidence": 1.0,
+          "reason": "Tắc nghẽn đường mật đã được đề cập và chẩn đoán trong ngữ cảnh của kết quả chẩn đoán hình ảnh và các thủ thuật đã thực hiện."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 11,
+        "llm_checked": 4
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783446540.8209026
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783446540.820934
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 11
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "bệnh tim mạch do xơ vữa động mạch",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              57,
+              90
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true,
+              "confidence": 1.0,
+              "reason": "Bệnh tim mạch do xơ vữa động mạch được ghi nhận trong phần tiền sử bệnh nội khoa, là một bệnh lý mạn tính, được mô tả rõ ràng và không có dấu hiệu phủ định nào"
+            },
+            "assertion_confidence": 1.0,
+            "candidates": [
+              "I25.0",
+              "I25.1"
+            ],
+            "link_confidence": 0.8
+          },
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - bệnh tim mạch do xơ vữa động mạch\n    - Tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - bệnh trào ngược dạ dày- thực quản không có viêm thực quản\n\n2.  Tiền sử bệnh hiện tại\n "
+        },
+        "output": {
+          "candidates": [
+            "I25.0",
+            "I25.1"
+          ],
+          "confidence": 0.8
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "Tăng huyết áp",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              97,
+              110
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": true,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true,
+              "confidence": 0.95,
+              "reason": "Tăng huyết áp được liệt kê trong phần tiền sử bệnh mạn tính, đây là tiền sử bản thân bệnh nhân đã có từ trước."
+            },
+            "assertion_confidence": 0.95,
+            "candidates": [
+              "I15.0",
+              "I27.0",
+              "O11",
+              "O16",
+              "I15.8"
+            ],
+            "link_confidence": 0.8
+          },
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - bệnh tim mạch do xơ vữa động mạch\n    - Tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - bệnh trào ngược dạ dày- thực quản không có viêm thực quản\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: "
+        },
+        "output": {
+          "candidates": [
+            "I15.0",
+            "I27.0",
+            "O11",
+            "O16",
+            "I15.8"
+          ],
+          "confidence": 0.8
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "giãn đường mật",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              1083,
+              1097
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.9
+              }
+            ],
+            "llm_corrected": true,
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true,
+              "confidence": 0.9,
+              "reason": "Giãn đường mật là một kết quả chẩn đoán được đề cập trong đoạn văn, cho thấy tình trạng bệnh của bệnh nhân."
+            },
+            "assertion_confidence": 0.9,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          "context": " bilirubin toàn phần (tbili) là 2.4\n    - bạch cầu (wbc) 11.6\n    - Đã lấy cấy máu\n Kết quả chẩn đoán hình ảnh: \nSiêu âm gan mật  ghi nhận tình trạng giãn đường mật, gợi ý tắc nghẽn đường mật cần tiếp tục đánh giá và can thiệp.\nCác thủ thuật đã thực hiện:Nội soi mật tụy ngược dòng \nĐặt stent đường mật để dẫn lưu "
+        },
+        "output": {
+          "candidates": [],
+          "confidence": 0.0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "tắc nghẽn đường mật",
+            "type": "CHẨN_ĐOÁN",
+            "source": "ner_llm_relocated",
+            "position": [
+              1105,
+              1124
+            ],
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.9
+              }
+            ],
+            "llm_corrected": true,
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": [
+              "ner_llm_relocated"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true,
+              "confidence": 1.0,
+              "reason": "Tắc nghẽn đường mật đã được đề cập và chẩn đoán trong ngữ cảnh của kết quả chẩn đoán hình ảnh và các thủ thuật đã thực hiện."
+            },
+            "assertion_confidence": 1.0,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          "context": "tbili) là 2.4\n    - bạch cầu (wbc) 11.6\n    - Đã lấy cấy máu\n Kết quả chẩn đoán hình ảnh: \nSiêu âm gan mật  ghi nhận tình trạng giãn đường mật, gợi ý tắc nghẽn đường mật cần tiếp tục đánh giá và can thiệp.\nCác thủ thuật đã thực hiện:Nội soi mật tụy ngược dòng \nĐặt stent đường mật để dẫn lưu và giải áp đường mật.\nĐặt n"
+        },
+        "output": {
+          "candidates": [],
+          "confidence": 0.0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 2
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 2,
+      "ts": 1783446603.1642642
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783446603.1642942
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 11
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "bệnh tim mạch do xơ vữa động mạch",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                57,
+                90
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 1.0,
+                "reason": "Bệnh tim mạch do xơ vữa động mạch được ghi nhận trong phần tiền sử bệnh nội khoa, là một bệnh lý mạn tính, được mô tả rõ ràng và không có dấu hiệu phủ định nào"
+              },
+              "assertion_confidence": 1.0,
+              "candidates": [
+                "I25.0",
+                "I25.1"
+              ],
+              "link_confidence": 0.8
+            },
+            {
+              "text": "Tăng huyết áp",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                97,
+                110
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": true,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 0.95,
+                "reason": "Tăng huyết áp được liệt kê trong phần tiền sử bệnh mạn tính, đây là tiền sử bản thân bệnh nhân đã có từ trước."
+              },
+              "assertion_confidence": 0.95,
+              "candidates": [
+                "I15.0",
+                "I27.0",
+                "O11",
+                "O16",
+                "I15.8"
+              ],
+              "link_confidence": 0.8
+            },
+            {
+              "text": "tăng lipid máu",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                117,
+                131
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                466,
+                469
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "khó",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                503,
+                506
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "101.4",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                598,
+                603
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "101.8",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                619,
+                624
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "cấy máu",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                1008,
+                1015
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Siêu âm gan mật",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                1046,
+                1061
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "giãn đường mật",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                1083,
+                1097
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 0.9,
+                "reason": "Giãn đường mật là một kết quả chẩn đoán được đề cập trong đoạn văn, cho thấy tình trạng bệnh của bệnh nhân."
+              },
+              "assertion_confidence": 0.9,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "tắc nghẽn đường mật",
+              "type": "CHẨN_ĐOÁN",
+              "source": "ner_llm_relocated",
+              "position": [
+                1105,
+                1124
+              ],
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true,
+                "confidence": 1.0,
+                "reason": "Tắc nghẽn đường mật đã được đề cập và chẩn đoán trong ngữ cảnh của kết quả chẩn đoán hình ảnh và các thủ thuật đã thực hiện."
+              },
+              "assertion_confidence": 1.0,
+              "candidates": [],
+              "link_confidence": 0.0
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - bệnh tim mạch do xơ vữa động mạch\n    - Tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - bệnh trào ngược dạ dày- thực quản không có viêm thực quản\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đau bụng\n    Thời điểm khởi phát triệu chứng\n    - Tiền sử 1 ngày\n    - Khởi phát trong khi ăn tối\n    Triệu chứng chính\n    - đau bụng vùng thượng vị\n    - buồn nôn\n    Các triệu chứng liên quan: Không có sốt, ớn lạnh, nôn, táo bón, ho, tiểu khó, hoặc các triệu chứng khác\n\n3.  Đánh giá tại bệnh viện\n    Dấu hiệu lâm sàng\n    - sốt đến 101.4\n    - Tăng lên 101.8 trước thủ thuật\n    - hạ huyết áp, không đặc hiệu trong khi thủ thuật\n    - chỉ số huyết áp tâm thu trên đường A-line (khi đến MICU)\n    Kết quả xét nghiệm\n    - viêm gan do men\n    - ast (aspartate aminotransferase) là 319\n    - alt (alanine aminotransferase) là 690\n    - phosphatase kiềm (ap) là 983\n    - bilirubin toàn phần (tbili) là 2.4\n    - bạch cầu (wbc) 11.6\n    - Đã lấy cấy máu\n Kết quả chẩn đoán hình ảnh: \nSiêu âm gan mật  ghi nhận tình trạng giãn đường mật, gợi ý tắc nghẽn đường mật cần tiếp tục đánh giá và can thiệp.\nCác thủ thuật đã thực hiện:Nội soi mật tụy ngược dòng \nĐặt stent đường mật để dẫn lưu và giải áp đường mật.\nĐặt nội khí quản nhằm \nĐặt catheter động mạch (\nĐặt đường truyền tĩnh mạch ngoại vi \n    - levophed\n    - propofol để an thần\n    - Đã đặt phentolamine"
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "drop_prediction",
+              "reason": "invalid assertion key: confidence"
+            },
+            {
+              "action": "drop_prediction",
+              "reason": "invalid assertion key: confidence"
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "drop_prediction",
+              "reason": "invalid assertion key: confidence"
+            },
+            {
+              "action": "drop_prediction",
+              "reason": "invalid assertion key: confidence"
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "tăng lipid máu",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                117,
+                131
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                466,
+                469
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.9
+                }
+              ],
+              "llm_corrected": true,
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "khó",
+              "type": "TRIỆU_CHỨNG",
+              "source": "ner_llm_relocated",
+              "position": [
+                503,
+                506
+              ],
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "101.4",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                598,
+                603
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "101.8",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                619,
+                624
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "cấy máu",
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                1008,
+                1015
+              ],
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Siêu âm gan mật",
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "ner_llm_relocated",
+              "position": [
+                1046,
+                1061
+              ],
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": [
+                "ner_llm_relocated"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "dropped": 4
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 7,
+        "dropped": 4
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 7,
+      "ts": 1783446603.16453
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 7,
+      "elapsed": 200.02,
+      "ts": 1783446603.164555
+    }
+  ],
+  "stats": null
+}

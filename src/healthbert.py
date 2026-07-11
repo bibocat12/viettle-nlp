@@ -86,7 +86,7 @@ def _build_prototypes():
         "TÊN_XÉT_NGHIỆM": [
             "chụp X-quang ngực", "điện tâm đồ",
             "xét nghiệm máu", "siêu âm tim",
-            "chụp cắt lớp vi tính", "nội soi dạ dày",
+            "chụp cắt lớp vi tính",
         ],
         "KẾT_QUẢ_XÉT_NGHIỆM": [
             "kết quả bình thường", "troponin 0.01",
@@ -111,6 +111,9 @@ def _build_prototypes():
             "đổi sóng t không đặc hiệu",
             "Bệnh nhân vào viện", "Theo lời bệnh nhân",
             "Một ngày người bệnh",
+            # Procedures (not medical tests)
+            "phẫu thuật tim", "nội soi dạ dày", "đặt stent",
+            "dẫn lưu", "mổ", "shunt dẫn lưu",
         ],
     }
 
@@ -155,7 +158,7 @@ def classify_type_embedding(mention_text: str) -> Dict:
 TYPE_KEYWORDS = {
     "THUỐC": [
         r'\d+\s*(?:mg|ml|mcg|IU|U)\b',
-        r'\b(?:po|iv|im|sc|sl|tiêm|uống|đặt|nhỏ|bôi|thoa)\b',
+        r'\b(?:po|iv|im|sc|sl|tiêm|đặt|nhỏ|bôi|thoa)\b',
         r'metoprolol|aspirin|atenolol|doxycycline|amoxicillin|chlorpheniramine|Laxis|nitroglycerin',
         r'paracetamol|ibuprofen|omeprazole|ranitidine|furosemide|enalapril|losartan|simvastatin',
         r'warfarin|heparin|insulin|glucose\s+\d+|metformin|glipizide|levothyroxine|prednisolone',
@@ -172,7 +175,6 @@ TYPE_KEYWORDS = {
         'đường huyết', 'glucose', 'ure', 'bun', 'sodium', 'natri', 'potassium', 'kali',
         'chloride', 'protein', 'albumin', 'canxi toàn phần', 'canxi ion hóa',
         'xét nghiệm máu', 'xét nghiệm nước tiểu', 'xét nghiệm gan', 'xét nghiệm thận',
-        'shunt', 'dẫn lưu', 'đặt shunt', 'nội soi', 'phẫu thuật', 'mổ',
         'chụp mạch', 'thông tim', 'siêu âm doppler',
     ],
     "KẾT_QUẢ_XÉT_NGHIỆM": [
@@ -235,6 +237,69 @@ def classify_type(mention_text: str, context: str = "") -> Dict:
     """Classify mention type — keyword first (drugs/tests/results), then embedding."""
     import re
     text_lower = mention_text.lower()
+
+    # 0. Reject non-entity patterns (instructions, fragments, verbs)
+    NON_ENTITY_PATTERNS = [
+        'uống hôm nay', 'uống hàng chục', 'được chỉ định',
+        'bắt đầu dùng', 'cho thấy', 'liên quan đến',
+        'là không', 'đã sử dụng',
+        'vùng', 'sau đó', 'sau khi', 'ngày hôm nay',
+        'đến khoa', 'khoa điều trị', 'được thăm khám',
+        'gì đáng chú ý', 'nhận gì bất thường',
+        'định', 'được cho dùng', 'tiếp tục cảm thấy',
+        'còn cảm giác',
+    ]
+    has_drug = any(re.search(kw, text_lower) for kw in TYPE_KEYWORDS["THUỐC"])
+    has_test = any(kw in text_lower for kw in TYPE_KEYWORDS["TÊN_XÉT_NGHIỆM"] if isinstance(kw, str))
+    has_result = any(kw in text_lower for kw in TYPE_KEYWORDS["KẾT_QUẢ_XÉT_NGHIỆM"] if isinstance(kw, str))
+
+    # Check for non-entity verbs/instructions
+    verb_count = sum(1 for p in NON_ENTITY_PATTERNS if p in text_lower)
+
+    # If the phrase has non-entity patterns AND no real medical keyword, reject
+    if verb_count >= 1 and not (has_drug or has_test or has_result):
+        is_known_symptom = any(kw in text_lower for kw in ['đau', 'khó thở', 'sốt', 'buồn nôn', 'mệt mỏi', 'ho'])
+        if not is_known_symptom:
+            return {"type": "KHÔNG_PHẢI", "score": 0.90, "source": "non_entity_filter"}
+
+    # If phrase has non-entity verbs PLUS medical content, only allow if
+    # the medical content is the MAIN part (not followed by verbs)
+    if verb_count >= 1 and (has_drug or has_test or has_result):
+        words = text_lower.split()
+        non_entity_words = {'cho', 'thấy', 'là', 'không', 'được', 'chỉ', 'định',
+                           'sau', 'đó', 'khi', 'của', 'và', 'hoặc', 'các'}
+        for i, w in enumerate(words):
+            if w in non_entity_words and i > 0 and i < len(words) - 1:
+                return {"type": "KHÔNG_PHẢI", "score": 0.88, "source": "trailing_verb"}
+
+    # Also check trailing verbs for drug phrases even without verb_count match
+    # e.g. "doxycycline cho viêm tuyến mồ hôi" has "cho" as trailing non-drug word
+    if has_drug and not has_test and not has_result:
+        words = text_lower.split()
+        # If drug name is followed by non-drug content, reject
+        drug_keywords_found = [kw for kw in TYPE_KEYWORDS["THUỐC"] if re.search(kw, text_lower)]
+        if drug_keywords_found:
+            first_drug_pos = len(text_lower)
+            for kw in drug_keywords_found:
+                m = re.search(kw, text_lower)
+                if m and m.start() < first_drug_pos:
+                    first_drug_pos = m.start()
+            # If drug name starts early but phrase is much longer, reject
+            if first_drug_pos == 0 and len(text_lower) > 30:
+                return {"type": "KHÔNG_PHẢI", "score": 0.88, "source": "drug_phrase_too_long"}
+
+    # 0b. If test name + result combined (e.g. "ecg bình thường"), reject
+
+    # 0b. If test name + result combined (e.g. "ecg bình thường"), reject
+    if has_test and has_result:
+        return {"type": "KHÔNG_PHẢI", "score": 0.90, "source": "test_result_combined"}
+
+    # 0. Reject procedures/surgeries (not medical tests)
+    PROCEDURE_KW = ['phẫu thuật', 'mổ', 'nội soi', 'đặt stent', 'dẫn lưu',
+                    'shunt', 'thông tim', 'chụp mạch', 'đặt ống']
+    for kw in PROCEDURE_KW:
+        if kw in text_lower:
+            return {"type": "KHÔNG_PHẢI", "score": 0.95, "source": "procedure_filter"}
 
     # 1. Strong keyword matches (high precision, never filtered)
     for kw in TYPE_KEYWORDS["THUỐC"]:

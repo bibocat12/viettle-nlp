@@ -1,0 +1,511 @@
+{
+  "note_id": "77",
+  "mentions": [
+    {
+      "text": "lần tự tửdo quá liều klonopinclonidine",
+      "position": [
+        25,
+        63
+      ],
+      "type": "THUỐC",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      },
+      "candidates": [
+        "2599",
+        "202585"
+      ]
+    },
+    {
+      "text": "điều trị đặt nội khí quản",
+      "position": [
+        64,
+        89
+      ],
+      "type": "THUỐC",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      },
+      "candidates": []
+    },
+    {
+      "text": "Thuốc kê đơn",
+      "position": [
+        315,
+        327
+      ],
+      "type": "THUỐC",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      },
+      "candidates": []
+    },
+    {
+      "text": "chất gây nghiện opioid",
+      "position": [
+        593,
+        615
+      ],
+      "type": "THUỐC",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    },
+    {
+      "text": "bằng tăng hoạt động và giảm",
+      "position": [
+        811,
+        838
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "nhu cầu ngủ",
+      "position": [
+        839,
+        850
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "dừng dùng suboxone ngày hôm qua",
+      "position": [
+        990,
+        1021
+      ],
+      "type": "THUỐC",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": [
+        "352990"
+      ]
+    }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [
+      "[1] THUỐC has no candidates",
+      "[2] THUỐC has no candidates",
+      "[3] THUỐC has no candidates"
+    ]
+  },
+  "stats": {
+    "total_mentions": 7,
+    "final": 7,
+    "validation_errors": 0,
+    "elapsed": 4.41
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 1232,
+      "ts": 1783398360.0172744
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398360.017287
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 1232
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 1232
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối l"
+        },
+        "output": "{'rule': [], 'qwen': [], 'healthbert': [{'text': 'lần tự tửdo quá liều klonopinclonidine', 'position': [25, 63], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.7074516415596008}]}, {'text': 'điều trị đặt nội khí quản', 'position': [64, 89], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.85}]}, {'text': 'Thuốc kê đơn', 'position': [315, 327], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.5712660551071167}]}, {'text': 'chất gây nghiện op",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 0,
+          "healthbert": 7,
+          "errors": 0
+        },
+        "total": 7
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'lần tự tửdo quá liều klonopinclonidine', 'position': [25, 63], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.7074516415596008}], 'extraction_source': 'healthbert', 'vot"
+        },
+        "output": "[{'text': 'lần tự tửdo quá liều klonopinclonidine', 'position': [25, 63], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.7074516415596008}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'điều trị đặt nội khí quản', 'position': [64, 89], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.85}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': '",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 7
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'lần tự tửdo quá liều klonopinclonidine', 'position': [25, 63], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.7074516415596008}], 'extraction_source': 'healthbert', 'vot",
+          "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối l"
+        },
+        "output": "[{'text': 'lần tự tửdo quá liều klonopinclonidine', 'position': [25, 63], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.7074516415596008}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'điều trị đặt nội khí quản', 'position': [64, 89], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.85}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': '",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'lần tự tửdo quá liều klonopinclonidine', 'position': [25, 63], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.7074516415596008}], 'extraction_source': 'healthbert', 'vot",
+          "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối l"
+        },
+        "output": "[{'text': 'lần tự tửdo quá liều klonopinclonidine', 'position': [25, 63], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.7074516415596008}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'điều trị đặt nội khí quản', 'position': [64, 89], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.85}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'conf",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 7,
+      "ts": 1783398363.352234
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398363.3522713
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 7
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối l",
+          "start": "25",
+          "end": "63"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối l",
+          "start": "64",
+          "end": "89"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối l",
+          "start": "315",
+          "end": "327"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối l",
+          "start": "593",
+          "end": "615"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối l",
+          "start": "839",
+          "end": "850"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối l",
+          "start": "990",
+          "end": "1021"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 7,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398363.3526387
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398363.3526595
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 7
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'lần tự tửdo quá liều klonopinclonidine', 'position': [25, 63], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.7074516415596008}], 'extraction_source': 'healthbert', 'vote",
+          "context": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối l"
+        },
+        "output": "{'candidates': ['2599', '202585'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'điều trị đặt nội khí quản', 'position': [64, 89], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.85}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['hea",
+          "context": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối l"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'Thuốc kê đơn', 'position': [315, 327], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.5712660551071167}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['",
+          "context": "t\n    Các bệnh mãn tính\n    - Rối loạn cảm xúc \n    - Rối loạn lưỡng cực\n    - rối loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - klono"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'chất gây nghiện opioid', 'position': [593, 615], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.566524863243103}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vo",
+          "context": " (bắt đầu 3 tuần trước), không dùng đều 5-6 ngày, dừng thuốc trước nhập viện 01 ngày\n    Các yếu tố nguy cơ liên quan\n    - Lạm dụng chất kích thích, chất gây nghiện opioid\n2.   Bệnh sử hiện tại\n    L"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'dừng dùng suboxone ngày hôm qua', 'position': [990, 1021], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.576529860496521}], 'extraction_source': 'healthbert', 'vote_coun",
+          "context": "hu cầu ngủ 3-4 ngày, trong vài tuần nay và có ý định tự tử.  Thuốc kê đơn không dùng đều đặn x5-6 ngày, bắt đầu dùng suboxone 3 tuần trước vì rẻ hơn, dừng dùng suboxone ngày hôm qua\n    Triệu chứng kh"
+        },
+        "output": "{'candidates': ['352990'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 2
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 2,
+      "ts": 1783398364.4217887
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398364.4218206
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 7
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'lần tự tửdo quá liều klonopinclonidine', 'position': [25, 63], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.7074516415596008}], 'extraction_source': 'healthbert', 'vot",
+          "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối l"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}], 'final_predictions': [{'text': 'lần tự tửdo quá liều klonopinclonidine', 'position':",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 7,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 7,
+      "ts": 1783398364.4221811
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 7,
+      "elapsed": 4.4,
+      "ts": 1783398364.4221973
+    }
+  ]
+}

@@ -34,9 +34,14 @@ async function init() {
           <span class="subtitle">Agentic Pipeline</span>
           <div class="spacer"></div>
           <select id="model-select" class="folder-select" style="width:auto">
-            <option value="">No LLM</option>
-            <option value="runpod" selected>RunPod</option>
+            <option value="voting" selected>HealthBERT + LLM</option>
+            <option value="llm_only">LLM only</option>
+          </select>
+          <select id="llm-select" class="folder-select" style="width:auto;margin-left:4px">
+            <option value="featherless" selected>Featherless.ai</option>
+            <option value="runpod">RunPod</option>
             <option value="local">Local (models/)</option>
+            <option value="">No LLM</option>
           </select>
         </header>
         <div class="content">
@@ -208,12 +213,13 @@ async function runExtract() {
 
   clearResults()
   clearLogs()
-  const modelType = document.getElementById('model-select').value
+  const modeType = document.getElementById('model-select').value
+  const modelType = document.getElementById('llm-select').value
   const useLlm = modelType !== ''
   const startTime = Date.now()
 
   try {
-    const resp = await apiPost('/extract', { text, use_llm: useLlm, model: modelType, file_id: currentFile, folder: currentFolder })
+    const resp = await apiPost('/extract', { text, use_llm: useLlm, model: modelType, mode: modeType, file_id: currentFile, folder: currentFolder })
     const reader = resp.body.getReader()
     const decoder = new TextDecoder()
     let buffer = ''
@@ -296,17 +302,32 @@ function showResult(mentions, elapsed) {
   `).join('')
 }
 
+const TYPE_COLORS = {
+  THUỐC: '#58a6ff',
+  TRIỆU_CHỨNG: '#f0883e',
+  CHẨN_ĐOÁN: '#3fb950',
+  TÊN_XÉT_NGHIỆM: '#a371f7',
+  KẾT_QUẢ_XÉT_NGHIỆM: '#db6d28',
+}
+
 function highlightText(text, mentions) {
   const el = document.getElementById('highlighted')
   if (!mentions?.length) { el.classList.add('hidden'); return }
   const sorted = [...mentions].sort((a, b) => b.position[0] - a.position[0])
-  let html = escapeHtml(text)
+  let result = ''
+  let lastEnd = text.length
   for (const m of sorted) {
     const st = m.position[0], en = m.position[1]
-    const mt = escapeHtml(text.substring(st, en))
-    html = html.substring(0, st) + `<span class="cite-${m.type}" title="${m.type}">${mt}</span>` + html.substring(en)
+    const before = escapeHtml(text.substring(en, lastEnd))
+    const entity = escapeHtml(text.substring(st, en))
+    const color = TYPE_COLORS[m.type] || '#8b949e'
+    result = before + result
+    result = `<span style="background:${color}22;border-bottom:2px solid ${color};padding:1px 2px;border-radius:2px" title="${m.type}">${entity}</span>` + result
+    lastEnd = st
   }
-  el.innerHTML = html
+  const head = escapeHtml(text.substring(0, lastEnd))
+  result = head + result
+  el.innerHTML = result
   el.classList.remove('hidden')
 }
 
@@ -316,18 +337,23 @@ function clearResults() {
   document.getElementById('result-info').classList.add('hidden')
 }
 
+let showDetailState = false
+
 function addLog(entry) {
   const logsDiv = document.getElementById('logs')
   if (logsDiv.querySelector('.empty')) logsDiv.innerHTML = ''
   const agent = entry.agent || 'system'
   const action = entry.action || ''
-  const input = entry.input || null
-  const output = entry.output || null
-  const message = entry.message || entry.error || ''
+  // Support both flat format and nested data format
+  const data = entry.data || {}
+  const input = entry.input || data.input || null
+  const output = entry.output || data.output || null
+  const message = entry.message || entry.error || data.message || data.error || ''
 
   let detailHtml = ''
   if (input || output) {
-    detailHtml = '<div class="log-detail">'
+    const disp = showDetailState ? 'block' : 'none'
+    detailHtml = `<div class="log-detail" style="display:${disp}">`
     if (input) {
       const inpStr = typeof input === 'object' ? JSON.stringify(input, null, 2) : String(input)
       detailHtml += `<div class="log-io"><div class="log-label">Input</div><div class="log-value">${escapeHtml(inpStr)}</div></div>`
@@ -361,15 +387,21 @@ function clearLogs() {
 }
 
 function toggleDetail() {
+  showDetailState = true
   document.querySelectorAll('.log-detail').forEach(el => {
-    el.style.display = el.style.display === 'none' ? 'block' : 'none'
+    el.style.display = 'block'
   })
+  document.getElementById('detail-btn').classList.add('active')
+  document.getElementById('list-btn').classList.remove('active')
 }
 
 function toggleList() {
-  document.querySelectorAll('.llm_verify, .extraction-summary').forEach(el => {
-    el.style.display = el.style.display === 'none' ? '' : 'none'
+  showDetailState = false
+  document.querySelectorAll('.log-detail').forEach(el => {
+    el.style.display = 'none'
   })
+  document.getElementById('detail-btn').classList.remove('active')
+  document.getElementById('list-btn').classList.add('active')
 }
 
 // Run All files

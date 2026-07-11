@@ -160,53 +160,66 @@ def _llm_verify_type(entity_text: str, rule_type: str, context: str, llm) -> str
     return rule_type
 
 
+def _extract_chunk(chunk: str, llm) -> list:
+    """Extract entities from a single chunk via LLM."""
+    entities = []
+    user_prompt = f"Extract all medical entities:\n\n{chunk}"
+    response = llm.generate(NER_SYSTEM_PROMPT, user_prompt, 2048)
+    parsed = llm.parse_json(response)
+    items = parsed if isinstance(parsed, list) else []
+    
+    for ent in items:
+        if not isinstance(ent, dict):
+            continue
+        entity_text = ent.get("entity", "").strip()
+        entity_type = ent.get("type", "").strip()
+        
+        if not entity_text or len(entity_text) < 2:
+            continue
+        if _is_section_header(entity_text):
+            continue
+        
+        # Map to Vietnamese types
+        type_map = {
+            "THUỐC": "THUỐC", "TRIỆU CHỨNG": "TRIỆU_CHỨNG", "CHẨN ĐOÁN": "CHẨN_ĐOÁN",
+            "TÊN XÉT NGHIỆM": "TÊN_XÉT_NGHIỆM", "KẾT QUẢ XÉT NGHIỆM": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "DRUG": "THUỐC", "SYMPTOM": "TRIỆU_CHỨNG", "DISEASE": "CHẨN_ĐOÁN",
+            "TEST": "TÊN_XÉT_NGHIỆM", "RESULT": "KẾT_QUẢ_XÉT_NGHIỆM",
+        }
+        mtype = type_map.get(entity_type.upper(), entity_type)
+        
+        entities.append({
+            "text": entity_text,
+            "type": mtype,
+            "source": "ner_llm",
+        })
+    return entities
+
+
 def ner_and_type(text: str, llm=None) -> dict:
     """LLM extracts keywords → rules find positions → rules verify → LLM verifies."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
     mentions = []
 
     # Step 1: LLM extracts keywords (NO positions)
     if llm and llm.is_available():
         chunks = [text[i:i+500] for i in range(0, len(text), 500)]
-        for chunk_idx, chunk in enumerate(chunks):
-            if len(chunk.strip()) < 20:
-                continue
+        chunks = [(idx, c) for idx, c in enumerate(chunks) if len(c.strip()) >= 20]
 
-            user_prompt = f"Trích xuất keywords y tế từ:\n\n{chunk}"
-            response = llm.generate(NER_SYSTEM_PROMPT, user_prompt, 2048)
-            parsed = llm.parse_json(response)
-            entities = parsed if isinstance(parsed, list) else []
-
-            for ent in entities:
-                if not isinstance(ent, dict):
-                    continue
-                entity_text = ent.get("entity", "").strip()
-                entity_type = ent.get("type", "").strip().upper()
-
-                if not entity_text or len(entity_text) < 2:
-                    continue
-                if _is_section_header(entity_text):
-                    continue
-
-                # Normalize entity type (uppercase, handle Vietnamese diacritics)
-                entity_type = ent.get("type", "").strip()
-                # Convert to uppercase using Unicode case folding
-                entity_type = entity_type.upper().replace('Ả', 'Ả').replace('Ẩ', 'Ẩ').replace('Ẳ', 'Ẳ').replace('Ẵ', 'Ẵ').replace('Ặ', 'Ặ')
-                type_map = {
-                    "THUỐC": "THUỐC", "TRIỆU_CHỨNG": "TRIỆU_CHỨNG",
-                    "CHẨN_ĐOÁN": "CHẨN_ĐOÁN", "TÊN_XÉT_NGHIỆM": "TÊN_XÉT_NGHIỆM",
-                    "KẾT_QUẢ_XÉT_NGHIỆM": "KẾT_QUẢ_XÉT_NGHIỆM",
-                    "DRUG": "THUỐC", "SYMPTOM": "TRIỆU_CHỨNG", "DISEASE": "CHẨN_ĐOÁN",
-                    "DIAGNOSIS": "CHẨN_ĐOÁN", "TEST": "TÊN_XÉT_NGHIỆM",
-                    "RESULT": "KẾT_QUẢ_XÉT_NGHIỆM", "SYMPTOM_AND_DISEASE": "TRIỆU_CHỨNG",
-                    "MEDICAL_PROCEDURE": "TÊN_XÉT_NGHIỆM",
-                }
-                mtype = type_map.get(entity_type, "TRIỆU_CHỨNG")
-
-                mentions.append({
-                    "text": entity_text,
-                    "type": mtype,
-                    "source": "ner_llm",
-                })
+        if len(chunks) <= 1:
+            # Single chunk: no parallelism needed
+            for chunk_idx, chunk in chunks:
+                entities = _extract_chunk(chunk, llm)
+                mentions.extend(entities)
+        else:
+            # Parallel chunk processing
+            with ThreadPoolExecutor(max_workers=min(4, len(chunks))) as ex:
+                futures = {ex.submit(_extract_chunk, chunk, llm): idx for idx, chunk in chunks}
+                for future in as_completed(futures):
+                    try:
+                        mentions.extend(future.result())
+                    except Exception as e:
+                        print(f"Chunk NER error: {e}", file=__import__('sys').stderr)
 
     # Step 2: Rule-based position finding
     for m in mentions:
@@ -214,10 +227,8 @@ def ner_and_type(text: str, llm=None) -> dict:
         if pos:
             m["position"] = pos
         else:
-            # Can't find position — skip this mention
             m["position"] = None
 
-    # Remove mentions without valid positions
     mentions = [m for m in mentions if m.get("position") is not None]
 
     # Step 3: Rule-based type verification (skip non-medical text)

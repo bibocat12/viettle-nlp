@@ -1,41 +1,246 @@
-[
-  {
-    "text": "tách thành động mạch chủ",
-    "position": [
-      48,
-      72
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
+{
+  "note_id": "25",
+  "mentions": [
+    {
+      "text": "thiệp nội mạch qua đường vào",
+      "position": [
+        140,
+        168
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
     }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": []
   },
-  {
-    "text": "liệt hai chân",
-    "position": [
-      89,
-      102
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
+  "stats": {
+    "total_mentions": 1,
+    "final": 1,
+    "validation_errors": 0,
+    "elapsed": 1.63
   },
-  {
-    "text": "rung động",
-    "position": [
-      274,
-      283
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 440,
+      "ts": 1783398038.9986565
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398038.99867
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 440
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 440
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử"
+        },
+        "output": "{'rule': [], 'qwen': [], 'healthbert': [{'text': 'thiệp nội mạch qua đường vào', 'position': [140, 168], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6737614274024963}]}], 'errors': []}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 0,
+          "healthbert": 1,
+          "errors": 0
+        },
+        "total": 1
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'thiệp nội mạch qua đường vào', 'position': [140, 168], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6737614274024963}], 'extraction_source': 'healthb"
+        },
+        "output": "[{'text': 'thiệp nội mạch qua đường vào', 'position': [140, 168], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6737614274024963}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}]",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 1
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'thiệp nội mạch qua đường vào', 'position': [140, 168], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6737614274024963}], 'extraction_source': 'healthb",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử"
+        },
+        "output": "[{'text': 'thiệp nội mạch qua đường vào', 'position': [140, 168], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6737614274024963}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}]",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'thiệp nội mạch qua đường vào', 'position': [140, 168], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6737614274024963}], 'extraction_source': 'healthb",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử"
+        },
+        "output": "[{'text': 'thiệp nội mạch qua đường vào', 'position': [140, 168], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6737614274024963}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}]",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 1,
+      "ts": 1783398040.6301727
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398040.6302006
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 1
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 1,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398040.6302133
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398040.6302245
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 1
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1783398040.630233
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398040.6302428
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 1
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'thiệp nội mạch qua đường vào', 'position': [140, 168], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6737614274024963}], 'extraction_source': 'healthb",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}], 'final_predictions': [{'text': 'thiệp nội mạch qua đường vào', 'position': [140, 168], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.6737614274024963}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False, 'assertions': {'isNegated': False, 'isFamily': False, 'isHistorical': False}}], 'dropped': 0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 1,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 1,
+      "ts": 1783398040.6303222
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 1,
+      "elapsed": 1.63,
+      "ts": 1783398040.630339
     }
-  }
-]
+  ]
+}

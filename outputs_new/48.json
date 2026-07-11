@@ -1,210 +1,536 @@
-[
-  {
-    "text": "yếu nửa người trái",
-    "position": [
-      218,
-      236
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
+{
+  "note_id": "48",
+  "mentions": [
+    {
+      "text": "bình thường",
+      "position": [
+        316,
+        327
+      ],
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "ct",
+      "position": [
+        333,
+        335
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "cảm thấy yếu sức",
+      "position": [
+        682,
+        698
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "nhận thấy ông ấy kéo lê",
+      "position": [
+        750,
+        773
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "khó khăn khi ăn",
+      "position": [
+        886,
+        901
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "bao gồm kéo lê chân trái",
+      "position": [
+        1198,
+        1222
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "và cánh tay buông thõng và",
+      "position": [
+        1223,
+        1249
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "kéo lê chân trái",
+      "position": [
+        767,
+        783
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "bên phải đầu",
+      "position": [
+        1028,
+        1040
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": true,
+        "isFamily": false,
+        "isHistorical": false
+      }
     }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": []
   },
-  {
-    "text": "bình thường",
-    "position": [
-      316,
-      327
-    ],
-    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-    "assertions": {
-      "isNegated": true,
-      "isFamily": false,
-      "isHistorical": false
-    }
+  "stats": {
+    "total_mentions": 9,
+    "final": 9,
+    "validation_errors": 0,
+    "elapsed": 9.06
   },
-  {
-    "text": "ct",
-    "position": [
-      333,
-      335
-    ],
-    "type": "TÊN_XÉT_NGHIỆM",
-    "assertions": {
-      "isNegated": true,
-      "isFamily": false,
-      "isHistorical": false
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 2762,
+      "ts": 1783398205.5247524
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398205.52477
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 2762
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 2762
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các tình trạng bệnh lý mạn tính: Tiền sử bệnh lý rộng\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Yếu nửa người trái\n    Thời điểm khởi phát triệu chứng: Hôm nay\n    Diễn biến"
+        },
+        "output": "{'rule': [{'text': 'bình thường', 'position': [316, 327], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'confidence': 0.9, 'source': 'rule'}, {'text': 'ct', 'position': [333, 335], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}, {'text': 'bình thường', 'position': [975, 986], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'confidence': 0.9, 'source': 'rule'}, {'text': 'bình thường', 'position': [1975, 1986], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'confidence': 0.9, 'source': 'rule'}, {'text': 'bình thường', 'position': ",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 6,
+          "qwen": 0,
+          "healthbert": 13,
+          "errors": 0
+        },
+        "total": 17
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'bình thường', 'position': [316, 327], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'ct', 'p"
+        },
+        "output": "[{'text': 'bình thường', 'position': [316, 327], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'ct', 'position': [333, 335], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'cảm thấy yếu sức', 'position': [682, 698], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.613672137260437}",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 17
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'bình thường', 'position': [316, 327], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'ct', 'p",
+          "text": "1.  Tiền sử bệnh\n    Các tình trạng bệnh lý mạn tính: Tiền sử bệnh lý rộng\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Yếu nửa người trái\n    Thời điểm khởi phát triệu chứng: Hôm nay\n    Diễn biến"
+        },
+        "output": "[{'text': 'bình thường', 'position': [316, 327], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'ct', 'position': [333, 335], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'cảm thấy yếu sức', 'position': [682, 698], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.613672137260437}",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'bình thường', 'position': [316, 327], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': ",
+          "text": "1.  Tiền sử bệnh\n    Các tình trạng bệnh lý mạn tính: Tiền sử bệnh lý rộng\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Yếu nửa người trái\n    Thời điểm khởi phát triệu chứng: Hôm nay\n    Diễn biến"
+        },
+        "output": "[{'text': 'bình thường', 'position': [316, 327], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False}, {'text': 'ct', 'position': [333, 335], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False}, {'text': 'cảm thấy yếu sức', 'position': [682, 698], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 10
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 17,
+      "ts": 1783398214.5791454
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398214.5791698
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 17
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các tình trạng bệnh lý mạn tính: Tiền sử bệnh lý rộng\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Yếu nửa người trái\n    Thời điểm khởi phát triệu chứng: Hôm nay\n    Diễn biến",
+          "start": "682",
+          "end": "698"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các tình trạng bệnh lý mạn tính: Tiền sử bệnh lý rộng\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Yếu nửa người trái\n    Thời điểm khởi phát triệu chứng: Hôm nay\n    Diễn biến",
+          "start": "750",
+          "end": "773"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các tình trạng bệnh lý mạn tính: Tiền sử bệnh lý rộng\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Yếu nửa người trái\n    Thời điểm khởi phát triệu chứng: Hôm nay\n    Diễn biến",
+          "start": "886",
+          "end": "901"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các tình trạng bệnh lý mạn tính: Tiền sử bệnh lý rộng\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Yếu nửa người trái\n    Thời điểm khởi phát triệu chứng: Hôm nay\n    Diễn biến",
+          "start": "1198",
+          "end": "1222"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các tình trạng bệnh lý mạn tính: Tiền sử bệnh lý rộng\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Yếu nửa người trái\n    Thời điểm khởi phát triệu chứng: Hôm nay\n    Diễn biến",
+          "start": "1223",
+          "end": "1249"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các tình trạng bệnh lý mạn tính: Tiền sử bệnh lý rộng\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Yếu nửa người trái\n    Thời điểm khởi phát triệu chứng: Hôm nay\n    Diễn biến",
+          "start": "682",
+          "end": "698"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các tình trạng bệnh lý mạn tính: Tiền sử bệnh lý rộng\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Yếu nửa người trái\n    Thời điểm khởi phát triệu chứng: Hôm nay\n    Diễn biến",
+          "start": "767",
+          "end": "783"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các tình trạng bệnh lý mạn tính: Tiền sử bệnh lý rộng\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Yếu nửa người trái\n    Thời điểm khởi phát triệu chứng: Hôm nay\n    Diễn biến",
+          "start": "886",
+          "end": "901"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các tình trạng bệnh lý mạn tính: Tiền sử bệnh lý rộng\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Yếu nửa người trái\n    Thời điểm khởi phát triệu chứng: Hôm nay\n    Diễn biến",
+          "start": "1028",
+          "end": "1040"
+        },
+        "output": "{'isNegated': True, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các tình trạng bệnh lý mạn tính: Tiền sử bệnh lý rộng\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Yếu nửa người trái\n    Thời điểm khởi phát triệu chứng: Hôm nay\n    Diễn biến",
+          "start": "767",
+          "end": "783"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các tình trạng bệnh lý mạn tính: Tiền sử bệnh lý rộng\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Yếu nửa người trái\n    Thời điểm khởi phát triệu chứng: Hôm nay\n    Diễn biến",
+          "start": "886",
+          "end": "901"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 17,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398214.5795686
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398214.5795777
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 17
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1783398214.5795867
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398214.5795941
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 17
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'bình thường', 'position': [316, 327], 'type': 'KẾT_QUẢ_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': ",
+          "text": "1.  Tiền sử bệnh\n    Các tình trạng bệnh lý mạn tính: Tiền sử bệnh lý rộng\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Yếu nửa người trái\n    Thời điểm khởi phát triệu chứng: Hôm nay\n    Diễn biến"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes'",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 9,
+        "dropped": 8
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 9,
+      "ts": 1783398214.580038
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 9,
+      "elapsed": 9.06,
+      "ts": 1783398214.5800536
     }
-  },
-  {
-    "text": "ngất xỉu",
-    "position": [
-      386,
-      394
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "hơi vụng về",
-    "position": [
-      635,
-      646
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "bình thường",
-    "position": [
-      975,
-      986
-    ],
-    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "cảm thấy yếu sức",
-    "position": [
-      1334,
-      1350
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "bình thường",
-    "position": [
-      1975,
-      1986
-    ],
-    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "khó khăn khi cài cúc áo",
-    "position": [
-      2016,
-      2039
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "kéo khóa quần",
-    "position": [
-      2041,
-      2054
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "vụng về",
-    "position": [
-      2056,
-      2063
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "đi tiểu trên sàn",
-    "position": [
-      2065,
-      2081
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "bình thường",
-    "position": [
-      2366,
-      2377
-    ],
-    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-    "assertions": {
-      "isNegated": true,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "ct",
-    "position": [
-      2383,
-      2385
-    ],
-    "type": "TÊN_XÉT_NGHIỆM",
-    "assertions": {
-      "isNegated": true,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "ngất xỉu",
-    "position": [
-      2436,
-      2444
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
-  },
-  {
-    "text": "khó khăn khi cài cúc áo",
-    "position": [
-      2569,
-      2592
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": true,
-      "isHistorical": false
-    }
-  }
-]
+  ]
+}

@@ -1,15 +1,228 @@
-[
-  {
-    "text": "Khởi phát chuyển dạ",
-    "position": [
-      17,
-      36
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
+{
+  "note_id": "31",
+  "mentions": [],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "stats": {
+    "total_mentions": 0,
+    "final": 0,
+    "validation_errors": 0,
+    "elapsed": 0.74
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 196,
+      "ts": 1783398075.920962
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398075.9209814
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 196
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 196
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "Lý do nhập viện: Khởi phát chuyển dạBệnh sử: Thai 41 tuần, nhập viện để khởi phát chuyển dạ. Hiện có cơn co tử cung, \nthai máy tốt (FM +), \nchưa  ra huyết âm đạo (VB -), chưa vỡ ối/rỉ ối (LOF -).\n"
+        },
+        "output": "{'rule': [], 'qwen': [], 'healthbert': [], 'errors': []}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 0,
+          "healthbert": 0,
+          "errors": 0
+        },
+        "total": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[]"
+        },
+        "output": null,
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[]",
+          "text": "Lý do nhập viện: Khởi phát chuyển dạBệnh sử: Thai 41 tuần, nhập viện để khởi phát chuyển dạ. Hiện có cơn co tử cung, \nthai máy tốt (FM +), \nchưa  ra huyết âm đạo (VB -), chưa vỡ ối/rỉ ối (LOF -).\n"
+        },
+        "output": null,
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[]",
+          "text": "Lý do nhập viện: Khởi phát chuyển dạBệnh sử: Thai 41 tuần, nhập viện để khởi phát chuyển dạ. Hiện có cơn co tử cung, \nthai máy tốt (FM +), \nchưa  ra huyết âm đạo (VB -), chưa vỡ ối/rỉ ối (LOF -).\n"
+        },
+        "output": null,
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 0,
+      "ts": 1783398076.6620648
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398076.662096
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 0
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 0,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398076.662109
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398076.662121
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 0
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1783398076.662133
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398076.6621418
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 0
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[]",
+          "text": "Lý do nhập viện: Khởi phát chuyển dạBệnh sử: Thai 41 tuần, nhập viện để khởi phát chuyển dạ. Hiện có cơn co tử cung, \nthai máy tốt (FM +), \nchưa  ra huyết âm đạo (VB -), chưa vỡ ối/rỉ ối (LOF -).\n"
+        },
+        "output": "{'actions': [], 'final_predictions': [], 'dropped': 0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 0,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 0,
+      "ts": 1783398076.6621678
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 0,
+      "elapsed": 0.74,
+      "ts": 1783398076.662182
     }
-  }
-]
+  ]
+}

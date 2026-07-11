@@ -1,103 +1,1884 @@
 {
   "file_id": "test_log",
+  "timestamp": 1783433790.7642975,
+  "elapsed": 6.32,
+  "model": "rules",
+  "result": {
+    "note_id": "test_log",
+    "mentions": [
+      {
+        "text": "bệnh nhân đau ngực và khó",
+        "position": [
+          0,
+          25
+        ],
+        "type": "CHẨN_ĐOÁN",
+        "confidence": 0.5,
+        "voters": [
+          "healthbert"
+        ],
+        "assertions": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "candidates": []
+      },
+      {
+        "text": "metoprolol 25mg",
+        "position": [
+          36,
+          51
+        ],
+        "type": "THUỐC",
+        "confidence": 0.5,
+        "voters": [
+          "rule"
+        ],
+        "assertions": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "candidates": [
+          "1163524",
+          "2712144",
+          "1163523",
+          "6918",
+          "102313"
+        ]
+      }
+    ],
+    "validation": {
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        "[0] CHẨN_ĐOÁN has no candidates"
+      ]
+    },
+    "stats": {
+      "total_mentions": 2,
+      "final": 2,
+      "validation_errors": 0,
+      "elapsed": 6.32,
+      "rule": 1,
+      "qwen": 0,
+      "healthbert": 1,
+      "errors": 0
+    },
+    "logs": [
+      {
+        "agent": "orchestrator",
+        "action": "start",
+        "text_len": 51,
+        "ts": 1783433784.4403
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_start",
+        "ts": 1783433784.4403117
+      },
+      {
+        "agent": "extraction",
+        "action": "start",
+        "data": {
+          "text_len": 51
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "preprocessed",
+        "data": {
+          "normalized_len": 51
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "parallel_extract",
+          "input": {
+            "text": "bệnh nhân đau ngực và khó thở, dùng metoprolol 25mg"
+          },
+          "output": {
+            "rule": [
+              {
+                "text": "metoprolol 25mg",
+                "position": [
+                  36,
+                  51
+                ],
+                "type": "THUỐC",
+                "confidence": 0.5,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": [
+                  "rule"
+                ],
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "1163524",
+                  "2712144",
+                  "1163523",
+                  "6918",
+                  "102313"
+                ],
+                "link_confidence": 0.8
+              }
+            ],
+            "qwen": [],
+            "healthbert": [
+              {
+                "text": "bệnh nhân đau ngực và khó",
+                "position": [
+                  0,
+                  25
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.75
+                  }
+                ],
+                "extraction_source": "healthbert",
+                "vote_count": 1,
+                "voters": [
+                  "healthbert"
+                ],
+                "confidence": 0.5,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [],
+                "link_confidence": 0.0
+              }
+            ],
+            "errors": []
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "extracted",
+        "data": {
+          "sources": {
+            "rule": 1,
+            "qwen": 0,
+            "healthbert": 1,
+            "errors": 0
+          },
+          "total": 2
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "vote_merge",
+          "input": {
+            "all_mentions": [
+              {
+                "text": "metoprolol 25mg",
+                "position": [
+                  36,
+                  51
+                ],
+                "type": "THUỐC",
+                "confidence": 0.5,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": [
+                  "rule"
+                ],
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "1163524",
+                  "2712144",
+                  "1163523",
+                  "6918",
+                  "102313"
+                ],
+                "link_confidence": 0.8
+              },
+              {
+                "text": "bệnh nhân đau ngực và khó",
+                "position": [
+                  0,
+                  25
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.75
+                  }
+                ],
+                "extraction_source": "healthbert",
+                "vote_count": 1,
+                "voters": [
+                  "healthbert"
+                ],
+                "confidence": 0.5,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [],
+                "link_confidence": 0.0
+              }
+            ]
+          },
+          "output": [
+            {
+              "text": "bệnh nhân đau ngực và khó",
+              "position": [
+                0,
+                25
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.75
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "metoprolol 25mg",
+              "position": [
+                36,
+                51
+              ],
+              "type": "THUỐC",
+              "confidence": 0.5,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": [
+                "rule"
+              ],
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "1163524",
+                "2712144",
+                "1163523",
+                "6918",
+                "102313"
+              ],
+              "link_confidence": 0.8
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "voted",
+        "data": {
+          "merged": 2
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "resolve_conflicts",
+          "input": {
+            "merged": [
+              {
+                "text": "bệnh nhân đau ngực và khó",
+                "position": [
+                  0,
+                  25
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.75
+                  }
+                ],
+                "extraction_source": "healthbert",
+                "vote_count": 1,
+                "voters": [
+                  "healthbert"
+                ],
+                "confidence": 0.5,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [],
+                "link_confidence": 0.0
+              },
+              {
+                "text": "metoprolol 25mg",
+                "position": [
+                  36,
+                  51
+                ],
+                "type": "THUỐC",
+                "confidence": 0.5,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": [
+                  "rule"
+                ],
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "1163524",
+                  "2712144",
+                  "1163523",
+                  "6918",
+                  "102313"
+                ],
+                "link_confidence": 0.8
+              }
+            ],
+            "text": "bệnh nhân đau ngực và khó thở, dùng metoprolol 25mg"
+          },
+          "output": [
+            {
+              "text": "bệnh nhân đau ngực và khó",
+              "position": [
+                0,
+                25
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.75
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "metoprolol 25mg",
+              "position": [
+                36,
+                51
+              ],
+              "type": "THUỐC",
+              "confidence": 0.5,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": [
+                "rule"
+              ],
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "1163524",
+                "2712144",
+                "1163523",
+                "6918",
+                "102313"
+              ],
+              "link_confidence": 0.8
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "fix_positions",
+          "input": {
+            "mentions": [
+              {
+                "text": "bệnh nhân đau ngực và khó",
+                "position": [
+                  0,
+                  25
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.75
+                  }
+                ],
+                "extraction_source": "healthbert",
+                "vote_count": 1,
+                "voters": [
+                  "healthbert"
+                ],
+                "confidence": 0.5,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [],
+                "link_confidence": 0.0
+              },
+              {
+                "text": "metoprolol 25mg",
+                "position": [
+                  36,
+                  51
+                ],
+                "type": "THUỐC",
+                "confidence": 0.5,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": [
+                  "rule"
+                ],
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "1163524",
+                  "2712144",
+                  "1163523",
+                  "6918",
+                  "102313"
+                ],
+                "link_confidence": 0.8
+              }
+            ],
+            "text": "bệnh nhân đau ngực và khó thở, dùng metoprolol 25mg"
+          },
+          "output": [
+            {
+              "text": "bệnh nhân đau ngực và khó",
+              "position": [
+                0,
+                25
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.75
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "metoprolol 25mg",
+              "position": [
+                36,
+                51
+              ],
+              "type": "THUỐC",
+              "confidence": 0.5,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": [
+                "rule"
+              ],
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "1163524",
+                "2712144",
+                "1163523",
+                "6918",
+                "102313"
+              ],
+              "link_confidence": 0.8
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "positions_fixed",
+        "data": {
+          "fixed": 0
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "llm_verified",
+        "data": {
+          "corrected": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_complete",
+        "mentions": 2,
+        "ts": 1783433789.0306158
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_start",
+        "ts": 1783433789.030633
+      },
+      {
+        "agent": "assertion",
+        "action": "start",
+        "data": {
+          "mentions": 2
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "bệnh nhân đau ngực và khó thở, dùng metoprolol 25mg",
+            "start": 0,
+            "end": 25
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "bệnh nhân đau ngực và khó thở, dùng metoprolol 25mg",
+            "start": 36,
+            "end": 51
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "complete",
+        "data": {
+          "processed": 2,
+          "llm_checked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_complete",
+        "ts": 1783433789.0317814
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_start",
+        "ts": 1783433789.0317936
+      },
+      {
+        "agent": "linking",
+        "action": "start",
+        "data": {
+          "mentions": 2
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "bệnh nhân đau ngực và khó",
+              "position": [
+                0,
+                25
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.75
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            "context": "bệnh nhân đau ngực và khó thở, dùng metoprolol 25mg"
+          },
+          "output": {
+            "candidates": [],
+            "confidence": 0.0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "metoprolol 25mg",
+              "position": [
+                36,
+                51
+              ],
+              "type": "THUỐC",
+              "confidence": 0.5,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": [
+                "rule"
+              ],
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "1163524",
+                "2712144",
+                "1163523",
+                "6918",
+                "102313"
+              ],
+              "link_confidence": 0.8
+            },
+            "context": "bệnh nhân đau ngực và khó thở, dùng metoprolol 25mg"
+          },
+          "output": {
+            "candidates": [
+              "1163524",
+              "2712144",
+              "1163523",
+              "6918",
+              "102313"
+            ],
+            "confidence": 0.8
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "complete",
+        "data": {
+          "linked": 1
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_complete",
+        "linked": 1,
+        "ts": 1783433790.7641718
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_start",
+        "ts": 1783433790.7641873
+      },
+      {
+        "agent": "verifier",
+        "action": "start",
+        "data": {
+          "mentions": 2
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "tool_call",
+        "data": {
+          "tool": "verify_schema",
+          "input": {
+            "mentions": [
+              {
+                "text": "bệnh nhân đau ngực và khó",
+                "position": [
+                  0,
+                  25
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.75
+                  }
+                ],
+                "extraction_source": "healthbert",
+                "vote_count": 1,
+                "voters": [
+                  "healthbert"
+                ],
+                "confidence": 0.5,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [],
+                "link_confidence": 0.0
+              },
+              {
+                "text": "metoprolol 25mg",
+                "position": [
+                  36,
+                  51
+                ],
+                "type": "THUỐC",
+                "confidence": 0.5,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": [
+                  "rule"
+                ],
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "1163524",
+                  "2712144",
+                  "1163523",
+                  "6918",
+                  "102313"
+                ],
+                "link_confidence": 0.8
+              }
+            ],
+            "text": "bệnh nhân đau ngực và khó thở, dùng metoprolol 25mg"
+          },
+          "output": {
+            "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": [
+                  "no candidates"
+                ]
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              }
+            ],
+            "final_predictions": [
+              {
+                "text": "bệnh nhân đau ngực và khó",
+                "position": [
+                  0,
+                  25
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.75
+                  }
+                ],
+                "extraction_source": "healthbert",
+                "vote_count": 1,
+                "voters": [
+                  "healthbert"
+                ],
+                "confidence": 0.5,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [],
+                "link_confidence": 0.0
+              },
+              {
+                "text": "metoprolol 25mg",
+                "position": [
+                  36,
+                  51
+                ],
+                "type": "THUỐC",
+                "confidence": 0.5,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": [
+                  "rule"
+                ],
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "1163524",
+                  "2712144",
+                  "1163523",
+                  "6918",
+                  "102313"
+                ],
+                "link_confidence": 0.8
+              }
+            ],
+            "dropped": 0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "validated",
+        "data": {
+          "kept": 2,
+          "dropped": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_complete",
+        "kept": 2,
+        "ts": 1783433790.7642329
+      },
+      {
+        "agent": "orchestrator",
+        "action": "complete",
+        "total_mentions": 2,
+        "elapsed": 6.32,
+        "ts": 1783433790.7642493
+      }
+    ]
+  },
   "logs": [
     {
       "agent": "orchestrator",
       "action": "start",
-      "ts": 1783316879.4623966,
-      "input": {
-        "note_id": "test_log",
-        "text_len": 26
-      }
+      "text_len": 51,
+      "ts": 1783433784.4403
     },
     {
       "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783433784.4403117
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 51
+      }
+    },
+    {
+      "agent": "extraction",
       "action": "preprocessed",
-      "ts": 1783316879.4628966,
-      "input": {},
-      "output": {
-        "len": 26
+      "data": {
+        "normalized_len": 51
       }
     },
     {
-      "agent": "orchestrator",
-      "action": "rule_extracted",
-      "ts": 1783316879.472055,
-      "output": {
-        "mentions": 0
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "bệnh nhân đau ngực và khó thở, dùng metoprolol 25mg"
+        },
+        "output": {
+          "rule": [
+            {
+              "text": "metoprolol 25mg",
+              "position": [
+                36,
+                51
+              ],
+              "type": "THUỐC",
+              "confidence": 0.5,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": [
+                "rule"
+              ],
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "1163524",
+                "2712144",
+                "1163523",
+                "6918",
+                "102313"
+              ],
+              "link_confidence": 0.8
+            }
+          ],
+          "qwen": [],
+          "healthbert": [
+            {
+              "text": "bệnh nhân đau ngực và khó",
+              "position": [
+                0,
+                25
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.75
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
       }
     },
     {
-      "agent": "orchestrator",
-      "action": "ner_qwen_extracted",
-      "ts": 1783316889.481018,
-      "output": {
-        "mentions": 0
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 1,
+          "qwen": 0,
+          "healthbert": 1,
+          "errors": 0
+        },
+        "total": 2
       }
     },
     {
-      "agent": "orchestrator",
-      "action": "merged",
-      "ts": 1783316889.4816318,
-      "output": {
-        "total": 0,
-        "from": {
-          "rule": 0,
-          "ner_qwen": 0,
-          "ner_healthbert": 0
-        }
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "metoprolol 25mg",
+              "position": [
+                36,
+                51
+              ],
+              "type": "THUỐC",
+              "confidence": 0.5,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": [
+                "rule"
+              ],
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "1163524",
+                "2712144",
+                "1163523",
+                "6918",
+                "102313"
+              ],
+              "link_confidence": 0.8
+            },
+            {
+              "text": "bệnh nhân đau ngực và khó",
+              "position": [
+                0,
+                25
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.75
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "bệnh nhân đau ngực và khó",
+            "position": [
+              0,
+              25
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.75
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": [
+              "healthbert"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "metoprolol 25mg",
+            "position": [
+              36,
+              51
+            ],
+            "type": "THUỐC",
+            "confidence": 0.5,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": [
+              "rule"
+            ],
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "1163524",
+              "2712144",
+              "1163523",
+              "6918",
+              "102313"
+            ],
+            "link_confidence": 0.8
+          }
+        ],
+        "result_type": "list"
       }
     },
     {
-      "agent": "orchestrator",
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 2
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "bệnh nhân đau ngực và khó",
+              "position": [
+                0,
+                25
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.75
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "metoprolol 25mg",
+              "position": [
+                36,
+                51
+              ],
+              "type": "THUỐC",
+              "confidence": 0.5,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": [
+                "rule"
+              ],
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "1163524",
+                "2712144",
+                "1163523",
+                "6918",
+                "102313"
+              ],
+              "link_confidence": 0.8
+            }
+          ],
+          "text": "bệnh nhân đau ngực và khó thở, dùng metoprolol 25mg"
+        },
+        "output": [
+          {
+            "text": "bệnh nhân đau ngực và khó",
+            "position": [
+              0,
+              25
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.75
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": [
+              "healthbert"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "metoprolol 25mg",
+            "position": [
+              36,
+              51
+            ],
+            "type": "THUỐC",
+            "confidence": 0.5,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": [
+              "rule"
+            ],
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "1163524",
+              "2712144",
+              "1163523",
+              "6918",
+              "102313"
+            ],
+            "link_confidence": 0.8
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "bệnh nhân đau ngực và khó",
+              "position": [
+                0,
+                25
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.75
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "metoprolol 25mg",
+              "position": [
+                36,
+                51
+              ],
+              "type": "THUỐC",
+              "confidence": 0.5,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": [
+                "rule"
+              ],
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "1163524",
+                "2712144",
+                "1163523",
+                "6918",
+                "102313"
+              ],
+              "link_confidence": 0.8
+            }
+          ],
+          "text": "bệnh nhân đau ngực và khó thở, dùng metoprolol 25mg"
+        },
+        "output": [
+          {
+            "text": "bệnh nhân đau ngực và khó",
+            "position": [
+              0,
+              25
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.75
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": [
+              "healthbert"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "metoprolol 25mg",
+            "position": [
+              36,
+              51
+            ],
+            "type": "THUỐC",
+            "confidence": 0.5,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": [
+              "rule"
+            ],
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "1163524",
+              "2712144",
+              "1163523",
+              "6918",
+              "102313"
+            ],
+            "link_confidence": 0.8
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
       "action": "positions_fixed",
-      "ts": 1783316889.4816425,
-      "output": {
-        "total": 0,
+      "data": {
         "fixed": 0
       }
     },
     {
-      "agent": "orchestrator",
+      "agent": "extraction",
       "action": "llm_verified",
-      "ts": 1783316889.4816468,
-      "output": {
-        "healthbert_mentions": 0,
+      "data": {
         "corrected": 0
       }
     },
     {
       "agent": "orchestrator",
-      "action": "assertions_classified",
-      "ts": 1783316889.4816492,
-      "count": 0
+      "action": "extraction_complete",
+      "mentions": 2,
+      "ts": 1783433789.0306158
     },
     {
       "agent": "orchestrator",
-      "action": "linked",
-      "ts": 1783316889.4816515,
-      "count": 0
+      "action": "assertion_start",
+      "ts": 1783433789.030633
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 2
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "bệnh nhân đau ngực và khó thở, dùng metoprolol 25mg",
+          "start": 0,
+          "end": 25
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "bệnh nhân đau ngực và khó thở, dùng metoprolol 25mg",
+          "start": 36,
+          "end": 51
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 2,
+        "llm_checked": 0
+      }
     },
     {
       "agent": "orchestrator",
-      "action": "verified",
-      "ts": 1783316889.4816577,
-      "kept": 0,
-      "dropped": 0
+      "action": "assertion_complete",
+      "ts": 1783433789.0317814
     },
     {
       "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783433789.0317936
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 2
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "bệnh nhân đau ngực và khó",
+            "position": [
+              0,
+              25
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.75
+              }
+            ],
+            "extraction_source": "healthbert",
+            "vote_count": 1,
+            "voters": [
+              "healthbert"
+            ],
+            "confidence": 0.5,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          "context": "bệnh nhân đau ngực và khó thở, dùng metoprolol 25mg"
+        },
+        "output": {
+          "candidates": [],
+          "confidence": 0.0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "metoprolol 25mg",
+            "position": [
+              36,
+              51
+            ],
+            "type": "THUỐC",
+            "confidence": 0.5,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": [
+              "rule"
+            ],
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "1163524",
+              "2712144",
+              "1163523",
+              "6918",
+              "102313"
+            ],
+            "link_confidence": 0.8
+          },
+          "context": "bệnh nhân đau ngực và khó thở, dùng metoprolol 25mg"
+        },
+        "output": {
+          "candidates": [
+            "1163524",
+            "2712144",
+            "1163523",
+            "6918",
+            "102313"
+          ],
+          "confidence": 0.8
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 1,
+      "ts": 1783433790.7641718
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783433790.7641873
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 2
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "bệnh nhân đau ngực và khó",
+              "position": [
+                0,
+                25
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.75
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "metoprolol 25mg",
+              "position": [
+                36,
+                51
+              ],
+              "type": "THUỐC",
+              "confidence": 0.5,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": [
+                "rule"
+              ],
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "1163524",
+                "2712144",
+                "1163523",
+                "6918",
+                "102313"
+              ],
+              "link_confidence": 0.8
+            }
+          ],
+          "text": "bệnh nhân đau ngực và khó thở, dùng metoprolol 25mg"
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": [
+                "no candidates"
+              ]
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "bệnh nhân đau ngực và khó",
+              "position": [
+                0,
+                25
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.75
+                }
+              ],
+              "extraction_source": "healthbert",
+              "vote_count": 1,
+              "voters": [
+                "healthbert"
+              ],
+              "confidence": 0.5,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "metoprolol 25mg",
+              "position": [
+                36,
+                51
+              ],
+              "type": "THUỐC",
+              "confidence": 0.5,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": [
+                "rule"
+              ],
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "1163524",
+                "2712144",
+                "1163523",
+                "6918",
+                "102313"
+              ],
+              "link_confidence": 0.8
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
       "action": "validated",
-      "ts": 1783316889.481667,
-      "is_valid": true,
-      "errors": 0
+      "data": {
+        "kept": 2,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 2,
+      "ts": 1783433790.7642329
     },
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1783316889.481668,
-      "total_mentions": 0
+      "total_mentions": 2,
+      "elapsed": 6.32,
+      "ts": 1783433790.7642493
     }
-  ],
-  "count": 12
+  ]
 }

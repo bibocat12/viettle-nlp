@@ -12,11 +12,12 @@ from worker_agents import ExtractionAgent, AssertionAgent, LinkingAgent, Verifie
 
 
 class OrchestratorAgent(Agent):
-    def __init__(self, llm=None, kb=None, on_log: Optional[Callable] = None):
+    def __init__(self, llm=None, kb=None, on_log: Optional[Callable] = None, mode="voting"):
         self.kb = kb
         self.on_log = on_log
+        self.mode = mode
 
-        self.extraction = ExtractionAgent(llm=llm)
+        self.extraction = ExtractionAgent(llm=llm, mode=mode)
         self.assertion = AssertionAgent(llm=llm)
         self.linking = LinkingAgent(llm=llm, kb=kb)
         self.verifier = VerifierAgent(llm=llm)
@@ -89,5 +90,5 @@ class OrchestratorAgent(Agent):
         return ctx
 
 
-def create_orchestrator(kb=None, llm=None, on_log=None) -> OrchestratorAgent:
-    return OrchestratorAgent(llm=llm, kb=kb, on_log=on_log)
+def create_orchestrator(kb=None, llm=None, on_log=None, mode="voting") -> OrchestratorAgent:
+    return OrchestratorAgent(llm=llm, kb=kb, on_log=on_log, mode=mode)

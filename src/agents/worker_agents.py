@@ -24,9 +24,10 @@ class ExtractionAgent(Agent):
         'các sự kiện', 'các thủ thuật', 'đánh giá', 'xử trí',
     }
 
-    def __init__(self, llm=None):
+    def __init__(self, llm=None, mode="voting"):
+        self.mode = mode  # "voting" (healthbert+llm) or "llm_only"
         tools = [
-            Tool("parallel_extract", "Run all 3 extraction models in parallel", self._parallel_extract),
+            Tool("parallel_extract", "Run extraction models", self._parallel_extract),
             Tool("vote_merge", "Merge mentions with voting-based confidence", self._vote_merge),
             Tool("resolve_conflicts", "LLM resolve low-confidence mentions", self._resolve_conflicts),
             Tool("fix_positions", "Re-locate positions in original text", self._fix_positions),
@@ -40,8 +41,35 @@ class ExtractionAgent(Agent):
     def _run_qwen(self, text: str) -> list:
         if self.llm is None:
             return []
-        result = ner_and_type(text, llm=self.llm)
-        return result.get("mentions", [])
+        from agents.section_parser import parse_sections
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+
+        sections = parse_sections(text)
+        if len(sections) <= 1:
+            # No sections found, infer on full text
+            result = ner_and_type(text, llm=self.llm)
+            return result.get("mentions", [])
+
+        # Parallel extraction per section
+        all_mentions = []
+        with ThreadPoolExecutor(max_workers=min(3, len(sections))) as ex:
+            def extract_section(sec):
+                mentions = ner_and_type(sec["text"], llm=self.llm).get("mentions", [])
+                # Offset positions by section start
+                for m in mentions:
+                    if m.get("position"):
+                        m["position"][0] += sec["start"]
+                        m["position"][1] += sec["start"]
+                return mentions
+
+            futures = {ex.submit(extract_section, sec): sec["id"] for sec in sections}
+            for future in as_completed(futures):
+                try:
+                    all_mentions.extend(future.result())
+                except Exception as e:
+                    self.log("error", {"section": futures[future], "message": str(e)})
+
+        return all_mentions
 
     def _run_healthbert(self, text: str) -> list:
         import re
@@ -78,26 +106,28 @@ class ExtractionAgent(Agent):
         return mentions
 
     def _parallel_extract(self, text: str) -> dict:
-        results = {"rule": None, "qwen": None, "healthbert": None}
+        results = {"qwen": None, "healthbert": None}
         errors = []
 
-        with ThreadPoolExecutor(max_workers=3) as ex:
-            futures = {
-                ex.submit(self._run_rule, text): "rule",
-                ex.submit(self._run_qwen, text): "qwen",
-                ex.submit(self._run_healthbert, text): "healthbert",
-            }
-            for future in as_completed(futures):
-                name = futures[future]
-                try:
-                    results[name] = future.result()
-                except Exception as e:
-                    errors.append(f"{name}: {e}")
-                    results[name] = []
+        if self.mode == "llm_only":
+            results["qwen"] = self._run_qwen(text) or []
+        else:
+            # Mode "voting": HealthBERT + LLM in parallel
+            with ThreadPoolExecutor(max_workers=2) as ex:
+                futures = {
+                    ex.submit(self._run_qwen, text): "qwen",
+                    ex.submit(self._run_healthbert, text): "healthbert",
+                }
+                for future in as_completed(futures):
+                    name = futures[future]
+                    try:
+                        results[name] = future.result()
+                    except Exception as e:
+                        errors.append(f"{name}: {e}")
+                        results[name] = []
 
         return {
-            "rule": results["rule"] or [],
-            "qwen": results["qwen"] or [],
+            "rule": [], "qwen": results["qwen"] or [],
             "healthbert": results["healthbert"] or [],
             "errors": errors,
         }
@@ -145,7 +175,7 @@ Trả về JSON: {"correct": true/false, "corrected_type": "...", "reason": "...
 
         # Flatten all mentions with source tracking
         all_mentions = []
-        for source_name in ("rule", "qwen", "healthbert"):
+        for source_name in ("qwen", "healthbert"):
             for m in parallel.get(source_name, []):
                 if "type_candidates" in m and "type" not in m:
                     candidates = m["type_candidates"]
@@ -155,29 +185,7 @@ Trả về JSON: {"correct": true/false, "corrected_type": "...", "reason": "...
                 m["extraction_source"] = source_name
                 all_mentions.append(m)
 
-        # Filter: remove healthbert mentions that cross entity boundaries.
-        # If a healthbert mention overlaps with a rules mention AND starts
-        # before the rules mention, it likely captured extra preceding context.
-        rule_spans = [(m.get("position", [0, 0])[0], m.get("position", [0, 0])[1])
-                      for m in parallel.get("rule", [])]
-        cleaned = []
-        for m in all_mentions:
-            if m.get("extraction_source") == "healthbert":
-                s, e = m.get("position", [0, 0])
-                # Check if this healthbert mention starts at or before any rules entity
-                # that it overlaps with (boundary crossing)
-                skip = False
-                for rs, re in rule_spans:
-                    overlap = min(e, re) - max(s, rs)
-                    if overlap > 0 and s <= rs:
-                        skip = True
-                        break
-                if skip:
-                    continue
-            cleaned.append(m)
-        all_mentions = cleaned
-
-        source_counts = {k: len(v or []) for k, v in parallel.items()}
+        source_counts = {k: len(v or []) for k, v in parallel.items() if k != "errors"}
         self.log("extracted", {"sources": source_counts, "total": len(all_mentions)})
 
         # Voting merge
@@ -268,6 +276,14 @@ Trả về JSON: {"isNegated": bool, "isFamily": bool, "isHistorical": bool,
                 llm_result = self.call_tool("llm_assert",
                     mention=m["text"], mtype=m["type"], context=context)
                 m["assertions"] = llm_result
+            elif self.llm and m.get("type") == "TRIỆU_CHỨNG" and any(rule_assert.values()):
+                # Symptom with detected assertion (negation/family/historical) — LLM verify
+                ctx_start = max(0, m["position"][0] - 150)
+                ctx_end = min(len(ctx.normalized), m["position"][1] + 150)
+                context = ctx.normalized[ctx_start:ctx_end]
+                llm_result = self.call_tool("llm_assert",
+                    mention=m["text"], mtype=m["type"], context=context)
+                m["assertions"] = llm_result
             else:
                 m["assertions"] = rule_assert
             m["assertion_confidence"] = m.get("assertions", {}).get("confidence", 0.85)
@@ -329,13 +345,23 @@ class VerifierAgent(Agent):
         kept = result.get("final_predictions", [])
         dropped = result.get("dropped", 0)
 
-        # Dedup by position: keep highest confidence mention per exact position
-        seen = {}
-        for m in kept:
-            key = tuple(m.get("position", [0, 0]))
-            if key not in seen or m.get("confidence", 0) > seen[key].get("confidence", 0):
-                seen[key] = m
-        deduped = list(seen.values())
+        # Dedup by position: remove overlapping entities, keep highest confidence
+        kept_sorted = sorted(kept, key=lambda x: (x.get("position", [0, 0])[0], -x.get("confidence", 0)))
+        deduped = []
+        for m in kept_sorted:
+            s, e = m.get("position", [0, 0])
+            overlap = False
+            for i, prev in enumerate(deduped):
+                ps, pe = prev.get("position", [0, 0])
+                # Check overlap: if starts within previous span or previous starts within this span
+                if (s >= ps and s < pe) or (ps >= s and ps < e):
+                    overlap = True
+                    # Keep the one with higher confidence
+                    if m.get("confidence", 0) > prev.get("confidence", 0):
+                        deduped[i] = m
+                    break
+            if not overlap:
+                deduped.append(m)
         extra_dropped = len(kept) - len(deduped)
 
         self.log("validated", {"kept": len(deduped), "dropped": (dropped if isinstance(dropped, int) else len(dropped)) + extra_dropped})

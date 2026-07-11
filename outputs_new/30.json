@@ -1,144 +1,686 @@
-[
-  {
-    "text": "bạch cầu",
-    "position": [
-      62,
-      70
-    ],
-    "type": "TÊN_XÉT_NGHIỆM",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
+{
+  "note_id": "30",
+  "mentions": [
+    {
+      "text": "bạch cầu",
+      "position": [
+        62,
+        70
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "tăng cholesterol máu đơn thuần",
+      "position": [
+        95,
+        125
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": [
+        "E78.0"
+      ]
+    },
+    {
+      "text": "tăng huyết áp",
+      "position": [
+        132,
+        145
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": [
+        "I15.0",
+        "O16",
+        "O11",
+        "I27.0",
+        "I67.5"
+      ]
+    },
+    {
+      "text": "ngừng uống cách nhập viện",
+      "position": [
+        199,
+        224
+      ],
+      "type": "THUỐC",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": true
+      },
+      "candidates": []
+    },
+    {
+      "text": "ngừng uống \ncách nhập viện",
+      "position": [
+        252,
+        278
+      ],
+      "type": "THUỐC",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    },
+    {
+      "text": "Thuốc giảm đau",
+      "position": [
+        293,
+        307
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "đường tiết niệu",
+      "position": [
+        527,
+        542
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": [
+        "P39.3",
+        "N21.8",
+        "N21.1",
+        "N21.9",
+        "Z93.6"
+      ]
+    },
+    {
+      "text": "ngừng thuốc giảm đau",
+      "position": [
+        718,
+        738
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": true,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "Liều gleevec đã ngừng cách nhập",
+      "position": [
+        746,
+        777
+      ],
+      "type": "THUỐC",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": true,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": [
+        "282386"
+      ]
+    },
+    {
+      "text": "chuyện với mình",
+      "position": [
+        1059,
+        1074
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "da của mình",
+      "position": [
+        1169,
+        1180
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
     }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [
+      "[3] THUỐC has no candidates",
+      "[4] THUỐC has no candidates"
+    ]
   },
-  {
-    "text": "tăng cholesterol máu đơn thuần",
-    "position": [
-      95,
-      125
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
+  "stats": {
+    "total_mentions": 11,
+    "final": 11,
+    "validation_errors": 0,
+    "elapsed": 11.9
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 1517,
+      "ts": 1783398064.0188534
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398064.0188649
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 1517
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 1517
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Bệnh bạch cầu dòng tủy mãn tính\n    - tăng cholesterol máu đơn thuần\n    - tăng huyết áp\n    Thuốc trước khi nhập viện lần này\n    - gleevec (n"
+        },
+        "output": "{'rule': [{'text': 'bạch cầu', 'position': [62, 70], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}], 'qwen': [], 'healthbert': [{'text': 'Bệnh bạch cầu dòng tủy mãn', 'position': [57, 83], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.85}]}, {'text': 'tăng cholesterol máu đơn thuần', 'position': [95, 125], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.621238648891449}]}, {'text': 'tăng huyết áp', 'position': [1",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 1,
+          "qwen": 0,
+          "healthbert": 12,
+          "errors": 0
+        },
+        "total": 12
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'bạch cầu', 'position': [62, 70], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'tăng cholesterol"
+        },
+        "output": "[{'text': 'bạch cầu', 'position': [62, 70], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'tăng cholesterol máu đơn thuần', 'position': [95, 125], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.621238648891449}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'tăng huyết áp', 'position': [132, 145], 'type': 'CHẨN_ĐOÁN",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 12
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'bạch cầu', 'position': [62, 70], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'tăng cholesterol",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Bệnh bạch cầu dòng tủy mãn tính\n    - tăng cholesterol máu đơn thuần\n    - tăng huyết áp\n    Thuốc trước khi nhập viện lần này\n    - gleevec (n"
+        },
+        "output": "[{'text': 'bạch cầu', 'position': [62, 70], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'tăng cholesterol máu đơn thuần', 'position': [95, 125], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.621238648891449}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'tăng huyết áp', 'position': [132, 145], 'type': 'CHẨN_ĐOÁN",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'bạch cầu', 'position': [62, 70], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False}, {",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Bệnh bạch cầu dòng tủy mãn tính\n    - tăng cholesterol máu đơn thuần\n    - tăng huyết áp\n    Thuốc trước khi nhập viện lần này\n    - gleevec (n"
+        },
+        "output": "[{'text': 'bạch cầu', 'position': [62, 70], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False}, {'text': 'tăng cholesterol máu đơn thuần', 'position': [95, 125], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.621238648891449}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'tăng huy",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 1
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 12,
+      "ts": 1783398067.9874356
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398067.9874692
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 12
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Bệnh bạch cầu dòng tủy mãn tính\n    - tăng cholesterol máu đơn thuần\n    - tăng huyết áp\n    Thuốc trước khi nhập viện lần này\n    - gleevec (n",
+          "start": "95",
+          "end": "125"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Bệnh bạch cầu dòng tủy mãn tính\n    - tăng cholesterol máu đơn thuần\n    - tăng huyết áp\n    Thuốc trước khi nhập viện lần này\n    - gleevec (n",
+          "start": "132",
+          "end": "145"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Bệnh bạch cầu dòng tủy mãn tính\n    - tăng cholesterol máu đơn thuần\n    - tăng huyết áp\n    Thuốc trước khi nhập viện lần này\n    - gleevec (n",
+          "start": "199",
+          "end": "224"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': True}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Bệnh bạch cầu dòng tủy mãn tính\n    - tăng cholesterol máu đơn thuần\n    - tăng huyết áp\n    Thuốc trước khi nhập viện lần này\n    - gleevec (n",
+          "start": "252",
+          "end": "278"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Bệnh bạch cầu dòng tủy mãn tính\n    - tăng cholesterol máu đơn thuần\n    - tăng huyết áp\n    Thuốc trước khi nhập viện lần này\n    - gleevec (n",
+          "start": "293",
+          "end": "307"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Bệnh bạch cầu dòng tủy mãn tính\n    - tăng cholesterol máu đơn thuần\n    - tăng huyết áp\n    Thuốc trước khi nhập viện lần này\n    - gleevec (n",
+          "start": "527",
+          "end": "542"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Bệnh bạch cầu dòng tủy mãn tính\n    - tăng cholesterol máu đơn thuần\n    - tăng huyết áp\n    Thuốc trước khi nhập viện lần này\n    - gleevec (n",
+          "start": "718",
+          "end": "738"
+        },
+        "output": "{'isNegated': True, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Bệnh bạch cầu dòng tủy mãn tính\n    - tăng cholesterol máu đơn thuần\n    - tăng huyết áp\n    Thuốc trước khi nhập viện lần này\n    - gleevec (n",
+          "start": "746",
+          "end": "777"
+        },
+        "output": "{'isNegated': True, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Bệnh bạch cầu dòng tủy mãn tính\n    - tăng cholesterol máu đơn thuần\n    - tăng huyết áp\n    Thuốc trước khi nhập viện lần này\n    - gleevec (n",
+          "start": "1059",
+          "end": "1074"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Bệnh bạch cầu dòng tủy mãn tính\n    - tăng cholesterol máu đơn thuần\n    - tăng huyết áp\n    Thuốc trước khi nhập viện lần này\n    - gleevec (n",
+          "start": "1169",
+          "end": "1180"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Bệnh bạch cầu dòng tủy mãn tính\n    - tăng cholesterol máu đơn thuần\n    - tăng huyết áp\n    Thuốc trước khi nhập viện lần này\n    - gleevec (n",
+          "start": "746",
+          "end": "777"
+        },
+        "output": "{'isNegated': True, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 12,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398067.9880836
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398067.988106
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 12
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'tăng cholesterol máu đơn thuần', 'position': [95, 125], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.621238648891449}], 'extraction_source': 'healthbert', 'vote",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Bệnh bạch cầu dòng tủy mãn tính\n    - tăng cholesterol máu đơn thuần\n    - tăng huyết áp\n    Thuốc trước khi nhập viện lần này\n    - gleevec (n"
+        },
+        "output": "{'candidates': ['E78.0'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'tăng huyết áp', 'position': [132, 145], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.75}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healt",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Bệnh bạch cầu dòng tủy mãn tính\n    - tăng cholesterol máu đơn thuần\n    - tăng huyết áp\n    Thuốc trước khi nhập viện lần này\n    - gleevec (n"
+        },
+        "output": "{'candidates': ['I15.0', 'O16', 'O11', 'I27.0', 'I67.5'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'ngừng uống cách nhập viện', 'position': [199, 224], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.85}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['h",
+          "context": "h\n    - Bệnh bạch cầu dòng tủy mãn tính\n    - tăng cholesterol máu đơn thuần\n    - tăng huyết áp\n    Thuốc trước khi nhập viện lần này\n    - gleevec (ngừng uống cách nhập viện 5 ngày)\n    - allopurino"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'ngừng uống \\ncách nhập viện', 'position': [252, 278], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.85}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': [",
+          "context": "olesterol máu đơn thuần\n    - tăng huyết áp\n    Thuốc trước khi nhập viện lần này\n    - gleevec (ngừng uống cách nhập viện 5 ngày)\n    - allopurinol (ngừng uống \ncách nhập viện 5 ngày)\n    - Thuốc giả"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'đường tiết niệu', 'position': [527, 542], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.5966066122055054}], 'extraction_source': 'healthbert', 'vote_count': 1, '",
+          "context": "ời điểm khởi phát triệu chứng: Khoảng một tháng trước\n    Diễn biến\n    - ảo giácxuất hiện khoảng một tháng trước.\n    - Đã được điều trị nhiễm khuẩn đường tiết niệu, vị trí không xác định.\n    - Thuố"
+        },
+        "output": "{'candidates': ['P39.3', 'N21.8', 'N21.1', 'N21.9', 'Z93.6'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'Liều gleevec đã ngừng cách nhập', 'position': [746, 777], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.6652499437332153}], 'extraction_source': 'healthbert', 'vote_coun",
+          "context": ".\n    - Không có thay đổi đáng kể về triệu chứng mặc dù đã điều trị nhiễm khuẩn đường tiết niệu, vị trí không xác định và ngừng thuốc giảm đau.\n    - Liều gleevec đã ngừng cách nhập viện 5 ngày.\n    -"
+        },
+        "output": "{'candidates': ['282386'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'Liều gleevec đã ngừng cách nhập', 'position': [746, 777], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.6652499437332153}], 'extraction_source': 'healthbert', 'vote_coun",
+          "context": ".\n    - Không có thay đổi đáng kể về triệu chứng mặc dù đã điều trị nhiễm khuẩn đường tiết niệu, vị trí không xác định và ngừng thuốc giảm đau.\n    - Liều gleevec đã ngừng cách nhập viện 5 ngày.\n    -"
+        },
+        "output": "{'candidates': ['282386'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 5
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 5,
+      "ts": 1783398075.9165864
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398075.9166167
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 12
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'bạch cầu', 'position': [62, 70], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False, 'a",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Bệnh bạch cầu dòng tủy mãn tính\n    - tăng cholesterol máu đơn thuần\n    - tăng huyết áp\n    Thuốc trước khi nhập viện lần này\n    - gleevec (n"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 11,
+        "dropped": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 11,
+      "ts": 1783398075.9172206
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 11,
+      "elapsed": 11.9,
+      "ts": 1783398075.9172397
     }
-  },
-  {
-    "text": "tăng huyết áp",
-    "position": [
-      132,
-      145
-    ],
-    "type": "CHẨN_ĐOÁN",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    },
-    "candidates": [
-      "P29.2",
-      "I12",
-      "I15.8"
-    ]
-  },
-  {
-    "text": "gleevec",
-    "position": [
-      190,
-      197
-    ],
-    "type": "THUỐC",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": true
-    },
-    "candidates": [
-      "282386",
-      "1171231",
-      "1171230"
-    ]
-  },
-  {
-    "text": "nhiễm khuẩn đường tiết niệu",
-    "position": [
-      664,
-      691
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": true
-    }
-  },
-  {
-    "text": "gleevec",
-    "position": [
-      751,
-      758
-    ],
-    "type": "THUỐC",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    },
-    "candidates": [
-      "282386",
-      "1171231",
-      "1171230"
-    ]
-  },
-  {
-    "text": "allopurinol",
-    "position": [
-      797,
-      808
-    ],
-    "type": "THUỐC",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    },
-    "candidates": [
-      "519",
-      "1154942",
-      "80566"
-    ]
-  },
-  {
-    "text": "nhiễm khuẩn đường tiết niệu",
-    "position": [
-      1232,
-      1259
-    ],
-    "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": true
-    }
-  },
-  {
-    "text": "allopurinol",
-    "position": [
-      1369,
-      1380
-    ],
-    "type": "THUỐC",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    },
-    "candidates": [
-      "519",
-      "1154942",
-      "80566"
-    ]
-  }
-]
+  ]
+}

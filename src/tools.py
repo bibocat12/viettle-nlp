@@ -96,10 +96,7 @@ TEST_PATTERNS = [
     r"tiểu cầu", r"bạch cầu", r"hồng cầu", r"đường huyết",
     r"glucose", r"BUN", r"ure", r"sodium", r"potassium", r"chloride",
     r"protein", r"albumin", r"canxi toàn phần", r"canxi ion hóa",
-    # Medical procedures
-    r"đặt shunt", r"dẫn lưu", r"shunt dẫn lưu",
-    r"đặt stent", r"nội soi", r"mổ", r"phẫu thuật",
-    r"siêu âm tim", r"thông tim", r"chụp mạch",
+    # Medical procedures (removed — not test names)
 ]
 
 LAB_VALUE_PATTERNS = [

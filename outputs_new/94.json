@@ -1,0 +1,647 @@
+{
+  "note_id": "94",
+  "mentions": [
+    {
+      "text": "đang dùng thuốc  weekly taxol\nvà",
+      "position": [
+        81,
+        113
+      ],
+      "type": "THUỐC",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    },
+    {
+      "text": "đau bụng vùng hạ sườn phải",
+      "position": [
+        181,
+        207
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "hạ sườn phải",
+      "position": [
+        195,
+        207
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    },
+    {
+      "text": "nôn kèm theo đi ngoài phân",
+      "position": [
+        328,
+        354
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "bụng tăng lên",
+      "position": [
+        417,
+        430
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": true,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "kèm theo buồn nôn",
+      "position": [
+        442,
+        459
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "nôn ra thức ăn và dịch",
+      "position": [
+        592,
+        614
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "không có máu",
+      "position": [
+        623,
+        635
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    },
+    {
+      "text": "compazine và alevenhưng vẫn còn đau",
+      "position": [
+        764,
+        799
+      ],
+      "type": "THUỐC",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": [
+        "203546",
+        "215101"
+      ]
+    },
+    {
+      "text": "Uống  morphineoral và  lorazepam đỡ đau",
+      "position": [
+        806,
+        845
+      ],
+      "type": "THUỐC",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": [
+        "6470",
+        "202817",
+        "7052"
+      ]
+    }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [
+      "[0] THUỐC has no candidates",
+      "[2] CHẨN_ĐOÁN has no candidates",
+      "[7] CHẨN_ĐOÁN has no candidates"
+    ]
+  },
+  "stats": {
+    "total_mentions": 10,
+    "final": 10,
+    "validation_errors": 0,
+    "elapsed": 3.6
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 887,
+      "ts": 1783398410.1385112
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398410.1385288
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 887
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 887
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sư"
+        },
+        "output": "{'rule': [], 'qwen': [], 'healthbert': [{'text': 'đang dùng thuốc  weekly taxol\\nvà', 'position': [81, 113], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.7258877754211426}]}, {'text': 'đau bụng vùng hạ sườn phải', 'position': [181, 207], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.585066556930542}]}, {'text': 'hạ sườn phải', 'position': [304, 316], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.5582975149154663}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 0,
+          "healthbert": 11,
+          "errors": 0
+        },
+        "total": 11
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'đang dùng thuốc  weekly taxol\\nvà', 'position': [81, 113], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.7258877754211426}], 'extraction_source': 'healthbert', 'vote_co"
+        },
+        "output": "[{'text': 'đang dùng thuốc  weekly taxol\\nvà', 'position': [81, 113], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.7258877754211426}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'đau bụng vùng hạ sườn phải', 'position': [181, 207], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.585066556930542}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confi",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 11
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'đang dùng thuốc  weekly taxol\\nvà', 'position': [81, 113], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.7258877754211426}], 'extraction_source': 'healthbert', 'vote_co",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sư"
+        },
+        "output": "[{'text': 'đang dùng thuốc  weekly taxol\\nvà', 'position': [81, 113], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.7258877754211426}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'đau bụng vùng hạ sườn phải', 'position': [181, 207], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.585066556930542}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confi",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'đang dùng thuốc  weekly taxol\\nvà', 'position': [81, 113], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.7258877754211426}], 'extraction_source': 'healthbert', 'vote_co",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sư"
+        },
+        "output": "[{'text': 'đang dùng thuốc  weekly taxol\\nvà', 'position': [81, 113], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.7258877754211426}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'đau bụng vùng hạ sườn phải', 'position': [181, 207], 'type': 'TRIỆU_CHỨNG', 'type_candidates': [{'label': 'TRIỆU_CHỨNG', 'score': 0.585066556930542}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 2
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 11,
+      "ts": 1783398412.4914572
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398412.4914994
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 11
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sư",
+          "start": "81",
+          "end": "113"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sư",
+          "start": "181",
+          "end": "207"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sư",
+          "start": "195",
+          "end": "207"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sư",
+          "start": "328",
+          "end": "354"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sư",
+          "start": "417",
+          "end": "430"
+        },
+        "output": "{'isNegated': True, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sư",
+          "start": "442",
+          "end": "459"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sư",
+          "start": "195",
+          "end": "207"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sư",
+          "start": "592",
+          "end": "614"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sư",
+          "start": "623",
+          "end": "635"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sư",
+          "start": "764",
+          "end": "799"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sư",
+          "start": "806",
+          "end": "845"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 11,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398412.4921968
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398412.4922245
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 11
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'đang dùng thuốc  weekly taxol\\nvà', 'position': [81, 113], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.7258877754211426}], 'extraction_source': 'healthbert', 'vote_cou",
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sư"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'hạ sườn phải', 'position': [195, 207], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.5582975149154663}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vot",
+          "context": "nh: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'hạ sườn phải', 'position': [195, 207], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.5582975149154663}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vot",
+          "context": "nh: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'không có máu', 'position': [623, 635], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.6132857203483582}], 'extraction_source': 'healthbert', 'vote_count': 1, 'vot",
+          "context": "hưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch:"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'compazine và alevenhưng vẫn còn đau', 'position': [764, 799], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.640190839767456}], 'extraction_source': 'healthbert', 'vote_c",
+          "context": " dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  mo"
+        },
+        "output": "{'candidates': ['203546', '215101'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'Uống  morphineoral và  lorazepam đỡ đau', 'position': [806, 845], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.85}], 'extraction_source': 'healthbert', 'vote_count': 1,",
+          "context": "130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể n"
+        },
+        "output": "{'candidates': ['6470', '202817', '7052'], 'confidence': 0.8}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 2
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 2,
+      "ts": 1783398413.7380373
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398413.7380745
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 11
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'đang dùng thuốc  weekly taxol\\nvà', 'position': [81, 113], 'type': 'THUỐC', 'type_candidates': [{'label': 'THUỐC', 'score': 0.7258877754211426}], 'extraction_source': 'healthbert', 'vote_co",
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sư"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], ",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 10,
+        "dropped": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 10,
+      "ts": 1783398413.738758
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 10,
+      "elapsed": 3.6,
+      "ts": 1783398413.7387931
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "note_id": "83",
+  "mentions": [
+    {
+      "text": "Cận lâm sàng",
+      "position": [
+        211,
+        223
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "siêu âm tim",
+      "position": [
+        247,
+        258
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "rule"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "van hai lá nặng",
+      "position": [
+        271,
+        286
+      ],
+      "type": "CHẨN_ĐOÁN",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      },
+      "candidates": []
+    },
+    {
+      "text": "Chụp động mạch vành cho thấy",
+      "position": [
+        289,
+        317
+      ],
+      "type": "TÊN_XÉT_NGHIỆM",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": false,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    },
+    {
+      "text": "Dùng lợi tiểu",
+      "position": [
+        359,
+        372
+      ],
+      "type": "TRIỆU_CHỨNG",
+      "confidence": 0.5,
+      "voters": [
+        "healthbert"
+      ],
+      "assertions": {
+        "isNegated": true,
+        "isFamily": false,
+        "isHistorical": false
+      }
+    }
+  ],
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [
+      "[2] CHẨN_ĐOÁN has no candidates"
+    ]
+  },
+  "stats": {
+    "total_mentions": 5,
+    "final": 5,
+    "validation_errors": 0,
+    "elapsed": 1.15
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 414,
+      "ts": 1783398372.316876
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1783398372.316884
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 414
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 414
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở kh"
+        },
+        "output": "{'rule': [{'text': 'siêu âm tim', 'position': [247, 258], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.95, 'source': 'rule'}], 'qwen': [], 'healthbert': [{'text': 'Cận lâm sàng', 'position': [211, 223], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.5675861835479736}]}, {'text': 'siêu âm tim cho thấy hở', 'position': [247, 270], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.85}]}, {'text': 'van hai lá nặng', 'position': [2",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 1,
+          "qwen": 0,
+          "healthbert": 5,
+          "errors": 0
+        },
+        "total": 5
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": "[{'text': 'siêu âm tim', 'position': [247, 258], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'Cận lâm sàn"
+        },
+        "output": "[{'text': 'Cận lâm sàng', 'position': [211, 223], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.5675861835479736}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'siêu âm tim', 'position': [247, 258], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'van hai lá nặng', 'position': [271, 286], 'type': 'CHẨN_ĐOÁ",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 5
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": "[{'text': 'Cận lâm sàng', 'position': [211, 223], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.5675861835479736}], 'extraction_source': 'healthbert', 'vote_coun",
+          "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở kh"
+        },
+        "output": "[{'text': 'Cận lâm sàng', 'position': [211, 223], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.5675861835479736}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5}, {'text': 'siêu âm tim', 'position': [247, 258], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule']}, {'text': 'van hai lá nặng', 'position': [271, 286], 'type': 'CHẨN_ĐOÁ",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": "[{'text': 'Cận lâm sàng', 'position': [211, 223], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.5675861835479736}], 'extraction_source': 'healthbert', 'vote_coun",
+          "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở kh"
+        },
+        "output": "[{'text': 'Cận lâm sàng', 'position': [211, 223], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.5675861835479736}], 'extraction_source': 'healthbert', 'vote_count': 1, 'voters': ['healthbert'], 'confidence': 0.5, 'position_fixed': False}, {'text': 'siêu âm tim', 'position': [247, 258], 'type': 'TÊN_XÉT_NGHIỆM', 'confidence': 0.5, 'source': 'rule', 'extraction_source': 'rule', 'vote_count': 1, 'voters': ['rule'], 'position_fixed': False}, {'text': 'van hai l",
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 5,
+      "ts": 1783398373.457179
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1783398373.457211
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 5
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở kh",
+          "start": "271",
+          "end": "286"
+        },
+        "output": "{'isNegated': False, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở kh",
+          "start": "359",
+          "end": "372"
+        },
+        "output": "{'isNegated': True, 'isFamily': False, 'isHistorical': False}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 5,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1783398373.4573543
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1783398373.457365
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 5
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": "{'text': 'van hai lá nặng', 'position': [271, 286], 'type': 'CHẨN_ĐOÁN', 'type_candidates': [{'label': 'CHẨN_ĐOÁN', 'score': 0.565426230430603}], 'extraction_source': 'healthbert', 'vote_count': 1, 'v",
+          "context": "au đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở khi gắng sức\nCận lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy khô"
+        },
+        "output": "{'candidates': [], 'confidence': 0.0}",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1783398373.462516
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1783398373.4625552
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 5
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": "[{'text': 'Cận lâm sàng', 'position': [211, 223], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.5675861835479736}], 'extraction_source': 'healthbert', 'vote_coun",
+          "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở kh"
+        },
+        "output": "{'actions': [{'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': ['no candidates']}, {'action': 'accept', 'fixes': [], 'warnings': []}, {'action': 'accept', 'fixes': [], 'warnings': []}], 'final_predictions': [{'text': 'Cận lâm sàng', 'position': [211, 223], 'type': 'TÊN_XÉT_NGHIỆM', 'type_candidates': [{'label': 'TÊN_XÉT_NGHIỆM', 'score': 0.5675861835479736}], 'extraction_source': 'healthbert', 'vote",
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 5,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 5,
+      "ts": 1783398373.462823
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 5,
+      "elapsed": 1.15,
+      "ts": 1783398373.4628427
+    }
+  ]
+}

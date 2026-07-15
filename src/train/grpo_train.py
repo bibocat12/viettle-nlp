@@ -1,26 +1,40 @@
 #!/usr/bin/env python3
-"""GRPO Fine-tuning with Unsloth — Vietnamese Medical NER with reward-based optimization.
+"""GRPO Fine-tuning with Unsloth — Vietnamese Medical NER.
+
+Reward function based on:
+  final_score = 0.3 * text_score + 0.3 * assertions_score + 0.4 * candidates_score
+
+- text_score: 1 - Word Error Rate (character-level)
+- assertions_score: Jaccard similarity of assertion sets
+- candidates_score: Jaccard similarity of candidate sets (weighted by GT size)
 
 Usage:
     python3 src/train/grpo_train.py \
         --model PeterPaker123/Qwen2.5-7B-Vietnamese-Medical-NER-GRPO \
-        --dataset data_train/grpo_dataset.jsonl \
+        --dataset data_train/grpo_combined.jsonl \
         --output models/qwen-ner-grpo-v1 \
         --epochs 2
 """
 
-import argparse, json, os, sys, re
+import argparse, json, logging, os, re, sys, warnings
 from pathlib import Path
+
+import torch
+
+# Suppress noise from transformers deprecation warnings
+logging.getLogger("transformers").setLevel(logging.ERROR)
+warnings.filterwarnings("ignore", message=".*is_flash_linear_attention_available.*")
+warnings.filterwarnings("ignore", category=FutureWarning, module="transformers")
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-# Bypass HF hub validation for local model paths
 import huggingface_hub.utils._validators as _hub_val
 _hub_val.validate_repo_id = lambda repo_id: None
 
 
+# ── Dataset loading ──────────────────────────────────────────────────────
+
 def load_grpo_dataset(path: str, max_samples: int = None):
-    """Load GRPO dataset with entities (for reward computation)."""
     data = []
     with open(path) as f:
         for i, line in enumerate(f):
@@ -34,7 +48,7 @@ def load_grpo_dataset(path: str, max_samples: int = None):
                     data.append({
                         "system": msgs[0]["content"],
                         "text": msgs[1]["content"],
-                        "entities": entities,  # Ground truth for reward
+                        "entities": entities,
                     })
             except:
                 pass
@@ -42,55 +56,175 @@ def load_grpo_dataset(path: str, max_samples: int = None):
     return data
 
 
-def reward_entity_overlap(completion: str, ground_truth: list) -> float:
-    """Reward function: score based on entity overlap (F1-like)."""
-    if not completion or not ground_truth:
-        return 0.0
+# ── Parsing ──────────────────────────────────────────────────────────────
 
-    # Parse entities from completion
+def parse_completion(completion: str) -> list:
+    """Parse model output into list of entity dicts."""
+    if not completion:
+        return []
+    m = re.search(r'\[.*\]', completion, re.DOTALL)
+    if not m:
+        return []
     try:
-        # Try to extract JSON from completion
-        m = re.search(r'\[.*\]', completion, re.DOTALL)
-        if not m:
-            return 0.0
         pred = json.loads(m.group())
         if not isinstance(pred, list):
-            return 0.0
+            return []
+        return pred
     except:
+        return []
+
+
+# ── Word Error Rate (character-level) ────────────────────────────────────
+
+def wer_char(ref: str, hyp: str) -> float:
+    """Character-level WER using Levenshtein distance."""
+    if not ref and not hyp:
+        return 0.0
+    if not ref:
+        return 1.0
+    if not hyp:
+        return 1.0
+    r, c = len(ref) + 1, len(hyp) + 1
+    dp = [[0] * c for _ in range(r)]
+    for i in range(r):
+        dp[i][0] = i
+    for j in range(c):
+        dp[0][j] = j
+    for i in range(1, r):
+        for j in range(1, c):
+            cost = 0 if ref[i - 1] == hyp[j - 1] else 1
+            dp[i][j] = min(
+                dp[i - 1][j] + 1,
+                dp[i][j - 1] + 1,
+                dp[i - 1][j - 1] + cost,
+            )
+    return dp[-1][-1] / max(len(ref), len(hyp))
+
+
+# ── Jaccard similarity ───────────────────────────────────────────────────
+
+def jaccard(gt_set: set, pred_set: set) -> float:
+    if not gt_set and not pred_set:
+        return 1.0
+    if not gt_set:
+        return 0.0
+    return len(gt_set & pred_set) / len(gt_set | pred_set)
+
+
+# ── Reward function ──────────────────────────────────────────────────────
+
+def compute_reward(completion: str, ground_truth: list, reference_text: str = "") -> float:
+    """Compute final reward = 0.3 * text_score + 0.3 * assertions_score + 0.4 * candidates_score.
+
+    ground_truth: list of dicts with keys: entity (or text), type, position
+                 optionally: assertions (list[str]), candidates (list[str])
+    """
+    pred_entities = parse_completion(completion)
+    if not pred_entities and not ground_truth:
+        return 1.0  # both empty → perfect
+    if not pred_entities:
         return 0.0
 
-    # Build sets of (entity_text, type) pairs
-    gt_set = set()
+    # Normalize: ground truth entities use "entity" key (old) or "text" key (synthetic)
+    def get_entity_text(e):
+        return e.get("entity") or e.get("text") or ""
+
+    # ── Align predictions ↔ ground truth ──
+    # Key by (normalized_text, type) to catch wrong-type penalties per spec
+    gt_by_key = {}
     for e in ground_truth:
-        gt_set.add((e.get("entity", "").lower().strip(), e.get("type", "")))
+        key = (get_entity_text(e).lower().strip(), e.get("type", ""))
+        gt_by_key.setdefault(key, []).append(e)
 
-    pred_set = set()
-    for e in pred:
-        if isinstance(e, dict):
-            pred_set.add((e.get("entity", "").lower().strip(), e.get("type", "")))
+    pred_by_key = {}
+    for e in pred_entities:
+        if not isinstance(e, dict):
+            continue
+        key = (e.get("entity", "").lower().strip(), e.get("type", ""))
+        pred_by_key.setdefault(key, []).append(e)
 
-    if not pred_set or not gt_set:
-        return 0.0
+    all_keys = set(gt_by_key) | set(pred_by_key)
 
-    tp = len(gt_set & pred_set)
-    p = tp / len(pred_set) if pred_set else 0
-    r = tp / len(gt_set) if gt_set else 0
-    f1 = 2 * p * r / (p + r) if (p + r) > 0 else 0
+    text_scores = []
+    assertion_scores = []
+    candidate_scores = []
+    candidate_weights = []
 
-    # Bonus for exact match
-    exact_bonus = 0.2 if gt_set == pred_set else 0
+    for key in all_keys:
+        gt_list = gt_by_key.get(key, [])
+        pred_list = pred_by_key.get(key, [])
 
-    return f1 + exact_bonus
+        # Spec: if key exists in only GT or only pred → type mismatch
+        # → entity counted twice, each gets 0 for ALL three metrics
+        if not gt_list or not pred_list:
+            text_scores.append(0.0)
+            assertion_scores.append(0.0)
+            w = 1
+            candidate_scores.append(0.0)
+            candidate_weights.append(w)
+            continue
+
+        gt = gt_list[0]
+        pred = pred_list[0]
+
+        # text_score: 1 - WER on entity text (character-level)
+        gt_text = get_entity_text(gt)
+        pred_text = pred.get("entity", "")
+        text_scores.append(1.0 - wer_char(gt_text, pred_text))
+
+        # assertions_score: Jaccard on assertion sets
+        gt_assertions = set(gt.get("assertions", []))
+        pred_assertions = set(pred.get("assertions", []))
+        assertion_scores.append(jaccard(gt_assertions, pred_assertions))
+
+        # candidates_score: Jaccard on candidate sets (weighted by GT size)
+        gt_candidates = set(gt.get("candidates", []))
+        pred_candidates = set(pred.get("candidates", []))
+        cs = jaccard(gt_candidates, pred_candidates)
+
+        # Weight = len(GT candidates) + 1
+        w = len(gt_candidates) + 1
+        candidate_scores.append(cs)
+        candidate_weights.append(w)
+
+    # Aggregate
+    n = max(len(text_scores), 1)
+    text_score = sum(text_scores) / n
+    assertions_score = sum(assertion_scores) / n
+
+    if candidate_weights and sum(candidate_weights) > 0:
+        candidates_score = sum(s * w for s, w in zip(candidate_scores, candidate_weights)) / sum(candidate_weights)
+    else:
+        candidates_score = 0.0
+
+    final = 0.3 * text_score + 0.3 * assertions_score + 0.4 * candidates_score
+    return final
 
 
-def reward_position_match(completion: str, ground_truth: list, text: str) -> float:
-    """Reward: entity overlap + position accuracy."""
-    overlap_score = reward_entity_overlap(completion, ground_truth)
-    return overlap_score
+# ── GRPO trainer wrapper ─────────────────────────────────────────────────
+
+def make_reward_fn(entity_map: dict):
+    """Return a reward function compatible with GRPOTrainer.
+
+    GRPOTrainer calls reward_func(completions, **kwargs) where completions
+    is a list of strings (one per sample in the batch), and **kwargs
+    contains the dataset columns for the current batch.
+
+    The dataset has an 'idx' column we use to look up ground truth.
+    Without 'idx', falls back to sequential (for testing only).
+    """
+    def reward_fn(completions, **kwargs):
+        scores = []
+        indices = kwargs.get("idx", None)
+        for i, completion in enumerate(completions):
+            idx = indices[i] if indices else i
+            gt = entity_map.get(idx, [])
+            scores.append(compute_reward(completion, gt))
+        return scores
+    return reward_fn
 
 
 def format_prompt(example, tokenizer):
-    """Format as chat template for GRPO training."""
     messages = [
         {"role": "system", "content": example["system"]},
         {"role": "user", "content": example["text"]},
@@ -100,23 +234,33 @@ def format_prompt(example, tokenizer):
     )
 
 
+# ── Main ─────────────────────────────────────────────────────────────────
+
 def main():
     parser = argparse.ArgumentParser(description="Unsloth GRPO Training")
     parser.add_argument("--model", default="PeterPaker123/Qwen2.5-7B-Vietnamese-Medical-NER-GRPO")
-    parser.add_argument("--local-model-path", default=None,
-                        help="Local model path (overrides --model)")
-    parser.add_argument("--dataset", default="data_train/grpo_dataset.jsonl")
+    parser.add_argument("--local-model-path", default=None)
+    parser.add_argument("--dataset", default="data_train/grpo_combined.jsonl")
     parser.add_argument("--output", default="models/qwen-ner-grpo-v1")
     parser.add_argument("--max_samples", type=int, default=None)
     parser.add_argument("--epochs", type=int, default=2)
     parser.add_argument("--lora_r", type=int, default=16)
-    parser.add_argument("--lora-path", default=None,
-                        help="Path to SFT LoRA adapter to start from (e.g. models/qwen-ner-sft-v1/lora)")
+    parser.add_argument("--lora-path", default=None)
     parser.add_argument("--max_seq_length", type=int, default=4096)
     parser.add_argument("--batch_size", type=int, default=4)
     parser.add_argument("--grad_accum", type=int, default=4)
     parser.add_argument("--learning_rate", type=float, default=5e-5)
     parser.add_argument("--logging_steps", type=int, default=10)
+    parser.add_argument("--num_generations", type=int, default=4,
+                        help="Completions per prompt (default=4). Lower=faster but less stable.")
+    parser.add_argument("--max_new_tokens", type=int, default=128,
+                        help="Max new tokens per generation (default=128).")
+    parser.add_argument("--resume-from-checkpoint", type=str, default=None,
+                        help="Path to a checkpoint directory to resume from.")
+    parser.add_argument("--save-steps", type=int, default=500,
+                        help="Save checkpoint every N steps.")
+    parser.add_argument("--save-total-limit", type=int, default=3,
+                        help="Keep only the N most recent checkpoints.")
     args = parser.parse_args()
 
     # ── Load dataset ──────────────────────────────────────────
@@ -135,16 +279,29 @@ def main():
         model_name=model_name,
         max_seq_length=args.max_seq_length,
         load_in_4bit=True,
-        dtype=None,
+        dtype=torch.float16,  # GPU doesn't support bf16; use half
     )
     tokenizer = get_chat_template(tokenizer, chat_template="qwen-3")
 
-    # Load SFT LoRA if provided (stage 2: GRPO on top of SFT)
     if args.lora_path:
         print(f"Loading SFT LoRA adapter: {args.lora_path}")
         model.load_adapter(args.lora_path)
 
-    # Add GRPO LoRA on top
+        # GPU doesn't support bf16; LoRA adapter may be saved in bf16.
+        # Convert all LoRA weights to float16 to match base compute dtype.
+        target_modules = [model]
+        if hasattr(model, "base_model"):
+            target_modules.append(model.base_model)
+            if hasattr(model.base_model, "model"):
+                target_modules.append(model.base_model.model)
+        for mod in target_modules:
+            for name, param in mod.named_parameters():
+                if "lora_" in name and param.dtype == torch.bfloat16:
+                    param.data = param.data.to(torch.float16)
+
+        if hasattr(model, "merge_and_unload"):
+            model = model.merge_and_unload()
+
     model = FastLanguageModel.get_peft_model(
         model, r=args.lora_r, lora_alpha=args.lora_r * 2,
         lora_dropout=0.0,
@@ -156,7 +313,6 @@ def main():
     print(f"Formatting {len(data)} GRPO samples...")
     from datasets import Dataset
 
-    # Store ground truth entities for reward
     entity_map = {}
     prompts = []
     for i, ex in enumerate(data):
@@ -168,21 +324,11 @@ def main():
 
     # ── Train with GRPO ───────────────────────────────────────
     from trl import GRPOTrainer, GRPOConfig
-    from transformers import TrainingArguments
-
-    def make_reward(i: int):
-        """Create reward function for a specific sample index."""
-        gt = entity_map.get(i, [])
-        def reward_fn(completions, **kwargs):
-            if isinstance(completions, list):
-                return [reward_entity_overlap(c, gt) for c in completions]
-            return reward_entity_overlap(completions, gt)
-        return reward_fn
 
     trainer = GRPOTrainer(
         model=model,
         processing_class=tokenizer,
-        args=TrainingArguments(
+        args=GRPOConfig(
             output_dir=args.output,
             per_device_train_batch_size=args.batch_size,
             gradient_accumulation_steps=args.grad_accum,
@@ -191,23 +337,30 @@ def main():
             warmup_steps=50,
             logging_steps=args.logging_steps,
             save_strategy="steps",
-            fp16=False,
-            bf16=True,
+            save_steps=args.save_steps,
+            save_total_limit=args.save_total_limit,
+            fp16=True,
+            bf16=False,
             optim="adamw_8bit",
             seed=3407,
             report_to="none",
+            num_generations=args.num_generations,
         ),
-        reward_funcs=make_reward,  # Will be overridden per-step
+        reward_funcs=make_reward_fn(entity_map),
         train_dataset=dataset,
     )
 
-    print(f"\nGRPO Training {len(data)} samples, {args.epochs} epochs...")
-    trainer.train()
-
-    # ── Save ──────────────────────────────────────────────────
+    # Save training args for reproducibility & resuming
     output_dir = Path(args.output)
     output_dir.mkdir(parents=True, exist_ok=True)
+    with open(output_dir / "training_args.json", "w") as f:
+        json.dump(vars(args), f, indent=2, ensure_ascii=False)
+    print(f"Saved training args to {output_dir / 'training_args.json'}", flush=True)
 
+    print(f"\nGRPO Training {len(data)} samples, {args.epochs} epochs...")
+    trainer.train(resume_from_checkpoint=args.resume_from_checkpoint)
+
+    # ── Save final LoRA ───────────────────────────────────────────
     print(f"Saving GRPO LoRA adapter to {output_dir}/lora...")
     model.save_pretrained(str(output_dir / "lora"))
     tokenizer.save_pretrained(str(output_dir / "lora"))

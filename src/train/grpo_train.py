@@ -261,6 +261,8 @@ def main():
                         help="Save checkpoint every N steps.")
     parser.add_argument("--save-total-limit", type=int, default=3,
                         help="Keep only the N most recent checkpoints.")
+    parser.add_argument("--sft-beta", type=float, default=0.1,
+                        help="Weight for SFT loss (0=GRPO only, 0.1=10% SFT). Keeps model from drifting.")
     args = parser.parse_args()
 
     # ── Load dataset ──────────────────────────────────────────
@@ -345,6 +347,7 @@ def main():
             seed=3407,
             report_to="none",
             num_generations=args.num_generations,
+            sft_beta=args.sft_beta,
         ),
         reward_funcs=make_reward_fn(entity_map),
         train_dataset=dataset,

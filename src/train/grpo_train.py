@@ -261,10 +261,8 @@ def main():
                         help="Save checkpoint every N steps (default=100, frequent for GRPO).")
     parser.add_argument("--save-total-limit", type=int, default=3,
                         help="Keep only the N most recent checkpoints.")
-    parser.add_argument("--sft-beta", type=float, default=0.1,
-                        help="Weight for SFT loss (0=GRPO only, 0.1=10% SFT). Keeps model from drifting.")
-    parser.add_argument("--bf16", action="store_true", default=False,
-                        help="Use bfloat16 (for RTX 6000 Ada/Blackwell). Default: fp16.")
+    parser.add_argument("--sft-beta", type=float, default=0.0,
+                        help="SFT loss weight (0=GRPO only). Only works if TRL supports it.")
     args = parser.parse_args()
 
     # ── Load dataset ──────────────────────────────────────────
@@ -329,31 +327,47 @@ def main():
     # ── Train with GRPO ───────────────────────────────────────
     from trl import GRPOTrainer, GRPOConfig
 
-    trainer = GRPOTrainer(
-        model=model,
-        processing_class=tokenizer,
-        args=GRPOConfig(
-            output_dir=args.output,
-            per_device_train_batch_size=args.batch_size,
-            gradient_accumulation_steps=args.grad_accum,
-            num_train_epochs=args.epochs,
-            learning_rate=args.learning_rate,
-            warmup_steps=50,
-            logging_steps=args.logging_steps,
-            save_strategy="steps",
-            save_steps=args.save_steps,
-            save_total_limit=args.save_total_limit,
-            fp16=not args.bf16,
-            bf16=args.bf16,
-            optim="adamw_8bit",
-            seed=3407,
-            report_to="none",
-            num_generations=args.num_generations,
-            sft_beta=args.sft_beta,
-        ),
-        reward_funcs=make_reward_fn(entity_map),
-        train_dataset=dataset,
+    grpo_kwargs = dict(
+        output_dir=args.output,
+        per_device_train_batch_size=args.batch_size,
+        gradient_accumulation_steps=args.grad_accum,
+        num_train_epochs=args.epochs,
+        learning_rate=args.learning_rate,
+        warmup_steps=50,
+        logging_steps=args.logging_steps,
+        save_strategy="steps",
+        save_steps=args.save_steps,
+        save_total_limit=args.save_total_limit,
+        fp16=not args.bf16,
+        bf16=args.bf16,
+        optim="adamw_8bit",
+        seed=3407,
+        report_to="none",
+        num_generations=args.num_generations,
     )
+    if args.sft_beta > 0:
+        grpo_kwargs["sft_beta"] = args.sft_beta
+
+    try:
+        trainer = GRPOTrainer(
+            model=model,
+            processing_class=tokenizer,
+            args=GRPOConfig(**grpo_kwargs),
+            reward_funcs=make_reward_fn(entity_map),
+            train_dataset=dataset,
+        )
+    except TypeError as e:
+        if "sft_beta" in str(e):
+            print("WARN: TRL doesn't support sft_beta, retrying without it...", flush=True)
+            del grpo_kwargs["sft_beta"]
+            trainer = GRPOTrainer(
+                model=model, processing_class=tokenizer,
+                args=GRPOConfig(**grpo_kwargs),
+                reward_funcs=make_reward_fn(entity_map),
+                train_dataset=dataset,
+            )
+        else:
+            raise
 
     # Save training args + dataset stats for reproducibility & resuming
     output_dir = Path(args.output)

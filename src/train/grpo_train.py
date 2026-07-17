@@ -363,6 +363,9 @@ def main():
         use_vllm=args.use_vllm,
         loss_type=args.loss_type,
         mask_truncated_completions=False,
+        dataloader_num_workers=2,
+        dataloader_pin_memory=True,
+        dataloader_prefetch_factor=4,
     )
     if args.sft_beta > 0:
         grpo_kwargs["sft_beta"] = args.sft_beta

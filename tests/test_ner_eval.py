@@ -4,13 +4,9 @@ import os
 import re
 
 from eval_protocol.models import EvaluateResult, EvaluationRow, MetricResult
-from eval_protocol.pytest import RemoteRolloutProcessor, evaluation_test
+from eval_protocol.pytest import SingleTurnRolloutProcessor, evaluation_test
 
-# Remote agent URL — set REMOTE_AGENT_URL env var before uploading
-# Default is localhost for testing, use ngrok URL for real RFT
-REMOTE_URL = os.getenv("REMOTE_AGENT_URL", "http://localhost:8080")
-print(f"Using remote agent URL: {REMOTE_URL}")
-ROLLOUT_PROCESSOR = RemoteRolloutProcessor(remote_base_url=REMOTE_URL)
+ROLLOUT_PROCESSOR = SingleTurnRolloutProcessor()
 
 logger = logging.getLogger(__name__)
 

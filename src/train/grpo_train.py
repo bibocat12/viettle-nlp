@@ -257,12 +257,14 @@ def main():
                         help="Max new tokens per generation (default=128).")
     parser.add_argument("--resume-from-checkpoint", type=str, default=None,
                         help="Path to a checkpoint directory to resume from.")
-    parser.add_argument("--save-steps", type=int, default=500,
-                        help="Save checkpoint every N steps.")
+    parser.add_argument("--save-steps", type=int, default=100,
+                        help="Save checkpoint every N steps (default=100, frequent for GRPO).")
     parser.add_argument("--save-total-limit", type=int, default=3,
                         help="Keep only the N most recent checkpoints.")
     parser.add_argument("--sft-beta", type=float, default=0.1,
                         help="Weight for SFT loss (0=GRPO only, 0.1=10% SFT). Keeps model from drifting.")
+    parser.add_argument("--bf16", action="store_true", default=False,
+                        help="Use bfloat16 (for RTX 6000 Ada/Blackwell). Default: fp16.")
     args = parser.parse_args()
 
     # ── Load dataset ──────────────────────────────────────────
@@ -341,8 +343,8 @@ def main():
             save_strategy="steps",
             save_steps=args.save_steps,
             save_total_limit=args.save_total_limit,
-            fp16=True,
-            bf16=False,
+            fp16=not args.bf16,
+            bf16=args.bf16,
             optim="adamw_8bit",
             seed=3407,
             report_to="none",
@@ -353,12 +355,21 @@ def main():
         train_dataset=dataset,
     )
 
-    # Save training args for reproducibility & resuming
+    # Save training args + dataset stats for reproducibility & resuming
     output_dir = Path(args.output)
     output_dir.mkdir(parents=True, exist_ok=True)
     with open(output_dir / "training_args.json", "w") as f:
         json.dump(vars(args), f, indent=2, ensure_ascii=False)
-    print(f"Saved training args to {output_dir / 'training_args.json'}", flush=True)
+    # Save entity stats for tracking
+    total_entities = sum(len(ex["entities"]) for ex in data)
+    with open(output_dir / "train_info.json", "w") as f:
+        json.dump({
+            "num_samples": len(data),
+            "total_entities": total_entities,
+            "dataset_path": args.dataset,
+            "max_samples": args.max_samples,
+        }, f, indent=2, ensure_ascii=False)
+    print(f"Saved training info to {output_dir}/", flush=True)
 
     print(f"\nGRPO Training {len(data)} samples, {args.epochs} epochs...")
     trainer.train(resume_from_checkpoint=args.resume_from_checkpoint)

@@ -276,6 +276,8 @@ def main():
                         help="GRPO loss variant (default: grpo).")
     parser.add_argument("--bf16", action="store_true", default=False,
                         help="Use bfloat16 (for RTX 6000 Ada/Blackwell/AMD MI300X). Default: fp16.")
+    parser.add_argument("--fp8", action="store_true", default=False,
+                        help="Use FP8 for 2x faster training (needs H100/MI300X + Unsloth 2026.7+).")
     args = parser.parse_args()
 
     # ── Load dataset ──────────────────────────────────────────
@@ -293,9 +295,9 @@ def main():
     model, tokenizer = FastLanguageModel.from_pretrained(
         model_name=model_name,
         max_seq_length=args.max_seq_length,
-        load_in_4bit=True,
+        load_in_4bit=not args.fp8,
         fast_inference=args.use_vllm,
-        dtype=torch.float16,
+        dtype=torch.float16 if not args.bf16 else torch.bfloat16,
     )
     tokenizer = get_chat_template(tokenizer, chat_template="qwen-3")
 

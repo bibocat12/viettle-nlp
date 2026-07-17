@@ -274,6 +274,8 @@ def main():
     parser.add_argument("--loss-type", default="grpo",
                         choices=["grpo", "bnpo", "dr_grpo", "dapo"],
                         help="GRPO loss variant (default: grpo).")
+    parser.add_argument("--bf16", action="store_true", default=False,
+                        help="Use bfloat16 (for RTX 6000 Ada/Blackwell/AMD MI300X). Default: fp16.")
     args = parser.parse_args()
 
     # ── Load dataset ──────────────────────────────────────────

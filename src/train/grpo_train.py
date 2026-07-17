@@ -206,20 +206,26 @@ def compute_reward(completion: str, ground_truth: list, reference_text: str = ""
 def make_reward_fn(entity_map: dict):
     """Return a reward function compatible with GRPOTrainer.
 
-    GRPOTrainer calls reward_func(completions, **kwargs) where completions
-    is a list of strings (one per sample in the batch), and **kwargs
-    contains the dataset columns for the current batch.
+    GRPOTrainer calls reward_func(completions, **kwargs) where each completion
+    may be a string (TRL <0.15) or a list-of-dicts (Unsloth/TRL >= 0.15):
+      [{"content": "model output text"}, ...].
 
-    The dataset has an 'idx' column we use to look up ground truth.
-    Without 'idx', falls back to sequential (for testing only).
+    **kwargs contains dataset columns ('idx', 'gt_entities', etc).
     """
     def reward_fn(completions, **kwargs):
         scores = []
         indices = kwargs.get("idx", None)
         for i, completion in enumerate(completions):
+            # Unsloth passes completions as list[list[dict]]: [[{content: ...}]]
+            if isinstance(completion, list) and len(completion) > 0 and isinstance(completion[0], dict):
+                text = completion[0].get("content", "")
+            elif isinstance(completion, dict):
+                text = completion.get("content", "")
+            else:
+                text = str(completion) if completion else ""
             idx = indices[i] if indices else i
             gt = entity_map.get(idx, [])
-            scores.append(compute_reward(completion, gt))
+            scores.append(compute_reward(text, gt))
         return scores
     return reward_fn
 
@@ -263,6 +269,11 @@ def main():
                         help="Keep only the N most recent checkpoints.")
     parser.add_argument("--sft-beta", type=float, default=0.0,
                         help="SFT loss weight (0=GRPO only). Only works if TRL supports it.")
+    parser.add_argument("--use-vllm", action="store_true", default=False,
+                        help="Use vLLM for 2x faster inference during GRPO generation.")
+    parser.add_argument("--loss-type", default="grpo",
+                        choices=["grpo", "bnpo", "dr_grpo", "dapo"],
+                        help="GRPO loss variant (default: grpo).")
     args = parser.parse_args()
 
     # ── Load dataset ──────────────────────────────────────────
@@ -281,7 +292,8 @@ def main():
         model_name=model_name,
         max_seq_length=args.max_seq_length,
         load_in_4bit=True,
-        dtype=torch.float16,  # GPU doesn't support bf16; use half
+        fast_inference=args.use_vllm,
+        dtype=torch.float16,
     )
     tokenizer = get_chat_template(tokenizer, chat_template="qwen-3")
 
@@ -344,6 +356,9 @@ def main():
         seed=3407,
         report_to="none",
         num_generations=args.num_generations,
+        use_vllm=args.use_vllm,
+        loss_type=args.loss_type,
+        mask_truncated_completions=False,
     )
     if args.sft_beta > 0:
         grpo_kwargs["sft_beta"] = args.sft_beta

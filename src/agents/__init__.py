@@ -119,7 +119,7 @@ class AgentContext:
     def to_output(self) -> List[Dict]:
         valid_types = {"THUỐC", "TRIỆU_CHỨNG", "CHẨN_ĐOÁN", "TÊN_XÉT_NGHIỆM", "KẾT_QUẢ_XÉT_NGHIỆM"}
         result = []
-        for m in self.mentions:
+        for m in sorted(self.mentions, key=lambda item: tuple(item.get("position", [0, 0]))):
             if m.get("type") not in valid_types:
                 continue
             pos = m.get("position", [0, 0])
@@ -127,19 +127,27 @@ class AgentContext:
                 continue
             if pos[1] <= pos[0]:
                 continue
+            assertion_values = m.get("assertions", {})
+            if isinstance(assertion_values, dict):
+                assertions = [
+                    label for label in ("isNegated", "isFamily", "isHistorical")
+                    if bool(assertion_values.get(label, False))
+                ]
+            elif isinstance(assertion_values, list):
+                assertions = [
+                    label for label in ("isNegated", "isFamily", "isHistorical")
+                    if label in assertion_values
+                ]
+            else:
+                assertions = []
             out = {
                 "text": m.get("text", ""),
-                "position": pos,
                 "type": m["type"],
-                "confidence": m.get("confidence", 0.5),
-                "voters": m.get("voters", {}),
-                "assertions": {
-                    "isNegated": bool(m.get("assertions", {}).get("isNegated", False)),
-                    "isFamily": bool(m.get("assertions", {}).get("isFamily", False)),
-                    "isHistorical": bool(m.get("assertions", {}).get("isHistorical", False)),
-                },
+                "assertions": assertions,
+                "position": pos,
             }
             if m["type"] in ("CHẨN_ĐOÁN", "THUỐC"):
-                out["candidates"] = m.get("candidates", [])
+                candidates = [str(code) for code in m.get("candidates", []) if str(code)]
+                out["candidates"] = candidates[:1]
             result.append(out)
         return result

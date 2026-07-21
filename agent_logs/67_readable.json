@@ -1,0 +1,160 @@
+{
+  "file_id": "67",
+  "timestamp": 1784566790.0998607,
+  "elapsed": 20.63,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "mention_count": 5,
+  "stats": {
+    "total_mentions": 5,
+    "final": 5,
+    "validation_errors": 0,
+    "elapsed": 20.63,
+    "rule": 2,
+    "qwen": 5
+  },
+  "log_summary": [
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "parallel_extract"
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "vote_merge"
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "resolve_conflicts"
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "fix_positions"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "verify_schema"
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "ts": 1784566790.0997927,
+      "tool": null
+    }
+  ],
+  "mentions": [
+    {
+      "text": "đau vùng hạ sườn phải",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        156,
+        177
+      ]
+    },
+    {
+      "text": "siêu âm",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        220,
+        227
+      ]
+    },
+    {
+      "text": "sỏi mật",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        237,
+        244
+      ],
+      "candidates": [
+        "K80.5"
+      ]
+    },
+    {
+      "text": "siêu âm",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        389,
+        396
+      ]
+    },
+    {
+      "text": "sỏi mật",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        406,
+        413
+      ],
+      "candidates": [
+        "K80.5"
+      ]
+    }
+  ]
+}

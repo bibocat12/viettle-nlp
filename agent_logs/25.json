@@ -1,0 +1,2389 @@
+{
+  "file_id": "25",
+  "timestamp": 1784566249.1427712,
+  "elapsed": 38.04,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "result": {
+    "note_id": "25",
+    "mentions": [
+      {
+        "text": "tách thành động mạch chủ",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          48,
+          72
+        ],
+        "candidates": [
+          "I71.0"
+        ]
+      },
+      {
+        "text": "liệt hai chân",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          89,
+          102
+        ]
+      },
+      {
+        "text": "Rò động - tĩnh mạch đùi phải",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [],
+        "position": [
+          335,
+          363
+        ],
+        "candidates": [
+          "I77.0"
+        ]
+      }
+    ],
+    "validation": {
+      "is_valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stats": {
+      "total_mentions": 3,
+      "final": 3,
+      "validation_errors": 0,
+      "elapsed": 38.04,
+      "rule": 0,
+      "qwen": 3
+    },
+    "logs": [
+      {
+        "agent": "orchestrator",
+        "action": "start",
+        "text_len": 440,
+        "ts": 1784566211.0984962
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_start",
+        "ts": 1784566211.0985065
+      },
+      {
+        "agent": "extraction",
+        "action": "start",
+        "data": {
+          "text_len": 440
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "preprocessed",
+        "data": {
+          "normalized_len": 440
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "parallel_extract",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử bệnh hiện tại\n3.  khám  tại bệnh viện\n    khám thực thể Kết quả: sờ thấy rung động tại vị trí lỗ rò\n    Các phát hiện chẩn đoán khác: Rò động - tĩnh mạch đùi phải do thủ thuật can thiệp , hiện tăng kích thước so với các lần đánh giá trước."
+          },
+          "output": {
+            "rule": [],
+            "qwen": [
+              {
+                "text": "tách thành động mạch chủ",
+                "position": [
+                  48,
+                  72
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "liệt hai chân",
+                "position": [
+                  89,
+                  102
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Rò động - tĩnh mạch đùi phải",
+                "position": [
+                  335,
+                  363
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ],
+            "errors": []
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "extracted",
+        "data": {
+          "sources": {
+            "rule": 0,
+            "qwen": 3
+          },
+          "total": 3
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "vote_merge",
+          "input": {
+            "all_mentions": [
+              {
+                "text": "tách thành động mạch chủ",
+                "position": [
+                  48,
+                  72
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "liệt hai chân",
+                "position": [
+                  89,
+                  102
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Rò động - tĩnh mạch đùi phải",
+                "position": [
+                  335,
+                  363
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ]
+          },
+          "output": [
+            {
+              "text": "tách thành động mạch chủ",
+              "position": [
+                48,
+                72
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.0"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "liệt hai chân",
+              "position": [
+                89,
+                102
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Rò động - tĩnh mạch đùi phải",
+              "position": [
+                335,
+                363
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I77.0"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "voted",
+        "data": {
+          "merged": 3
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "resolve_conflicts",
+          "input": {
+            "merged": [
+              {
+                "text": "tách thành động mạch chủ",
+                "position": [
+                  48,
+                  72
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I71.0"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "liệt hai chân",
+                "position": [
+                  89,
+                  102
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "Rò động - tĩnh mạch đùi phải",
+                "position": [
+                  335,
+                  363
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I77.0"
+                ],
+                "link_confidence": 0.85
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử bệnh hiện tại\n3.  khám  tại bệnh viện\n    khám thực thể Kết quả: sờ thấy rung động tại vị trí lỗ rò\n    Các phát hiện chẩn đoán khác: Rò động - tĩnh mạch đùi phải do thủ thuật can thiệp , hiện tăng kích thước so với các lần đánh giá trước."
+          },
+          "output": [
+            {
+              "text": "tách thành động mạch chủ",
+              "position": [
+                48,
+                72
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.0"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "liệt hai chân",
+              "position": [
+                89,
+                102
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Rò động - tĩnh mạch đùi phải",
+              "position": [
+                335,
+                363
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I77.0"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "fix_positions",
+          "input": {
+            "mentions": [
+              {
+                "text": "tách thành động mạch chủ",
+                "position": [
+                  48,
+                  72
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I71.0"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "liệt hai chân",
+                "position": [
+                  89,
+                  102
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "Rò động - tĩnh mạch đùi phải",
+                "position": [
+                  335,
+                  363
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I77.0"
+                ],
+                "link_confidence": 0.85
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử bệnh hiện tại\n3.  khám  tại bệnh viện\n    khám thực thể Kết quả: sờ thấy rung động tại vị trí lỗ rò\n    Các phát hiện chẩn đoán khác: Rò động - tĩnh mạch đùi phải do thủ thuật can thiệp , hiện tăng kích thước so với các lần đánh giá trước."
+          },
+          "output": [
+            {
+              "text": "tách thành động mạch chủ",
+              "position": [
+                48,
+                72
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.0"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "liệt hai chân",
+              "position": [
+                89,
+                102
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Rò động - tĩnh mạch đùi phải",
+              "position": [
+                335,
+                363
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I77.0"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "positions_fixed",
+        "data": {
+          "fixed": 0
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "llm_verified",
+        "data": {
+          "corrected": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_complete",
+        "mentions": 3,
+        "ts": 1784566216.3950446
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_start",
+        "ts": 1784566216.3950577
+      },
+      {
+        "agent": "assertion",
+        "action": "start",
+        "data": {
+          "mentions": 3
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử bệnh hiện tại\n3.  khám  tại bệnh viện\n    khám thực thể Kết quả: sờ thấy rung động tại vị trí lỗ rò\n    Các phát hiện chẩn đoán khác: Rò động - tĩnh mạch đùi phải do thủ thuật can thiệp , hiện tăng kích thước so với các lần đánh giá trước.",
+            "start": 48,
+            "end": 72,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử bệnh hiện tại\n3.  khám  tại bệnh viện\n    khám thực thể Kết quả: sờ thấy rung động tại vị trí lỗ rò\n    Các phát hiện chẩn đoán khác: Rò động - tĩnh mạch đùi phải do thủ thuật can thiệp , hiện tăng kích thước so với các lần đánh giá trước.",
+            "start": 89,
+            "end": 102,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử bệnh hiện tại\n3.  khám  tại bệnh viện\n    khám thực thể Kết quả: sờ thấy rung động tại vị trí lỗ rò\n    Các phát hiện chẩn đoán khác: Rò động - tĩnh mạch đùi phải do thủ thuật can thiệp , hiện tăng kích thước so với các lần đánh giá trước.",
+            "start": 335,
+            "end": 363,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "complete",
+        "data": {
+          "processed": 3,
+          "llm_checked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_complete",
+        "ts": 1784566216.395436
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_start",
+        "ts": 1784566216.3954458
+      },
+      {
+        "agent": "linking",
+        "action": "start",
+        "data": {
+          "mentions": 3
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "tách thành động mạch chủ",
+              "position": [
+                48,
+                72
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.0"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử bệnh hiện tại\n3.  khá"
+          },
+          "output": {
+            "candidates": [
+              "I71.0"
+            ],
+            "confidence": 0.85,
+            "rationale": "Mention 'tách thành động mạch chủ' phù hợp với mã I71.0 (Tách thành động mạch chủ [bất kỳ đoạn nào]) trong danh sách candidates."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "Rò động - tĩnh mạch đùi phải",
+              "position": [
+                335,
+                363
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I77.0"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "ải.\n2.  Tiền sử bệnh hiện tại\n3.  khám  tại bệnh viện\n    khám thực thể Kết quả: sờ thấy rung động tại vị trí lỗ rò\n    Các phát hiện chẩn đoán khác: Rò động - tĩnh mạch đùi phải do thủ thuật can thiệp , hiện tăng kích thước so với các lần đánh giá trước."
+          },
+          "output": {
+            "candidates": [
+              "I77.0"
+            ],
+            "confidence": 0.85,
+            "rationale": "Mention 'Rò động - tĩnh mạch đùi phải' phù hợp với mã I77.0 (Rò động tĩnh mạch, mắc phải), vì đây là mã chẩn đoán chính xác cho tình trạng rò động - tĩnh mạch tại vị trí đùi."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "complete",
+        "data": {
+          "linked": 2
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_complete",
+        "linked": 2,
+        "ts": 1784566249.093591
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_start",
+        "ts": 1784566249.0936193
+      },
+      {
+        "agent": "verifier",
+        "action": "start",
+        "data": {
+          "mentions": 3
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "tool_call",
+        "data": {
+          "tool": "verify_schema",
+          "input": {
+            "mentions": [
+              {
+                "text": "tách thành động mạch chủ",
+                "position": [
+                  48,
+                  72
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I71.0"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "liệt hai chân",
+                "position": [
+                  89,
+                  102
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "Rò động - tĩnh mạch đùi phải",
+                "position": [
+                  335,
+                  363
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I77.0"
+                ],
+                "link_confidence": 0.85
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử bệnh hiện tại\n3.  khám  tại bệnh viện\n    khám thực thể Kết quả: sờ thấy rung động tại vị trí lỗ rò\n    Các phát hiện chẩn đoán khác: Rò động - tĩnh mạch đùi phải do thủ thuật can thiệp , hiện tăng kích thước so với các lần đánh giá trước."
+          },
+          "output": {
+            "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              }
+            ],
+            "final_predictions": [
+              {
+                "text": "tách thành động mạch chủ",
+                "position": [
+                  48,
+                  72
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I71.0"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "liệt hai chân",
+                "position": [
+                  89,
+                  102
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "Rò động - tĩnh mạch đùi phải",
+                "position": [
+                  335,
+                  363
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I77.0"
+                ],
+                "link_confidence": 0.85
+              }
+            ],
+            "dropped": 0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "validated",
+        "data": {
+          "kept": 3,
+          "dropped": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_complete",
+        "kept": 3,
+        "ts": 1784566249.1426587
+      },
+      {
+        "agent": "orchestrator",
+        "action": "complete",
+        "total_mentions": 3,
+        "elapsed": 38.04,
+        "ts": 1784566249.1426866
+      }
+    ]
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 440,
+      "ts": 1784566211.0984962
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1784566211.0985065
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 440
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 440
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử bệnh hiện tại\n3.  khám  tại bệnh viện\n    khám thực thể Kết quả: sờ thấy rung động tại vị trí lỗ rò\n    Các phát hiện chẩn đoán khác: Rò động - tĩnh mạch đùi phải do thủ thuật can thiệp , hiện tăng kích thước so với các lần đánh giá trước."
+        },
+        "output": {
+          "rule": [],
+          "qwen": [
+            {
+              "text": "tách thành động mạch chủ",
+              "position": [
+                48,
+                72
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "liệt hai chân",
+              "position": [
+                89,
+                102
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Rò động - tĩnh mạch đùi phải",
+              "position": [
+                335,
+                363
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 3
+        },
+        "total": 3
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "tách thành động mạch chủ",
+              "position": [
+                48,
+                72
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "liệt hai chân",
+              "position": [
+                89,
+                102
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Rò động - tĩnh mạch đùi phải",
+              "position": [
+                335,
+                363
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "tách thành động mạch chủ",
+            "position": [
+              48,
+              72
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I71.0"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "liệt hai chân",
+            "position": [
+              89,
+              102
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "Rò động - tĩnh mạch đùi phải",
+            "position": [
+              335,
+              363
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I77.0"
+            ],
+            "link_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 3
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "tách thành động mạch chủ",
+              "position": [
+                48,
+                72
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.0"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "liệt hai chân",
+              "position": [
+                89,
+                102
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Rò động - tĩnh mạch đùi phải",
+              "position": [
+                335,
+                363
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I77.0"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử bệnh hiện tại\n3.  khám  tại bệnh viện\n    khám thực thể Kết quả: sờ thấy rung động tại vị trí lỗ rò\n    Các phát hiện chẩn đoán khác: Rò động - tĩnh mạch đùi phải do thủ thuật can thiệp , hiện tăng kích thước so với các lần đánh giá trước."
+        },
+        "output": [
+          {
+            "text": "tách thành động mạch chủ",
+            "position": [
+              48,
+              72
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I71.0"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "liệt hai chân",
+            "position": [
+              89,
+              102
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "Rò động - tĩnh mạch đùi phải",
+            "position": [
+              335,
+              363
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I77.0"
+            ],
+            "link_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "tách thành động mạch chủ",
+              "position": [
+                48,
+                72
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.0"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "liệt hai chân",
+              "position": [
+                89,
+                102
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Rò động - tĩnh mạch đùi phải",
+              "position": [
+                335,
+                363
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I77.0"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử bệnh hiện tại\n3.  khám  tại bệnh viện\n    khám thực thể Kết quả: sờ thấy rung động tại vị trí lỗ rò\n    Các phát hiện chẩn đoán khác: Rò động - tĩnh mạch đùi phải do thủ thuật can thiệp , hiện tăng kích thước so với các lần đánh giá trước."
+        },
+        "output": [
+          {
+            "text": "tách thành động mạch chủ",
+            "position": [
+              48,
+              72
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I71.0"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "liệt hai chân",
+            "position": [
+              89,
+              102
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "Rò động - tĩnh mạch đùi phải",
+            "position": [
+              335,
+              363
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I77.0"
+            ],
+            "link_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 3,
+      "ts": 1784566216.3950446
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1784566216.3950577
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 3
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử bệnh hiện tại\n3.  khám  tại bệnh viện\n    khám thực thể Kết quả: sờ thấy rung động tại vị trí lỗ rò\n    Các phát hiện chẩn đoán khác: Rò động - tĩnh mạch đùi phải do thủ thuật can thiệp , hiện tăng kích thước so với các lần đánh giá trước.",
+          "start": 48,
+          "end": 72,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử bệnh hiện tại\n3.  khám  tại bệnh viện\n    khám thực thể Kết quả: sờ thấy rung động tại vị trí lỗ rò\n    Các phát hiện chẩn đoán khác: Rò động - tĩnh mạch đùi phải do thủ thuật can thiệp , hiện tăng kích thước so với các lần đánh giá trước.",
+          "start": 89,
+          "end": 102,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử bệnh hiện tại\n3.  khám  tại bệnh viện\n    khám thực thể Kết quả: sờ thấy rung động tại vị trí lỗ rò\n    Các phát hiện chẩn đoán khác: Rò động - tĩnh mạch đùi phải do thủ thuật can thiệp , hiện tăng kích thước so với các lần đánh giá trước.",
+          "start": 335,
+          "end": 363,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 3,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1784566216.395436
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1784566216.3954458
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 3
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "tách thành động mạch chủ",
+            "position": [
+              48,
+              72
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I71.0"
+            ],
+            "link_confidence": 0.85
+          },
+          "context": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử bệnh hiện tại\n3.  khá"
+        },
+        "output": {
+          "candidates": [
+            "I71.0"
+          ],
+          "confidence": 0.85,
+          "rationale": "Mention 'tách thành động mạch chủ' phù hợp với mã I71.0 (Tách thành động mạch chủ [bất kỳ đoạn nào]) trong danh sách candidates."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "Rò động - tĩnh mạch đùi phải",
+            "position": [
+              335,
+              363
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I77.0"
+            ],
+            "link_confidence": 0.85
+          },
+          "context": "ải.\n2.  Tiền sử bệnh hiện tại\n3.  khám  tại bệnh viện\n    khám thực thể Kết quả: sờ thấy rung động tại vị trí lỗ rò\n    Các phát hiện chẩn đoán khác: Rò động - tĩnh mạch đùi phải do thủ thuật can thiệp , hiện tăng kích thước so với các lần đánh giá trước."
+        },
+        "output": {
+          "candidates": [
+            "I77.0"
+          ],
+          "confidence": 0.85,
+          "rationale": "Mention 'Rò động - tĩnh mạch đùi phải' phù hợp với mã I77.0 (Rò động tĩnh mạch, mắc phải), vì đây là mã chẩn đoán chính xác cho tình trạng rò động - tĩnh mạch tại vị trí đùi."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 2
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 2,
+      "ts": 1784566249.093591
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1784566249.0936193
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 3
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "tách thành động mạch chủ",
+              "position": [
+                48,
+                72
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.0"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "liệt hai chân",
+              "position": [
+                89,
+                102
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Rò động - tĩnh mạch đùi phải",
+              "position": [
+                335,
+                363
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I77.0"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: tách thành động mạch chủ  biến chứng bởi liệt hai chân\n    Đã thực hiện nhiều thủ thuật can thiệp nội mạch qua đường vào động mạch đùi phải.\n2.  Tiền sử bệnh hiện tại\n3.  khám  tại bệnh viện\n    khám thực thể Kết quả: sờ thấy rung động tại vị trí lỗ rò\n    Các phát hiện chẩn đoán khác: Rò động - tĩnh mạch đùi phải do thủ thuật can thiệp , hiện tăng kích thước so với các lần đánh giá trước."
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "tách thành động mạch chủ",
+              "position": [
+                48,
+                72
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.0"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "liệt hai chân",
+              "position": [
+                89,
+                102
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Rò động - tĩnh mạch đùi phải",
+              "position": [
+                335,
+                363
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I77.0"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 3,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 3,
+      "ts": 1784566249.1426587
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 3,
+      "elapsed": 38.04,
+      "ts": 1784566249.1426866
+    }
+  ]
+}

@@ -93,7 +93,9 @@ def run_pipeline(
     }
 
     # Save full log to agent_logs/
-    model_name = "runpod" if llm and getattr(llm, 'is_available', lambda: False)() else "rules"
+    model_name = getattr(llm, "model_name", None) if llm else None
+    if not model_name:
+        model_name = "runpod" if llm and getattr(llm, 'is_available', lambda: False)() else "rules"
     log_data = {
         "file_id": note_id,
         "timestamp": time.time(),

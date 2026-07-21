@@ -1,0 +1,3625 @@
+{
+  "file_id": "81",
+  "timestamp": 1784566979.3569248,
+  "elapsed": 8.91,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "result": {
+    "note_id": "81",
+    "mentions": [
+      {
+        "text": "vết thương thấu bụng giữa bên phải",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          37,
+          71
+        ]
+      },
+      {
+        "text": "vết thương thấu bụng giữa bên phải",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          95,
+          129
+        ]
+      },
+      {
+        "text": "chụp cắt lớp vi tính",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          257,
+          277
+        ]
+      },
+      {
+        "text": "ct",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          279,
+          281
+        ]
+      },
+      {
+        "text": "chụp cắt lớp vi tính",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          379,
+          399
+        ]
+      },
+      {
+        "text": "ct",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          401,
+          403
+        ]
+      },
+      {
+        "text": "nội soi ổ bụng chẩn đoán",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          438,
+          462
+        ]
+      }
+    ],
+    "validation": {
+      "is_valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stats": {
+      "total_mentions": 7,
+      "final": 7,
+      "validation_errors": 0,
+      "elapsed": 8.91,
+      "rule": 4,
+      "qwen": 5
+    },
+    "logs": [
+      {
+        "agent": "orchestrator",
+        "action": "start",
+        "text_len": 462,
+        "ts": 1784566970.4497375
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_start",
+        "ts": 1784566970.449748
+      },
+      {
+        "agent": "extraction",
+        "action": "start",
+        "data": {
+          "text_len": 462
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "preprocessed",
+        "data": {
+          "normalized_len": 462
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "parallel_extract",
+          "input": {
+            "text": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến\n3. Đánh giá tại bệnh viện\nKết quả chẩn đoán hình ảnh:\n- chụp cắt lớp vi tính (ct) sọ  trước mổ cho thấy độ dày niêm mạc xoang hàm dày lên\n- không có tổn thương rõ ràng khác trên chụp cắt lớp vi tính (ct) bụng\nCác thủ thuật đã thực hiện: nội soi ổ bụng chẩn đoán"
+          },
+          "output": {
+            "rule": [
+              {
+                "text": "chụp cắt lớp vi tính",
+                "position": [
+                  257,
+                  277
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "ct",
+                "position": [
+                  279,
+                  281
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "chụp cắt lớp vi tính",
+                "position": [
+                  379,
+                  399
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "ct",
+                "position": [
+                  401,
+                  403
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              }
+            ],
+            "qwen": [
+              {
+                "text": "vết thương thấu bụng giữa bên phải",
+                "position": [
+                  37,
+                  71
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "vết thương thấu bụng giữa bên phải",
+                "position": [
+                  95,
+                  129
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp cắt lớp vi tính (ct) sọ",
+                "position": [
+                  257,
+                  285
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp cắt lớp vi tính (ct) bụng",
+                "position": [
+                  379,
+                  409
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "nội soi ổ bụng chẩn đoán",
+                "position": [
+                  438,
+                  462
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ],
+            "errors": []
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "extracted",
+        "data": {
+          "sources": {
+            "rule": 4,
+            "qwen": 5
+          },
+          "total": 9
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "vote_merge",
+          "input": {
+            "all_mentions": [
+              {
+                "text": "vết thương thấu bụng giữa bên phải",
+                "position": [
+                  37,
+                  71
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "vết thương thấu bụng giữa bên phải",
+                "position": [
+                  95,
+                  129
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp cắt lớp vi tính (ct) sọ",
+                "position": [
+                  257,
+                  285
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp cắt lớp vi tính (ct) bụng",
+                "position": [
+                  379,
+                  409
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "nội soi ổ bụng chẩn đoán",
+                "position": [
+                  438,
+                  462
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp cắt lớp vi tính",
+                "position": [
+                  257,
+                  277
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "ct",
+                "position": [
+                  279,
+                  281
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "chụp cắt lớp vi tính",
+                "position": [
+                  379,
+                  399
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "ct",
+                "position": [
+                  401,
+                  403
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              }
+            ]
+          },
+          "output": [
+            {
+              "text": "vết thương thấu bụng giữa bên phải",
+              "position": [
+                37,
+                71
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "vết thương thấu bụng giữa bên phải",
+              "position": [
+                95,
+                129
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                257,
+                277
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ct",
+              "position": [
+                279,
+                281
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                379,
+                399
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ct",
+              "position": [
+                401,
+                403
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "nội soi ổ bụng chẩn đoán",
+              "position": [
+                438,
+                462
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "voted",
+        "data": {
+          "merged": 7
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "resolve_conflicts",
+          "input": {
+            "merged": [
+              {
+                "text": "vết thương thấu bụng giữa bên phải",
+                "position": [
+                  37,
+                  71
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "vết thương thấu bụng giữa bên phải",
+                "position": [
+                  95,
+                  129
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "chụp cắt lớp vi tính",
+                "position": [
+                  257,
+                  277
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "ct",
+                "position": [
+                  279,
+                  281
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp cắt lớp vi tính",
+                "position": [
+                  379,
+                  399
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "ct",
+                "position": [
+                  401,
+                  403
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "nội soi ổ bụng chẩn đoán",
+                "position": [
+                  438,
+                  462
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến\n3. Đánh giá tại bệnh viện\nKết quả chẩn đoán hình ảnh:\n- chụp cắt lớp vi tính (ct) sọ  trước mổ cho thấy độ dày niêm mạc xoang hàm dày lên\n- không có tổn thương rõ ràng khác trên chụp cắt lớp vi tính (ct) bụng\nCác thủ thuật đã thực hiện: nội soi ổ bụng chẩn đoán"
+          },
+          "output": [
+            {
+              "text": "vết thương thấu bụng giữa bên phải",
+              "position": [
+                37,
+                71
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "vết thương thấu bụng giữa bên phải",
+              "position": [
+                95,
+                129
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                257,
+                277
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ct",
+              "position": [
+                279,
+                281
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                379,
+                399
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ct",
+              "position": [
+                401,
+                403
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "nội soi ổ bụng chẩn đoán",
+              "position": [
+                438,
+                462
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "fix_positions",
+          "input": {
+            "mentions": [
+              {
+                "text": "vết thương thấu bụng giữa bên phải",
+                "position": [
+                  37,
+                  71
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "vết thương thấu bụng giữa bên phải",
+                "position": [
+                  95,
+                  129
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "chụp cắt lớp vi tính",
+                "position": [
+                  257,
+                  277
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "ct",
+                "position": [
+                  279,
+                  281
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp cắt lớp vi tính",
+                "position": [
+                  379,
+                  399
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "ct",
+                "position": [
+                  401,
+                  403
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "nội soi ổ bụng chẩn đoán",
+                "position": [
+                  438,
+                  462
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến\n3. Đánh giá tại bệnh viện\nKết quả chẩn đoán hình ảnh:\n- chụp cắt lớp vi tính (ct) sọ  trước mổ cho thấy độ dày niêm mạc xoang hàm dày lên\n- không có tổn thương rõ ràng khác trên chụp cắt lớp vi tính (ct) bụng\nCác thủ thuật đã thực hiện: nội soi ổ bụng chẩn đoán"
+          },
+          "output": [
+            {
+              "text": "vết thương thấu bụng giữa bên phải",
+              "position": [
+                37,
+                71
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "vết thương thấu bụng giữa bên phải",
+              "position": [
+                95,
+                129
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                257,
+                277
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ct",
+              "position": [
+                279,
+                281
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                379,
+                399
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ct",
+              "position": [
+                401,
+                403
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "nội soi ổ bụng chẩn đoán",
+              "position": [
+                438,
+                462
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "positions_fixed",
+        "data": {
+          "fixed": 0
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "llm_verified",
+        "data": {
+          "corrected": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_complete",
+        "mentions": 7,
+        "ts": 1784566979.2566302
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_start",
+        "ts": 1784566979.2566438
+      },
+      {
+        "agent": "assertion",
+        "action": "start",
+        "data": {
+          "mentions": 7
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến\n3. Đánh giá tại bệnh viện\nKết quả chẩn đoán hình ảnh:\n- chụp cắt lớp vi tính (ct) sọ  trước mổ cho thấy độ dày niêm mạc xoang hàm dày lên\n- không có tổn thương rõ ràng khác trên chụp cắt lớp vi tính (ct) bụng\nCác thủ thuật đã thực hiện: nội soi ổ bụng chẩn đoán",
+            "start": 37,
+            "end": 71,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến\n3. Đánh giá tại bệnh viện\nKết quả chẩn đoán hình ảnh:\n- chụp cắt lớp vi tính (ct) sọ  trước mổ cho thấy độ dày niêm mạc xoang hàm dày lên\n- không có tổn thương rõ ràng khác trên chụp cắt lớp vi tính (ct) bụng\nCác thủ thuật đã thực hiện: nội soi ổ bụng chẩn đoán",
+            "start": 95,
+            "end": 129,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "complete",
+        "data": {
+          "processed": 7,
+          "llm_checked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_complete",
+        "ts": 1784566979.2568243
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_start",
+        "ts": 1784566979.2568324
+      },
+      {
+        "agent": "linking",
+        "action": "start",
+        "data": {
+          "mentions": 7
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "complete",
+        "data": {
+          "linked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_complete",
+        "linked": 0,
+        "ts": 1784566979.2568426
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_start",
+        "ts": 1784566979.2568493
+      },
+      {
+        "agent": "verifier",
+        "action": "start",
+        "data": {
+          "mentions": 7
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "tool_call",
+        "data": {
+          "tool": "verify_schema",
+          "input": {
+            "mentions": [
+              {
+                "text": "vết thương thấu bụng giữa bên phải",
+                "position": [
+                  37,
+                  71
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "vết thương thấu bụng giữa bên phải",
+                "position": [
+                  95,
+                  129
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "chụp cắt lớp vi tính",
+                "position": [
+                  257,
+                  277
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "ct",
+                "position": [
+                  279,
+                  281
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp cắt lớp vi tính",
+                "position": [
+                  379,
+                  399
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "ct",
+                "position": [
+                  401,
+                  403
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "nội soi ổ bụng chẩn đoán",
+                "position": [
+                  438,
+                  462
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến\n3. Đánh giá tại bệnh viện\nKết quả chẩn đoán hình ảnh:\n- chụp cắt lớp vi tính (ct) sọ  trước mổ cho thấy độ dày niêm mạc xoang hàm dày lên\n- không có tổn thương rõ ràng khác trên chụp cắt lớp vi tính (ct) bụng\nCác thủ thuật đã thực hiện: nội soi ổ bụng chẩn đoán"
+          },
+          "output": {
+            "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              }
+            ],
+            "final_predictions": [
+              {
+                "text": "vết thương thấu bụng giữa bên phải",
+                "position": [
+                  37,
+                  71
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "vết thương thấu bụng giữa bên phải",
+                "position": [
+                  95,
+                  129
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "chụp cắt lớp vi tính",
+                "position": [
+                  257,
+                  277
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "ct",
+                "position": [
+                  279,
+                  281
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp cắt lớp vi tính",
+                "position": [
+                  379,
+                  399
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "ct",
+                "position": [
+                  401,
+                  403
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "nội soi ổ bụng chẩn đoán",
+                "position": [
+                  438,
+                  462
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "dropped": 0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "validated",
+        "data": {
+          "kept": 7,
+          "dropped": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_complete",
+        "kept": 7,
+        "ts": 1784566979.356805
+      },
+      {
+        "agent": "orchestrator",
+        "action": "complete",
+        "total_mentions": 7,
+        "elapsed": 8.91,
+        "ts": 1784566979.3568246
+      }
+    ]
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 462,
+      "ts": 1784566970.4497375
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1784566970.449748
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 462
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 462
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến\n3. Đánh giá tại bệnh viện\nKết quả chẩn đoán hình ảnh:\n- chụp cắt lớp vi tính (ct) sọ  trước mổ cho thấy độ dày niêm mạc xoang hàm dày lên\n- không có tổn thương rõ ràng khác trên chụp cắt lớp vi tính (ct) bụng\nCác thủ thuật đã thực hiện: nội soi ổ bụng chẩn đoán"
+        },
+        "output": {
+          "rule": [
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                257,
+                277
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "ct",
+              "position": [
+                279,
+                281
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                379,
+                399
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "ct",
+              "position": [
+                401,
+                403
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            }
+          ],
+          "qwen": [
+            {
+              "text": "vết thương thấu bụng giữa bên phải",
+              "position": [
+                37,
+                71
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "vết thương thấu bụng giữa bên phải",
+              "position": [
+                95,
+                129
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) sọ",
+              "position": [
+                257,
+                285
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) bụng",
+              "position": [
+                379,
+                409
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "nội soi ổ bụng chẩn đoán",
+              "position": [
+                438,
+                462
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 4,
+          "qwen": 5
+        },
+        "total": 9
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "vết thương thấu bụng giữa bên phải",
+              "position": [
+                37,
+                71
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "vết thương thấu bụng giữa bên phải",
+              "position": [
+                95,
+                129
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) sọ",
+              "position": [
+                257,
+                285
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) bụng",
+              "position": [
+                379,
+                409
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "nội soi ổ bụng chẩn đoán",
+              "position": [
+                438,
+                462
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                257,
+                277
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "ct",
+              "position": [
+                279,
+                281
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                379,
+                399
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "ct",
+              "position": [
+                401,
+                403
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "vết thương thấu bụng giữa bên phải",
+            "position": [
+              37,
+              71
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "vết thương thấu bụng giữa bên phải",
+            "position": [
+              95,
+              129
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "chụp cắt lớp vi tính",
+            "position": [
+              257,
+              277
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "ct",
+            "position": [
+              279,
+              281
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chụp cắt lớp vi tính",
+            "position": [
+              379,
+              399
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "ct",
+            "position": [
+              401,
+              403
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "nội soi ổ bụng chẩn đoán",
+            "position": [
+              438,
+              462
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 7
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "vết thương thấu bụng giữa bên phải",
+              "position": [
+                37,
+                71
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "vết thương thấu bụng giữa bên phải",
+              "position": [
+                95,
+                129
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                257,
+                277
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ct",
+              "position": [
+                279,
+                281
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                379,
+                399
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ct",
+              "position": [
+                401,
+                403
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "nội soi ổ bụng chẩn đoán",
+              "position": [
+                438,
+                462
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến\n3. Đánh giá tại bệnh viện\nKết quả chẩn đoán hình ảnh:\n- chụp cắt lớp vi tính (ct) sọ  trước mổ cho thấy độ dày niêm mạc xoang hàm dày lên\n- không có tổn thương rõ ràng khác trên chụp cắt lớp vi tính (ct) bụng\nCác thủ thuật đã thực hiện: nội soi ổ bụng chẩn đoán"
+        },
+        "output": [
+          {
+            "text": "vết thương thấu bụng giữa bên phải",
+            "position": [
+              37,
+              71
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "vết thương thấu bụng giữa bên phải",
+            "position": [
+              95,
+              129
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "chụp cắt lớp vi tính",
+            "position": [
+              257,
+              277
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "ct",
+            "position": [
+              279,
+              281
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chụp cắt lớp vi tính",
+            "position": [
+              379,
+              399
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "ct",
+            "position": [
+              401,
+              403
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "nội soi ổ bụng chẩn đoán",
+            "position": [
+              438,
+              462
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "vết thương thấu bụng giữa bên phải",
+              "position": [
+                37,
+                71
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "vết thương thấu bụng giữa bên phải",
+              "position": [
+                95,
+                129
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                257,
+                277
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ct",
+              "position": [
+                279,
+                281
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                379,
+                399
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ct",
+              "position": [
+                401,
+                403
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "nội soi ổ bụng chẩn đoán",
+              "position": [
+                438,
+                462
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến\n3. Đánh giá tại bệnh viện\nKết quả chẩn đoán hình ảnh:\n- chụp cắt lớp vi tính (ct) sọ  trước mổ cho thấy độ dày niêm mạc xoang hàm dày lên\n- không có tổn thương rõ ràng khác trên chụp cắt lớp vi tính (ct) bụng\nCác thủ thuật đã thực hiện: nội soi ổ bụng chẩn đoán"
+        },
+        "output": [
+          {
+            "text": "vết thương thấu bụng giữa bên phải",
+            "position": [
+              37,
+              71
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "vết thương thấu bụng giữa bên phải",
+            "position": [
+              95,
+              129
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "chụp cắt lớp vi tính",
+            "position": [
+              257,
+              277
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "ct",
+            "position": [
+              279,
+              281
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chụp cắt lớp vi tính",
+            "position": [
+              379,
+              399
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "ct",
+            "position": [
+              401,
+              403
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "nội soi ổ bụng chẩn đoán",
+            "position": [
+              438,
+              462
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 7,
+      "ts": 1784566979.2566302
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1784566979.2566438
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 7
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến\n3. Đánh giá tại bệnh viện\nKết quả chẩn đoán hình ảnh:\n- chụp cắt lớp vi tính (ct) sọ  trước mổ cho thấy độ dày niêm mạc xoang hàm dày lên\n- không có tổn thương rõ ràng khác trên chụp cắt lớp vi tính (ct) bụng\nCác thủ thuật đã thực hiện: nội soi ổ bụng chẩn đoán",
+          "start": 37,
+          "end": 71,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến\n3. Đánh giá tại bệnh viện\nKết quả chẩn đoán hình ảnh:\n- chụp cắt lớp vi tính (ct) sọ  trước mổ cho thấy độ dày niêm mạc xoang hàm dày lên\n- không có tổn thương rõ ràng khác trên chụp cắt lớp vi tính (ct) bụng\nCác thủ thuật đã thực hiện: nội soi ổ bụng chẩn đoán",
+          "start": 95,
+          "end": 129,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 7,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1784566979.2568243
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1784566979.2568324
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 7
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1784566979.2568426
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1784566979.2568493
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 7
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "vết thương thấu bụng giữa bên phải",
+              "position": [
+                37,
+                71
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "vết thương thấu bụng giữa bên phải",
+              "position": [
+                95,
+                129
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                257,
+                277
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ct",
+              "position": [
+                279,
+                281
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                379,
+                399
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ct",
+              "position": [
+                401,
+                403
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "nội soi ổ bụng chẩn đoán",
+              "position": [
+                438,
+                462
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: vết thương thấu bụng giữa bên phải\nTriệu chứng khi đến:\n- vết thương thấu bụng giữa bên phải\nTình trạng ngay trước khi nhập viện: ổn định về mặt huyết động khi đến\n3. Đánh giá tại bệnh viện\nKết quả chẩn đoán hình ảnh:\n- chụp cắt lớp vi tính (ct) sọ  trước mổ cho thấy độ dày niêm mạc xoang hàm dày lên\n- không có tổn thương rõ ràng khác trên chụp cắt lớp vi tính (ct) bụng\nCác thủ thuật đã thực hiện: nội soi ổ bụng chẩn đoán"
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "vết thương thấu bụng giữa bên phải",
+              "position": [
+                37,
+                71
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "vết thương thấu bụng giữa bên phải",
+              "position": [
+                95,
+                129
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                257,
+                277
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ct",
+              "position": [
+                279,
+                281
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                379,
+                399
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "ct",
+              "position": [
+                401,
+                403
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "nội soi ổ bụng chẩn đoán",
+              "position": [
+                438,
+                462
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 7,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 7,
+      "ts": 1784566979.356805
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 7,
+      "elapsed": 8.91,
+      "ts": 1784566979.3568246
+    }
+  ]
+}

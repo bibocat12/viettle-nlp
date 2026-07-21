@@ -1,0 +1,2752 @@
+{
+  "file_id": "80",
+  "timestamp": 1784566970.3383315,
+  "elapsed": 11.83,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "result": {
+    "note_id": "80",
+    "mentions": [
+      {
+        "text": "gãy xương sườn trái",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          146,
+          165
+        ]
+      },
+      {
+        "text": "gãy xương sườn trái",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          316,
+          335
+        ]
+      },
+      {
+        "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          359,
+          396
+        ]
+      },
+      {
+        "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          425,
+          460
+        ]
+      }
+    ],
+    "validation": {
+      "is_valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stats": {
+      "total_mentions": 4,
+      "final": 4,
+      "validation_errors": 0,
+      "elapsed": 11.83,
+      "rule": 4,
+      "qwen": 4
+    },
+    "logs": [
+      {
+        "agent": "orchestrator",
+        "action": "start",
+        "text_len": 581,
+        "ts": 1784566958.5068364
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_start",
+        "ts": 1784566958.5068502
+      },
+      {
+        "agent": "extraction",
+        "action": "start",
+        "data": {
+          "text_len": 581
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "preprocessed",
+        "data": {
+          "normalized_len": 581
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "parallel_extract",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: nam giới khỏe mạnh, không có bệnh lý khác\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: chấn thương gãy xương sườn trái sau tai nạn trượt ván giao thông\nBệnh nhân thực hiện động tác nhảy skateboard sau đó bị ngã đập ngực xuống đường\n    Triệu chứng lúc vào: chấn thương gãy xương sườn trái\n   Cận lâm sàng:\n    - chụp cắt lớp vi tính (ct) cột sống cổ không thấy tổn thương\n    - chụp cắt lớp vi tính (ct) lồng ngực Hình ảnh gãy 3 xương sườn 9, 10 và 11, xương sườn thứ 10 bị gãy vụn gây đụng dập một vùng nhu mô phổi nhỏ tại vị trí gãy"
+          },
+          "output": {
+            "rule": [
+              {
+                "text": "chụp cắt lớp vi tính",
+                "position": [
+                  359,
+                  379
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "ct",
+                "position": [
+                  381,
+                  383
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "chụp cắt lớp vi tính",
+                "position": [
+                  425,
+                  445
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "ct",
+                "position": [
+                  447,
+                  449
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              }
+            ],
+            "qwen": [
+              {
+                "text": "gãy xương sườn trái",
+                "position": [
+                  146,
+                  165
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "gãy xương sườn trái",
+                "position": [
+                  316,
+                  335
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+                "position": [
+                  359,
+                  396
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+                "position": [
+                  425,
+                  460
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ],
+            "errors": []
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "extracted",
+        "data": {
+          "sources": {
+            "rule": 4,
+            "qwen": 4
+          },
+          "total": 8
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "vote_merge",
+          "input": {
+            "all_mentions": [
+              {
+                "text": "gãy xương sườn trái",
+                "position": [
+                  146,
+                  165
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "gãy xương sườn trái",
+                "position": [
+                  316,
+                  335
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+                "position": [
+                  359,
+                  396
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+                "position": [
+                  425,
+                  460
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp cắt lớp vi tính",
+                "position": [
+                  359,
+                  379
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "ct",
+                "position": [
+                  381,
+                  383
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "chụp cắt lớp vi tính",
+                "position": [
+                  425,
+                  445
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "ct",
+                "position": [
+                  447,
+                  449
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              }
+            ]
+          },
+          "output": [
+            {
+              "text": "gãy xương sườn trái",
+              "position": [
+                146,
+                165
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "gãy xương sườn trái",
+              "position": [
+                316,
+                335
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+              "position": [
+                359,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 2,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+              "position": [
+                425,
+                460
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 2,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "voted",
+        "data": {
+          "merged": 4
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "resolve_conflicts",
+          "input": {
+            "merged": [
+              {
+                "text": "gãy xương sườn trái",
+                "position": [
+                  146,
+                  165
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "gãy xương sườn trái",
+                "position": [
+                  316,
+                  335
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+                "position": [
+                  359,
+                  396
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "rule": 2,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+                "position": [
+                  425,
+                  460
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "rule": 2,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: nam giới khỏe mạnh, không có bệnh lý khác\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: chấn thương gãy xương sườn trái sau tai nạn trượt ván giao thông\nBệnh nhân thực hiện động tác nhảy skateboard sau đó bị ngã đập ngực xuống đường\n    Triệu chứng lúc vào: chấn thương gãy xương sườn trái\n   Cận lâm sàng:\n    - chụp cắt lớp vi tính (ct) cột sống cổ không thấy tổn thương\n    - chụp cắt lớp vi tính (ct) lồng ngực Hình ảnh gãy 3 xương sườn 9, 10 và 11, xương sườn thứ 10 bị gãy vụn gây đụng dập một vùng nhu mô phổi nhỏ tại vị trí gãy"
+          },
+          "output": [
+            {
+              "text": "gãy xương sườn trái",
+              "position": [
+                146,
+                165
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "gãy xương sườn trái",
+              "position": [
+                316,
+                335
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+              "position": [
+                359,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 2,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+              "position": [
+                425,
+                460
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 2,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "fix_positions",
+          "input": {
+            "mentions": [
+              {
+                "text": "gãy xương sườn trái",
+                "position": [
+                  146,
+                  165
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "gãy xương sườn trái",
+                "position": [
+                  316,
+                  335
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+                "position": [
+                  359,
+                  396
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "rule": 2,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+                "position": [
+                  425,
+                  460
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "rule": 2,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: nam giới khỏe mạnh, không có bệnh lý khác\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: chấn thương gãy xương sườn trái sau tai nạn trượt ván giao thông\nBệnh nhân thực hiện động tác nhảy skateboard sau đó bị ngã đập ngực xuống đường\n    Triệu chứng lúc vào: chấn thương gãy xương sườn trái\n   Cận lâm sàng:\n    - chụp cắt lớp vi tính (ct) cột sống cổ không thấy tổn thương\n    - chụp cắt lớp vi tính (ct) lồng ngực Hình ảnh gãy 3 xương sườn 9, 10 và 11, xương sườn thứ 10 bị gãy vụn gây đụng dập một vùng nhu mô phổi nhỏ tại vị trí gãy"
+          },
+          "output": [
+            {
+              "text": "gãy xương sườn trái",
+              "position": [
+                146,
+                165
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "gãy xương sườn trái",
+              "position": [
+                316,
+                335
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+              "position": [
+                359,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 2,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+              "position": [
+                425,
+                460
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 2,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "positions_fixed",
+        "data": {
+          "fixed": 0
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "llm_verified",
+        "data": {
+          "corrected": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_complete",
+        "mentions": 4,
+        "ts": 1784566970.053841
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_start",
+        "ts": 1784566970.0538552
+      },
+      {
+        "agent": "assertion",
+        "action": "start",
+        "data": {
+          "mentions": 4
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: nam giới khỏe mạnh, không có bệnh lý khác\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: chấn thương gãy xương sườn trái sau tai nạn trượt ván giao thông\nBệnh nhân thực hiện động tác nhảy skateboard sau đó bị ngã đập ngực xuống đường\n    Triệu chứng lúc vào: chấn thương gãy xương sườn trái\n   Cận lâm sàng:\n    - chụp cắt lớp vi tính (ct) cột sống cổ không thấy tổn thương\n    - chụp cắt lớp vi tính (ct) lồng ngực Hình ảnh gãy 3 xương sườn 9, 10 và 11, xương sườn thứ 10 bị gãy vụn gây đụng dập một vùng nhu mô phổi nhỏ tại vị trí gãy",
+            "start": 146,
+            "end": 165,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: nam giới khỏe mạnh, không có bệnh lý khác\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: chấn thương gãy xương sườn trái sau tai nạn trượt ván giao thông\nBệnh nhân thực hiện động tác nhảy skateboard sau đó bị ngã đập ngực xuống đường\n    Triệu chứng lúc vào: chấn thương gãy xương sườn trái\n   Cận lâm sàng:\n    - chụp cắt lớp vi tính (ct) cột sống cổ không thấy tổn thương\n    - chụp cắt lớp vi tính (ct) lồng ngực Hình ảnh gãy 3 xương sườn 9, 10 và 11, xương sườn thứ 10 bị gãy vụn gây đụng dập một vùng nhu mô phổi nhỏ tại vị trí gãy",
+            "start": 316,
+            "end": 335,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "complete",
+        "data": {
+          "processed": 4,
+          "llm_checked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_complete",
+        "ts": 1784566970.0540535
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_start",
+        "ts": 1784566970.0540621
+      },
+      {
+        "agent": "linking",
+        "action": "start",
+        "data": {
+          "mentions": 4
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "complete",
+        "data": {
+          "linked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_complete",
+        "linked": 0,
+        "ts": 1784566970.0540721
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_start",
+        "ts": 1784566970.0540795
+      },
+      {
+        "agent": "verifier",
+        "action": "start",
+        "data": {
+          "mentions": 4
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "tool_call",
+        "data": {
+          "tool": "verify_schema",
+          "input": {
+            "mentions": [
+              {
+                "text": "gãy xương sườn trái",
+                "position": [
+                  146,
+                  165
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "gãy xương sườn trái",
+                "position": [
+                  316,
+                  335
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+                "position": [
+                  359,
+                  396
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "rule": 2,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+                "position": [
+                  425,
+                  460
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "rule": 2,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: nam giới khỏe mạnh, không có bệnh lý khác\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: chấn thương gãy xương sườn trái sau tai nạn trượt ván giao thông\nBệnh nhân thực hiện động tác nhảy skateboard sau đó bị ngã đập ngực xuống đường\n    Triệu chứng lúc vào: chấn thương gãy xương sườn trái\n   Cận lâm sàng:\n    - chụp cắt lớp vi tính (ct) cột sống cổ không thấy tổn thương\n    - chụp cắt lớp vi tính (ct) lồng ngực Hình ảnh gãy 3 xương sườn 9, 10 và 11, xương sườn thứ 10 bị gãy vụn gây đụng dập một vùng nhu mô phổi nhỏ tại vị trí gãy"
+          },
+          "output": {
+            "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              }
+            ],
+            "final_predictions": [
+              {
+                "text": "gãy xương sườn trái",
+                "position": [
+                  146,
+                  165
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "gãy xương sườn trái",
+                "position": [
+                  316,
+                  335
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+                "position": [
+                  359,
+                  396
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "rule": 2,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+                "position": [
+                  425,
+                  460
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "rule": 2,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "dropped": 0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "validated",
+        "data": {
+          "kept": 4,
+          "dropped": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_complete",
+        "kept": 4,
+        "ts": 1784566970.3382254
+      },
+      {
+        "agent": "orchestrator",
+        "action": "complete",
+        "total_mentions": 4,
+        "elapsed": 11.83,
+        "ts": 1784566970.338247
+      }
+    ]
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 581,
+      "ts": 1784566958.5068364
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1784566958.5068502
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 581
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 581
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: nam giới khỏe mạnh, không có bệnh lý khác\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: chấn thương gãy xương sườn trái sau tai nạn trượt ván giao thông\nBệnh nhân thực hiện động tác nhảy skateboard sau đó bị ngã đập ngực xuống đường\n    Triệu chứng lúc vào: chấn thương gãy xương sườn trái\n   Cận lâm sàng:\n    - chụp cắt lớp vi tính (ct) cột sống cổ không thấy tổn thương\n    - chụp cắt lớp vi tính (ct) lồng ngực Hình ảnh gãy 3 xương sườn 9, 10 và 11, xương sườn thứ 10 bị gãy vụn gây đụng dập một vùng nhu mô phổi nhỏ tại vị trí gãy"
+        },
+        "output": {
+          "rule": [
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                359,
+                379
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "ct",
+              "position": [
+                381,
+                383
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                425,
+                445
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "ct",
+              "position": [
+                447,
+                449
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            }
+          ],
+          "qwen": [
+            {
+              "text": "gãy xương sườn trái",
+              "position": [
+                146,
+                165
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "gãy xương sườn trái",
+              "position": [
+                316,
+                335
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+              "position": [
+                359,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+              "position": [
+                425,
+                460
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 4,
+          "qwen": 4
+        },
+        "total": 8
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "gãy xương sườn trái",
+              "position": [
+                146,
+                165
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "gãy xương sườn trái",
+              "position": [
+                316,
+                335
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+              "position": [
+                359,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+              "position": [
+                425,
+                460
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                359,
+                379
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "ct",
+              "position": [
+                381,
+                383
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "chụp cắt lớp vi tính",
+              "position": [
+                425,
+                445
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "ct",
+              "position": [
+                447,
+                449
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "gãy xương sườn trái",
+            "position": [
+              146,
+              165
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "gãy xương sườn trái",
+            "position": [
+              316,
+              335
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+            "position": [
+              359,
+              396
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "rule": 2,
+              "qwen": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+            "position": [
+              425,
+              460
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "rule": 2,
+              "qwen": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 4
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "gãy xương sườn trái",
+              "position": [
+                146,
+                165
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "gãy xương sườn trái",
+              "position": [
+                316,
+                335
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+              "position": [
+                359,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 2,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+              "position": [
+                425,
+                460
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 2,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: nam giới khỏe mạnh, không có bệnh lý khác\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: chấn thương gãy xương sườn trái sau tai nạn trượt ván giao thông\nBệnh nhân thực hiện động tác nhảy skateboard sau đó bị ngã đập ngực xuống đường\n    Triệu chứng lúc vào: chấn thương gãy xương sườn trái\n   Cận lâm sàng:\n    - chụp cắt lớp vi tính (ct) cột sống cổ không thấy tổn thương\n    - chụp cắt lớp vi tính (ct) lồng ngực Hình ảnh gãy 3 xương sườn 9, 10 và 11, xương sườn thứ 10 bị gãy vụn gây đụng dập một vùng nhu mô phổi nhỏ tại vị trí gãy"
+        },
+        "output": [
+          {
+            "text": "gãy xương sườn trái",
+            "position": [
+              146,
+              165
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "gãy xương sườn trái",
+            "position": [
+              316,
+              335
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+            "position": [
+              359,
+              396
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "rule": 2,
+              "qwen": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+            "position": [
+              425,
+              460
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "rule": 2,
+              "qwen": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "gãy xương sườn trái",
+              "position": [
+                146,
+                165
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "gãy xương sườn trái",
+              "position": [
+                316,
+                335
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+              "position": [
+                359,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 2,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+              "position": [
+                425,
+                460
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 2,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: nam giới khỏe mạnh, không có bệnh lý khác\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: chấn thương gãy xương sườn trái sau tai nạn trượt ván giao thông\nBệnh nhân thực hiện động tác nhảy skateboard sau đó bị ngã đập ngực xuống đường\n    Triệu chứng lúc vào: chấn thương gãy xương sườn trái\n   Cận lâm sàng:\n    - chụp cắt lớp vi tính (ct) cột sống cổ không thấy tổn thương\n    - chụp cắt lớp vi tính (ct) lồng ngực Hình ảnh gãy 3 xương sườn 9, 10 và 11, xương sườn thứ 10 bị gãy vụn gây đụng dập một vùng nhu mô phổi nhỏ tại vị trí gãy"
+        },
+        "output": [
+          {
+            "text": "gãy xương sườn trái",
+            "position": [
+              146,
+              165
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "gãy xương sườn trái",
+            "position": [
+              316,
+              335
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+            "position": [
+              359,
+              396
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "rule": 2,
+              "qwen": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+            "position": [
+              425,
+              460
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "rule": 2,
+              "qwen": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 4,
+      "ts": 1784566970.053841
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1784566970.0538552
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 4
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: nam giới khỏe mạnh, không có bệnh lý khác\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: chấn thương gãy xương sườn trái sau tai nạn trượt ván giao thông\nBệnh nhân thực hiện động tác nhảy skateboard sau đó bị ngã đập ngực xuống đường\n    Triệu chứng lúc vào: chấn thương gãy xương sườn trái\n   Cận lâm sàng:\n    - chụp cắt lớp vi tính (ct) cột sống cổ không thấy tổn thương\n    - chụp cắt lớp vi tính (ct) lồng ngực Hình ảnh gãy 3 xương sườn 9, 10 và 11, xương sườn thứ 10 bị gãy vụn gây đụng dập một vùng nhu mô phổi nhỏ tại vị trí gãy",
+          "start": 146,
+          "end": 165,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: nam giới khỏe mạnh, không có bệnh lý khác\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: chấn thương gãy xương sườn trái sau tai nạn trượt ván giao thông\nBệnh nhân thực hiện động tác nhảy skateboard sau đó bị ngã đập ngực xuống đường\n    Triệu chứng lúc vào: chấn thương gãy xương sườn trái\n   Cận lâm sàng:\n    - chụp cắt lớp vi tính (ct) cột sống cổ không thấy tổn thương\n    - chụp cắt lớp vi tính (ct) lồng ngực Hình ảnh gãy 3 xương sườn 9, 10 và 11, xương sườn thứ 10 bị gãy vụn gây đụng dập một vùng nhu mô phổi nhỏ tại vị trí gãy",
+          "start": 316,
+          "end": 335,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 4,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1784566970.0540535
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1784566970.0540621
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 4
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1784566970.0540721
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1784566970.0540795
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 4
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "gãy xương sườn trái",
+              "position": [
+                146,
+                165
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "gãy xương sườn trái",
+              "position": [
+                316,
+                335
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+              "position": [
+                359,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 2,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+              "position": [
+                425,
+                460
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 2,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh lý mãn tính: nam giới khỏe mạnh, không có bệnh lý khác\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: chấn thương gãy xương sườn trái sau tai nạn trượt ván giao thông\nBệnh nhân thực hiện động tác nhảy skateboard sau đó bị ngã đập ngực xuống đường\n    Triệu chứng lúc vào: chấn thương gãy xương sườn trái\n   Cận lâm sàng:\n    - chụp cắt lớp vi tính (ct) cột sống cổ không thấy tổn thương\n    - chụp cắt lớp vi tính (ct) lồng ngực Hình ảnh gãy 3 xương sườn 9, 10 và 11, xương sườn thứ 10 bị gãy vụn gây đụng dập một vùng nhu mô phổi nhỏ tại vị trí gãy"
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "gãy xương sườn trái",
+              "position": [
+                146,
+                165
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "gãy xương sườn trái",
+              "position": [
+                316,
+                335
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+              "position": [
+                359,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 2,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+              "position": [
+                425,
+                460
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 2,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 4,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 4,
+      "ts": 1784566970.3382254
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 4,
+      "elapsed": 11.83,
+      "ts": 1784566970.338247
+    }
+  ]
+}

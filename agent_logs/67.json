@@ -1,0 +1,3407 @@
+{
+  "file_id": "67",
+  "timestamp": 1784566790.0998607,
+  "elapsed": 20.63,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "result": {
+    "note_id": "67",
+    "mentions": [
+      {
+        "text": "đau vùng hạ sườn phải",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          156,
+          177
+        ]
+      },
+      {
+        "text": "siêu âm",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          220,
+          227
+        ]
+      },
+      {
+        "text": "sỏi mật",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [],
+        "position": [
+          237,
+          244
+        ],
+        "candidates": [
+          "K80.5"
+        ]
+      },
+      {
+        "text": "siêu âm",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          389,
+          396
+        ]
+      },
+      {
+        "text": "sỏi mật",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [],
+        "position": [
+          406,
+          413
+        ],
+        "candidates": [
+          "K80.5"
+        ]
+      }
+    ],
+    "validation": {
+      "is_valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stats": {
+      "total_mentions": 5,
+      "final": 5,
+      "validation_errors": 0,
+      "elapsed": 20.63,
+      "rule": 2,
+      "qwen": 5
+    },
+    "logs": [
+      {
+        "agent": "orchestrator",
+        "action": "start",
+        "text_len": 503,
+        "ts": 1784566769.466137
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_start",
+        "ts": 1784566769.4661462
+      },
+      {
+        "agent": "extraction",
+        "action": "start",
+        "data": {
+          "text_len": 503
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "preprocessed",
+        "data": {
+          "normalized_len": 503
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "parallel_extract",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang\n    Triệu chứng hiện tại: đau vùng hạ sườn phải\n    Các sự kiện trước khi nhập viện\n    - siêu âm cho thấy sỏi mật\n    - Đề nghị cắt túi mật nội soi cùng lúc với phẫu thuật cắt bỏ tuyến giáp toàn bộ\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: siêu âm cho thấy sỏi mật\n    Các phát hiện chẩn đoán khác: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang"
+          },
+          "output": {
+            "rule": [
+              {
+                "text": "siêu âm",
+                "position": [
+                  220,
+                  227
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "siêu âm",
+                "position": [
+                  389,
+                  396
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              }
+            ],
+            "qwen": [
+              {
+                "text": "đau vùng hạ sườn phải",
+                "position": [
+                  156,
+                  177
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "siêu âm",
+                "position": [
+                  220,
+                  227
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "sỏi mật",
+                "position": [
+                  237,
+                  244
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "siêu âm",
+                "position": [
+                  389,
+                  396
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "sỏi mật",
+                "position": [
+                  406,
+                  413
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ],
+            "errors": []
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "extracted",
+        "data": {
+          "sources": {
+            "rule": 2,
+            "qwen": 5
+          },
+          "total": 7
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "vote_merge",
+          "input": {
+            "all_mentions": [
+              {
+                "text": "đau vùng hạ sườn phải",
+                "position": [
+                  156,
+                  177
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "siêu âm",
+                "position": [
+                  220,
+                  227
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "sỏi mật",
+                "position": [
+                  237,
+                  244
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "siêu âm",
+                "position": [
+                  389,
+                  396
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "sỏi mật",
+                "position": [
+                  406,
+                  413
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "siêu âm",
+                "position": [
+                  220,
+                  227
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "siêu âm",
+                "position": [
+                  389,
+                  396
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              }
+            ]
+          },
+          "output": [
+            {
+              "text": "đau vùng hạ sườn phải",
+              "position": [
+                156,
+                177
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                220,
+                227
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "sỏi mật",
+              "position": [
+                237,
+                244
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K80.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                389,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "sỏi mật",
+              "position": [
+                406,
+                413
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K80.5"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "voted",
+        "data": {
+          "merged": 5
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "resolve_conflicts",
+          "input": {
+            "merged": [
+              {
+                "text": "đau vùng hạ sườn phải",
+                "position": [
+                  156,
+                  177
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "siêu âm",
+                "position": [
+                  220,
+                  227
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "sỏi mật",
+                "position": [
+                  237,
+                  244
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K80.5"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "siêu âm",
+                "position": [
+                  389,
+                  396
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "sỏi mật",
+                "position": [
+                  406,
+                  413
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K80.5"
+                ],
+                "link_confidence": 0.85
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang\n    Triệu chứng hiện tại: đau vùng hạ sườn phải\n    Các sự kiện trước khi nhập viện\n    - siêu âm cho thấy sỏi mật\n    - Đề nghị cắt túi mật nội soi cùng lúc với phẫu thuật cắt bỏ tuyến giáp toàn bộ\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: siêu âm cho thấy sỏi mật\n    Các phát hiện chẩn đoán khác: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang"
+          },
+          "output": [
+            {
+              "text": "đau vùng hạ sườn phải",
+              "position": [
+                156,
+                177
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                220,
+                227
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "sỏi mật",
+              "position": [
+                237,
+                244
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K80.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                389,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "sỏi mật",
+              "position": [
+                406,
+                413
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K80.5"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "fix_positions",
+          "input": {
+            "mentions": [
+              {
+                "text": "đau vùng hạ sườn phải",
+                "position": [
+                  156,
+                  177
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "siêu âm",
+                "position": [
+                  220,
+                  227
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "sỏi mật",
+                "position": [
+                  237,
+                  244
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K80.5"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "siêu âm",
+                "position": [
+                  389,
+                  396
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "sỏi mật",
+                "position": [
+                  406,
+                  413
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K80.5"
+                ],
+                "link_confidence": 0.85
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang\n    Triệu chứng hiện tại: đau vùng hạ sườn phải\n    Các sự kiện trước khi nhập viện\n    - siêu âm cho thấy sỏi mật\n    - Đề nghị cắt túi mật nội soi cùng lúc với phẫu thuật cắt bỏ tuyến giáp toàn bộ\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: siêu âm cho thấy sỏi mật\n    Các phát hiện chẩn đoán khác: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang"
+          },
+          "output": [
+            {
+              "text": "đau vùng hạ sườn phải",
+              "position": [
+                156,
+                177
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                220,
+                227
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "sỏi mật",
+              "position": [
+                237,
+                244
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K80.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                389,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "sỏi mật",
+              "position": [
+                406,
+                413
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K80.5"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "positions_fixed",
+        "data": {
+          "fixed": 0
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "llm_verified",
+        "data": {
+          "corrected": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_complete",
+        "mentions": 5,
+        "ts": 1784566776.8090727
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_start",
+        "ts": 1784566776.8090854
+      },
+      {
+        "agent": "assertion",
+        "action": "start",
+        "data": {
+          "mentions": 5
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang\n    Triệu chứng hiện tại: đau vùng hạ sườn phải\n    Các sự kiện trước khi nhập viện\n    - siêu âm cho thấy sỏi mật\n    - Đề nghị cắt túi mật nội soi cùng lúc với phẫu thuật cắt bỏ tuyến giáp toàn bộ\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: siêu âm cho thấy sỏi mật\n    Các phát hiện chẩn đoán khác: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang",
+            "start": 156,
+            "end": 177,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang\n    Triệu chứng hiện tại: đau vùng hạ sườn phải\n    Các sự kiện trước khi nhập viện\n    - siêu âm cho thấy sỏi mật\n    - Đề nghị cắt túi mật nội soi cùng lúc với phẫu thuật cắt bỏ tuyến giáp toàn bộ\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: siêu âm cho thấy sỏi mật\n    Các phát hiện chẩn đoán khác: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang",
+            "start": 237,
+            "end": 244,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang\n    Triệu chứng hiện tại: đau vùng hạ sườn phải\n    Các sự kiện trước khi nhập viện\n    - siêu âm cho thấy sỏi mật\n    - Đề nghị cắt túi mật nội soi cùng lúc với phẫu thuật cắt bỏ tuyến giáp toàn bộ\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: siêu âm cho thấy sỏi mật\n    Các phát hiện chẩn đoán khác: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang",
+            "start": 406,
+            "end": 413,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "complete",
+        "data": {
+          "processed": 5,
+          "llm_checked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_complete",
+        "ts": 1784566776.8093574
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_start",
+        "ts": 1784566776.8093662
+      },
+      {
+        "agent": "linking",
+        "action": "start",
+        "data": {
+          "mentions": 5
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "sỏi mật",
+              "position": [
+                237,
+                244
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K80.5"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "ốt sần tuyến giáp phải có cấu trúc vi nang\n    Triệu chứng hiện tại: đau vùng hạ sườn phải\n    Các sự kiện trước khi nhập viện\n    - siêu âm cho thấy sỏi mật\n    - Đề nghị cắt túi mật nội soi cùng lúc với phẫu thuật cắt bỏ tuyến giáp toàn bộ\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: siêu "
+          },
+          "output": {
+            "candidates": [
+              "K80.5"
+            ],
+            "confidence": 0.85,
+            "rationale": "Sỏi ống mật kèm viêm đường dẫn mật là mã bệnh phù hợp nhất với mention 'sỏi mật' và bối cảnh lâm sàng được cung cấp."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "complete",
+        "data": {
+          "linked": 2
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_complete",
+        "linked": 2,
+        "ts": 1784566789.7840881
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_start",
+        "ts": 1784566789.7840962
+      },
+      {
+        "agent": "verifier",
+        "action": "start",
+        "data": {
+          "mentions": 5
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "tool_call",
+        "data": {
+          "tool": "verify_schema",
+          "input": {
+            "mentions": [
+              {
+                "text": "đau vùng hạ sườn phải",
+                "position": [
+                  156,
+                  177
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "siêu âm",
+                "position": [
+                  220,
+                  227
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "sỏi mật",
+                "position": [
+                  237,
+                  244
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K80.5"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "siêu âm",
+                "position": [
+                  389,
+                  396
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "sỏi mật",
+                "position": [
+                  406,
+                  413
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K80.5"
+                ],
+                "link_confidence": 0.85
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang\n    Triệu chứng hiện tại: đau vùng hạ sườn phải\n    Các sự kiện trước khi nhập viện\n    - siêu âm cho thấy sỏi mật\n    - Đề nghị cắt túi mật nội soi cùng lúc với phẫu thuật cắt bỏ tuyến giáp toàn bộ\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: siêu âm cho thấy sỏi mật\n    Các phát hiện chẩn đoán khác: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang"
+          },
+          "output": {
+            "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              }
+            ],
+            "final_predictions": [
+              {
+                "text": "đau vùng hạ sườn phải",
+                "position": [
+                  156,
+                  177
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "siêu âm",
+                "position": [
+                  220,
+                  227
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "sỏi mật",
+                "position": [
+                  237,
+                  244
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K80.5"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "siêu âm",
+                "position": [
+                  389,
+                  396
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "sỏi mật",
+                "position": [
+                  406,
+                  413
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K80.5"
+                ],
+                "link_confidence": 0.85
+              }
+            ],
+            "dropped": 0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "validated",
+        "data": {
+          "kept": 5,
+          "dropped": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_complete",
+        "kept": 5,
+        "ts": 1784566790.0997744
+      },
+      {
+        "agent": "orchestrator",
+        "action": "complete",
+        "total_mentions": 5,
+        "elapsed": 20.63,
+        "ts": 1784566790.0997927
+      }
+    ]
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 503,
+      "ts": 1784566769.466137
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1784566769.4661462
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 503
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 503
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang\n    Triệu chứng hiện tại: đau vùng hạ sườn phải\n    Các sự kiện trước khi nhập viện\n    - siêu âm cho thấy sỏi mật\n    - Đề nghị cắt túi mật nội soi cùng lúc với phẫu thuật cắt bỏ tuyến giáp toàn bộ\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: siêu âm cho thấy sỏi mật\n    Các phát hiện chẩn đoán khác: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang"
+        },
+        "output": {
+          "rule": [
+            {
+              "text": "siêu âm",
+              "position": [
+                220,
+                227
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                389,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            }
+          ],
+          "qwen": [
+            {
+              "text": "đau vùng hạ sườn phải",
+              "position": [
+                156,
+                177
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                220,
+                227
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "sỏi mật",
+              "position": [
+                237,
+                244
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                389,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "sỏi mật",
+              "position": [
+                406,
+                413
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 2,
+          "qwen": 5
+        },
+        "total": 7
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "đau vùng hạ sườn phải",
+              "position": [
+                156,
+                177
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                220,
+                227
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "sỏi mật",
+              "position": [
+                237,
+                244
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                389,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "sỏi mật",
+              "position": [
+                406,
+                413
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                220,
+                227
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                389,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "đau vùng hạ sườn phải",
+            "position": [
+              156,
+              177
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "siêu âm",
+            "position": [
+              220,
+              227
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "sỏi mật",
+            "position": [
+              237,
+              244
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K80.5"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "siêu âm",
+            "position": [
+              389,
+              396
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "sỏi mật",
+            "position": [
+              406,
+              413
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K80.5"
+            ],
+            "link_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 5
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "đau vùng hạ sườn phải",
+              "position": [
+                156,
+                177
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                220,
+                227
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "sỏi mật",
+              "position": [
+                237,
+                244
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K80.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                389,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "sỏi mật",
+              "position": [
+                406,
+                413
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K80.5"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang\n    Triệu chứng hiện tại: đau vùng hạ sườn phải\n    Các sự kiện trước khi nhập viện\n    - siêu âm cho thấy sỏi mật\n    - Đề nghị cắt túi mật nội soi cùng lúc với phẫu thuật cắt bỏ tuyến giáp toàn bộ\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: siêu âm cho thấy sỏi mật\n    Các phát hiện chẩn đoán khác: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang"
+        },
+        "output": [
+          {
+            "text": "đau vùng hạ sườn phải",
+            "position": [
+              156,
+              177
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "siêu âm",
+            "position": [
+              220,
+              227
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "sỏi mật",
+            "position": [
+              237,
+              244
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K80.5"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "siêu âm",
+            "position": [
+              389,
+              396
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "sỏi mật",
+            "position": [
+              406,
+              413
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K80.5"
+            ],
+            "link_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "đau vùng hạ sườn phải",
+              "position": [
+                156,
+                177
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                220,
+                227
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "sỏi mật",
+              "position": [
+                237,
+                244
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K80.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                389,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "sỏi mật",
+              "position": [
+                406,
+                413
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K80.5"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang\n    Triệu chứng hiện tại: đau vùng hạ sườn phải\n    Các sự kiện trước khi nhập viện\n    - siêu âm cho thấy sỏi mật\n    - Đề nghị cắt túi mật nội soi cùng lúc với phẫu thuật cắt bỏ tuyến giáp toàn bộ\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: siêu âm cho thấy sỏi mật\n    Các phát hiện chẩn đoán khác: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang"
+        },
+        "output": [
+          {
+            "text": "đau vùng hạ sườn phải",
+            "position": [
+              156,
+              177
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "siêu âm",
+            "position": [
+              220,
+              227
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "sỏi mật",
+            "position": [
+              237,
+              244
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K80.5"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "siêu âm",
+            "position": [
+              389,
+              396
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "sỏi mật",
+            "position": [
+              406,
+              413
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K80.5"
+            ],
+            "link_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 5,
+      "ts": 1784566776.8090727
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1784566776.8090854
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 5
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang\n    Triệu chứng hiện tại: đau vùng hạ sườn phải\n    Các sự kiện trước khi nhập viện\n    - siêu âm cho thấy sỏi mật\n    - Đề nghị cắt túi mật nội soi cùng lúc với phẫu thuật cắt bỏ tuyến giáp toàn bộ\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: siêu âm cho thấy sỏi mật\n    Các phát hiện chẩn đoán khác: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang",
+          "start": 156,
+          "end": 177,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang\n    Triệu chứng hiện tại: đau vùng hạ sườn phải\n    Các sự kiện trước khi nhập viện\n    - siêu âm cho thấy sỏi mật\n    - Đề nghị cắt túi mật nội soi cùng lúc với phẫu thuật cắt bỏ tuyến giáp toàn bộ\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: siêu âm cho thấy sỏi mật\n    Các phát hiện chẩn đoán khác: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang",
+          "start": 237,
+          "end": 244,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang\n    Triệu chứng hiện tại: đau vùng hạ sườn phải\n    Các sự kiện trước khi nhập viện\n    - siêu âm cho thấy sỏi mật\n    - Đề nghị cắt túi mật nội soi cùng lúc với phẫu thuật cắt bỏ tuyến giáp toàn bộ\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: siêu âm cho thấy sỏi mật\n    Các phát hiện chẩn đoán khác: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang",
+          "start": 406,
+          "end": 413,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 5,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1784566776.8093574
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1784566776.8093662
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 5
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "sỏi mật",
+            "position": [
+              237,
+              244
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K80.5"
+            ],
+            "link_confidence": 0.85
+          },
+          "context": "ốt sần tuyến giáp phải có cấu trúc vi nang\n    Triệu chứng hiện tại: đau vùng hạ sườn phải\n    Các sự kiện trước khi nhập viện\n    - siêu âm cho thấy sỏi mật\n    - Đề nghị cắt túi mật nội soi cùng lúc với phẫu thuật cắt bỏ tuyến giáp toàn bộ\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: siêu "
+        },
+        "output": {
+          "candidates": [
+            "K80.5"
+          ],
+          "confidence": 0.85,
+          "rationale": "Sỏi ống mật kèm viêm đường dẫn mật là mã bệnh phù hợp nhất với mention 'sỏi mật' và bối cảnh lâm sàng được cung cấp."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 2
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 2,
+      "ts": 1784566789.7840881
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1784566789.7840962
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 5
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "đau vùng hạ sườn phải",
+              "position": [
+                156,
+                177
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                220,
+                227
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "sỏi mật",
+              "position": [
+                237,
+                244
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K80.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                389,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "sỏi mật",
+              "position": [
+                406,
+                413
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K80.5"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang\n    Triệu chứng hiện tại: đau vùng hạ sườn phải\n    Các sự kiện trước khi nhập viện\n    - siêu âm cho thấy sỏi mật\n    - Đề nghị cắt túi mật nội soi cùng lúc với phẫu thuật cắt bỏ tuyến giáp toàn bộ\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: siêu âm cho thấy sỏi mật\n    Các phát hiện chẩn đoán khác: FNA của một nốt sần tuyến giáp phải có cấu trúc vi nang"
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "đau vùng hạ sườn phải",
+              "position": [
+                156,
+                177
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                220,
+                227
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "sỏi mật",
+              "position": [
+                237,
+                244
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K80.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "siêu âm",
+              "position": [
+                389,
+                396
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "sỏi mật",
+              "position": [
+                406,
+                413
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K80.5"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 5,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 5,
+      "ts": 1784566790.0997744
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 5,
+      "elapsed": 20.63,
+      "ts": 1784566790.0997927
+    }
+  ]
+}

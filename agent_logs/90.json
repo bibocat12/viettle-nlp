@@ -1,0 +1,3251 @@
+{
+  "file_id": "90",
+  "timestamp": 1784567076.5142827,
+  "elapsed": 13.51,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "result": {
+    "note_id": "90",
+    "mentions": [
+      {
+        "text": "giọng khàn",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          37,
+          47
+        ]
+      },
+      {
+        "text": "tổn thương dây thanh quản",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          51,
+          76
+        ]
+      },
+      {
+        "text": "giọng khàn",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          100,
+          110
+        ]
+      },
+      {
+        "text": "tổn thương dây thanh quản",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          113,
+          138
+        ]
+      },
+      {
+        "text": "nạo vét tổn thương dây thanh quản",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          202,
+          235
+        ]
+      }
+    ],
+    "validation": {
+      "is_valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stats": {
+      "total_mentions": 5,
+      "final": 5,
+      "validation_errors": 0,
+      "elapsed": 13.51,
+      "rule": 0,
+      "qwen": 6
+    },
+    "logs": [
+      {
+        "agent": "orchestrator",
+        "action": "start",
+        "text_len": 235,
+        "ts": 1784567063.0090022
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_start",
+        "ts": 1784567063.0090134
+      },
+      {
+        "agent": "extraction",
+        "action": "start",
+        "data": {
+          "text_len": 235
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "preprocessed",
+        "data": {
+          "normalized_len": 235
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "parallel_extract",
+          "input": {
+            "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện: nạo vét tổn thương dây thanh quản"
+          },
+          "output": {
+            "rule": [],
+            "qwen": [
+              {
+                "text": "giọng khàn",
+                "position": [
+                  37,
+                  47
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "tổn thương dây thanh quản",
+                "position": [
+                  51,
+                  76
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "giọng khàn",
+                "position": [
+                  100,
+                  110
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "tổn thương dây thanh quản",
+                "position": [
+                  113,
+                  138
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "nạo vét tổn thương dây thanh quản",
+                "position": [
+                  202,
+                  235
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "tổn thương dây thanh quản",
+                "position": [
+                  210,
+                  235
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ],
+            "errors": []
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "extracted",
+        "data": {
+          "sources": {
+            "rule": 0,
+            "qwen": 6
+          },
+          "total": 6
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "vote_merge",
+          "input": {
+            "all_mentions": [
+              {
+                "text": "giọng khàn",
+                "position": [
+                  37,
+                  47
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "tổn thương dây thanh quản",
+                "position": [
+                  51,
+                  76
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "giọng khàn",
+                "position": [
+                  100,
+                  110
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "tổn thương dây thanh quản",
+                "position": [
+                  113,
+                  138
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "nạo vét tổn thương dây thanh quản",
+                "position": [
+                  202,
+                  235
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "tổn thương dây thanh quản",
+                "position": [
+                  210,
+                  235
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ]
+          },
+          "output": [
+            {
+              "text": "giọng khàn",
+              "position": [
+                37,
+                47
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                51,
+                76
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "giọng khàn",
+              "position": [
+                100,
+                110
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                113,
+                138
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nạo vét tổn thương dây thanh quản",
+              "position": [
+                202,
+                235
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 1,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 2
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 0.45,
+                "TRIỆU_CHỨNG": 0.45
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'nạo vét tổn thương dây thanh quản' mô tả một thủ thuật y tế được thực hiện để điều trị hoặc đánh giá tình trạng tổn thương dây thanh quản, không phải là kết quả xét nghiệm hay tên xét nghiệm. Nó phản ánh một hành động y tế nhằm xử lý triệu chứng hoặc tình trạng bệnh lý, do đó được phân loại là TRIỆU_CHỨNG.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "voted",
+        "data": {
+          "merged": 5
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "resolve_conflicts",
+          "input": {
+            "merged": [
+              {
+                "text": "giọng khàn",
+                "position": [
+                  37,
+                  47
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "tổn thương dây thanh quản",
+                "position": [
+                  51,
+                  76
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "giọng khàn",
+                "position": [
+                  100,
+                  110
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "tổn thương dây thanh quản",
+                "position": [
+                  113,
+                  138
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "nạo vét tổn thương dây thanh quản",
+                "position": [
+                  202,
+                  235
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "confidence": 0.85,
+                "vote_count": 1,
+                "max_type_votes": 1,
+                "voters": {
+                  "qwen": 2
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 0.45,
+                  "TRIỆU_CHỨNG": 0.45
+                },
+                "needs_review": true,
+                "llm_resolved": true,
+                "reason": "Mention 'nạo vét tổn thương dây thanh quản' mô tả một thủ thuật y tế được thực hiện để điều trị hoặc đánh giá tình trạng tổn thương dây thanh quản, không phải là kết quả xét nghiệm hay tên xét nghiệm. Nó phản ánh một hành động y tế nhằm xử lý triệu chứng hoặc tình trạng bệnh lý, do đó được phân loại là TRIỆU_CHỨNG.",
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              }
+            ],
+            "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện: nạo vét tổn thương dây thanh quản"
+          },
+          "output": [
+            {
+              "text": "giọng khàn",
+              "position": [
+                37,
+                47
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                51,
+                76
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "giọng khàn",
+              "position": [
+                100,
+                110
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                113,
+                138
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nạo vét tổn thương dây thanh quản",
+              "position": [
+                202,
+                235
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 1,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 2
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 0.45,
+                "TRIỆU_CHỨNG": 0.45
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'nạo vét tổn thương dây thanh quản' mô tả một thủ thuật y tế được thực hiện để điều trị hoặc đánh giá tình trạng tổn thương dây thanh quản, không phải là kết quả xét nghiệm hay tên xét nghiệm. Nó phản ánh một hành động y tế nhằm xử lý triệu chứng hoặc tình trạng bệnh lý, do đó được phân loại là TRIỆU_CHỨNG.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "fix_positions",
+          "input": {
+            "mentions": [
+              {
+                "text": "giọng khàn",
+                "position": [
+                  37,
+                  47
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "tổn thương dây thanh quản",
+                "position": [
+                  51,
+                  76
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "giọng khàn",
+                "position": [
+                  100,
+                  110
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "tổn thương dây thanh quản",
+                "position": [
+                  113,
+                  138
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "nạo vét tổn thương dây thanh quản",
+                "position": [
+                  202,
+                  235
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "confidence": 0.85,
+                "vote_count": 1,
+                "max_type_votes": 1,
+                "voters": {
+                  "qwen": 2
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 0.45,
+                  "TRIỆU_CHỨNG": 0.45
+                },
+                "needs_review": true,
+                "llm_resolved": true,
+                "reason": "Mention 'nạo vét tổn thương dây thanh quản' mô tả một thủ thuật y tế được thực hiện để điều trị hoặc đánh giá tình trạng tổn thương dây thanh quản, không phải là kết quả xét nghiệm hay tên xét nghiệm. Nó phản ánh một hành động y tế nhằm xử lý triệu chứng hoặc tình trạng bệnh lý, do đó được phân loại là TRIỆU_CHỨNG.",
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              }
+            ],
+            "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện: nạo vét tổn thương dây thanh quản"
+          },
+          "output": [
+            {
+              "text": "giọng khàn",
+              "position": [
+                37,
+                47
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                51,
+                76
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "giọng khàn",
+              "position": [
+                100,
+                110
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                113,
+                138
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nạo vét tổn thương dây thanh quản",
+              "position": [
+                202,
+                235
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 1,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 2
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 0.45,
+                "TRIỆU_CHỨNG": 0.45
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'nạo vét tổn thương dây thanh quản' mô tả một thủ thuật y tế được thực hiện để điều trị hoặc đánh giá tình trạng tổn thương dây thanh quản, không phải là kết quả xét nghiệm hay tên xét nghiệm. Nó phản ánh một hành động y tế nhằm xử lý triệu chứng hoặc tình trạng bệnh lý, do đó được phân loại là TRIỆU_CHỨNG.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "positions_fixed",
+        "data": {
+          "fixed": 0
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "llm_verified",
+        "data": {
+          "corrected": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_complete",
+        "mentions": 5,
+        "ts": 1784567076.1164725
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_start",
+        "ts": 1784567076.1164863
+      },
+      {
+        "agent": "assertion",
+        "action": "start",
+        "data": {
+          "mentions": 5
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện: nạo vét tổn thương dây thanh quản",
+            "start": 37,
+            "end": 47,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện: nạo vét tổn thương dây thanh quản",
+            "start": 51,
+            "end": 76,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện: nạo vét tổn thương dây thanh quản",
+            "start": 100,
+            "end": 110,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện: nạo vét tổn thương dây thanh quản",
+            "start": 113,
+            "end": 138,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện: nạo vét tổn thương dây thanh quản",
+            "start": 202,
+            "end": 235,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "complete",
+        "data": {
+          "processed": 5,
+          "llm_checked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_complete",
+        "ts": 1784567076.1168864
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_start",
+        "ts": 1784567076.1168962
+      },
+      {
+        "agent": "linking",
+        "action": "start",
+        "data": {
+          "mentions": 5
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "complete",
+        "data": {
+          "linked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_complete",
+        "linked": 0,
+        "ts": 1784567076.1169064
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_start",
+        "ts": 1784567076.1169136
+      },
+      {
+        "agent": "verifier",
+        "action": "start",
+        "data": {
+          "mentions": 5
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "tool_call",
+        "data": {
+          "tool": "verify_schema",
+          "input": {
+            "mentions": [
+              {
+                "text": "giọng khàn",
+                "position": [
+                  37,
+                  47
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "tổn thương dây thanh quản",
+                "position": [
+                  51,
+                  76
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "giọng khàn",
+                "position": [
+                  100,
+                  110
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "tổn thương dây thanh quản",
+                "position": [
+                  113,
+                  138
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "nạo vét tổn thương dây thanh quản",
+                "position": [
+                  202,
+                  235
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "confidence": 0.85,
+                "vote_count": 1,
+                "max_type_votes": 1,
+                "voters": {
+                  "qwen": 2
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 0.45,
+                  "TRIỆU_CHỨNG": 0.45
+                },
+                "needs_review": true,
+                "llm_resolved": true,
+                "reason": "Mention 'nạo vét tổn thương dây thanh quản' mô tả một thủ thuật y tế được thực hiện để điều trị hoặc đánh giá tình trạng tổn thương dây thanh quản, không phải là kết quả xét nghiệm hay tên xét nghiệm. Nó phản ánh một hành động y tế nhằm xử lý triệu chứng hoặc tình trạng bệnh lý, do đó được phân loại là TRIỆU_CHỨNG.",
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              }
+            ],
+            "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện: nạo vét tổn thương dây thanh quản"
+          },
+          "output": {
+            "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              }
+            ],
+            "final_predictions": [
+              {
+                "text": "giọng khàn",
+                "position": [
+                  37,
+                  47
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "tổn thương dây thanh quản",
+                "position": [
+                  51,
+                  76
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "giọng khàn",
+                "position": [
+                  100,
+                  110
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "tổn thương dây thanh quản",
+                "position": [
+                  113,
+                  138
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "nạo vét tổn thương dây thanh quản",
+                "position": [
+                  202,
+                  235
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "confidence": 0.85,
+                "vote_count": 1,
+                "max_type_votes": 1,
+                "voters": {
+                  "qwen": 2
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 0.45,
+                  "TRIỆU_CHỨNG": 0.45
+                },
+                "needs_review": true,
+                "llm_resolved": true,
+                "reason": "Mention 'nạo vét tổn thương dây thanh quản' mô tả một thủ thuật y tế được thực hiện để điều trị hoặc đánh giá tình trạng tổn thương dây thanh quản, không phải là kết quả xét nghiệm hay tên xét nghiệm. Nó phản ánh một hành động y tế nhằm xử lý triệu chứng hoặc tình trạng bệnh lý, do đó được phân loại là TRIỆU_CHỨNG.",
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              }
+            ],
+            "dropped": 0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "validated",
+        "data": {
+          "kept": 5,
+          "dropped": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_complete",
+        "kept": 5,
+        "ts": 1784567076.5141723
+      },
+      {
+        "agent": "orchestrator",
+        "action": "complete",
+        "total_mentions": 5,
+        "elapsed": 13.51,
+        "ts": 1784567076.5141976
+      }
+    ]
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 235,
+      "ts": 1784567063.0090022
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1784567063.0090134
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 235
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 235
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện: nạo vét tổn thương dây thanh quản"
+        },
+        "output": {
+          "rule": [],
+          "qwen": [
+            {
+              "text": "giọng khàn",
+              "position": [
+                37,
+                47
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                51,
+                76
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "giọng khàn",
+              "position": [
+                100,
+                110
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                113,
+                138
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "nạo vét tổn thương dây thanh quản",
+              "position": [
+                202,
+                235
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                210,
+                235
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 6
+        },
+        "total": 6
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "giọng khàn",
+              "position": [
+                37,
+                47
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                51,
+                76
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "giọng khàn",
+              "position": [
+                100,
+                110
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                113,
+                138
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "nạo vét tổn thương dây thanh quản",
+              "position": [
+                202,
+                235
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                210,
+                235
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "giọng khàn",
+            "position": [
+              37,
+              47
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "tổn thương dây thanh quản",
+            "position": [
+              51,
+              76
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "giọng khàn",
+            "position": [
+              100,
+              110
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "tổn thương dây thanh quản",
+            "position": [
+              113,
+              138
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "nạo vét tổn thương dây thanh quản",
+            "position": [
+              202,
+              235
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "confidence": 0.85,
+            "vote_count": 1,
+            "max_type_votes": 1,
+            "voters": {
+              "qwen": 2
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 0.45,
+              "TRIỆU_CHỨNG": 0.45
+            },
+            "needs_review": true,
+            "llm_resolved": true,
+            "reason": "Mention 'nạo vét tổn thương dây thanh quản' mô tả một thủ thuật y tế được thực hiện để điều trị hoặc đánh giá tình trạng tổn thương dây thanh quản, không phải là kết quả xét nghiệm hay tên xét nghiệm. Nó phản ánh một hành động y tế nhằm xử lý triệu chứng hoặc tình trạng bệnh lý, do đó được phân loại là TRIỆU_CHỨNG.",
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 5
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "giọng khàn",
+              "position": [
+                37,
+                47
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                51,
+                76
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "giọng khàn",
+              "position": [
+                100,
+                110
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                113,
+                138
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nạo vét tổn thương dây thanh quản",
+              "position": [
+                202,
+                235
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 1,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 2
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 0.45,
+                "TRIỆU_CHỨNG": 0.45
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'nạo vét tổn thương dây thanh quản' mô tả một thủ thuật y tế được thực hiện để điều trị hoặc đánh giá tình trạng tổn thương dây thanh quản, không phải là kết quả xét nghiệm hay tên xét nghiệm. Nó phản ánh một hành động y tế nhằm xử lý triệu chứng hoặc tình trạng bệnh lý, do đó được phân loại là TRIỆU_CHỨNG.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện: nạo vét tổn thương dây thanh quản"
+        },
+        "output": [
+          {
+            "text": "giọng khàn",
+            "position": [
+              37,
+              47
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "tổn thương dây thanh quản",
+            "position": [
+              51,
+              76
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "giọng khàn",
+            "position": [
+              100,
+              110
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "tổn thương dây thanh quản",
+            "position": [
+              113,
+              138
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "nạo vét tổn thương dây thanh quản",
+            "position": [
+              202,
+              235
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "confidence": 0.85,
+            "vote_count": 1,
+            "max_type_votes": 1,
+            "voters": {
+              "qwen": 2
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 0.45,
+              "TRIỆU_CHỨNG": 0.45
+            },
+            "needs_review": true,
+            "llm_resolved": true,
+            "reason": "Mention 'nạo vét tổn thương dây thanh quản' mô tả một thủ thuật y tế được thực hiện để điều trị hoặc đánh giá tình trạng tổn thương dây thanh quản, không phải là kết quả xét nghiệm hay tên xét nghiệm. Nó phản ánh một hành động y tế nhằm xử lý triệu chứng hoặc tình trạng bệnh lý, do đó được phân loại là TRIỆU_CHỨNG.",
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "giọng khàn",
+              "position": [
+                37,
+                47
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                51,
+                76
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "giọng khàn",
+              "position": [
+                100,
+                110
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                113,
+                138
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nạo vét tổn thương dây thanh quản",
+              "position": [
+                202,
+                235
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 1,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 2
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 0.45,
+                "TRIỆU_CHỨNG": 0.45
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'nạo vét tổn thương dây thanh quản' mô tả một thủ thuật y tế được thực hiện để điều trị hoặc đánh giá tình trạng tổn thương dây thanh quản, không phải là kết quả xét nghiệm hay tên xét nghiệm. Nó phản ánh một hành động y tế nhằm xử lý triệu chứng hoặc tình trạng bệnh lý, do đó được phân loại là TRIỆU_CHỨNG.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện: nạo vét tổn thương dây thanh quản"
+        },
+        "output": [
+          {
+            "text": "giọng khàn",
+            "position": [
+              37,
+              47
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "tổn thương dây thanh quản",
+            "position": [
+              51,
+              76
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "giọng khàn",
+            "position": [
+              100,
+              110
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "tổn thương dây thanh quản",
+            "position": [
+              113,
+              138
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "nạo vét tổn thương dây thanh quản",
+            "position": [
+              202,
+              235
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "confidence": 0.85,
+            "vote_count": 1,
+            "max_type_votes": 1,
+            "voters": {
+              "qwen": 2
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 0.45,
+              "TRIỆU_CHỨNG": 0.45
+            },
+            "needs_review": true,
+            "llm_resolved": true,
+            "reason": "Mention 'nạo vét tổn thương dây thanh quản' mô tả một thủ thuật y tế được thực hiện để điều trị hoặc đánh giá tình trạng tổn thương dây thanh quản, không phải là kết quả xét nghiệm hay tên xét nghiệm. Nó phản ánh một hành động y tế nhằm xử lý triệu chứng hoặc tình trạng bệnh lý, do đó được phân loại là TRIỆU_CHỨNG.",
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 5,
+      "ts": 1784567076.1164725
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1784567076.1164863
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 5
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện: nạo vét tổn thương dây thanh quản",
+          "start": 37,
+          "end": 47,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện: nạo vét tổn thương dây thanh quản",
+          "start": 51,
+          "end": 76,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện: nạo vét tổn thương dây thanh quản",
+          "start": 100,
+          "end": 110,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện: nạo vét tổn thương dây thanh quản",
+          "start": 113,
+          "end": 138,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện: nạo vét tổn thương dây thanh quản",
+          "start": 202,
+          "end": 235,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 5,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1784567076.1168864
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1784567076.1168962
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 5
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1784567076.1169064
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1784567076.1169136
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 5
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "giọng khàn",
+              "position": [
+                37,
+                47
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                51,
+                76
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "giọng khàn",
+              "position": [
+                100,
+                110
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                113,
+                138
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nạo vét tổn thương dây thanh quản",
+              "position": [
+                202,
+                235
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 1,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 2
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 0.45,
+                "TRIỆU_CHỨNG": 0.45
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'nạo vét tổn thương dây thanh quản' mô tả một thủ thuật y tế được thực hiện để điều trị hoặc đánh giá tình trạng tổn thương dây thanh quản, không phải là kết quả xét nghiệm hay tên xét nghiệm. Nó phản ánh một hành động y tế nhằm xử lý triệu chứng hoặc tình trạng bệnh lý, do đó được phân loại là TRIỆU_CHỨNG.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "text": "2. Bệnh sử hiện tại\nLý do khám bệnh: giọng khàn do tổn thương dây thanh quản\nTriệu chứng hiện tại\n- giọng khàn\n- tổn thương dây thanh quản thật sự\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật đã thực hiện: nạo vét tổn thương dây thanh quản"
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "giọng khàn",
+              "position": [
+                37,
+                47
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                51,
+                76
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "giọng khàn",
+              "position": [
+                100,
+                110
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tổn thương dây thanh quản",
+              "position": [
+                113,
+                138
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nạo vét tổn thương dây thanh quản",
+              "position": [
+                202,
+                235
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 1,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 2
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 0.45,
+                "TRIỆU_CHỨNG": 0.45
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'nạo vét tổn thương dây thanh quản' mô tả một thủ thuật y tế được thực hiện để điều trị hoặc đánh giá tình trạng tổn thương dây thanh quản, không phải là kết quả xét nghiệm hay tên xét nghiệm. Nó phản ánh một hành động y tế nhằm xử lý triệu chứng hoặc tình trạng bệnh lý, do đó được phân loại là TRIỆU_CHỨNG.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 5,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 5,
+      "ts": 1784567076.5141723
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 5,
+      "elapsed": 13.51,
+      "ts": 1784567076.5141976
+    }
+  ]
+}

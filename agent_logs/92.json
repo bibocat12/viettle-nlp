@@ -1,0 +1,4855 @@
+{
+  "file_id": "92",
+  "timestamp": 1784567128.5528374,
+  "elapsed": 26.69,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "result": {
+    "note_id": "92",
+    "mentions": [
+      {
+        "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          45,
+          84
+        ],
+        "candidates": [
+          "O23.3"
+        ]
+      },
+      {
+        "text": "đại tràng giãn",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          138,
+          152
+        ]
+      },
+      {
+        "text": "bạch cầu",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          248,
+          256
+        ]
+      },
+      {
+        "text": "chụp CT",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          295,
+          302
+        ]
+      },
+      {
+        "text": "lơ mơ",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          415,
+          420
+        ]
+      },
+      {
+        "text": "Bạch cầu",
+        "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          472,
+          480
+        ]
+      },
+      {
+        "text": "chụp ct",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          518,
+          525
+        ]
+      },
+      {
+        "text": "đại tràng giãn",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          598,
+          612
+        ]
+      }
+    ],
+    "validation": {
+      "is_valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stats": {
+      "total_mentions": 8,
+      "final": 8,
+      "validation_errors": 0,
+      "elapsed": 26.69,
+      "rule": 4,
+      "qwen": 7
+    },
+    "logs": [
+      {
+        "agent": "orchestrator",
+        "action": "start",
+        "text_len": 612,
+        "ts": 1784567101.8613932
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_start",
+        "ts": 1784567101.8614063
+      },
+      {
+        "agent": "extraction",
+        "action": "start",
+        "data": {
+          "text_len": 612
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "preprocessed",
+        "data": {
+          "normalized_len": 612
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "parallel_extract",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mạn tính: Nhiễm trùng đường tiết niệu kháng thuốc\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: theo dõi đại tràng giãn\n    - Vào đợt kiểm tra sức khoẻ định kỳ sau ngã đang hồi phục phát hiện xét nghiệm máu có tăng bạch cầuNgày nay xuất hiện ý thúc chậm hơn, đã chụp CT ở tuyến trước chưa phát hiện bất thường trên phim chụp,  vào viện\n    Tình trạng vào Khoa Cấp cứu. \n  Bệnh nhân lơ mơ\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm: Bạch cầu tăng\n    Kết quả chẩn đoán hình ảnh: chụp ctchưa phát hiện bất thường trên phim chụp\n    Các kết quả  khác: Theo dõi đại tràng giãn"
+          },
+          "output": {
+            "rule": [
+              {
+                "text": "bạch cầu",
+                "position": [
+                  248,
+                  256
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "CT",
+                "position": [
+                  300,
+                  302
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "Bạch cầu",
+                "position": [
+                  472,
+                  480
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "ct",
+                "position": [
+                  523,
+                  525
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              }
+            ],
+            "qwen": [
+              {
+                "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+                "position": [
+                  45,
+                  84
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đại tràng giãn",
+                "position": [
+                  138,
+                  152
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp CT",
+                "position": [
+                  295,
+                  302
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "lơ mơ",
+                "position": [
+                  415,
+                  420
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Bạch cầu tăng",
+                "position": [
+                  472,
+                  485
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp ct",
+                "position": [
+                  518,
+                  525
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đại tràng giãn",
+                "position": [
+                  598,
+                  612
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ],
+            "errors": []
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "extracted",
+        "data": {
+          "sources": {
+            "rule": 4,
+            "qwen": 7
+          },
+          "total": 11
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "vote_merge",
+          "input": {
+            "all_mentions": [
+              {
+                "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+                "position": [
+                  45,
+                  84
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đại tràng giãn",
+                "position": [
+                  138,
+                  152
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp CT",
+                "position": [
+                  295,
+                  302
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "lơ mơ",
+                "position": [
+                  415,
+                  420
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Bạch cầu tăng",
+                "position": [
+                  472,
+                  485
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp ct",
+                "position": [
+                  518,
+                  525
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đại tràng giãn",
+                "position": [
+                  598,
+                  612
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "bạch cầu",
+                "position": [
+                  248,
+                  256
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "CT",
+                "position": [
+                  300,
+                  302
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "Bạch cầu",
+                "position": [
+                  472,
+                  480
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "ct",
+                "position": [
+                  523,
+                  525
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              }
+            ]
+          },
+          "output": [
+            {
+              "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+              "position": [
+                45,
+                84
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "O23.3"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đại tràng giãn",
+              "position": [
+                138,
+                152
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "bạch cầu",
+              "position": [
+                248,
+                256
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp CT",
+              "position": [
+                295,
+                302
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "lơ mơ",
+              "position": [
+                415,
+                420
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Bạch cầu",
+              "position": [
+                472,
+                480
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 2,
+              "max_type_votes": 1,
+              "voters": {
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 0.55,
+                "KẾT_QUẢ_XÉT_NGHIỆM": 0.45
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'Bạch cầu' xuất hiện trong câu 'Kết quả xét nghiệm: Bạch cầu tăng', đây là một kết quả được ghi nhận từ kết quả xét nghiệm, do đó thuộc loại KẾT_QUẢ_XÉT_NGHIỆM.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp ct",
+              "position": [
+                518,
+                525
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "đại tràng giãn",
+              "position": [
+                598,
+                612
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "voted",
+        "data": {
+          "merged": 8
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "resolve_conflicts",
+          "input": {
+            "merged": [
+              {
+                "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+                "position": [
+                  45,
+                  84
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "O23.3"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đại tràng giãn",
+                "position": [
+                  138,
+                  152
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "bạch cầu",
+                "position": [
+                  248,
+                  256
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp CT",
+                "position": [
+                  295,
+                  302
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "lơ mơ",
+                "position": [
+                  415,
+                  420
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "Bạch cầu",
+                "position": [
+                  472,
+                  480
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "confidence": 0.85,
+                "vote_count": 2,
+                "max_type_votes": 1,
+                "voters": {
+                  "rule": 1,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 0.55,
+                  "KẾT_QUẢ_XÉT_NGHIỆM": 0.45
+                },
+                "needs_review": true,
+                "llm_resolved": true,
+                "reason": "Mention 'Bạch cầu' xuất hiện trong câu 'Kết quả xét nghiệm: Bạch cầu tăng', đây là một kết quả được ghi nhận từ kết quả xét nghiệm, do đó thuộc loại KẾT_QUẢ_XÉT_NGHIỆM.",
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp ct",
+                "position": [
+                  518,
+                  525
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "đại tràng giãn",
+                "position": [
+                  598,
+                  612
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mạn tính: Nhiễm trùng đường tiết niệu kháng thuốc\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: theo dõi đại tràng giãn\n    - Vào đợt kiểm tra sức khoẻ định kỳ sau ngã đang hồi phục phát hiện xét nghiệm máu có tăng bạch cầuNgày nay xuất hiện ý thúc chậm hơn, đã chụp CT ở tuyến trước chưa phát hiện bất thường trên phim chụp,  vào viện\n    Tình trạng vào Khoa Cấp cứu. \n  Bệnh nhân lơ mơ\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm: Bạch cầu tăng\n    Kết quả chẩn đoán hình ảnh: chụp ctchưa phát hiện bất thường trên phim chụp\n    Các kết quả  khác: Theo dõi đại tràng giãn"
+          },
+          "output": [
+            {
+              "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+              "position": [
+                45,
+                84
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "O23.3"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đại tràng giãn",
+              "position": [
+                138,
+                152
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "bạch cầu",
+              "position": [
+                248,
+                256
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp CT",
+              "position": [
+                295,
+                302
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "lơ mơ",
+              "position": [
+                415,
+                420
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Bạch cầu",
+              "position": [
+                472,
+                480
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 2,
+              "max_type_votes": 1,
+              "voters": {
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 0.55,
+                "KẾT_QUẢ_XÉT_NGHIỆM": 0.45
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'Bạch cầu' xuất hiện trong câu 'Kết quả xét nghiệm: Bạch cầu tăng', đây là một kết quả được ghi nhận từ kết quả xét nghiệm, do đó thuộc loại KẾT_QUẢ_XÉT_NGHIỆM.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp ct",
+              "position": [
+                518,
+                525
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "đại tràng giãn",
+              "position": [
+                598,
+                612
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "fix_positions",
+          "input": {
+            "mentions": [
+              {
+                "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+                "position": [
+                  45,
+                  84
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "O23.3"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đại tràng giãn",
+                "position": [
+                  138,
+                  152
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "bạch cầu",
+                "position": [
+                  248,
+                  256
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp CT",
+                "position": [
+                  295,
+                  302
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "lơ mơ",
+                "position": [
+                  415,
+                  420
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "Bạch cầu",
+                "position": [
+                  472,
+                  480
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "confidence": 0.85,
+                "vote_count": 2,
+                "max_type_votes": 1,
+                "voters": {
+                  "rule": 1,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 0.55,
+                  "KẾT_QUẢ_XÉT_NGHIỆM": 0.45
+                },
+                "needs_review": true,
+                "llm_resolved": true,
+                "reason": "Mention 'Bạch cầu' xuất hiện trong câu 'Kết quả xét nghiệm: Bạch cầu tăng', đây là một kết quả được ghi nhận từ kết quả xét nghiệm, do đó thuộc loại KẾT_QUẢ_XÉT_NGHIỆM.",
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp ct",
+                "position": [
+                  518,
+                  525
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "đại tràng giãn",
+                "position": [
+                  598,
+                  612
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mạn tính: Nhiễm trùng đường tiết niệu kháng thuốc\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: theo dõi đại tràng giãn\n    - Vào đợt kiểm tra sức khoẻ định kỳ sau ngã đang hồi phục phát hiện xét nghiệm máu có tăng bạch cầuNgày nay xuất hiện ý thúc chậm hơn, đã chụp CT ở tuyến trước chưa phát hiện bất thường trên phim chụp,  vào viện\n    Tình trạng vào Khoa Cấp cứu. \n  Bệnh nhân lơ mơ\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm: Bạch cầu tăng\n    Kết quả chẩn đoán hình ảnh: chụp ctchưa phát hiện bất thường trên phim chụp\n    Các kết quả  khác: Theo dõi đại tràng giãn"
+          },
+          "output": [
+            {
+              "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+              "position": [
+                45,
+                84
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "O23.3"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đại tràng giãn",
+              "position": [
+                138,
+                152
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "bạch cầu",
+              "position": [
+                248,
+                256
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp CT",
+              "position": [
+                295,
+                302
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "lơ mơ",
+              "position": [
+                415,
+                420
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Bạch cầu",
+              "position": [
+                472,
+                480
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 2,
+              "max_type_votes": 1,
+              "voters": {
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 0.55,
+                "KẾT_QUẢ_XÉT_NGHIỆM": 0.45
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'Bạch cầu' xuất hiện trong câu 'Kết quả xét nghiệm: Bạch cầu tăng', đây là một kết quả được ghi nhận từ kết quả xét nghiệm, do đó thuộc loại KẾT_QUẢ_XÉT_NGHIỆM.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp ct",
+              "position": [
+                518,
+                525
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "đại tràng giãn",
+              "position": [
+                598,
+                612
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "positions_fixed",
+        "data": {
+          "fixed": 0
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "llm_verified",
+        "data": {
+          "corrected": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_complete",
+        "mentions": 8,
+        "ts": 1784567117.3948703
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_start",
+        "ts": 1784567117.3948872
+      },
+      {
+        "agent": "assertion",
+        "action": "start",
+        "data": {
+          "mentions": 8
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mạn tính: Nhiễm trùng đường tiết niệu kháng thuốc\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: theo dõi đại tràng giãn\n    - Vào đợt kiểm tra sức khoẻ định kỳ sau ngã đang hồi phục phát hiện xét nghiệm máu có tăng bạch cầuNgày nay xuất hiện ý thúc chậm hơn, đã chụp CT ở tuyến trước chưa phát hiện bất thường trên phim chụp,  vào viện\n    Tình trạng vào Khoa Cấp cứu. \n  Bệnh nhân lơ mơ\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm: Bạch cầu tăng\n    Kết quả chẩn đoán hình ảnh: chụp ctchưa phát hiện bất thường trên phim chụp\n    Các kết quả  khác: Theo dõi đại tràng giãn",
+            "start": 45,
+            "end": 84,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mạn tính: Nhiễm trùng đường tiết niệu kháng thuốc\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: theo dõi đại tràng giãn\n    - Vào đợt kiểm tra sức khoẻ định kỳ sau ngã đang hồi phục phát hiện xét nghiệm máu có tăng bạch cầuNgày nay xuất hiện ý thúc chậm hơn, đã chụp CT ở tuyến trước chưa phát hiện bất thường trên phim chụp,  vào viện\n    Tình trạng vào Khoa Cấp cứu. \n  Bệnh nhân lơ mơ\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm: Bạch cầu tăng\n    Kết quả chẩn đoán hình ảnh: chụp ctchưa phát hiện bất thường trên phim chụp\n    Các kết quả  khác: Theo dõi đại tràng giãn",
+            "start": 138,
+            "end": 152,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mạn tính: Nhiễm trùng đường tiết niệu kháng thuốc\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: theo dõi đại tràng giãn\n    - Vào đợt kiểm tra sức khoẻ định kỳ sau ngã đang hồi phục phát hiện xét nghiệm máu có tăng bạch cầuNgày nay xuất hiện ý thúc chậm hơn, đã chụp CT ở tuyến trước chưa phát hiện bất thường trên phim chụp,  vào viện\n    Tình trạng vào Khoa Cấp cứu. \n  Bệnh nhân lơ mơ\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm: Bạch cầu tăng\n    Kết quả chẩn đoán hình ảnh: chụp ctchưa phát hiện bất thường trên phim chụp\n    Các kết quả  khác: Theo dõi đại tràng giãn",
+            "start": 415,
+            "end": 420,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mạn tính: Nhiễm trùng đường tiết niệu kháng thuốc\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: theo dõi đại tràng giãn\n    - Vào đợt kiểm tra sức khoẻ định kỳ sau ngã đang hồi phục phát hiện xét nghiệm máu có tăng bạch cầuNgày nay xuất hiện ý thúc chậm hơn, đã chụp CT ở tuyến trước chưa phát hiện bất thường trên phim chụp,  vào viện\n    Tình trạng vào Khoa Cấp cứu. \n  Bệnh nhân lơ mơ\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm: Bạch cầu tăng\n    Kết quả chẩn đoán hình ảnh: chụp ctchưa phát hiện bất thường trên phim chụp\n    Các kết quả  khác: Theo dõi đại tràng giãn",
+            "start": 598,
+            "end": 612,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "complete",
+        "data": {
+          "processed": 8,
+          "llm_checked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_complete",
+        "ts": 1784567117.3952231
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_start",
+        "ts": 1784567117.3952358
+      },
+      {
+        "agent": "linking",
+        "action": "start",
+        "data": {
+          "mentions": 8
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+              "position": [
+                45,
+                84
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "O23.3"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "1.  Tiền sử bệnh nội khoa\n    Bệnh mạn tính: Nhiễm trùng đường tiết niệu kháng thuốc\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: theo dõi đại tràng giãn\n    - Vào đợt kiểm tra sức khoẻ định kỳ sau ngã đang hồi phục phát hiện xét nghiệ"
+          },
+          "output": {
+            "candidates": [
+              "O23.3"
+            ],
+            "confidence": 0.85,
+            "rationale": "Mention 'Nhiễm trùng đường tiết niệu kháng thuốc' phù hợp với mã O23.3 (Nhiễm trùng phần khác của đường tiết niệu trong thai kỳ), vì mã này bao quát các trường hợp nhiễm trùng đường tiết niệu không rõ vị trí cụ thể trong thai kỳ, bao gồm cả trường hợp kháng thuốc."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "complete",
+        "data": {
+          "linked": 1
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_complete",
+        "linked": 1,
+        "ts": 1784567128.4360735
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_start",
+        "ts": 1784567128.4360902
+      },
+      {
+        "agent": "verifier",
+        "action": "start",
+        "data": {
+          "mentions": 8
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "tool_call",
+        "data": {
+          "tool": "verify_schema",
+          "input": {
+            "mentions": [
+              {
+                "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+                "position": [
+                  45,
+                  84
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "O23.3"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đại tràng giãn",
+                "position": [
+                  138,
+                  152
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "bạch cầu",
+                "position": [
+                  248,
+                  256
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp CT",
+                "position": [
+                  295,
+                  302
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "lơ mơ",
+                "position": [
+                  415,
+                  420
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "Bạch cầu",
+                "position": [
+                  472,
+                  480
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "confidence": 0.85,
+                "vote_count": 2,
+                "max_type_votes": 1,
+                "voters": {
+                  "rule": 1,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 0.55,
+                  "KẾT_QUẢ_XÉT_NGHIỆM": 0.45
+                },
+                "needs_review": true,
+                "llm_resolved": true,
+                "reason": "Mention 'Bạch cầu' xuất hiện trong câu 'Kết quả xét nghiệm: Bạch cầu tăng', đây là một kết quả được ghi nhận từ kết quả xét nghiệm, do đó thuộc loại KẾT_QUẢ_XÉT_NGHIỆM.",
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp ct",
+                "position": [
+                  518,
+                  525
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "đại tràng giãn",
+                "position": [
+                  598,
+                  612
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mạn tính: Nhiễm trùng đường tiết niệu kháng thuốc\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: theo dõi đại tràng giãn\n    - Vào đợt kiểm tra sức khoẻ định kỳ sau ngã đang hồi phục phát hiện xét nghiệm máu có tăng bạch cầuNgày nay xuất hiện ý thúc chậm hơn, đã chụp CT ở tuyến trước chưa phát hiện bất thường trên phim chụp,  vào viện\n    Tình trạng vào Khoa Cấp cứu. \n  Bệnh nhân lơ mơ\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm: Bạch cầu tăng\n    Kết quả chẩn đoán hình ảnh: chụp ctchưa phát hiện bất thường trên phim chụp\n    Các kết quả  khác: Theo dõi đại tràng giãn"
+          },
+          "output": {
+            "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              }
+            ],
+            "final_predictions": [
+              {
+                "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+                "position": [
+                  45,
+                  84
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "O23.3"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đại tràng giãn",
+                "position": [
+                  138,
+                  152
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "bạch cầu",
+                "position": [
+                  248,
+                  256
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp CT",
+                "position": [
+                  295,
+                  302
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "lơ mơ",
+                "position": [
+                  415,
+                  420
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "Bạch cầu",
+                "position": [
+                  472,
+                  480
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "confidence": 0.85,
+                "vote_count": 2,
+                "max_type_votes": 1,
+                "voters": {
+                  "rule": 1,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 0.55,
+                  "KẾT_QUẢ_XÉT_NGHIỆM": 0.45
+                },
+                "needs_review": true,
+                "llm_resolved": true,
+                "reason": "Mention 'Bạch cầu' xuất hiện trong câu 'Kết quả xét nghiệm: Bạch cầu tăng', đây là một kết quả được ghi nhận từ kết quả xét nghiệm, do đó thuộc loại KẾT_QUẢ_XÉT_NGHIỆM.",
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp ct",
+                "position": [
+                  518,
+                  525
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "đại tràng giãn",
+                "position": [
+                  598,
+                  612
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              }
+            ],
+            "dropped": 0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "validated",
+        "data": {
+          "kept": 8,
+          "dropped": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_complete",
+        "kept": 8,
+        "ts": 1784567128.5527031
+      },
+      {
+        "agent": "orchestrator",
+        "action": "complete",
+        "total_mentions": 8,
+        "elapsed": 26.69,
+        "ts": 1784567128.5527308
+      }
+    ]
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 612,
+      "ts": 1784567101.8613932
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1784567101.8614063
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 612
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 612
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mạn tính: Nhiễm trùng đường tiết niệu kháng thuốc\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: theo dõi đại tràng giãn\n    - Vào đợt kiểm tra sức khoẻ định kỳ sau ngã đang hồi phục phát hiện xét nghiệm máu có tăng bạch cầuNgày nay xuất hiện ý thúc chậm hơn, đã chụp CT ở tuyến trước chưa phát hiện bất thường trên phim chụp,  vào viện\n    Tình trạng vào Khoa Cấp cứu. \n  Bệnh nhân lơ mơ\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm: Bạch cầu tăng\n    Kết quả chẩn đoán hình ảnh: chụp ctchưa phát hiện bất thường trên phim chụp\n    Các kết quả  khác: Theo dõi đại tràng giãn"
+        },
+        "output": {
+          "rule": [
+            {
+              "text": "bạch cầu",
+              "position": [
+                248,
+                256
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "CT",
+              "position": [
+                300,
+                302
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "Bạch cầu",
+              "position": [
+                472,
+                480
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "ct",
+              "position": [
+                523,
+                525
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            }
+          ],
+          "qwen": [
+            {
+              "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+              "position": [
+                45,
+                84
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đại tràng giãn",
+              "position": [
+                138,
+                152
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp CT",
+              "position": [
+                295,
+                302
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "lơ mơ",
+              "position": [
+                415,
+                420
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Bạch cầu tăng",
+              "position": [
+                472,
+                485
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp ct",
+              "position": [
+                518,
+                525
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đại tràng giãn",
+              "position": [
+                598,
+                612
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 4,
+          "qwen": 7
+        },
+        "total": 11
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+              "position": [
+                45,
+                84
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đại tràng giãn",
+              "position": [
+                138,
+                152
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp CT",
+              "position": [
+                295,
+                302
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "lơ mơ",
+              "position": [
+                415,
+                420
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Bạch cầu tăng",
+              "position": [
+                472,
+                485
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp ct",
+              "position": [
+                518,
+                525
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đại tràng giãn",
+              "position": [
+                598,
+                612
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "bạch cầu",
+              "position": [
+                248,
+                256
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "CT",
+              "position": [
+                300,
+                302
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "Bạch cầu",
+              "position": [
+                472,
+                480
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "ct",
+              "position": [
+                523,
+                525
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+            "position": [
+              45,
+              84
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "O23.3"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "đại tràng giãn",
+            "position": [
+              138,
+              152
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "bạch cầu",
+            "position": [
+              248,
+              256
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chụp CT",
+            "position": [
+              295,
+              302
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "lơ mơ",
+            "position": [
+              415,
+              420
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "Bạch cầu",
+            "position": [
+              472,
+              480
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "confidence": 0.85,
+            "vote_count": 2,
+            "max_type_votes": 1,
+            "voters": {
+              "rule": 1,
+              "qwen": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 0.55,
+              "KẾT_QUẢ_XÉT_NGHIỆM": 0.45
+            },
+            "needs_review": true,
+            "llm_resolved": true,
+            "reason": "Mention 'Bạch cầu' xuất hiện trong câu 'Kết quả xét nghiệm: Bạch cầu tăng', đây là một kết quả được ghi nhận từ kết quả xét nghiệm, do đó thuộc loại KẾT_QUẢ_XÉT_NGHIỆM.",
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chụp ct",
+            "position": [
+              518,
+              525
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "đại tràng giãn",
+            "position": [
+              598,
+              612
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 8
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+              "position": [
+                45,
+                84
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "O23.3"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đại tràng giãn",
+              "position": [
+                138,
+                152
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "bạch cầu",
+              "position": [
+                248,
+                256
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp CT",
+              "position": [
+                295,
+                302
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "lơ mơ",
+              "position": [
+                415,
+                420
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Bạch cầu",
+              "position": [
+                472,
+                480
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 2,
+              "max_type_votes": 1,
+              "voters": {
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 0.55,
+                "KẾT_QUẢ_XÉT_NGHIỆM": 0.45
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'Bạch cầu' xuất hiện trong câu 'Kết quả xét nghiệm: Bạch cầu tăng', đây là một kết quả được ghi nhận từ kết quả xét nghiệm, do đó thuộc loại KẾT_QUẢ_XÉT_NGHIỆM.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp ct",
+              "position": [
+                518,
+                525
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "đại tràng giãn",
+              "position": [
+                598,
+                612
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mạn tính: Nhiễm trùng đường tiết niệu kháng thuốc\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: theo dõi đại tràng giãn\n    - Vào đợt kiểm tra sức khoẻ định kỳ sau ngã đang hồi phục phát hiện xét nghiệm máu có tăng bạch cầuNgày nay xuất hiện ý thúc chậm hơn, đã chụp CT ở tuyến trước chưa phát hiện bất thường trên phim chụp,  vào viện\n    Tình trạng vào Khoa Cấp cứu. \n  Bệnh nhân lơ mơ\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm: Bạch cầu tăng\n    Kết quả chẩn đoán hình ảnh: chụp ctchưa phát hiện bất thường trên phim chụp\n    Các kết quả  khác: Theo dõi đại tràng giãn"
+        },
+        "output": [
+          {
+            "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+            "position": [
+              45,
+              84
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "O23.3"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "đại tràng giãn",
+            "position": [
+              138,
+              152
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "bạch cầu",
+            "position": [
+              248,
+              256
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chụp CT",
+            "position": [
+              295,
+              302
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "lơ mơ",
+            "position": [
+              415,
+              420
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "Bạch cầu",
+            "position": [
+              472,
+              480
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "confidence": 0.85,
+            "vote_count": 2,
+            "max_type_votes": 1,
+            "voters": {
+              "rule": 1,
+              "qwen": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 0.55,
+              "KẾT_QUẢ_XÉT_NGHIỆM": 0.45
+            },
+            "needs_review": true,
+            "llm_resolved": true,
+            "reason": "Mention 'Bạch cầu' xuất hiện trong câu 'Kết quả xét nghiệm: Bạch cầu tăng', đây là một kết quả được ghi nhận từ kết quả xét nghiệm, do đó thuộc loại KẾT_QUẢ_XÉT_NGHIỆM.",
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chụp ct",
+            "position": [
+              518,
+              525
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "đại tràng giãn",
+            "position": [
+              598,
+              612
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+              "position": [
+                45,
+                84
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "O23.3"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đại tràng giãn",
+              "position": [
+                138,
+                152
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "bạch cầu",
+              "position": [
+                248,
+                256
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp CT",
+              "position": [
+                295,
+                302
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "lơ mơ",
+              "position": [
+                415,
+                420
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Bạch cầu",
+              "position": [
+                472,
+                480
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 2,
+              "max_type_votes": 1,
+              "voters": {
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 0.55,
+                "KẾT_QUẢ_XÉT_NGHIỆM": 0.45
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'Bạch cầu' xuất hiện trong câu 'Kết quả xét nghiệm: Bạch cầu tăng', đây là một kết quả được ghi nhận từ kết quả xét nghiệm, do đó thuộc loại KẾT_QUẢ_XÉT_NGHIỆM.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp ct",
+              "position": [
+                518,
+                525
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "đại tràng giãn",
+              "position": [
+                598,
+                612
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mạn tính: Nhiễm trùng đường tiết niệu kháng thuốc\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: theo dõi đại tràng giãn\n    - Vào đợt kiểm tra sức khoẻ định kỳ sau ngã đang hồi phục phát hiện xét nghiệm máu có tăng bạch cầuNgày nay xuất hiện ý thúc chậm hơn, đã chụp CT ở tuyến trước chưa phát hiện bất thường trên phim chụp,  vào viện\n    Tình trạng vào Khoa Cấp cứu. \n  Bệnh nhân lơ mơ\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm: Bạch cầu tăng\n    Kết quả chẩn đoán hình ảnh: chụp ctchưa phát hiện bất thường trên phim chụp\n    Các kết quả  khác: Theo dõi đại tràng giãn"
+        },
+        "output": [
+          {
+            "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+            "position": [
+              45,
+              84
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "O23.3"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "đại tràng giãn",
+            "position": [
+              138,
+              152
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "bạch cầu",
+            "position": [
+              248,
+              256
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chụp CT",
+            "position": [
+              295,
+              302
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "lơ mơ",
+            "position": [
+              415,
+              420
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "Bạch cầu",
+            "position": [
+              472,
+              480
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "confidence": 0.85,
+            "vote_count": 2,
+            "max_type_votes": 1,
+            "voters": {
+              "rule": 1,
+              "qwen": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 0.55,
+              "KẾT_QUẢ_XÉT_NGHIỆM": 0.45
+            },
+            "needs_review": true,
+            "llm_resolved": true,
+            "reason": "Mention 'Bạch cầu' xuất hiện trong câu 'Kết quả xét nghiệm: Bạch cầu tăng', đây là một kết quả được ghi nhận từ kết quả xét nghiệm, do đó thuộc loại KẾT_QUẢ_XÉT_NGHIỆM.",
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chụp ct",
+            "position": [
+              518,
+              525
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "đại tràng giãn",
+            "position": [
+              598,
+              612
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 8,
+      "ts": 1784567117.3948703
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1784567117.3948872
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 8
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mạn tính: Nhiễm trùng đường tiết niệu kháng thuốc\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: theo dõi đại tràng giãn\n    - Vào đợt kiểm tra sức khoẻ định kỳ sau ngã đang hồi phục phát hiện xét nghiệm máu có tăng bạch cầuNgày nay xuất hiện ý thúc chậm hơn, đã chụp CT ở tuyến trước chưa phát hiện bất thường trên phim chụp,  vào viện\n    Tình trạng vào Khoa Cấp cứu. \n  Bệnh nhân lơ mơ\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm: Bạch cầu tăng\n    Kết quả chẩn đoán hình ảnh: chụp ctchưa phát hiện bất thường trên phim chụp\n    Các kết quả  khác: Theo dõi đại tràng giãn",
+          "start": 45,
+          "end": 84,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mạn tính: Nhiễm trùng đường tiết niệu kháng thuốc\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: theo dõi đại tràng giãn\n    - Vào đợt kiểm tra sức khoẻ định kỳ sau ngã đang hồi phục phát hiện xét nghiệm máu có tăng bạch cầuNgày nay xuất hiện ý thúc chậm hơn, đã chụp CT ở tuyến trước chưa phát hiện bất thường trên phim chụp,  vào viện\n    Tình trạng vào Khoa Cấp cứu. \n  Bệnh nhân lơ mơ\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm: Bạch cầu tăng\n    Kết quả chẩn đoán hình ảnh: chụp ctchưa phát hiện bất thường trên phim chụp\n    Các kết quả  khác: Theo dõi đại tràng giãn",
+          "start": 138,
+          "end": 152,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mạn tính: Nhiễm trùng đường tiết niệu kháng thuốc\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: theo dõi đại tràng giãn\n    - Vào đợt kiểm tra sức khoẻ định kỳ sau ngã đang hồi phục phát hiện xét nghiệm máu có tăng bạch cầuNgày nay xuất hiện ý thúc chậm hơn, đã chụp CT ở tuyến trước chưa phát hiện bất thường trên phim chụp,  vào viện\n    Tình trạng vào Khoa Cấp cứu. \n  Bệnh nhân lơ mơ\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm: Bạch cầu tăng\n    Kết quả chẩn đoán hình ảnh: chụp ctchưa phát hiện bất thường trên phim chụp\n    Các kết quả  khác: Theo dõi đại tràng giãn",
+          "start": 415,
+          "end": 420,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mạn tính: Nhiễm trùng đường tiết niệu kháng thuốc\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: theo dõi đại tràng giãn\n    - Vào đợt kiểm tra sức khoẻ định kỳ sau ngã đang hồi phục phát hiện xét nghiệm máu có tăng bạch cầuNgày nay xuất hiện ý thúc chậm hơn, đã chụp CT ở tuyến trước chưa phát hiện bất thường trên phim chụp,  vào viện\n    Tình trạng vào Khoa Cấp cứu. \n  Bệnh nhân lơ mơ\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm: Bạch cầu tăng\n    Kết quả chẩn đoán hình ảnh: chụp ctchưa phát hiện bất thường trên phim chụp\n    Các kết quả  khác: Theo dõi đại tràng giãn",
+          "start": 598,
+          "end": 612,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 8,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1784567117.3952231
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1784567117.3952358
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 8
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+            "position": [
+              45,
+              84
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "O23.3"
+            ],
+            "link_confidence": 0.85
+          },
+          "context": "1.  Tiền sử bệnh nội khoa\n    Bệnh mạn tính: Nhiễm trùng đường tiết niệu kháng thuốc\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: theo dõi đại tràng giãn\n    - Vào đợt kiểm tra sức khoẻ định kỳ sau ngã đang hồi phục phát hiện xét nghiệ"
+        },
+        "output": {
+          "candidates": [
+            "O23.3"
+          ],
+          "confidence": 0.85,
+          "rationale": "Mention 'Nhiễm trùng đường tiết niệu kháng thuốc' phù hợp với mã O23.3 (Nhiễm trùng phần khác của đường tiết niệu trong thai kỳ), vì mã này bao quát các trường hợp nhiễm trùng đường tiết niệu không rõ vị trí cụ thể trong thai kỳ, bao gồm cả trường hợp kháng thuốc."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 1,
+      "ts": 1784567128.4360735
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1784567128.4360902
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 8
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+              "position": [
+                45,
+                84
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "O23.3"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đại tràng giãn",
+              "position": [
+                138,
+                152
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "bạch cầu",
+              "position": [
+                248,
+                256
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp CT",
+              "position": [
+                295,
+                302
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "lơ mơ",
+              "position": [
+                415,
+                420
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Bạch cầu",
+              "position": [
+                472,
+                480
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 2,
+              "max_type_votes": 1,
+              "voters": {
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 0.55,
+                "KẾT_QUẢ_XÉT_NGHIỆM": 0.45
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'Bạch cầu' xuất hiện trong câu 'Kết quả xét nghiệm: Bạch cầu tăng', đây là một kết quả được ghi nhận từ kết quả xét nghiệm, do đó thuộc loại KẾT_QUẢ_XÉT_NGHIỆM.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp ct",
+              "position": [
+                518,
+                525
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "đại tràng giãn",
+              "position": [
+                598,
+                612
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mạn tính: Nhiễm trùng đường tiết niệu kháng thuốc\n\n2.  Bệnh sử  hiện tại\n    Lý do nhập viện: theo dõi đại tràng giãn\n    - Vào đợt kiểm tra sức khoẻ định kỳ sau ngã đang hồi phục phát hiện xét nghiệm máu có tăng bạch cầuNgày nay xuất hiện ý thúc chậm hơn, đã chụp CT ở tuyến trước chưa phát hiện bất thường trên phim chụp,  vào viện\n    Tình trạng vào Khoa Cấp cứu. \n  Bệnh nhân lơ mơ\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm: Bạch cầu tăng\n    Kết quả chẩn đoán hình ảnh: chụp ctchưa phát hiện bất thường trên phim chụp\n    Các kết quả  khác: Theo dõi đại tràng giãn"
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+              "position": [
+                45,
+                84
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "O23.3"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đại tràng giãn",
+              "position": [
+                138,
+                152
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "bạch cầu",
+              "position": [
+                248,
+                256
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp CT",
+              "position": [
+                295,
+                302
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "lơ mơ",
+              "position": [
+                415,
+                420
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Bạch cầu",
+              "position": [
+                472,
+                480
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 2,
+              "max_type_votes": 1,
+              "voters": {
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 0.55,
+                "KẾT_QUẢ_XÉT_NGHIỆM": 0.45
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'Bạch cầu' xuất hiện trong câu 'Kết quả xét nghiệm: Bạch cầu tăng', đây là một kết quả được ghi nhận từ kết quả xét nghiệm, do đó thuộc loại KẾT_QUẢ_XÉT_NGHIỆM.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp ct",
+              "position": [
+                518,
+                525
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "đại tràng giãn",
+              "position": [
+                598,
+                612
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 8,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 8,
+      "ts": 1784567128.5527031
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 8,
+      "elapsed": 26.69,
+      "ts": 1784567128.5527308
+    }
+  ]
+}

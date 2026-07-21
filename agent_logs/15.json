@@ -1,0 +1,1614 @@
+{
+  "file_id": "15",
+  "timestamp": 1784566073.8237321,
+  "elapsed": 12.0,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "result": {
+    "note_id": "15",
+    "mentions": [
+      {
+        "text": "Truyền dịch yếu tố IX đậm đặc",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          144,
+          173
+        ]
+      },
+      {
+        "text": "chống đông",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          271,
+          281
+        ]
+      }
+    ],
+    "validation": {
+      "is_valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stats": {
+      "total_mentions": 2,
+      "final": 2,
+      "validation_errors": 0,
+      "elapsed": 12.0,
+      "rule": 1,
+      "qwen": 2
+    },
+    "logs": [
+      {
+        "agent": "orchestrator",
+        "action": "start",
+        "text_len": 281,
+        "ts": 1784566061.8236604
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_start",
+        "ts": 1784566061.8236837
+      },
+      {
+        "agent": "extraction",
+        "action": "start",
+        "data": {
+          "text_len": 281
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "preprocessed",
+        "data": {
+          "normalized_len": 281
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "parallel_extract",
+          "input": {
+            "text": "2. Bệnh sử hiện tại\nLý do nhập viện: xuất huyết nội sọ không do chấn thương, không đặc hiệu\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật thực hiện: Truyền dịch yếu tố IX đậm đặc\nCác phát hiện chẩn đoán khác\n- xuất huyết nội sọ không do chấn thương, không đặc hiệu\n- Điều trị chống đông"
+          },
+          "output": {
+            "rule": [
+              {
+                "text": "chống đông",
+                "position": [
+                  271,
+                  281
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              }
+            ],
+            "qwen": [
+              {
+                "text": "Truyền dịch yếu tố IX đậm đặc",
+                "position": [
+                  144,
+                  173
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Điều trị chống đông",
+                "position": [
+                  262,
+                  281
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ],
+            "errors": []
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "extracted",
+        "data": {
+          "sources": {
+            "rule": 1,
+            "qwen": 2
+          },
+          "total": 3
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "vote_merge",
+          "input": {
+            "all_mentions": [
+              {
+                "text": "Truyền dịch yếu tố IX đậm đặc",
+                "position": [
+                  144,
+                  173
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Điều trị chống đông",
+                "position": [
+                  262,
+                  281
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chống đông",
+                "position": [
+                  271,
+                  281
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              }
+            ]
+          },
+          "output": [
+            {
+              "text": "Truyền dịch yếu tố IX đậm đặc",
+              "position": [
+                144,
+                173
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chống đông",
+              "position": [
+                271,
+                281
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 2,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "THUỐC": 0.45,
+                "TRIỆU_CHỨNG": 0.55
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'chống đông' trong context được sử dụng để chỉ một tình trạng y khoa, không phải là tên thuốc, kết quả xét nghiệm, hay chẩn đoán. Nó mô tả một triệu chứng hoặc tình trạng cần được điều trị, do đó phù hợp với loại TRIỆU_CHỨNG.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "voted",
+        "data": {
+          "merged": 2
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "resolve_conflicts",
+          "input": {
+            "merged": [
+              {
+                "text": "Truyền dịch yếu tố IX đậm đặc",
+                "position": [
+                  144,
+                  173
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chống đông",
+                "position": [
+                  271,
+                  281
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "confidence": 0.85,
+                "vote_count": 2,
+                "max_type_votes": 1,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "THUỐC": 0.45,
+                  "TRIỆU_CHỨNG": 0.55
+                },
+                "needs_review": true,
+                "llm_resolved": true,
+                "reason": "Mention 'chống đông' trong context được sử dụng để chỉ một tình trạng y khoa, không phải là tên thuốc, kết quả xét nghiệm, hay chẩn đoán. Nó mô tả một triệu chứng hoặc tình trạng cần được điều trị, do đó phù hợp với loại TRIỆU_CHỨNG.",
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              }
+            ],
+            "text": "2. Bệnh sử hiện tại\nLý do nhập viện: xuất huyết nội sọ không do chấn thương, không đặc hiệu\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật thực hiện: Truyền dịch yếu tố IX đậm đặc\nCác phát hiện chẩn đoán khác\n- xuất huyết nội sọ không do chấn thương, không đặc hiệu\n- Điều trị chống đông"
+          },
+          "output": [
+            {
+              "text": "Truyền dịch yếu tố IX đậm đặc",
+              "position": [
+                144,
+                173
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chống đông",
+              "position": [
+                271,
+                281
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 2,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "THUỐC": 0.45,
+                "TRIỆU_CHỨNG": 0.55
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'chống đông' trong context được sử dụng để chỉ một tình trạng y khoa, không phải là tên thuốc, kết quả xét nghiệm, hay chẩn đoán. Nó mô tả một triệu chứng hoặc tình trạng cần được điều trị, do đó phù hợp với loại TRIỆU_CHỨNG.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "fix_positions",
+          "input": {
+            "mentions": [
+              {
+                "text": "Truyền dịch yếu tố IX đậm đặc",
+                "position": [
+                  144,
+                  173
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chống đông",
+                "position": [
+                  271,
+                  281
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "confidence": 0.85,
+                "vote_count": 2,
+                "max_type_votes": 1,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "THUỐC": 0.45,
+                  "TRIỆU_CHỨNG": 0.55
+                },
+                "needs_review": true,
+                "llm_resolved": true,
+                "reason": "Mention 'chống đông' trong context được sử dụng để chỉ một tình trạng y khoa, không phải là tên thuốc, kết quả xét nghiệm, hay chẩn đoán. Nó mô tả một triệu chứng hoặc tình trạng cần được điều trị, do đó phù hợp với loại TRIỆU_CHỨNG.",
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              }
+            ],
+            "text": "2. Bệnh sử hiện tại\nLý do nhập viện: xuất huyết nội sọ không do chấn thương, không đặc hiệu\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật thực hiện: Truyền dịch yếu tố IX đậm đặc\nCác phát hiện chẩn đoán khác\n- xuất huyết nội sọ không do chấn thương, không đặc hiệu\n- Điều trị chống đông"
+          },
+          "output": [
+            {
+              "text": "Truyền dịch yếu tố IX đậm đặc",
+              "position": [
+                144,
+                173
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chống đông",
+              "position": [
+                271,
+                281
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 2,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "THUỐC": 0.45,
+                "TRIỆU_CHỨNG": 0.55
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'chống đông' trong context được sử dụng để chỉ một tình trạng y khoa, không phải là tên thuốc, kết quả xét nghiệm, hay chẩn đoán. Nó mô tả một triệu chứng hoặc tình trạng cần được điều trị, do đó phù hợp với loại TRIỆU_CHỨNG.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "positions_fixed",
+        "data": {
+          "fixed": 0
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "llm_verified",
+        "data": {
+          "corrected": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_complete",
+        "mentions": 2,
+        "ts": 1784566073.7695045
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_start",
+        "ts": 1784566073.769525
+      },
+      {
+        "agent": "assertion",
+        "action": "start",
+        "data": {
+          "mentions": 2
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "2. Bệnh sử hiện tại\nLý do nhập viện: xuất huyết nội sọ không do chấn thương, không đặc hiệu\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật thực hiện: Truyền dịch yếu tố IX đậm đặc\nCác phát hiện chẩn đoán khác\n- xuất huyết nội sọ không do chấn thương, không đặc hiệu\n- Điều trị chống đông",
+            "start": 271,
+            "end": 281,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "complete",
+        "data": {
+          "processed": 2,
+          "llm_checked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_complete",
+        "ts": 1784566073.7697034
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_start",
+        "ts": 1784566073.769717
+      },
+      {
+        "agent": "linking",
+        "action": "start",
+        "data": {
+          "mentions": 2
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "complete",
+        "data": {
+          "linked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_complete",
+        "linked": 0,
+        "ts": 1784566073.7697284
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_start",
+        "ts": 1784566073.7697368
+      },
+      {
+        "agent": "verifier",
+        "action": "start",
+        "data": {
+          "mentions": 2
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "tool_call",
+        "data": {
+          "tool": "verify_schema",
+          "input": {
+            "mentions": [
+              {
+                "text": "Truyền dịch yếu tố IX đậm đặc",
+                "position": [
+                  144,
+                  173
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chống đông",
+                "position": [
+                  271,
+                  281
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "confidence": 0.85,
+                "vote_count": 2,
+                "max_type_votes": 1,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "THUỐC": 0.45,
+                  "TRIỆU_CHỨNG": 0.55
+                },
+                "needs_review": true,
+                "llm_resolved": true,
+                "reason": "Mention 'chống đông' trong context được sử dụng để chỉ một tình trạng y khoa, không phải là tên thuốc, kết quả xét nghiệm, hay chẩn đoán. Nó mô tả một triệu chứng hoặc tình trạng cần được điều trị, do đó phù hợp với loại TRIỆU_CHỨNG.",
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              }
+            ],
+            "text": "2. Bệnh sử hiện tại\nLý do nhập viện: xuất huyết nội sọ không do chấn thương, không đặc hiệu\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật thực hiện: Truyền dịch yếu tố IX đậm đặc\nCác phát hiện chẩn đoán khác\n- xuất huyết nội sọ không do chấn thương, không đặc hiệu\n- Điều trị chống đông"
+          },
+          "output": {
+            "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              }
+            ],
+            "final_predictions": [
+              {
+                "text": "Truyền dịch yếu tố IX đậm đặc",
+                "position": [
+                  144,
+                  173
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chống đông",
+                "position": [
+                  271,
+                  281
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "confidence": 0.85,
+                "vote_count": 2,
+                "max_type_votes": 1,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "THUỐC": 0.45,
+                  "TRIỆU_CHỨNG": 0.55
+                },
+                "needs_review": true,
+                "llm_resolved": true,
+                "reason": "Mention 'chống đông' trong context được sử dụng để chỉ một tình trạng y khoa, không phải là tên thuốc, kết quả xét nghiệm, hay chẩn đoán. Nó mô tả một triệu chứng hoặc tình trạng cần được điều trị, do đó phù hợp với loại TRIỆU_CHỨNG.",
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              }
+            ],
+            "dropped": 0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "validated",
+        "data": {
+          "kept": 2,
+          "dropped": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_complete",
+        "kept": 2,
+        "ts": 1784566073.823627
+      },
+      {
+        "agent": "orchestrator",
+        "action": "complete",
+        "total_mentions": 2,
+        "elapsed": 12.0,
+        "ts": 1784566073.8236568
+      }
+    ]
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 281,
+      "ts": 1784566061.8236604
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1784566061.8236837
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 281
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 281
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: xuất huyết nội sọ không do chấn thương, không đặc hiệu\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật thực hiện: Truyền dịch yếu tố IX đậm đặc\nCác phát hiện chẩn đoán khác\n- xuất huyết nội sọ không do chấn thương, không đặc hiệu\n- Điều trị chống đông"
+        },
+        "output": {
+          "rule": [
+            {
+              "text": "chống đông",
+              "position": [
+                271,
+                281
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            }
+          ],
+          "qwen": [
+            {
+              "text": "Truyền dịch yếu tố IX đậm đặc",
+              "position": [
+                144,
+                173
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Điều trị chống đông",
+              "position": [
+                262,
+                281
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 1,
+          "qwen": 2
+        },
+        "total": 3
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "Truyền dịch yếu tố IX đậm đặc",
+              "position": [
+                144,
+                173
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Điều trị chống đông",
+              "position": [
+                262,
+                281
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chống đông",
+              "position": [
+                271,
+                281
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "Truyền dịch yếu tố IX đậm đặc",
+            "position": [
+              144,
+              173
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chống đông",
+            "position": [
+              271,
+              281
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "confidence": 0.85,
+            "vote_count": 2,
+            "max_type_votes": 1,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "THUỐC": 0.45,
+              "TRIỆU_CHỨNG": 0.55
+            },
+            "needs_review": true,
+            "llm_resolved": true,
+            "reason": "Mention 'chống đông' trong context được sử dụng để chỉ một tình trạng y khoa, không phải là tên thuốc, kết quả xét nghiệm, hay chẩn đoán. Nó mô tả một triệu chứng hoặc tình trạng cần được điều trị, do đó phù hợp với loại TRIỆU_CHỨNG.",
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 2
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "Truyền dịch yếu tố IX đậm đặc",
+              "position": [
+                144,
+                173
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chống đông",
+              "position": [
+                271,
+                281
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 2,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "THUỐC": 0.45,
+                "TRIỆU_CHỨNG": 0.55
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'chống đông' trong context được sử dụng để chỉ một tình trạng y khoa, không phải là tên thuốc, kết quả xét nghiệm, hay chẩn đoán. Nó mô tả một triệu chứng hoặc tình trạng cần được điều trị, do đó phù hợp với loại TRIỆU_CHỨNG.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: xuất huyết nội sọ không do chấn thương, không đặc hiệu\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật thực hiện: Truyền dịch yếu tố IX đậm đặc\nCác phát hiện chẩn đoán khác\n- xuất huyết nội sọ không do chấn thương, không đặc hiệu\n- Điều trị chống đông"
+        },
+        "output": [
+          {
+            "text": "Truyền dịch yếu tố IX đậm đặc",
+            "position": [
+              144,
+              173
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chống đông",
+            "position": [
+              271,
+              281
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "confidence": 0.85,
+            "vote_count": 2,
+            "max_type_votes": 1,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "THUỐC": 0.45,
+              "TRIỆU_CHỨNG": 0.55
+            },
+            "needs_review": true,
+            "llm_resolved": true,
+            "reason": "Mention 'chống đông' trong context được sử dụng để chỉ một tình trạng y khoa, không phải là tên thuốc, kết quả xét nghiệm, hay chẩn đoán. Nó mô tả một triệu chứng hoặc tình trạng cần được điều trị, do đó phù hợp với loại TRIỆU_CHỨNG.",
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "Truyền dịch yếu tố IX đậm đặc",
+              "position": [
+                144,
+                173
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chống đông",
+              "position": [
+                271,
+                281
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 2,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "THUỐC": 0.45,
+                "TRIỆU_CHỨNG": 0.55
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'chống đông' trong context được sử dụng để chỉ một tình trạng y khoa, không phải là tên thuốc, kết quả xét nghiệm, hay chẩn đoán. Nó mô tả một triệu chứng hoặc tình trạng cần được điều trị, do đó phù hợp với loại TRIỆU_CHỨNG.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: xuất huyết nội sọ không do chấn thương, không đặc hiệu\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật thực hiện: Truyền dịch yếu tố IX đậm đặc\nCác phát hiện chẩn đoán khác\n- xuất huyết nội sọ không do chấn thương, không đặc hiệu\n- Điều trị chống đông"
+        },
+        "output": [
+          {
+            "text": "Truyền dịch yếu tố IX đậm đặc",
+            "position": [
+              144,
+              173
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chống đông",
+            "position": [
+              271,
+              281
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "confidence": 0.85,
+            "vote_count": 2,
+            "max_type_votes": 1,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "THUỐC": 0.45,
+              "TRIỆU_CHỨNG": 0.55
+            },
+            "needs_review": true,
+            "llm_resolved": true,
+            "reason": "Mention 'chống đông' trong context được sử dụng để chỉ một tình trạng y khoa, không phải là tên thuốc, kết quả xét nghiệm, hay chẩn đoán. Nó mô tả một triệu chứng hoặc tình trạng cần được điều trị, do đó phù hợp với loại TRIỆU_CHỨNG.",
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 2,
+      "ts": 1784566073.7695045
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1784566073.769525
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 2
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: xuất huyết nội sọ không do chấn thương, không đặc hiệu\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật thực hiện: Truyền dịch yếu tố IX đậm đặc\nCác phát hiện chẩn đoán khác\n- xuất huyết nội sọ không do chấn thương, không đặc hiệu\n- Điều trị chống đông",
+          "start": 271,
+          "end": 281,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 2,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1784566073.7697034
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1784566073.769717
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 2
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1784566073.7697284
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1784566073.7697368
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 2
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "Truyền dịch yếu tố IX đậm đặc",
+              "position": [
+                144,
+                173
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chống đông",
+              "position": [
+                271,
+                281
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 2,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "THUỐC": 0.45,
+                "TRIỆU_CHỨNG": 0.55
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'chống đông' trong context được sử dụng để chỉ một tình trạng y khoa, không phải là tên thuốc, kết quả xét nghiệm, hay chẩn đoán. Nó mô tả một triệu chứng hoặc tình trạng cần được điều trị, do đó phù hợp với loại TRIỆU_CHỨNG.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "text": "2. Bệnh sử hiện tại\nLý do nhập viện: xuất huyết nội sọ không do chấn thương, không đặc hiệu\n\n3. Đánh giá tại bệnh viện\nCác thủ thuật thực hiện: Truyền dịch yếu tố IX đậm đặc\nCác phát hiện chẩn đoán khác\n- xuất huyết nội sọ không do chấn thương, không đặc hiệu\n- Điều trị chống đông"
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "Truyền dịch yếu tố IX đậm đặc",
+              "position": [
+                144,
+                173
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chống đông",
+              "position": [
+                271,
+                281
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "confidence": 0.85,
+              "vote_count": 2,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "THUỐC": 0.45,
+                "TRIỆU_CHỨNG": 0.55
+              },
+              "needs_review": true,
+              "llm_resolved": true,
+              "reason": "Mention 'chống đông' trong context được sử dụng để chỉ một tình trạng y khoa, không phải là tên thuốc, kết quả xét nghiệm, hay chẩn đoán. Nó mô tả một triệu chứng hoặc tình trạng cần được điều trị, do đó phù hợp với loại TRIỆU_CHỨNG.",
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 2,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 2,
+      "ts": 1784566073.823627
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 2,
+      "elapsed": 12.0,
+      "ts": 1784566073.8236568
+    }
+  ]
+}

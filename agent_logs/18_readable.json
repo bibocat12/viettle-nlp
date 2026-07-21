@@ -1,17 +1,16 @@
 {
   "file_id": "18",
-  "timestamp": 1783588730.5055397,
-  "elapsed": 110.18,
-  "model": "runpod",
-  "mention_count": 8,
+  "timestamp": 1784566135.3280866,
+  "elapsed": 42.62,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "mention_count": 9,
   "stats": {
-    "total_mentions": 8,
-    "final": 8,
+    "total_mentions": 9,
+    "final": 9,
     "validation_errors": 0,
-    "elapsed": 110.18,
-    "rule": 0,
-    "qwen": 7,
-    "healthbert": 9
+    "elapsed": 42.62,
+    "rule": 4,
+    "qwen": 9
   },
   "log_summary": [
     {
@@ -60,24 +59,6 @@
       "agent": "assertion",
       "action": "tool_call",
       "ts": null,
-      "tool": "llm_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "llm_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
       "tool": "rule_assert"
     },
     {
@@ -85,12 +66,6 @@
       "action": "tool_call",
       "ts": null,
       "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "llm_assert"
     },
     {
       "agent": "assertion",
@@ -114,19 +89,7 @@
       "agent": "assertion",
       "action": "tool_call",
       "ts": null,
-      "tool": "llm_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
       "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "llm_assert"
     },
     {
       "agent": "assertion",
@@ -167,151 +130,99 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1783588730.505448,
+      "ts": 1784566135.3279986,
       "tool": null
     }
   ],
   "mentions": [
     {
       "text": "Thuyên tắc tĩnh mạch sâu chi dưới ở chân trái",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
       "position": [
         63,
         108
       ],
-      "type": "CHẨN_ĐOÁN",
-      "confidence": 0.5,
-      "voters": {
-        "ner_llm_relocated": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": true
-      },
-      "candidates": []
+      "candidates": [
+        "I80.2"
+      ]
     },
     {
       "text": "đau ngực trái",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
       "position": [
         156,
         169
-      ],
-      "type": "TRIỆU_CHỨNG",
-      "confidence": 0.95,
-      "voters": {
-        "ner_llm_relocated": 2,
-        "healthbert": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": true
-      }
+      ]
     },
     {
       "text": "đau sau xương ức",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
       "position": [
         182,
         198
-      ],
+      ]
+    },
+    {
+      "text": "đau ngực trái",
       "type": "TRIỆU_CHỨNG",
-      "confidence": 0.95,
-      "voters": {
-        "ner_llm_relocated": 2,
-        "healthbert": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+      "assertions": [],
+      "position": [
+        292,
+        305
+      ]
+    },
+    {
+      "text": "đau sau xương ức",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        312,
+        328
+      ]
     },
     {
       "text": "đau lan ra sau lưng",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
       "position": [
         335,
         354
-      ],
-      "type": "TRIỆU_CHỨNG",
-      "confidence": 0.5,
-      "voters": {
-        "healthbert": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+      ]
     },
     {
-      "text": "Vẫn còn đau ngực lan ra",
-      "position": [
-        396,
-        419
-      ],
-      "type": "TRIỆU_CHỨNG",
-      "confidence": 0.5,
-      "voters": {
-        "healthbert": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
-    },
-    {
-      "text": "chụp cắt lớp vi tính mạch máu",
+      "text": "chụp cắt lớp vi tính mạch máu (ctma) ngực",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
       "position": [
         486,
-        515
-      ],
-      "type": "TÊN_XÉT_NGHIỆM",
-      "confidence": 0.8,
-      "voters": {
-        "ner_llm_relocated": 1,
-        "healthbert": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+        527
+      ]
     },
     {
-      "text": "ctma",
-      "position": [
-        517,
-        521
-      ],
+      "text": "chụp cắt lớp vi tính mạch máu (ctma) ngực",
       "type": "TÊN_XÉT_NGHIỆM",
-      "confidence": 0.5,
-      "voters": {
-        "ner_llm_relocated": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+      "assertions": [],
+      "position": [
+        713,
+        754
+      ]
     },
     {
-      "text": "giá tắc mạch phổi",
-      "position": [
-        551,
-        568
-      ],
+      "text": "bóc tách động mạch chủ loại B",
       "type": "CHẨN_ĐOÁN",
-      "confidence": 0.5,
-      "voters": {
-        "healthbert": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      },
-      "candidates": []
+      "assertions": [],
+      "position": [
+        804,
+        833
+      ],
+      "candidates": [
+        "I71.0"
+      ]
     }
   ]
 }

@@ -1,17 +1,16 @@
 {
   "file_id": "2",
-  "timestamp": 1783581910.6974676,
-  "elapsed": 85.0,
-  "model": "runpod",
-  "mention_count": 5,
+  "timestamp": 1784565933.3980167,
+  "elapsed": 28.54,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "mention_count": 7,
   "stats": {
-    "total_mentions": 5,
-    "final": 5,
+    "total_mentions": 7,
+    "final": 7,
     "validation_errors": 0,
-    "elapsed": 85.0,
+    "elapsed": 28.54,
     "rule": 0,
-    "qwen": 3,
-    "healthbert": 3
+    "qwen": 7
   },
   "log_summary": [
     {
@@ -60,7 +59,7 @@
       "agent": "assertion",
       "action": "tool_call",
       "ts": null,
-      "tool": "llm_assert"
+      "tool": "rule_assert"
     },
     {
       "agent": "assertion",
@@ -72,7 +71,7 @@
       "agent": "assertion",
       "action": "tool_call",
       "ts": null,
-      "tool": "llm_assert"
+      "tool": "rule_assert"
     },
     {
       "agent": "assertion",
@@ -84,31 +83,13 @@
       "agent": "assertion",
       "action": "tool_call",
       "ts": null,
-      "tool": "llm_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
       "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "llm_assert"
     },
     {
       "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
-    },
-    {
-      "agent": "linking",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -143,99 +124,92 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1783581910.697408,
+      "ts": 1784565933.3979414,
       "tool": null
     }
   ],
   "mentions": [
     {
-      "text": "nghi ngờ xơ gan do rượu",
+      "text": "xơ gan do rượu",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
       "position": [
-        52,
+        61,
         75
       ],
-      "type": "CHẨN_ĐOÁN",
-      "confidence": 0.8,
-      "voters": {
-        "healthbert": 1,
-        "ner_llm_relocated": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": true
-      },
-      "candidates": []
+      "candidates": [
+        "K70.1"
+      ]
     },
     {
       "text": "sử dụng rượu bia",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isHistorical"
+      ],
       "position": [
         121,
         137
-      ],
-      "type": "TRIỆU_CHỨNG",
-      "confidence": 0.5,
-      "voters": {
-        "ner_llm_relocated": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": true
-      }
+      ]
     },
     {
       "text": "hội chứng não gan",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
       "position": [
         191,
         208
       ],
-      "type": "CHẨN_ĐOÁN",
-      "confidence": 0.5,
-      "voters": {
-        "healthbert": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": true
-      },
-      "candidates": []
+      "candidates": [
+        "K76.7"
+      ]
     },
     {
-      "text": "thức suy giảm",
-      "position": [
-        370,
-        383
-      ],
+      "text": "hội chứng não gan",
       "type": "CHẨN_ĐOÁN",
-      "confidence": 0.5,
-      "voters": {
-        "healthbert": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      },
-      "candidates": []
+      "assertions": [],
+      "position": [
+        270,
+        287
+      ],
+      "candidates": [
+        "K76.7"
+      ]
+    },
+    {
+      "text": "hội chứng não gan",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        338,
+        355
+      ],
+      "candidates": [
+        "K76.7"
+      ]
+    },
+    {
+      "text": "hội chứng não gan",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        432,
+        449
+      ],
+      "candidates": [
+        "K76.7"
+      ]
     },
     {
       "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
       "position": [
         555,
         593
-      ],
-      "type": "TÊN_XÉT_NGHIỆM",
-      "confidence": 0.5,
-      "voters": {
-        "ner_llm_relocated": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+      ]
     }
   ]
 }

@@ -1,0 +1,137 @@
+{
+  "file_id": "80",
+  "timestamp": 1784566970.3383315,
+  "elapsed": 11.83,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "mention_count": 4,
+  "stats": {
+    "total_mentions": 4,
+    "final": 4,
+    "validation_errors": 0,
+    "elapsed": 11.83,
+    "rule": 4,
+    "qwen": 4
+  },
+  "log_summary": [
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "parallel_extract"
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "vote_merge"
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "resolve_conflicts"
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "fix_positions"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "verify_schema"
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "ts": 1784566970.338247,
+      "tool": null
+    }
+  ],
+  "mentions": [
+    {
+      "text": "gãy xương sườn trái",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        146,
+        165
+      ]
+    },
+    {
+      "text": "gãy xương sườn trái",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        316,
+        335
+      ]
+    },
+    {
+      "text": "chụp cắt lớp vi tính (ct) cột sống cổ",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        359,
+        396
+      ]
+    },
+    {
+      "text": "chụp cắt lớp vi tính (ct) lồng ngực",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        425,
+        460
+      ]
+    }
+  ]
+}

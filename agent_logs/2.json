@@ -1,19 +1,2377 @@
 {
   "file_id": "2",
-  "timestamp": 1783581910.735831,
-  "elapsed": 85.04,
-  "model": "runpod",
+  "timestamp": 1784565933.3980167,
+  "elapsed": 28.54,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "result": {
+    "note_id": "2",
+    "mentions": [
+      {
+        "text": "xơ gan do rượu",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          61,
+          75
+        ],
+        "candidates": [
+          "K70.1"
+        ]
+      },
+      {
+        "text": "sử dụng rượu bia",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          121,
+          137
+        ]
+      },
+      {
+        "text": "hội chứng não gan",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [],
+        "position": [
+          191,
+          208
+        ],
+        "candidates": [
+          "K76.7"
+        ]
+      },
+      {
+        "text": "hội chứng não gan",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [],
+        "position": [
+          270,
+          287
+        ],
+        "candidates": [
+          "K76.7"
+        ]
+      },
+      {
+        "text": "hội chứng não gan",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [],
+        "position": [
+          338,
+          355
+        ],
+        "candidates": [
+          "K76.7"
+        ]
+      },
+      {
+        "text": "hội chứng não gan",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [],
+        "position": [
+          432,
+          449
+        ],
+        "candidates": [
+          "K76.7"
+        ]
+      },
+      {
+        "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          555,
+          593
+        ]
+      }
+    ],
+    "validation": {
+      "is_valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stats": {
+      "total_mentions": 7,
+      "final": 7,
+      "validation_errors": 0,
+      "elapsed": 28.54,
+      "rule": 0,
+      "qwen": 7
+    },
+    "logs": [
+      {
+        "agent": "orchestrator",
+        "action": "start",
+        "text_len": 593,
+        "ts": 1784565904.8543043
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_start",
+        "ts": 1784565904.854323
+      },
+      {
+        "agent": "extraction",
+        "action": "start",
+        "data": {
+          "text_len": 593
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "preprocessed",
+        "data": {
+          "normalized_len": 593
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "parallel_extract",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm\n    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan\n    - không thể tự chăm sóc bản thân tại nhà\n\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện: đặt shunt dẫn lưu tĩnh mạch cửa qua da"
+          },
+          "output": {
+            "rule": [],
+            "qwen": [
+              {
+                "text": "xơ gan do rượu",
+                "position": [
+                  61,
+                  75
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "sử dụng rượu bia",
+                "position": [
+                  121,
+                  137
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  191,
+                  208
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  270,
+                  287
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  338,
+                  355
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  432,
+                  449
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+                "position": [
+                  555,
+                  593
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ],
+            "errors": []
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "extracted",
+        "data": {
+          "sources": {
+            "rule": 0,
+            "qwen": 7
+          },
+          "total": 7
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "vote_merge",
+          "input": {
+            "all_mentions": [
+              {
+                "text": "xơ gan do rượu",
+                "position": [
+                  61,
+                  75
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "sử dụng rượu bia",
+                "position": [
+                  121,
+                  137
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  191,
+                  208
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  270,
+                  287
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  338,
+                  355
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  432,
+                  449
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+                "position": [
+                  555,
+                  593
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ]
+          },
+          "output": [
+            {
+              "text": "xơ gan do rượu",
+              "position": [
+                61,
+                75
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K70.1"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "sử dụng rượu bia",
+              "position": [
+                121,
+                137
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                191,
+                208
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                270,
+                287
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                338,
+                355
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                432,
+                449
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+              "position": [
+                555,
+                593
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "voted",
+        "data": {
+          "merged": 7
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "resolve_conflicts",
+          "input": {
+            "merged": [
+              {
+                "text": "xơ gan do rượu",
+                "position": [
+                  61,
+                  75
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K70.1"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "sử dụng rượu bia",
+                "position": [
+                  121,
+                  137
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  191,
+                  208
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K76.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  270,
+                  287
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K76.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  338,
+                  355
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K76.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  432,
+                  449
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K76.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+                "position": [
+                  555,
+                  593
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm\n    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan\n    - không thể tự chăm sóc bản thân tại nhà\n\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện: đặt shunt dẫn lưu tĩnh mạch cửa qua da"
+          },
+          "output": [
+            {
+              "text": "xơ gan do rượu",
+              "position": [
+                61,
+                75
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K70.1"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "sử dụng rượu bia",
+              "position": [
+                121,
+                137
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                191,
+                208
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                270,
+                287
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                338,
+                355
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                432,
+                449
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+              "position": [
+                555,
+                593
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "fix_positions",
+          "input": {
+            "mentions": [
+              {
+                "text": "xơ gan do rượu",
+                "position": [
+                  61,
+                  75
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K70.1"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "sử dụng rượu bia",
+                "position": [
+                  121,
+                  137
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  191,
+                  208
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K76.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  270,
+                  287
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K76.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  338,
+                  355
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K76.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  432,
+                  449
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K76.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+                "position": [
+                  555,
+                  593
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm\n    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan\n    - không thể tự chăm sóc bản thân tại nhà\n\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện: đặt shunt dẫn lưu tĩnh mạch cửa qua da"
+          },
+          "output": [
+            {
+              "text": "xơ gan do rượu",
+              "position": [
+                61,
+                75
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K70.1"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "sử dụng rượu bia",
+              "position": [
+                121,
+                137
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                191,
+                208
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                270,
+                287
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                338,
+                355
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                432,
+                449
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+              "position": [
+                555,
+                593
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "positions_fixed",
+        "data": {
+          "fixed": 0
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "llm_verified",
+        "data": {
+          "corrected": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_complete",
+        "mentions": 7,
+        "ts": 1784565912.406147
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_start",
+        "ts": 1784565912.4061615
+      },
+      {
+        "agent": "assertion",
+        "action": "start",
+        "data": {
+          "mentions": 7
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm\n    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan\n    - không thể tự chăm sóc bản thân tại nhà\n\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện: đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+            "start": 61,
+            "end": 75,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm\n    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan\n    - không thể tự chăm sóc bản thân tại nhà\n\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện: đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+            "start": 121,
+            "end": 137,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm\n    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan\n    - không thể tự chăm sóc bản thân tại nhà\n\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện: đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+            "start": 191,
+            "end": 208,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm\n    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan\n    - không thể tự chăm sóc bản thân tại nhà\n\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện: đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+            "start": 270,
+            "end": 287,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm\n    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan\n    - không thể tự chăm sóc bản thân tại nhà\n\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện: đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+            "start": 338,
+            "end": 355,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm\n    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan\n    - không thể tự chăm sóc bản thân tại nhà\n\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện: đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+            "start": 432,
+            "end": 449,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "complete",
+        "data": {
+          "processed": 7,
+          "llm_checked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_complete",
+        "ts": 1784565912.4071078
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_start",
+        "ts": 1784565912.4071224
+      },
+      {
+        "agent": "linking",
+        "action": "start",
+        "data": {
+          "mentions": 7
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "xơ gan do rượu",
+              "position": [
+                61,
+                75
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K70.1"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện "
+          },
+          "output": {
+            "candidates": [
+              "K70.1"
+            ],
+            "confidence": 0.85,
+            "rationale": "Mention 'xơ gan do rượu' trực tiếp tương ứng với mã K70.1: Bệnh xơ gan và/hoặc xơ hóa gan do rượu, đây là mã chẩn đoán chính xác và phù hợp nhất trong danh sách."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "hội chứng não gan",
+              "position": [
+                191,
+                208
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": " mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan ti"
+          },
+          "output": {
+            "candidates": [
+              "K76.7"
+            ],
+            "confidence": 0.85,
+            "rationale": "Hội chứng gan - thận được liệt kê trong danh sách candidates và phù hợp với mention 'hội chứng não gan' do sự liên quan về bệnh lý gan. Mã K76.7 là mã chính xác nhất trong ngữ cảnh này."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "complete",
+        "data": {
+          "linked": 5
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_complete",
+        "linked": 5,
+        "ts": 1784565933.282806
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_start",
+        "ts": 1784565933.2828224
+      },
+      {
+        "agent": "verifier",
+        "action": "start",
+        "data": {
+          "mentions": 7
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "tool_call",
+        "data": {
+          "tool": "verify_schema",
+          "input": {
+            "mentions": [
+              {
+                "text": "xơ gan do rượu",
+                "position": [
+                  61,
+                  75
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K70.1"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "sử dụng rượu bia",
+                "position": [
+                  121,
+                  137
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  191,
+                  208
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K76.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  270,
+                  287
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K76.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  338,
+                  355
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K76.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  432,
+                  449
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K76.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+                "position": [
+                  555,
+                  593
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm\n    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan\n    - không thể tự chăm sóc bản thân tại nhà\n\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện: đặt shunt dẫn lưu tĩnh mạch cửa qua da"
+          },
+          "output": {
+            "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              }
+            ],
+            "final_predictions": [
+              {
+                "text": "xơ gan do rượu",
+                "position": [
+                  61,
+                  75
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K70.1"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "sử dụng rượu bia",
+                "position": [
+                  121,
+                  137
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  191,
+                  208
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K76.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  270,
+                  287
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K76.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  338,
+                  355
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K76.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "hội chứng não gan",
+                "position": [
+                  432,
+                  449
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K76.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+                "position": [
+                  555,
+                  593
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "dropped": 0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "validated",
+        "data": {
+          "kept": 7,
+          "dropped": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_complete",
+        "kept": 7,
+        "ts": 1784565933.397921
+      },
+      {
+        "agent": "orchestrator",
+        "action": "complete",
+        "total_mentions": 7,
+        "elapsed": 28.54,
+        "ts": 1784565933.3979414
+      }
+    ]
+  },
   "logs": [
     {
       "agent": "orchestrator",
       "action": "start",
       "text_len": 593,
-      "ts": 1783581825.6956398
+      "ts": 1784565904.8543043
     },
     {
       "agent": "orchestrator",
       "action": "extraction_start",
-      "ts": 1783581825.6958318
+      "ts": 1784565904.854323
     },
     {
       "agent": "extraction",
@@ -41,40 +2399,13 @@
           "rule": [],
           "qwen": [
             {
-              "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
-              "type": "TÊN_XÉT_NGHIỆM",
-              "source": "ner_llm_relocated",
-              "position": [
-                555,
-                593
-              ],
-              "type_candidates": [
-                {
-                  "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "ner_llm_relocated": 1
-              },
-              "confidence": 0.5,
-              "position_fixed": true,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              }
-            },
-            {
               "text": "xơ gan do rượu",
-              "type": "CHẨN_ĐOÁN",
-              "source": "ner_llm_relocated",
               "position": [
                 61,
                 75
               ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
@@ -85,48 +2416,19 @@
             },
             {
               "text": "sử dụng rượu bia",
-              "type": "TRIỆU_CHỨNG",
-              "source": "ner_llm_relocated",
               "position": [
                 121,
                 137
               ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "TRIỆU_CHỨNG",
                   "score": 0.85
                 }
               ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "ner_llm_relocated": 1
-              },
-              "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.9
-            }
-          ],
-          "healthbert": [
-            {
-              "text": "nghi ngờ xơ gan do rượu",
-              "position": [
-                52,
-                75
-              ],
-              "type": "CHẨN_ĐOÁN",
-              "type_candidates": [
-                {
-                  "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
-                }
-              ],
-              "extraction_source": "healthbert"
+              "extraction_source": "qwen"
             },
             {
               "text": "hội chứng não gan",
@@ -135,56 +2437,78 @@
                 208
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
-              "vote_count": 1,
-              "voters": {
-                "healthbert": 1
-              },
-              "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.8,
-              "candidates": [],
-              "link_confidence": 0.0
+              "extraction_source": "qwen"
             },
             {
-              "text": "thức suy giảm",
+              "text": "hội chứng não gan",
               "position": [
-                370,
-                383
+                270,
+                287
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
-              "vote_count": 1,
-              "voters": {
-                "healthbert": 1
-              },
-              "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                338,
+                355
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                432,
+                449
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+              "position": [
+                555,
+                593
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
             }
           ],
           "errors": []
@@ -198,10 +2522,9 @@
       "data": {
         "sources": {
           "rule": 0,
-          "qwen": 3,
-          "healthbert": 3
+          "qwen": 7
         },
-        "total": 6
+        "total": 7
       }
     },
     {
@@ -212,40 +2535,13 @@
         "input": {
           "all_mentions": [
             {
-              "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
-              "type": "TÊN_XÉT_NGHIỆM",
-              "source": "ner_llm_relocated",
-              "position": [
-                555,
-                593
-              ],
-              "type_candidates": [
-                {
-                  "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "ner_llm_relocated": 1
-              },
-              "confidence": 0.5,
-              "position_fixed": true,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              }
-            },
-            {
               "text": "xơ gan do rượu",
-              "type": "CHẨN_ĐOÁN",
-              "source": "ner_llm_relocated",
               "position": [
                 61,
                 75
               ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
@@ -256,46 +2552,19 @@
             },
             {
               "text": "sử dụng rượu bia",
-              "type": "TRIỆU_CHỨNG",
-              "source": "ner_llm_relocated",
               "position": [
                 121,
                 137
               ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "TRIỆU_CHỨNG",
                   "score": 0.85
                 }
               ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "ner_llm_relocated": 1
-              },
-              "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.9
-            },
-            {
-              "text": "nghi ngờ xơ gan do rượu",
-              "position": [
-                52,
-                75
-              ],
-              "type": "CHẨN_ĐOÁN",
-              "type_candidates": [
-                {
-                  "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
-                }
-              ],
-              "extraction_source": "healthbert"
+              "extraction_source": "qwen"
             },
             {
               "text": "hội chứng não gan",
@@ -304,83 +2573,102 @@
                 208
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
-              "vote_count": 1,
-              "voters": {
-                "healthbert": 1
-              },
-              "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.8,
-              "candidates": [],
-              "link_confidence": 0.0
+              "extraction_source": "qwen"
             },
             {
-              "text": "thức suy giảm",
+              "text": "hội chứng não gan",
               "position": [
-                370,
-                383
+                270,
+                287
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
-              "vote_count": 1,
-              "voters": {
-                "healthbert": 1
-              },
-              "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                338,
+                355
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                432,
+                449
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+              "position": [
+                555,
+                593
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
             }
           ]
         },
         "output": [
           {
-            "text": "nghi ngờ xơ gan do rượu",
+            "text": "xơ gan do rượu",
             "position": [
-              52,
+              61,
               75
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.8
+                "score": 0.85
               }
             ],
-            "confidence": 0.8,
-            "vote_count": 2,
-            "max_type_votes": 2,
+            "extraction_source": "qwen",
+            "vote_count": 1,
             "voters": {
-              "healthbert": 1,
-              "ner_llm_relocated": 1
+              "qwen": 1
             },
-            "type_votes": {
-              "CHẨN_ĐOÁN": 2
-            },
+            "confidence": 0.5,
             "needs_review": false,
             "position_fixed": false,
             "assertions": {
@@ -388,18 +2676,20 @@
               "isFamily": false,
               "isHistorical": true
             },
-            "assertion_confidence": 0.95,
-            "candidates": [],
-            "link_confidence": 0.0
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K70.1"
+            ],
+            "link_confidence": 0.85
           },
           {
             "text": "sử dụng rượu bia",
-            "type": "TRIỆU_CHỨNG",
-            "source": "ner_llm_relocated",
             "position": [
               121,
               137
             ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "TRIỆU_CHỨNG",
@@ -409,16 +2699,17 @@
             "extraction_source": "qwen",
             "vote_count": 1,
             "voters": {
-              "ner_llm_relocated": 1
+              "qwen": 1
             },
             "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
               "isHistorical": true
             },
-            "assertion_confidence": 0.9
+            "assertion_confidence": 0.85
           },
           {
             "text": "hội chứng não gan",
@@ -427,47 +2718,20 @@
               208
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
             "voters": {
-              "healthbert": 1
+              "qwen": 1
             },
             "confidence": 0.5,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": true
-            },
-            "assertion_confidence": 0.8,
-            "candidates": [],
-            "link_confidence": 0.0
-          },
-          {
-            "text": "thức suy giảm",
-            "position": [
-              370,
-              383
-            ],
-            "type": "CHẨN_ĐOÁN",
-            "type_candidates": [
-              {
-                "label": "CHẨN_ĐOÁN",
-                "score": 0.75
-              }
-            ],
-            "extraction_source": "healthbert",
-            "vote_count": 1,
-            "voters": {
-              "healthbert": 1
-            },
-            "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
@@ -475,17 +2739,118 @@
               "isHistorical": false
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "K76.7"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "hội chứng não gan",
+            "position": [
+              270,
+              287
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K76.7"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "hội chứng não gan",
+            "position": [
+              338,
+              355
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K76.7"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "hội chứng não gan",
+            "position": [
+              432,
+              449
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K76.7"
+            ],
+            "link_confidence": 0.85
           },
           {
             "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
-            "type": "TÊN_XÉT_NGHIỆM",
-            "source": "ner_llm_relocated",
             "position": [
               555,
               593
             ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "TÊN_XÉT_NGHIỆM",
@@ -495,10 +2860,11 @@
             "extraction_source": "qwen",
             "vote_count": 1,
             "voters": {
-              "ner_llm_relocated": 1
+              "qwen": 1
             },
             "confidence": 0.5,
-            "position_fixed": true,
+            "needs_review": false,
+            "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
@@ -513,7 +2879,7 @@
       "agent": "extraction",
       "action": "voted",
       "data": {
-        "merged": 5
+        "merged": 7
       }
     },
     {
@@ -524,28 +2890,25 @@
         "input": {
           "merged": [
             {
-              "text": "nghi ngờ xơ gan do rượu",
+              "text": "xơ gan do rượu",
               "position": [
-                52,
+                61,
                 75
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.8
+                  "score": 0.85
                 }
               ],
-              "confidence": 0.8,
-              "vote_count": 2,
-              "max_type_votes": 2,
+              "extraction_source": "qwen",
+              "vote_count": 1,
               "voters": {
-                "healthbert": 1,
-                "ner_llm_relocated": 1
+                "qwen": 1
               },
-              "type_votes": {
-                "CHẨN_ĐOÁN": 2
-              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -553,18 +2916,20 @@
                 "isFamily": false,
                 "isHistorical": true
               },
-              "assertion_confidence": 0.95,
-              "candidates": [],
-              "link_confidence": 0.0
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K70.1"
+              ],
+              "link_confidence": 0.85
             },
             {
               "text": "sử dụng rượu bia",
-              "type": "TRIỆU_CHỨNG",
-              "source": "ner_llm_relocated",
               "position": [
                 121,
                 137
               ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "TRIỆU_CHỨNG",
@@ -574,16 +2939,17 @@
               "extraction_source": "qwen",
               "vote_count": 1,
               "voters": {
-                "ner_llm_relocated": 1
+                "qwen": 1
               },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
                 "isHistorical": true
               },
-              "assertion_confidence": 0.9
+              "assertion_confidence": 0.85
             },
             {
               "text": "hội chứng não gan",
@@ -592,47 +2958,20 @@
                 208
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
               "voters": {
-                "healthbert": 1
+                "qwen": 1
               },
               "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.8,
-              "candidates": [],
-              "link_confidence": 0.0
-            },
-            {
-              "text": "thức suy giảm",
-              "position": [
-                370,
-                383
-              ],
-              "type": "CHẨN_ĐOÁN",
-              "type_candidates": [
-                {
-                  "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
-                }
-              ],
-              "extraction_source": "healthbert",
-              "vote_count": 1,
-              "voters": {
-                "healthbert": 1
-              },
-              "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
@@ -640,17 +2979,118 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                270,
+                287
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                338,
+                355
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                432,
+                449
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
             },
             {
               "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
-              "type": "TÊN_XÉT_NGHIỆM",
-              "source": "ner_llm_relocated",
               "position": [
                 555,
                 593
               ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "TÊN_XÉT_NGHIỆM",
@@ -660,10 +3100,11 @@
               "extraction_source": "qwen",
               "vote_count": 1,
               "voters": {
-                "ner_llm_relocated": 1
+                "qwen": 1
               },
               "confidence": 0.5,
-              "position_fixed": true,
+              "needs_review": false,
+              "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
@@ -675,28 +3116,25 @@
         },
         "output": [
           {
-            "text": "nghi ngờ xơ gan do rượu",
+            "text": "xơ gan do rượu",
             "position": [
-              52,
+              61,
               75
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.8
+                "score": 0.85
               }
             ],
-            "confidence": 0.8,
-            "vote_count": 2,
-            "max_type_votes": 2,
+            "extraction_source": "qwen",
+            "vote_count": 1,
             "voters": {
-              "healthbert": 1,
-              "ner_llm_relocated": 1
+              "qwen": 1
             },
-            "type_votes": {
-              "CHẨN_ĐOÁN": 2
-            },
+            "confidence": 0.5,
             "needs_review": false,
             "position_fixed": false,
             "assertions": {
@@ -704,18 +3142,20 @@
               "isFamily": false,
               "isHistorical": true
             },
-            "assertion_confidence": 0.95,
-            "candidates": [],
-            "link_confidence": 0.0
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K70.1"
+            ],
+            "link_confidence": 0.85
           },
           {
             "text": "sử dụng rượu bia",
-            "type": "TRIỆU_CHỨNG",
-            "source": "ner_llm_relocated",
             "position": [
               121,
               137
             ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "TRIỆU_CHỨNG",
@@ -725,16 +3165,17 @@
             "extraction_source": "qwen",
             "vote_count": 1,
             "voters": {
-              "ner_llm_relocated": 1
+              "qwen": 1
             },
             "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
               "isHistorical": true
             },
-            "assertion_confidence": 0.9
+            "assertion_confidence": 0.85
           },
           {
             "text": "hội chứng não gan",
@@ -743,47 +3184,20 @@
               208
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
             "voters": {
-              "healthbert": 1
+              "qwen": 1
             },
             "confidence": 0.5,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": true
-            },
-            "assertion_confidence": 0.8,
-            "candidates": [],
-            "link_confidence": 0.0
-          },
-          {
-            "text": "thức suy giảm",
-            "position": [
-              370,
-              383
-            ],
-            "type": "CHẨN_ĐOÁN",
-            "type_candidates": [
-              {
-                "label": "CHẨN_ĐOÁN",
-                "score": 0.75
-              }
-            ],
-            "extraction_source": "healthbert",
-            "vote_count": 1,
-            "voters": {
-              "healthbert": 1
-            },
-            "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
@@ -791,17 +3205,118 @@
               "isHistorical": false
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "K76.7"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "hội chứng não gan",
+            "position": [
+              270,
+              287
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K76.7"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "hội chứng não gan",
+            "position": [
+              338,
+              355
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K76.7"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "hội chứng não gan",
+            "position": [
+              432,
+              449
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K76.7"
+            ],
+            "link_confidence": 0.85
           },
           {
             "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
-            "type": "TÊN_XÉT_NGHIỆM",
-            "source": "ner_llm_relocated",
             "position": [
               555,
               593
             ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "TÊN_XÉT_NGHIỆM",
@@ -811,10 +3326,11 @@
             "extraction_source": "qwen",
             "vote_count": 1,
             "voters": {
-              "ner_llm_relocated": 1
+              "qwen": 1
             },
             "confidence": 0.5,
-            "position_fixed": true,
+            "needs_review": false,
+            "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
@@ -833,28 +3349,25 @@
         "input": {
           "mentions": [
             {
-              "text": "nghi ngờ xơ gan do rượu",
+              "text": "xơ gan do rượu",
               "position": [
-                52,
+                61,
                 75
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.8
+                  "score": 0.85
                 }
               ],
-              "confidence": 0.8,
-              "vote_count": 2,
-              "max_type_votes": 2,
+              "extraction_source": "qwen",
+              "vote_count": 1,
               "voters": {
-                "healthbert": 1,
-                "ner_llm_relocated": 1
+                "qwen": 1
               },
-              "type_votes": {
-                "CHẨN_ĐOÁN": 2
-              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -862,18 +3375,20 @@
                 "isFamily": false,
                 "isHistorical": true
               },
-              "assertion_confidence": 0.95,
-              "candidates": [],
-              "link_confidence": 0.0
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K70.1"
+              ],
+              "link_confidence": 0.85
             },
             {
               "text": "sử dụng rượu bia",
-              "type": "TRIỆU_CHỨNG",
-              "source": "ner_llm_relocated",
               "position": [
                 121,
                 137
               ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "TRIỆU_CHỨNG",
@@ -883,16 +3398,17 @@
               "extraction_source": "qwen",
               "vote_count": 1,
               "voters": {
-                "ner_llm_relocated": 1
+                "qwen": 1
               },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
                 "isHistorical": true
               },
-              "assertion_confidence": 0.9
+              "assertion_confidence": 0.85
             },
             {
               "text": "hội chứng não gan",
@@ -901,47 +3417,20 @@
                 208
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
               "voters": {
-                "healthbert": 1
+                "qwen": 1
               },
               "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.8,
-              "candidates": [],
-              "link_confidence": 0.0
-            },
-            {
-              "text": "thức suy giảm",
-              "position": [
-                370,
-                383
-              ],
-              "type": "CHẨN_ĐOÁN",
-              "type_candidates": [
-                {
-                  "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
-                }
-              ],
-              "extraction_source": "healthbert",
-              "vote_count": 1,
-              "voters": {
-                "healthbert": 1
-              },
-              "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
@@ -949,17 +3438,118 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                270,
+                287
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                338,
+                355
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                432,
+                449
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
             },
             {
               "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
-              "type": "TÊN_XÉT_NGHIỆM",
-              "source": "ner_llm_relocated",
               "position": [
                 555,
                 593
               ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "TÊN_XÉT_NGHIỆM",
@@ -969,10 +3559,11 @@
               "extraction_source": "qwen",
               "vote_count": 1,
               "voters": {
-                "ner_llm_relocated": 1
+                "qwen": 1
               },
               "confidence": 0.5,
-              "position_fixed": true,
+              "needs_review": false,
+              "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
@@ -984,28 +3575,25 @@
         },
         "output": [
           {
-            "text": "nghi ngờ xơ gan do rượu",
+            "text": "xơ gan do rượu",
             "position": [
-              52,
+              61,
               75
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.8
+                "score": 0.85
               }
             ],
-            "confidence": 0.8,
-            "vote_count": 2,
-            "max_type_votes": 2,
+            "extraction_source": "qwen",
+            "vote_count": 1,
             "voters": {
-              "healthbert": 1,
-              "ner_llm_relocated": 1
+              "qwen": 1
             },
-            "type_votes": {
-              "CHẨN_ĐOÁN": 2
-            },
+            "confidence": 0.5,
             "needs_review": false,
             "position_fixed": false,
             "assertions": {
@@ -1013,18 +3601,20 @@
               "isFamily": false,
               "isHistorical": true
             },
-            "assertion_confidence": 0.95,
-            "candidates": [],
-            "link_confidence": 0.0
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K70.1"
+            ],
+            "link_confidence": 0.85
           },
           {
             "text": "sử dụng rượu bia",
-            "type": "TRIỆU_CHỨNG",
-            "source": "ner_llm_relocated",
             "position": [
               121,
               137
             ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "TRIỆU_CHỨNG",
@@ -1034,16 +3624,17 @@
             "extraction_source": "qwen",
             "vote_count": 1,
             "voters": {
-              "ner_llm_relocated": 1
+              "qwen": 1
             },
             "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
               "isHistorical": true
             },
-            "assertion_confidence": 0.9
+            "assertion_confidence": 0.85
           },
           {
             "text": "hội chứng não gan",
@@ -1052,47 +3643,20 @@
               208
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
             "voters": {
-              "healthbert": 1
+              "qwen": 1
             },
             "confidence": 0.5,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": true
-            },
-            "assertion_confidence": 0.8,
-            "candidates": [],
-            "link_confidence": 0.0
-          },
-          {
-            "text": "thức suy giảm",
-            "position": [
-              370,
-              383
-            ],
-            "type": "CHẨN_ĐOÁN",
-            "type_candidates": [
-              {
-                "label": "CHẨN_ĐOÁN",
-                "score": 0.75
-              }
-            ],
-            "extraction_source": "healthbert",
-            "vote_count": 1,
-            "voters": {
-              "healthbert": 1
-            },
-            "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
@@ -1100,17 +3664,118 @@
               "isHistorical": false
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "K76.7"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "hội chứng não gan",
+            "position": [
+              270,
+              287
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K76.7"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "hội chứng não gan",
+            "position": [
+              338,
+              355
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K76.7"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "hội chứng não gan",
+            "position": [
+              432,
+              449
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K76.7"
+            ],
+            "link_confidence": 0.85
           },
           {
             "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
-            "type": "TÊN_XÉT_NGHIỆM",
-            "source": "ner_llm_relocated",
             "position": [
               555,
               593
             ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "TÊN_XÉT_NGHIỆM",
@@ -1120,10 +3785,11 @@
             "extraction_source": "qwen",
             "vote_count": 1,
             "voters": {
-              "ner_llm_relocated": 1
+              "qwen": 1
             },
             "confidence": 0.5,
-            "position_fixed": true,
+            "needs_review": false,
+            "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
@@ -1138,7 +3804,7 @@
       "agent": "extraction",
       "action": "positions_fixed",
       "data": {
-        "fixed": 1
+        "fixed": 0
       }
     },
     {
@@ -1151,19 +3817,19 @@
     {
       "agent": "orchestrator",
       "action": "extraction_complete",
-      "mentions": 5,
-      "ts": 1783581895.6481898
+      "mentions": 7,
+      "ts": 1784565912.406147
     },
     {
       "agent": "orchestrator",
       "action": "assertion_start",
-      "ts": 1783581895.648223
+      "ts": 1784565912.4061615
     },
     {
       "agent": "assertion",
       "action": "start",
       "data": {
-        "mentions": 5
+        "mentions": 7
       }
     },
     {
@@ -1173,26 +3839,9 @@
         "tool": "rule_assert",
         "input": {
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm\n    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan\n    - không thể tự chăm sóc bản thân tại nhà\n\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện: đặt shunt dẫn lưu tĩnh mạch cửa qua da",
-          "start": 52,
-          "end": 75
-        },
-        "output": {
-          "isNegated": false,
-          "isFamily": false,
-          "isHistorical": true
-        },
-        "result_type": "dict"
-      }
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "data": {
-        "tool": "llm_assert",
-        "input": {
-          "mention": "nghi ngờ xơ gan do rượu",
-          "mtype": "CHẨN_ĐOÁN",
-          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện "
+          "start": 61,
+          "end": 75,
+          "mtype": "CHẨN_ĐOÁN"
         },
         "output": {
           "isNegated": false,
@@ -1210,25 +3859,8 @@
         "input": {
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm\n    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan\n    - không thể tự chăm sóc bản thân tại nhà\n\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện: đặt shunt dẫn lưu tĩnh mạch cửa qua da",
           "start": 121,
-          "end": 137
-        },
-        "output": {
-          "isNegated": false,
-          "isFamily": false,
-          "isHistorical": true
-        },
-        "result_type": "dict"
-      }
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "data": {
-        "tool": "llm_assert",
-        "input": {
-          "mention": "sử dụng rượu bia",
-          "mtype": "TRIỆU_CHỨNG",
-          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan"
+          "end": 137,
+          "mtype": "TRIỆU_CHỨNG"
         },
         "output": {
           "isNegated": false,
@@ -1246,43 +3878,8 @@
         "input": {
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm\n    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan\n    - không thể tự chăm sóc bản thân tại nhà\n\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện: đặt shunt dẫn lưu tĩnh mạch cửa qua da",
           "start": 191,
-          "end": 208
-        },
-        "output": {
-          "isNegated": false,
-          "isFamily": false,
-          "isHistorical": true
-        },
-        "result_type": "dict"
-      }
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "data": {
-        "tool": "llm_assert",
-        "input": {
-          "mention": "hội chứng não gan",
-          "mtype": "CHẨN_ĐOÁN",
-          "context": " mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan ti"
-        },
-        "output": {
-          "isNegated": false,
-          "isFamily": false,
-          "isHistorical": true
-        },
-        "result_type": "dict"
-      }
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "data": {
-        "tool": "rule_assert",
-        "input": {
-          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm\n    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan\n    - không thể tự chăm sóc bản thân tại nhà\n\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện: đặt shunt dẫn lưu tĩnh mạch cửa qua da",
-          "start": 370,
-          "end": 383
+          "end": 208,
+          "mtype": "CHẨN_ĐOÁN"
         },
         "output": {
           "isNegated": false,
@@ -1296,11 +3893,50 @@
       "agent": "assertion",
       "action": "tool_call",
       "data": {
-        "tool": "llm_assert",
+        "tool": "rule_assert",
         "input": {
-          "mention": "thức suy giảm",
-          "mtype": "CHẨN_ĐOÁN",
-          "context": "kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm\n    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan\n    - không thể tự chăm sóc bản thân tại nhà\n\n3.  Đánh giá tại bệnh viện\n    Các th"
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm\n    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan\n    - không thể tự chăm sóc bản thân tại nhà\n\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện: đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+          "start": 270,
+          "end": 287,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm\n    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan\n    - không thể tự chăm sóc bản thân tại nhà\n\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện: đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+          "start": 338,
+          "end": 355,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm\n    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan\n    - không thể tự chăm sóc bản thân tại nhà\n\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện: đặt shunt dẫn lưu tĩnh mạch cửa qua da",
+          "start": 432,
+          "end": 449,
+          "mtype": "CHẨN_ĐOÁN"
         },
         "output": {
           "isNegated": false,
@@ -1314,25 +3950,25 @@
       "agent": "assertion",
       "action": "complete",
       "data": {
-        "processed": 5,
-        "llm_checked": 3
+        "processed": 7,
+        "llm_checked": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "assertion_complete",
-      "ts": 1783581910.6896324
+      "ts": 1784565912.4071078
     },
     {
       "agent": "orchestrator",
       "action": "linking_start",
-      "ts": 1783581910.689652
+      "ts": 1784565912.4071224
     },
     {
       "agent": "linking",
       "action": "start",
       "data": {
-        "mentions": 5
+        "mentions": 7
       }
     },
     {
@@ -1342,28 +3978,25 @@
         "tool": "link_entity",
         "input": {
           "mention": {
-            "text": "nghi ngờ xơ gan do rượu",
+            "text": "xơ gan do rượu",
             "position": [
-              52,
+              61,
               75
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.8
+                "score": 0.85
               }
             ],
-            "confidence": 0.8,
-            "vote_count": 2,
-            "max_type_votes": 2,
+            "extraction_source": "qwen",
+            "vote_count": 1,
             "voters": {
-              "healthbert": 1,
-              "ner_llm_relocated": 1
+              "qwen": 1
             },
-            "type_votes": {
-              "CHẨN_ĐOÁN": 2
-            },
+            "confidence": 0.5,
             "needs_review": false,
             "position_fixed": false,
             "assertions": {
@@ -1371,15 +4004,20 @@
               "isFamily": false,
               "isHistorical": true
             },
-            "assertion_confidence": 0.95,
-            "candidates": [],
-            "link_confidence": 0.0
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K70.1"
+            ],
+            "link_confidence": 0.85
           },
           "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện "
         },
         "output": {
-          "candidates": [],
-          "confidence": 0.0
+          "candidates": [
+            "K70.1"
+          ],
+          "confidence": 0.85,
+          "rationale": "Mention 'xơ gan do rượu' trực tiếp tương ứng với mã K70.1: Bệnh xơ gan và/hoặc xơ hóa gan do rượu, đây là mã chẩn đoán chính xác và phù hợp nhất trong danh sách."
         },
         "result_type": "dict"
       }
@@ -1397,62 +4035,20 @@
               208
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
             "voters": {
-              "healthbert": 1
+              "qwen": 1
             },
             "confidence": 0.5,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": true
-            },
-            "assertion_confidence": 0.8,
-            "candidates": [],
-            "link_confidence": 0.0
-          },
-          "context": " mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan ti"
-        },
-        "output": {
-          "candidates": [],
-          "confidence": 0.0
-        },
-        "result_type": "dict"
-      }
-    },
-    {
-      "agent": "linking",
-      "action": "tool_call",
-      "data": {
-        "tool": "link_entity",
-        "input": {
-          "mention": {
-            "text": "thức suy giảm",
-            "position": [
-              370,
-              383
-            ],
-            "type": "CHẨN_ĐOÁN",
-            "type_candidates": [
-              {
-                "label": "CHẨN_ĐOÁN",
-                "score": 0.75
-              }
-            ],
-            "extraction_source": "healthbert",
-            "vote_count": 1,
-            "voters": {
-              "healthbert": 1
-            },
-            "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
@@ -1460,14 +4056,19 @@
               "isHistorical": false
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "K76.7"
+            ],
+            "link_confidence": 0.85
           },
-          "context": "kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan tiến triển, ý thức suy giảm\n    - Bệnh nhân nhập viện vào ngày w tiến triển hội chứng não gan\n    - không thể tự chăm sóc bản thân tại nhà\n\n3.  Đánh giá tại bệnh viện\n    Các th"
+          "context": " mãn tính: nghi ngờ xơ gan do rượu\n    Các yếu tố nguy cơ liên quan: Có tiền sử sử dụng rượu bia\n\n2.  Tiền sử bệnh hiện tại\n    Triệu chứng hiện tại: hội chứng não gan\n    Các sự kiện trước khi nhập viện\n    - đến bệnh viện  với hội chứng não gan\n    - Bệnh nhân được chuyển viện trong tình trạng hội chứng não gan ti"
         },
         "output": {
-          "candidates": [],
-          "confidence": 0.0
+          "candidates": [
+            "K76.7"
+          ],
+          "confidence": 0.85,
+          "rationale": "Hội chứng gan - thận được liệt kê trong danh sách candidates và phù hợp với mention 'hội chứng não gan' do sự liên quan về bệnh lý gan. Mã K76.7 là mã chính xác nhất trong ngữ cảnh này."
         },
         "result_type": "dict"
       }
@@ -1476,25 +4077,25 @@
       "agent": "linking",
       "action": "complete",
       "data": {
-        "linked": 0
+        "linked": 5
       }
     },
     {
       "agent": "orchestrator",
       "action": "linking_complete",
-      "linked": 0,
-      "ts": 1783581910.6972501
+      "linked": 5,
+      "ts": 1784565933.282806
     },
     {
       "agent": "orchestrator",
       "action": "verification_start",
-      "ts": 1783581910.6972816
+      "ts": 1784565933.2828224
     },
     {
       "agent": "verifier",
       "action": "start",
       "data": {
-        "mentions": 5
+        "mentions": 7
       }
     },
     {
@@ -1505,28 +4106,25 @@
         "input": {
           "mentions": [
             {
-              "text": "nghi ngờ xơ gan do rượu",
+              "text": "xơ gan do rượu",
               "position": [
-                52,
+                61,
                 75
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.8
+                  "score": 0.85
                 }
               ],
-              "confidence": 0.8,
-              "vote_count": 2,
-              "max_type_votes": 2,
+              "extraction_source": "qwen",
+              "vote_count": 1,
               "voters": {
-                "healthbert": 1,
-                "ner_llm_relocated": 1
+                "qwen": 1
               },
-              "type_votes": {
-                "CHẨN_ĐOÁN": 2
-              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -1534,18 +4132,20 @@
                 "isFamily": false,
                 "isHistorical": true
               },
-              "assertion_confidence": 0.95,
-              "candidates": [],
-              "link_confidence": 0.0
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K70.1"
+              ],
+              "link_confidence": 0.85
             },
             {
               "text": "sử dụng rượu bia",
-              "type": "TRIỆU_CHỨNG",
-              "source": "ner_llm_relocated",
               "position": [
                 121,
                 137
               ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "TRIỆU_CHỨNG",
@@ -1555,16 +4155,17 @@
               "extraction_source": "qwen",
               "vote_count": 1,
               "voters": {
-                "ner_llm_relocated": 1
+                "qwen": 1
               },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
                 "isHistorical": true
               },
-              "assertion_confidence": 0.9
+              "assertion_confidence": 0.85
             },
             {
               "text": "hội chứng não gan",
@@ -1573,47 +4174,20 @@
                 208
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
               "voters": {
-                "healthbert": 1
+                "qwen": 1
               },
               "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.8,
-              "candidates": [],
-              "link_confidence": 0.0
-            },
-            {
-              "text": "thức suy giảm",
-              "position": [
-                370,
-                383
-              ],
-              "type": "CHẨN_ĐOÁN",
-              "type_candidates": [
-                {
-                  "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
-                }
-              ],
-              "extraction_source": "healthbert",
-              "vote_count": 1,
-              "voters": {
-                "healthbert": 1
-              },
-              "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
@@ -1621,17 +4195,118 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                270,
+                287
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                338,
+                355
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                432,
+                449
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
             },
             {
               "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
-              "type": "TÊN_XÉT_NGHIỆM",
-              "source": "ner_llm_relocated",
               "position": [
                 555,
                 593
               ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "TÊN_XÉT_NGHIỆM",
@@ -1641,10 +4316,11 @@
               "extraction_source": "qwen",
               "vote_count": 1,
               "voters": {
-                "ner_llm_relocated": 1
+                "qwen": 1
               },
               "confidence": 0.5,
-              "position_fixed": true,
+              "needs_review": false,
+              "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
@@ -1659,9 +4335,7 @@
             {
               "action": "accept",
               "fixes": [],
-              "warnings": [
-                "no candidates"
-              ]
+              "warnings": []
             },
             {
               "action": "accept",
@@ -1671,16 +4345,22 @@
             {
               "action": "accept",
               "fixes": [],
-              "warnings": [
-                "no candidates"
-              ]
+              "warnings": []
             },
             {
               "action": "accept",
               "fixes": [],
-              "warnings": [
-                "no candidates"
-              ]
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
             },
             {
               "action": "accept",
@@ -1690,28 +4370,25 @@
           ],
           "final_predictions": [
             {
-              "text": "nghi ngờ xơ gan do rượu",
+              "text": "xơ gan do rượu",
               "position": [
-                52,
+                61,
                 75
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.8
+                  "score": 0.85
                 }
               ],
-              "confidence": 0.8,
-              "vote_count": 2,
-              "max_type_votes": 2,
+              "extraction_source": "qwen",
+              "vote_count": 1,
               "voters": {
-                "healthbert": 1,
-                "ner_llm_relocated": 1
+                "qwen": 1
               },
-              "type_votes": {
-                "CHẨN_ĐOÁN": 2
-              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -1719,18 +4396,20 @@
                 "isFamily": false,
                 "isHistorical": true
               },
-              "assertion_confidence": 0.95,
-              "candidates": [],
-              "link_confidence": 0.0
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K70.1"
+              ],
+              "link_confidence": 0.85
             },
             {
               "text": "sử dụng rượu bia",
-              "type": "TRIỆU_CHỨNG",
-              "source": "ner_llm_relocated",
               "position": [
                 121,
                 137
               ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "TRIỆU_CHỨNG",
@@ -1740,16 +4419,17 @@
               "extraction_source": "qwen",
               "vote_count": 1,
               "voters": {
-                "ner_llm_relocated": 1
+                "qwen": 1
               },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
                 "isHistorical": true
               },
-              "assertion_confidence": 0.9
+              "assertion_confidence": 0.85
             },
             {
               "text": "hội chứng não gan",
@@ -1758,47 +4438,20 @@
                 208
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
               "voters": {
-                "healthbert": 1
+                "qwen": 1
               },
               "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.8,
-              "candidates": [],
-              "link_confidence": 0.0
-            },
-            {
-              "text": "thức suy giảm",
-              "position": [
-                370,
-                383
-              ],
-              "type": "CHẨN_ĐOÁN",
-              "type_candidates": [
-                {
-                  "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
-                }
-              ],
-              "extraction_source": "healthbert",
-              "vote_count": 1,
-              "voters": {
-                "healthbert": 1
-              },
-              "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
@@ -1806,17 +4459,118 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                270,
+                287
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                338,
+                355
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "hội chứng não gan",
+              "position": [
+                432,
+                449
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K76.7"
+              ],
+              "link_confidence": 0.85
             },
             {
               "text": "đặt shunt dẫn lưu tĩnh mạch cửa qua da",
-              "type": "TÊN_XÉT_NGHIỆM",
-              "source": "ner_llm_relocated",
               "position": [
                 555,
                 593
               ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "TÊN_XÉT_NGHIỆM",
@@ -1826,10 +4580,11 @@
               "extraction_source": "qwen",
               "vote_count": 1,
               "voters": {
-                "ner_llm_relocated": 1
+                "qwen": 1
               },
               "confidence": 0.5,
-              "position_fixed": true,
+              "needs_review": false,
+              "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
@@ -1846,31 +4601,22 @@
       "agent": "verifier",
       "action": "validated",
       "data": {
-        "kept": 5,
+        "kept": 7,
         "dropped": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "verification_complete",
-      "kept": 5,
-      "ts": 1783581910.697381
+      "kept": 7,
+      "ts": 1784565933.397921
     },
     {
       "agent": "orchestrator",
       "action": "complete",
-      "total_mentions": 5,
-      "elapsed": 85.0,
-      "ts": 1783581910.697408
+      "total_mentions": 7,
+      "elapsed": 28.54,
+      "ts": 1784565933.3979414
     }
-  ],
-  "stats": {
-    "total_mentions": 5,
-    "final": 5,
-    "validation_errors": 0,
-    "elapsed": 85.0,
-    "rule": 0,
-    "qwen": 3,
-    "healthbert": 3
-  }
+  ]
 }

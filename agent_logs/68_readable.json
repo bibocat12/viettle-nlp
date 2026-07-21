@@ -1,0 +1,167 @@
+{
+  "file_id": "68",
+  "timestamp": 1784566798.1385784,
+  "elapsed": 24.04,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "mention_count": 4,
+  "stats": {
+    "total_mentions": 4,
+    "final": 4,
+    "validation_errors": 0,
+    "elapsed": 24.04,
+    "rule": 0,
+    "qwen": 4
+  },
+  "log_summary": [
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "parallel_extract"
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "vote_merge"
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "resolve_conflicts"
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "fix_positions"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "verify_schema"
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "ts": 1784566798.138508,
+      "tool": null
+    }
+  ],
+  "mentions": [
+    {
+      "text": "bệnh phổi tắc nghẽn mạn tính, không xác định",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        57,
+        101
+      ],
+      "candidates": [
+        "J44.9"
+      ]
+    },
+    {
+      "text": "tâm thần phân liệt",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        108,
+        126
+      ],
+      "candidates": [
+        "F20.9"
+      ]
+    },
+    {
+      "text": "yếu",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        175,
+        178
+      ]
+    },
+    {
+      "text": "yếu",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        209,
+        212
+      ]
+    }
+  ]
+}

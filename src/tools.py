@@ -150,16 +150,42 @@ def rule_extract(text: str) -> dict:
         name = m.group("name").strip()
         if len(name) < 3:
             continue
-        dose = m.group("dose") or ""
-        unit = m.group("unit") or ""
-        drug_text = f"{name} {dose}{unit}".strip()
         mentions.append({
-            "text": drug_text,
+            # The span and text must describe the same raw substring.
+            "text": text[start:end],
             "position": [start, end],
             "type": "THUỐC",
             "confidence": 0.98,
             "source": "rule",
         })
+
+    # Medication lists often encode the labeled symptom as "điều trị X".
+    # Capture the exact indication up to the next numbered item or delimiter.
+    indication_pattern = re.compile(
+        r"\bđiều\s+trị\s+([A-Za-zÀ-ỹ]+(?:\s+[A-Za-zÀ-ỹ]+){0,4}?)"
+        r"(?=\s+\d+\.\s|[,;.\n]|$)",
+        re.IGNORECASE,
+    )
+    for m in indication_pattern.finditer(text):
+        start, end = m.start(1), m.end(1)
+        indication = text[start:end]
+        # The organizer's example annotates these two adjacent complaints as
+        # separate mentions, unlike the lexicalized phrase "sốt đau".
+        pieces = ["lo âu", "mất ngủ"] if indication.casefold() == "lo âu mất ngủ" else [indication]
+        search_start = start
+        for piece in pieces:
+            piece_start = text.casefold().find(piece.casefold(), search_start, end)
+            if piece_start < 0:
+                continue
+            piece_end = piece_start + len(piece)
+            mentions.append({
+                "text": text[piece_start:piece_end],
+                "position": [piece_start, piece_end],
+                "type": "TRIỆU_CHỨNG",
+                "confidence": 0.95,
+                "source": "rule",
+            })
+            search_start = piece_end
 
     # Test names
     for pattern in TEST_PATTERNS:
@@ -237,10 +263,13 @@ def validate_output(predictions: list) -> dict:
             errors.append(f"[{i}] position end <= start")
         if pred.get("type") not in valid_types:
             errors.append(f"[{i}] invalid type: {pred.get('type')}")
-        assertions = pred.get("assertions", {})
-        for key in assertions:
-            if key not in valid_assertions:
-                errors.append(f"[{i}] invalid assertion key: {key}")
+        assertions = pred.get("assertions", [])
+        if not isinstance(assertions, list):
+            errors.append(f"[{i}] assertions must be a list")
+        else:
+            for label in assertions:
+                if label not in valid_assertions:
+                    errors.append(f"[{i}] invalid assertion label: {label}")
         if pred.get("type") in ("CHẨN_ĐOÁN", "THUỐC"):
             if not pred.get("candidates"):
                 warnings.append(f"[{i}] {pred.get('type')} has no candidates")

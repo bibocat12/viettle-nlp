@@ -1,0 +1,4291 @@
+{
+  "file_id": "60",
+  "timestamp": 1784566738.2004564,
+  "elapsed": 58.14,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "result": {
+    "note_id": "60",
+    "mentions": [
+      {
+        "text": "Trào ngược dạ dày thực quản",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [],
+        "position": [
+          149,
+          176
+        ],
+        "candidates": [
+          "K21"
+        ]
+      },
+      {
+        "text": "trào ngược",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [],
+        "position": [
+          254,
+          264
+        ],
+        "candidates": [
+          "K21"
+        ]
+      },
+      {
+        "text": "trào ngược",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [],
+        "position": [
+          540,
+          550
+        ],
+        "candidates": [
+          "K21"
+        ]
+      },
+      {
+        "text": "thoát vị hoành",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [
+          "isNegated"
+        ],
+        "position": [
+          638,
+          652
+        ],
+        "candidates": [
+          "K44.9"
+        ]
+      },
+      {
+        "text": "thoát vị cạnh thực quản",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [],
+        "position": [
+          694,
+          717
+        ],
+        "candidates": [
+          "K44"
+        ]
+      },
+      {
+        "text": "bình thường",
+        "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          866,
+          877
+        ]
+      }
+    ],
+    "validation": {
+      "is_valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stats": {
+      "total_mentions": 6,
+      "final": 6,
+      "validation_errors": 0,
+      "elapsed": 58.14,
+      "rule": 1,
+      "qwen": 6
+    },
+    "logs": [
+      {
+        "agent": "orchestrator",
+        "action": "start",
+        "text_len": 879,
+        "ts": 1784566680.0593777
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_start",
+        "ts": 1784566680.0593882
+      },
+      {
+        "agent": "extraction",
+        "action": "start",
+        "data": {
+          "text_len": 879
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "preprocessed",
+        "data": {
+          "normalized_len": 879
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "parallel_extract",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh hưởng đến sinh hoạt hằng ngày. Bệnh nhân nhập viện để được thăm khám và điều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường.\n"
+          },
+          "output": {
+            "rule": [
+              {
+                "text": "bình thường",
+                "position": [
+                  866,
+                  877
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "confidence": 0.9,
+                "source": "rule",
+                "extraction_source": "rule"
+              }
+            ],
+            "qwen": [
+              {
+                "text": "Trào ngược",
+                "position": [
+                  149,
+                  159
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Trào ngược dạ dày thực quản",
+                "position": [
+                  149,
+                  176
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "trào ngược",
+                "position": [
+                  254,
+                  264
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "trào ngược",
+                "position": [
+                  540,
+                  550
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "thoát vị hoành",
+                "position": [
+                  638,
+                  652
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "thoát vị cạnh thực quản",
+                "position": [
+                  694,
+                  717
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ],
+            "errors": []
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "extracted",
+        "data": {
+          "sources": {
+            "rule": 1,
+            "qwen": 6
+          },
+          "total": 7
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "vote_merge",
+          "input": {
+            "all_mentions": [
+              {
+                "text": "Trào ngược",
+                "position": [
+                  149,
+                  159
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Trào ngược dạ dày thực quản",
+                "position": [
+                  149,
+                  176
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "trào ngược",
+                "position": [
+                  254,
+                  264
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "trào ngược",
+                "position": [
+                  540,
+                  550
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "thoát vị hoành",
+                "position": [
+                  638,
+                  652
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "thoát vị cạnh thực quản",
+                "position": [
+                  694,
+                  717
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "bình thường",
+                "position": [
+                  866,
+                  877
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "confidence": 0.9,
+                "source": "rule",
+                "extraction_source": "rule"
+              }
+            ]
+          },
+          "output": [
+            {
+              "text": "Trào ngược dạ dày thực quản",
+              "position": [
+                149,
+                176
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.5
+                }
+              ],
+              "confidence": 0.5,
+              "vote_count": 1,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 2
+              },
+              "type_votes": {
+                "CHẨN_ĐOÁN": 0.45
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "trào ngược",
+              "position": [
+                254,
+                264
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "trào ngược",
+              "position": [
+                540,
+                550
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "thoát vị hoành",
+              "position": [
+                638,
+                652
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K44.9"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "thoát vị cạnh thực quản",
+              "position": [
+                694,
+                717
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K44"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bình thường",
+              "position": [
+                866,
+                877
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "confidence": 0.9,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "voted",
+        "data": {
+          "merged": 6
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "resolve_conflicts",
+          "input": {
+            "merged": [
+              {
+                "text": "Trào ngược dạ dày thực quản",
+                "position": [
+                  149,
+                  176
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.5
+                  }
+                ],
+                "confidence": 0.5,
+                "vote_count": 1,
+                "max_type_votes": 1,
+                "voters": {
+                  "qwen": 2
+                },
+                "type_votes": {
+                  "CHẨN_ĐOÁN": 0.45
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K21"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "trào ngược",
+                "position": [
+                  254,
+                  264
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K21"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "trào ngược",
+                "position": [
+                  540,
+                  550
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K21"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "thoát vị hoành",
+                "position": [
+                  638,
+                  652
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K44.9"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "thoát vị cạnh thực quản",
+                "position": [
+                  694,
+                  717
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K44"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "bình thường",
+                "position": [
+                  866,
+                  877
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "confidence": 0.9,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh hưởng đến sinh hoạt hằng ngày. Bệnh nhân nhập viện để được thăm khám và điều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường.\n"
+          },
+          "output": [
+            {
+              "text": "Trào ngược dạ dày thực quản",
+              "position": [
+                149,
+                176
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.5
+                }
+              ],
+              "confidence": 0.5,
+              "vote_count": 1,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 2
+              },
+              "type_votes": {
+                "CHẨN_ĐOÁN": 0.45
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "trào ngược",
+              "position": [
+                254,
+                264
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "trào ngược",
+              "position": [
+                540,
+                550
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "thoát vị hoành",
+              "position": [
+                638,
+                652
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K44.9"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "thoát vị cạnh thực quản",
+              "position": [
+                694,
+                717
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K44"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bình thường",
+              "position": [
+                866,
+                877
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "confidence": 0.9,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "fix_positions",
+          "input": {
+            "mentions": [
+              {
+                "text": "Trào ngược dạ dày thực quản",
+                "position": [
+                  149,
+                  176
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.5
+                  }
+                ],
+                "confidence": 0.5,
+                "vote_count": 1,
+                "max_type_votes": 1,
+                "voters": {
+                  "qwen": 2
+                },
+                "type_votes": {
+                  "CHẨN_ĐOÁN": 0.45
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K21"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "trào ngược",
+                "position": [
+                  254,
+                  264
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K21"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "trào ngược",
+                "position": [
+                  540,
+                  550
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K21"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "thoát vị hoành",
+                "position": [
+                  638,
+                  652
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K44.9"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "thoát vị cạnh thực quản",
+                "position": [
+                  694,
+                  717
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K44"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "bình thường",
+                "position": [
+                  866,
+                  877
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "confidence": 0.9,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh hưởng đến sinh hoạt hằng ngày. Bệnh nhân nhập viện để được thăm khám và điều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường.\n"
+          },
+          "output": [
+            {
+              "text": "Trào ngược dạ dày thực quản",
+              "position": [
+                149,
+                176
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.5
+                }
+              ],
+              "confidence": 0.5,
+              "vote_count": 1,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 2
+              },
+              "type_votes": {
+                "CHẨN_ĐOÁN": 0.45
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "trào ngược",
+              "position": [
+                254,
+                264
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "trào ngược",
+              "position": [
+                540,
+                550
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "thoát vị hoành",
+              "position": [
+                638,
+                652
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K44.9"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "thoát vị cạnh thực quản",
+              "position": [
+                694,
+                717
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K44"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bình thường",
+              "position": [
+                866,
+                877
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "confidence": 0.9,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "positions_fixed",
+        "data": {
+          "fixed": 0
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "llm_verified",
+        "data": {
+          "corrected": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_complete",
+        "mentions": 6,
+        "ts": 1784566686.703421
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_start",
+        "ts": 1784566686.7034338
+      },
+      {
+        "agent": "assertion",
+        "action": "start",
+        "data": {
+          "mentions": 6
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh hưởng đến sinh hoạt hằng ngày. Bệnh nhân nhập viện để được thăm khám và điều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường.\n",
+            "start": 149,
+            "end": 176,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh hưởng đến sinh hoạt hằng ngày. Bệnh nhân nhập viện để được thăm khám và điều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường.\n",
+            "start": 254,
+            "end": 264,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh hưởng đến sinh hoạt hằng ngày. Bệnh nhân nhập viện để được thăm khám và điều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường.\n",
+            "start": 540,
+            "end": 550,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh hưởng đến sinh hoạt hằng ngày. Bệnh nhân nhập viện để được thăm khám và điều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường.\n",
+            "start": 638,
+            "end": 652,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": true,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh hưởng đến sinh hoạt hằng ngày. Bệnh nhân nhập viện để được thăm khám và điều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường.\n",
+            "start": 694,
+            "end": 717,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "complete",
+        "data": {
+          "processed": 6,
+          "llm_checked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_complete",
+        "ts": 1784566686.7038252
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_start",
+        "ts": 1784566686.7038343
+      },
+      {
+        "agent": "linking",
+        "action": "start",
+        "data": {
+          "mentions": 6
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "Trào ngược dạ dày thực quản",
+              "position": [
+                149,
+                176
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.5
+                }
+              ],
+              "confidence": 0.5,
+              "vote_count": 1,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 2
+              },
+              "type_votes": {
+                "CHẨN_ĐOÁN": 0.45
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng "
+          },
+          "output": {
+            "candidates": [
+              "K21"
+            ],
+            "confidence": 0.85,
+            "rationale": "Mention 'Trào ngược dạ dày thực quản' trực tiếp tương ứng với mã K21 - Bệnh trào ngược dạ dày - thực quản, đây là mã chính xác nhất trong danh sách candidates."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "trào ngược",
+              "position": [
+                254,
+                264
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh"
+          },
+          "output": {
+            "candidates": [
+              "K21"
+            ],
+            "confidence": 0.85,
+            "rationale": "Mention 'trào ngược' kết hợp với bối cảnh bệnh khởi phát với triệu chứng trào ngược dạ dày thực quản, phù hợp với mã K21 (Bệnh trào ngược dạ dày - thực quản)."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "thoát vị hoành",
+              "position": [
+                638,
+                652
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K44.9"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "iều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn l"
+          },
+          "output": {
+            "candidates": [
+              "K44.9"
+            ],
+            "confidence": 0.85,
+            "rationale": "Mention 'thoát vị hoành' phù hợp với mã K44.9 (Thoát vị cơ hoành, không tắc nghẽn hoặc hoại thư), đây là mã chẩn đoán chính xác nhất trong danh sách candidates."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "thoát vị cạnh thực quản",
+              "position": [
+                694,
+                717
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K44"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": " ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ b"
+          },
+          "output": {
+            "candidates": [
+              "K44"
+            ],
+            "confidence": 0.85,
+            "rationale": "Mention 'thoát vị cạnh thực quản' phù hợp với mã K44 (Thoát vị cơ hoành) trong danh sách candidates."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "complete",
+        "data": {
+          "linked": 5
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_complete",
+        "linked": 5,
+        "ts": 1784566738.1061118
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_start",
+        "ts": 1784566738.1061292
+      },
+      {
+        "agent": "verifier",
+        "action": "start",
+        "data": {
+          "mentions": 6
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "tool_call",
+        "data": {
+          "tool": "verify_schema",
+          "input": {
+            "mentions": [
+              {
+                "text": "Trào ngược dạ dày thực quản",
+                "position": [
+                  149,
+                  176
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.5
+                  }
+                ],
+                "confidence": 0.5,
+                "vote_count": 1,
+                "max_type_votes": 1,
+                "voters": {
+                  "qwen": 2
+                },
+                "type_votes": {
+                  "CHẨN_ĐOÁN": 0.45
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K21"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "trào ngược",
+                "position": [
+                  254,
+                  264
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K21"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "trào ngược",
+                "position": [
+                  540,
+                  550
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K21"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "thoát vị hoành",
+                "position": [
+                  638,
+                  652
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K44.9"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "thoát vị cạnh thực quản",
+                "position": [
+                  694,
+                  717
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K44"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "bình thường",
+                "position": [
+                  866,
+                  877
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "confidence": 0.9,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh hưởng đến sinh hoạt hằng ngày. Bệnh nhân nhập viện để được thăm khám và điều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường.\n"
+          },
+          "output": {
+            "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              }
+            ],
+            "final_predictions": [
+              {
+                "text": "Trào ngược dạ dày thực quản",
+                "position": [
+                  149,
+                  176
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.5
+                  }
+                ],
+                "confidence": 0.5,
+                "vote_count": 1,
+                "max_type_votes": 1,
+                "voters": {
+                  "qwen": 2
+                },
+                "type_votes": {
+                  "CHẨN_ĐOÁN": 0.45
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K21"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "trào ngược",
+                "position": [
+                  254,
+                  264
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K21"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "trào ngược",
+                "position": [
+                  540,
+                  550
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K21"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "thoát vị hoành",
+                "position": [
+                  638,
+                  652
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K44.9"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "thoát vị cạnh thực quản",
+                "position": [
+                  694,
+                  717
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K44"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "bình thường",
+                "position": [
+                  866,
+                  877
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "confidence": 0.9,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "dropped": 0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "validated",
+        "data": {
+          "kept": 6,
+          "dropped": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_complete",
+        "kept": 6,
+        "ts": 1784566738.2003663
+      },
+      {
+        "agent": "orchestrator",
+        "action": "complete",
+        "total_mentions": 6,
+        "elapsed": 58.14,
+        "ts": 1784566738.200385
+      }
+    ]
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 879,
+      "ts": 1784566680.0593777
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1784566680.0593882
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 879
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 879
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh hưởng đến sinh hoạt hằng ngày. Bệnh nhân nhập viện để được thăm khám và điều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường.\n"
+        },
+        "output": {
+          "rule": [
+            {
+              "text": "bình thường",
+              "position": [
+                866,
+                877
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "confidence": 0.9,
+              "source": "rule",
+              "extraction_source": "rule"
+            }
+          ],
+          "qwen": [
+            {
+              "text": "Trào ngược",
+              "position": [
+                149,
+                159
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Trào ngược dạ dày thực quản",
+              "position": [
+                149,
+                176
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "trào ngược",
+              "position": [
+                254,
+                264
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "trào ngược",
+              "position": [
+                540,
+                550
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "thoát vị hoành",
+              "position": [
+                638,
+                652
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "thoát vị cạnh thực quản",
+              "position": [
+                694,
+                717
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 1,
+          "qwen": 6
+        },
+        "total": 7
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "Trào ngược",
+              "position": [
+                149,
+                159
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Trào ngược dạ dày thực quản",
+              "position": [
+                149,
+                176
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "trào ngược",
+              "position": [
+                254,
+                264
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "trào ngược",
+              "position": [
+                540,
+                550
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "thoát vị hoành",
+              "position": [
+                638,
+                652
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "thoát vị cạnh thực quản",
+              "position": [
+                694,
+                717
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "bình thường",
+              "position": [
+                866,
+                877
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "confidence": 0.9,
+              "source": "rule",
+              "extraction_source": "rule"
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "Trào ngược dạ dày thực quản",
+            "position": [
+              149,
+              176
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.5
+              }
+            ],
+            "confidence": 0.5,
+            "vote_count": 1,
+            "max_type_votes": 1,
+            "voters": {
+              "qwen": 2
+            },
+            "type_votes": {
+              "CHẨN_ĐOÁN": 0.45
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K21"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "trào ngược",
+            "position": [
+              254,
+              264
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K21"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "trào ngược",
+            "position": [
+              540,
+              550
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K21"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "thoát vị hoành",
+            "position": [
+              638,
+              652
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K44.9"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "thoát vị cạnh thực quản",
+            "position": [
+              694,
+              717
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K44"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "bình thường",
+            "position": [
+              866,
+              877
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "confidence": 0.9,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 6
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "Trào ngược dạ dày thực quản",
+              "position": [
+                149,
+                176
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.5
+                }
+              ],
+              "confidence": 0.5,
+              "vote_count": 1,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 2
+              },
+              "type_votes": {
+                "CHẨN_ĐOÁN": 0.45
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "trào ngược",
+              "position": [
+                254,
+                264
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "trào ngược",
+              "position": [
+                540,
+                550
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "thoát vị hoành",
+              "position": [
+                638,
+                652
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K44.9"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "thoát vị cạnh thực quản",
+              "position": [
+                694,
+                717
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K44"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bình thường",
+              "position": [
+                866,
+                877
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "confidence": 0.9,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh hưởng đến sinh hoạt hằng ngày. Bệnh nhân nhập viện để được thăm khám và điều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường.\n"
+        },
+        "output": [
+          {
+            "text": "Trào ngược dạ dày thực quản",
+            "position": [
+              149,
+              176
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.5
+              }
+            ],
+            "confidence": 0.5,
+            "vote_count": 1,
+            "max_type_votes": 1,
+            "voters": {
+              "qwen": 2
+            },
+            "type_votes": {
+              "CHẨN_ĐOÁN": 0.45
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K21"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "trào ngược",
+            "position": [
+              254,
+              264
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K21"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "trào ngược",
+            "position": [
+              540,
+              550
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K21"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "thoát vị hoành",
+            "position": [
+              638,
+              652
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K44.9"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "thoát vị cạnh thực quản",
+            "position": [
+              694,
+              717
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K44"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "bình thường",
+            "position": [
+              866,
+              877
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "confidence": 0.9,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "Trào ngược dạ dày thực quản",
+              "position": [
+                149,
+                176
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.5
+                }
+              ],
+              "confidence": 0.5,
+              "vote_count": 1,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 2
+              },
+              "type_votes": {
+                "CHẨN_ĐOÁN": 0.45
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "trào ngược",
+              "position": [
+                254,
+                264
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "trào ngược",
+              "position": [
+                540,
+                550
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "thoát vị hoành",
+              "position": [
+                638,
+                652
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K44.9"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "thoát vị cạnh thực quản",
+              "position": [
+                694,
+                717
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K44"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bình thường",
+              "position": [
+                866,
+                877
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "confidence": 0.9,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh hưởng đến sinh hoạt hằng ngày. Bệnh nhân nhập viện để được thăm khám và điều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường.\n"
+        },
+        "output": [
+          {
+            "text": "Trào ngược dạ dày thực quản",
+            "position": [
+              149,
+              176
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.5
+              }
+            ],
+            "confidence": 0.5,
+            "vote_count": 1,
+            "max_type_votes": 1,
+            "voters": {
+              "qwen": 2
+            },
+            "type_votes": {
+              "CHẨN_ĐOÁN": 0.45
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K21"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "trào ngược",
+            "position": [
+              254,
+              264
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K21"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "trào ngược",
+            "position": [
+              540,
+              550
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K21"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "thoát vị hoành",
+            "position": [
+              638,
+              652
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K44.9"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "thoát vị cạnh thực quản",
+            "position": [
+              694,
+              717
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K44"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "bình thường",
+            "position": [
+              866,
+              877
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "confidence": 0.9,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 6,
+      "ts": 1784566686.703421
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1784566686.7034338
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 6
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh hưởng đến sinh hoạt hằng ngày. Bệnh nhân nhập viện để được thăm khám và điều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường.\n",
+          "start": 149,
+          "end": 176,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh hưởng đến sinh hoạt hằng ngày. Bệnh nhân nhập viện để được thăm khám và điều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường.\n",
+          "start": 254,
+          "end": 264,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh hưởng đến sinh hoạt hằng ngày. Bệnh nhân nhập viện để được thăm khám và điều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường.\n",
+          "start": 540,
+          "end": 550,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh hưởng đến sinh hoạt hằng ngày. Bệnh nhân nhập viện để được thăm khám và điều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường.\n",
+          "start": 638,
+          "end": 652,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": true,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh hưởng đến sinh hoạt hằng ngày. Bệnh nhân nhập viện để được thăm khám và điều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường.\n",
+          "start": 694,
+          "end": 717,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 6,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1784566686.7038252
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1784566686.7038343
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 6
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "Trào ngược dạ dày thực quản",
+            "position": [
+              149,
+              176
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.5
+              }
+            ],
+            "confidence": 0.5,
+            "vote_count": 1,
+            "max_type_votes": 1,
+            "voters": {
+              "qwen": 2
+            },
+            "type_votes": {
+              "CHẨN_ĐOÁN": 0.45
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K21"
+            ],
+            "link_confidence": 0.85
+          },
+          "context": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng "
+        },
+        "output": {
+          "candidates": [
+            "K21"
+          ],
+          "confidence": 0.85,
+          "rationale": "Mention 'Trào ngược dạ dày thực quản' trực tiếp tương ứng với mã K21 - Bệnh trào ngược dạ dày - thực quản, đây là mã chính xác nhất trong danh sách candidates."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "trào ngược",
+            "position": [
+              254,
+              264
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K21"
+            ],
+            "link_confidence": 0.85
+          },
+          "context": "  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh"
+        },
+        "output": {
+          "candidates": [
+            "K21"
+          ],
+          "confidence": 0.85,
+          "rationale": "Mention 'trào ngược' kết hợp với bối cảnh bệnh khởi phát với triệu chứng trào ngược dạ dày thực quản, phù hợp với mã K21 (Bệnh trào ngược dạ dày - thực quản)."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "thoát vị hoành",
+            "position": [
+              638,
+              652
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K44.9"
+            ],
+            "link_confidence": 0.85
+          },
+          "context": "iều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn l"
+        },
+        "output": {
+          "candidates": [
+            "K44.9"
+          ],
+          "confidence": 0.85,
+          "rationale": "Mention 'thoát vị hoành' phù hợp với mã K44.9 (Thoát vị cơ hoành, không tắc nghẽn hoặc hoại thư), đây là mã chẩn đoán chính xác nhất trong danh sách candidates."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "thoát vị cạnh thực quản",
+            "position": [
+              694,
+              717
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "K44"
+            ],
+            "link_confidence": 0.85
+          },
+          "context": " ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ b"
+        },
+        "output": {
+          "candidates": [
+            "K44"
+          ],
+          "confidence": 0.85,
+          "rationale": "Mention 'thoát vị cạnh thực quản' phù hợp với mã K44 (Thoát vị cơ hoành) trong danh sách candidates."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 5
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 5,
+      "ts": 1784566738.1061118
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1784566738.1061292
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 6
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "Trào ngược dạ dày thực quản",
+              "position": [
+                149,
+                176
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.5
+                }
+              ],
+              "confidence": 0.5,
+              "vote_count": 1,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 2
+              },
+              "type_votes": {
+                "CHẨN_ĐOÁN": 0.45
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "trào ngược",
+              "position": [
+                254,
+                264
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "trào ngược",
+              "position": [
+                540,
+                550
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "thoát vị hoành",
+              "position": [
+                638,
+                652
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K44.9"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "thoát vị cạnh thực quản",
+              "position": [
+                694,
+                717
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K44"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bình thường",
+              "position": [
+                866,
+                877
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "confidence": 0.9,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật: phẫu thuật tạo đáy vị (fundoplication)\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Trào ngược dạ dày thực quản ngày càng tăng.\n    Bệnh khởi phát cách đây khoảng 1 năm với các triệu chứng trào ngược mức độ nhẹ, có thời điểm thuyên giảm. Tuy nhiên trong khoảng 1 năm trở lại đây, các triệu chứng xuất hiện thường xuyên hơn và tăng dần về mức độ, ảnh hưởng đến sinh hoạt hằng ngày. Bệnh nhân nhập viện để được thăm khám và điều trị.\n    Triệu chứng hiện tại\n    - triệu chứng trào ngược\n3.  Đánh giá tại bệnh viện\n    Kết quả Chẩn đoán hình ảnh\n    - Kêt quả không cho thấy thoát vị hoành cách đây một năm.\n    - Phát hiện có một thoát vị cạnh thực quản khá lớn.\n    - Thoát vị này dường như bao gồm đáy vị và một phần của lớp băng cuốn lên lồng ngực.\n    - Vị trí nối thực quản - dạ dày thực tế có vẻ bình thường.\n"
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "Trào ngược dạ dày thực quản",
+              "position": [
+                149,
+                176
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.5
+                }
+              ],
+              "confidence": 0.5,
+              "vote_count": 1,
+              "max_type_votes": 1,
+              "voters": {
+                "qwen": 2
+              },
+              "type_votes": {
+                "CHẨN_ĐOÁN": 0.45
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "trào ngược",
+              "position": [
+                254,
+                264
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "trào ngược",
+              "position": [
+                540,
+                550
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K21"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "thoát vị hoành",
+              "position": [
+                638,
+                652
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K44.9"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "thoát vị cạnh thực quản",
+              "position": [
+                694,
+                717
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K44"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bình thường",
+              "position": [
+                866,
+                877
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "confidence": 0.9,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 6,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 6,
+      "ts": 1784566738.2003663
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 6,
+      "elapsed": 58.14,
+      "ts": 1784566738.200385
+    }
+  ]
+}

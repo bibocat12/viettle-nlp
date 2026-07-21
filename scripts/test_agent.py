@@ -102,6 +102,11 @@ def execute_tool(kb, tool_name: str, args: dict) -> list:
 def run_agent(endpoint: str, model: str, text: str, kb) -> dict:
     """Run the model with tool calling and return parsed entities."""
     client = requests.Session()
+
+    # Auth: use QWEN_API if endpoint is DashScope, otherwise FIREWORKS_API_KEY
+    api_key = os.getenv("QWEN_API") or os.getenv("DASHSCOPE_API_KEY") or os.getenv("FIREWORKS_API_KEY") or ""
+    headers = {"Authorization": f"Bearer {api_key}"} if api_key else {}
+
     messages = [{"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": text}]
     max_turns = 6
@@ -116,15 +121,30 @@ def run_agent(endpoint: str, model: str, text: str, kb) -> dict:
                 "temperature": 0.1,
                 "max_tokens": 1024,
             },
+            headers=headers,
             timeout=120,
         )
         data = resp.json()
+
+        # Handle error responses
+        if "error" in data:
+            yield {"type": "error", "content": str(data["error"])}
+            return
+        if "choices" not in data:
+            yield {"type": "error", "content": f"Unexpected response: {str(data)[:200]}"}
+            return
+
         choice = data["choices"][0]
         msg = choice["message"]
 
-        if "tool_calls" in msg and msg["tool_calls"]:
+        # Handle both 'tool_calls' and variations
+        tool_calls = msg.get("tool_calls", []) or []
+        if not tool_calls and "function_call" in msg:
+            tool_calls = [{"function": msg["function_call"]}]
+
+        if tool_calls:
             messages.append(msg)
-            for tc in msg["tool_calls"]:
+            for tc in tool_calls:
                 fn_name = tc["function"]["name"]
                 fn_args = json.loads(tc["function"]["arguments"])
                 result = execute_tool(kb, fn_name, fn_args)
@@ -251,11 +271,14 @@ def validate(pred_entities: list, gt_entities: list) -> dict:
 def main():
     parser = argparse.ArgumentParser(description="Test GRPO model with tool calling")
     parser.add_argument("--endpoint", default="http://localhost:8000/v1")
-    parser.add_argument("--model", default="qwen3-ner-grpo")
+    parser.add_argument("--model", default="bibocat/qwen3-ner-grpo-final")
     parser.add_argument("--dataset", default="data_train/grpo_combined-100.jsonl")
     parser.add_argument("--num-samples", type=int, default=10)
     parser.add_argument("--verbose", action="store_true", default=True)
     args = parser.parse_args()
+
+    from dotenv import load_dotenv
+    load_dotenv(Path(__file__).parent.parent / ".env")
 
     # Load KB
     print("Loading KB...")

@@ -1,0 +1,1172 @@
+{
+  "file_id": "26",
+  "timestamp": 1784566248.5439723,
+  "elapsed": 10.78,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "result": {
+    "note_id": "26",
+    "mentions": [
+      {
+        "text": "béo phì",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          52,
+          59
+        ],
+        "candidates": [
+          "E65"
+        ]
+      }
+    ],
+    "validation": {
+      "is_valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stats": {
+      "total_mentions": 1,
+      "final": 1,
+      "validation_errors": 0,
+      "elapsed": 10.78,
+      "rule": 0,
+      "qwen": 1
+    },
+    "logs": [
+      {
+        "agent": "orchestrator",
+        "action": "start",
+        "text_len": 378,
+        "ts": 1784566237.7628014
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_start",
+        "ts": 1784566237.7628212
+      },
+      {
+        "agent": "extraction",
+        "action": "start",
+        "data": {
+          "text_len": 378
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "preprocessed",
+        "data": {
+          "normalized_len": 378
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "parallel_extract",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: béo phì\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật\n    Các sự kiện trước khi nhập viện\n    - nhiều lần cố gắng giảm cân và tăng cân trở lại\n    - nhiều lần thực hiện chế độ ăn kiêng có giám sát với mức giảm cân tối đa 60 pound nhưng sau đó có  tăng cân trở lại\n3.  Đánh giá tại bệnh viện"
+          },
+          "output": {
+            "rule": [],
+            "qwen": [
+              {
+                "text": "béo phì",
+                "position": [
+                  52,
+                  59
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ],
+            "errors": []
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "extracted",
+        "data": {
+          "sources": {
+            "rule": 0,
+            "qwen": 1
+          },
+          "total": 1
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "vote_merge",
+          "input": {
+            "all_mentions": [
+              {
+                "text": "béo phì",
+                "position": [
+                  52,
+                  59
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ]
+          },
+          "output": [
+            {
+              "text": "béo phì",
+              "position": [
+                52,
+                59
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E65"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "voted",
+        "data": {
+          "merged": 1
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "resolve_conflicts",
+          "input": {
+            "merged": [
+              {
+                "text": "béo phì",
+                "position": [
+                  52,
+                  59
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "E65"
+                ],
+                "link_confidence": 0.85
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: béo phì\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật\n    Các sự kiện trước khi nhập viện\n    - nhiều lần cố gắng giảm cân và tăng cân trở lại\n    - nhiều lần thực hiện chế độ ăn kiêng có giám sát với mức giảm cân tối đa 60 pound nhưng sau đó có  tăng cân trở lại\n3.  Đánh giá tại bệnh viện"
+          },
+          "output": [
+            {
+              "text": "béo phì",
+              "position": [
+                52,
+                59
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E65"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "fix_positions",
+          "input": {
+            "mentions": [
+              {
+                "text": "béo phì",
+                "position": [
+                  52,
+                  59
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "E65"
+                ],
+                "link_confidence": 0.85
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: béo phì\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật\n    Các sự kiện trước khi nhập viện\n    - nhiều lần cố gắng giảm cân và tăng cân trở lại\n    - nhiều lần thực hiện chế độ ăn kiêng có giám sát với mức giảm cân tối đa 60 pound nhưng sau đó có  tăng cân trở lại\n3.  Đánh giá tại bệnh viện"
+          },
+          "output": [
+            {
+              "text": "béo phì",
+              "position": [
+                52,
+                59
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E65"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "positions_fixed",
+        "data": {
+          "fixed": 0
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "llm_verified",
+        "data": {
+          "corrected": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_complete",
+        "mentions": 1,
+        "ts": 1784566239.7418458
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_start",
+        "ts": 1784566239.7418563
+      },
+      {
+        "agent": "assertion",
+        "action": "start",
+        "data": {
+          "mentions": 1
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: béo phì\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật\n    Các sự kiện trước khi nhập viện\n    - nhiều lần cố gắng giảm cân và tăng cân trở lại\n    - nhiều lần thực hiện chế độ ăn kiêng có giám sát với mức giảm cân tối đa 60 pound nhưng sau đó có  tăng cân trở lại\n3.  Đánh giá tại bệnh viện",
+            "start": 52,
+            "end": 59,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "complete",
+        "data": {
+          "processed": 1,
+          "llm_checked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_complete",
+        "ts": 1784566239.741976
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_start",
+        "ts": 1784566239.741983
+      },
+      {
+        "agent": "linking",
+        "action": "start",
+        "data": {
+          "mentions": 1
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "béo phì",
+              "position": [
+                52,
+                59
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E65"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: béo phì\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật\n    Các sự kiện trước khi nhập viện\n    - nhiều lần cố gắng giảm câ"
+          },
+          "output": {
+            "candidates": [
+              "E65"
+            ],
+            "confidence": 0.85,
+            "rationale": "Béo phì được mã hóa bởi E65 (Bệnh béo phì khu trú Bao gồm: khối mỡ) trong danh sách candidates."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "complete",
+        "data": {
+          "linked": 1
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_complete",
+        "linked": 1,
+        "ts": 1784566248.528391
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_start",
+        "ts": 1784566248.5284045
+      },
+      {
+        "agent": "verifier",
+        "action": "start",
+        "data": {
+          "mentions": 1
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "tool_call",
+        "data": {
+          "tool": "verify_schema",
+          "input": {
+            "mentions": [
+              {
+                "text": "béo phì",
+                "position": [
+                  52,
+                  59
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "E65"
+                ],
+                "link_confidence": 0.85
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: béo phì\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật\n    Các sự kiện trước khi nhập viện\n    - nhiều lần cố gắng giảm cân và tăng cân trở lại\n    - nhiều lần thực hiện chế độ ăn kiêng có giám sát với mức giảm cân tối đa 60 pound nhưng sau đó có  tăng cân trở lại\n3.  Đánh giá tại bệnh viện"
+          },
+          "output": {
+            "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              }
+            ],
+            "final_predictions": [
+              {
+                "text": "béo phì",
+                "position": [
+                  52,
+                  59
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "E65"
+                ],
+                "link_confidence": 0.85
+              }
+            ],
+            "dropped": 0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "validated",
+        "data": {
+          "kept": 1,
+          "dropped": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_complete",
+        "kept": 1,
+        "ts": 1784566248.543919
+      },
+      {
+        "agent": "orchestrator",
+        "action": "complete",
+        "total_mentions": 1,
+        "elapsed": 10.78,
+        "ts": 1784566248.543936
+      }
+    ]
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 378,
+      "ts": 1784566237.7628014
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1784566237.7628212
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 378
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 378
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: béo phì\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật\n    Các sự kiện trước khi nhập viện\n    - nhiều lần cố gắng giảm cân và tăng cân trở lại\n    - nhiều lần thực hiện chế độ ăn kiêng có giám sát với mức giảm cân tối đa 60 pound nhưng sau đó có  tăng cân trở lại\n3.  Đánh giá tại bệnh viện"
+        },
+        "output": {
+          "rule": [],
+          "qwen": [
+            {
+              "text": "béo phì",
+              "position": [
+                52,
+                59
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 1
+        },
+        "total": 1
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "béo phì",
+              "position": [
+                52,
+                59
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "béo phì",
+            "position": [
+              52,
+              59
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "E65"
+            ],
+            "link_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 1
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "béo phì",
+              "position": [
+                52,
+                59
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E65"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: béo phì\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật\n    Các sự kiện trước khi nhập viện\n    - nhiều lần cố gắng giảm cân và tăng cân trở lại\n    - nhiều lần thực hiện chế độ ăn kiêng có giám sát với mức giảm cân tối đa 60 pound nhưng sau đó có  tăng cân trở lại\n3.  Đánh giá tại bệnh viện"
+        },
+        "output": [
+          {
+            "text": "béo phì",
+            "position": [
+              52,
+              59
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "E65"
+            ],
+            "link_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "béo phì",
+              "position": [
+                52,
+                59
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E65"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: béo phì\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật\n    Các sự kiện trước khi nhập viện\n    - nhiều lần cố gắng giảm cân và tăng cân trở lại\n    - nhiều lần thực hiện chế độ ăn kiêng có giám sát với mức giảm cân tối đa 60 pound nhưng sau đó có  tăng cân trở lại\n3.  Đánh giá tại bệnh viện"
+        },
+        "output": [
+          {
+            "text": "béo phì",
+            "position": [
+              52,
+              59
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "E65"
+            ],
+            "link_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 1,
+      "ts": 1784566239.7418458
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1784566239.7418563
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 1
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: béo phì\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật\n    Các sự kiện trước khi nhập viện\n    - nhiều lần cố gắng giảm cân và tăng cân trở lại\n    - nhiều lần thực hiện chế độ ăn kiêng có giám sát với mức giảm cân tối đa 60 pound nhưng sau đó có  tăng cân trở lại\n3.  Đánh giá tại bệnh viện",
+          "start": 52,
+          "end": 59,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 1,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1784566239.741976
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1784566239.741983
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 1
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "béo phì",
+            "position": [
+              52,
+              59
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "E65"
+            ],
+            "link_confidence": 0.85
+          },
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: béo phì\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật\n    Các sự kiện trước khi nhập viện\n    - nhiều lần cố gắng giảm câ"
+        },
+        "output": {
+          "candidates": [
+            "E65"
+          ],
+          "confidence": 0.85,
+          "rationale": "Béo phì được mã hóa bởi E65 (Bệnh béo phì khu trú Bao gồm: khối mỡ) trong danh sách candidates."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 1,
+      "ts": 1784566248.528391
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1784566248.5284045
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 1
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "béo phì",
+              "position": [
+                52,
+                59
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E65"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mãn tính: béo phì\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: đến khám vì sau cân sau phẫu thuật\n    Các sự kiện trước khi nhập viện\n    - nhiều lần cố gắng giảm cân và tăng cân trở lại\n    - nhiều lần thực hiện chế độ ăn kiêng có giám sát với mức giảm cân tối đa 60 pound nhưng sau đó có  tăng cân trở lại\n3.  Đánh giá tại bệnh viện"
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "béo phì",
+              "position": [
+                52,
+                59
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E65"
+              ],
+              "link_confidence": 0.85
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 1,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 1,
+      "ts": 1784566248.543919
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 1,
+      "elapsed": 10.78,
+      "ts": 1784566248.543936
+    }
+  ]
+}

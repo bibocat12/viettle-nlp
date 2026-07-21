@@ -1,0 +1,4560 @@
+{
+  "file_id": "95",
+  "timestamp": 1784567136.6012642,
+  "elapsed": 8.04,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "result": {
+    "note_id": "95",
+    "mentions": [
+      {
+        "text": "đau bụng",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          51,
+          59
+        ]
+      },
+      {
+        "text": "đau âm ỉ vùng quanh rốn",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          120,
+          143
+        ]
+      },
+      {
+        "text": "đau bụng",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          207,
+          215
+        ]
+      },
+      {
+        "text": "đau âm ỉ vùng quanh rốn",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          376,
+          399
+        ]
+      },
+      {
+        "text": "buồn nôn",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          430,
+          438
+        ]
+      },
+      {
+        "text": "bình thường",
+        "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          501,
+          512
+        ]
+      },
+      {
+        "text": "đau ngực",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isNegated",
+          "isHistorical"
+        ],
+        "position": [
+          544,
+          552
+        ]
+      },
+      {
+        "text": "khó thở",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isNegated",
+          "isHistorical"
+        ],
+        "position": [
+          565,
+          572
+        ]
+      }
+    ],
+    "validation": {
+      "is_valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stats": {
+      "total_mentions": 8,
+      "final": 8,
+      "validation_errors": 0,
+      "elapsed": 8.04,
+      "rule": 1,
+      "qwen": 7
+    },
+    "logs": [
+      {
+        "agent": "orchestrator",
+        "action": "start",
+        "text_len": 673,
+        "ts": 1784567128.5579555
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_start",
+        "ts": 1784567128.5579686
+      },
+      {
+        "agent": "extraction",
+        "action": "start",
+        "data": {
+          "text_len": 673
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "preprocessed",
+        "data": {
+          "normalized_len": 673
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "parallel_extract",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện"
+          },
+          "output": {
+            "rule": [
+              {
+                "text": "bình thường",
+                "position": [
+                  501,
+                  512
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "confidence": 0.9,
+                "source": "rule",
+                "extraction_source": "rule"
+              }
+            ],
+            "qwen": [
+              {
+                "text": "đau bụng",
+                "position": [
+                  51,
+                  59
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đau âm ỉ vùng quanh rốn",
+                "position": [
+                  120,
+                  143
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đau bụng",
+                "position": [
+                  207,
+                  215
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đau âm ỉ vùng quanh rốn",
+                "position": [
+                  376,
+                  399
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "buồn nôn",
+                "position": [
+                  430,
+                  438
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đau ngực",
+                "position": [
+                  544,
+                  552
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "khó thở",
+                "position": [
+                  565,
+                  572
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ],
+            "errors": []
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "extracted",
+        "data": {
+          "sources": {
+            "rule": 1,
+            "qwen": 7
+          },
+          "total": 8
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "vote_merge",
+          "input": {
+            "all_mentions": [
+              {
+                "text": "đau bụng",
+                "position": [
+                  51,
+                  59
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đau âm ỉ vùng quanh rốn",
+                "position": [
+                  120,
+                  143
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đau bụng",
+                "position": [
+                  207,
+                  215
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đau âm ỉ vùng quanh rốn",
+                "position": [
+                  376,
+                  399
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "buồn nôn",
+                "position": [
+                  430,
+                  438
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đau ngực",
+                "position": [
+                  544,
+                  552
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "khó thở",
+                "position": [
+                  565,
+                  572
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "bình thường",
+                "position": [
+                  501,
+                  512
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "confidence": 0.9,
+                "source": "rule",
+                "extraction_source": "rule"
+              }
+            ]
+          },
+          "output": [
+            {
+              "text": "đau bụng",
+              "position": [
+                51,
+                59
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau âm ỉ vùng quanh rốn",
+              "position": [
+                120,
+                143
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau bụng",
+              "position": [
+                207,
+                215
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau âm ỉ vùng quanh rốn",
+              "position": [
+                376,
+                399
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "buồn nôn",
+              "position": [
+                430,
+                438
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "bình thường",
+              "position": [
+                501,
+                512
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "confidence": 0.9,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "đau ngực",
+              "position": [
+                544,
+                552
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                565,
+                572
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "voted",
+        "data": {
+          "merged": 8
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "resolve_conflicts",
+          "input": {
+            "merged": [
+              {
+                "text": "đau bụng",
+                "position": [
+                  51,
+                  59
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau âm ỉ vùng quanh rốn",
+                "position": [
+                  120,
+                  143
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau bụng",
+                "position": [
+                  207,
+                  215
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau âm ỉ vùng quanh rốn",
+                "position": [
+                  376,
+                  399
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "buồn nôn",
+                "position": [
+                  430,
+                  438
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "bình thường",
+                "position": [
+                  501,
+                  512
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "confidence": 0.9,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "đau ngực",
+                "position": [
+                  544,
+                  552
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "khó thở",
+                "position": [
+                  565,
+                  572
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              }
+            ],
+            "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện"
+          },
+          "output": [
+            {
+              "text": "đau bụng",
+              "position": [
+                51,
+                59
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau âm ỉ vùng quanh rốn",
+              "position": [
+                120,
+                143
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau bụng",
+              "position": [
+                207,
+                215
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau âm ỉ vùng quanh rốn",
+              "position": [
+                376,
+                399
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "buồn nôn",
+              "position": [
+                430,
+                438
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "bình thường",
+              "position": [
+                501,
+                512
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "confidence": 0.9,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "đau ngực",
+              "position": [
+                544,
+                552
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                565,
+                572
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "fix_positions",
+          "input": {
+            "mentions": [
+              {
+                "text": "đau bụng",
+                "position": [
+                  51,
+                  59
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau âm ỉ vùng quanh rốn",
+                "position": [
+                  120,
+                  143
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau bụng",
+                "position": [
+                  207,
+                  215
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau âm ỉ vùng quanh rốn",
+                "position": [
+                  376,
+                  399
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "buồn nôn",
+                "position": [
+                  430,
+                  438
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "bình thường",
+                "position": [
+                  501,
+                  512
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "confidence": 0.9,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "đau ngực",
+                "position": [
+                  544,
+                  552
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "khó thở",
+                "position": [
+                  565,
+                  572
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              }
+            ],
+            "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện"
+          },
+          "output": [
+            {
+              "text": "đau bụng",
+              "position": [
+                51,
+                59
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau âm ỉ vùng quanh rốn",
+              "position": [
+                120,
+                143
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau bụng",
+              "position": [
+                207,
+                215
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau âm ỉ vùng quanh rốn",
+              "position": [
+                376,
+                399
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "buồn nôn",
+              "position": [
+                430,
+                438
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "bình thường",
+              "position": [
+                501,
+                512
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "confidence": 0.9,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "đau ngực",
+              "position": [
+                544,
+                552
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                565,
+                572
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "positions_fixed",
+        "data": {
+          "fixed": 0
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "llm_verified",
+        "data": {
+          "corrected": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_complete",
+        "mentions": 8,
+        "ts": 1784567136.2419238
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_start",
+        "ts": 1784567136.2419317
+      },
+      {
+        "agent": "assertion",
+        "action": "start",
+        "data": {
+          "mentions": 8
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện",
+            "start": 51,
+            "end": 59,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện",
+            "start": 120,
+            "end": 143,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện",
+            "start": 207,
+            "end": 215,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện",
+            "start": 376,
+            "end": 399,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện",
+            "start": 430,
+            "end": 438,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện",
+            "start": 544,
+            "end": 552,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": true,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện",
+            "start": 565,
+            "end": 572,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": true,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "complete",
+        "data": {
+          "processed": 8,
+          "llm_checked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_complete",
+        "ts": 1784567136.2421699
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_start",
+        "ts": 1784567136.2421744
+      },
+      {
+        "agent": "linking",
+        "action": "start",
+        "data": {
+          "mentions": 8
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "complete",
+        "data": {
+          "linked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_complete",
+        "linked": 0,
+        "ts": 1784567136.242181
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_start",
+        "ts": 1784567136.2421849
+      },
+      {
+        "agent": "verifier",
+        "action": "start",
+        "data": {
+          "mentions": 8
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "tool_call",
+        "data": {
+          "tool": "verify_schema",
+          "input": {
+            "mentions": [
+              {
+                "text": "đau bụng",
+                "position": [
+                  51,
+                  59
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau âm ỉ vùng quanh rốn",
+                "position": [
+                  120,
+                  143
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau bụng",
+                "position": [
+                  207,
+                  215
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau âm ỉ vùng quanh rốn",
+                "position": [
+                  376,
+                  399
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "buồn nôn",
+                "position": [
+                  430,
+                  438
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "bình thường",
+                "position": [
+                  501,
+                  512
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "confidence": 0.9,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "đau ngực",
+                "position": [
+                  544,
+                  552
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "khó thở",
+                "position": [
+                  565,
+                  572
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              }
+            ],
+            "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện"
+          },
+          "output": {
+            "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              }
+            ],
+            "final_predictions": [
+              {
+                "text": "đau bụng",
+                "position": [
+                  51,
+                  59
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau âm ỉ vùng quanh rốn",
+                "position": [
+                  120,
+                  143
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau bụng",
+                "position": [
+                  207,
+                  215
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau âm ỉ vùng quanh rốn",
+                "position": [
+                  376,
+                  399
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "buồn nôn",
+                "position": [
+                  430,
+                  438
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "bình thường",
+                "position": [
+                  501,
+                  512
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "confidence": 0.9,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "đau ngực",
+                "position": [
+                  544,
+                  552
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "khó thở",
+                "position": [
+                  565,
+                  572
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              }
+            ],
+            "dropped": 0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "validated",
+        "data": {
+          "kept": 8,
+          "dropped": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_complete",
+        "kept": 8,
+        "ts": 1784567136.6011782
+      },
+      {
+        "agent": "orchestrator",
+        "action": "complete",
+        "total_mentions": 8,
+        "elapsed": 8.04,
+        "ts": 1784567136.6011992
+      }
+    ]
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 673,
+      "ts": 1784567128.5579555
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1784567128.5579686
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 673
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 673
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện"
+        },
+        "output": {
+          "rule": [
+            {
+              "text": "bình thường",
+              "position": [
+                501,
+                512
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "confidence": 0.9,
+              "source": "rule",
+              "extraction_source": "rule"
+            }
+          ],
+          "qwen": [
+            {
+              "text": "đau bụng",
+              "position": [
+                51,
+                59
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau âm ỉ vùng quanh rốn",
+              "position": [
+                120,
+                143
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau bụng",
+              "position": [
+                207,
+                215
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau âm ỉ vùng quanh rốn",
+              "position": [
+                376,
+                399
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "buồn nôn",
+              "position": [
+                430,
+                438
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau ngực",
+              "position": [
+                544,
+                552
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                565,
+                572
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 1,
+          "qwen": 7
+        },
+        "total": 8
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "đau bụng",
+              "position": [
+                51,
+                59
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau âm ỉ vùng quanh rốn",
+              "position": [
+                120,
+                143
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau bụng",
+              "position": [
+                207,
+                215
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau âm ỉ vùng quanh rốn",
+              "position": [
+                376,
+                399
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "buồn nôn",
+              "position": [
+                430,
+                438
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau ngực",
+              "position": [
+                544,
+                552
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                565,
+                572
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "bình thường",
+              "position": [
+                501,
+                512
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "confidence": 0.9,
+              "source": "rule",
+              "extraction_source": "rule"
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "đau bụng",
+            "position": [
+              51,
+              59
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau âm ỉ vùng quanh rốn",
+            "position": [
+              120,
+              143
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau bụng",
+            "position": [
+              207,
+              215
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau âm ỉ vùng quanh rốn",
+            "position": [
+              376,
+              399
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "buồn nôn",
+            "position": [
+              430,
+              438
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "bình thường",
+            "position": [
+              501,
+              512
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "confidence": 0.9,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "đau ngực",
+            "position": [
+              544,
+              552
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "khó thở",
+            "position": [
+              565,
+              572
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 8
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "đau bụng",
+              "position": [
+                51,
+                59
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau âm ỉ vùng quanh rốn",
+              "position": [
+                120,
+                143
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau bụng",
+              "position": [
+                207,
+                215
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau âm ỉ vùng quanh rốn",
+              "position": [
+                376,
+                399
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "buồn nôn",
+              "position": [
+                430,
+                438
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "bình thường",
+              "position": [
+                501,
+                512
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "confidence": 0.9,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "đau ngực",
+              "position": [
+                544,
+                552
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                565,
+                572
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện"
+        },
+        "output": [
+          {
+            "text": "đau bụng",
+            "position": [
+              51,
+              59
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau âm ỉ vùng quanh rốn",
+            "position": [
+              120,
+              143
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau bụng",
+            "position": [
+              207,
+              215
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau âm ỉ vùng quanh rốn",
+            "position": [
+              376,
+              399
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "buồn nôn",
+            "position": [
+              430,
+              438
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "bình thường",
+            "position": [
+              501,
+              512
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "confidence": 0.9,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "đau ngực",
+            "position": [
+              544,
+              552
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "khó thở",
+            "position": [
+              565,
+              572
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "đau bụng",
+              "position": [
+                51,
+                59
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau âm ỉ vùng quanh rốn",
+              "position": [
+                120,
+                143
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau bụng",
+              "position": [
+                207,
+                215
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau âm ỉ vùng quanh rốn",
+              "position": [
+                376,
+                399
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "buồn nôn",
+              "position": [
+                430,
+                438
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "bình thường",
+              "position": [
+                501,
+                512
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "confidence": 0.9,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "đau ngực",
+              "position": [
+                544,
+                552
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                565,
+                572
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện"
+        },
+        "output": [
+          {
+            "text": "đau bụng",
+            "position": [
+              51,
+              59
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau âm ỉ vùng quanh rốn",
+            "position": [
+              120,
+              143
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau bụng",
+            "position": [
+              207,
+              215
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau âm ỉ vùng quanh rốn",
+            "position": [
+              376,
+              399
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "buồn nôn",
+            "position": [
+              430,
+              438
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "bình thường",
+            "position": [
+              501,
+              512
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "confidence": 0.9,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "đau ngực",
+            "position": [
+              544,
+              552
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "khó thở",
+            "position": [
+              565,
+              572
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 8,
+      "ts": 1784567136.2419238
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1784567136.2419317
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 8
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện",
+          "start": 51,
+          "end": 59,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện",
+          "start": 120,
+          "end": 143,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện",
+          "start": 207,
+          "end": 215,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện",
+          "start": 376,
+          "end": 399,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện",
+          "start": 430,
+          "end": 438,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện",
+          "start": 544,
+          "end": 552,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": true,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện",
+          "start": 565,
+          "end": 572,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": true,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 8,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1784567136.2421699
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1784567136.2421744
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 8
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 0,
+      "ts": 1784567136.242181
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1784567136.2421849
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 8
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "đau bụng",
+              "position": [
+                51,
+                59
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau âm ỉ vùng quanh rốn",
+              "position": [
+                120,
+                143
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau bụng",
+              "position": [
+                207,
+                215
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau âm ỉ vùng quanh rốn",
+              "position": [
+                376,
+                399
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "buồn nôn",
+              "position": [
+                430,
+                438
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "bình thường",
+              "position": [
+                501,
+                512
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "confidence": 0.9,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "đau ngực",
+              "position": [
+                544,
+                552
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                565,
+                572
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "text": "1.  Tiền sử bệnh\n   Trước đây bệnh nhân đã từng bị đau bụng sau khi uống sữa\n\n2.  Bệnh sử  hin tại\n    Lý do nhập viện: đau âm ỉ vùng quanh rốn\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân xuất hiện đau bụng âm ỉ quanh rốn sau khí uống sữa, ngày nay vẫn còn đau, vào viện.\n  Tình trạng lúc vào viện:\nBệnh nhân tỉnh\nDa niêm mạc hồng nhạt\nKhông xuất huyết dưới da\n    - đau âm ỉ vùng quanh rốn, hạ sườn trái từng cơni\n    - buồn nôn nhẹ, không nôn\n    - Không sốt, không  ớn lạnh\n    - Đại tiện bình thường, không có nhầy máu\n    - Không đau ngực\n    - Không khó thở\nKhám bụng mềm, không chướng\n- Khám cơ quan khác chưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện"
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "đau bụng",
+              "position": [
+                51,
+                59
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau âm ỉ vùng quanh rốn",
+              "position": [
+                120,
+                143
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau bụng",
+              "position": [
+                207,
+                215
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau âm ỉ vùng quanh rốn",
+              "position": [
+                376,
+                399
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "buồn nôn",
+              "position": [
+                430,
+                438
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "bình thường",
+              "position": [
+                501,
+                512
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "confidence": 0.9,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "đau ngực",
+              "position": [
+                544,
+                552
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                565,
+                572
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 8,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 8,
+      "ts": 1784567136.6011782
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 8,
+      "elapsed": 8.04,
+      "ts": 1784567136.6011992
+    }
+  ]
+}

@@ -1,18 +1,16 @@
 {
   "file_id": "9",
-  "timestamp": 1783442542.4209974,
-  "elapsed": 7.46,
-  "model": "runpod",
-  "mention_count": 11,
+  "timestamp": 1784566026.0059392,
+  "elapsed": 26.52,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "mention_count": 13,
   "stats": {
-    "total_mentions": 11,
-    "final": 11,
+    "total_mentions": 13,
+    "final": 13,
     "validation_errors": 0,
-    "elapsed": 7.46,
-    "rule": 5,
-    "qwen": 0,
-    "healthbert": 10,
-    "errors": 0
+    "elapsed": 26.52,
+    "rule": 7,
+    "qwen": 7
   },
   "log_summary": [
     {
@@ -67,7 +65,7 @@
       "agent": "assertion",
       "action": "tool_call",
       "ts": null,
-      "tool": "llm_assert"
+      "tool": "rule_assert"
     },
     {
       "agent": "assertion",
@@ -79,7 +77,7 @@
       "agent": "assertion",
       "action": "tool_call",
       "ts": null,
-      "tool": "llm_assert"
+      "tool": "rule_assert"
     },
     {
       "agent": "assertion",
@@ -91,19 +89,19 @@
       "agent": "assertion",
       "action": "tool_call",
       "ts": null,
-      "tool": "llm_assert"
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
     },
     {
       "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
-    },
-    {
-      "agent": "linking",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -138,201 +136,141 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1783442542.4208858,
+      "ts": 1784566026.0058184,
       "tool": null
     }
   ],
   "mentions": [
     {
-      "text": "Bắt đầu đau bụng dưới và",
-      "position": [
-        157,
-        181
-      ],
-      "type": "TRIỆU_CHỨNG",
-      "confidence": 0.5,
-      "voters": [
-        "healthbert"
-      ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
-    },
-    {
-      "text": "chảy máu nhiều",
-      "position": [
-        182,
-        196
-      ],
+      "text": "u cơ trơn tử cung",
       "type": "CHẨN_ĐOÁN",
-      "confidence": 0.5,
-      "voters": [
-        "healthbert"
+      "assertions": [
+        "isHistorical"
       ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      },
+      "position": [
+        39,
+        56
+      ],
       "candidates": [
-        "N92.2"
+        "D25"
       ]
     },
     {
-      "text": "lower abdominal pain",
-      "position": [
-        228,
-        248
-      ],
+      "text": "iron",
       "type": "THUỐC",
-      "confidence": 0.5,
-      "voters": [
-        "healthbert"
+      "assertions": [
+        "isHistorical"
       ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      },
-      "candidates": []
+      "position": [
+        104,
+        108
+      ],
+      "candidates": [
+        "90176"
+      ]
+    },
+    {
+      "text": "đau bụng dưới",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        165,
+        178
+      ]
+    },
+    {
+      "text": "chảy máu nhiều",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        182,
+        196
+      ]
+    },
+    {
+      "text": "chảy máu nhiều",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        255,
+        269
+      ]
     },
     {
       "text": "siêu âm",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
       "position": [
         312,
         319
-      ],
-      "type": "TÊN_XÉT_NGHIỆM",
-      "confidence": 0.5,
-      "voters": [
-        "rule"
-      ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+      ]
     },
     {
-      "text": "điều trị nội khoa",
+      "text": "bảo tồn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
       "position": [
-        451,
+        442,
+        449
+      ]
+    },
+    {
+      "text": "nội khoa",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        460,
         468
-      ],
-      "type": "TÊN_XÉT_NGHIỆM",
-      "confidence": 0.5,
-      "voters": [
-        "healthbert"
-      ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+      ]
     },
     {
       "text": "x-quang",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
       "position": [
         480,
         487
-      ],
-      "type": "TÊN_XÉT_NGHIỆM",
-      "confidence": 0.5,
-      "voters": [
-        "rule"
-      ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+      ]
     },
     {
-      "text": "xơ tử cung qua đường bụng",
+      "text": "ngoại khoa",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
       "position": [
-        544,
-        569
-      ],
-      "type": "TÊN_XÉT_NGHIỆM",
-      "confidence": 0.5,
-      "voters": [
-        "healthbert"
-      ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+        500,
+        510
+      ]
     },
     {
-      "text": "mổ",
+      "text": "huyết cầu tố 26.1",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "assertions": [],
       "position": [
-        633,
-        635
-      ],
-      "type": "TÊN_XÉT_NGHIỆM",
-      "confidence": 0.5,
-      "voters": [
-        "rule"
-      ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+        694,
+        711
+      ]
     },
     {
-      "text": "dưới của tử cung đo",
-      "position": [
-        855,
-        874
-      ],
+      "text": "siêu âm tử cung",
       "type": "TÊN_XÉT_NGHIỆM",
-      "confidence": 0.5,
-      "voters": [
-        "healthbert"
-      ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
-    },
-    {
-      "text": "Dải nội mạc tử cung không",
+      "assertions": [],
       "position": [
-        900,
-        925
-      ],
-      "type": "TÊN_XÉT_NGHIỆM",
-      "confidence": 0.5,
-      "voters": [
-        "healthbert"
-      ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+        749,
+        764
+      ]
     },
     {
       "text": "bình thường",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "assertions": [],
       "position": [
         979,
         990
-      ],
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "confidence": 0.5,
-      "voters": [
-        "rule"
-      ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+      ]
     }
   ]
 }

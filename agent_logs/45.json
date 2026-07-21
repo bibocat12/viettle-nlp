@@ -1,0 +1,5787 @@
+{
+  "file_id": "45",
+  "timestamp": 1784566540.3840353,
+  "elapsed": 62.5,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "result": {
+    "note_id": "45",
+    "mentions": [
+      {
+        "text": "đái tháo đường",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          48,
+          62
+        ],
+        "candidates": [
+          "E14"
+        ]
+      },
+      {
+        "text": "tăng huyết áp",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          69,
+          82
+        ],
+        "candidates": [
+          "I10"
+        ]
+      },
+      {
+        "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          119,
+          169
+        ],
+        "candidates": [
+          "I71.5"
+        ]
+      },
+      {
+        "text": "đái tháo đường",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [],
+        "position": [
+          209,
+          223
+        ],
+        "candidates": [
+          "E14"
+        ]
+      },
+      {
+        "text": "tăng huyết áp",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [],
+        "position": [
+          230,
+          243
+        ],
+        "candidates": [
+          "I10"
+        ]
+      },
+      {
+        "text": "tai biến mạch máu não",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          364,
+          385
+        ]
+      },
+      {
+        "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [],
+        "position": [
+          472,
+          522
+        ],
+        "candidates": [
+          "I71.5"
+        ]
+      },
+      {
+        "text": "chụp mạch máu",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          545,
+          558
+        ]
+      },
+      {
+        "text": "chụp mạch máu",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          875,
+          888
+        ]
+      }
+    ],
+    "validation": {
+      "is_valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stats": {
+      "total_mentions": 9,
+      "final": 9,
+      "validation_errors": 0,
+      "elapsed": 62.5,
+      "rule": 0,
+      "qwen": 9
+    },
+    "logs": [
+      {
+        "agent": "orchestrator",
+        "action": "start",
+        "text_len": 993,
+        "ts": 1784566477.8791225
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_start",
+        "ts": 1784566477.8791313
+      },
+      {
+        "agent": "extraction",
+        "action": "start",
+        "data": {
+          "text_len": 993
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "preprocessed",
+        "data": {
+          "normalized_len": 993
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "parallel_extract",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét"
+          },
+          "output": {
+            "rule": [],
+            "qwen": [
+              {
+                "text": "đái tháo đường",
+                "position": [
+                  48,
+                  62
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "tăng huyết áp",
+                "position": [
+                  69,
+                  82
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+                "position": [
+                  119,
+                  169
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đái tháo đường",
+                "position": [
+                  209,
+                  223
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "tăng huyết áp",
+                "position": [
+                  230,
+                  243
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "tai biến mạch máu não",
+                "position": [
+                  364,
+                  385
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+                "position": [
+                  472,
+                  522
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp mạch máu",
+                "position": [
+                  545,
+                  558
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp mạch máu",
+                "position": [
+                  875,
+                  888
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ],
+            "errors": []
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "extracted",
+        "data": {
+          "sources": {
+            "rule": 0,
+            "qwen": 9
+          },
+          "total": 9
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "vote_merge",
+          "input": {
+            "all_mentions": [
+              {
+                "text": "đái tháo đường",
+                "position": [
+                  48,
+                  62
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "tăng huyết áp",
+                "position": [
+                  69,
+                  82
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+                "position": [
+                  119,
+                  169
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đái tháo đường",
+                "position": [
+                  209,
+                  223
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "tăng huyết áp",
+                "position": [
+                  230,
+                  243
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "tai biến mạch máu não",
+                "position": [
+                  364,
+                  385
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+                "position": [
+                  472,
+                  522
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp mạch máu",
+                "position": [
+                  545,
+                  558
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp mạch máu",
+                "position": [
+                  875,
+                  888
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ]
+          },
+          "output": [
+            {
+              "text": "đái tháo đường",
+              "position": [
+                48,
+                62
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E14"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                69,
+                82
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I10"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+              "position": [
+                119,
+                169
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đái tháo đường",
+              "position": [
+                209,
+                223
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E14"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                230,
+                243
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I10"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tai biến mạch máu não",
+              "position": [
+                364,
+                385
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+              "position": [
+                472,
+                522
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp mạch máu",
+              "position": [
+                545,
+                558
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp mạch máu",
+              "position": [
+                875,
+                888
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "voted",
+        "data": {
+          "merged": 9
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "resolve_conflicts",
+          "input": {
+            "merged": [
+              {
+                "text": "đái tháo đường",
+                "position": [
+                  48,
+                  62
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "E14"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "tăng huyết áp",
+                "position": [
+                  69,
+                  82
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I10"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+                "position": [
+                  119,
+                  169
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I71.5"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đái tháo đường",
+                "position": [
+                  209,
+                  223
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "E14"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "tăng huyết áp",
+                "position": [
+                  230,
+                  243
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I10"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "tai biến mạch máu não",
+                "position": [
+                  364,
+                  385
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+                "position": [
+                  472,
+                  522
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I71.5"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "chụp mạch máu",
+                "position": [
+                  545,
+                  558
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp mạch máu",
+                "position": [
+                  875,
+                  888
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét"
+          },
+          "output": [
+            {
+              "text": "đái tháo đường",
+              "position": [
+                48,
+                62
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E14"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                69,
+                82
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I10"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+              "position": [
+                119,
+                169
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đái tháo đường",
+              "position": [
+                209,
+                223
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E14"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                230,
+                243
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I10"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tai biến mạch máu não",
+              "position": [
+                364,
+                385
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+              "position": [
+                472,
+                522
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp mạch máu",
+              "position": [
+                545,
+                558
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp mạch máu",
+              "position": [
+                875,
+                888
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "fix_positions",
+          "input": {
+            "mentions": [
+              {
+                "text": "đái tháo đường",
+                "position": [
+                  48,
+                  62
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "E14"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "tăng huyết áp",
+                "position": [
+                  69,
+                  82
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I10"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+                "position": [
+                  119,
+                  169
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I71.5"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đái tháo đường",
+                "position": [
+                  209,
+                  223
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "E14"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "tăng huyết áp",
+                "position": [
+                  230,
+                  243
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I10"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "tai biến mạch máu não",
+                "position": [
+                  364,
+                  385
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+                "position": [
+                  472,
+                  522
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I71.5"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "chụp mạch máu",
+                "position": [
+                  545,
+                  558
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp mạch máu",
+                "position": [
+                  875,
+                  888
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét"
+          },
+          "output": [
+            {
+              "text": "đái tháo đường",
+              "position": [
+                48,
+                62
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E14"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                69,
+                82
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I10"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+              "position": [
+                119,
+                169
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đái tháo đường",
+              "position": [
+                209,
+                223
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E14"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                230,
+                243
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I10"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tai biến mạch máu não",
+              "position": [
+                364,
+                385
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+              "position": [
+                472,
+                522
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp mạch máu",
+              "position": [
+                545,
+                558
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp mạch máu",
+              "position": [
+                875,
+                888
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "positions_fixed",
+        "data": {
+          "fixed": 0
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "llm_verified",
+        "data": {
+          "corrected": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_complete",
+        "mentions": 9,
+        "ts": 1784566493.6610668
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_start",
+        "ts": 1784566493.6610794
+      },
+      {
+        "agent": "assertion",
+        "action": "start",
+        "data": {
+          "mentions": 9
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét",
+            "start": 48,
+            "end": 62,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét",
+            "start": 69,
+            "end": 82,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét",
+            "start": 119,
+            "end": 169,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét",
+            "start": 209,
+            "end": 223,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét",
+            "start": 230,
+            "end": 243,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét",
+            "start": 364,
+            "end": 385,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét",
+            "start": 472,
+            "end": 522,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "complete",
+        "data": {
+          "processed": 9,
+          "llm_checked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_complete",
+        "ts": 1784566493.6615782
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_start",
+        "ts": 1784566493.6615875
+      },
+      {
+        "agent": "linking",
+        "action": "start",
+        "data": {
+          "mentions": 9
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "đái tháo đường",
+              "position": [
+                48,
+                62
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E14"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái"
+          },
+          "output": {
+            "candidates": [
+              "E14"
+            ],
+            "confidence": 0.85,
+            "rationale": "Mention 'đái tháo đường' không kèm thêm thông tin về loại (type 1, type 2) hoặc biến chứng, nên chọn mã E14 (Bệnh đái tháo đường không xác định) là phù hợp nhất."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "tăng huyết áp",
+              "position": [
+                69,
+                82
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I10"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tă"
+          },
+          "output": {
+            "candidates": [
+              "I10"
+            ],
+            "confidence": 0.85,
+            "rationale": "Mention 'tăng huyết áp' phù hợp với mã I10 (Bệnh tăng huyết áp vô căn - nguyên phát), đây là mã chẩn đoán chính xác và phổ biến nhất cho tình trạng tăng huyết áp không có nguyên nhân cụ thể được nêu trong context."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+              "position": [
+                119,
+                169
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.5"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Tri"
+          },
+          "output": {
+            "candidates": [
+              "I71.5"
+            ],
+            "confidence": 0.85,
+            "rationale": "Mention 'đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải' liên quan đến phình vỡ động mạch chủ ngực - bụng, mã I71.5 phù hợp nhất."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "complete",
+        "data": {
+          "linked": 6
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_complete",
+        "linked": 6,
+        "ts": 1784566540.258496
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_start",
+        "ts": 1784566540.2585125
+      },
+      {
+        "agent": "verifier",
+        "action": "start",
+        "data": {
+          "mentions": 9
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "tool_call",
+        "data": {
+          "tool": "verify_schema",
+          "input": {
+            "mentions": [
+              {
+                "text": "đái tháo đường",
+                "position": [
+                  48,
+                  62
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "E14"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "tăng huyết áp",
+                "position": [
+                  69,
+                  82
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I10"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+                "position": [
+                  119,
+                  169
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I71.5"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đái tháo đường",
+                "position": [
+                  209,
+                  223
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "E14"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "tăng huyết áp",
+                "position": [
+                  230,
+                  243
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I10"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "tai biến mạch máu não",
+                "position": [
+                  364,
+                  385
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+                "position": [
+                  472,
+                  522
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I71.5"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "chụp mạch máu",
+                "position": [
+                  545,
+                  558
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp mạch máu",
+                "position": [
+                  875,
+                  888
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét"
+          },
+          "output": {
+            "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              }
+            ],
+            "final_predictions": [
+              {
+                "text": "đái tháo đường",
+                "position": [
+                  48,
+                  62
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "E14"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "tăng huyết áp",
+                "position": [
+                  69,
+                  82
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I10"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+                "position": [
+                  119,
+                  169
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I71.5"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đái tháo đường",
+                "position": [
+                  209,
+                  223
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "E14"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "tăng huyết áp",
+                "position": [
+                  230,
+                  243
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I10"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "tai biến mạch máu não",
+                "position": [
+                  364,
+                  385
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+                "position": [
+                  472,
+                  522
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I71.5"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "chụp mạch máu",
+                "position": [
+                  545,
+                  558
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp mạch máu",
+                "position": [
+                  875,
+                  888
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "dropped": 0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "validated",
+        "data": {
+          "kept": 9,
+          "dropped": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_complete",
+        "kept": 9,
+        "ts": 1784566540.3839214
+      },
+      {
+        "agent": "orchestrator",
+        "action": "complete",
+        "total_mentions": 9,
+        "elapsed": 62.5,
+        "ts": 1784566540.3839452
+      }
+    ]
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 993,
+      "ts": 1784566477.8791225
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1784566477.8791313
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 993
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 993
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét"
+        },
+        "output": {
+          "rule": [],
+          "qwen": [
+            {
+              "text": "đái tháo đường",
+              "position": [
+                48,
+                62
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                69,
+                82
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+              "position": [
+                119,
+                169
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đái tháo đường",
+              "position": [
+                209,
+                223
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                230,
+                243
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "tai biến mạch máu não",
+              "position": [
+                364,
+                385
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+              "position": [
+                472,
+                522
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp mạch máu",
+              "position": [
+                545,
+                558
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp mạch máu",
+              "position": [
+                875,
+                888
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 9
+        },
+        "total": 9
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "đái tháo đường",
+              "position": [
+                48,
+                62
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                69,
+                82
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+              "position": [
+                119,
+                169
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đái tháo đường",
+              "position": [
+                209,
+                223
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                230,
+                243
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "tai biến mạch máu não",
+              "position": [
+                364,
+                385
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+              "position": [
+                472,
+                522
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp mạch máu",
+              "position": [
+                545,
+                558
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp mạch máu",
+              "position": [
+                875,
+                888
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "đái tháo đường",
+            "position": [
+              48,
+              62
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "E14"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "tăng huyết áp",
+            "position": [
+              69,
+              82
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I10"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+            "position": [
+              119,
+              169
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I71.5"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "đái tháo đường",
+            "position": [
+              209,
+              223
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "E14"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "tăng huyết áp",
+            "position": [
+              230,
+              243
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I10"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "tai biến mạch máu não",
+            "position": [
+              364,
+              385
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+            "position": [
+              472,
+              522
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I71.5"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "chụp mạch máu",
+            "position": [
+              545,
+              558
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chụp mạch máu",
+            "position": [
+              875,
+              888
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 9
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "đái tháo đường",
+              "position": [
+                48,
+                62
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E14"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                69,
+                82
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I10"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+              "position": [
+                119,
+                169
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đái tháo đường",
+              "position": [
+                209,
+                223
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E14"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                230,
+                243
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I10"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tai biến mạch máu não",
+              "position": [
+                364,
+                385
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+              "position": [
+                472,
+                522
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp mạch máu",
+              "position": [
+                545,
+                558
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp mạch máu",
+              "position": [
+                875,
+                888
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét"
+        },
+        "output": [
+          {
+            "text": "đái tháo đường",
+            "position": [
+              48,
+              62
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "E14"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "tăng huyết áp",
+            "position": [
+              69,
+              82
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I10"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+            "position": [
+              119,
+              169
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I71.5"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "đái tháo đường",
+            "position": [
+              209,
+              223
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "E14"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "tăng huyết áp",
+            "position": [
+              230,
+              243
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I10"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "tai biến mạch máu não",
+            "position": [
+              364,
+              385
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+            "position": [
+              472,
+              522
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I71.5"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "chụp mạch máu",
+            "position": [
+              545,
+              558
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chụp mạch máu",
+            "position": [
+              875,
+              888
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "đái tháo đường",
+              "position": [
+                48,
+                62
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E14"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                69,
+                82
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I10"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+              "position": [
+                119,
+                169
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đái tháo đường",
+              "position": [
+                209,
+                223
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E14"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                230,
+                243
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I10"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tai biến mạch máu não",
+              "position": [
+                364,
+                385
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+              "position": [
+                472,
+                522
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp mạch máu",
+              "position": [
+                545,
+                558
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp mạch máu",
+              "position": [
+                875,
+                888
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét"
+        },
+        "output": [
+          {
+            "text": "đái tháo đường",
+            "position": [
+              48,
+              62
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "E14"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "tăng huyết áp",
+            "position": [
+              69,
+              82
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I10"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+            "position": [
+              119,
+              169
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I71.5"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "đái tháo đường",
+            "position": [
+              209,
+              223
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "E14"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "tăng huyết áp",
+            "position": [
+              230,
+              243
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I10"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "tai biến mạch máu não",
+            "position": [
+              364,
+              385
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+            "position": [
+              472,
+              522
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I71.5"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "chụp mạch máu",
+            "position": [
+              545,
+              558
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chụp mạch máu",
+            "position": [
+              875,
+              888
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 9,
+      "ts": 1784566493.6610668
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1784566493.6610794
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 9
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét",
+          "start": 48,
+          "end": 62,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét",
+          "start": 69,
+          "end": 82,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét",
+          "start": 119,
+          "end": 169,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét",
+          "start": 209,
+          "end": 223,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét",
+          "start": 230,
+          "end": 243,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét",
+          "start": 364,
+          "end": 385,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét",
+          "start": 472,
+          "end": 522,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 9,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1784566493.6615782
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1784566493.6615875
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 9
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "đái tháo đường",
+            "position": [
+              48,
+              62
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "E14"
+            ],
+            "link_confidence": 0.85
+          },
+          "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái"
+        },
+        "output": {
+          "candidates": [
+            "E14"
+          ],
+          "confidence": 0.85,
+          "rationale": "Mention 'đái tháo đường' không kèm thêm thông tin về loại (type 1, type 2) hoặc biến chứng, nên chọn mã E14 (Bệnh đái tháo đường không xác định) là phù hợp nhất."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "tăng huyết áp",
+            "position": [
+              69,
+              82
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I10"
+            ],
+            "link_confidence": 0.85
+          },
+          "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tă"
+        },
+        "output": {
+          "candidates": [
+            "I10"
+          ],
+          "confidence": 0.85,
+          "rationale": "Mention 'tăng huyết áp' phù hợp với mã I10 (Bệnh tăng huyết áp vô căn - nguyên phát), đây là mã chẩn đoán chính xác và phổ biến nhất cho tình trạng tăng huyết áp không có nguyên nhân cụ thể được nêu trong context."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+            "position": [
+              119,
+              169
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I71.5"
+            ],
+            "link_confidence": 0.85
+          },
+          "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Tri"
+        },
+        "output": {
+          "candidates": [
+            "I71.5"
+          ],
+          "confidence": 0.85,
+          "rationale": "Mention 'đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải' liên quan đến phình vỡ động mạch chủ ngực - bụng, mã I71.5 phù hợp nhất."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 6
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 6,
+      "ts": 1784566540.258496
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1784566540.2585125
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 9
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "đái tháo đường",
+              "position": [
+                48,
+                62
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E14"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                69,
+                82
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I10"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+              "position": [
+                119,
+                169
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đái tháo đường",
+              "position": [
+                209,
+                223
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E14"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                230,
+                243
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I10"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tai biến mạch máu não",
+              "position": [
+                364,
+                385
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+              "position": [
+                472,
+                522
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp mạch máu",
+              "position": [
+                545,
+                558
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp mạch máu",
+              "position": [
+                875,
+                888
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - đái tháo đường\n    - tăng huyết áp\n    Tiền sử phẫu thuật / thủ thuật: đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    Các yếu tố nguy cơ liên quan\n    - đái tháo đường\n    - tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: Thủ thuật điện chọn\n    Triệu chứng hiện tại: triệu chứng liên quan đến tai biến mạch máu não từ vùng này\n    Các sự kiện trước khi nhập viện\n    - Gần đây được điều trị bằng cách đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải\n    - Trong quá trình chụp mạch máu, ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét\n    - Đã thảo luận với bệnh nhân khi bà nhập viện rằng có khả năng bà sẽ cần được điều trị tình trạng này bằng phẫu thuật nội mạch hóa động mạch cảnh\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: chụp mạch máu ghi nhận tình trạng hẹp khoảng 65% của động mạch cảnh chung trái gần gốc với bằng chứng xơ vữa mảng loét"
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "đái tháo đường",
+              "position": [
+                48,
+                62
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E14"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                69,
+                82
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I10"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+              "position": [
+                119,
+                169
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đái tháo đường",
+              "position": [
+                209,
+                223
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "E14"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                230,
+                243
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I10"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "tai biến mạch máu não",
+              "position": [
+                364,
+                385
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đặt stent hỗ trợ cuộn dây phình mạch ACom bên phải",
+              "position": [
+                472,
+                522
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I71.5"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp mạch máu",
+              "position": [
+                545,
+                558
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp mạch máu",
+              "position": [
+                875,
+                888
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 9,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 9,
+      "ts": 1784566540.3839214
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 9,
+      "elapsed": 62.5,
+      "ts": 1784566540.3839452
+    }
+  ]
+}

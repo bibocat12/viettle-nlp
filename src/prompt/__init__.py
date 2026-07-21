@@ -2,7 +2,9 @@
 NER_PROMPT = """You are a Vietnamese medical NER system. Extract ALL medical entities from the text. DO NOT skip any entities.
 
 Entity types:
-- THUỐC: medication + dose. E.g., "metoprolol 25mg", "aspirin 325mg"
+- THUỐC: the COMPLETE medication order as written: ingredient/form + dose +
+  route + frequency + PRN suffix. E.g., "metoprolol 25mg po bid",
+  "aspirin 325mg x 1". Stop before phrases such as "điều trị ...".
 - TRIỆU_CHỨNG: symptom, sign, complaint. E.g., "đau ngực", "khó thở", "sốt", "mệt mỏi"
 - CHẨN_ĐOÁN: diagnosis, disease. E.g., "tăng huyết áp", "viêm phổi", "suy tim"
 - TÊN_XÉT_NGHIỆM: test name, procedure. E.g., "điện tâm đồ", "chụp X-quang"
@@ -18,12 +20,16 @@ Output: [{"entity": "tăng huyết áp", "type": "CHẨN_ĐOÁN"}, {"entity": "�
 Input: "Bệnh nhân buồn nôn, nôn 3 lần, đau bụng vùng thượng vị. Siêu âm ổ bụng: gan to. Chẩn đoán: viêm dạ dày. Điều trị: omeprazole 20mg."
 Output: [{"entity": "buồn nôn", "type": "TRIỆU_CHỨNG"}, {"entity": "nôn", "type": "TRIỆU_CHỨNG"}, {"entity": "đau bụng vùng thượng vị", "type": "TRIỆU_CHỨNG"}, {"entity": "Siêu âm ổ bụng", "type": "TÊN_XÉT_NGHIỆM"}, {"entity": "gan to", "type": "KẾT_QUẢ_XÉT_NGHIỆM"}, {"entity": "viêm dạ dày", "type": "CHẨN_ĐOÁN"}, {"entity": "omeprazole 20mg", "type": "THUỐC"}]
 
+Input: "aspirin 81 mg po daily điều trị đau; acetaminophen 325-650 mg po q6h:prn điều trị sốt đau"
+Output: [{"entity": "aspirin 81 mg po daily", "type": "THUỐC"}, {"entity": "đau", "type": "TRIỆU_CHỨNG"}, {"entity": "acetaminophen 325-650 mg po q6h:prn", "type": "THUỐC"}, {"entity": "sốt đau", "type": "TRIỆU_CHỨNG"}]
+
 RULES:
 1. Extract ALL entities — no skipping
 2. Include risk factors (rượu bia, hút thuốc, caffeine)
 3. Include negated symptoms (không X, chưa X)
 4. DO NOT extract section headers, metadata
 5. Return JSON array
+6. A medication indication after "điều trị" is a separate symptom; never skip it
 """
 
 # Prompt for LLM assertion

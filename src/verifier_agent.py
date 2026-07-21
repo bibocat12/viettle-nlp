@@ -36,16 +36,20 @@ def verify_mention(mention: dict, original_text: str, llm=None) -> dict:
     # Check span text matches original
     span_text = original_text[pos[0]:pos[1]]
     if mention.get("text", "") != span_text:
-        # Try to find the text nearby
-        nearby = original_text[max(0, pos[0]-20):pos[1]+20]
-        if mention.get("text", "") not in nearby:
-            return {"action": "drop_prediction", "reason": "span text mismatch"}
+        return {"action": "drop_prediction", "reason": "span text mismatch"}
 
     # Check assertions — strip extra keys instead of dropping
     assertions = mention.get("assertions", {})
-    for key in list(assertions.keys()):
-        if key not in VALID_ASSERTIONS:
-            del assertions[key]
+    if isinstance(assertions, dict):
+        for key in list(assertions.keys()):
+            if key not in VALID_ASSERTIONS:
+                del assertions[key]
+    elif isinstance(assertions, list):
+        mention["assertions"] = {key: key in assertions for key in VALID_ASSERTIONS}
+        assertions = mention["assertions"]
+    else:
+        mention["assertions"] = {}
+        assertions = mention["assertions"]
 
     # Check candidates
     if mtype in ("CHẨN_ĐOÁN", "THUỐC"):

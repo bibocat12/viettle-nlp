@@ -13,9 +13,9 @@ from collections import defaultdict
 
 
 MODEL_WEIGHTS = {
-    "qwen": 0.40,      # Best recall, may hallucinate
-    "rules": 0.35,     # High precision for structured patterns
-    "healthbert": 0.25, # Fast keyword matching, lower precision
+    "qwen": 0.45,      # Recall proposer
+    "rule": 0.55,      # High precision for structured patterns
+    "rules": 0.55,     # Backward-compatible source name
 }
 
 VOTE_CONFIDENCE = {
@@ -49,9 +49,10 @@ def group_mentions(all_mentions: List[Dict]) -> List[List[Dict]]:
                 continue
             s_j, e_j = n["position"]
 
-            # Check overlap: positions within 3 chars or overlapping
+            # Only overlapping spans describe the same occurrence. Nearby
+            # symptoms/tests must remain separate entities.
             overlap = min(e_i, e_j) - max(s_i, s_j)
-            if overlap > 0 or abs(s_i - s_j) < 3:
+            if overlap > 0:
                 group.append(n)
                 used.add(j)
                 # Expand bounds
@@ -74,39 +75,57 @@ def _merge_group(group: List[Dict]) -> Dict:
         return None
 
     if len(group) == 1:
-        m = group[0]
+        m = dict(group[0])
         m["vote_count"] = 1
         src = m.get("source", m.get("extraction_source", "unknown"))
         m["voters"] = {src: 1}
-        m["confidence"] = VOTE_CONFIDENCE[1]
+        m["confidence"] = max(m.get("confidence", 0.0), 0.90 if src in ("rule", "rules") else VOTE_CONFIDENCE[1])
+        m["needs_review"] = False
         return m
 
-    # Vote on position: use the widest span
-    positions = [m["position"] for m in group]
-    best_pos = min(p[0] for p in positions), max(p[1] for p in positions)
-
-    # Vote on text: use the most common text variant (original behavior)
-    texts = [m.get("text", "") for m in group]
-    text_votes = defaultdict(int)
-    for t in texts:
-        key = t.lower().strip()
-        text_votes[key] += 1
-    best_text_key = max(text_votes, key=text_votes.get)
-    best_text = [t for t in texts if t.lower().strip() == best_text_key][0]
+    # Pick one real source span. Combining min(start)/max(end) with another
+    # source's text creates an invalid text-position pair.
+    def boundary_score(candidate):
+        cs, ce = candidate["position"]
+        support = 0.0
+        for other in group:
+            os, oe = other["position"]
+            overlap = max(0, min(ce, oe) - max(cs, os))
+            denominator = max(1, min(ce - cs, oe - os))
+            if overlap / denominator >= 0.7:
+                source = other.get("source", other.get("extraction_source", "unknown"))
+                support += MODEL_WEIGHTS.get(source, 0.25)
+        return support, ce - cs, candidate.get("confidence", 0.0)
 
     # Vote on type
-    type_votes = defaultdict(int)
+    type_votes = defaultdict(float)
+    type_sources = defaultdict(set)
     source_votes = defaultdict(int)
     for m in group:
         mtype = m.get("type", m.get("type_candidates", [{}])[0].get("label", "TRIỆU_CHỨNG"))
-        type_votes[mtype] += 1
         source = m.get("source", m.get("extraction_source", "unknown"))
+        if source not in type_sources[mtype]:
+            type_votes[mtype] += MODEL_WEIGHTS.get(source, 0.25)
+            type_sources[mtype].add(source)
         source_votes[source] += 1
 
     # Winner type = most votes
     best_type = max(type_votes, key=type_votes.get)
-    total_votes = len(group)
-    max_type_votes = type_votes[best_type]
+    total_votes = len(source_votes)
+    max_type_votes = len(type_sources[best_type])
+
+    same_type = [
+        mention for mention in group
+        if mention.get("type", mention.get("type_candidates", [{}])[0].get("label")) == best_type
+    ]
+    # Official medication spans include the full order (ingredient, dose,
+    # route, frequency). For other types the longest supported real span also
+    # avoids creating a synthetic boundary from two partially-overlapping spans.
+    boundary = max(same_type or group, key=lambda item: (
+        item["position"][1] - item["position"][0], boundary_score(item)
+    ))
+    best_pos = list(boundary["position"])
+    best_text = boundary.get("text", "")
 
     # Confidence based on agreement
     if max_type_votes >= 3:
@@ -118,21 +137,51 @@ def _merge_group(group: List[Dict]) -> Dict:
 
     return {
         "text": best_text,
-        "position": list(best_pos),
+        "position": best_pos,
         "type": best_type,
         "type_candidates": [{"label": best_type, "score": confidence}],
         "confidence": confidence,
         "vote_count": total_votes,
         "max_type_votes": max_type_votes,
         "voters": dict(source_votes),
-        "type_votes": dict(type_votes),
-        "needs_review": max_type_votes < 2,
+        "type_votes": {key: round(value, 3) for key, value in type_votes.items()},
+        "needs_review": len(type_votes) > 1,
     }
 
 
 def merge_with_voting(all_mentions: List[Dict]) -> List[Dict]:
     """Merge mentions from all models with voting-based confidence."""
-    groups = group_mentions(all_mentions)
+    # When a generative span contains two high-precision, non-overlapping rule
+    # spans of the same type, keep the two atomic mentions. Otherwise the
+    # transitive overlap group collapses e.g. "lo âu" + "mất ngủ" back into
+    # the model's single "lo âu mất ngủ" span.
+    filtered_mentions = []
+    for mention in all_mentions:
+        source = mention.get("source", mention.get("extraction_source", "unknown"))
+        if source == "qwen":
+            start, end = mention.get("position", [0, 0])
+            mtype = mention.get("type")
+            contained_rules = sorted(
+                (
+                    candidate for candidate in all_mentions
+                    if candidate is not mention
+                    and candidate.get("source", candidate.get("extraction_source")) in ("rule", "rules")
+                    and candidate.get("type") == mtype
+                    and start <= candidate.get("position", [0, 0])[0]
+                    and candidate.get("position", [0, 0])[1] <= end
+                ),
+                key=lambda item: item["position"],
+            )
+            non_overlapping = all(
+                left["position"][1] <= right["position"][0]
+                for left, right in zip(contained_rules, contained_rules[1:])
+            )
+            covered = sum(item["position"][1] - item["position"][0] for item in contained_rules)
+            if len(contained_rules) >= 2 and non_overlapping and covered / max(1, end - start) >= 0.7:
+                continue
+        filtered_mentions.append(mention)
+
+    groups = group_mentions(filtered_mentions)
     merged = []
 
     for g in groups:

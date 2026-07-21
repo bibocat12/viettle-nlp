@@ -6,8 +6,9 @@ Usage:
   # Process single file (rules only)
   python3 cli.py input/1.txt
 
-  # Process single file with RunPod LLM
-  python3 cli.py input/1.txt --llm runpod
+  # Recommended: self-hosted Qwen3 GRPO through vLLM
+  python3 cli.py input/1.txt --llm vllm \
+    --served-model bibocat/qwen3-ner-grpo-final
 
   # Process single file with local model on GPU
   python3 cli.py input/1.txt --llm local --gpu
@@ -61,13 +62,17 @@ def main():
     parser = argparse.ArgumentParser(description="Viettle NLP - Medical NER Pipeline CLI")
     parser.add_argument("input", help="Input file or directory")
     parser.add_argument("--output", "-o", default=None, help="Output directory (default: outputs/ or outputs_new/)")
-    parser.add_argument("--llm", choices=["none", "runpod", "local"], default="none",
-                        help="LLM mode: none (rules only), runpod (API), local (models/)")
+    parser.add_argument("--llm", choices=["none", "vllm", "runpod", "local"], default="none",
+                        help="LLM mode: none, vllm (OpenAI-compatible), runpod, or local")
     parser.add_argument("--model", choices=["qwen", "healthbert", "deberta"], default="qwen",
                         help="Model name (default: qwen)")
     parser.add_argument("--model-path", "-m", default="./models",
                         help="Base directory for ALL models (Qwen, ViHealthBERT, ViPubMedDeBERTa). "
                              "Default: ./models")
+    parser.add_argument("--base-url", default=os.getenv("VLLM_BASE_URL", "http://localhost:8000/v1"),
+                        help="vLLM OpenAI-compatible base URL")
+    parser.add_argument("--served-model", default=os.getenv("VLLM_MODEL", "bibocat/qwen3-ner-grpo-final"),
+                        help="Model ID exposed by vLLM")
     parser.add_argument("--gpu", action="store_true", help="Use GPU if available (only for local model)")
     parser.add_argument("--parallel", "-p", type=int, default=1, help="Parallel workers for batch processing")
     parser.add_argument("--verbose", "-v", action="store_true", help="Show detailed logs")
@@ -95,7 +100,15 @@ def main():
 
     # Setup LLM
     llm = None
-    if args.llm == "runpod":
+    if args.llm == "vllm":
+        print(f"Connecting to vLLM model {args.served_model} at {args.base_url}...")
+        from vllm_llm import get_vllm_llm
+        llm = get_vllm_llm(base_url=args.base_url, model=args.served_model)
+        if not llm.is_available():
+            print(f"  vLLM unavailable: {llm.last_error}")
+            sys.exit(2)
+        print("  vLLM ready")
+    elif args.llm == "runpod":
         print("Loading RunPod LLM...")
         from runpod_llm import get_runpod_llm
         llm = get_runpod_llm()

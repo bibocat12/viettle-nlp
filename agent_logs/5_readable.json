@@ -1,17 +1,16 @@
 {
   "file_id": "5",
-  "timestamp": 1783446603.164632,
-  "elapsed": 200.02,
-  "model": "runpod",
-  "mention_count": 7,
+  "timestamp": 1784565999.3905523,
+  "elapsed": 74.93,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "mention_count": 23,
   "stats": {
-    "total_mentions": 7,
-    "final": 7,
+    "total_mentions": 23,
+    "final": 23,
     "validation_errors": 0,
-    "elapsed": 200.02,
-    "rule": 0,
-    "qwen": 11,
-    "healthbert": 0
+    "elapsed": 74.93,
+    "rule": 3,
+    "qwen": 22
   },
   "log_summary": [
     {
@@ -60,19 +59,7 @@
       "agent": "assertion",
       "action": "tool_call",
       "ts": null,
-      "tool": "llm_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
       "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "llm_assert"
     },
     {
       "agent": "assertion",
@@ -96,7 +83,7 @@
       "agent": "assertion",
       "action": "tool_call",
       "ts": null,
-      "tool": "llm_assert"
+      "tool": "rule_assert"
     },
     {
       "agent": "assertion",
@@ -108,13 +95,67 @@
       "agent": "assertion",
       "action": "tool_call",
       "ts": null,
-      "tool": "llm_assert"
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
     },
     {
       "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -161,129 +202,243 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1783446603.164555,
+      "ts": 1784565999.3903797,
       "tool": null
     }
   ],
   "mentions": [
     {
+      "text": "bệnh tim mạch do xơ vữa động mạch",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        57,
+        90
+      ],
+      "candidates": [
+        "I25.0"
+      ]
+    },
+    {
+      "text": "Tăng huyết áp",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        97,
+        110
+      ],
+      "candidates": [
+        "I10"
+      ]
+    },
+    {
       "text": "tăng lipid máu",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isHistorical"
+      ],
       "position": [
         117,
         131
-      ],
+      ]
+    },
+    {
+      "text": "đau bụng",
       "type": "TRIỆU_CHỨNG",
-      "confidence": 0.5,
-      "voters": [
-        "ner_llm_relocated"
-      ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+      "assertions": [],
+      "position": [
+        260,
+        268
+      ]
+    },
+    {
+      "text": "đau bụng vùng thượng vị",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        387,
+        410
+      ]
+    },
+    {
+      "text": "buồn nôn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        417,
+        425
+      ]
     },
     {
       "text": "sốt",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         466,
         469
-      ],
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "confidence": 0.5,
-      "voters": [
-        "ner_llm_relocated"
-      ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+      ]
     },
     {
-      "text": "khó",
-      "position": [
-        503,
-        506
-      ],
+      "text": "sốt",
       "type": "TRIỆU_CHỨNG",
-      "confidence": 0.5,
-      "voters": [
-        "ner_llm_relocated"
-      ],
-      "assertions": {
-        "isNegated": true,
-        "isFamily": false,
-        "isHistorical": false
-      }
+      "assertions": [],
+      "position": [
+        590,
+        593
+      ]
     },
     {
-      "text": "101.4",
+      "text": "hạ huyết áp",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
       "position": [
-        598,
-        603
-      ],
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "confidence": 0.5,
-      "voters": [
-        "ner_llm_relocated"
-      ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+        647,
+        658
+      ]
     },
     {
-      "text": "101.8",
+      "text": "viêm gan do men",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
       "position": [
-        619,
-        624
+        787,
+        802
       ],
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "confidence": 0.5,
-      "voters": [
-        "ner_llm_relocated"
-      ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+      "candidates": [
+        "B94.2"
+      ]
     },
     {
-      "text": "cấy máu",
+      "text": "bilirubin",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
       "position": [
-        1008,
-        1015
-      ],
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "confidence": 0.5,
-      "voters": [
-        "ner_llm_relocated"
-      ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+        934,
+        943
+      ]
+    },
+    {
+      "text": "bạch cầu",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        975,
+        983
+      ]
     },
     {
       "text": "Siêu âm gan mật",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
       "position": [
         1046,
         1061
-      ],
+      ]
+    },
+    {
+      "text": "giãn đường mật",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1083,
+        1097
+      ]
+    },
+    {
+      "text": "tắc nghẽn đường mật",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1105,
+        1124
+      ]
+    },
+    {
+      "text": "Nội soi mật tụy ngược dòng",
       "type": "TÊN_XÉT_NGHIỆM",
-      "confidence": 0.5,
-      "voters": [
-        "ner_llm_relocated"
+      "assertions": [],
+      "position": [
+        1188,
+        1214
+      ]
+    },
+    {
+      "text": "Đặt stent đường mật",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1216,
+        1235
+      ]
+    },
+    {
+      "text": "Đặt nội khí quản",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1269,
+        1285
+      ]
+    },
+    {
+      "text": "Đặt catheter động mạch",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1292,
+        1314
+      ]
+    },
+    {
+      "text": "Đặt đường truyền tĩnh mạch ngoại vi",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1317,
+        1352
+      ]
+    },
+    {
+      "text": "levophed",
+      "type": "THUỐC",
+      "assertions": [],
+      "position": [
+        1360,
+        1368
       ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+      "candidates": [
+        "227559"
+      ]
+    },
+    {
+      "text": "propofol",
+      "type": "THUỐC",
+      "assertions": [],
+      "position": [
+        1375,
+        1383
+      ],
+      "candidates": [
+        "8782"
+      ]
+    },
+    {
+      "text": "phentolamine",
+      "type": "THUỐC",
+      "assertions": [],
+      "position": [
+        1408,
+        1420
+      ],
+      "candidates": [
+        "8153"
+      ]
     }
   ]
 }

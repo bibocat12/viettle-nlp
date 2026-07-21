@@ -1,19 +1,3022 @@
 {
   "file_id": "11",
-  "timestamp": 1783443850.6093984,
-  "elapsed": 7.53,
-  "model": "runpod",
+  "timestamp": 1784566092.6898582,
+  "elapsed": 66.52,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "result": {
+    "note_id": "11",
+    "mentions": [
+      {
+        "text": "tăng huyết áp",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          57,
+          70
+        ],
+        "candidates": [
+          "I10"
+        ]
+      },
+      {
+        "text": "bệnh gút không đặc hiệu",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          77,
+          100
+        ],
+        "candidates": [
+          "M10.99"
+        ]
+      },
+      {
+        "text": "bệnh thận mạn, không đặc hiệu",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          107,
+          136
+        ],
+        "candidates": [
+          "N18.9"
+        ]
+      },
+      {
+        "text": "ung thư đại tràng",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          143,
+          160
+        ],
+        "candidates": [
+          "C18.7"
+        ]
+      },
+      {
+        "text": "béo phì",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          167,
+          174
+        ]
+      },
+      {
+        "text": "xơ gan mất bù",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          191,
+          204
+        ],
+        "candidates": [
+          "K70.1"
+        ]
+      },
+      {
+        "text": "chọc dò màng phổi",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          443,
+          460
+        ]
+      },
+      {
+        "text": "chọc dò dịch ổ bụng",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          471,
+          490
+        ]
+      },
+      {
+        "text": "thủ thuật TIPS",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          500,
+          514
+        ]
+      }
+    ],
+    "validation": {
+      "is_valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stats": {
+      "total_mentions": 9,
+      "final": 9,
+      "validation_errors": 0,
+      "elapsed": 66.52,
+      "rule": 0,
+      "qwen": 9
+    },
+    "logs": [
+      {
+        "agent": "orchestrator",
+        "action": "start",
+        "text_len": 514,
+        "ts": 1784566026.1675441
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_start",
+        "ts": 1784566026.1675525
+      },
+      {
+        "agent": "extraction",
+        "action": "start",
+        "data": {
+          "text_len": 514
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "preprocessed",
+        "data": {
+          "normalized_len": 514
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "parallel_extract",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nChưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện\n    - chọc dò màng phổi 3L4\n    - chọc dò dịch ổ bụng 7L\n    - thủ thuật TIPS"
+          },
+          "output": {
+            "rule": [],
+            "qwen": [
+              {
+                "text": "tăng huyết áp",
+                "position": [
+                  57,
+                  70
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "bệnh gút không đặc hiệu",
+                "position": [
+                  77,
+                  100
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "bệnh thận mạn, không đặc hiệu",
+                "position": [
+                  107,
+                  136
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "ung thư đại tràng",
+                "position": [
+                  143,
+                  160
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "béo phì",
+                "position": [
+                  167,
+                  174
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "xơ gan mất bù",
+                "position": [
+                  191,
+                  204
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chọc dò màng phổi",
+                "position": [
+                  443,
+                  460
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chọc dò dịch ổ bụng",
+                "position": [
+                  471,
+                  490
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "thủ thuật TIPS",
+                "position": [
+                  500,
+                  514
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ],
+            "errors": []
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "extracted",
+        "data": {
+          "sources": {
+            "rule": 0,
+            "qwen": 9
+          },
+          "total": 9
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "vote_merge",
+          "input": {
+            "all_mentions": [
+              {
+                "text": "tăng huyết áp",
+                "position": [
+                  57,
+                  70
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "bệnh gút không đặc hiệu",
+                "position": [
+                  77,
+                  100
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "bệnh thận mạn, không đặc hiệu",
+                "position": [
+                  107,
+                  136
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "ung thư đại tràng",
+                "position": [
+                  143,
+                  160
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "béo phì",
+                "position": [
+                  167,
+                  174
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "xơ gan mất bù",
+                "position": [
+                  191,
+                  204
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chọc dò màng phổi",
+                "position": [
+                  443,
+                  460
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chọc dò dịch ổ bụng",
+                "position": [
+                  471,
+                  490
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "thủ thuật TIPS",
+                "position": [
+                  500,
+                  514
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ]
+          },
+          "output": [
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                57,
+                70
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I10"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bệnh gút không đặc hiệu",
+              "position": [
+                77,
+                100
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "M10.99"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bệnh thận mạn, không đặc hiệu",
+              "position": [
+                107,
+                136
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "N18.9"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "ung thư đại tràng",
+              "position": [
+                143,
+                160
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "C18.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "béo phì",
+              "position": [
+                167,
+                174
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "xơ gan mất bù",
+              "position": [
+                191,
+                204
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K70.1"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chọc dò màng phổi",
+              "position": [
+                443,
+                460
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chọc dò dịch ổ bụng",
+              "position": [
+                471,
+                490
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "thủ thuật TIPS",
+              "position": [
+                500,
+                514
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "voted",
+        "data": {
+          "merged": 9
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "resolve_conflicts",
+          "input": {
+            "merged": [
+              {
+                "text": "tăng huyết áp",
+                "position": [
+                  57,
+                  70
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I10"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "bệnh gút không đặc hiệu",
+                "position": [
+                  77,
+                  100
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "M10.99"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "bệnh thận mạn, không đặc hiệu",
+                "position": [
+                  107,
+                  136
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "N18.9"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "ung thư đại tràng",
+                "position": [
+                  143,
+                  160
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "C18.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "béo phì",
+                "position": [
+                  167,
+                  174
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "xơ gan mất bù",
+                "position": [
+                  191,
+                  204
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K70.1"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "chọc dò màng phổi",
+                "position": [
+                  443,
+                  460
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chọc dò dịch ổ bụng",
+                "position": [
+                  471,
+                  490
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "thủ thuật TIPS",
+                "position": [
+                  500,
+                  514
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nChưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện\n    - chọc dò màng phổi 3L4\n    - chọc dò dịch ổ bụng 7L\n    - thủ thuật TIPS"
+          },
+          "output": [
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                57,
+                70
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I10"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bệnh gút không đặc hiệu",
+              "position": [
+                77,
+                100
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "M10.99"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bệnh thận mạn, không đặc hiệu",
+              "position": [
+                107,
+                136
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "N18.9"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "ung thư đại tràng",
+              "position": [
+                143,
+                160
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "C18.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "béo phì",
+              "position": [
+                167,
+                174
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "xơ gan mất bù",
+              "position": [
+                191,
+                204
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K70.1"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chọc dò màng phổi",
+              "position": [
+                443,
+                460
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chọc dò dịch ổ bụng",
+              "position": [
+                471,
+                490
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "thủ thuật TIPS",
+              "position": [
+                500,
+                514
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "fix_positions",
+          "input": {
+            "mentions": [
+              {
+                "text": "tăng huyết áp",
+                "position": [
+                  57,
+                  70
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I10"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "bệnh gút không đặc hiệu",
+                "position": [
+                  77,
+                  100
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "M10.99"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "bệnh thận mạn, không đặc hiệu",
+                "position": [
+                  107,
+                  136
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "N18.9"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "ung thư đại tràng",
+                "position": [
+                  143,
+                  160
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "C18.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "béo phì",
+                "position": [
+                  167,
+                  174
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "xơ gan mất bù",
+                "position": [
+                  191,
+                  204
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K70.1"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "chọc dò màng phổi",
+                "position": [
+                  443,
+                  460
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chọc dò dịch ổ bụng",
+                "position": [
+                  471,
+                  490
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "thủ thuật TIPS",
+                "position": [
+                  500,
+                  514
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nChưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện\n    - chọc dò màng phổi 3L4\n    - chọc dò dịch ổ bụng 7L\n    - thủ thuật TIPS"
+          },
+          "output": [
+            {
+              "text": "tăng huyết áp",
+              "position": [
+                57,
+                70
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I10"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bệnh gút không đặc hiệu",
+              "position": [
+                77,
+                100
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "M10.99"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bệnh thận mạn, không đặc hiệu",
+              "position": [
+                107,
+                136
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "N18.9"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "ung thư đại tràng",
+              "position": [
+                143,
+                160
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "C18.7"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "béo phì",
+              "position": [
+                167,
+                174
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "xơ gan mất bù",
+              "position": [
+                191,
+                204
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K70.1"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chọc dò màng phổi",
+              "position": [
+                443,
+                460
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chọc dò dịch ổ bụng",
+              "position": [
+                471,
+                490
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "thủ thuật TIPS",
+              "position": [
+                500,
+                514
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "positions_fixed",
+        "data": {
+          "fixed": 0
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "llm_verified",
+        "data": {
+          "corrected": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_complete",
+        "mentions": 9,
+        "ts": 1784566042.1015992
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_start",
+        "ts": 1784566042.1016061
+      },
+      {
+        "agent": "assertion",
+        "action": "start",
+        "data": {
+          "mentions": 9
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nChưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện\n    - chọc dò màng phổi 3L4\n    - chọc dò dịch ổ bụng 7L\n    - thủ thuật TIPS",
+            "start": 57,
+            "end": 70,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nChưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện\n    - chọc dò màng phổi 3L4\n    - chọc dò dịch ổ bụng 7L\n    - thủ thuật TIPS",
+            "start": 77,
+            "end": 100,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nChưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện\n    - chọc dò màng phổi 3L4\n    - chọc dò dịch ổ bụng 7L\n    - thủ thuật TIPS",
+            "start": 107,
+            "end": 136,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nChưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện\n    - chọc dò màng phổi 3L4\n    - chọc dò dịch ổ bụng 7L\n    - thủ thuật TIPS",
+            "start": 143,
+            "end": 160,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nChưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện\n    - chọc dò màng phổi 3L4\n    - chọc dò dịch ổ bụng 7L\n    - thủ thuật TIPS",
+            "start": 167,
+            "end": 174,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nChưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện\n    - chọc dò màng phổi 3L4\n    - chọc dò dịch ổ bụng 7L\n    - thủ thuật TIPS",
+            "start": 191,
+            "end": 204,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "complete",
+        "data": {
+          "processed": 9,
+          "llm_checked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_complete",
+        "ts": 1784566042.1017904
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_start",
+        "ts": 1784566042.1017945
+      },
+      {
+        "agent": "linking",
+        "action": "start",
+        "data": {
+          "mentions": 9
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "tăng huyết áp",
+              "position": [
+                57,
+                70
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I10"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực "
+          },
+          "output": {
+            "candidates": [
+              "I10"
+            ],
+            "confidence": 0.85,
+            "rationale": "Mention 'tăng huyết áp' phù hợp với mã I10 (Bệnh tăng huyết áp vô căn - nguyên phát), đây là mã chẩn đoán chính xác và phổ biến nhất cho tình trạng này."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "bệnh gút không đặc hiệu",
+              "position": [
+                77,
+                100
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "M10.99"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tr"
+          },
+          "output": {
+            "candidates": [
+              "M10.99"
+            ],
+            "confidence": 0.85,
+            "rationale": "Mention 'bệnh gút không đặc hiệu' phù hợp với mã M10.99 (Bệnh gút, không xác định, vị trí không xác định), vì đây là mã chẩn đoán được sử dụng khi không thể xác định vị trí cụ thể của bệnh gút."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "bệnh thận mạn, không đặc hiệu",
+              "position": [
+                107,
+                136
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "N18.9"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước k"
+          },
+          "output": {
+            "candidates": [
+              "N18.9"
+            ],
+            "confidence": 0.85,
+            "rationale": "Mention 'bệnh thận mạn, không đặc hiệu' phù hợp với mã N18.9 (Bệnh thận mạn tính, không xác định) trong danh sách candidates."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "ung thư đại tràng",
+              "position": [
+                143,
+                160
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "C18.7"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: li"
+          },
+          "output": {
+            "candidates": [
+              "C18.7"
+            ],
+            "confidence": 0.85,
+            "rationale": "Ung thư đại tràng được mã hóa bởi C18.7, đây là mã chính xác nhất trong danh sách candidates."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "xơ gan mất bù",
+              "position": [
+                191,
+                204
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "K70.1"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": " mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nC"
+          },
+          "output": {
+            "candidates": [
+              "K70.1"
+            ],
+            "confidence": 0.85,
+            "rationale": "Mention 'xơ gan mất bù' phù hợp với mã K70.1 (Bệnh xơ gan và/hoặc xơ hóa gan do rượu), vì mã này đặc biệt mô tả tình trạng xơ gan mất bù, một dạng nghiêm trọng của bệnh xơ gan."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "complete",
+        "data": {
+          "linked": 5
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_complete",
+        "linked": 5,
+        "ts": 1784566092.559704
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_start",
+        "ts": 1784566092.5597212
+      },
+      {
+        "agent": "verifier",
+        "action": "start",
+        "data": {
+          "mentions": 9
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "tool_call",
+        "data": {
+          "tool": "verify_schema",
+          "input": {
+            "mentions": [
+              {
+                "text": "tăng huyết áp",
+                "position": [
+                  57,
+                  70
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I10"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "bệnh gút không đặc hiệu",
+                "position": [
+                  77,
+                  100
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "M10.99"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "bệnh thận mạn, không đặc hiệu",
+                "position": [
+                  107,
+                  136
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "N18.9"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "ung thư đại tràng",
+                "position": [
+                  143,
+                  160
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "C18.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "béo phì",
+                "position": [
+                  167,
+                  174
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "xơ gan mất bù",
+                "position": [
+                  191,
+                  204
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K70.1"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "chọc dò màng phổi",
+                "position": [
+                  443,
+                  460
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chọc dò dịch ổ bụng",
+                "position": [
+                  471,
+                  490
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "thủ thuật TIPS",
+                "position": [
+                  500,
+                  514
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nChưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện\n    - chọc dò màng phổi 3L4\n    - chọc dò dịch ổ bụng 7L\n    - thủ thuật TIPS"
+          },
+          "output": {
+            "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              }
+            ],
+            "final_predictions": [
+              {
+                "text": "tăng huyết áp",
+                "position": [
+                  57,
+                  70
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I10"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "bệnh gút không đặc hiệu",
+                "position": [
+                  77,
+                  100
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "M10.99"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "bệnh thận mạn, không đặc hiệu",
+                "position": [
+                  107,
+                  136
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "N18.9"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "ung thư đại tràng",
+                "position": [
+                  143,
+                  160
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "C18.7"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "béo phì",
+                "position": [
+                  167,
+                  174
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "xơ gan mất bù",
+                "position": [
+                  191,
+                  204
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "K70.1"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "chọc dò màng phổi",
+                "position": [
+                  443,
+                  460
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chọc dò dịch ổ bụng",
+                "position": [
+                  471,
+                  490
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "thủ thuật TIPS",
+                "position": [
+                  500,
+                  514
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "dropped": 0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "validated",
+        "data": {
+          "kept": 9,
+          "dropped": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_complete",
+        "kept": 9,
+        "ts": 1784566092.6897469
+      },
+      {
+        "agent": "orchestrator",
+        "action": "complete",
+        "total_mentions": 9,
+        "elapsed": 66.52,
+        "ts": 1784566092.689767
+      }
+    ]
+  },
   "logs": [
     {
       "agent": "orchestrator",
       "action": "start",
       "text_len": 514,
-      "ts": 1783443843.080528
+      "ts": 1784566026.1675441
     },
     {
       "agent": "orchestrator",
       "action": "extraction_start",
-      "ts": 1783443843.0806155
+      "ts": 1784566026.1675525
     },
     {
       "agent": "extraction",
@@ -39,8 +3042,7 @@
         },
         "output": {
           "rule": [],
-          "qwen": [],
-          "healthbert": [
+          "qwen": [
             {
               "text": "tăng huyết áp",
               "position": [
@@ -48,68 +3050,46 @@
                 70
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
-              "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
-              "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85,
-              "candidates": [
-                "I15.0",
-                "O16",
-                "O11",
-                "I27.0",
-                "I67.5"
-              ],
-              "link_confidence": 0.8
+              "extraction_source": "qwen"
             },
             {
-              "text": "bệnh thận mạn",
+              "text": "bệnh gút không đặc hiệu",
               "position": [
-                107,
-                120
+                77,
+                100
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
-              "vote_count": 1,
-              "voters": [
-                "healthbert"
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "bệnh thận mạn, không đặc hiệu",
+              "position": [
+                107,
+                136
               ],
-              "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85,
-              "candidates": [
-                "N18.9",
-                "N18.4",
-                "N18.2",
-                "N18.1",
-                "N18"
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
               ],
-              "link_confidence": 0.8
+              "extraction_source": "qwen"
             },
             {
               "text": "ung thư đại tràng",
@@ -118,56 +3098,46 @@
                 160
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
-              "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
-              "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "extraction_source": "qwen"
             },
             {
-              "text": "Bệnh nhân xơ gan mất bù",
+              "text": "béo phì",
               "position": [
-                181,
+                167,
+                174
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "xơ gan mất bù",
+              "position": [
+                191,
                 204
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
-              "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
-              "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "extraction_source": "qwen"
             },
             {
               "text": "chọc dò màng phổi",
@@ -176,24 +3146,46 @@
                 460
               ],
               "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.6735056638717651
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
-              "vote_count": 1,
-              "voters": [
-                "healthbert"
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chọc dò dịch ổ bụng",
+              "position": [
+                471,
+                490
               ],
-              "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              }
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "thủ thuật TIPS",
+              "position": [
+                500,
+                514
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
             }
           ],
           "errors": []
@@ -207,11 +3199,9 @@
       "data": {
         "sources": {
           "rule": 0,
-          "qwen": 0,
-          "healthbert": 5,
-          "errors": 0
+          "qwen": 9
         },
-        "total": 5
+        "total": 9
       }
     },
     {
@@ -228,68 +3218,46 @@
                 70
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
-              "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
-              "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85,
-              "candidates": [
-                "I15.0",
-                "O16",
-                "O11",
-                "I27.0",
-                "I67.5"
-              ],
-              "link_confidence": 0.8
+              "extraction_source": "qwen"
             },
             {
-              "text": "bệnh thận mạn",
+              "text": "bệnh gút không đặc hiệu",
               "position": [
-                107,
-                120
+                77,
+                100
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
-              "vote_count": 1,
-              "voters": [
-                "healthbert"
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "bệnh thận mạn, không đặc hiệu",
+              "position": [
+                107,
+                136
               ],
-              "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85,
-              "candidates": [
-                "N18.9",
-                "N18.4",
-                "N18.2",
-                "N18.1",
-                "N18"
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
               ],
-              "link_confidence": 0.8
+              "extraction_source": "qwen"
             },
             {
               "text": "ung thư đại tràng",
@@ -298,56 +3266,46 @@
                 160
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
-              "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
-              "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "extraction_source": "qwen"
             },
             {
-              "text": "Bệnh nhân xơ gan mất bù",
+              "text": "béo phì",
               "position": [
-                181,
+                167,
+                174
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "xơ gan mất bù",
+              "position": [
+                191,
                 204
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
-              "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
-              "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "extraction_source": "qwen"
             },
             {
               "text": "chọc dò màng phổi",
@@ -356,24 +3314,46 @@
                 460
               ],
               "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.6735056638717651
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
-              "vote_count": 1,
-              "voters": [
-                "healthbert"
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chọc dò dịch ổ bụng",
+              "position": [
+                471,
+                490
               ],
-              "confidence": 0.5,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              }
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "thủ thuật TIPS",
+              "position": [
+                500,
+                514
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
             }
           ]
         },
@@ -385,68 +3365,97 @@
               70
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "voters": [
-              "healthbert"
-            ],
+            "voters": {
+              "qwen": 1
+            },
             "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": false
+              "isHistorical": true
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I15.0",
-              "O16",
-              "O11",
-              "I27.0",
-              "I67.5"
+              "I10"
             ],
-            "link_confidence": 0.8
+            "link_confidence": 0.85
           },
           {
-            "text": "bệnh thận mạn",
+            "text": "bệnh gút không đặc hiệu",
             "position": [
-              107,
-              120
+              77,
+              100
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "voters": [
-              "healthbert"
-            ],
+            "voters": {
+              "qwen": 1
+            },
             "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": false
+              "isHistorical": true
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "N18.9",
-              "N18.4",
-              "N18.2",
-              "N18.1",
-              "N18"
+              "M10.99"
             ],
-            "link_confidence": 0.8
+            "link_confidence": 0.85
+          },
+          {
+            "text": "bệnh thận mạn, không đặc hiệu",
+            "position": [
+              107,
+              136
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "N18.9"
+            ],
+            "link_confidence": 0.85
           },
           {
             "text": "ung thư đại tràng",
@@ -455,56 +3464,93 @@
               160
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "voters": [
-              "healthbert"
-            ],
+            "voters": {
+              "qwen": 1
+            },
             "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": false
+              "isHistorical": true
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "C18.7"
+            ],
+            "link_confidence": 0.85
           },
           {
-            "text": "Bệnh nhân xơ gan mất bù",
+            "text": "béo phì",
             "position": [
-              181,
+              167,
+              174
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "xơ gan mất bù",
+            "position": [
+              191,
               204
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "voters": [
-              "healthbert"
-            ],
+            "voters": {
+              "qwen": 1
+            },
             "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": false
+              "isHistorical": true
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "K70.1"
+            ],
+            "link_confidence": 0.85
           },
           {
             "text": "chọc dò màng phổi",
@@ -513,18 +3559,76 @@
               460
             ],
             "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "TÊN_XÉT_NGHIỆM",
-                "score": 0.6735056638717651
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "voters": [
-              "healthbert"
-            ],
+            "voters": {
+              "qwen": 1
+            },
             "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chọc dò dịch ổ bụng",
+            "position": [
+              471,
+              490
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "thủ thuật TIPS",
+            "position": [
+              500,
+              514
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
@@ -540,7 +3644,7 @@
       "agent": "extraction",
       "action": "voted",
       "data": {
-        "merged": 5
+        "merged": 9
       }
     },
     {
@@ -557,68 +3661,97 @@
                 70
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": false
+                "isHistorical": true
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I15.0",
-                "O16",
-                "O11",
-                "I27.0",
-                "I67.5"
+                "I10"
               ],
-              "link_confidence": 0.8
+              "link_confidence": 0.85
             },
             {
-              "text": "bệnh thận mạn",
+              "text": "bệnh gút không đặc hiệu",
               "position": [
-                107,
-                120
+                77,
+                100
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": false
+                "isHistorical": true
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N18.9",
-                "N18.4",
-                "N18.2",
-                "N18.1",
-                "N18"
+                "M10.99"
               ],
-              "link_confidence": 0.8
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bệnh thận mạn, không đặc hiệu",
+              "position": [
+                107,
+                136
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "N18.9"
+              ],
+              "link_confidence": 0.85
             },
             {
               "text": "ung thư đại tràng",
@@ -627,56 +3760,93 @@
                 160
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": false
+                "isHistorical": true
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "C18.7"
+              ],
+              "link_confidence": 0.85
             },
             {
-              "text": "Bệnh nhân xơ gan mất bù",
+              "text": "béo phì",
               "position": [
-                181,
+                167,
+                174
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "xơ gan mất bù",
+              "position": [
+                191,
                 204
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": false
+                "isHistorical": true
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "K70.1"
+              ],
+              "link_confidence": 0.85
             },
             {
               "text": "chọc dò màng phổi",
@@ -685,18 +3855,76 @@
                 460
               ],
               "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.6735056638717651
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chọc dò dịch ổ bụng",
+              "position": [
+                471,
+                490
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "thủ thuật TIPS",
+              "position": [
+                500,
+                514
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
@@ -715,68 +3943,97 @@
               70
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "voters": [
-              "healthbert"
-            ],
+            "voters": {
+              "qwen": 1
+            },
             "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": false
+              "isHistorical": true
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I15.0",
-              "O16",
-              "O11",
-              "I27.0",
-              "I67.5"
+              "I10"
             ],
-            "link_confidence": 0.8
+            "link_confidence": 0.85
           },
           {
-            "text": "bệnh thận mạn",
+            "text": "bệnh gút không đặc hiệu",
             "position": [
-              107,
-              120
+              77,
+              100
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "voters": [
-              "healthbert"
-            ],
+            "voters": {
+              "qwen": 1
+            },
             "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": false
+              "isHistorical": true
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "N18.9",
-              "N18.4",
-              "N18.2",
-              "N18.1",
-              "N18"
+              "M10.99"
             ],
-            "link_confidence": 0.8
+            "link_confidence": 0.85
+          },
+          {
+            "text": "bệnh thận mạn, không đặc hiệu",
+            "position": [
+              107,
+              136
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "N18.9"
+            ],
+            "link_confidence": 0.85
           },
           {
             "text": "ung thư đại tràng",
@@ -785,56 +4042,93 @@
               160
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "voters": [
-              "healthbert"
-            ],
+            "voters": {
+              "qwen": 1
+            },
             "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": false
+              "isHistorical": true
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "C18.7"
+            ],
+            "link_confidence": 0.85
           },
           {
-            "text": "Bệnh nhân xơ gan mất bù",
+            "text": "béo phì",
             "position": [
-              181,
+              167,
+              174
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "xơ gan mất bù",
+            "position": [
+              191,
               204
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "voters": [
-              "healthbert"
-            ],
+            "voters": {
+              "qwen": 1
+            },
             "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": false
+              "isHistorical": true
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "K70.1"
+            ],
+            "link_confidence": 0.85
           },
           {
             "text": "chọc dò màng phổi",
@@ -843,18 +4137,76 @@
               460
             ],
             "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "TÊN_XÉT_NGHIỆM",
-                "score": 0.6735056638717651
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "voters": [
-              "healthbert"
-            ],
+            "voters": {
+              "qwen": 1
+            },
             "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chọc dò dịch ổ bụng",
+            "position": [
+              471,
+              490
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "thủ thuật TIPS",
+            "position": [
+              500,
+              514
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
@@ -880,68 +4232,97 @@
                 70
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": false
+                "isHistorical": true
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I15.0",
-                "O16",
-                "O11",
-                "I27.0",
-                "I67.5"
+                "I10"
               ],
-              "link_confidence": 0.8
+              "link_confidence": 0.85
             },
             {
-              "text": "bệnh thận mạn",
+              "text": "bệnh gút không đặc hiệu",
               "position": [
-                107,
-                120
+                77,
+                100
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": false
+                "isHistorical": true
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N18.9",
-                "N18.4",
-                "N18.2",
-                "N18.1",
-                "N18"
+                "M10.99"
               ],
-              "link_confidence": 0.8
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bệnh thận mạn, không đặc hiệu",
+              "position": [
+                107,
+                136
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "N18.9"
+              ],
+              "link_confidence": 0.85
             },
             {
               "text": "ung thư đại tràng",
@@ -950,56 +4331,93 @@
                 160
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": false
+                "isHistorical": true
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "C18.7"
+              ],
+              "link_confidence": 0.85
             },
             {
-              "text": "Bệnh nhân xơ gan mất bù",
+              "text": "béo phì",
               "position": [
-                181,
+                167,
+                174
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "xơ gan mất bù",
+              "position": [
+                191,
                 204
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": false
+                "isHistorical": true
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "K70.1"
+              ],
+              "link_confidence": 0.85
             },
             {
               "text": "chọc dò màng phổi",
@@ -1008,18 +4426,76 @@
                 460
               ],
               "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.6735056638717651
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chọc dò dịch ổ bụng",
+              "position": [
+                471,
+                490
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "thủ thuật TIPS",
+              "position": [
+                500,
+                514
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
@@ -1038,68 +4514,97 @@
               70
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "voters": [
-              "healthbert"
-            ],
+            "voters": {
+              "qwen": 1
+            },
             "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": false
+              "isHistorical": true
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I15.0",
-              "O16",
-              "O11",
-              "I27.0",
-              "I67.5"
+              "I10"
             ],
-            "link_confidence": 0.8
+            "link_confidence": 0.85
           },
           {
-            "text": "bệnh thận mạn",
+            "text": "bệnh gút không đặc hiệu",
             "position": [
-              107,
-              120
+              77,
+              100
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "voters": [
-              "healthbert"
-            ],
+            "voters": {
+              "qwen": 1
+            },
             "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": false
+              "isHistorical": true
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "N18.9",
-              "N18.4",
-              "N18.2",
-              "N18.1",
-              "N18"
+              "M10.99"
             ],
-            "link_confidence": 0.8
+            "link_confidence": 0.85
+          },
+          {
+            "text": "bệnh thận mạn, không đặc hiệu",
+            "position": [
+              107,
+              136
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "N18.9"
+            ],
+            "link_confidence": 0.85
           },
           {
             "text": "ung thư đại tràng",
@@ -1108,56 +4613,93 @@
               160
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "voters": [
-              "healthbert"
-            ],
+            "voters": {
+              "qwen": 1
+            },
             "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": false
+              "isHistorical": true
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "C18.7"
+            ],
+            "link_confidence": 0.85
           },
           {
-            "text": "Bệnh nhân xơ gan mất bù",
+            "text": "béo phì",
             "position": [
-              181,
+              167,
+              174
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "xơ gan mất bù",
+            "position": [
+              191,
               204
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "voters": [
-              "healthbert"
-            ],
+            "voters": {
+              "qwen": 1
+            },
             "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": false
+              "isHistorical": true
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "K70.1"
+            ],
+            "link_confidence": 0.85
           },
           {
             "text": "chọc dò màng phổi",
@@ -1166,18 +4708,76 @@
               460
             ],
             "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "TÊN_XÉT_NGHIỆM",
-                "score": 0.6735056638717651
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "voters": [
-              "healthbert"
-            ],
+            "voters": {
+              "qwen": 1
+            },
             "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chọc dò dịch ổ bụng",
+            "position": [
+              471,
+              490
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "thủ thuật TIPS",
+            "position": [
+              500,
+              514
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
@@ -1206,19 +4806,19 @@
     {
       "agent": "orchestrator",
       "action": "extraction_complete",
-      "mentions": 5,
-      "ts": 1783443844.0280542
+      "mentions": 9,
+      "ts": 1784566042.1015992
     },
     {
       "agent": "orchestrator",
       "action": "assertion_start",
-      "ts": 1783443844.0280724
+      "ts": 1784566042.1016061
     },
     {
       "agent": "assertion",
       "action": "start",
       "data": {
-        "mentions": 5
+        "mentions": 9
       }
     },
     {
@@ -1229,7 +4829,8 @@
         "input": {
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nChưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện\n    - chọc dò màng phổi 3L4\n    - chọc dò dịch ổ bụng 7L\n    - thủ thuật TIPS",
           "start": 57,
-          "end": 70
+          "end": 70,
+          "mtype": "CHẨN_ĐOÁN"
         },
         "output": {
           "isNegated": false,
@@ -1243,16 +4844,17 @@
       "agent": "assertion",
       "action": "tool_call",
       "data": {
-        "tool": "llm_assert",
+        "tool": "rule_assert",
         "input": {
-          "mention": "tăng huyết áp",
-          "mtype": "CHẨN_ĐOÁN",
-          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực "
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nChưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện\n    - chọc dò màng phổi 3L4\n    - chọc dò dịch ổ bụng 7L\n    - thủ thuật TIPS",
+          "start": 77,
+          "end": 100,
+          "mtype": "CHẨN_ĐOÁN"
         },
         "output": {
           "isNegated": false,
           "isFamily": false,
-          "isHistorical": false
+          "isHistorical": true
         },
         "result_type": "dict"
       }
@@ -1265,30 +4867,13 @@
         "input": {
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nChưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện\n    - chọc dò màng phổi 3L4\n    - chọc dò dịch ổ bụng 7L\n    - thủ thuật TIPS",
           "start": 107,
-          "end": 120
-        },
-        "output": {
-          "isNegated": true,
-          "isFamily": false,
-          "isHistorical": false
-        },
-        "result_type": "dict"
-      }
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "data": {
-        "tool": "llm_assert",
-        "input": {
-          "mention": "bệnh thận mạn",
-          "mtype": "CHẨN_ĐOÁN",
-          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n "
+          "end": 136,
+          "mtype": "CHẨN_ĐOÁN"
         },
         "output": {
           "isNegated": false,
           "isFamily": false,
-          "isHistorical": false
+          "isHistorical": true
         },
         "result_type": "dict"
       }
@@ -1301,30 +4886,13 @@
         "input": {
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nChưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện\n    - chọc dò màng phổi 3L4\n    - chọc dò dịch ổ bụng 7L\n    - thủ thuật TIPS",
           "start": 143,
-          "end": 160
-        },
-        "output": {
-          "isNegated": true,
-          "isFamily": false,
-          "isHistorical": false
-        },
-        "result_type": "dict"
-      }
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "data": {
-        "tool": "llm_assert",
-        "input": {
-          "mention": "ung thư đại tràng",
-          "mtype": "CHẨN_ĐOÁN",
-          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: li"
+          "end": 160,
+          "mtype": "CHẨN_ĐOÁN"
         },
         "output": {
           "isNegated": false,
           "isFamily": false,
-          "isHistorical": false
+          "isHistorical": true
         },
         "result_type": "dict"
       }
@@ -1336,13 +4904,14 @@
         "tool": "rule_assert",
         "input": {
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nChưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện\n    - chọc dò màng phổi 3L4\n    - chọc dò dịch ổ bụng 7L\n    - thủ thuật TIPS",
-          "start": 181,
-          "end": 204
+          "start": 167,
+          "end": 174,
+          "mtype": "TRIỆU_CHỨNG"
         },
         "output": {
-          "isNegated": true,
+          "isNegated": false,
           "isFamily": false,
-          "isHistorical": false
+          "isHistorical": true
         },
         "result_type": "dict"
       }
@@ -1351,16 +4920,17 @@
       "agent": "assertion",
       "action": "tool_call",
       "data": {
-        "tool": "llm_assert",
+        "tool": "rule_assert",
         "input": {
-          "mention": "Bệnh nhân xơ gan mất bù",
-          "mtype": "CHẨN_ĐOÁN",
-          "context": "ác bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nC"
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nChưa phát hiện bất thường\n3.  Đánh giá tại bệnh viện\n    Các thủ thuật đã thực hiện\n    - chọc dò màng phổi 3L4\n    - chọc dò dịch ổ bụng 7L\n    - thủ thuật TIPS",
+          "start": 191,
+          "end": 204,
+          "mtype": "CHẨN_ĐOÁN"
         },
         "output": {
           "isNegated": false,
           "isFamily": false,
-          "isHistorical": false
+          "isHistorical": true
         },
         "result_type": "dict"
       }
@@ -1369,25 +4939,25 @@
       "agent": "assertion",
       "action": "complete",
       "data": {
-        "processed": 5,
+        "processed": 9,
         "llm_checked": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "assertion_complete",
-      "ts": 1783443845.2451227
+      "ts": 1784566042.1017904
     },
     {
       "agent": "orchestrator",
       "action": "linking_start",
-      "ts": 1783443845.245149
+      "ts": 1784566042.1017945
     },
     {
       "agent": "linking",
       "action": "start",
       "data": {
-        "mentions": 5
+        "mentions": 9
       }
     },
     {
@@ -1403,45 +4973,40 @@
               70
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "voters": [
-              "healthbert"
-            ],
+            "voters": {
+              "qwen": 1
+            },
             "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": false
+              "isHistorical": true
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I15.0",
-              "O16",
-              "O11",
-              "I27.0",
-              "I67.5"
+              "I10"
             ],
-            "link_confidence": 0.8
+            "link_confidence": 0.85
           },
           "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực "
         },
         "output": {
           "candidates": [
-            "I15.0",
-            "O16",
-            "O11",
-            "I27.0",
-            "I67.5"
+            "I10"
           ],
-          "confidence": 0.8
+          "confidence": 0.85,
+          "rationale": "Mention 'tăng huyết áp' phù hợp với mã I10 (Bệnh tăng huyết áp vô căn - nguyên phát), đây là mã chẩn đoán chính xác và phổ biến nhất cho tình trạng này."
         },
         "result_type": "dict"
       }
@@ -1453,51 +5018,97 @@
         "tool": "link_entity",
         "input": {
           "mention": {
-            "text": "bệnh thận mạn",
+            "text": "bệnh gút không đặc hiệu",
             "position": [
-              107,
-              120
+              77,
+              100
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "voters": [
-              "healthbert"
-            ],
+            "voters": {
+              "qwen": 1
+            },
             "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": false
+              "isHistorical": true
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "N18.9",
-              "N18.4",
-              "N18.2",
-              "N18.1",
-              "N18"
+              "M10.99"
             ],
-            "link_confidence": 0.8
+            "link_confidence": 0.85
           },
-          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n "
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tr"
         },
         "output": {
           "candidates": [
-            "N18.9",
-            "N18.4",
-            "N18.2",
-            "N18.1",
-            "N18"
+            "M10.99"
           ],
-          "confidence": 0.8
+          "confidence": 0.85,
+          "rationale": "Mention 'bệnh gút không đặc hiệu' phù hợp với mã M10.99 (Bệnh gút, không xác định, vị trí không xác định), vì đây là mã chẩn đoán được sử dụng khi không thể xác định vị trí cụ thể của bệnh gút."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "bệnh thận mạn, không đặc hiệu",
+            "position": [
+              107,
+              136
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "N18.9"
+            ],
+            "link_confidence": 0.85
+          },
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước k"
+        },
+        "output": {
+          "candidates": [
+            "N18.9"
+          ],
+          "confidence": 0.85,
+          "rationale": "Mention 'bệnh thận mạn, không đặc hiệu' phù hợp với mã N18.9 (Bệnh thận mạn tính, không xác định) trong danh sách candidates."
         },
         "result_type": "dict"
       }
@@ -1515,33 +5126,40 @@
               160
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "voters": [
-              "healthbert"
-            ],
+            "voters": {
+              "qwen": 1
+            },
             "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": false
+              "isHistorical": true
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "C18.7"
+            ],
+            "link_confidence": 0.85
           },
           "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: li"
         },
         "output": {
-          "candidates": [],
-          "confidence": 0.0
+          "candidates": [
+            "C18.7"
+          ],
+          "confidence": 0.85,
+          "rationale": "Ung thư đại tràng được mã hóa bởi C18.7, đây là mã chính xác nhất trong danh sách candidates."
         },
         "result_type": "dict"
       }
@@ -1553,39 +5171,46 @@
         "tool": "link_entity",
         "input": {
           "mention": {
-            "text": "Bệnh nhân xơ gan mất bù",
+            "text": "xơ gan mất bù",
             "position": [
-              181,
+              191,
               204
             ],
             "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "CHẨN_ĐOÁN",
-                "score": 0.75
+                "score": 0.85
               }
             ],
-            "extraction_source": "healthbert",
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "voters": [
-              "healthbert"
-            ],
+            "voters": {
+              "qwen": 1
+            },
             "confidence": 0.5,
+            "needs_review": false,
             "position_fixed": false,
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": false
+              "isHistorical": true
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "K70.1"
+            ],
+            "link_confidence": 0.85
           },
-          "context": "ác bệnh lý mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nC"
+          "context": " mạn tính\n    - tăng huyết áp\n    - bệnh gút không đặc hiệu\n    - bệnh thận mạn, không đặc hiệu\n    - ung thư đại tràng\n    - béo phì\n    - Bệnh nhân xơ gan mất bù có tăng áp lực tĩnh mạch cửa, cổ trướng và tràn dịch màng phổi.\n    Thuốc trước khi nhập viện lần này: liệu pháp lợi tiểu\n2.  Tiền sử bệnh hiện tại\nC"
         },
         "output": {
-          "candidates": [],
-          "confidence": 0.0
+          "candidates": [
+            "K70.1"
+          ],
+          "confidence": 0.85,
+          "rationale": "Mention 'xơ gan mất bù' phù hợp với mã K70.1 (Bệnh xơ gan và/hoặc xơ hóa gan do rượu), vì mã này đặc biệt mô tả tình trạng xơ gan mất bù, một dạng nghiêm trọng của bệnh xơ gan."
         },
         "result_type": "dict"
       }
@@ -1594,25 +5219,25 @@
       "agent": "linking",
       "action": "complete",
       "data": {
-        "linked": 2
+        "linked": 5
       }
     },
     {
       "agent": "orchestrator",
       "action": "linking_complete",
-      "linked": 2,
-      "ts": 1783443850.5366058
+      "linked": 5,
+      "ts": 1784566092.559704
     },
     {
       "agent": "orchestrator",
       "action": "verification_start",
-      "ts": 1783443850.5366378
+      "ts": 1784566092.5597212
     },
     {
       "agent": "verifier",
       "action": "start",
       "data": {
-        "mentions": 5
+        "mentions": 9
       }
     },
     {
@@ -1629,68 +5254,97 @@
                 70
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": false
+                "isHistorical": true
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I15.0",
-                "O16",
-                "O11",
-                "I27.0",
-                "I67.5"
+                "I10"
               ],
-              "link_confidence": 0.8
+              "link_confidence": 0.85
             },
             {
-              "text": "bệnh thận mạn",
+              "text": "bệnh gút không đặc hiệu",
               "position": [
-                107,
-                120
+                77,
+                100
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": false
+                "isHistorical": true
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N18.9",
-                "N18.4",
-                "N18.2",
-                "N18.1",
-                "N18"
+                "M10.99"
               ],
-              "link_confidence": 0.8
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bệnh thận mạn, không đặc hiệu",
+              "position": [
+                107,
+                136
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "N18.9"
+              ],
+              "link_confidence": 0.85
             },
             {
               "text": "ung thư đại tràng",
@@ -1699,56 +5353,93 @@
                 160
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": false
+                "isHistorical": true
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "C18.7"
+              ],
+              "link_confidence": 0.85
             },
             {
-              "text": "Bệnh nhân xơ gan mất bù",
+              "text": "béo phì",
               "position": [
-                181,
+                167,
+                174
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "xơ gan mất bù",
+              "position": [
+                191,
                 204
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": false
+                "isHistorical": true
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "K70.1"
+              ],
+              "link_confidence": 0.85
             },
             {
               "text": "chọc dò màng phổi",
@@ -1757,18 +5448,76 @@
                 460
               ],
               "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.6735056638717651
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chọc dò dịch ổ bụng",
+              "position": [
+                471,
+                490
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "thủ thuật TIPS",
+              "position": [
+                500,
+                514
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
@@ -1794,16 +5543,32 @@
             {
               "action": "accept",
               "fixes": [],
-              "warnings": [
-                "no candidates"
-              ]
+              "warnings": []
             },
             {
               "action": "accept",
               "fixes": [],
-              "warnings": [
-                "no candidates"
-              ]
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
             },
             {
               "action": "accept",
@@ -1819,68 +5584,97 @@
                 70
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": false
+                "isHistorical": true
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I15.0",
-                "O16",
-                "O11",
-                "I27.0",
-                "I67.5"
+                "I10"
               ],
-              "link_confidence": 0.8
+              "link_confidence": 0.85
             },
             {
-              "text": "bệnh thận mạn",
+              "text": "bệnh gút không đặc hiệu",
               "position": [
-                107,
-                120
+                77,
+                100
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": false
+                "isHistorical": true
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N18.9",
-                "N18.4",
-                "N18.2",
-                "N18.1",
-                "N18"
+                "M10.99"
               ],
-              "link_confidence": 0.8
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bệnh thận mạn, không đặc hiệu",
+              "position": [
+                107,
+                136
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "N18.9"
+              ],
+              "link_confidence": 0.85
             },
             {
               "text": "ung thư đại tràng",
@@ -1889,56 +5683,93 @@
                 160
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": false
+                "isHistorical": true
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "C18.7"
+              ],
+              "link_confidence": 0.85
             },
             {
-              "text": "Bệnh nhân xơ gan mất bù",
+              "text": "béo phì",
               "position": [
-                181,
+                167,
+                174
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "xơ gan mất bù",
+              "position": [
+                191,
                 204
               ],
               "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
-                  "score": 0.75
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": false
+                "isHistorical": true
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "K70.1"
+              ],
+              "link_confidence": 0.85
             },
             {
               "text": "chọc dò màng phổi",
@@ -1947,18 +5778,76 @@
                 460
               ],
               "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.6735056638717651
+                  "score": 0.85
                 }
               ],
-              "extraction_source": "healthbert",
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "voters": [
-                "healthbert"
-              ],
+              "voters": {
+                "qwen": 1
+              },
               "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chọc dò dịch ổ bụng",
+              "position": [
+                471,
+                490
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "thủ thuật TIPS",
+              "position": [
+                500,
+                514
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
               "position_fixed": false,
               "assertions": {
                 "isNegated": false,
@@ -1976,23 +5865,22 @@
       "agent": "verifier",
       "action": "validated",
       "data": {
-        "kept": 5,
+        "kept": 9,
         "dropped": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "verification_complete",
-      "kept": 5,
-      "ts": 1783443850.5367467
+      "kept": 9,
+      "ts": 1784566092.6897469
     },
     {
       "agent": "orchestrator",
       "action": "complete",
-      "total_mentions": 5,
-      "elapsed": 7.46,
-      "ts": 1783443850.5367744
+      "total_mentions": 9,
+      "elapsed": 66.52,
+      "ts": 1784566092.689767
     }
-  ],
-  "stats": null
+  ]
 }

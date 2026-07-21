@@ -1,0 +1,187 @@
+{
+  "file_id": "21",
+  "timestamp": 1784566190.648628,
+  "elapsed": 53.16,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "mention_count": 5,
+  "stats": {
+    "total_mentions": 5,
+    "final": 5,
+    "validation_errors": 0,
+    "elapsed": 53.16,
+    "rule": 0,
+    "qwen": 5
+  },
+  "log_summary": [
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "parallel_extract"
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "vote_merge"
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "resolve_conflicts"
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "fix_positions"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "verify_schema"
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "ts": 1784566190.648573,
+      "tool": null
+    }
+  ],
+  "mentions": [
+    {
+      "text": "Tăng huyết áp",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        48,
+        61
+      ],
+      "candidates": [
+        "I10"
+      ]
+    },
+    {
+      "text": "suy tim",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        68,
+        75
+      ],
+      "candidates": [
+        "I11.0"
+      ]
+    },
+    {
+      "text": "bệnh thận mạn",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        98,
+        111
+      ],
+      "candidates": [
+        "N18.9"
+      ]
+    },
+    {
+      "text": "sử dụng thuốc lá",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        339,
+        355
+      ]
+    },
+    {
+      "text": "phẫu thuật sửa van tĩnh mạch chủ ngực bụng",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        451,
+        493
+      ]
+    }
+  ]
+}

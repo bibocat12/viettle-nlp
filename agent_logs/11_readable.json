@@ -1,18 +1,16 @@
 {
   "file_id": "11",
-  "timestamp": 1783443850.536848,
-  "elapsed": 7.46,
-  "model": "runpod",
-  "mention_count": 5,
+  "timestamp": 1784566092.6898582,
+  "elapsed": 66.52,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "mention_count": 9,
   "stats": {
-    "total_mentions": 5,
-    "final": 5,
+    "total_mentions": 9,
+    "final": 9,
     "validation_errors": 0,
-    "elapsed": 7.46,
+    "elapsed": 66.52,
     "rule": 0,
-    "qwen": 0,
-    "healthbert": 5,
-    "errors": 0
+    "qwen": 9
   },
   "log_summary": [
     {
@@ -61,7 +59,7 @@
       "agent": "assertion",
       "action": "tool_call",
       "ts": null,
-      "tool": "llm_assert"
+      "tool": "rule_assert"
     },
     {
       "agent": "assertion",
@@ -73,7 +71,7 @@
       "agent": "assertion",
       "action": "tool_call",
       "ts": null,
-      "tool": "llm_assert"
+      "tool": "rule_assert"
     },
     {
       "agent": "assertion",
@@ -85,25 +83,19 @@
       "agent": "assertion",
       "action": "tool_call",
       "ts": null,
-      "tool": "llm_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
       "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "llm_assert"
     },
     {
       "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -150,111 +142,118 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1783443850.5367744,
+      "ts": 1784566092.689767,
       "tool": null
     }
   ],
   "mentions": [
     {
       "text": "tăng huyết áp",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
       "position": [
         57,
         70
       ],
-      "type": "CHẨN_ĐOÁN",
-      "confidence": 0.5,
-      "voters": [
-        "healthbert"
-      ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      },
       "candidates": [
-        "I15.0",
-        "O16",
-        "O11",
-        "I27.0",
-        "I67.5"
+        "I10"
       ]
     },
     {
-      "text": "bệnh thận mạn",
+      "text": "bệnh gút không đặc hiệu",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        77,
+        100
+      ],
+      "candidates": [
+        "M10.99"
+      ]
+    },
+    {
+      "text": "bệnh thận mạn, không đặc hiệu",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
       "position": [
         107,
-        120
+        136
       ],
-      "type": "CHẨN_ĐOÁN",
-      "confidence": 0.5,
-      "voters": [
-        "healthbert"
-      ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      },
       "candidates": [
-        "N18.9",
-        "N18.4",
-        "N18.2",
-        "N18.1",
-        "N18"
+        "N18.9"
       ]
     },
     {
       "text": "ung thư đại tràng",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
       "position": [
         143,
         160
       ],
-      "type": "CHẨN_ĐOÁN",
-      "confidence": 0.5,
-      "voters": [
-        "healthbert"
-      ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      },
-      "candidates": []
+      "candidates": [
+        "C18.7"
+      ]
     },
     {
-      "text": "Bệnh nhân xơ gan mất bù",
+      "text": "béo phì",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isHistorical"
+      ],
       "position": [
-        181,
+        167,
+        174
+      ]
+    },
+    {
+      "text": "xơ gan mất bù",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        191,
         204
       ],
-      "type": "CHẨN_ĐOÁN",
-      "confidence": 0.5,
-      "voters": [
-        "healthbert"
-      ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      },
-      "candidates": []
+      "candidates": [
+        "K70.1"
+      ]
     },
     {
       "text": "chọc dò màng phổi",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
       "position": [
         443,
         460
-      ],
+      ]
+    },
+    {
+      "text": "chọc dò dịch ổ bụng",
       "type": "TÊN_XÉT_NGHIỆM",
-      "confidence": 0.5,
-      "voters": [
-        "healthbert"
-      ],
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+      "assertions": [],
+      "position": [
+        471,
+        490
+      ]
+    },
+    {
+      "text": "thủ thuật TIPS",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        500,
+        514
+      ]
     }
   ]
 }

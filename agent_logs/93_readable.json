@@ -1,0 +1,191 @@
+{
+  "file_id": "93",
+  "timestamp": 1784567148.643682,
+  "elapsed": 46.57,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "mention_count": 5,
+  "stats": {
+    "total_mentions": 5,
+    "final": 5,
+    "validation_errors": 0,
+    "elapsed": 46.57,
+    "rule": 0,
+    "qwen": 5
+  },
+  "log_summary": [
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "parallel_extract"
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "vote_merge"
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "resolve_conflicts"
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "fix_positions"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "verify_schema"
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "ts": 1784567148.6435642,
+      "tool": null
+    }
+  ],
+  "mentions": [
+    {
+      "text": "Ung thư vú di căn",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        25,
+        42
+      ],
+      "candidates": [
+        "C50"
+      ]
+    },
+    {
+      "text": "tràn dịch màng phổi trái",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        44,
+        68
+      ],
+      "candidates": [
+        "J90"
+      ]
+    },
+    {
+      "text": "khó thở",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        116,
+        123
+      ]
+    },
+    {
+      "text": "tràn dịch màng ngoài tim",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        156,
+        180
+      ]
+    },
+    {
+      "text": "ung thư di căn theo đường bạch huyết ở hai phổi",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        227,
+        274
+      ],
+      "candidates": [
+        "C32.0"
+      ]
+    }
+  ]
+}

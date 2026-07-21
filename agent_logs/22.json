@@ -1,0 +1,4239 @@
+{
+  "file_id": "22",
+  "timestamp": 1784566210.6204538,
+  "elapsed": 45.76,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "result": {
+    "note_id": "22",
+    "mentions": [
+      {
+        "text": "bệnh mạch máu",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          34,
+          47
+        ],
+        "candidates": [
+          "I73.9"
+        ]
+      },
+      {
+        "text": "aspirin 325mg hằng ngày",
+        "type": "THUỐC",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          75,
+          98
+        ],
+        "candidates": [
+          "212033"
+        ]
+      },
+      {
+        "text": "Không có rối loạn thần kinh",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [],
+        "position": [
+          168,
+          195
+        ],
+        "candidates": [
+          "G70.0"
+        ]
+      },
+      {
+        "text": "chụp ct sọ não không thuốc cản quang",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          224,
+          260
+        ]
+      },
+      {
+        "text": "khối máu tụ dưới màng cứng bán cấp hai bên",
+        "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          271,
+          313
+        ]
+      },
+      {
+        "text": "chụp ct sọ não không thuốc cản quang",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          342,
+          378
+        ]
+      }
+    ],
+    "validation": {
+      "is_valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stats": {
+      "total_mentions": 6,
+      "final": 6,
+      "validation_errors": 0,
+      "elapsed": 45.76,
+      "rule": 3,
+      "qwen": 6
+    },
+    "logs": [
+      {
+        "agent": "orchestrator",
+        "action": "start",
+        "text_len": 379,
+        "ts": 1784566164.859303
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_start",
+        "ts": 1784566164.859349
+      },
+      {
+        "agent": "extraction",
+        "action": "start",
+        "data": {
+          "text_len": 379
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "preprocessed",
+        "data": {
+          "normalized_len": 379
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "parallel_extract",
+          "input": {
+            "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết quả chẩn đoán hình ảnh: chụp ct sọ não không thuốc cản quang Hình ảnh  khối máu tụ dưới màng cứng bán cấp hai bên\nCác thủ thuật đã thực hiện: chụp ct sọ não không thuốc cản quang\n"
+          },
+          "output": {
+            "rule": [
+              {
+                "text": "aspirin 325mg",
+                "position": [
+                  75,
+                  88
+                ],
+                "type": "THUỐC",
+                "confidence": 0.98,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "ct",
+                "position": [
+                  229,
+                  231
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "ct",
+                "position": [
+                  347,
+                  349
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              }
+            ],
+            "qwen": [
+              {
+                "text": "bệnh mạch máu",
+                "position": [
+                  34,
+                  47
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "aspirin 325mg hằng ngày",
+                "position": [
+                  75,
+                  98
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Không có rối loạn thần kinh",
+                "position": [
+                  168,
+                  195
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp ct sọ não không thuốc cản quang",
+                "position": [
+                  224,
+                  260
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "khối máu tụ dưới màng cứng bán cấp hai bên",
+                "position": [
+                  271,
+                  313
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp ct sọ não không thuốc cản quang",
+                "position": [
+                  342,
+                  378
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ],
+            "errors": []
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "extracted",
+        "data": {
+          "sources": {
+            "rule": 3,
+            "qwen": 6
+          },
+          "total": 9
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "vote_merge",
+          "input": {
+            "all_mentions": [
+              {
+                "text": "bệnh mạch máu",
+                "position": [
+                  34,
+                  47
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "aspirin 325mg hằng ngày",
+                "position": [
+                  75,
+                  98
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Không có rối loạn thần kinh",
+                "position": [
+                  168,
+                  195
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp ct sọ não không thuốc cản quang",
+                "position": [
+                  224,
+                  260
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "khối máu tụ dưới màng cứng bán cấp hai bên",
+                "position": [
+                  271,
+                  313
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp ct sọ não không thuốc cản quang",
+                "position": [
+                  342,
+                  378
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "aspirin 325mg",
+                "position": [
+                  75,
+                  88
+                ],
+                "type": "THUỐC",
+                "confidence": 0.98,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "ct",
+                "position": [
+                  229,
+                  231
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "ct",
+                "position": [
+                  347,
+                  349
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              }
+            ]
+          },
+          "output": [
+            {
+              "text": "bệnh mạch máu",
+              "position": [
+                34,
+                47
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I73.9"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "aspirin 325mg hằng ngày",
+              "position": [
+                75,
+                98
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "THUỐC": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "212033"
+              ],
+              "link_confidence": 0.95
+            },
+            {
+              "text": "Không có rối loạn thần kinh",
+              "position": [
+                168,
+                195
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "G70.0"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp ct sọ não không thuốc cản quang",
+              "position": [
+                224,
+                260
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "khối máu tụ dưới màng cứng bán cấp hai bên",
+              "position": [
+                271,
+                313
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp ct sọ não không thuốc cản quang",
+              "position": [
+                342,
+                378
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "voted",
+        "data": {
+          "merged": 6
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "resolve_conflicts",
+          "input": {
+            "merged": [
+              {
+                "text": "bệnh mạch máu",
+                "position": [
+                  34,
+                  47
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I73.9"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "aspirin 325mg hằng ngày",
+                "position": [
+                  75,
+                  98
+                ],
+                "type": "THUỐC",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "rule": 1,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "THUỐC": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "212033"
+                ],
+                "link_confidence": 0.95
+              },
+              {
+                "text": "Không có rối loạn thần kinh",
+                "position": [
+                  168,
+                  195
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "G70.0"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "chụp ct sọ não không thuốc cản quang",
+                "position": [
+                  224,
+                  260
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "khối máu tụ dưới màng cứng bán cấp hai bên",
+                "position": [
+                  271,
+                  313
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp ct sọ não không thuốc cản quang",
+                "position": [
+                  342,
+                  378
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết quả chẩn đoán hình ảnh: chụp ct sọ não không thuốc cản quang Hình ảnh  khối máu tụ dưới màng cứng bán cấp hai bên\nCác thủ thuật đã thực hiện: chụp ct sọ não không thuốc cản quang\n"
+          },
+          "output": [
+            {
+              "text": "bệnh mạch máu",
+              "position": [
+                34,
+                47
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I73.9"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "aspirin 325mg hằng ngày",
+              "position": [
+                75,
+                98
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "THUỐC": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "212033"
+              ],
+              "link_confidence": 0.95
+            },
+            {
+              "text": "Không có rối loạn thần kinh",
+              "position": [
+                168,
+                195
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "G70.0"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp ct sọ não không thuốc cản quang",
+              "position": [
+                224,
+                260
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "khối máu tụ dưới màng cứng bán cấp hai bên",
+              "position": [
+                271,
+                313
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp ct sọ não không thuốc cản quang",
+              "position": [
+                342,
+                378
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "fix_positions",
+          "input": {
+            "mentions": [
+              {
+                "text": "bệnh mạch máu",
+                "position": [
+                  34,
+                  47
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I73.9"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "aspirin 325mg hằng ngày",
+                "position": [
+                  75,
+                  98
+                ],
+                "type": "THUỐC",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "rule": 1,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "THUỐC": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "212033"
+                ],
+                "link_confidence": 0.95
+              },
+              {
+                "text": "Không có rối loạn thần kinh",
+                "position": [
+                  168,
+                  195
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "G70.0"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "chụp ct sọ não không thuốc cản quang",
+                "position": [
+                  224,
+                  260
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "khối máu tụ dưới màng cứng bán cấp hai bên",
+                "position": [
+                  271,
+                  313
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp ct sọ não không thuốc cản quang",
+                "position": [
+                  342,
+                  378
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết quả chẩn đoán hình ảnh: chụp ct sọ não không thuốc cản quang Hình ảnh  khối máu tụ dưới màng cứng bán cấp hai bên\nCác thủ thuật đã thực hiện: chụp ct sọ não không thuốc cản quang\n"
+          },
+          "output": [
+            {
+              "text": "bệnh mạch máu",
+              "position": [
+                34,
+                47
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I73.9"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "aspirin 325mg hằng ngày",
+              "position": [
+                75,
+                98
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "THUỐC": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "212033"
+              ],
+              "link_confidence": 0.95
+            },
+            {
+              "text": "Không có rối loạn thần kinh",
+              "position": [
+                168,
+                195
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "G70.0"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp ct sọ não không thuốc cản quang",
+              "position": [
+                224,
+                260
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "khối máu tụ dưới màng cứng bán cấp hai bên",
+              "position": [
+                271,
+                313
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp ct sọ não không thuốc cản quang",
+              "position": [
+                342,
+                378
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "positions_fixed",
+        "data": {
+          "fixed": 0
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "llm_verified",
+        "data": {
+          "corrected": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_complete",
+        "mentions": 6,
+        "ts": 1784566174.7918026
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_start",
+        "ts": 1784566174.7918143
+      },
+      {
+        "agent": "assertion",
+        "action": "start",
+        "data": {
+          "mentions": 6
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết quả chẩn đoán hình ảnh: chụp ct sọ não không thuốc cản quang Hình ảnh  khối máu tụ dưới màng cứng bán cấp hai bên\nCác thủ thuật đã thực hiện: chụp ct sọ não không thuốc cản quang\n",
+            "start": 34,
+            "end": 47,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết quả chẩn đoán hình ảnh: chụp ct sọ não không thuốc cản quang Hình ảnh  khối máu tụ dưới màng cứng bán cấp hai bên\nCác thủ thuật đã thực hiện: chụp ct sọ não không thuốc cản quang\n",
+            "start": 75,
+            "end": 98,
+            "mtype": "THUỐC"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết quả chẩn đoán hình ảnh: chụp ct sọ não không thuốc cản quang Hình ảnh  khối máu tụ dưới màng cứng bán cấp hai bên\nCác thủ thuật đã thực hiện: chụp ct sọ não không thuốc cản quang\n",
+            "start": 168,
+            "end": 195,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "complete",
+        "data": {
+          "processed": 6,
+          "llm_checked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_complete",
+        "ts": 1784566174.7920444
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_start",
+        "ts": 1784566174.7920532
+      },
+      {
+        "agent": "linking",
+        "action": "start",
+        "data": {
+          "mentions": 6
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "bệnh mạch máu",
+              "position": [
+                34,
+                47
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I73.9"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nK"
+          },
+          "output": {
+            "candidates": [
+              "I73.9"
+            ],
+            "confidence": 0.85,
+            "rationale": "Mention 'bệnh mạch máu' không cụ thể, không có thông tin để xác định loại bệnh mạch máu nào. Mã I73.9 là mã chung cho 'Bệnh mạch máu ngoại vi, không xác định' phù hợp với ngữ cảnh không đủ thông tin chi tiết."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "aspirin 325mg hằng ngày",
+              "position": [
+                75,
+                98
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "THUỐC": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "212033"
+              ],
+              "link_confidence": 0.95
+            },
+            "context": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết quả chẩn đoán hình ảnh: chụp ct sọ não không thu"
+          },
+          "output": {
+            "candidates": [
+              "212033"
+            ],
+            "confidence": 0.95
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "Không có rối loạn thần kinh",
+              "position": [
+                168,
+                195
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "G70.0"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "nh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết quả chẩn đoán hình ảnh: chụp ct sọ não không thuốc cản quang Hình ảnh  khối máu tụ dưới màng cứng bán cấp hai bên\nCác thủ thuật đã thực hiện: chụ"
+          },
+          "output": {
+            "candidates": [
+              "G70.0"
+            ],
+            "confidence": 0.85,
+            "rationale": "Mention 'Không có rối loạn thần kinh' cho thấy không có chẩn đoán rối loạn thần kinh - cơ, nhưng mã G70.0 là mã chính xác cho 'Nhược cơ [rối loạn thần kinh - cơ tự miễn]', phù hợp với ngữ cảnh khi không có rối loạn thần kinh được ghi nhận."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "complete",
+        "data": {
+          "linked": 3
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_complete",
+        "linked": 3,
+        "ts": 1784566210.162485
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_start",
+        "ts": 1784566210.1625001
+      },
+      {
+        "agent": "verifier",
+        "action": "start",
+        "data": {
+          "mentions": 6
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "tool_call",
+        "data": {
+          "tool": "verify_schema",
+          "input": {
+            "mentions": [
+              {
+                "text": "bệnh mạch máu",
+                "position": [
+                  34,
+                  47
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I73.9"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "aspirin 325mg hằng ngày",
+                "position": [
+                  75,
+                  98
+                ],
+                "type": "THUỐC",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "rule": 1,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "THUỐC": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "212033"
+                ],
+                "link_confidence": 0.95
+              },
+              {
+                "text": "Không có rối loạn thần kinh",
+                "position": [
+                  168,
+                  195
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "G70.0"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "chụp ct sọ não không thuốc cản quang",
+                "position": [
+                  224,
+                  260
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "khối máu tụ dưới màng cứng bán cấp hai bên",
+                "position": [
+                  271,
+                  313
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp ct sọ não không thuốc cản quang",
+                "position": [
+                  342,
+                  378
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết quả chẩn đoán hình ảnh: chụp ct sọ não không thuốc cản quang Hình ảnh  khối máu tụ dưới màng cứng bán cấp hai bên\nCác thủ thuật đã thực hiện: chụp ct sọ não không thuốc cản quang\n"
+          },
+          "output": {
+            "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              }
+            ],
+            "final_predictions": [
+              {
+                "text": "bệnh mạch máu",
+                "position": [
+                  34,
+                  47
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "I73.9"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "aspirin 325mg hằng ngày",
+                "position": [
+                  75,
+                  98
+                ],
+                "type": "THUỐC",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "rule": 1,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "THUỐC": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "212033"
+                ],
+                "link_confidence": 0.95
+              },
+              {
+                "text": "Không có rối loạn thần kinh",
+                "position": [
+                  168,
+                  195
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "G70.0"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "chụp ct sọ não không thuốc cản quang",
+                "position": [
+                  224,
+                  260
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "khối máu tụ dưới màng cứng bán cấp hai bên",
+                "position": [
+                  271,
+                  313
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "chụp ct sọ não không thuốc cản quang",
+                "position": [
+                  342,
+                  378
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "dropped": 0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "validated",
+        "data": {
+          "kept": 6,
+          "dropped": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_complete",
+        "kept": 6,
+        "ts": 1784566210.6203513
+      },
+      {
+        "agent": "orchestrator",
+        "action": "complete",
+        "total_mentions": 6,
+        "elapsed": 45.76,
+        "ts": 1784566210.6203744
+      }
+    ]
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 379,
+      "ts": 1784566164.859303
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1784566164.859349
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 379
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 379
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết quả chẩn đoán hình ảnh: chụp ct sọ não không thuốc cản quang Hình ảnh  khối máu tụ dưới màng cứng bán cấp hai bên\nCác thủ thuật đã thực hiện: chụp ct sọ não không thuốc cản quang\n"
+        },
+        "output": {
+          "rule": [
+            {
+              "text": "aspirin 325mg",
+              "position": [
+                75,
+                88
+              ],
+              "type": "THUỐC",
+              "confidence": 0.98,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "ct",
+              "position": [
+                229,
+                231
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "ct",
+              "position": [
+                347,
+                349
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            }
+          ],
+          "qwen": [
+            {
+              "text": "bệnh mạch máu",
+              "position": [
+                34,
+                47
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "aspirin 325mg hằng ngày",
+              "position": [
+                75,
+                98
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Không có rối loạn thần kinh",
+              "position": [
+                168,
+                195
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp ct sọ não không thuốc cản quang",
+              "position": [
+                224,
+                260
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "khối máu tụ dưới màng cứng bán cấp hai bên",
+              "position": [
+                271,
+                313
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp ct sọ não không thuốc cản quang",
+              "position": [
+                342,
+                378
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 3,
+          "qwen": 6
+        },
+        "total": 9
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "bệnh mạch máu",
+              "position": [
+                34,
+                47
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "aspirin 325mg hằng ngày",
+              "position": [
+                75,
+                98
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Không có rối loạn thần kinh",
+              "position": [
+                168,
+                195
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp ct sọ não không thuốc cản quang",
+              "position": [
+                224,
+                260
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "khối máu tụ dưới màng cứng bán cấp hai bên",
+              "position": [
+                271,
+                313
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp ct sọ não không thuốc cản quang",
+              "position": [
+                342,
+                378
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "aspirin 325mg",
+              "position": [
+                75,
+                88
+              ],
+              "type": "THUỐC",
+              "confidence": 0.98,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "ct",
+              "position": [
+                229,
+                231
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "ct",
+              "position": [
+                347,
+                349
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "bệnh mạch máu",
+            "position": [
+              34,
+              47
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I73.9"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "aspirin 325mg hằng ngày",
+            "position": [
+              75,
+              98
+            ],
+            "type": "THUỐC",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "rule": 1,
+              "qwen": 1
+            },
+            "type_votes": {
+              "THUỐC": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "212033"
+            ],
+            "link_confidence": 0.95
+          },
+          {
+            "text": "Không có rối loạn thần kinh",
+            "position": [
+              168,
+              195
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "G70.0"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "chụp ct sọ não không thuốc cản quang",
+            "position": [
+              224,
+              260
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "khối máu tụ dưới màng cứng bán cấp hai bên",
+            "position": [
+              271,
+              313
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chụp ct sọ não không thuốc cản quang",
+            "position": [
+              342,
+              378
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 6
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "bệnh mạch máu",
+              "position": [
+                34,
+                47
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I73.9"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "aspirin 325mg hằng ngày",
+              "position": [
+                75,
+                98
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "THUỐC": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "212033"
+              ],
+              "link_confidence": 0.95
+            },
+            {
+              "text": "Không có rối loạn thần kinh",
+              "position": [
+                168,
+                195
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "G70.0"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp ct sọ não không thuốc cản quang",
+              "position": [
+                224,
+                260
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "khối máu tụ dưới màng cứng bán cấp hai bên",
+              "position": [
+                271,
+                313
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp ct sọ não không thuốc cản quang",
+              "position": [
+                342,
+                378
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết quả chẩn đoán hình ảnh: chụp ct sọ não không thuốc cản quang Hình ảnh  khối máu tụ dưới màng cứng bán cấp hai bên\nCác thủ thuật đã thực hiện: chụp ct sọ não không thuốc cản quang\n"
+        },
+        "output": [
+          {
+            "text": "bệnh mạch máu",
+            "position": [
+              34,
+              47
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I73.9"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "aspirin 325mg hằng ngày",
+            "position": [
+              75,
+              98
+            ],
+            "type": "THUỐC",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "rule": 1,
+              "qwen": 1
+            },
+            "type_votes": {
+              "THUỐC": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "212033"
+            ],
+            "link_confidence": 0.95
+          },
+          {
+            "text": "Không có rối loạn thần kinh",
+            "position": [
+              168,
+              195
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "G70.0"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "chụp ct sọ não không thuốc cản quang",
+            "position": [
+              224,
+              260
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "khối máu tụ dưới màng cứng bán cấp hai bên",
+            "position": [
+              271,
+              313
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chụp ct sọ não không thuốc cản quang",
+            "position": [
+              342,
+              378
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "bệnh mạch máu",
+              "position": [
+                34,
+                47
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I73.9"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "aspirin 325mg hằng ngày",
+              "position": [
+                75,
+                98
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "THUỐC": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "212033"
+              ],
+              "link_confidence": 0.95
+            },
+            {
+              "text": "Không có rối loạn thần kinh",
+              "position": [
+                168,
+                195
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "G70.0"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp ct sọ não không thuốc cản quang",
+              "position": [
+                224,
+                260
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "khối máu tụ dưới màng cứng bán cấp hai bên",
+              "position": [
+                271,
+                313
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp ct sọ não không thuốc cản quang",
+              "position": [
+                342,
+                378
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết quả chẩn đoán hình ảnh: chụp ct sọ não không thuốc cản quang Hình ảnh  khối máu tụ dưới màng cứng bán cấp hai bên\nCác thủ thuật đã thực hiện: chụp ct sọ não không thuốc cản quang\n"
+        },
+        "output": [
+          {
+            "text": "bệnh mạch máu",
+            "position": [
+              34,
+              47
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I73.9"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "aspirin 325mg hằng ngày",
+            "position": [
+              75,
+              98
+            ],
+            "type": "THUỐC",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "rule": 1,
+              "qwen": 1
+            },
+            "type_votes": {
+              "THUỐC": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "212033"
+            ],
+            "link_confidence": 0.95
+          },
+          {
+            "text": "Không có rối loạn thần kinh",
+            "position": [
+              168,
+              195
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "G70.0"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "chụp ct sọ não không thuốc cản quang",
+            "position": [
+              224,
+              260
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "khối máu tụ dưới màng cứng bán cấp hai bên",
+            "position": [
+              271,
+              313
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "chụp ct sọ não không thuốc cản quang",
+            "position": [
+              342,
+              378
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 6,
+      "ts": 1784566174.7918026
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1784566174.7918143
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 6
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết quả chẩn đoán hình ảnh: chụp ct sọ não không thuốc cản quang Hình ảnh  khối máu tụ dưới màng cứng bán cấp hai bên\nCác thủ thuật đã thực hiện: chụp ct sọ não không thuốc cản quang\n",
+          "start": 34,
+          "end": 47,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết quả chẩn đoán hình ảnh: chụp ct sọ não không thuốc cản quang Hình ảnh  khối máu tụ dưới màng cứng bán cấp hai bên\nCác thủ thuật đã thực hiện: chụp ct sọ não không thuốc cản quang\n",
+          "start": 75,
+          "end": 98,
+          "mtype": "THUỐC"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết quả chẩn đoán hình ảnh: chụp ct sọ não không thuốc cản quang Hình ảnh  khối máu tụ dưới màng cứng bán cấp hai bên\nCác thủ thuật đã thực hiện: chụp ct sọ não không thuốc cản quang\n",
+          "start": 168,
+          "end": 195,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 6,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1784566174.7920444
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1784566174.7920532
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 6
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "bệnh mạch máu",
+            "position": [
+              34,
+              47
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "I73.9"
+            ],
+            "link_confidence": 0.85
+          },
+          "context": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nK"
+        },
+        "output": {
+          "candidates": [
+            "I73.9"
+          ],
+          "confidence": 0.85,
+          "rationale": "Mention 'bệnh mạch máu' không cụ thể, không có thông tin để xác định loại bệnh mạch máu nào. Mã I73.9 là mã chung cho 'Bệnh mạch máu ngoại vi, không xác định' phù hợp với ngữ cảnh không đủ thông tin chi tiết."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "aspirin 325mg hằng ngày",
+            "position": [
+              75,
+              98
+            ],
+            "type": "THUỐC",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "rule": 1,
+              "qwen": 1
+            },
+            "type_votes": {
+              "THUỐC": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "212033"
+            ],
+            "link_confidence": 0.95
+          },
+          "context": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết quả chẩn đoán hình ảnh: chụp ct sọ não không thu"
+        },
+        "output": {
+          "candidates": [
+            "212033"
+          ],
+          "confidence": 0.95
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "Không có rối loạn thần kinh",
+            "position": [
+              168,
+              195
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "G70.0"
+            ],
+            "link_confidence": 0.85
+          },
+          "context": "nh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết quả chẩn đoán hình ảnh: chụp ct sọ não không thuốc cản quang Hình ảnh  khối máu tụ dưới màng cứng bán cấp hai bên\nCác thủ thuật đã thực hiện: chụ"
+        },
+        "output": {
+          "candidates": [
+            "G70.0"
+          ],
+          "confidence": 0.85,
+          "rationale": "Mention 'Không có rối loạn thần kinh' cho thấy không có chẩn đoán rối loạn thần kinh - cơ, nhưng mã G70.0 là mã chính xác cho 'Nhược cơ [rối loạn thần kinh - cơ tự miễn]', phù hợp với ngữ cảnh khi không có rối loạn thần kinh được ghi nhận."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 3
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 3,
+      "ts": 1784566210.162485
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1784566210.1625001
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 6
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "bệnh mạch máu",
+              "position": [
+                34,
+                47
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I73.9"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "aspirin 325mg hằng ngày",
+              "position": [
+                75,
+                98
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "THUỐC": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "212033"
+              ],
+              "link_confidence": 0.95
+            },
+            {
+              "text": "Không có rối loạn thần kinh",
+              "position": [
+                168,
+                195
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "G70.0"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp ct sọ não không thuốc cản quang",
+              "position": [
+                224,
+                260
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "khối máu tụ dưới màng cứng bán cấp hai bên",
+              "position": [
+                271,
+                313
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp ct sọ não không thuốc cản quang",
+              "position": [
+                342,
+                378
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1. Tiền sử bệnh\nBệnh lý mãn tính: bệnh mạch máu\nThuốc trước khi nhập viện: aspirin 325mg hằng ngày\n2. Bệnh sử hiện tại\n3. Đánh giá tại bệnh viện\nKết quả khám thực thể: Không có rối loạn thần kinh\nKết quả chẩn đoán hình ảnh: chụp ct sọ não không thuốc cản quang Hình ảnh  khối máu tụ dưới màng cứng bán cấp hai bên\nCác thủ thuật đã thực hiện: chụp ct sọ não không thuốc cản quang\n"
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "bệnh mạch máu",
+              "position": [
+                34,
+                47
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "I73.9"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "aspirin 325mg hằng ngày",
+              "position": [
+                75,
+                98
+              ],
+              "type": "THUỐC",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "THUỐC": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "212033"
+              ],
+              "link_confidence": 0.95
+            },
+            {
+              "text": "Không có rối loạn thần kinh",
+              "position": [
+                168,
+                195
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "G70.0"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp ct sọ não không thuốc cản quang",
+              "position": [
+                224,
+                260
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "khối máu tụ dưới màng cứng bán cấp hai bên",
+              "position": [
+                271,
+                313
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "chụp ct sọ não không thuốc cản quang",
+              "position": [
+                342,
+                378
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 6,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 6,
+      "ts": 1784566210.6203513
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 6,
+      "elapsed": 45.76,
+      "ts": 1784566210.6203744
+    }
+  ]
+}

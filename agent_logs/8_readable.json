@@ -1,17 +1,16 @@
 {
   "file_id": "8",
-  "timestamp": 1783582671.8812828,
-  "elapsed": 170.33,
-  "model": "runpod",
-  "mention_count": 8,
+  "timestamp": 1784566004.8097882,
+  "elapsed": 5.8,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "mention_count": 10,
   "stats": {
-    "total_mentions": 8,
-    "final": 8,
+    "total_mentions": 10,
+    "final": 10,
     "validation_errors": 0,
-    "elapsed": 170.33,
-    "rule": 0,
-    "qwen": 6,
-    "healthbert": 6
+    "elapsed": 5.8,
+    "rule": 1,
+    "qwen": 9
   },
   "log_summary": [
     {
@@ -51,10 +50,10 @@
       "tool": "fix_positions"
     },
     {
-      "agent": "extraction",
+      "agent": "assertion",
       "action": "tool_call",
       "ts": null,
-      "tool": "llm_verify"
+      "tool": "rule_assert"
     },
     {
       "agent": "assertion",
@@ -66,97 +65,19 @@
       "agent": "assertion",
       "action": "tool_call",
       "ts": null,
-      "tool": "llm_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
       "tool": "rule_assert"
     },
     {
       "agent": "assertion",
       "action": "tool_call",
       "ts": null,
-      "tool": "llm_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
       "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "llm_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "llm_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "llm_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "llm_assert"
     },
     {
       "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
-    },
-    {
-      "agent": "linking",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "link_entity"
-    },
-    {
-      "agent": "linking",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "link_entity"
-    },
-    {
-      "agent": "linking",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "link_entity"
-    },
-    {
-      "agent": "linking",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -179,151 +100,100 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1783582671.8811984,
+      "ts": 1784566004.8096404,
       "tool": null
     }
   ],
   "mentions": [
     {
-      "text": "chọc hút bất thường của nốt tuyến giáp thùy trái",
+      "text": "bất thường",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "assertions": [],
       "position": [
-        84,
-        132
-      ],
-      "type": "CHẨN_ĐOÁN",
-      "confidence": 0.5,
-      "voters": {
-        "ner_llm_relocated": 1,
-        "healthbert": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": true
-      },
-      "candidates": []
+        93,
+        103
+      ]
     },
     {
-      "text": "nốt tuyến giáp thùy trái kích thước khoảng 1 cm",
+      "text": "nốt tuyến giáp thùy trái",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        108,
+        132
+      ]
+    },
+    {
+      "text": "nốt tuyến giáp thùy trái",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
       "position": [
         190,
-        237
-      ],
+        214
+      ]
+    },
+    {
+      "text": "chọc hút bằng kim nhỏ",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        278,
+        299
+      ]
+    },
+    {
+      "text": "bất thường",
       "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "confidence": 0.5,
-      "voters": {
-        "ner_llm_relocated": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+      "assertions": [],
+      "position": [
+        382,
+        392
+      ]
     },
     {
-      "text": "nhỏ  đối với tổn thương này",
-      "position": [
-        296,
-        323
-      ],
-      "type": "THUỐC",
-      "confidence": 0.5,
-      "voters": {
-        "healthbert": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      },
-      "candidates": []
-    },
-    {
-      "text": "khó nuốt",
-      "position": [
-        568,
-        576
-      ],
+      "text": "phù hợp",
       "type": "TRIỆU_CHỨNG",
-      "confidence": 0.5,
-      "voters": {
-        "ner_llm_relocated": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": true
-      }
+      "assertions": [],
+      "position": [
+        477,
+        484
+      ]
     },
     {
-      "text": "khó thở",
-      "position": [
-        578,
-        585
-      ],
-      "type": "TRIỆU_CHỨNG",
-      "confidence": 0.95,
-      "voters": {
-        "ner_llm_relocated": 2,
-        "healthbert": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
-    },
-    {
-      "text": "chọc hút bất thường của nốt tuyến giáp trái",
-      "position": [
-        659,
-        702
-      ],
+      "text": "bất thường",
       "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "confidence": 0.5,
-      "voters": {
-        "ner_llm_relocated": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+      "assertions": [],
+      "position": [
+        668,
+        678
+      ]
     },
     {
-      "text": "Chọc hút bằng kim nhỏ  nốt",
+      "text": "bất thường",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        816,
+        826
+      ]
+    },
+    {
+      "text": "Chọc hút bằng kim nhỏ",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
       "position": [
         852,
-        878
-      ],
-      "type": "THUỐC",
-      "confidence": 0.5,
-      "voters": {
-        "healthbert": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      },
-      "candidates": []
+        873
+      ]
     },
     {
-      "text": "thương ghi nhận",
+      "text": "Nốt tuyến giáp thùy trái",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
       "position": [
-        899,
-        914
-      ],
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "confidence": 0.5,
-      "voters": {
-        "healthbert": 1
-      },
-      "assertions": {
-        "isNegated": false,
-        "isFamily": false,
-        "isHistorical": false
-      }
+        916,
+        940
+      ]
     }
   ]
 }

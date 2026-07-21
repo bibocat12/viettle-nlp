@@ -1,0 +1,2794 @@
+{
+  "file_id": "57",
+  "timestamp": 1784566665.8273582,
+  "elapsed": 28.35,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "result": {
+    "note_id": "57",
+    "mentions": [
+      {
+        "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [],
+        "position": [
+          74,
+          115
+        ],
+        "candidates": [
+          "M79.2"
+        ]
+      },
+      {
+        "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [],
+        "position": [
+          187,
+          228
+        ],
+        "candidates": [
+          "M79.2"
+        ]
+      },
+      {
+        "text": "chụp cộng hưởng từ (mri) cột sống cổ",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          279,
+          315
+        ]
+      },
+      {
+        "text": "hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+        "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          325,
+          373
+        ]
+      }
+    ],
+    "validation": {
+      "is_valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stats": {
+      "total_mentions": 4,
+      "final": 4,
+      "validation_errors": 0,
+      "elapsed": 28.35,
+      "rule": 1,
+      "qwen": 4
+    },
+    "logs": [
+      {
+        "agent": "orchestrator",
+        "action": "start",
+        "text_len": 373,
+        "ts": 1784566637.4777148
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_start",
+        "ts": 1784566637.4777312
+      },
+      {
+        "agent": "extraction",
+        "action": "start",
+        "data": {
+          "text_len": 373
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "preprocessed",
+        "data": {
+          "normalized_len": 373
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "parallel_extract",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n    Thời điểm khởi phát triệu chứng: vài năm\n    Triệu chứng hiện tại: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cộng hưởng từ (mri) cột sống cổ cho thấy hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp"
+          },
+          "output": {
+            "rule": [
+              {
+                "text": "mri",
+                "position": [
+                  299,
+                  302
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              }
+            ],
+            "qwen": [
+              {
+                "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+                "position": [
+                  74,
+                  115
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+                "position": [
+                  187,
+                  228
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp cộng hưởng từ (mri) cột sống cổ",
+                "position": [
+                  279,
+                  315
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+                "position": [
+                  325,
+                  373
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ],
+            "errors": []
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "extracted",
+        "data": {
+          "sources": {
+            "rule": 1,
+            "qwen": 4
+          },
+          "total": 5
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "vote_merge",
+          "input": {
+            "all_mentions": [
+              {
+                "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+                "position": [
+                  74,
+                  115
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+                "position": [
+                  187,
+                  228
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chụp cộng hưởng từ (mri) cột sống cổ",
+                "position": [
+                  279,
+                  315
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+                "position": [
+                  325,
+                  373
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "mri",
+                "position": [
+                  299,
+                  302
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              }
+            ]
+          },
+          "output": [
+            {
+              "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+              "position": [
+                74,
+                115
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "M79.2"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+              "position": [
+                187,
+                228
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "M79.2"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp cộng hưởng từ (mri) cột sống cổ",
+              "position": [
+                279,
+                315
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+              "position": [
+                325,
+                373
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "voted",
+        "data": {
+          "merged": 4
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "resolve_conflicts",
+          "input": {
+            "merged": [
+              {
+                "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+                "position": [
+                  74,
+                  115
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "M79.2"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+                "position": [
+                  187,
+                  228
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "M79.2"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "chụp cộng hưởng từ (mri) cột sống cổ",
+                "position": [
+                  279,
+                  315
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+                "position": [
+                  325,
+                  373
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n    Thời điểm khởi phát triệu chứng: vài năm\n    Triệu chứng hiện tại: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cộng hưởng từ (mri) cột sống cổ cho thấy hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp"
+          },
+          "output": [
+            {
+              "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+              "position": [
+                74,
+                115
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "M79.2"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+              "position": [
+                187,
+                228
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "M79.2"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp cộng hưởng từ (mri) cột sống cổ",
+              "position": [
+                279,
+                315
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+              "position": [
+                325,
+                373
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "fix_positions",
+          "input": {
+            "mentions": [
+              {
+                "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+                "position": [
+                  74,
+                  115
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "M79.2"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+                "position": [
+                  187,
+                  228
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "M79.2"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "chụp cộng hưởng từ (mri) cột sống cổ",
+                "position": [
+                  279,
+                  315
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+                "position": [
+                  325,
+                  373
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n    Thời điểm khởi phát triệu chứng: vài năm\n    Triệu chứng hiện tại: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cộng hưởng từ (mri) cột sống cổ cho thấy hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp"
+          },
+          "output": [
+            {
+              "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+              "position": [
+                74,
+                115
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "M79.2"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+              "position": [
+                187,
+                228
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "M79.2"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp cộng hưởng từ (mri) cột sống cổ",
+              "position": [
+                279,
+                315
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+              "position": [
+                325,
+                373
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "positions_fixed",
+        "data": {
+          "fixed": 0
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "llm_verified",
+        "data": {
+          "corrected": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_complete",
+        "mentions": 4,
+        "ts": 1784566645.9966261
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_start",
+        "ts": 1784566645.9966383
+      },
+      {
+        "agent": "assertion",
+        "action": "start",
+        "data": {
+          "mentions": 4
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n    Thời điểm khởi phát triệu chứng: vài năm\n    Triệu chứng hiện tại: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cộng hưởng từ (mri) cột sống cổ cho thấy hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+            "start": 74,
+            "end": 115,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n    Thời điểm khởi phát triệu chứng: vài năm\n    Triệu chứng hiện tại: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cộng hưởng từ (mri) cột sống cổ cho thấy hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+            "start": 187,
+            "end": 228,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "complete",
+        "data": {
+          "processed": 4,
+          "llm_checked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_complete",
+        "ts": 1784566645.996803
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_start",
+        "ts": 1784566645.996811
+      },
+      {
+        "agent": "linking",
+        "action": "start",
+        "data": {
+          "mentions": 4
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+              "position": [
+                74,
+                115
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "M79.2"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n    Thời điểm khởi phát triệu chứng: vài năm\n    Triệu chứng hiện tại: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n\n3.  Đánh giá tại bệnh viện\n    Kết "
+          },
+          "output": {
+            "candidates": [
+              "M79.2"
+            ],
+            "confidence": 0.85,
+            "rationale": "M79.2 là mã bệnh phù hợp nhất vì nó mô tả 'Bệnh lý rễ thần kinh - Viêm dây thần kinh hoặc viêm rễ thần kinh: + Vùng tay', phù hợp với triệu chứng 'bệnh rễ thần kinh tuỷ sống ở ngón tay cái' được nêu trong mention."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "complete",
+        "data": {
+          "linked": 2
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_complete",
+        "linked": 2,
+        "ts": 1784566665.7640448
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_start",
+        "ts": 1784566665.7640934
+      },
+      {
+        "agent": "verifier",
+        "action": "start",
+        "data": {
+          "mentions": 4
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "tool_call",
+        "data": {
+          "tool": "verify_schema",
+          "input": {
+            "mentions": [
+              {
+                "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+                "position": [
+                  74,
+                  115
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "M79.2"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+                "position": [
+                  187,
+                  228
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "M79.2"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "chụp cộng hưởng từ (mri) cột sống cổ",
+                "position": [
+                  279,
+                  315
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+                "position": [
+                  325,
+                  373
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n    Thời điểm khởi phát triệu chứng: vài năm\n    Triệu chứng hiện tại: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cộng hưởng từ (mri) cột sống cổ cho thấy hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp"
+          },
+          "output": {
+            "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              }
+            ],
+            "final_predictions": [
+              {
+                "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+                "position": [
+                  74,
+                  115
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "M79.2"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+                "position": [
+                  187,
+                  228
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "M79.2"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "chụp cộng hưởng từ (mri) cột sống cổ",
+                "position": [
+                  279,
+                  315
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
+                "voters": {
+                  "qwen": 1,
+                  "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+                "position": [
+                  325,
+                  373
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              }
+            ],
+            "dropped": 0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "validated",
+        "data": {
+          "kept": 4,
+          "dropped": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_complete",
+        "kept": 4,
+        "ts": 1784566665.8272152
+      },
+      {
+        "agent": "orchestrator",
+        "action": "complete",
+        "total_mentions": 4,
+        "elapsed": 28.35,
+        "ts": 1784566665.8272421
+      }
+    ]
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 373,
+      "ts": 1784566637.4777148
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1784566637.4777312
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 373
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 373
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n    Thời điểm khởi phát triệu chứng: vài năm\n    Triệu chứng hiện tại: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cộng hưởng từ (mri) cột sống cổ cho thấy hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp"
+        },
+        "output": {
+          "rule": [
+            {
+              "text": "mri",
+              "position": [
+                299,
+                302
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            }
+          ],
+          "qwen": [
+            {
+              "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+              "position": [
+                74,
+                115
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+              "position": [
+                187,
+                228
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp cộng hưởng từ (mri) cột sống cổ",
+              "position": [
+                279,
+                315
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+              "position": [
+                325,
+                373
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 1,
+          "qwen": 4
+        },
+        "total": 5
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+              "position": [
+                74,
+                115
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+              "position": [
+                187,
+                228
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chụp cộng hưởng từ (mri) cột sống cổ",
+              "position": [
+                279,
+                315
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+              "position": [
+                325,
+                373
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "mri",
+              "position": [
+                299,
+                302
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+            "position": [
+              74,
+              115
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "M79.2"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+            "position": [
+              187,
+              228
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "M79.2"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "chụp cộng hưởng từ (mri) cột sống cổ",
+            "position": [
+              279,
+              315
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+            "position": [
+              325,
+              373
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 4
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+              "position": [
+                74,
+                115
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "M79.2"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+              "position": [
+                187,
+                228
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "M79.2"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp cộng hưởng từ (mri) cột sống cổ",
+              "position": [
+                279,
+                315
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+              "position": [
+                325,
+                373
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n    Thời điểm khởi phát triệu chứng: vài năm\n    Triệu chứng hiện tại: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cộng hưởng từ (mri) cột sống cổ cho thấy hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp"
+        },
+        "output": [
+          {
+            "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+            "position": [
+              74,
+              115
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "M79.2"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+            "position": [
+              187,
+              228
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "M79.2"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "chụp cộng hưởng từ (mri) cột sống cổ",
+            "position": [
+              279,
+              315
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+            "position": [
+              325,
+              373
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+              "position": [
+                74,
+                115
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "M79.2"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+              "position": [
+                187,
+                228
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "M79.2"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp cộng hưởng từ (mri) cột sống cổ",
+              "position": [
+                279,
+                315
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+              "position": [
+                325,
+                373
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n    Thời điểm khởi phát triệu chứng: vài năm\n    Triệu chứng hiện tại: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cộng hưởng từ (mri) cột sống cổ cho thấy hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp"
+        },
+        "output": [
+          {
+            "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+            "position": [
+              74,
+              115
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "M79.2"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+            "position": [
+              187,
+              228
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "M79.2"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "chụp cộng hưởng từ (mri) cột sống cổ",
+            "position": [
+              279,
+              315
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
+            "voters": {
+              "qwen": 1,
+              "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+            "position": [
+              325,
+              373
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 4,
+      "ts": 1784566645.9966261
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1784566645.9966383
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 4
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n    Thời điểm khởi phát triệu chứng: vài năm\n    Triệu chứng hiện tại: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cộng hưởng từ (mri) cột sống cổ cho thấy hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+          "start": 74,
+          "end": 115,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n    Thời điểm khởi phát triệu chứng: vài năm\n    Triệu chứng hiện tại: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cộng hưởng từ (mri) cột sống cổ cho thấy hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+          "start": 187,
+          "end": 228,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 4,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1784566645.996803
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1784566645.996811
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 4
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+            "position": [
+              74,
+              115
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "M79.2"
+            ],
+            "link_confidence": 0.85
+          },
+          "context": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n    Thời điểm khởi phát triệu chứng: vài năm\n    Triệu chứng hiện tại: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n\n3.  Đánh giá tại bệnh viện\n    Kết "
+        },
+        "output": {
+          "candidates": [
+            "M79.2"
+          ],
+          "confidence": 0.85,
+          "rationale": "M79.2 là mã bệnh phù hợp nhất vì nó mô tả 'Bệnh lý rễ thần kinh - Viêm dây thần kinh hoặc viêm rễ thần kinh: + Vùng tay', phù hợp với triệu chứng 'bệnh rễ thần kinh tuỷ sống ở ngón tay cái' được nêu trong mention."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 2
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 2,
+      "ts": 1784566665.7640448
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1784566665.7640934
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 4
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+              "position": [
+                74,
+                115
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "M79.2"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+              "position": [
+                187,
+                228
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "M79.2"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp cộng hưởng từ (mri) cột sống cổ",
+              "position": [
+                279,
+                315
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+              "position": [
+                325,
+                373
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n    Thời điểm khởi phát triệu chứng: vài năm\n    Triệu chứng hiện tại: bệnh rễ thần kinh tuỷ sống ở ngón tay cái\n\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp ảnh: chụp cộng hưởng từ (mri) cột sống cổ cho thấy hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp"
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+              "position": [
+                74,
+                115
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "M79.2"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "bệnh rễ thần kinh tuỷ sống ở ngón tay cái",
+              "position": [
+                187,
+                228
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "M79.2"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "chụp cộng hưởng từ (mri) cột sống cổ",
+              "position": [
+                279,
+                315
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
+              "voters": {
+                "qwen": 1,
+                "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "hẹp ống sống C4-5, C5-6, C6-7 và hẹp lỗ liên hợp",
+              "position": [
+                325,
+                373
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 4,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 4,
+      "ts": 1784566665.8272152
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 4,
+      "elapsed": 28.35,
+      "ts": 1784566665.8272421
+    }
+  ]
+}

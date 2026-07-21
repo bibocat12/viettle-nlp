@@ -1,0 +1,196 @@
+{
+  "file_id": "92",
+  "timestamp": 1784567128.5528374,
+  "elapsed": 26.69,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "mention_count": 8,
+  "stats": {
+    "total_mentions": 8,
+    "final": 8,
+    "validation_errors": 0,
+    "elapsed": 26.69,
+    "rule": 4,
+    "qwen": 7
+  },
+  "log_summary": [
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "parallel_extract"
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "vote_merge"
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "resolve_conflicts"
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "fix_positions"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "verify_schema"
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "ts": null,
+      "tool": null
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "ts": 1784567128.5527308,
+      "tool": null
+    }
+  ],
+  "mentions": [
+    {
+      "text": "Nhiễm trùng đường tiết niệu kháng thuốc",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        45,
+        84
+      ],
+      "candidates": [
+        "O23.3"
+      ]
+    },
+    {
+      "text": "đại tràng giãn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        138,
+        152
+      ]
+    },
+    {
+      "text": "bạch cầu",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        248,
+        256
+      ]
+    },
+    {
+      "text": "chụp CT",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        295,
+        302
+      ]
+    },
+    {
+      "text": "lơ mơ",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        415,
+        420
+      ]
+    },
+    {
+      "text": "Bạch cầu",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        472,
+        480
+      ]
+    },
+    {
+      "text": "chụp ct",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        518,
+        525
+      ]
+    },
+    {
+      "text": "đại tràng giãn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        598,
+        612
+      ]
+    }
+  ]
+}

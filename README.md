@@ -13,12 +13,11 @@ Input .txt
   │   ├── KẾT_QUẢ_XÉT_NGHIỆM (lab values): numeric results, "bình thường"
   │   ├── CHẨN_ĐOÁN (diagnoses): "chẩn đoán:", "bệnh chính:"
   │   └── TRIỆU_CHỨNG (symptoms): clinical symptom keywords
-  ├── Qwen2.5-7B NER (optional, --use-ner flag)
-  │   └── Prompt-based entity extraction via chat template
-  ├── Merge engine (dedup, conflict resolution, type enforcement)
-  ├── Assertion classifier (negation, family, historical)
-  ├── ICD-10 / RxNorm linker (exact + fuzzy match → candidates)
-  └── Output JSON
+  ├── bibocat/qwen3-ner-grpo-final through local vLLM
+  ├── Exact span alignment + rules/Qwen voting
+  ├── Scoped assertion rules (negation, family, historical)
+  ├── ICD-10 / RxNorm retrieve → rerank → top-1
+  └── Strict schema/offset validation → output.zip
 ```
 
 ## Setup
@@ -27,7 +26,7 @@ Input .txt
 # Create venv and install dependencies
 python3 -m venv .venv
 source .venv/bin/activate
-pip install torch transformers scikit-learn rdflib rapidfuzz pymupdf pandas numpy
+pip install -r requirements.txt
 ```
 
 ## Usage
@@ -35,10 +34,20 @@ pip install torch transformers scikit-learn rdflib rapidfuzz pymupdf pandas nump
 ```bash
 source .venv/bin/activate
 
-# Rules-only mode (fast, ~1.3s per file)
+# Recommended competition pipeline with the self-hosted Qwen3 GRPO model
+python3 cli.py input/ --llm vllm \
+  --base-url http://localhost:8000/v1 \
+  --served-model bibocat/qwen3-ner-grpo-final \
+  --output output
+
+# Fail on schema/offset/package errors, then create output.zip
+python3 scripts/build_submission.py --check-only
+python3 scripts/build_submission.py
+
+# Legacy rules-only pipeline
 python3 src/inference.py
 
-# With Qwen2.5-7B NER model (slow on CPU, better recall)
+# Legacy local Qwen2.5 pipeline
 python3 src/inference.py --use-ner
 
 # With LLM modules (canonicalization, assertions, reranking, agent review)
@@ -59,24 +68,16 @@ Each input file produces a JSON array of extracted mentions:
 [
   {
     "text": "metoprolol 25mg po bid",
-    "position": [53, 75],
     "type": "THUỐC",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": true
-    },
-    "candidates": ["6918", "214621", "1007340"]
+    "assertions": ["isHistorical"],
+    "position": [53, 75],
+    "candidates": ["6918"]
   },
   {
     "text": "đánh trống ngực",
-    "position": [498, 512],
     "type": "TRIỆU_CHỨNG",
-    "assertions": {
-      "isNegated": false,
-      "isFamily": false,
-      "isHistorical": false
-    }
+    "assertions": [],
+    "position": [498, 512]
   }
 ]
 ```
@@ -88,7 +89,7 @@ Each input file produces a JSON array of extracted mentions:
 | `text` | string | Extracted mention text |
 | `position` | [int, int] | Character offset `[start, end)` in original text |
 | `type` | string | One of 5 concept types (see below) |
-| `assertions` | object | Boolean flags for contextual assertions |
+| `assertions` | string[] | True contextual assertions only |
 | `candidates` | string[] | ICD-10 codes or RxNorm CUIs (only for `CHẨN_ĐOÁN` and `THUỐC`) |
 
 ### Concept Types
@@ -113,20 +114,14 @@ Each input file produces a JSON array of extracted mentions:
 
 | File | Purpose |
 |---|---|
-| `src/preprocess.py` | Unicode normalization, sentence splitting |
-| `src/kb.py` | Knowledge base: RxNorm (124K concepts), ICD-10 (6K codes), Vietnamese ICD-10 from PDF |
-| `src/rules.py` | Regex + dictionary extraction for all 5 concept types |
-| `src/ner.py` | Qwen2.5-7B Vietnamese Medical NER (prompt-based, optional) |
-| `src/merge.py` | Combines rule + NER outputs, resolves conflicts, deduplicates |
-| `src/assertion.py` | Per-mention assertion classification using trigger patterns |
-| `src/linker.py` | ICD-10 and RxNorm candidate generation (exact + fuzzy matching) |
-| `src/llm.py` | Core LLM wrapper for Qwen2.5-7B (shared by all LLM modules) |
-| `src/canonicalize.py` | LLM-based mention canonicalization (fix abbreviations, spelling) |
-| `src/assertion_llm.py` | LLM assertion checker for hard scope cases |
-| `src/reranker.py` | LLM-assisted ICD-10/RxNorm candidate reranking |
-| `src/agent.py` | Agent reviewer for uncertain cases (type, assertions, candidates) |
-| `src/inference.py` | Pipeline orchestrator, CLI, JSON output |
-| `src/extract_icd10_pdf.py` | Extract ICD-10 codes from Vietnamese MoH PDF to CSV |
+| `src/vllm_llm.py` | OpenAI-compatible client pinned to the Qwen3 GRPO checkpoint |
+| `src/ner_tool.py` | Chunked NER and deterministic source-text span alignment |
+| `src/voting.py` | Qwen/rule merge, atomic span and type resolution |
+| `src/agents/worker_agents.py` | Extraction, assertion, linking, and verification workers |
+| `src/linker_agent.py` | Structured RxNorm and hybrid ICD-10 retrieval/reranking |
+| `src/position_fix.py` | Exact offset repair without first-token fallbacks |
+| `src/verifier_agent.py` | Final mention validation and exact deduplication |
+| `scripts/build_submission.py` | Strict 100-file validator and ZIP builder |
 
 ## Data Sources
 
@@ -135,34 +130,24 @@ Each input file produces a JSON array of extracted mentions:
 | `database-stuff/RXNORM.ttl` | RxNorm ontology (2.8M lines RDF), English drug names + relationships |
 | `database-stuff/ICDO.csv` | ICD-10 codes with English names (6K codes, 900+ with ICD-10 mapping) |
 | `database-stuff/06-byt-kem.pdf` | Vietnamese MoH ICD-10 code list (1271 pages), Vietnamese disease names |
-| `models/Qwen2.5-7B-Vietnamese-Medical-NER-GRPO/` | Vietnamese Medical NER LLM (7.6B params, bf16) |
+| `bibocat/qwen3-ner-grpo-final` | Self-hosted NER/reasoning checkpoint served by vLLM |
 | `models/vipubmed-deberta-base/` | Vietnamese biomedical DeBERTa (768M params) |
 
-## Current Performance
+## Validation Snapshot
 
-| Metric | Value |
+| Check | Result |
 |---|---|
-| Files processed | 100/100 |
-| Total mentions | 589 |
-| With ICD-10/RxNorm candidates | 222 (38%) |
-| Avg processing time | 1.3s/file (rules only) |
-
-### Type Distribution
-
-| Type | Count |
-|---|---|
-| TÊN_XÉT_NGHIỆM | 225 |
-| CHẨN_ĐOÁN | 186 |
-| TRIỆU_CHỨNG | 83 |
-| KẾT_QUẢ_XÉT_NGHIỆM | 58 |
-| THUỐC | 37 |
+| Organizer public example | Exact 19/19 entities |
+| Organizer RxNorm example | Exact 11/11 top-1 codes |
+| Public-example offsets | 0 mismatches |
+| Regression suite | `pytest -q tests/test_pipeline_regressions.py` |
 
 ## Improving Results
 
-1. **Add Qwen NER**: `--use-ner` flag adds LLM-based extraction for symptoms and diagnoses the rules miss
-2. **Tune assertion window**: Edit `window` parameter in `src/assertion.py` (default: 40 chars)
-3. **Add drug dictionary**: Extend Vietnamese drug name mappings in `src/linker.py`
-4. **Improve ICD-10 matching**: The PDF parser extracts Vietnamese names; refine in `src/kb.py`
+1. Annotate a stratified 30–40-file development set without inspecting leaderboard labels.
+2. Tune span/type thresholds on the local metric, one change per ablation.
+3. Use leaderboard submissions to compare extraction, assertion, and linking variants separately.
+4. Keep only changes that improve the weighted score across at least two submissions.
 
 ## Project Structure
 

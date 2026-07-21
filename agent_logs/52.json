@@ -1,0 +1,3276 @@
+{
+  "file_id": "52",
+  "timestamp": 1784566580.6641455,
+  "elapsed": 5.69,
+  "model": "bibocat/qwen3-ner-grpo-final",
+  "result": {
+    "note_id": "52",
+    "mentions": [
+      {
+        "text": "run rẩy",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          401,
+          408
+        ]
+      },
+      {
+        "text": "sốt",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          413,
+          416
+        ]
+      },
+      {
+        "text": "sốt",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          426,
+          429
+        ]
+      },
+      {
+        "text": "sốt",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          493,
+          496
+        ]
+      },
+      {
+        "text": "Augmentin",
+        "type": "THUỐC",
+        "assertions": [],
+        "position": [
+          630,
+          639
+        ],
+        "candidates": [
+          "151392"
+        ]
+      }
+    ],
+    "validation": {
+      "is_valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "stats": {
+      "total_mentions": 5,
+      "final": 5,
+      "validation_errors": 0,
+      "elapsed": 5.69,
+      "rule": 0,
+      "qwen": 5
+    },
+    "logs": [
+      {
+        "agent": "orchestrator",
+        "action": "start",
+        "text_len": 989,
+        "ts": 1784566574.97005
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_start",
+        "ts": 1784566574.9700563
+      },
+      {
+        "agent": "extraction",
+        "action": "start",
+        "data": {
+          "text_len": 989
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "preprocessed",
+        "data": {
+          "normalized_len": 989
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "parallel_extract",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ ống dẫn mật chủ\n    - cắt bỏ phân đoạn bên trái gan\n    - Đã phẫu thuật nối ống gan - hỗng tràng vì nghi ngờ ung thư đường mật không thể cắt bỏ\n    - Đã can thiệp chụp đường mật, đặt 3 stent đường mật lưu dài hạn\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: Đêm trước khi nhập viện\n    Triệu chứng hiện tại: run rẩy kèm sốt kèm theo sốt\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ảnh\n    - mrcp (chụp cộng hưởng từ mật tụy) cho thấy nhiều nang tụy nhỏ\n    - ba stent mật kim loại đã được đặt\n    - một ổ dịch sau phẫu thuật giảm kích thước so với lần chụp chẩn đoán hình ảnh  trước"
+          },
+          "output": {
+            "rule": [],
+            "qwen": [
+              {
+                "text": "run rẩy",
+                "position": [
+                  401,
+                  408
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "sốt",
+                "position": [
+                  413,
+                  416
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "sốt",
+                "position": [
+                  426,
+                  429
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "sốt",
+                "position": [
+                  493,
+                  496
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Augmentin",
+                "position": [
+                  630,
+                  639
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ],
+            "errors": []
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "extracted",
+        "data": {
+          "sources": {
+            "rule": 0,
+            "qwen": 5
+          },
+          "total": 5
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "vote_merge",
+          "input": {
+            "all_mentions": [
+              {
+                "text": "run rẩy",
+                "position": [
+                  401,
+                  408
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "sốt",
+                "position": [
+                  413,
+                  416
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "sốt",
+                "position": [
+                  426,
+                  429
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "sốt",
+                "position": [
+                  493,
+                  496
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Augmentin",
+                "position": [
+                  630,
+                  639
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              }
+            ]
+          },
+          "output": [
+            {
+              "text": "run rẩy",
+              "position": [
+                401,
+                408
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                413,
+                416
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                426,
+                429
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                493,
+                496
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Augmentin",
+              "position": [
+                630,
+                639
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "151392"
+              ],
+              "link_confidence": 0.95
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "voted",
+        "data": {
+          "merged": 5
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "resolve_conflicts",
+          "input": {
+            "merged": [
+              {
+                "text": "run rẩy",
+                "position": [
+                  401,
+                  408
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "sốt",
+                "position": [
+                  413,
+                  416
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "sốt",
+                "position": [
+                  426,
+                  429
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "sốt",
+                "position": [
+                  493,
+                  496
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "Augmentin",
+                "position": [
+                  630,
+                  639
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "151392"
+                ],
+                "link_confidence": 0.95
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ ống dẫn mật chủ\n    - cắt bỏ phân đoạn bên trái gan\n    - Đã phẫu thuật nối ống gan - hỗng tràng vì nghi ngờ ung thư đường mật không thể cắt bỏ\n    - Đã can thiệp chụp đường mật, đặt 3 stent đường mật lưu dài hạn\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: Đêm trước khi nhập viện\n    Triệu chứng hiện tại: run rẩy kèm sốt kèm theo sốt\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ảnh\n    - mrcp (chụp cộng hưởng từ mật tụy) cho thấy nhiều nang tụy nhỏ\n    - ba stent mật kim loại đã được đặt\n    - một ổ dịch sau phẫu thuật giảm kích thước so với lần chụp chẩn đoán hình ảnh  trước"
+          },
+          "output": [
+            {
+              "text": "run rẩy",
+              "position": [
+                401,
+                408
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                413,
+                416
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                426,
+                429
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                493,
+                496
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Augmentin",
+              "position": [
+                630,
+                639
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "151392"
+              ],
+              "link_confidence": 0.95
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "tool_call",
+        "data": {
+          "tool": "fix_positions",
+          "input": {
+            "mentions": [
+              {
+                "text": "run rẩy",
+                "position": [
+                  401,
+                  408
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "sốt",
+                "position": [
+                  413,
+                  416
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "sốt",
+                "position": [
+                  426,
+                  429
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "sốt",
+                "position": [
+                  493,
+                  496
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "Augmentin",
+                "position": [
+                  630,
+                  639
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "151392"
+                ],
+                "link_confidence": 0.95
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ ống dẫn mật chủ\n    - cắt bỏ phân đoạn bên trái gan\n    - Đã phẫu thuật nối ống gan - hỗng tràng vì nghi ngờ ung thư đường mật không thể cắt bỏ\n    - Đã can thiệp chụp đường mật, đặt 3 stent đường mật lưu dài hạn\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: Đêm trước khi nhập viện\n    Triệu chứng hiện tại: run rẩy kèm sốt kèm theo sốt\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ảnh\n    - mrcp (chụp cộng hưởng từ mật tụy) cho thấy nhiều nang tụy nhỏ\n    - ba stent mật kim loại đã được đặt\n    - một ổ dịch sau phẫu thuật giảm kích thước so với lần chụp chẩn đoán hình ảnh  trước"
+          },
+          "output": [
+            {
+              "text": "run rẩy",
+              "position": [
+                401,
+                408
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                413,
+                416
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                426,
+                429
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                493,
+                496
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Augmentin",
+              "position": [
+                630,
+                639
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "151392"
+              ],
+              "link_confidence": 0.95
+            }
+          ],
+          "result_type": "list"
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "positions_fixed",
+        "data": {
+          "fixed": 0
+        }
+      },
+      {
+        "agent": "extraction",
+        "action": "llm_verified",
+        "data": {
+          "corrected": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "extraction_complete",
+        "mentions": 5,
+        "ts": 1784566580.573664
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_start",
+        "ts": 1784566580.5736732
+      },
+      {
+        "agent": "assertion",
+        "action": "start",
+        "data": {
+          "mentions": 5
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ ống dẫn mật chủ\n    - cắt bỏ phân đoạn bên trái gan\n    - Đã phẫu thuật nối ống gan - hỗng tràng vì nghi ngờ ung thư đường mật không thể cắt bỏ\n    - Đã can thiệp chụp đường mật, đặt 3 stent đường mật lưu dài hạn\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: Đêm trước khi nhập viện\n    Triệu chứng hiện tại: run rẩy kèm sốt kèm theo sốt\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ảnh\n    - mrcp (chụp cộng hưởng từ mật tụy) cho thấy nhiều nang tụy nhỏ\n    - ba stent mật kim loại đã được đặt\n    - một ổ dịch sau phẫu thuật giảm kích thước so với lần chụp chẩn đoán hình ảnh  trước",
+            "start": 401,
+            "end": 408,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ ống dẫn mật chủ\n    - cắt bỏ phân đoạn bên trái gan\n    - Đã phẫu thuật nối ống gan - hỗng tràng vì nghi ngờ ung thư đường mật không thể cắt bỏ\n    - Đã can thiệp chụp đường mật, đặt 3 stent đường mật lưu dài hạn\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: Đêm trước khi nhập viện\n    Triệu chứng hiện tại: run rẩy kèm sốt kèm theo sốt\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ảnh\n    - mrcp (chụp cộng hưởng từ mật tụy) cho thấy nhiều nang tụy nhỏ\n    - ba stent mật kim loại đã được đặt\n    - một ổ dịch sau phẫu thuật giảm kích thước so với lần chụp chẩn đoán hình ảnh  trước",
+            "start": 413,
+            "end": 416,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ ống dẫn mật chủ\n    - cắt bỏ phân đoạn bên trái gan\n    - Đã phẫu thuật nối ống gan - hỗng tràng vì nghi ngờ ung thư đường mật không thể cắt bỏ\n    - Đã can thiệp chụp đường mật, đặt 3 stent đường mật lưu dài hạn\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: Đêm trước khi nhập viện\n    Triệu chứng hiện tại: run rẩy kèm sốt kèm theo sốt\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ảnh\n    - mrcp (chụp cộng hưởng từ mật tụy) cho thấy nhiều nang tụy nhỏ\n    - ba stent mật kim loại đã được đặt\n    - một ổ dịch sau phẫu thuật giảm kích thước so với lần chụp chẩn đoán hình ảnh  trước",
+            "start": 426,
+            "end": 429,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ ống dẫn mật chủ\n    - cắt bỏ phân đoạn bên trái gan\n    - Đã phẫu thuật nối ống gan - hỗng tràng vì nghi ngờ ung thư đường mật không thể cắt bỏ\n    - Đã can thiệp chụp đường mật, đặt 3 stent đường mật lưu dài hạn\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: Đêm trước khi nhập viện\n    Triệu chứng hiện tại: run rẩy kèm sốt kèm theo sốt\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ảnh\n    - mrcp (chụp cộng hưởng từ mật tụy) cho thấy nhiều nang tụy nhỏ\n    - ba stent mật kim loại đã được đặt\n    - một ổ dịch sau phẫu thuật giảm kích thước so với lần chụp chẩn đoán hình ảnh  trước",
+            "start": 493,
+            "end": 496,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ ống dẫn mật chủ\n    - cắt bỏ phân đoạn bên trái gan\n    - Đã phẫu thuật nối ống gan - hỗng tràng vì nghi ngờ ung thư đường mật không thể cắt bỏ\n    - Đã can thiệp chụp đường mật, đặt 3 stent đường mật lưu dài hạn\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: Đêm trước khi nhập viện\n    Triệu chứng hiện tại: run rẩy kèm sốt kèm theo sốt\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ảnh\n    - mrcp (chụp cộng hưởng từ mật tụy) cho thấy nhiều nang tụy nhỏ\n    - ba stent mật kim loại đã được đặt\n    - một ổ dịch sau phẫu thuật giảm kích thước so với lần chụp chẩn đoán hình ảnh  trước",
+            "start": 630,
+            "end": 639,
+            "mtype": "THUỐC"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "complete",
+        "data": {
+          "processed": 5,
+          "llm_checked": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "assertion_complete",
+        "ts": 1784566580.5739315
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_start",
+        "ts": 1784566580.5739372
+      },
+      {
+        "agent": "linking",
+        "action": "start",
+        "data": {
+          "mentions": 5
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "Augmentin",
+              "position": [
+                630,
+                639
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "151392"
+              ],
+              "link_confidence": 0.95
+            },
+            "context": "nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ả"
+          },
+          "output": {
+            "candidates": [
+              "151392"
+            ],
+            "confidence": 0.95
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "complete",
+        "data": {
+          "linked": 1
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "linking_complete",
+        "linked": 1,
+        "ts": 1784566580.5967247
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_start",
+        "ts": 1784566580.596743
+      },
+      {
+        "agent": "verifier",
+        "action": "start",
+        "data": {
+          "mentions": 5
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "tool_call",
+        "data": {
+          "tool": "verify_schema",
+          "input": {
+            "mentions": [
+              {
+                "text": "run rẩy",
+                "position": [
+                  401,
+                  408
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "sốt",
+                "position": [
+                  413,
+                  416
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "sốt",
+                "position": [
+                  426,
+                  429
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "sốt",
+                "position": [
+                  493,
+                  496
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "Augmentin",
+                "position": [
+                  630,
+                  639
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "151392"
+                ],
+                "link_confidence": 0.95
+              }
+            ],
+            "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ ống dẫn mật chủ\n    - cắt bỏ phân đoạn bên trái gan\n    - Đã phẫu thuật nối ống gan - hỗng tràng vì nghi ngờ ung thư đường mật không thể cắt bỏ\n    - Đã can thiệp chụp đường mật, đặt 3 stent đường mật lưu dài hạn\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: Đêm trước khi nhập viện\n    Triệu chứng hiện tại: run rẩy kèm sốt kèm theo sốt\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ảnh\n    - mrcp (chụp cộng hưởng từ mật tụy) cho thấy nhiều nang tụy nhỏ\n    - ba stent mật kim loại đã được đặt\n    - một ổ dịch sau phẫu thuật giảm kích thước so với lần chụp chẩn đoán hình ảnh  trước"
+          },
+          "output": {
+            "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              }
+            ],
+            "final_predictions": [
+              {
+                "text": "run rẩy",
+                "position": [
+                  401,
+                  408
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "sốt",
+                "position": [
+                  413,
+                  416
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "sốt",
+                "position": [
+                  426,
+                  429
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "sốt",
+                "position": [
+                  493,
+                  496
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "Augmentin",
+                "position": [
+                  630,
+                  639
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "151392"
+                ],
+                "link_confidence": 0.95
+              }
+            ],
+            "dropped": 0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "verifier",
+        "action": "validated",
+        "data": {
+          "kept": 5,
+          "dropped": 0
+        }
+      },
+      {
+        "agent": "orchestrator",
+        "action": "verification_complete",
+        "kept": 5,
+        "ts": 1784566580.664091
+      },
+      {
+        "agent": "orchestrator",
+        "action": "complete",
+        "total_mentions": 5,
+        "elapsed": 5.69,
+        "ts": 1784566580.6641047
+      }
+    ]
+  },
+  "logs": [
+    {
+      "agent": "orchestrator",
+      "action": "start",
+      "text_len": 989,
+      "ts": 1784566574.97005
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_start",
+      "ts": 1784566574.9700563
+    },
+    {
+      "agent": "extraction",
+      "action": "start",
+      "data": {
+        "text_len": 989
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "preprocessed",
+      "data": {
+        "normalized_len": 989
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "parallel_extract",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ ống dẫn mật chủ\n    - cắt bỏ phân đoạn bên trái gan\n    - Đã phẫu thuật nối ống gan - hỗng tràng vì nghi ngờ ung thư đường mật không thể cắt bỏ\n    - Đã can thiệp chụp đường mật, đặt 3 stent đường mật lưu dài hạn\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: Đêm trước khi nhập viện\n    Triệu chứng hiện tại: run rẩy kèm sốt kèm theo sốt\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ảnh\n    - mrcp (chụp cộng hưởng từ mật tụy) cho thấy nhiều nang tụy nhỏ\n    - ba stent mật kim loại đã được đặt\n    - một ổ dịch sau phẫu thuật giảm kích thước so với lần chụp chẩn đoán hình ảnh  trước"
+        },
+        "output": {
+          "rule": [],
+          "qwen": [
+            {
+              "text": "run rẩy",
+              "position": [
+                401,
+                408
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "sốt",
+              "position": [
+                413,
+                416
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "sốt",
+              "position": [
+                426,
+                429
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "sốt",
+              "position": [
+                493,
+                496
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Augmentin",
+              "position": [
+                630,
+                639
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ],
+          "errors": []
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "extracted",
+      "data": {
+        "sources": {
+          "rule": 0,
+          "qwen": 5
+        },
+        "total": 5
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "vote_merge",
+        "input": {
+          "all_mentions": [
+            {
+              "text": "run rẩy",
+              "position": [
+                401,
+                408
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "sốt",
+              "position": [
+                413,
+                416
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "sốt",
+              "position": [
+                426,
+                429
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "sốt",
+              "position": [
+                493,
+                496
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Augmentin",
+              "position": [
+                630,
+                639
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            }
+          ]
+        },
+        "output": [
+          {
+            "text": "run rẩy",
+            "position": [
+              401,
+              408
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "sốt",
+            "position": [
+              413,
+              416
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "sốt",
+            "position": [
+              426,
+              429
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "sốt",
+            "position": [
+              493,
+              496
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "Augmentin",
+            "position": [
+              630,
+              639
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "151392"
+            ],
+            "link_confidence": 0.95
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "voted",
+      "data": {
+        "merged": 5
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "resolve_conflicts",
+        "input": {
+          "merged": [
+            {
+              "text": "run rẩy",
+              "position": [
+                401,
+                408
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                413,
+                416
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                426,
+                429
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                493,
+                496
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Augmentin",
+              "position": [
+                630,
+                639
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "151392"
+              ],
+              "link_confidence": 0.95
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ ống dẫn mật chủ\n    - cắt bỏ phân đoạn bên trái gan\n    - Đã phẫu thuật nối ống gan - hỗng tràng vì nghi ngờ ung thư đường mật không thể cắt bỏ\n    - Đã can thiệp chụp đường mật, đặt 3 stent đường mật lưu dài hạn\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: Đêm trước khi nhập viện\n    Triệu chứng hiện tại: run rẩy kèm sốt kèm theo sốt\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ảnh\n    - mrcp (chụp cộng hưởng từ mật tụy) cho thấy nhiều nang tụy nhỏ\n    - ba stent mật kim loại đã được đặt\n    - một ổ dịch sau phẫu thuật giảm kích thước so với lần chụp chẩn đoán hình ảnh  trước"
+        },
+        "output": [
+          {
+            "text": "run rẩy",
+            "position": [
+              401,
+              408
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "sốt",
+            "position": [
+              413,
+              416
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "sốt",
+            "position": [
+              426,
+              429
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "sốt",
+            "position": [
+              493,
+              496
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "Augmentin",
+            "position": [
+              630,
+              639
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "151392"
+            ],
+            "link_confidence": 0.95
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "data": {
+        "tool": "fix_positions",
+        "input": {
+          "mentions": [
+            {
+              "text": "run rẩy",
+              "position": [
+                401,
+                408
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                413,
+                416
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                426,
+                429
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                493,
+                496
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Augmentin",
+              "position": [
+                630,
+                639
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "151392"
+              ],
+              "link_confidence": 0.95
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ ống dẫn mật chủ\n    - cắt bỏ phân đoạn bên trái gan\n    - Đã phẫu thuật nối ống gan - hỗng tràng vì nghi ngờ ung thư đường mật không thể cắt bỏ\n    - Đã can thiệp chụp đường mật, đặt 3 stent đường mật lưu dài hạn\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: Đêm trước khi nhập viện\n    Triệu chứng hiện tại: run rẩy kèm sốt kèm theo sốt\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ảnh\n    - mrcp (chụp cộng hưởng từ mật tụy) cho thấy nhiều nang tụy nhỏ\n    - ba stent mật kim loại đã được đặt\n    - một ổ dịch sau phẫu thuật giảm kích thước so với lần chụp chẩn đoán hình ảnh  trước"
+        },
+        "output": [
+          {
+            "text": "run rẩy",
+            "position": [
+              401,
+              408
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "sốt",
+            "position": [
+              413,
+              416
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "sốt",
+            "position": [
+              426,
+              429
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "sốt",
+            "position": [
+              493,
+              496
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "Augmentin",
+            "position": [
+              630,
+              639
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "151392"
+            ],
+            "link_confidence": 0.95
+          }
+        ],
+        "result_type": "list"
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "positions_fixed",
+      "data": {
+        "fixed": 0
+      }
+    },
+    {
+      "agent": "extraction",
+      "action": "llm_verified",
+      "data": {
+        "corrected": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "extraction_complete",
+      "mentions": 5,
+      "ts": 1784566580.573664
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_start",
+      "ts": 1784566580.5736732
+    },
+    {
+      "agent": "assertion",
+      "action": "start",
+      "data": {
+        "mentions": 5
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ ống dẫn mật chủ\n    - cắt bỏ phân đoạn bên trái gan\n    - Đã phẫu thuật nối ống gan - hỗng tràng vì nghi ngờ ung thư đường mật không thể cắt bỏ\n    - Đã can thiệp chụp đường mật, đặt 3 stent đường mật lưu dài hạn\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: Đêm trước khi nhập viện\n    Triệu chứng hiện tại: run rẩy kèm sốt kèm theo sốt\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ảnh\n    - mrcp (chụp cộng hưởng từ mật tụy) cho thấy nhiều nang tụy nhỏ\n    - ba stent mật kim loại đã được đặt\n    - một ổ dịch sau phẫu thuật giảm kích thước so với lần chụp chẩn đoán hình ảnh  trước",
+          "start": 401,
+          "end": 408,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ ống dẫn mật chủ\n    - cắt bỏ phân đoạn bên trái gan\n    - Đã phẫu thuật nối ống gan - hỗng tràng vì nghi ngờ ung thư đường mật không thể cắt bỏ\n    - Đã can thiệp chụp đường mật, đặt 3 stent đường mật lưu dài hạn\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: Đêm trước khi nhập viện\n    Triệu chứng hiện tại: run rẩy kèm sốt kèm theo sốt\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ảnh\n    - mrcp (chụp cộng hưởng từ mật tụy) cho thấy nhiều nang tụy nhỏ\n    - ba stent mật kim loại đã được đặt\n    - một ổ dịch sau phẫu thuật giảm kích thước so với lần chụp chẩn đoán hình ảnh  trước",
+          "start": 413,
+          "end": 416,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ ống dẫn mật chủ\n    - cắt bỏ phân đoạn bên trái gan\n    - Đã phẫu thuật nối ống gan - hỗng tràng vì nghi ngờ ung thư đường mật không thể cắt bỏ\n    - Đã can thiệp chụp đường mật, đặt 3 stent đường mật lưu dài hạn\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: Đêm trước khi nhập viện\n    Triệu chứng hiện tại: run rẩy kèm sốt kèm theo sốt\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ảnh\n    - mrcp (chụp cộng hưởng từ mật tụy) cho thấy nhiều nang tụy nhỏ\n    - ba stent mật kim loại đã được đặt\n    - một ổ dịch sau phẫu thuật giảm kích thước so với lần chụp chẩn đoán hình ảnh  trước",
+          "start": 426,
+          "end": 429,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ ống dẫn mật chủ\n    - cắt bỏ phân đoạn bên trái gan\n    - Đã phẫu thuật nối ống gan - hỗng tràng vì nghi ngờ ung thư đường mật không thể cắt bỏ\n    - Đã can thiệp chụp đường mật, đặt 3 stent đường mật lưu dài hạn\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: Đêm trước khi nhập viện\n    Triệu chứng hiện tại: run rẩy kèm sốt kèm theo sốt\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ảnh\n    - mrcp (chụp cộng hưởng từ mật tụy) cho thấy nhiều nang tụy nhỏ\n    - ba stent mật kim loại đã được đặt\n    - một ổ dịch sau phẫu thuật giảm kích thước so với lần chụp chẩn đoán hình ảnh  trước",
+          "start": 493,
+          "end": 496,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ ống dẫn mật chủ\n    - cắt bỏ phân đoạn bên trái gan\n    - Đã phẫu thuật nối ống gan - hỗng tràng vì nghi ngờ ung thư đường mật không thể cắt bỏ\n    - Đã can thiệp chụp đường mật, đặt 3 stent đường mật lưu dài hạn\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: Đêm trước khi nhập viện\n    Triệu chứng hiện tại: run rẩy kèm sốt kèm theo sốt\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ảnh\n    - mrcp (chụp cộng hưởng từ mật tụy) cho thấy nhiều nang tụy nhỏ\n    - ba stent mật kim loại đã được đặt\n    - một ổ dịch sau phẫu thuật giảm kích thước so với lần chụp chẩn đoán hình ảnh  trước",
+          "start": 630,
+          "end": 639,
+          "mtype": "THUỐC"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "complete",
+      "data": {
+        "processed": 5,
+        "llm_checked": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "assertion_complete",
+      "ts": 1784566580.5739315
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_start",
+      "ts": 1784566580.5739372
+    },
+    {
+      "agent": "linking",
+      "action": "start",
+      "data": {
+        "mentions": 5
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "Augmentin",
+            "position": [
+              630,
+              639
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "151392"
+            ],
+            "link_confidence": 0.95
+          },
+          "context": "nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ả"
+        },
+        "output": {
+          "candidates": [
+            "151392"
+          ],
+          "confidence": 0.95
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "complete",
+      "data": {
+        "linked": 1
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "linking_complete",
+      "linked": 1,
+      "ts": 1784566580.5967247
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_start",
+      "ts": 1784566580.596743
+    },
+    {
+      "agent": "verifier",
+      "action": "start",
+      "data": {
+        "mentions": 5
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "tool_call",
+      "data": {
+        "tool": "verify_schema",
+        "input": {
+          "mentions": [
+            {
+              "text": "run rẩy",
+              "position": [
+                401,
+                408
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                413,
+                416
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                426,
+                429
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                493,
+                496
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Augmentin",
+              "position": [
+                630,
+                639
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "151392"
+              ],
+              "link_confidence": 0.95
+            }
+          ],
+          "text": "1.  Tiền sử bệnh nội khoa\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ ống dẫn mật chủ\n    - cắt bỏ phân đoạn bên trái gan\n    - Đã phẫu thuật nối ống gan - hỗng tràng vì nghi ngờ ung thư đường mật không thể cắt bỏ\n    - Đã can thiệp chụp đường mật, đặt 3 stent đường mật lưu dài hạn\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: Đêm trước khi nhập viện\n    Triệu chứng hiện tại: run rẩy kèm sốt kèm theo sốt\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì sốt và các ổ dịch trong ổ bụng được cho là áp xe\n    - Điều trị bằng kháng sinh tĩnh mạch trong thời gian nằm viện\n    - Ra viện với đơn Augmentin đường uống trong 10 ngày \n    - Tình trạng ổn định ở nhà cho đến đêm trước khi nhập viện\n3.  Đánh giá tại bệnh viện\n    Kết quả chụp chẩn đoán hình ảnh\n    - mrcp (chụp cộng hưởng từ mật tụy) cho thấy nhiều nang tụy nhỏ\n    - ba stent mật kim loại đã được đặt\n    - một ổ dịch sau phẫu thuật giảm kích thước so với lần chụp chẩn đoán hình ảnh  trước"
+        },
+        "output": {
+          "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            }
+          ],
+          "final_predictions": [
+            {
+              "text": "run rẩy",
+              "position": [
+                401,
+                408
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                413,
+                416
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                426,
+                429
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "sốt",
+              "position": [
+                493,
+                496
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Augmentin",
+              "position": [
+                630,
+                639
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "151392"
+              ],
+              "link_confidence": 0.95
+            }
+          ],
+          "dropped": 0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "verifier",
+      "action": "validated",
+      "data": {
+        "kept": 5,
+        "dropped": 0
+      }
+    },
+    {
+      "agent": "orchestrator",
+      "action": "verification_complete",
+      "kept": 5,
+      "ts": 1784566580.664091
+    },
+    {
+      "agent": "orchestrator",
+      "action": "complete",
+      "total_mentions": 5,
+      "elapsed": 5.69,
+      "ts": 1784566580.6641047
+    }
+  ]
+}

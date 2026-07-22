@@ -1,16 +1,16 @@
 {
   "file_id": "12",
-  "timestamp": 1784566080.9525995,
-  "elapsed": 44.57,
+  "timestamp": 1784626038.5455768,
+  "elapsed": 61.89,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 26,
+  "mention_count": 25,
   "stats": {
-    "total_mentions": 26,
-    "final": 26,
+    "total_mentions": 25,
+    "final": 25,
     "validation_errors": 0,
-    "elapsed": 44.57,
+    "elapsed": 61.89,
     "rule": 1,
-    "qwen": 28
+    "qwen": 27
   },
   "log_summary": [
     {
@@ -177,15 +177,15 @@
     },
     {
       "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -232,20 +232,23 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784566080.9524603,
+      "ts": 1784626038.5452616,
       "tool": null
     }
   ],
   "mentions": [
     {
-      "text": "ho",
-      "type": "TRIỆU_CHỨNG",
+      "text": "U Sacoit tổn thương chủ yếu tại tim",
+      "type": "CHẨN_ĐOÁN",
       "assertions": [
         "isHistorical"
       ],
       "position": [
-        22,
-        24
+        48,
+        83
+      ],
+      "candidates": [
+        "S26.8"
       ]
     },
     {
@@ -368,6 +371,15 @@
       ]
     },
     {
+      "text": "fever",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        646,
+        651
+      ]
+    },
+    {
       "text": "sốt",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
@@ -383,15 +395,6 @@
       "position": [
         685,
         716
-      ]
-    },
-    {
-      "text": "ho",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        868,
-        870
       ]
     },
     {
@@ -456,18 +459,7 @@
         1148
       ],
       "candidates": [
-        "J20"
-      ]
-    },
-    {
-      "text": "ho",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
-      ],
-      "position": [
-        1149,
-        1151
+        "J18.9"
       ]
     },
     {
@@ -481,7 +473,7 @@
         1162
       ],
       "candidates": [
-        "J68.1"
+        "J81.0"
       ]
     },
     {

@@ -1,4 +1,5 @@
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -305,6 +306,56 @@ def _make_chunks(text: str, max_chars: int = 1200, overlap: int = 120) -> list:
     return chunks
 
 
+def _append_nonoverlapping_mentions(primary: list, supplemental: list) -> list:
+    """Add recall proposals without allowing them to replace existing boundaries."""
+    merged = list(primary)
+    occupied = [tuple(item.get("position", [0, 0])) for item in primary]
+    seen = {
+        (*item.get("position", [0, 0]), item.get("type"))
+        for item in primary
+    }
+    for mention in supplemental:
+        start, end = mention.get("position", [0, 0])
+        key = (start, end, mention.get("type"))
+        if key in seen:
+            continue
+        if any(min(end, old_end) > max(start, old_start) for old_start, old_end in occupied):
+            continue
+        merged.append(mention)
+        occupied.append((start, end))
+        seen.add(key)
+    return merged
+
+
+def _extract_chunks(text: str, llm, max_chars: int, overlap: int) -> list:
+    """Extract one chunk scale in parallel while preserving absolute positions."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    chunks = _make_chunks(text, max_chars=max_chars, overlap=overlap)
+    if len(chunks) <= 1:
+        return [
+            entity
+            for chunk_start, chunk in chunks
+            for entity in _extract_chunk(chunk, chunk_start, llm)
+        ]
+
+    mentions = []
+    errors = []
+    with ThreadPoolExecutor(max_workers=min(4, len(chunks))) as executor:
+        futures = {
+            executor.submit(_extract_chunk, chunk, chunk_start, llm): chunk_start
+            for chunk_start, chunk in chunks
+        }
+        for future in as_completed(futures):
+            try:
+                mentions.extend(future.result())
+            except Exception as exc:
+                errors.append(f"chunk@{futures[future]}: {exc}")
+    if errors:
+        raise RuntimeError("; ".join(errors))
+    return mentions
+
+
 def ner_and_type(text: str, llm=None) -> dict:
     """LLM proposes verbatim spans; deterministic rules align and validate them."""
     from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -312,23 +363,10 @@ def ner_and_type(text: str, llm=None) -> dict:
 
     # Step 1: LLM extracts keywords; model-provided positions are ignored.
     if llm and llm.is_available():
-        chunks = _make_chunks(text)
-
-        if len(chunks) <= 1:
-            for chunk_start, chunk in chunks:
-                entities = _extract_chunk(chunk, chunk_start, llm)
-                mentions.extend(entities)
-        else:
-            with ThreadPoolExecutor(max_workers=min(4, len(chunks))) as ex:
-                futures = {
-                    ex.submit(_extract_chunk, chunk, chunk_start, llm): chunk_start
-                    for chunk_start, chunk in chunks
-                }
-                for future in as_completed(futures):
-                    try:
-                        mentions.extend(future.result())
-                    except Exception as e:
-                        print(f"Chunk NER error: {e}", file=__import__('sys').stderr)
+        mentions = _extract_chunks(text, llm, max_chars=1200, overlap=120)
+        if os.getenv("NER_MULTISCALE", "").casefold() in {"1", "true", "yes"}:
+            supplemental = _extract_chunks(text, llm, max_chars=500, overlap=60)
+            mentions = _append_nonoverlapping_mentions(mentions, supplemental)
 
     # Step 2: Rule-based type verification (skip administrative fragments).
     filtered = []

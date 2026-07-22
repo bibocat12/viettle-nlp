@@ -1,16 +1,16 @@
 {
   "file_id": "59",
-  "timestamp": 1784566717.3175821,
-  "elapsed": 51.49,
+  "timestamp": 1784626613.1097703,
+  "elapsed": 60.97,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 23,
+  "mention_count": 26,
   "stats": {
-    "total_mentions": 23,
-    "final": 23,
+    "total_mentions": 26,
+    "final": 26,
     "validation_errors": 0,
-    "elapsed": 51.49,
+    "elapsed": 60.97,
     "rule": 6,
-    "qwen": 19
+    "qwen": 22
   },
   "log_summary": [
     {
@@ -165,9 +165,33 @@
     },
     {
       "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -208,7 +232,7 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784566717.3174255,
+      "ts": 1784626613.1090448,
       "tool": null
     }
   ],
@@ -262,7 +286,7 @@
         424
       ],
       "candidates": [
-        "G91.9"
+        "Q03.8"
       ]
     },
     {
@@ -276,7 +300,7 @@
         516
       ],
       "candidates": [
-        "H44.4"
+        "H40.9"
       ]
     },
     {
@@ -298,6 +322,18 @@
       ]
     },
     {
+      "text": "não úng tuỷ",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        846,
+        857
+      ],
+      "candidates": [
+        "G91"
+      ]
+    },
+    {
       "text": "não úng thủy",
       "type": "CHẨN_ĐOÁN",
       "assertions": [
@@ -308,7 +344,7 @@
         980
       ],
       "candidates": [
-        "Q03.9"
+        "G91.9"
       ]
     },
     {
@@ -370,12 +406,30 @@
       ]
     },
     {
+      "text": "nhìn mờ",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1433,
+        1440
+      ]
+    },
+    {
       "text": "đau đầu",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
         1494,
         1501
+      ]
+    },
+    {
+      "text": "nhìn mờ",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1543,
+        1550
       ]
     },
     {
@@ -407,11 +461,14 @@
     },
     {
       "text": "Tăng nhãn áp",
-      "type": "TRIỆU_CHỨNG",
+      "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
         1987,
         1999
+      ],
+      "candidates": [
+        "H40.9"
       ]
     },
     {

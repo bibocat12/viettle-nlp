@@ -1,16 +1,16 @@
 {
   "file_id": "76",
-  "timestamp": 1784566993.397511,
-  "elapsed": 77.58,
+  "timestamp": 1784626826.4182432,
+  "elapsed": 65.03,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 24,
+  "mention_count": 25,
   "stats": {
-    "total_mentions": 24,
-    "final": 24,
+    "total_mentions": 25,
+    "final": 25,
     "validation_errors": 0,
-    "elapsed": 77.58,
+    "elapsed": 65.03,
     "rule": 5,
-    "qwen": 25
+    "qwen": 26
   },
   "log_summary": [
     {
@@ -159,9 +159,27 @@
     },
     {
       "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -226,7 +244,7 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784566993.3974068,
+      "ts": 1784626826.4175284,
       "tool": null
     }
   ],
@@ -242,7 +260,7 @@
         62
       ],
       "candidates": [
-        "E14"
+        "E11.9"
       ]
     },
     {
@@ -270,7 +288,7 @@
         110
       ],
       "candidates": [
-        "I25.0"
+        "I25.1"
       ]
     },
     {
@@ -284,8 +302,34 @@
         133
       ],
       "candidates": [
-        "I21.4"
+        "I21.9"
       ]
+    },
+    {
+      "text": "plavix",
+      "type": "THUỐC",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        355,
+        361
+      ],
+      "candidates": [
+        "174742"
+      ]
+    },
+    {
+      "text": "nitrates",
+      "type": "THUỐC",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        373,
+        381
+      ],
+      "candidates": []
     },
     {
       "text": "đau ngực",
@@ -305,18 +349,6 @@
       "position": [
         463,
         471
-      ]
-    },
-    {
-      "text": "nitro",
-      "type": "THUỐC",
-      "assertions": [],
-      "position": [
-        631,
-        636
-      ],
-      "candidates": [
-        "202525"
       ]
     },
     {

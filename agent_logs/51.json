@@ -1,7 +1,7 @@
 {
   "file_id": "51",
-  "timestamp": 1784566651.256634,
-  "elapsed": 78.4,
+  "timestamp": 1784626520.298553,
+  "elapsed": 36.84,
   "model": "bibocat/qwen3-ner-grpo-final",
   "result": {
     "note_id": "51",
@@ -116,6 +116,16 @@
         ]
       },
       {
+        "text": "kali 80mEq",
+        "type": "THUỐC",
+        "assertions": [],
+        "position": [
+          614,
+          624
+        ],
+        "candidates": []
+      },
+      {
         "text": "kali vẫn giảm xuống 2.2",
         "type": "KẾT_QUẢ_XÉT_NGHIỆM",
         "assertions": [],
@@ -134,6 +144,51 @@
         ],
         "candidates": [
           "18631"
+        ]
+      },
+      {
+        "text": "nhiệt độ 97.5",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          899,
+          912
+        ]
+      },
+      {
+        "text": "mạch 85",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          914,
+          921
+        ]
+      },
+      {
+        "text": "nhịp thở 18",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          923,
+          934
+        ]
+      },
+      {
+        "text": "huyết áp 14279",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          936,
+          950
+        ]
+      },
+      {
+        "text": "spo2 96",
+        "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          952,
+          959
         ]
       },
       {
@@ -201,7 +256,7 @@
           1214
         ],
         "candidates": [
-          "E87.5"
+          "E87.6"
         ]
       },
       {
@@ -230,29 +285,30 @@
       "is_valid": true,
       "errors": [],
       "warnings": [
-        "[17] THUỐC has no candidates",
-        "[18] THUỐC has no candidates"
+        "[11] THUỐC has no candidates",
+        "[23] THUỐC has no candidates",
+        "[24] THUỐC has no candidates"
       ]
     },
     "stats": {
-      "total_mentions": 22,
-      "final": 22,
+      "total_mentions": 28,
+      "final": 28,
       "validation_errors": 0,
-      "elapsed": 78.4,
+      "elapsed": 36.84,
       "rule": 1,
-      "qwen": 21
+      "qwen": 27
     },
     "logs": [
       {
         "agent": "orchestrator",
         "action": "start",
         "text_len": 1311,
-        "ts": 1784566572.860719
+        "ts": 1784626483.4571078
       },
       {
         "agent": "orchestrator",
         "action": "extraction_start",
-        "ts": 1784566572.8607295
+        "ts": 1784626483.457158
       },
       {
         "agent": "extraction",
@@ -468,6 +524,22 @@
                 "extraction_source": "qwen"
               },
               {
+                "text": "kali 80mEq",
+                "position": [
+                  614,
+                  624
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
                 "text": "kali vẫn giảm xuống 2.2",
                 "position": [
                   718,
@@ -494,6 +566,86 @@
                 "type_candidates": [
                   {
                     "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "nhiệt độ 97.5",
+                "position": [
+                  899,
+                  912
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "mạch 85",
+                "position": [
+                  914,
+                  921
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "nhịp thở 18",
+                "position": [
+                  923,
+                  934
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "huyết áp 14279",
+                "position": [
+                  936,
+                  950
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "spo2 96",
+                "position": [
+                  952,
+                  959
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
                     "score": 0.85
                   }
                 ],
@@ -639,9 +791,9 @@
         "data": {
           "sources": {
             "rule": 1,
-            "qwen": 21
+            "qwen": 27
           },
-          "total": 22
+          "total": 28
         }
       },
       {
@@ -828,6 +980,22 @@
                 "extraction_source": "qwen"
               },
               {
+                "text": "kali 80mEq",
+                "position": [
+                  614,
+                  624
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
                 "text": "kali vẫn giảm xuống 2.2",
                 "position": [
                   718,
@@ -854,6 +1022,86 @@
                 "type_candidates": [
                   {
                     "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "nhiệt độ 97.5",
+                "position": [
+                  899,
+                  912
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "mạch 85",
+                "position": [
+                  914,
+                  921
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "nhịp thở 18",
+                "position": [
+                  923,
+                  934
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "huyết áp 14279",
+                "position": [
+                  936,
+                  950
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "spo2 96",
+                "position": [
+                  952,
+                  959
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
                     "score": 0.85
                   }
                 ],
@@ -1032,7 +1280,7 @@
               "candidates": [
                 "E11.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Tăng huyết áp",
@@ -1065,7 +1313,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "khó chịu chung",
@@ -1328,6 +1576,37 @@
               }
             },
             {
+              "text": "kali 80mEq",
+              "position": [
+                614,
+                624
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
               "text": "kali vẫn giảm xuống 2.2",
               "position": [
                 718,
@@ -1386,7 +1665,151 @@
               "candidates": [
                 "18631"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
+            },
+            {
+              "text": "nhiệt độ 97.5",
+              "position": [
+                899,
+                912
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "mạch 85",
+              "position": [
+                914,
+                921
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nhịp thở 18",
+              "position": [
+                923,
+                934
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "huyết áp 14279",
+              "position": [
+                936,
+                950
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "spo2 96",
+              "position": [
+                952,
+                959
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
             },
             {
               "text": "bình thường",
@@ -1585,9 +2008,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E87.5"
+                "E87.6"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tiêu chảy",
@@ -1649,7 +2072,7 @@
               "candidates": [
                 "J06.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "result_type": "list"
@@ -1659,7 +2082,7 @@
         "agent": "extraction",
         "action": "voted",
         "data": {
-          "merged": 22
+          "merged": 28
         }
       },
       {
@@ -1700,7 +2123,7 @@
                 "candidates": [
                   "E11.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "Tăng huyết áp",
@@ -1733,7 +2156,7 @@
                 "candidates": [
                   "I10"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "khó chịu chung",
@@ -1996,6 +2419,37 @@
                 }
               },
               {
+                "text": "kali 80mEq",
+                "position": [
+                  614,
+                  624
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [],
+                "link_confidence": 0.0
+              },
+              {
                 "text": "kali vẫn giảm xuống 2.2",
                 "position": [
                   718,
@@ -2054,7 +2508,151 @@
                 "candidates": [
                   "18631"
                 ],
-                "link_confidence": 0.95
+                "link_confidence": 0.99
+              },
+              {
+                "text": "nhiệt độ 97.5",
+                "position": [
+                  899,
+                  912
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "mạch 85",
+                "position": [
+                  914,
+                  921
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "nhịp thở 18",
+                "position": [
+                  923,
+                  934
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "huyết áp 14279",
+                "position": [
+                  936,
+                  950
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "spo2 96",
+                "position": [
+                  952,
+                  959
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
               },
               {
                 "text": "bình thường",
@@ -2253,9 +2851,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "E87.5"
+                  "E87.6"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "tiêu chảy",
@@ -2317,7 +2915,7 @@
                 "candidates": [
                   "J06.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               }
             ],
             "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhiều hơn\n    - đau đầu bên trái\n    - mệt mỏi\n    - tiêu chảy\n    Đặc điểm triệu chứng\n    - tiêu chảy: vài tuần tiêu chảy bùng nổ, vài lần mỗi ngày, chủ yếu là phân\n    - tiêu chảy: không thấy  phân đen, nhầy, máu đỏ tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 96 khi thở khí trời\n    - khám là bình thường\n    Kết quả xét nghiệm\n    - kali là 2.4\n    - kali vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định"
@@ -2354,7 +2952,7 @@
               "candidates": [
                 "E11.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Tăng huyết áp",
@@ -2387,7 +2985,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "khó chịu chung",
@@ -2650,6 +3248,37 @@
               }
             },
             {
+              "text": "kali 80mEq",
+              "position": [
+                614,
+                624
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
               "text": "kali vẫn giảm xuống 2.2",
               "position": [
                 718,
@@ -2708,7 +3337,151 @@
               "candidates": [
                 "18631"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
+            },
+            {
+              "text": "nhiệt độ 97.5",
+              "position": [
+                899,
+                912
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "mạch 85",
+              "position": [
+                914,
+                921
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nhịp thở 18",
+              "position": [
+                923,
+                934
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "huyết áp 14279",
+              "position": [
+                936,
+                950
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "spo2 96",
+              "position": [
+                952,
+                959
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
             },
             {
               "text": "bình thường",
@@ -2907,9 +3680,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E87.5"
+                "E87.6"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tiêu chảy",
@@ -2971,7 +3744,7 @@
               "candidates": [
                 "J06.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "result_type": "list"
@@ -3015,7 +3788,7 @@
                 "candidates": [
                   "E11.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "Tăng huyết áp",
@@ -3048,7 +3821,7 @@
                 "candidates": [
                   "I10"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "khó chịu chung",
@@ -3311,6 +4084,37 @@
                 }
               },
               {
+                "text": "kali 80mEq",
+                "position": [
+                  614,
+                  624
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [],
+                "link_confidence": 0.0
+              },
+              {
                 "text": "kali vẫn giảm xuống 2.2",
                 "position": [
                   718,
@@ -3369,7 +4173,151 @@
                 "candidates": [
                   "18631"
                 ],
-                "link_confidence": 0.95
+                "link_confidence": 0.99
+              },
+              {
+                "text": "nhiệt độ 97.5",
+                "position": [
+                  899,
+                  912
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "mạch 85",
+                "position": [
+                  914,
+                  921
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "nhịp thở 18",
+                "position": [
+                  923,
+                  934
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "huyết áp 14279",
+                "position": [
+                  936,
+                  950
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "spo2 96",
+                "position": [
+                  952,
+                  959
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
               },
               {
                 "text": "bình thường",
@@ -3568,9 +4516,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "E87.5"
+                  "E87.6"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "tiêu chảy",
@@ -3632,7 +4580,7 @@
                 "candidates": [
                   "J06.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               }
             ],
             "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhiều hơn\n    - đau đầu bên trái\n    - mệt mỏi\n    - tiêu chảy\n    Đặc điểm triệu chứng\n    - tiêu chảy: vài tuần tiêu chảy bùng nổ, vài lần mỗi ngày, chủ yếu là phân\n    - tiêu chảy: không thấy  phân đen, nhầy, máu đỏ tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 96 khi thở khí trời\n    - khám là bình thường\n    Kết quả xét nghiệm\n    - kali là 2.4\n    - kali vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định"
@@ -3669,7 +4617,7 @@
               "candidates": [
                 "E11.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Tăng huyết áp",
@@ -3702,7 +4650,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "khó chịu chung",
@@ -3965,6 +4913,37 @@
               }
             },
             {
+              "text": "kali 80mEq",
+              "position": [
+                614,
+                624
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
               "text": "kali vẫn giảm xuống 2.2",
               "position": [
                 718,
@@ -4023,7 +5002,151 @@
               "candidates": [
                 "18631"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
+            },
+            {
+              "text": "nhiệt độ 97.5",
+              "position": [
+                899,
+                912
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "mạch 85",
+              "position": [
+                914,
+                921
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nhịp thở 18",
+              "position": [
+                923,
+                934
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "huyết áp 14279",
+              "position": [
+                936,
+                950
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "spo2 96",
+              "position": [
+                952,
+                959
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
             },
             {
               "text": "bình thường",
@@ -4222,9 +5345,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E87.5"
+                "E87.6"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tiêu chảy",
@@ -4286,7 +5409,7 @@
               "candidates": [
                 "J06.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "result_type": "list"
@@ -4309,19 +5432,19 @@
       {
         "agent": "orchestrator",
         "action": "extraction_complete",
-        "mentions": 22,
-        "ts": 1784566594.3455577
+        "mentions": 28,
+        "ts": 1784626519.06041
       },
       {
         "agent": "orchestrator",
         "action": "assertion_start",
-        "ts": 1784566594.3455703
+        "ts": 1784626519.0604513
       },
       {
         "agent": "assertion",
         "action": "start",
         "data": {
-          "mentions": 22
+          "mentions": 28
         }
       },
       {
@@ -4521,9 +5644,104 @@
           "tool": "rule_assert",
           "input": {
             "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhiều hơn\n    - đau đầu bên trái\n    - mệt mỏi\n    - tiêu chảy\n    Đặc điểm triệu chứng\n    - tiêu chảy: vài tuần tiêu chảy bùng nổ, vài lần mỗi ngày, chủ yếu là phân\n    - tiêu chảy: không thấy  phân đen, nhầy, máu đỏ tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 96 khi thở khí trời\n    - khám là bình thường\n    Kết quả xét nghiệm\n    - kali là 2.4\n    - kali vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định",
+            "start": 614,
+            "end": 624,
+            "mtype": "THUỐC"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhiều hơn\n    - đau đầu bên trái\n    - mệt mỏi\n    - tiêu chảy\n    Đặc điểm triệu chứng\n    - tiêu chảy: vài tuần tiêu chảy bùng nổ, vài lần mỗi ngày, chủ yếu là phân\n    - tiêu chảy: không thấy  phân đen, nhầy, máu đỏ tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 96 khi thở khí trời\n    - khám là bình thường\n    Kết quả xét nghiệm\n    - kali là 2.4\n    - kali vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định",
             "start": 795,
             "end": 807,
             "mtype": "THUỐC"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhiều hơn\n    - đau đầu bên trái\n    - mệt mỏi\n    - tiêu chảy\n    Đặc điểm triệu chứng\n    - tiêu chảy: vài tuần tiêu chảy bùng nổ, vài lần mỗi ngày, chủ yếu là phân\n    - tiêu chảy: không thấy  phân đen, nhầy, máu đỏ tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 96 khi thở khí trời\n    - khám là bình thường\n    Kết quả xét nghiệm\n    - kali là 2.4\n    - kali vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định",
+            "start": 899,
+            "end": 912,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhiều hơn\n    - đau đầu bên trái\n    - mệt mỏi\n    - tiêu chảy\n    Đặc điểm triệu chứng\n    - tiêu chảy: vài tuần tiêu chảy bùng nổ, vài lần mỗi ngày, chủ yếu là phân\n    - tiêu chảy: không thấy  phân đen, nhầy, máu đỏ tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 96 khi thở khí trời\n    - khám là bình thường\n    Kết quả xét nghiệm\n    - kali là 2.4\n    - kali vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định",
+            "start": 914,
+            "end": 921,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhiều hơn\n    - đau đầu bên trái\n    - mệt mỏi\n    - tiêu chảy\n    Đặc điểm triệu chứng\n    - tiêu chảy: vài tuần tiêu chảy bùng nổ, vài lần mỗi ngày, chủ yếu là phân\n    - tiêu chảy: không thấy  phân đen, nhầy, máu đỏ tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 96 khi thở khí trời\n    - khám là bình thường\n    Kết quả xét nghiệm\n    - kali là 2.4\n    - kali vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định",
+            "start": 923,
+            "end": 934,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhiều hơn\n    - đau đầu bên trái\n    - mệt mỏi\n    - tiêu chảy\n    Đặc điểm triệu chứng\n    - tiêu chảy: vài tuần tiêu chảy bùng nổ, vài lần mỗi ngày, chủ yếu là phân\n    - tiêu chảy: không thấy  phân đen, nhầy, máu đỏ tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 96 khi thở khí trời\n    - khám là bình thường\n    Kết quả xét nghiệm\n    - kali là 2.4\n    - kali vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định",
+            "start": 936,
+            "end": 950,
+            "mtype": "TRIỆU_CHỨNG"
           },
           "output": {
             "isNegated": false,
@@ -4632,25 +5850,25 @@
         "agent": "assertion",
         "action": "complete",
         "data": {
-          "processed": 22,
+          "processed": 28,
           "llm_checked": 0
         }
       },
       {
         "agent": "orchestrator",
         "action": "assertion_complete",
-        "ts": 1784566594.3468547
+        "ts": 1784626519.067412
       },
       {
         "agent": "orchestrator",
         "action": "linking_start",
-        "ts": 1784566594.3468697
+        "ts": 1784626519.067454
       },
       {
         "agent": "linking",
         "action": "start",
         "data": {
-          "mentions": 22
+          "mentions": 28
         }
       },
       {
@@ -4690,7 +5908,7 @@
               "candidates": [
                 "E11.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung"
           },
@@ -4698,8 +5916,7 @@
             "candidates": [
               "E11.9"
             ],
-            "confidence": 0.85,
-            "rationale": "Mention 'Đái tháo đường type 2' chỉ ra bệnh lý mạn tính, không kèm biến chứng, phù hợp với mã E11.9."
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -4741,7 +5958,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhi"
           },
@@ -4749,8 +5966,53 @@
             "candidates": [
               "I10"
             ],
-            "confidence": 0.85,
-            "rationale": "Mention 'Tăng huyết áp' phù hợp với mã I10 (Bệnh tăng huyết áp vô căn - nguyên phát), đây là mã chẩn đoán chính xác và phổ biến nhất cho tình trạng tăng huyết áp không có nguyên nhân cụ thể được nêu trong context."
+            "confidence": 0.99
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "kali 80mEq",
+              "position": [
+                614,
+                624
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            "context": "tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa C"
+          },
+          "output": {
+            "candidates": [],
+            "confidence": 0.0
           },
           "result_type": "dict"
         }
@@ -4792,7 +6054,7 @@
               "candidates": [
                 "18631"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             },
             "context": "uay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 "
           },
@@ -4800,7 +6062,7 @@
             "candidates": [
               "18631"
             ],
-            "confidence": 0.95
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -4932,18 +6194,17 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E87.5"
+                "E87.6"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "i vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định"
           },
           "output": {
             "candidates": [
-              "E87.5"
+              "E87.6"
             ],
-            "confidence": 0.85,
-            "rationale": "Hạ kali máu được thể hiện qua các triệu chứng và thủ thuật điều trị trong context, mã E87.5 (Tăng kali máu - Thừa kali [K] - Quá tải kali [K]) là mã phù hợp nhất."
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -4985,7 +6246,7 @@
               "candidates": [
                 "J06.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định"
           },
@@ -4993,8 +6254,7 @@
             "candidates": [
               "J06.9"
             ],
-            "confidence": 0.85,
-            "rationale": "Mention 'nhiễm trùng đường hô hấp trên cấp' phù hợp với mã J06.9 (Nhiễm trùng đường hô hấp trên cấp tính, không xác định)."
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -5010,18 +6270,18 @@
         "agent": "orchestrator",
         "action": "linking_complete",
         "linked": 5,
-        "ts": 1784566645.966881
+        "ts": 1784626519.6085396
       },
       {
         "agent": "orchestrator",
         "action": "verification_start",
-        "ts": 1784566645.966896
+        "ts": 1784626519.6085653
       },
       {
         "agent": "verifier",
         "action": "start",
         "data": {
-          "mentions": 22
+          "mentions": 28
         }
       },
       {
@@ -5062,7 +6322,7 @@
                 "candidates": [
                   "E11.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "Tăng huyết áp",
@@ -5095,7 +6355,7 @@
                 "candidates": [
                   "I10"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "khó chịu chung",
@@ -5358,6 +6618,37 @@
                 }
               },
               {
+                "text": "kali 80mEq",
+                "position": [
+                  614,
+                  624
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [],
+                "link_confidence": 0.0
+              },
+              {
                 "text": "kali vẫn giảm xuống 2.2",
                 "position": [
                   718,
@@ -5416,7 +6707,151 @@
                 "candidates": [
                   "18631"
                 ],
-                "link_confidence": 0.95
+                "link_confidence": 0.99
+              },
+              {
+                "text": "nhiệt độ 97.5",
+                "position": [
+                  899,
+                  912
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "mạch 85",
+                "position": [
+                  914,
+                  921
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "nhịp thở 18",
+                "position": [
+                  923,
+                  934
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "huyết áp 14279",
+                "position": [
+                  936,
+                  950
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "spo2 96",
+                "position": [
+                  952,
+                  959
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
               },
               {
                 "text": "bình thường",
@@ -5615,9 +7050,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "E87.5"
+                  "E87.6"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "tiêu chảy",
@@ -5679,7 +7114,7 @@
                 "candidates": [
                   "J06.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               }
             ],
             "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhiều hơn\n    - đau đầu bên trái\n    - mệt mỏi\n    - tiêu chảy\n    Đặc điểm triệu chứng\n    - tiêu chảy: vài tuần tiêu chảy bùng nổ, vài lần mỗi ngày, chủ yếu là phân\n    - tiêu chảy: không thấy  phân đen, nhầy, máu đỏ tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 96 khi thở khí trời\n    - khám là bình thường\n    Kết quả xét nghiệm\n    - kali là 2.4\n    - kali vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định"
@@ -5715,6 +7150,38 @@
                 "action": "accept",
                 "fixes": [],
                 "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": [
+                  "no candidates"
+                ]
               },
               {
                 "action": "accept",
@@ -5833,7 +7300,7 @@
                 "candidates": [
                   "E11.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "Tăng huyết áp",
@@ -5866,7 +7333,7 @@
                 "candidates": [
                   "I10"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "khó chịu chung",
@@ -6129,6 +7596,37 @@
                 }
               },
               {
+                "text": "kali 80mEq",
+                "position": [
+                  614,
+                  624
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [],
+                "link_confidence": 0.0
+              },
+              {
                 "text": "kali vẫn giảm xuống 2.2",
                 "position": [
                   718,
@@ -6187,7 +7685,151 @@
                 "candidates": [
                   "18631"
                 ],
-                "link_confidence": 0.95
+                "link_confidence": 0.99
+              },
+              {
+                "text": "nhiệt độ 97.5",
+                "position": [
+                  899,
+                  912
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "mạch 85",
+                "position": [
+                  914,
+                  921
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "nhịp thở 18",
+                "position": [
+                  923,
+                  934
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "huyết áp 14279",
+                "position": [
+                  936,
+                  950
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "spo2 96",
+                "position": [
+                  952,
+                  959
+                ],
+                "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
               },
               {
                 "text": "bình thường",
@@ -6386,9 +8028,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "E87.5"
+                  "E87.6"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "tiêu chảy",
@@ -6450,7 +8092,7 @@
                 "candidates": [
                   "J06.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               }
             ],
             "dropped": 0
@@ -6462,22 +8104,22 @@
         "agent": "verifier",
         "action": "validated",
         "data": {
-          "kept": 22,
+          "kept": 28,
           "dropped": 0
         }
       },
       {
         "agent": "orchestrator",
         "action": "verification_complete",
-        "kept": 22,
-        "ts": 1784566651.2564793
+        "kept": 28,
+        "ts": 1784626520.2980316
       },
       {
         "agent": "orchestrator",
         "action": "complete",
-        "total_mentions": 22,
-        "elapsed": 78.4,
-        "ts": 1784566651.2564983
+        "total_mentions": 28,
+        "elapsed": 36.84,
+        "ts": 1784626520.2980738
       }
     ]
   },
@@ -6486,12 +8128,12 @@
       "agent": "orchestrator",
       "action": "start",
       "text_len": 1311,
-      "ts": 1784566572.860719
+      "ts": 1784626483.4571078
     },
     {
       "agent": "orchestrator",
       "action": "extraction_start",
-      "ts": 1784566572.8607295
+      "ts": 1784626483.457158
     },
     {
       "agent": "extraction",
@@ -6707,6 +8349,22 @@
               "extraction_source": "qwen"
             },
             {
+              "text": "kali 80mEq",
+              "position": [
+                614,
+                624
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
               "text": "kali vẫn giảm xuống 2.2",
               "position": [
                 718,
@@ -6733,6 +8391,86 @@
               "type_candidates": [
                 {
                   "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "nhiệt độ 97.5",
+              "position": [
+                899,
+                912
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "mạch 85",
+              "position": [
+                914,
+                921
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "nhịp thở 18",
+              "position": [
+                923,
+                934
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "huyết áp 14279",
+              "position": [
+                936,
+                950
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "spo2 96",
+              "position": [
+                952,
+                959
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
                   "score": 0.85
                 }
               ],
@@ -6878,9 +8616,9 @@
       "data": {
         "sources": {
           "rule": 1,
-          "qwen": 21
+          "qwen": 27
         },
-        "total": 22
+        "total": 28
       }
     },
     {
@@ -7067,6 +8805,22 @@
               "extraction_source": "qwen"
             },
             {
+              "text": "kali 80mEq",
+              "position": [
+                614,
+                624
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
               "text": "kali vẫn giảm xuống 2.2",
               "position": [
                 718,
@@ -7093,6 +8847,86 @@
               "type_candidates": [
                 {
                   "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "nhiệt độ 97.5",
+              "position": [
+                899,
+                912
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "mạch 85",
+              "position": [
+                914,
+                921
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "nhịp thở 18",
+              "position": [
+                923,
+                934
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "huyết áp 14279",
+              "position": [
+                936,
+                950
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "spo2 96",
+              "position": [
+                952,
+                959
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
                   "score": 0.85
                 }
               ],
@@ -7271,7 +9105,7 @@
             "candidates": [
               "E11.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "Tăng huyết áp",
@@ -7304,7 +9138,7 @@
             "candidates": [
               "I10"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "khó chịu chung",
@@ -7567,6 +9401,37 @@
             }
           },
           {
+            "text": "kali 80mEq",
+            "position": [
+              614,
+              624
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
             "text": "kali vẫn giảm xuống 2.2",
             "position": [
               718,
@@ -7625,7 +9490,151 @@
             "candidates": [
               "18631"
             ],
-            "link_confidence": 0.95
+            "link_confidence": 0.99
+          },
+          {
+            "text": "nhiệt độ 97.5",
+            "position": [
+              899,
+              912
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "mạch 85",
+            "position": [
+              914,
+              921
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "nhịp thở 18",
+            "position": [
+              923,
+              934
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "huyết áp 14279",
+            "position": [
+              936,
+              950
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "spo2 96",
+            "position": [
+              952,
+              959
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
           },
           {
             "text": "bình thường",
@@ -7824,9 +9833,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "E87.5"
+              "E87.6"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "tiêu chảy",
@@ -7888,7 +9897,7 @@
             "candidates": [
               "J06.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           }
         ],
         "result_type": "list"
@@ -7898,7 +9907,7 @@
       "agent": "extraction",
       "action": "voted",
       "data": {
-        "merged": 22
+        "merged": 28
       }
     },
     {
@@ -7939,7 +9948,7 @@
               "candidates": [
                 "E11.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Tăng huyết áp",
@@ -7972,7 +9981,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "khó chịu chung",
@@ -8235,6 +10244,37 @@
               }
             },
             {
+              "text": "kali 80mEq",
+              "position": [
+                614,
+                624
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
               "text": "kali vẫn giảm xuống 2.2",
               "position": [
                 718,
@@ -8293,7 +10333,151 @@
               "candidates": [
                 "18631"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
+            },
+            {
+              "text": "nhiệt độ 97.5",
+              "position": [
+                899,
+                912
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "mạch 85",
+              "position": [
+                914,
+                921
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nhịp thở 18",
+              "position": [
+                923,
+                934
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "huyết áp 14279",
+              "position": [
+                936,
+                950
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "spo2 96",
+              "position": [
+                952,
+                959
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
             },
             {
               "text": "bình thường",
@@ -8492,9 +10676,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E87.5"
+                "E87.6"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tiêu chảy",
@@ -8556,7 +10740,7 @@
               "candidates": [
                 "J06.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhiều hơn\n    - đau đầu bên trái\n    - mệt mỏi\n    - tiêu chảy\n    Đặc điểm triệu chứng\n    - tiêu chảy: vài tuần tiêu chảy bùng nổ, vài lần mỗi ngày, chủ yếu là phân\n    - tiêu chảy: không thấy  phân đen, nhầy, máu đỏ tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 96 khi thở khí trời\n    - khám là bình thường\n    Kết quả xét nghiệm\n    - kali là 2.4\n    - kali vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định"
@@ -8593,7 +10777,7 @@
             "candidates": [
               "E11.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "Tăng huyết áp",
@@ -8626,7 +10810,7 @@
             "candidates": [
               "I10"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "khó chịu chung",
@@ -8889,6 +11073,37 @@
             }
           },
           {
+            "text": "kali 80mEq",
+            "position": [
+              614,
+              624
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
             "text": "kali vẫn giảm xuống 2.2",
             "position": [
               718,
@@ -8947,7 +11162,151 @@
             "candidates": [
               "18631"
             ],
-            "link_confidence": 0.95
+            "link_confidence": 0.99
+          },
+          {
+            "text": "nhiệt độ 97.5",
+            "position": [
+              899,
+              912
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "mạch 85",
+            "position": [
+              914,
+              921
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "nhịp thở 18",
+            "position": [
+              923,
+              934
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "huyết áp 14279",
+            "position": [
+              936,
+              950
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "spo2 96",
+            "position": [
+              952,
+              959
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
           },
           {
             "text": "bình thường",
@@ -9146,9 +11505,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "E87.5"
+              "E87.6"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "tiêu chảy",
@@ -9210,7 +11569,7 @@
             "candidates": [
               "J06.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           }
         ],
         "result_type": "list"
@@ -9254,7 +11613,7 @@
               "candidates": [
                 "E11.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Tăng huyết áp",
@@ -9287,7 +11646,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "khó chịu chung",
@@ -9550,6 +11909,37 @@
               }
             },
             {
+              "text": "kali 80mEq",
+              "position": [
+                614,
+                624
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
               "text": "kali vẫn giảm xuống 2.2",
               "position": [
                 718,
@@ -9608,7 +11998,151 @@
               "candidates": [
                 "18631"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
+            },
+            {
+              "text": "nhiệt độ 97.5",
+              "position": [
+                899,
+                912
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "mạch 85",
+              "position": [
+                914,
+                921
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nhịp thở 18",
+              "position": [
+                923,
+                934
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "huyết áp 14279",
+              "position": [
+                936,
+                950
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "spo2 96",
+              "position": [
+                952,
+                959
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
             },
             {
               "text": "bình thường",
@@ -9807,9 +12341,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E87.5"
+                "E87.6"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tiêu chảy",
@@ -9871,7 +12405,7 @@
               "candidates": [
                 "J06.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhiều hơn\n    - đau đầu bên trái\n    - mệt mỏi\n    - tiêu chảy\n    Đặc điểm triệu chứng\n    - tiêu chảy: vài tuần tiêu chảy bùng nổ, vài lần mỗi ngày, chủ yếu là phân\n    - tiêu chảy: không thấy  phân đen, nhầy, máu đỏ tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 96 khi thở khí trời\n    - khám là bình thường\n    Kết quả xét nghiệm\n    - kali là 2.4\n    - kali vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định"
@@ -9908,7 +12442,7 @@
             "candidates": [
               "E11.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "Tăng huyết áp",
@@ -9941,7 +12475,7 @@
             "candidates": [
               "I10"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "khó chịu chung",
@@ -10204,6 +12738,37 @@
             }
           },
           {
+            "text": "kali 80mEq",
+            "position": [
+              614,
+              624
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
             "text": "kali vẫn giảm xuống 2.2",
             "position": [
               718,
@@ -10262,7 +12827,151 @@
             "candidates": [
               "18631"
             ],
-            "link_confidence": 0.95
+            "link_confidence": 0.99
+          },
+          {
+            "text": "nhiệt độ 97.5",
+            "position": [
+              899,
+              912
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "mạch 85",
+            "position": [
+              914,
+              921
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "nhịp thở 18",
+            "position": [
+              923,
+              934
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "huyết áp 14279",
+            "position": [
+              936,
+              950
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "spo2 96",
+            "position": [
+              952,
+              959
+            ],
+            "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
           },
           {
             "text": "bình thường",
@@ -10461,9 +13170,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "E87.5"
+              "E87.6"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "tiêu chảy",
@@ -10525,7 +13234,7 @@
             "candidates": [
               "J06.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           }
         ],
         "result_type": "list"
@@ -10548,19 +13257,19 @@
     {
       "agent": "orchestrator",
       "action": "extraction_complete",
-      "mentions": 22,
-      "ts": 1784566594.3455577
+      "mentions": 28,
+      "ts": 1784626519.06041
     },
     {
       "agent": "orchestrator",
       "action": "assertion_start",
-      "ts": 1784566594.3455703
+      "ts": 1784626519.0604513
     },
     {
       "agent": "assertion",
       "action": "start",
       "data": {
-        "mentions": 22
+        "mentions": 28
       }
     },
     {
@@ -10760,9 +13469,104 @@
         "tool": "rule_assert",
         "input": {
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhiều hơn\n    - đau đầu bên trái\n    - mệt mỏi\n    - tiêu chảy\n    Đặc điểm triệu chứng\n    - tiêu chảy: vài tuần tiêu chảy bùng nổ, vài lần mỗi ngày, chủ yếu là phân\n    - tiêu chảy: không thấy  phân đen, nhầy, máu đỏ tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 96 khi thở khí trời\n    - khám là bình thường\n    Kết quả xét nghiệm\n    - kali là 2.4\n    - kali vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định",
+          "start": 614,
+          "end": 624,
+          "mtype": "THUỐC"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhiều hơn\n    - đau đầu bên trái\n    - mệt mỏi\n    - tiêu chảy\n    Đặc điểm triệu chứng\n    - tiêu chảy: vài tuần tiêu chảy bùng nổ, vài lần mỗi ngày, chủ yếu là phân\n    - tiêu chảy: không thấy  phân đen, nhầy, máu đỏ tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 96 khi thở khí trời\n    - khám là bình thường\n    Kết quả xét nghiệm\n    - kali là 2.4\n    - kali vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định",
           "start": 795,
           "end": 807,
           "mtype": "THUỐC"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhiều hơn\n    - đau đầu bên trái\n    - mệt mỏi\n    - tiêu chảy\n    Đặc điểm triệu chứng\n    - tiêu chảy: vài tuần tiêu chảy bùng nổ, vài lần mỗi ngày, chủ yếu là phân\n    - tiêu chảy: không thấy  phân đen, nhầy, máu đỏ tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 96 khi thở khí trời\n    - khám là bình thường\n    Kết quả xét nghiệm\n    - kali là 2.4\n    - kali vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định",
+          "start": 899,
+          "end": 912,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhiều hơn\n    - đau đầu bên trái\n    - mệt mỏi\n    - tiêu chảy\n    Đặc điểm triệu chứng\n    - tiêu chảy: vài tuần tiêu chảy bùng nổ, vài lần mỗi ngày, chủ yếu là phân\n    - tiêu chảy: không thấy  phân đen, nhầy, máu đỏ tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 96 khi thở khí trời\n    - khám là bình thường\n    Kết quả xét nghiệm\n    - kali là 2.4\n    - kali vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định",
+          "start": 914,
+          "end": 921,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhiều hơn\n    - đau đầu bên trái\n    - mệt mỏi\n    - tiêu chảy\n    Đặc điểm triệu chứng\n    - tiêu chảy: vài tuần tiêu chảy bùng nổ, vài lần mỗi ngày, chủ yếu là phân\n    - tiêu chảy: không thấy  phân đen, nhầy, máu đỏ tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 96 khi thở khí trời\n    - khám là bình thường\n    Kết quả xét nghiệm\n    - kali là 2.4\n    - kali vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định",
+          "start": 923,
+          "end": 934,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhiều hơn\n    - đau đầu bên trái\n    - mệt mỏi\n    - tiêu chảy\n    Đặc điểm triệu chứng\n    - tiêu chảy: vài tuần tiêu chảy bùng nổ, vài lần mỗi ngày, chủ yếu là phân\n    - tiêu chảy: không thấy  phân đen, nhầy, máu đỏ tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 96 khi thở khí trời\n    - khám là bình thường\n    Kết quả xét nghiệm\n    - kali là 2.4\n    - kali vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định",
+          "start": 936,
+          "end": 950,
+          "mtype": "TRIỆU_CHỨNG"
         },
         "output": {
           "isNegated": false,
@@ -10871,25 +13675,25 @@
       "agent": "assertion",
       "action": "complete",
       "data": {
-        "processed": 22,
+        "processed": 28,
         "llm_checked": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "assertion_complete",
-      "ts": 1784566594.3468547
+      "ts": 1784626519.067412
     },
     {
       "agent": "orchestrator",
       "action": "linking_start",
-      "ts": 1784566594.3468697
+      "ts": 1784626519.067454
     },
     {
       "agent": "linking",
       "action": "start",
       "data": {
-        "mentions": 22
+        "mentions": 28
       }
     },
     {
@@ -10929,7 +13733,7 @@
             "candidates": [
               "E11.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung"
         },
@@ -10937,8 +13741,7 @@
           "candidates": [
             "E11.9"
           ],
-          "confidence": 0.85,
-          "rationale": "Mention 'Đái tháo đường type 2' chỉ ra bệnh lý mạn tính, không kèm biến chứng, phù hợp với mã E11.9."
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -10980,7 +13783,7 @@
             "candidates": [
               "I10"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhi"
         },
@@ -10988,8 +13791,53 @@
           "candidates": [
             "I10"
           ],
-          "confidence": 0.85,
-          "rationale": "Mention 'Tăng huyết áp' phù hợp với mã I10 (Bệnh tăng huyết áp vô căn - nguyên phát), đây là mã chẩn đoán chính xác và phổ biến nhất cho tình trạng tăng huyết áp không có nguyên nhân cụ thể được nêu trong context."
+          "confidence": 0.99
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "kali 80mEq",
+            "position": [
+              614,
+              624
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          "context": "tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa C"
+        },
+        "output": {
+          "candidates": [],
+          "confidence": 0.0
         },
         "result_type": "dict"
       }
@@ -11031,7 +13879,7 @@
             "candidates": [
               "18631"
             ],
-            "link_confidence": 0.95
+            "link_confidence": 0.99
           },
           "context": "uay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 "
         },
@@ -11039,7 +13887,7 @@
           "candidates": [
             "18631"
           ],
-          "confidence": 0.95
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -11171,18 +14019,17 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "E87.5"
+              "E87.6"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "i vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định"
         },
         "output": {
           "candidates": [
-            "E87.5"
+            "E87.6"
           ],
-          "confidence": 0.85,
-          "rationale": "Hạ kali máu được thể hiện qua các triệu chứng và thủ thuật điều trị trong context, mã E87.5 (Tăng kali máu - Thừa kali [K] - Quá tải kali [K]) là mã phù hợp nhất."
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -11224,7 +14071,7 @@
             "candidates": [
               "J06.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định"
         },
@@ -11232,8 +14079,7 @@
           "candidates": [
             "J06.9"
           ],
-          "confidence": 0.85,
-          "rationale": "Mention 'nhiễm trùng đường hô hấp trên cấp' phù hợp với mã J06.9 (Nhiễm trùng đường hô hấp trên cấp tính, không xác định)."
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -11249,18 +14095,18 @@
       "agent": "orchestrator",
       "action": "linking_complete",
       "linked": 5,
-      "ts": 1784566645.966881
+      "ts": 1784626519.6085396
     },
     {
       "agent": "orchestrator",
       "action": "verification_start",
-      "ts": 1784566645.966896
+      "ts": 1784626519.6085653
     },
     {
       "agent": "verifier",
       "action": "start",
       "data": {
-        "mentions": 22
+        "mentions": 28
       }
     },
     {
@@ -11301,7 +14147,7 @@
               "candidates": [
                 "E11.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Tăng huyết áp",
@@ -11334,7 +14180,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "khó chịu chung",
@@ -11597,6 +14443,37 @@
               }
             },
             {
+              "text": "kali 80mEq",
+              "position": [
+                614,
+                624
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
               "text": "kali vẫn giảm xuống 2.2",
               "position": [
                 718,
@@ -11655,7 +14532,151 @@
               "candidates": [
                 "18631"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
+            },
+            {
+              "text": "nhiệt độ 97.5",
+              "position": [
+                899,
+                912
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "mạch 85",
+              "position": [
+                914,
+                921
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nhịp thở 18",
+              "position": [
+                923,
+                934
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "huyết áp 14279",
+              "position": [
+                936,
+                950
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "spo2 96",
+              "position": [
+                952,
+                959
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
             },
             {
               "text": "bình thường",
@@ -11854,9 +14875,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E87.5"
+                "E87.6"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tiêu chảy",
@@ -11918,7 +14939,7 @@
               "candidates": [
                 "J06.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh lý mạn tính\n    - Đái tháo đường type 2\n    - Tăng huyết áp\n\n2.  Tiền sử bệnh hiện tại\n    Thời điểm khởi phát triệu chứng: 5 ngày qua\n    Triệu chứng hiện tại\n    - cảm thấy khó chịu chung\n    - nghẹt mũi nhiều hơn\n    - đau đầu bên trái\n    - mệt mỏi\n    - tiêu chảy\n    Đặc điểm triệu chứng\n    - tiêu chảy: vài tuần tiêu chảy bùng nổ, vài lần mỗi ngày, chủ yếu là phân\n    - tiêu chảy: không thấy  phân đen, nhầy, máu đỏ tươi hoặc dịch nhầy\n    Sự kiện trước khi nhập viện\n    - Khám tại phòng khám vào ngày, xét nghiệm thường quy cho thấy kali là 2.4\n    - Được bổ sung kali 80mEq trong 24 giờ\n    - Quay lại để làm lại xét nghiệm vào ngày\n    - Lặp lại xét nghiệm cho thấy kali vẫn giảm xuống 2.2\n    - Được giới thiệu đến Khoa Cấp cứu\n    - Được kê azithromycin vào ngày\n\n3.  Đánh giá tại bệnh viện\n    Kết quả khám thực thể\n    - Khi đến Khoa Cấp cứu, nhiệt độ 97.5, mạch 85, nhịp thở 18, huyết áp 14279, spo2 96 khi thở khí trời\n    - khám là bình thường\n    Kết quả xét nghiệm\n    - kali là 2.4\n    - kali vẫn giảm xuống 2.2\n    - kali dai dẳng 2.2\n    Thủ thuật đã thực hiện\n    - Nhận 40meq po k\n    - Nhận 40meq iv k\n    Các phát hiện chẩn đoán khác: hạ kali máu rõ rệt trong bối cảnh tiêu chảy và có khả năng nhiễm trùng đường hô hấp trên cấp, không xác định"
@@ -11954,6 +14975,38 @@
               "action": "accept",
               "fixes": [],
               "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": [
+                "no candidates"
+              ]
             },
             {
               "action": "accept",
@@ -12072,7 +15125,7 @@
               "candidates": [
                 "E11.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Tăng huyết áp",
@@ -12105,7 +15158,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "khó chịu chung",
@@ -12368,6 +15421,37 @@
               }
             },
             {
+              "text": "kali 80mEq",
+              "position": [
+                614,
+                624
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
               "text": "kali vẫn giảm xuống 2.2",
               "position": [
                 718,
@@ -12426,7 +15510,151 @@
               "candidates": [
                 "18631"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
+            },
+            {
+              "text": "nhiệt độ 97.5",
+              "position": [
+                899,
+                912
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "mạch 85",
+              "position": [
+                914,
+                921
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nhịp thở 18",
+              "position": [
+                923,
+                934
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "huyết áp 14279",
+              "position": [
+                936,
+                950
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "spo2 96",
+              "position": [
+                952,
+                959
+              ],
+              "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "KẾT_QUẢ_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
             },
             {
               "text": "bình thường",
@@ -12625,9 +15853,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E87.5"
+                "E87.6"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tiêu chảy",
@@ -12689,7 +15917,7 @@
               "candidates": [
                 "J06.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "dropped": 0
@@ -12701,22 +15929,22 @@
       "agent": "verifier",
       "action": "validated",
       "data": {
-        "kept": 22,
+        "kept": 28,
         "dropped": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "verification_complete",
-      "kept": 22,
-      "ts": 1784566651.2564793
+      "kept": 28,
+      "ts": 1784626520.2980316
     },
     {
       "agent": "orchestrator",
       "action": "complete",
-      "total_mentions": 22,
-      "elapsed": 78.4,
-      "ts": 1784566651.2564983
+      "total_mentions": 28,
+      "elapsed": 36.84,
+      "ts": 1784626520.2980738
     }
   ]
 }

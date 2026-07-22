@@ -1,16 +1,16 @@
 {
   "file_id": "66",
-  "timestamp": 1784566915.8069777,
-  "elapsed": 160.89,
+  "timestamp": 1784626744.1637676,
+  "elapsed": 102.47,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 29,
+  "mention_count": 31,
   "stats": {
-    "total_mentions": 29,
-    "final": 29,
+    "total_mentions": 31,
+    "final": 31,
     "validation_errors": 0,
-    "elapsed": 160.89,
+    "elapsed": 102.47,
     "rule": 16,
-    "qwen": 23
+    "qwen": 26
   },
   "log_summary": [
     {
@@ -129,9 +129,39 @@
     },
     {
       "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -202,7 +232,7 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784566915.8068004,
+      "ts": 1784626744.1633756,
       "tool": null
     }
   ],
@@ -218,7 +248,7 @@
         86
       ],
       "candidates": [
-        "E10"
+        "E10.9"
       ]
     },
     {
@@ -260,15 +290,27 @@
         157
       ],
       "candidates": [
-        "E65"
+        "E66.9"
+      ]
+    },
+    {
+      "text": "Nhiễm trùng đường tiết niệu",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        164,
+        191
+      ],
+      "candidates": [
+        "O23.9"
       ]
     },
     {
       "text": "đau bàn chân phải",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isHistorical"
-      ],
+      "assertions": [],
       "position": [
         307,
         324
@@ -301,7 +343,7 @@
         485
       ],
       "candidates": [
-        "N11.1"
+        "N12"
       ]
     },
     {
@@ -313,7 +355,19 @@
         502
       ],
       "candidates": [
-        "J20.6"
+        "J40"
+      ]
+    },
+    {
+      "text": "ertapenem",
+      "type": "THUỐC",
+      "assertions": [],
+      "position": [
+        587,
+        596
+      ],
+      "candidates": [
+        "325642"
       ]
     },
     {
@@ -416,12 +470,12 @@
       ]
     },
     {
-      "text": "phân tích nước tiểu",
+      "text": "ua (urinalysis - tổng phân tích nước tiểu)",
       "type": "TÊN_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
-        1055,
-        1074
+        1033,
+        1075
       ]
     },
     {
@@ -471,13 +525,16 @@
     },
     {
       "text": "gãy xương",
-      "type": "TRIỆU_CHỨNG",
+      "type": "CHẨN_ĐOÁN",
       "assertions": [
         "isNegated"
       ],
       "position": [
         1329,
         1338
+      ],
+      "candidates": [
+        "T14.2"
       ]
     },
     {
@@ -491,19 +548,21 @@
         1358
       ],
       "candidates": [
-        "M86.1"
+        "M86.9"
       ]
     },
     {
       "text": "huyết khối tĩnh mạch sâu",
       "type": "CHẨN_ĐOÁN",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         1386,
         1410
       ],
       "candidates": [
-        "I82"
+        "I82.4"
       ]
     }
   ]

@@ -1,22 +1,11 @@
 {
   "file_id": "98",
-  "timestamp": 1784567178.1716192,
-  "elapsed": 23.03,
+  "timestamp": 1784627008.7889206,
+  "elapsed": 16.76,
   "model": "bibocat/qwen3-ner-grpo-final",
   "result": {
     "note_id": "98",
     "mentions": [
-      {
-        "text": "ho",
-        "type": "TRIỆU_CHỨNG",
-        "assertions": [
-          "isHistorical"
-        ],
-        "position": [
-          22,
-          24
-        ]
-      },
       {
         "text": "tăng huyết áp",
         "type": "CHẨN_ĐOÁN",
@@ -77,24 +66,24 @@
       "warnings": []
     },
     "stats": {
-      "total_mentions": 6,
-      "final": 6,
+      "total_mentions": 5,
+      "final": 5,
       "validation_errors": 0,
-      "elapsed": 23.03,
+      "elapsed": 16.76,
       "rule": 1,
-      "qwen": 6
+      "qwen": 5
     },
     "logs": [
       {
         "agent": "orchestrator",
         "action": "start",
         "text_len": 499,
-        "ts": 1784567155.1407537
+        "ts": 1784626992.0258117
       },
       {
         "agent": "orchestrator",
         "action": "extraction_start",
-        "ts": 1784567155.1407633
+        "ts": 1784626992.0258296
       },
       {
         "agent": "extraction",
@@ -133,22 +122,6 @@
               }
             ],
             "qwen": [
-              {
-                "text": "ho",
-                "position": [
-                  22,
-                  24
-                ],
-                "type": "TRIỆU_CHỨNG",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen"
-              },
               {
                 "text": "tăng huyết áp",
                 "position": [
@@ -241,9 +214,9 @@
         "data": {
           "sources": {
             "rule": 1,
-            "qwen": 6
+            "qwen": 5
           },
-          "total": 7
+          "total": 6
         }
       },
       {
@@ -253,22 +226,6 @@
           "tool": "vote_merge",
           "input": {
             "all_mentions": [
-              {
-                "text": "ho",
-                "position": [
-                  22,
-                  24
-                ],
-                "type": "TRIỆU_CHỨNG",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen"
-              },
               {
                 "text": "tăng huyết áp",
                 "position": [
@@ -364,35 +321,6 @@
           },
           "output": [
             {
-              "text": "ho",
-              "position": [
-                22,
-                24
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.85
-            },
-            {
               "text": "tăng huyết áp",
               "position": [
                 53,
@@ -423,7 +351,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ho",
@@ -545,7 +473,7 @@
               "candidates": [
                 "C90.0"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "result_type": "list"
@@ -555,7 +483,7 @@
         "agent": "extraction",
         "action": "voted",
         "data": {
-          "merged": 6
+          "merged": 5
         }
       },
       {
@@ -565,35 +493,6 @@
           "tool": "resolve_conflicts",
           "input": {
             "merged": [
-              {
-                "text": "ho",
-                "position": [
-                  22,
-                  24
-                ],
-                "type": "TRIỆU_CHỨNG",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": true
-                },
-                "assertion_confidence": 0.85
-              },
               {
                 "text": "tăng huyết áp",
                 "position": [
@@ -625,7 +524,7 @@
                 "candidates": [
                   "I10"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "ho",
@@ -747,41 +646,12 @@
                 "candidates": [
                   "C90.0"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               }
             ],
             "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mãn tính: tiền sử tăng huyết áp\n2.  Bệnh sử\nLý do nhập viện: Theo hẹn hóa trị huy động tế bào gốc.\n    Triệu chứng hiện tại\n    - ho\n    - đau lưng\n    Cận lâm sàng  trước khi nhập viện\n    - phim chụp CT hình ảnh tổn thương tiêu xương lan tỏa phù hợp với đa u tuỷ xương\n    - Xét nghiệm : Định lượng IgA tăng cao trong bệnh đa u tuỷ xương\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: các tổn thương ổ tiêu xương lan tỏa\n    Chẩn đoán: Đa u tủy xương"
           },
           "output": [
-            {
-              "text": "ho",
-              "position": [
-                22,
-                24
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.85
-            },
             {
               "text": "tăng huyết áp",
               "position": [
@@ -813,7 +683,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ho",
@@ -935,7 +805,7 @@
               "candidates": [
                 "C90.0"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "result_type": "list"
@@ -949,35 +819,6 @@
           "input": {
             "mentions": [
               {
-                "text": "ho",
-                "position": [
-                  22,
-                  24
-                ],
-                "type": "TRIỆU_CHỨNG",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": true
-                },
-                "assertion_confidence": 0.85
-              },
-              {
                 "text": "tăng huyết áp",
                 "position": [
                   53,
@@ -1008,7 +849,7 @@
                 "candidates": [
                   "I10"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "ho",
@@ -1130,41 +971,12 @@
                 "candidates": [
                   "C90.0"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               }
             ],
             "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mãn tính: tiền sử tăng huyết áp\n2.  Bệnh sử\nLý do nhập viện: Theo hẹn hóa trị huy động tế bào gốc.\n    Triệu chứng hiện tại\n    - ho\n    - đau lưng\n    Cận lâm sàng  trước khi nhập viện\n    - phim chụp CT hình ảnh tổn thương tiêu xương lan tỏa phù hợp với đa u tuỷ xương\n    - Xét nghiệm : Định lượng IgA tăng cao trong bệnh đa u tuỷ xương\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: các tổn thương ổ tiêu xương lan tỏa\n    Chẩn đoán: Đa u tủy xương"
           },
           "output": [
-            {
-              "text": "ho",
-              "position": [
-                22,
-                24
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.85
-            },
             {
               "text": "tăng huyết áp",
               "position": [
@@ -1196,7 +1008,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ho",
@@ -1318,7 +1130,7 @@
               "candidates": [
                 "C90.0"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "result_type": "list"
@@ -1341,38 +1153,19 @@
       {
         "agent": "orchestrator",
         "action": "extraction_complete",
-        "mentions": 6,
-        "ts": 1784567162.758396
+        "mentions": 5,
+        "ts": 1784627008.588193
       },
       {
         "agent": "orchestrator",
         "action": "assertion_start",
-        "ts": 1784567162.7584124
+        "ts": 1784627008.5882204
       },
       {
         "agent": "assertion",
         "action": "start",
         "data": {
-          "mentions": 6
-        }
-      },
-      {
-        "agent": "assertion",
-        "action": "tool_call",
-        "data": {
-          "tool": "rule_assert",
-          "input": {
-            "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mãn tính: tiền sử tăng huyết áp\n2.  Bệnh sử\nLý do nhập viện: Theo hẹn hóa trị huy động tế bào gốc.\n    Triệu chứng hiện tại\n    - ho\n    - đau lưng\n    Cận lâm sàng  trước khi nhập viện\n    - phim chụp CT hình ảnh tổn thương tiêu xương lan tỏa phù hợp với đa u tuỷ xương\n    - Xét nghiệm : Định lượng IgA tăng cao trong bệnh đa u tuỷ xương\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: các tổn thương ổ tiêu xương lan tỏa\n    Chẩn đoán: Đa u tủy xương",
-            "start": 22,
-            "end": 24,
-            "mtype": "TRIỆU_CHỨNG"
-          },
-          "output": {
-            "isNegated": false,
-            "isFamily": false,
-            "isHistorical": true
-          },
-          "result_type": "dict"
+          "mentions": 5
         }
       },
       {
@@ -1455,25 +1248,25 @@
         "agent": "assertion",
         "action": "complete",
         "data": {
-          "processed": 6,
+          "processed": 5,
           "llm_checked": 0
         }
       },
       {
         "agent": "orchestrator",
         "action": "assertion_complete",
-        "ts": 1784567162.758785
+        "ts": 1784627008.5888126
       },
       {
         "agent": "orchestrator",
         "action": "linking_start",
-        "ts": 1784567162.7587965
+        "ts": 1784627008.5888271
       },
       {
         "agent": "linking",
         "action": "start",
         "data": {
-          "mentions": 6
+          "mentions": 5
         }
       },
       {
@@ -1513,7 +1306,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "1.  Tiền sử bệnh nội khoa\n    Bệnh mãn tính: tiền sử tăng huyết áp\n2.  Bệnh sử\nLý do nhập viện: Theo hẹn hóa trị huy động tế bào gốc.\n    Triệu chứng hiện tại\n    - ho\n    - đau lưng\n    Cận lâm sàng  trước khi nhập "
           },
@@ -1521,8 +1314,7 @@
             "candidates": [
               "I10"
             ],
-            "confidence": 0.85,
-            "rationale": "Mention 'tăng huyết áp' phù hợp với mã I10 (Bệnh tăng huyết áp vô căn - nguyên phát), đây là mã chẩn đoán chính xác và phổ biến nhất cho tình trạng tăng huyết áp không có nguyên nhân cụ thể được nêu trong context."
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -1564,7 +1356,7 @@
               "candidates": [
                 "C90.0"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": " IgA tăng cao trong bệnh đa u tuỷ xương\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: các tổn thương ổ tiêu xương lan tỏa\n    Chẩn đoán: Đa u tủy xương"
           },
@@ -1572,8 +1364,7 @@
             "candidates": [
               "C90.0"
             ],
-            "confidence": 0.85,
-            "rationale": "Mention 'Đa u tủy xương' trực tiếp tương ứng với mã C90.0 trong danh sách, đây là mã chẩn đoán chính xác cho tình trạng bệnh lý này."
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -1589,18 +1380,18 @@
         "agent": "orchestrator",
         "action": "linking_complete",
         "linked": 2,
-        "ts": 1784567178.0854914
+        "ts": 1784627008.5889397
       },
       {
         "agent": "orchestrator",
         "action": "verification_start",
-        "ts": 1784567178.085507
+        "ts": 1784627008.5889535
       },
       {
         "agent": "verifier",
         "action": "start",
         "data": {
-          "mentions": 6
+          "mentions": 5
         }
       },
       {
@@ -1610,35 +1401,6 @@
           "tool": "verify_schema",
           "input": {
             "mentions": [
-              {
-                "text": "ho",
-                "position": [
-                  22,
-                  24
-                ],
-                "type": "TRIỆU_CHỨNG",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": true
-                },
-                "assertion_confidence": 0.85
-              },
               {
                 "text": "tăng huyết áp",
                 "position": [
@@ -1670,7 +1432,7 @@
                 "candidates": [
                   "I10"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "ho",
@@ -1792,7 +1554,7 @@
                 "candidates": [
                   "C90.0"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               }
             ],
             "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mãn tính: tiền sử tăng huyết áp\n2.  Bệnh sử\nLý do nhập viện: Theo hẹn hóa trị huy động tế bào gốc.\n    Triệu chứng hiện tại\n    - ho\n    - đau lưng\n    Cận lâm sàng  trước khi nhập viện\n    - phim chụp CT hình ảnh tổn thương tiêu xương lan tỏa phù hợp với đa u tuỷ xương\n    - Xét nghiệm : Định lượng IgA tăng cao trong bệnh đa u tuỷ xương\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: các tổn thương ổ tiêu xương lan tỏa\n    Chẩn đoán: Đa u tủy xương"
@@ -1823,43 +1585,9 @@
                 "action": "accept",
                 "fixes": [],
                 "warnings": []
-              },
-              {
-                "action": "accept",
-                "fixes": [],
-                "warnings": []
               }
             ],
             "final_predictions": [
-              {
-                "text": "ho",
-                "position": [
-                  22,
-                  24
-                ],
-                "type": "TRIỆU_CHỨNG",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": true
-                },
-                "assertion_confidence": 0.85
-              },
               {
                 "text": "tăng huyết áp",
                 "position": [
@@ -1891,7 +1619,7 @@
                 "candidates": [
                   "I10"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "ho",
@@ -2013,7 +1741,7 @@
                 "candidates": [
                   "C90.0"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               }
             ],
             "dropped": 0
@@ -2025,22 +1753,22 @@
         "agent": "verifier",
         "action": "validated",
         "data": {
-          "kept": 6,
+          "kept": 5,
           "dropped": 0
         }
       },
       {
         "agent": "orchestrator",
         "action": "verification_complete",
-        "kept": 6,
-        "ts": 1784567178.1715283
+        "kept": 5,
+        "ts": 1784627008.7887065
       },
       {
         "agent": "orchestrator",
         "action": "complete",
-        "total_mentions": 6,
-        "elapsed": 23.03,
-        "ts": 1784567178.1715484
+        "total_mentions": 5,
+        "elapsed": 16.76,
+        "ts": 1784627008.7887554
       }
     ]
   },
@@ -2049,12 +1777,12 @@
       "agent": "orchestrator",
       "action": "start",
       "text_len": 499,
-      "ts": 1784567155.1407537
+      "ts": 1784626992.0258117
     },
     {
       "agent": "orchestrator",
       "action": "extraction_start",
-      "ts": 1784567155.1407633
+      "ts": 1784626992.0258296
     },
     {
       "agent": "extraction",
@@ -2093,22 +1821,6 @@
             }
           ],
           "qwen": [
-            {
-              "text": "ho",
-              "position": [
-                22,
-                24
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen"
-            },
             {
               "text": "tăng huyết áp",
               "position": [
@@ -2201,9 +1913,9 @@
       "data": {
         "sources": {
           "rule": 1,
-          "qwen": 6
+          "qwen": 5
         },
-        "total": 7
+        "total": 6
       }
     },
     {
@@ -2213,22 +1925,6 @@
         "tool": "vote_merge",
         "input": {
           "all_mentions": [
-            {
-              "text": "ho",
-              "position": [
-                22,
-                24
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen"
-            },
             {
               "text": "tăng huyết áp",
               "position": [
@@ -2324,35 +2020,6 @@
         },
         "output": [
           {
-            "text": "ho",
-            "position": [
-              22,
-              24
-            ],
-            "type": "TRIỆU_CHỨNG",
-            "source": "qwen",
-            "type_candidates": [
-              {
-                "label": "TRIỆU_CHỨNG",
-                "score": 0.85
-              }
-            ],
-            "extraction_source": "qwen",
-            "vote_count": 1,
-            "voters": {
-              "qwen": 1
-            },
-            "confidence": 0.5,
-            "needs_review": false,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": true
-            },
-            "assertion_confidence": 0.85
-          },
-          {
             "text": "tăng huyết áp",
             "position": [
               53,
@@ -2383,7 +2050,7 @@
             "candidates": [
               "I10"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "ho",
@@ -2505,7 +2172,7 @@
             "candidates": [
               "C90.0"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           }
         ],
         "result_type": "list"
@@ -2515,7 +2182,7 @@
       "agent": "extraction",
       "action": "voted",
       "data": {
-        "merged": 6
+        "merged": 5
       }
     },
     {
@@ -2525,35 +2192,6 @@
         "tool": "resolve_conflicts",
         "input": {
           "merged": [
-            {
-              "text": "ho",
-              "position": [
-                22,
-                24
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.85
-            },
             {
               "text": "tăng huyết áp",
               "position": [
@@ -2585,7 +2223,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ho",
@@ -2707,41 +2345,12 @@
               "candidates": [
                 "C90.0"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mãn tính: tiền sử tăng huyết áp\n2.  Bệnh sử\nLý do nhập viện: Theo hẹn hóa trị huy động tế bào gốc.\n    Triệu chứng hiện tại\n    - ho\n    - đau lưng\n    Cận lâm sàng  trước khi nhập viện\n    - phim chụp CT hình ảnh tổn thương tiêu xương lan tỏa phù hợp với đa u tuỷ xương\n    - Xét nghiệm : Định lượng IgA tăng cao trong bệnh đa u tuỷ xương\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: các tổn thương ổ tiêu xương lan tỏa\n    Chẩn đoán: Đa u tủy xương"
         },
         "output": [
-          {
-            "text": "ho",
-            "position": [
-              22,
-              24
-            ],
-            "type": "TRIỆU_CHỨNG",
-            "source": "qwen",
-            "type_candidates": [
-              {
-                "label": "TRIỆU_CHỨNG",
-                "score": 0.85
-              }
-            ],
-            "extraction_source": "qwen",
-            "vote_count": 1,
-            "voters": {
-              "qwen": 1
-            },
-            "confidence": 0.5,
-            "needs_review": false,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": true
-            },
-            "assertion_confidence": 0.85
-          },
           {
             "text": "tăng huyết áp",
             "position": [
@@ -2773,7 +2382,7 @@
             "candidates": [
               "I10"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "ho",
@@ -2895,7 +2504,7 @@
             "candidates": [
               "C90.0"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           }
         ],
         "result_type": "list"
@@ -2909,35 +2518,6 @@
         "input": {
           "mentions": [
             {
-              "text": "ho",
-              "position": [
-                22,
-                24
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.85
-            },
-            {
               "text": "tăng huyết áp",
               "position": [
                 53,
@@ -2968,7 +2548,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ho",
@@ -3090,41 +2670,12 @@
               "candidates": [
                 "C90.0"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mãn tính: tiền sử tăng huyết áp\n2.  Bệnh sử\nLý do nhập viện: Theo hẹn hóa trị huy động tế bào gốc.\n    Triệu chứng hiện tại\n    - ho\n    - đau lưng\n    Cận lâm sàng  trước khi nhập viện\n    - phim chụp CT hình ảnh tổn thương tiêu xương lan tỏa phù hợp với đa u tuỷ xương\n    - Xét nghiệm : Định lượng IgA tăng cao trong bệnh đa u tuỷ xương\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: các tổn thương ổ tiêu xương lan tỏa\n    Chẩn đoán: Đa u tủy xương"
         },
         "output": [
-          {
-            "text": "ho",
-            "position": [
-              22,
-              24
-            ],
-            "type": "TRIỆU_CHỨNG",
-            "source": "qwen",
-            "type_candidates": [
-              {
-                "label": "TRIỆU_CHỨNG",
-                "score": 0.85
-              }
-            ],
-            "extraction_source": "qwen",
-            "vote_count": 1,
-            "voters": {
-              "qwen": 1
-            },
-            "confidence": 0.5,
-            "needs_review": false,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": true
-            },
-            "assertion_confidence": 0.85
-          },
           {
             "text": "tăng huyết áp",
             "position": [
@@ -3156,7 +2707,7 @@
             "candidates": [
               "I10"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "ho",
@@ -3278,7 +2829,7 @@
             "candidates": [
               "C90.0"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           }
         ],
         "result_type": "list"
@@ -3301,38 +2852,19 @@
     {
       "agent": "orchestrator",
       "action": "extraction_complete",
-      "mentions": 6,
-      "ts": 1784567162.758396
+      "mentions": 5,
+      "ts": 1784627008.588193
     },
     {
       "agent": "orchestrator",
       "action": "assertion_start",
-      "ts": 1784567162.7584124
+      "ts": 1784627008.5882204
     },
     {
       "agent": "assertion",
       "action": "start",
       "data": {
-        "mentions": 6
-      }
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "data": {
-        "tool": "rule_assert",
-        "input": {
-          "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mãn tính: tiền sử tăng huyết áp\n2.  Bệnh sử\nLý do nhập viện: Theo hẹn hóa trị huy động tế bào gốc.\n    Triệu chứng hiện tại\n    - ho\n    - đau lưng\n    Cận lâm sàng  trước khi nhập viện\n    - phim chụp CT hình ảnh tổn thương tiêu xương lan tỏa phù hợp với đa u tuỷ xương\n    - Xét nghiệm : Định lượng IgA tăng cao trong bệnh đa u tuỷ xương\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: các tổn thương ổ tiêu xương lan tỏa\n    Chẩn đoán: Đa u tủy xương",
-          "start": 22,
-          "end": 24,
-          "mtype": "TRIỆU_CHỨNG"
-        },
-        "output": {
-          "isNegated": false,
-          "isFamily": false,
-          "isHistorical": true
-        },
-        "result_type": "dict"
+        "mentions": 5
       }
     },
     {
@@ -3415,25 +2947,25 @@
       "agent": "assertion",
       "action": "complete",
       "data": {
-        "processed": 6,
+        "processed": 5,
         "llm_checked": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "assertion_complete",
-      "ts": 1784567162.758785
+      "ts": 1784627008.5888126
     },
     {
       "agent": "orchestrator",
       "action": "linking_start",
-      "ts": 1784567162.7587965
+      "ts": 1784627008.5888271
     },
     {
       "agent": "linking",
       "action": "start",
       "data": {
-        "mentions": 6
+        "mentions": 5
       }
     },
     {
@@ -3473,7 +3005,7 @@
             "candidates": [
               "I10"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "1.  Tiền sử bệnh nội khoa\n    Bệnh mãn tính: tiền sử tăng huyết áp\n2.  Bệnh sử\nLý do nhập viện: Theo hẹn hóa trị huy động tế bào gốc.\n    Triệu chứng hiện tại\n    - ho\n    - đau lưng\n    Cận lâm sàng  trước khi nhập "
         },
@@ -3481,8 +3013,7 @@
           "candidates": [
             "I10"
           ],
-          "confidence": 0.85,
-          "rationale": "Mention 'tăng huyết áp' phù hợp với mã I10 (Bệnh tăng huyết áp vô căn - nguyên phát), đây là mã chẩn đoán chính xác và phổ biến nhất cho tình trạng tăng huyết áp không có nguyên nhân cụ thể được nêu trong context."
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -3524,7 +3055,7 @@
             "candidates": [
               "C90.0"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": " IgA tăng cao trong bệnh đa u tuỷ xương\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: các tổn thương ổ tiêu xương lan tỏa\n    Chẩn đoán: Đa u tủy xương"
         },
@@ -3532,8 +3063,7 @@
           "candidates": [
             "C90.0"
           ],
-          "confidence": 0.85,
-          "rationale": "Mention 'Đa u tủy xương' trực tiếp tương ứng với mã C90.0 trong danh sách, đây là mã chẩn đoán chính xác cho tình trạng bệnh lý này."
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -3549,18 +3079,18 @@
       "agent": "orchestrator",
       "action": "linking_complete",
       "linked": 2,
-      "ts": 1784567178.0854914
+      "ts": 1784627008.5889397
     },
     {
       "agent": "orchestrator",
       "action": "verification_start",
-      "ts": 1784567178.085507
+      "ts": 1784627008.5889535
     },
     {
       "agent": "verifier",
       "action": "start",
       "data": {
-        "mentions": 6
+        "mentions": 5
       }
     },
     {
@@ -3570,35 +3100,6 @@
         "tool": "verify_schema",
         "input": {
           "mentions": [
-            {
-              "text": "ho",
-              "position": [
-                22,
-                24
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.85
-            },
             {
               "text": "tăng huyết áp",
               "position": [
@@ -3630,7 +3131,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ho",
@@ -3752,7 +3253,7 @@
               "candidates": [
                 "C90.0"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "text": "1.  Tiền sử bệnh nội khoa\n    Bệnh mãn tính: tiền sử tăng huyết áp\n2.  Bệnh sử\nLý do nhập viện: Theo hẹn hóa trị huy động tế bào gốc.\n    Triệu chứng hiện tại\n    - ho\n    - đau lưng\n    Cận lâm sàng  trước khi nhập viện\n    - phim chụp CT hình ảnh tổn thương tiêu xương lan tỏa phù hợp với đa u tuỷ xương\n    - Xét nghiệm : Định lượng IgA tăng cao trong bệnh đa u tuỷ xương\n3.  Đánh giá tại bệnh viện\n    Kết quả chẩn đoán hình ảnh: các tổn thương ổ tiêu xương lan tỏa\n    Chẩn đoán: Đa u tủy xương"
@@ -3783,43 +3284,9 @@
               "action": "accept",
               "fixes": [],
               "warnings": []
-            },
-            {
-              "action": "accept",
-              "fixes": [],
-              "warnings": []
             }
           ],
           "final_predictions": [
-            {
-              "text": "ho",
-              "position": [
-                22,
-                24
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.85
-            },
             {
               "text": "tăng huyết áp",
               "position": [
@@ -3851,7 +3318,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ho",
@@ -3973,7 +3440,7 @@
               "candidates": [
                 "C90.0"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "dropped": 0
@@ -3985,22 +3452,22 @@
       "agent": "verifier",
       "action": "validated",
       "data": {
-        "kept": 6,
+        "kept": 5,
         "dropped": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "verification_complete",
-      "kept": 6,
-      "ts": 1784567178.1715283
+      "kept": 5,
+      "ts": 1784627008.7887065
     },
     {
       "agent": "orchestrator",
       "action": "complete",
-      "total_mentions": 6,
-      "elapsed": 23.03,
-      "ts": 1784567178.1715484
+      "total_mentions": 5,
+      "elapsed": 16.76,
+      "ts": 1784627008.7887554
     }
   ]
 }

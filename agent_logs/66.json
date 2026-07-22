@@ -1,7 +1,7 @@
 {
   "file_id": "66",
-  "timestamp": 1784566915.8069777,
-  "elapsed": 160.89,
+  "timestamp": 1784626744.1637676,
+  "elapsed": 102.47,
   "model": "bibocat/qwen3-ner-grpo-final",
   "result": {
     "note_id": "66",
@@ -17,7 +17,7 @@
           86
         ],
         "candidates": [
-          "E10"
+          "E10.9"
         ]
       },
       {
@@ -59,15 +59,27 @@
           157
         ],
         "candidates": [
-          "E65"
+          "E66.9"
+        ]
+      },
+      {
+        "text": "Nhiễm trùng đường tiết niệu",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          164,
+          191
+        ],
+        "candidates": [
+          "O23.9"
         ]
       },
       {
         "text": "đau bàn chân phải",
         "type": "TRIỆU_CHỨNG",
-        "assertions": [
-          "isHistorical"
-        ],
+        "assertions": [],
         "position": [
           307,
           324
@@ -100,7 +112,7 @@
           485
         ],
         "candidates": [
-          "N11.1"
+          "N12"
         ]
       },
       {
@@ -112,7 +124,19 @@
           502
         ],
         "candidates": [
-          "J20.6"
+          "J40"
+        ]
+      },
+      {
+        "text": "ertapenem",
+        "type": "THUỐC",
+        "assertions": [],
+        "position": [
+          587,
+          596
+        ],
+        "candidates": [
+          "325642"
         ]
       },
       {
@@ -215,12 +239,12 @@
         ]
       },
       {
-        "text": "phân tích nước tiểu",
+        "text": "ua (urinalysis - tổng phân tích nước tiểu)",
         "type": "TÊN_XÉT_NGHIỆM",
         "assertions": [],
         "position": [
-          1055,
-          1074
+          1033,
+          1075
         ]
       },
       {
@@ -270,13 +294,16 @@
       },
       {
         "text": "gãy xương",
-        "type": "TRIỆU_CHỨNG",
+        "type": "CHẨN_ĐOÁN",
         "assertions": [
           "isNegated"
         ],
         "position": [
           1329,
           1338
+        ],
+        "candidates": [
+          "T14.2"
         ]
       },
       {
@@ -290,19 +317,21 @@
           1358
         ],
         "candidates": [
-          "M86.1"
+          "M86.9"
         ]
       },
       {
         "text": "huyết khối tĩnh mạch sâu",
         "type": "CHẨN_ĐOÁN",
-        "assertions": [],
+        "assertions": [
+          "isNegated"
+        ],
         "position": [
           1386,
           1410
         ],
         "candidates": [
-          "I82"
+          "I82.4"
         ]
       }
     ],
@@ -312,24 +341,24 @@
       "warnings": []
     },
     "stats": {
-      "total_mentions": 29,
-      "final": 29,
+      "total_mentions": 31,
+      "final": 31,
       "validation_errors": 0,
-      "elapsed": 160.89,
+      "elapsed": 102.47,
       "rule": 16,
-      "qwen": 23
+      "qwen": 26
     },
     "logs": [
       {
         "agent": "orchestrator",
         "action": "start",
         "text_len": 1416,
-        "ts": 1784566754.917816
+        "ts": 1784626641.6953168
       },
       {
         "agent": "orchestrator",
         "action": "extraction_start",
-        "ts": 1784566754.9178271
+        "ts": 1784626641.6953356
       },
       {
         "agent": "extraction",
@@ -598,6 +627,22 @@
                 "extraction_source": "qwen"
               },
               {
+                "text": "Nhiễm trùng đường tiết niệu",
+                "position": [
+                  164,
+                  191
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
                 "text": "đau bàn chân phải",
                 "position": [
                   307,
@@ -672,6 +717,22 @@
                 "type_candidates": [
                   {
                     "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "ertapenem",
+                "position": [
+                  587,
+                  596
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
                     "score": 0.85
                   }
                 ],
@@ -806,6 +867,22 @@
                 "extraction_source": "qwen"
               },
               {
+                "text": "ua (urinalysis - tổng phân tích nước tiểu)",
+                "position": [
+                  1033,
+                  1075
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
                 "text": "chụp x-quang ngực",
                 "position": [
                   1190,
@@ -859,11 +936,11 @@
                   1329,
                   1338
                 ],
-                "type": "TRIỆU_CHỨNG",
+                "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
                 "type_candidates": [
                   {
-                    "label": "TRIỆU_CHỨNG",
+                    "label": "CHẨN_ĐOÁN",
                     "score": 0.85
                   }
                 ],
@@ -913,9 +990,9 @@
         "data": {
           "sources": {
             "rule": 16,
-            "qwen": 23
+            "qwen": 26
           },
-          "total": 39
+          "total": 42
         }
       },
       {
@@ -990,6 +1067,22 @@
                 "extraction_source": "qwen"
               },
               {
+                "text": "Nhiễm trùng đường tiết niệu",
+                "position": [
+                  164,
+                  191
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
                 "text": "đau bàn chân phải",
                 "position": [
                   307,
@@ -1064,6 +1157,22 @@
                 "type_candidates": [
                   {
                     "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "ertapenem",
+                "position": [
+                  587,
+                  596
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
                     "score": 0.85
                   }
                 ],
@@ -1198,6 +1307,22 @@
                 "extraction_source": "qwen"
               },
               {
+                "text": "ua (urinalysis - tổng phân tích nước tiểu)",
+                "position": [
+                  1033,
+                  1075
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
                 "text": "chụp x-quang ngực",
                 "position": [
                   1190,
@@ -1251,11 +1376,11 @@
                   1329,
                   1338
                 ],
-                "type": "TRIỆU_CHỨNG",
+                "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
                 "type_candidates": [
                   {
-                    "label": "TRIỆU_CHỨNG",
+                    "label": "CHẨN_ĐOÁN",
                     "score": 0.85
                   }
                 ],
@@ -1501,9 +1626,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E10"
+                "E10.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng huyết áp",
@@ -1536,7 +1661,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng lipid máu",
@@ -1569,7 +1694,7 @@
               "candidates": [
                 "E78.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "béo phì",
@@ -1600,7 +1725,40 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E65"
+                "E66.9"
+              ],
+              "link_confidence": 0.99
+            },
+            {
+              "text": "Nhiễm trùng đường tiết niệu",
+              "position": [
+                164,
+                191
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "O23.9"
               ],
               "link_confidence": 0.85
             },
@@ -1629,7 +1787,7 @@
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": true
+                "isHistorical": false
               },
               "assertion_confidence": 0.85
             },
@@ -1720,9 +1878,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N11.1"
+                "N12"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "viêm phế quản",
@@ -1753,9 +1911,42 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "J20.6"
+                "J40"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "ertapenem",
+              "position": [
+                587,
+                596
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "325642"
+              ],
+              "link_confidence": 0.95
             },
             {
               "text": "đau bàn chân phải",
@@ -2067,18 +2258,27 @@
               }
             },
             {
-              "text": "phân tích nước tiểu",
+              "text": "ua (urinalysis - tổng phân tích nước tiểu)",
               "position": [
-                1055,
-                1074
+                1033,
+                1075
               ],
               "type": "TÊN_XÉT_NGHIỆM",
-              "confidence": 0.95,
-              "source": "rule",
-              "extraction_source": "rule",
-              "vote_count": 1,
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
               "voters": {
+                "qwen": 1,
                 "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
               },
               "needs_review": false,
               "position_fixed": false,
@@ -2228,11 +2428,11 @@
                 1329,
                 1338
               ],
-              "type": "TRIỆU_CHỨNG",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "TRIỆU_CHỨNG",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -2249,7 +2449,11 @@
                 "isFamily": false,
                 "isHistorical": false
               },
-              "assertion_confidence": 0.85
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "T14.2"
+              ],
+              "link_confidence": 0.99
             },
             {
               "text": "viêm xương tủy",
@@ -2280,9 +2484,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "M86.1"
+                "M86.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "huyết khối tĩnh mạch sâu",
@@ -2307,15 +2511,15 @@
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
-                "isNegated": false,
+                "isNegated": true,
                 "isFamily": false,
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I82"
+                "I82.4"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "result_type": "list"
@@ -2325,7 +2529,7 @@
         "agent": "extraction",
         "action": "voted",
         "data": {
-          "merged": 29
+          "merged": 31
         }
       },
       {
@@ -2364,9 +2568,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "E10"
+                  "E10.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "tăng huyết áp",
@@ -2399,7 +2603,7 @@
                 "candidates": [
                   "I10"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "tăng lipid máu",
@@ -2432,7 +2636,7 @@
                 "candidates": [
                   "E78.5"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "béo phì",
@@ -2463,7 +2667,40 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "E65"
+                  "E66.9"
+                ],
+                "link_confidence": 0.99
+              },
+              {
+                "text": "Nhiễm trùng đường tiết niệu",
+                "position": [
+                  164,
+                  191
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "O23.9"
                 ],
                 "link_confidence": 0.85
               },
@@ -2492,7 +2729,7 @@
                 "assertions": {
                   "isNegated": false,
                   "isFamily": false,
-                  "isHistorical": true
+                  "isHistorical": false
                 },
                 "assertion_confidence": 0.85
               },
@@ -2583,9 +2820,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "N11.1"
+                  "N12"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "viêm phế quản",
@@ -2616,9 +2853,42 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "J20.6"
+                  "J40"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
+              },
+              {
+                "text": "ertapenem",
+                "position": [
+                  587,
+                  596
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "325642"
+                ],
+                "link_confidence": 0.95
               },
               {
                 "text": "đau bàn chân phải",
@@ -2930,18 +3200,27 @@
                 }
               },
               {
-                "text": "phân tích nước tiểu",
+                "text": "ua (urinalysis - tổng phân tích nước tiểu)",
                 "position": [
-                  1055,
-                  1074
+                  1033,
+                  1075
                 ],
                 "type": "TÊN_XÉT_NGHIỆM",
-                "confidence": 0.95,
-                "source": "rule",
-                "extraction_source": "rule",
-                "vote_count": 1,
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
                 "voters": {
+                  "qwen": 1,
                   "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
                 },
                 "needs_review": false,
                 "position_fixed": false,
@@ -3091,11 +3370,11 @@
                   1329,
                   1338
                 ],
-                "type": "TRIỆU_CHỨNG",
+                "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
                 "type_candidates": [
                   {
-                    "label": "TRIỆU_CHỨNG",
+                    "label": "CHẨN_ĐOÁN",
                     "score": 0.85
                   }
                 ],
@@ -3112,7 +3391,11 @@
                   "isFamily": false,
                   "isHistorical": false
                 },
-                "assertion_confidence": 0.85
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "T14.2"
+                ],
+                "link_confidence": 0.99
               },
               {
                 "text": "viêm xương tủy",
@@ -3143,9 +3426,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "M86.1"
+                  "M86.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "huyết khối tĩnh mạch sâu",
@@ -3170,15 +3453,15 @@
                 "needs_review": false,
                 "position_fixed": false,
                 "assertions": {
-                  "isNegated": false,
+                  "isNegated": true,
                   "isFamily": false,
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I82"
+                  "I82.4"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               }
             ],
             "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: đau bàn chân phải\n    Các triệu chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn chân phải đã hoàn toàn hết\n    - cảm thấy tốt hơn\n    - Vẫn cảm thấy không vững khi đứng\n\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm xét nghiệm\n    - hct (hematocrit) 8.126.3\n    - tiểu cầu (platelets) 478\n    - hco3- (bicarbonate) 20\n    - ag (anion gap) 13\n    - bun/creatinine (ure/creatinine)\n    - glucose (đường huyết) 316\n    - lactate (acid lactat) 1.3\n    - Kết quả ua (urinalysis - tổng phân tích nước tiểu): 12 bạch cầu, không vi khuẩn, 1 hồng cầu, âm tính nitrite\n    Kết quả chẩn đoán hình ảnh chẩn đoán hình ảnh\n    - chụp x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)"
@@ -3213,9 +3496,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E10"
+                "E10.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng huyết áp",
@@ -3248,7 +3531,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng lipid máu",
@@ -3281,7 +3564,7 @@
               "candidates": [
                 "E78.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "béo phì",
@@ -3312,7 +3595,40 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E65"
+                "E66.9"
+              ],
+              "link_confidence": 0.99
+            },
+            {
+              "text": "Nhiễm trùng đường tiết niệu",
+              "position": [
+                164,
+                191
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "O23.9"
               ],
               "link_confidence": 0.85
             },
@@ -3341,7 +3657,7 @@
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": true
+                "isHistorical": false
               },
               "assertion_confidence": 0.85
             },
@@ -3432,9 +3748,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N11.1"
+                "N12"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "viêm phế quản",
@@ -3465,9 +3781,42 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "J20.6"
+                "J40"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "ertapenem",
+              "position": [
+                587,
+                596
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "325642"
+              ],
+              "link_confidence": 0.95
             },
             {
               "text": "đau bàn chân phải",
@@ -3779,18 +4128,27 @@
               }
             },
             {
-              "text": "phân tích nước tiểu",
+              "text": "ua (urinalysis - tổng phân tích nước tiểu)",
               "position": [
-                1055,
-                1074
+                1033,
+                1075
               ],
               "type": "TÊN_XÉT_NGHIỆM",
-              "confidence": 0.95,
-              "source": "rule",
-              "extraction_source": "rule",
-              "vote_count": 1,
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
               "voters": {
+                "qwen": 1,
                 "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
               },
               "needs_review": false,
               "position_fixed": false,
@@ -3940,11 +4298,11 @@
                 1329,
                 1338
               ],
-              "type": "TRIỆU_CHỨNG",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "TRIỆU_CHỨNG",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -3961,7 +4319,11 @@
                 "isFamily": false,
                 "isHistorical": false
               },
-              "assertion_confidence": 0.85
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "T14.2"
+              ],
+              "link_confidence": 0.99
             },
             {
               "text": "viêm xương tủy",
@@ -3992,9 +4354,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "M86.1"
+                "M86.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "huyết khối tĩnh mạch sâu",
@@ -4019,15 +4381,15 @@
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
-                "isNegated": false,
+                "isNegated": true,
                 "isFamily": false,
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I82"
+                "I82.4"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "result_type": "list"
@@ -4069,9 +4431,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "E10"
+                  "E10.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "tăng huyết áp",
@@ -4104,7 +4466,7 @@
                 "candidates": [
                   "I10"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "tăng lipid máu",
@@ -4137,7 +4499,7 @@
                 "candidates": [
                   "E78.5"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "béo phì",
@@ -4168,7 +4530,40 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "E65"
+                  "E66.9"
+                ],
+                "link_confidence": 0.99
+              },
+              {
+                "text": "Nhiễm trùng đường tiết niệu",
+                "position": [
+                  164,
+                  191
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "O23.9"
                 ],
                 "link_confidence": 0.85
               },
@@ -4197,7 +4592,7 @@
                 "assertions": {
                   "isNegated": false,
                   "isFamily": false,
-                  "isHistorical": true
+                  "isHistorical": false
                 },
                 "assertion_confidence": 0.85
               },
@@ -4288,9 +4683,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "N11.1"
+                  "N12"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "viêm phế quản",
@@ -4321,9 +4716,42 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "J20.6"
+                  "J40"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
+              },
+              {
+                "text": "ertapenem",
+                "position": [
+                  587,
+                  596
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "325642"
+                ],
+                "link_confidence": 0.95
               },
               {
                 "text": "đau bàn chân phải",
@@ -4635,18 +5063,27 @@
                 }
               },
               {
-                "text": "phân tích nước tiểu",
+                "text": "ua (urinalysis - tổng phân tích nước tiểu)",
                 "position": [
-                  1055,
-                  1074
+                  1033,
+                  1075
                 ],
                 "type": "TÊN_XÉT_NGHIỆM",
-                "confidence": 0.95,
-                "source": "rule",
-                "extraction_source": "rule",
-                "vote_count": 1,
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
                 "voters": {
+                  "qwen": 1,
                   "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
                 },
                 "needs_review": false,
                 "position_fixed": false,
@@ -4796,11 +5233,11 @@
                   1329,
                   1338
                 ],
-                "type": "TRIỆU_CHỨNG",
+                "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
                 "type_candidates": [
                   {
-                    "label": "TRIỆU_CHỨNG",
+                    "label": "CHẨN_ĐOÁN",
                     "score": 0.85
                   }
                 ],
@@ -4817,7 +5254,11 @@
                   "isFamily": false,
                   "isHistorical": false
                 },
-                "assertion_confidence": 0.85
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "T14.2"
+                ],
+                "link_confidence": 0.99
               },
               {
                 "text": "viêm xương tủy",
@@ -4848,9 +5289,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "M86.1"
+                  "M86.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "huyết khối tĩnh mạch sâu",
@@ -4875,15 +5316,15 @@
                 "needs_review": false,
                 "position_fixed": false,
                 "assertions": {
-                  "isNegated": false,
+                  "isNegated": true,
                   "isFamily": false,
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I82"
+                  "I82.4"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               }
             ],
             "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: đau bàn chân phải\n    Các triệu chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn chân phải đã hoàn toàn hết\n    - cảm thấy tốt hơn\n    - Vẫn cảm thấy không vững khi đứng\n\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm xét nghiệm\n    - hct (hematocrit) 8.126.3\n    - tiểu cầu (platelets) 478\n    - hco3- (bicarbonate) 20\n    - ag (anion gap) 13\n    - bun/creatinine (ure/creatinine)\n    - glucose (đường huyết) 316\n    - lactate (acid lactat) 1.3\n    - Kết quả ua (urinalysis - tổng phân tích nước tiểu): 12 bạch cầu, không vi khuẩn, 1 hồng cầu, âm tính nitrite\n    Kết quả chẩn đoán hình ảnh chẩn đoán hình ảnh\n    - chụp x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)"
@@ -4918,9 +5359,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E10"
+                "E10.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng huyết áp",
@@ -4953,7 +5394,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng lipid máu",
@@ -4986,7 +5427,7 @@
               "candidates": [
                 "E78.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "béo phì",
@@ -5017,7 +5458,40 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E65"
+                "E66.9"
+              ],
+              "link_confidence": 0.99
+            },
+            {
+              "text": "Nhiễm trùng đường tiết niệu",
+              "position": [
+                164,
+                191
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "O23.9"
               ],
               "link_confidence": 0.85
             },
@@ -5046,7 +5520,7 @@
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": true
+                "isHistorical": false
               },
               "assertion_confidence": 0.85
             },
@@ -5137,9 +5611,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N11.1"
+                "N12"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "viêm phế quản",
@@ -5170,9 +5644,42 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "J20.6"
+                "J40"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "ertapenem",
+              "position": [
+                587,
+                596
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "325642"
+              ],
+              "link_confidence": 0.95
             },
             {
               "text": "đau bàn chân phải",
@@ -5484,18 +5991,27 @@
               }
             },
             {
-              "text": "phân tích nước tiểu",
+              "text": "ua (urinalysis - tổng phân tích nước tiểu)",
               "position": [
-                1055,
-                1074
+                1033,
+                1075
               ],
               "type": "TÊN_XÉT_NGHIỆM",
-              "confidence": 0.95,
-              "source": "rule",
-              "extraction_source": "rule",
-              "vote_count": 1,
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
               "voters": {
+                "qwen": 1,
                 "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
               },
               "needs_review": false,
               "position_fixed": false,
@@ -5645,11 +6161,11 @@
                 1329,
                 1338
               ],
-              "type": "TRIỆU_CHỨNG",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "TRIỆU_CHỨNG",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -5666,7 +6182,11 @@
                 "isFamily": false,
                 "isHistorical": false
               },
-              "assertion_confidence": 0.85
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "T14.2"
+              ],
+              "link_confidence": 0.99
             },
             {
               "text": "viêm xương tủy",
@@ -5697,9 +6217,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "M86.1"
+                "M86.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "huyết khối tĩnh mạch sâu",
@@ -5724,15 +6244,15 @@
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
-                "isNegated": false,
+                "isNegated": true,
                 "isFamily": false,
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I82"
+                "I82.4"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "result_type": "list"
@@ -5755,19 +6275,19 @@
       {
         "agent": "orchestrator",
         "action": "extraction_complete",
-        "mentions": 29,
-        "ts": 1784566818.5417004
+        "mentions": 31,
+        "ts": 1784626723.683848
       },
       {
         "agent": "orchestrator",
         "action": "assertion_start",
-        "ts": 1784566818.5417151
+        "ts": 1784626723.6838684
       },
       {
         "agent": "assertion",
         "action": "start",
         "data": {
-          "mentions": 29
+          "mentions": 31
         }
       },
       {
@@ -5853,6 +6373,25 @@
           "tool": "rule_assert",
           "input": {
             "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: đau bàn chân phải\n    Các triệu chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn chân phải đã hoàn toàn hết\n    - cảm thấy tốt hơn\n    - Vẫn cảm thấy không vững khi đứng\n\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm xét nghiệm\n    - hct (hematocrit) 8.126.3\n    - tiểu cầu (platelets) 478\n    - hco3- (bicarbonate) 20\n    - ag (anion gap) 13\n    - bun/creatinine (ure/creatinine)\n    - glucose (đường huyết) 316\n    - lactate (acid lactat) 1.3\n    - Kết quả ua (urinalysis - tổng phân tích nước tiểu): 12 bạch cầu, không vi khuẩn, 1 hồng cầu, âm tính nitrite\n    Kết quả chẩn đoán hình ảnh chẩn đoán hình ảnh\n    - chụp x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)",
+            "start": 164,
+            "end": 191,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: đau bàn chân phải\n    Các triệu chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn chân phải đã hoàn toàn hết\n    - cảm thấy tốt hơn\n    - Vẫn cảm thấy không vững khi đứng\n\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm xét nghiệm\n    - hct (hematocrit) 8.126.3\n    - tiểu cầu (platelets) 478\n    - hco3- (bicarbonate) 20\n    - ag (anion gap) 13\n    - bun/creatinine (ure/creatinine)\n    - glucose (đường huyết) 316\n    - lactate (acid lactat) 1.3\n    - Kết quả ua (urinalysis - tổng phân tích nước tiểu): 12 bạch cầu, không vi khuẩn, 1 hồng cầu, âm tính nitrite\n    Kết quả chẩn đoán hình ảnh chẩn đoán hình ảnh\n    - chụp x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)",
             "start": 307,
             "end": 324,
             "mtype": "TRIỆU_CHỨNG"
@@ -5860,7 +6399,7 @@
           "output": {
             "isNegated": false,
             "isFamily": false,
-            "isHistorical": true
+            "isHistorical": false
           },
           "result_type": "dict"
         }
@@ -5948,6 +6487,25 @@
           "tool": "rule_assert",
           "input": {
             "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: đau bàn chân phải\n    Các triệu chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn chân phải đã hoàn toàn hết\n    - cảm thấy tốt hơn\n    - Vẫn cảm thấy không vững khi đứng\n\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm xét nghiệm\n    - hct (hematocrit) 8.126.3\n    - tiểu cầu (platelets) 478\n    - hco3- (bicarbonate) 20\n    - ag (anion gap) 13\n    - bun/creatinine (ure/creatinine)\n    - glucose (đường huyết) 316\n    - lactate (acid lactat) 1.3\n    - Kết quả ua (urinalysis - tổng phân tích nước tiểu): 12 bạch cầu, không vi khuẩn, 1 hồng cầu, âm tính nitrite\n    Kết quả chẩn đoán hình ảnh chẩn đoán hình ảnh\n    - chụp x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)",
+            "start": 587,
+            "end": 596,
+            "mtype": "THUỐC"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: đau bàn chân phải\n    Các triệu chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn chân phải đã hoàn toàn hết\n    - cảm thấy tốt hơn\n    - Vẫn cảm thấy không vững khi đứng\n\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm xét nghiệm\n    - hct (hematocrit) 8.126.3\n    - tiểu cầu (platelets) 478\n    - hco3- (bicarbonate) 20\n    - ag (anion gap) 13\n    - bun/creatinine (ure/creatinine)\n    - glucose (đường huyết) 316\n    - lactate (acid lactat) 1.3\n    - Kết quả ua (urinalysis - tổng phân tích nước tiểu): 12 bạch cầu, không vi khuẩn, 1 hồng cầu, âm tính nitrite\n    Kết quả chẩn đoán hình ảnh chẩn đoán hình ảnh\n    - chụp x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)",
             "start": 643,
             "end": 660,
             "mtype": "TRIỆU_CHỨNG"
@@ -5969,7 +6527,7 @@
             "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: đau bàn chân phải\n    Các triệu chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn chân phải đã hoàn toàn hết\n    - cảm thấy tốt hơn\n    - Vẫn cảm thấy không vững khi đứng\n\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm xét nghiệm\n    - hct (hematocrit) 8.126.3\n    - tiểu cầu (platelets) 478\n    - hco3- (bicarbonate) 20\n    - ag (anion gap) 13\n    - bun/creatinine (ure/creatinine)\n    - glucose (đường huyết) 316\n    - lactate (acid lactat) 1.3\n    - Kết quả ua (urinalysis - tổng phân tích nước tiểu): 12 bạch cầu, không vi khuẩn, 1 hồng cầu, âm tính nitrite\n    Kết quả chẩn đoán hình ảnh chẩn đoán hình ảnh\n    - chụp x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)",
             "start": 1329,
             "end": 1338,
-            "mtype": "TRIỆU_CHỨNG"
+            "mtype": "CHẨN_ĐOÁN"
           },
           "output": {
             "isNegated": true,
@@ -6010,7 +6568,7 @@
             "mtype": "CHẨN_ĐOÁN"
           },
           "output": {
-            "isNegated": false,
+            "isNegated": true,
             "isFamily": false,
             "isHistorical": false
           },
@@ -6021,25 +6579,25 @@
         "agent": "assertion",
         "action": "complete",
         "data": {
-          "processed": 29,
+          "processed": 31,
           "llm_checked": 0
         }
       },
       {
         "agent": "orchestrator",
         "action": "assertion_complete",
-        "ts": 1784566818.5426965
+        "ts": 1784626723.685298
       },
       {
         "agent": "orchestrator",
         "action": "linking_start",
-        "ts": 1784566818.5427077
+        "ts": 1784626723.685314
       },
       {
         "agent": "linking",
         "action": "start",
         "data": {
-          "mentions": 29
+          "mentions": 31
         }
       },
       {
@@ -6077,18 +6635,17 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E10"
+                "E10.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu,"
           },
           "output": {
             "candidates": [
-              "E10"
+              "E10.9"
             ],
-            "confidence": 0.85,
-            "rationale": "Mention 'Tiểu đường loại 1 đái tháo đường' tương ứng với mã E10 (Bệnh đái tháo đường típ 1) trong ICD-10."
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -6130,7 +6687,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác đị"
           },
@@ -6138,8 +6695,7 @@
             "candidates": [
               "I10"
             ],
-            "confidence": 0.85,
-            "rationale": "Mention 'tăng huyết áp' phù hợp với mã I10 (Bệnh tăng huyết áp vô căn - nguyên phát), đây là mã chẩn đoán chính xác và phổ biến nhất cho tình trạng này."
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -6181,7 +6737,7 @@
               "candidates": [
                 "E78.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh "
           },
@@ -6189,8 +6745,7 @@
             "candidates": [
               "E78.5"
             ],
-            "confidence": 0.85,
-            "rationale": "Mention 'tăng lipid máu' phù hợp với mã E78.5 (Tăng lipid máu, không xác định), đây là mã chẩn đoán chính xác nhất trong danh sách candidates."
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -6230,18 +6785,68 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E65"
+                "E66.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: "
           },
           "output": {
             "candidates": [
-              "E65"
+              "E66.9"
+            ],
+            "confidence": 0.99
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "Nhiễm trùng đường tiết niệu",
+              "position": [
+                164,
+                191
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "O23.9"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "nh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: đau bàn chân phải\n    Các triệu ch"
+          },
+          "output": {
+            "candidates": [
+              "O23.9"
             ],
             "confidence": 0.85,
-            "rationale": "Béo phì được mã hóa bởi E65 (Bệnh béo phì khu trú Bao gồm: khối mỡ) trong danh sách candidates."
+            "rationale": "Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm được phân loại dưới mã O23.9 trong ICD-10, đại diện cho 'Nhiễm trùng đường tiết niệu - sinh dục không xác định trong thai kỳ'."
           },
           "result_type": "dict"
         }
@@ -6281,18 +6886,17 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N11.1"
+                "N12"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "i\n    Các triệu chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập việ"
           },
           "output": {
             "candidates": [
-              "N11.1"
+              "N12"
             ],
-            "confidence": 0.85,
-            "rationale": "Viêm thận bể thận mạn tính do tắc nghẽn là mã bệnh phù hợp nhất với mention 'viêm bể thận' trong ngữ cảnh chẩn đoán."
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -6332,18 +6936,117 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "J20.6"
+                "J40"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn c"
           },
           "output": {
             "candidates": [
-              "J20.6"
+              "J40"
             ],
-            "confidence": 0.85,
-            "rationale": "Viêm phế quản cấp tính do virus hợp bào hô hấp (J20.6) là mã phù hợp nhất với mention 'viêm phế quản' trong ngữ cảnh bệnh nhân vừa nhập viện và xuất viện trong thời gian gần đây, không có thông tin chi tiết về nguyên nhân khác."
+            "confidence": 0.99
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "ertapenem",
+              "position": [
+                587,
+                596
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "325642"
+              ],
+              "link_confidence": 0.95
+            },
+            "context": "hập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn chân phải đã hoàn toàn hết\n    - cảm thấy tốt hơn\n    - Vẫn cảm thấy không vững khi đứng\n\n3.  Đ"
+          },
+          "output": {
+            "candidates": [
+              "325642"
+            ],
+            "confidence": 0.95
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "gãy xương",
+              "position": [
+                1329,
+                1338
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "T14.2"
+              ],
+              "link_confidence": 0.99
+            },
+            "context": " ảnh\n    - chụp x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)"
+          },
+          "output": {
+            "candidates": [
+              "T14.2"
+            ],
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -6383,19 +7086,17 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "M86.1"
+                "M86.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": " x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)"
           },
           "output": {
             "candidates": [
-              "M86.1"
+              "M86.9"
             ],
-            "confidence": 0.85,
-            "rationale": "Viêm xương tủy cấp tính khác (M86.1) là mã ICD-10 phù hợp nhất với tình huống được mô tả trong câu hỏi, bao gồm việc phát hiện viêm xương tủy trong quá trình chẩn đoán.",
-            "steps": 1
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -6429,24 +7130,23 @@
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
-                "isNegated": false,
+                "isNegated": true,
                 "isFamily": false,
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I82"
+                "I82.4"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "hông có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)"
           },
           "output": {
             "candidates": [
-              "I82"
+              "I82.4"
             ],
-            "confidence": 0.85,
-            "rationale": "Mention 'huyết khối tĩnh mạch sâu' phù hợp với mã I82 (Thuyên tắc và/hoặc huyết khối tĩnh mạch khác), đây là mã chẩn đoán chính xác nhất trong danh sách candidates."
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -6455,25 +7155,25 @@
         "agent": "linking",
         "action": "complete",
         "data": {
-          "linked": 8
+          "linked": 11
         }
       },
       {
         "agent": "orchestrator",
         "action": "linking_complete",
-        "linked": 8,
-        "ts": 1784566915.3877945
+        "linked": 11,
+        "ts": 1784626743.3157685
       },
       {
         "agent": "orchestrator",
         "action": "verification_start",
-        "ts": 1784566915.3878121
+        "ts": 1784626743.31579
       },
       {
         "agent": "verifier",
         "action": "start",
         "data": {
-          "mentions": 29
+          "mentions": 31
         }
       },
       {
@@ -6512,9 +7212,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "E10"
+                  "E10.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "tăng huyết áp",
@@ -6547,7 +7247,7 @@
                 "candidates": [
                   "I10"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "tăng lipid máu",
@@ -6580,7 +7280,7 @@
                 "candidates": [
                   "E78.5"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "béo phì",
@@ -6611,7 +7311,40 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "E65"
+                  "E66.9"
+                ],
+                "link_confidence": 0.99
+              },
+              {
+                "text": "Nhiễm trùng đường tiết niệu",
+                "position": [
+                  164,
+                  191
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "O23.9"
                 ],
                 "link_confidence": 0.85
               },
@@ -6640,7 +7373,7 @@
                 "assertions": {
                   "isNegated": false,
                   "isFamily": false,
-                  "isHistorical": true
+                  "isHistorical": false
                 },
                 "assertion_confidence": 0.85
               },
@@ -6731,9 +7464,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "N11.1"
+                  "N12"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "viêm phế quản",
@@ -6764,9 +7497,42 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "J20.6"
+                  "J40"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
+              },
+              {
+                "text": "ertapenem",
+                "position": [
+                  587,
+                  596
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "325642"
+                ],
+                "link_confidence": 0.95
               },
               {
                 "text": "đau bàn chân phải",
@@ -7078,18 +7844,27 @@
                 }
               },
               {
-                "text": "phân tích nước tiểu",
+                "text": "ua (urinalysis - tổng phân tích nước tiểu)",
                 "position": [
-                  1055,
-                  1074
+                  1033,
+                  1075
                 ],
                 "type": "TÊN_XÉT_NGHIỆM",
-                "confidence": 0.95,
-                "source": "rule",
-                "extraction_source": "rule",
-                "vote_count": 1,
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
                 "voters": {
+                  "qwen": 1,
                   "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
                 },
                 "needs_review": false,
                 "position_fixed": false,
@@ -7239,11 +8014,11 @@
                   1329,
                   1338
                 ],
-                "type": "TRIỆU_CHỨNG",
+                "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
                 "type_candidates": [
                   {
-                    "label": "TRIỆU_CHỨNG",
+                    "label": "CHẨN_ĐOÁN",
                     "score": 0.85
                   }
                 ],
@@ -7260,7 +8035,11 @@
                   "isFamily": false,
                   "isHistorical": false
                 },
-                "assertion_confidence": 0.85
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "T14.2"
+                ],
+                "link_confidence": 0.99
               },
               {
                 "text": "viêm xương tủy",
@@ -7291,9 +8070,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "M86.1"
+                  "M86.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "huyết khối tĩnh mạch sâu",
@@ -7318,21 +8097,31 @@
                 "needs_review": false,
                 "position_fixed": false,
                 "assertions": {
-                  "isNegated": false,
+                  "isNegated": true,
                   "isFamily": false,
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I82"
+                  "I82.4"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               }
             ],
             "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: đau bàn chân phải\n    Các triệu chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn chân phải đã hoàn toàn hết\n    - cảm thấy tốt hơn\n    - Vẫn cảm thấy không vững khi đứng\n\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm xét nghiệm\n    - hct (hematocrit) 8.126.3\n    - tiểu cầu (platelets) 478\n    - hco3- (bicarbonate) 20\n    - ag (anion gap) 13\n    - bun/creatinine (ure/creatinine)\n    - glucose (đường huyết) 316\n    - lactate (acid lactat) 1.3\n    - Kết quả ua (urinalysis - tổng phân tích nước tiểu): 12 bạch cầu, không vi khuẩn, 1 hồng cầu, âm tính nitrite\n    Kết quả chẩn đoán hình ảnh chẩn đoán hình ảnh\n    - chụp x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)"
           },
           "output": {
             "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
               {
                 "action": "accept",
                 "fixes": [],
@@ -7509,9 +8298,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "E10"
+                  "E10.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "tăng huyết áp",
@@ -7544,7 +8333,7 @@
                 "candidates": [
                   "I10"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "tăng lipid máu",
@@ -7577,7 +8366,7 @@
                 "candidates": [
                   "E78.5"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "béo phì",
@@ -7608,7 +8397,40 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "E65"
+                  "E66.9"
+                ],
+                "link_confidence": 0.99
+              },
+              {
+                "text": "Nhiễm trùng đường tiết niệu",
+                "position": [
+                  164,
+                  191
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "O23.9"
                 ],
                 "link_confidence": 0.85
               },
@@ -7637,7 +8459,7 @@
                 "assertions": {
                   "isNegated": false,
                   "isFamily": false,
-                  "isHistorical": true
+                  "isHistorical": false
                 },
                 "assertion_confidence": 0.85
               },
@@ -7728,9 +8550,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "N11.1"
+                  "N12"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "viêm phế quản",
@@ -7761,9 +8583,42 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "J20.6"
+                  "J40"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
+              },
+              {
+                "text": "ertapenem",
+                "position": [
+                  587,
+                  596
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "325642"
+                ],
+                "link_confidence": 0.95
               },
               {
                 "text": "đau bàn chân phải",
@@ -8075,18 +8930,27 @@
                 }
               },
               {
-                "text": "phân tích nước tiểu",
+                "text": "ua (urinalysis - tổng phân tích nước tiểu)",
                 "position": [
-                  1055,
-                  1074
+                  1033,
+                  1075
                 ],
                 "type": "TÊN_XÉT_NGHIỆM",
-                "confidence": 0.95,
-                "source": "rule",
-                "extraction_source": "rule",
-                "vote_count": 1,
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
                 "voters": {
+                  "qwen": 1,
                   "rule": 1
+                },
+                "type_votes": {
+                  "TÊN_XÉT_NGHIỆM": 1.0
                 },
                 "needs_review": false,
                 "position_fixed": false,
@@ -8236,11 +9100,11 @@
                   1329,
                   1338
                 ],
-                "type": "TRIỆU_CHỨNG",
+                "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
                 "type_candidates": [
                   {
-                    "label": "TRIỆU_CHỨNG",
+                    "label": "CHẨN_ĐOÁN",
                     "score": 0.85
                   }
                 ],
@@ -8257,7 +9121,11 @@
                   "isFamily": false,
                   "isHistorical": false
                 },
-                "assertion_confidence": 0.85
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "T14.2"
+                ],
+                "link_confidence": 0.99
               },
               {
                 "text": "viêm xương tủy",
@@ -8288,9 +9156,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "M86.1"
+                  "M86.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "huyết khối tĩnh mạch sâu",
@@ -8315,15 +9183,15 @@
                 "needs_review": false,
                 "position_fixed": false,
                 "assertions": {
-                  "isNegated": false,
+                  "isNegated": true,
                   "isFamily": false,
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I82"
+                  "I82.4"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               }
             ],
             "dropped": 0
@@ -8335,22 +9203,22 @@
         "agent": "verifier",
         "action": "validated",
         "data": {
-          "kept": 29,
+          "kept": 31,
           "dropped": 0
         }
       },
       {
         "agent": "orchestrator",
         "action": "verification_complete",
-        "kept": 29,
-        "ts": 1784566915.8067803
+        "kept": 31,
+        "ts": 1784626744.163343
       },
       {
         "agent": "orchestrator",
         "action": "complete",
-        "total_mentions": 29,
-        "elapsed": 160.89,
-        "ts": 1784566915.8068004
+        "total_mentions": 31,
+        "elapsed": 102.47,
+        "ts": 1784626744.1633756
       }
     ]
   },
@@ -8359,12 +9227,12 @@
       "agent": "orchestrator",
       "action": "start",
       "text_len": 1416,
-      "ts": 1784566754.917816
+      "ts": 1784626641.6953168
     },
     {
       "agent": "orchestrator",
       "action": "extraction_start",
-      "ts": 1784566754.9178271
+      "ts": 1784626641.6953356
     },
     {
       "agent": "extraction",
@@ -8633,6 +9501,22 @@
               "extraction_source": "qwen"
             },
             {
+              "text": "Nhiễm trùng đường tiết niệu",
+              "position": [
+                164,
+                191
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
               "text": "đau bàn chân phải",
               "position": [
                 307,
@@ -8707,6 +9591,22 @@
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "ertapenem",
+              "position": [
+                587,
+                596
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
                   "score": 0.85
                 }
               ],
@@ -8841,6 +9741,22 @@
               "extraction_source": "qwen"
             },
             {
+              "text": "ua (urinalysis - tổng phân tích nước tiểu)",
+              "position": [
+                1033,
+                1075
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
               "text": "chụp x-quang ngực",
               "position": [
                 1190,
@@ -8894,11 +9810,11 @@
                 1329,
                 1338
               ],
-              "type": "TRIỆU_CHỨNG",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "TRIỆU_CHỨNG",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -8948,9 +9864,9 @@
       "data": {
         "sources": {
           "rule": 16,
-          "qwen": 23
+          "qwen": 26
         },
-        "total": 39
+        "total": 42
       }
     },
     {
@@ -9025,6 +9941,22 @@
               "extraction_source": "qwen"
             },
             {
+              "text": "Nhiễm trùng đường tiết niệu",
+              "position": [
+                164,
+                191
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
               "text": "đau bàn chân phải",
               "position": [
                 307,
@@ -9099,6 +10031,22 @@
               "type_candidates": [
                 {
                   "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "ertapenem",
+              "position": [
+                587,
+                596
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
                   "score": 0.85
                 }
               ],
@@ -9233,6 +10181,22 @@
               "extraction_source": "qwen"
             },
             {
+              "text": "ua (urinalysis - tổng phân tích nước tiểu)",
+              "position": [
+                1033,
+                1075
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
               "text": "chụp x-quang ngực",
               "position": [
                 1190,
@@ -9286,11 +10250,11 @@
                 1329,
                 1338
               ],
-              "type": "TRIỆU_CHỨNG",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "TRIỆU_CHỨNG",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -9536,9 +10500,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "E10"
+              "E10.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "tăng huyết áp",
@@ -9571,7 +10535,7 @@
             "candidates": [
               "I10"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "tăng lipid máu",
@@ -9604,7 +10568,7 @@
             "candidates": [
               "E78.5"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "béo phì",
@@ -9635,7 +10599,40 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "E65"
+              "E66.9"
+            ],
+            "link_confidence": 0.99
+          },
+          {
+            "text": "Nhiễm trùng đường tiết niệu",
+            "position": [
+              164,
+              191
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "O23.9"
             ],
             "link_confidence": 0.85
           },
@@ -9664,7 +10661,7 @@
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": true
+              "isHistorical": false
             },
             "assertion_confidence": 0.85
           },
@@ -9755,9 +10752,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "N11.1"
+              "N12"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "viêm phế quản",
@@ -9788,9 +10785,42 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "J20.6"
+              "J40"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
+          },
+          {
+            "text": "ertapenem",
+            "position": [
+              587,
+              596
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "325642"
+            ],
+            "link_confidence": 0.95
           },
           {
             "text": "đau bàn chân phải",
@@ -10102,18 +11132,27 @@
             }
           },
           {
-            "text": "phân tích nước tiểu",
+            "text": "ua (urinalysis - tổng phân tích nước tiểu)",
             "position": [
-              1055,
-              1074
+              1033,
+              1075
             ],
             "type": "TÊN_XÉT_NGHIỆM",
-            "confidence": 0.95,
-            "source": "rule",
-            "extraction_source": "rule",
-            "vote_count": 1,
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
             "voters": {
+              "qwen": 1,
               "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
             },
             "needs_review": false,
             "position_fixed": false,
@@ -10263,11 +11302,11 @@
               1329,
               1338
             ],
-            "type": "TRIỆU_CHỨNG",
+            "type": "CHẨN_ĐOÁN",
             "source": "qwen",
             "type_candidates": [
               {
-                "label": "TRIỆU_CHỨNG",
+                "label": "CHẨN_ĐOÁN",
                 "score": 0.85
               }
             ],
@@ -10284,7 +11323,11 @@
               "isFamily": false,
               "isHistorical": false
             },
-            "assertion_confidence": 0.85
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "T14.2"
+            ],
+            "link_confidence": 0.99
           },
           {
             "text": "viêm xương tủy",
@@ -10315,9 +11358,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "M86.1"
+              "M86.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "huyết khối tĩnh mạch sâu",
@@ -10342,15 +11385,15 @@
             "needs_review": false,
             "position_fixed": false,
             "assertions": {
-              "isNegated": false,
+              "isNegated": true,
               "isFamily": false,
               "isHistorical": false
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I82"
+              "I82.4"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           }
         ],
         "result_type": "list"
@@ -10360,7 +11403,7 @@
       "agent": "extraction",
       "action": "voted",
       "data": {
-        "merged": 29
+        "merged": 31
       }
     },
     {
@@ -10399,9 +11442,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E10"
+                "E10.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng huyết áp",
@@ -10434,7 +11477,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng lipid máu",
@@ -10467,7 +11510,7 @@
               "candidates": [
                 "E78.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "béo phì",
@@ -10498,7 +11541,40 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E65"
+                "E66.9"
+              ],
+              "link_confidence": 0.99
+            },
+            {
+              "text": "Nhiễm trùng đường tiết niệu",
+              "position": [
+                164,
+                191
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "O23.9"
               ],
               "link_confidence": 0.85
             },
@@ -10527,7 +11603,7 @@
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": true
+                "isHistorical": false
               },
               "assertion_confidence": 0.85
             },
@@ -10618,9 +11694,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N11.1"
+                "N12"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "viêm phế quản",
@@ -10651,9 +11727,42 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "J20.6"
+                "J40"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "ertapenem",
+              "position": [
+                587,
+                596
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "325642"
+              ],
+              "link_confidence": 0.95
             },
             {
               "text": "đau bàn chân phải",
@@ -10965,18 +12074,27 @@
               }
             },
             {
-              "text": "phân tích nước tiểu",
+              "text": "ua (urinalysis - tổng phân tích nước tiểu)",
               "position": [
-                1055,
-                1074
+                1033,
+                1075
               ],
               "type": "TÊN_XÉT_NGHIỆM",
-              "confidence": 0.95,
-              "source": "rule",
-              "extraction_source": "rule",
-              "vote_count": 1,
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
               "voters": {
+                "qwen": 1,
                 "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
               },
               "needs_review": false,
               "position_fixed": false,
@@ -11126,11 +12244,11 @@
                 1329,
                 1338
               ],
-              "type": "TRIỆU_CHỨNG",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "TRIỆU_CHỨNG",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -11147,7 +12265,11 @@
                 "isFamily": false,
                 "isHistorical": false
               },
-              "assertion_confidence": 0.85
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "T14.2"
+              ],
+              "link_confidence": 0.99
             },
             {
               "text": "viêm xương tủy",
@@ -11178,9 +12300,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "M86.1"
+                "M86.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "huyết khối tĩnh mạch sâu",
@@ -11205,15 +12327,15 @@
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
-                "isNegated": false,
+                "isNegated": true,
                 "isFamily": false,
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I82"
+                "I82.4"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: đau bàn chân phải\n    Các triệu chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn chân phải đã hoàn toàn hết\n    - cảm thấy tốt hơn\n    - Vẫn cảm thấy không vững khi đứng\n\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm xét nghiệm\n    - hct (hematocrit) 8.126.3\n    - tiểu cầu (platelets) 478\n    - hco3- (bicarbonate) 20\n    - ag (anion gap) 13\n    - bun/creatinine (ure/creatinine)\n    - glucose (đường huyết) 316\n    - lactate (acid lactat) 1.3\n    - Kết quả ua (urinalysis - tổng phân tích nước tiểu): 12 bạch cầu, không vi khuẩn, 1 hồng cầu, âm tính nitrite\n    Kết quả chẩn đoán hình ảnh chẩn đoán hình ảnh\n    - chụp x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)"
@@ -11248,9 +12370,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "E10"
+              "E10.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "tăng huyết áp",
@@ -11283,7 +12405,7 @@
             "candidates": [
               "I10"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "tăng lipid máu",
@@ -11316,7 +12438,7 @@
             "candidates": [
               "E78.5"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "béo phì",
@@ -11347,7 +12469,40 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "E65"
+              "E66.9"
+            ],
+            "link_confidence": 0.99
+          },
+          {
+            "text": "Nhiễm trùng đường tiết niệu",
+            "position": [
+              164,
+              191
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "O23.9"
             ],
             "link_confidence": 0.85
           },
@@ -11376,7 +12531,7 @@
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": true
+              "isHistorical": false
             },
             "assertion_confidence": 0.85
           },
@@ -11467,9 +12622,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "N11.1"
+              "N12"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "viêm phế quản",
@@ -11500,9 +12655,42 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "J20.6"
+              "J40"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
+          },
+          {
+            "text": "ertapenem",
+            "position": [
+              587,
+              596
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "325642"
+            ],
+            "link_confidence": 0.95
           },
           {
             "text": "đau bàn chân phải",
@@ -11814,18 +13002,27 @@
             }
           },
           {
-            "text": "phân tích nước tiểu",
+            "text": "ua (urinalysis - tổng phân tích nước tiểu)",
             "position": [
-              1055,
-              1074
+              1033,
+              1075
             ],
             "type": "TÊN_XÉT_NGHIỆM",
-            "confidence": 0.95,
-            "source": "rule",
-            "extraction_source": "rule",
-            "vote_count": 1,
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
             "voters": {
+              "qwen": 1,
               "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
             },
             "needs_review": false,
             "position_fixed": false,
@@ -11975,11 +13172,11 @@
               1329,
               1338
             ],
-            "type": "TRIỆU_CHỨNG",
+            "type": "CHẨN_ĐOÁN",
             "source": "qwen",
             "type_candidates": [
               {
-                "label": "TRIỆU_CHỨNG",
+                "label": "CHẨN_ĐOÁN",
                 "score": 0.85
               }
             ],
@@ -11996,7 +13193,11 @@
               "isFamily": false,
               "isHistorical": false
             },
-            "assertion_confidence": 0.85
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "T14.2"
+            ],
+            "link_confidence": 0.99
           },
           {
             "text": "viêm xương tủy",
@@ -12027,9 +13228,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "M86.1"
+              "M86.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "huyết khối tĩnh mạch sâu",
@@ -12054,15 +13255,15 @@
             "needs_review": false,
             "position_fixed": false,
             "assertions": {
-              "isNegated": false,
+              "isNegated": true,
               "isFamily": false,
               "isHistorical": false
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I82"
+              "I82.4"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           }
         ],
         "result_type": "list"
@@ -12104,9 +13305,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E10"
+                "E10.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng huyết áp",
@@ -12139,7 +13340,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng lipid máu",
@@ -12172,7 +13373,7 @@
               "candidates": [
                 "E78.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "béo phì",
@@ -12203,7 +13404,40 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E65"
+                "E66.9"
+              ],
+              "link_confidence": 0.99
+            },
+            {
+              "text": "Nhiễm trùng đường tiết niệu",
+              "position": [
+                164,
+                191
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "O23.9"
               ],
               "link_confidence": 0.85
             },
@@ -12232,7 +13466,7 @@
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": true
+                "isHistorical": false
               },
               "assertion_confidence": 0.85
             },
@@ -12323,9 +13557,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N11.1"
+                "N12"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "viêm phế quản",
@@ -12356,9 +13590,42 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "J20.6"
+                "J40"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "ertapenem",
+              "position": [
+                587,
+                596
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "325642"
+              ],
+              "link_confidence": 0.95
             },
             {
               "text": "đau bàn chân phải",
@@ -12670,18 +13937,27 @@
               }
             },
             {
-              "text": "phân tích nước tiểu",
+              "text": "ua (urinalysis - tổng phân tích nước tiểu)",
               "position": [
-                1055,
-                1074
+                1033,
+                1075
               ],
               "type": "TÊN_XÉT_NGHIỆM",
-              "confidence": 0.95,
-              "source": "rule",
-              "extraction_source": "rule",
-              "vote_count": 1,
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
               "voters": {
+                "qwen": 1,
                 "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
               },
               "needs_review": false,
               "position_fixed": false,
@@ -12831,11 +14107,11 @@
                 1329,
                 1338
               ],
-              "type": "TRIỆU_CHỨNG",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "TRIỆU_CHỨNG",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -12852,7 +14128,11 @@
                 "isFamily": false,
                 "isHistorical": false
               },
-              "assertion_confidence": 0.85
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "T14.2"
+              ],
+              "link_confidence": 0.99
             },
             {
               "text": "viêm xương tủy",
@@ -12883,9 +14163,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "M86.1"
+                "M86.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "huyết khối tĩnh mạch sâu",
@@ -12910,15 +14190,15 @@
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
-                "isNegated": false,
+                "isNegated": true,
                 "isFamily": false,
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I82"
+                "I82.4"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: đau bàn chân phải\n    Các triệu chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn chân phải đã hoàn toàn hết\n    - cảm thấy tốt hơn\n    - Vẫn cảm thấy không vững khi đứng\n\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm xét nghiệm\n    - hct (hematocrit) 8.126.3\n    - tiểu cầu (platelets) 478\n    - hco3- (bicarbonate) 20\n    - ag (anion gap) 13\n    - bun/creatinine (ure/creatinine)\n    - glucose (đường huyết) 316\n    - lactate (acid lactat) 1.3\n    - Kết quả ua (urinalysis - tổng phân tích nước tiểu): 12 bạch cầu, không vi khuẩn, 1 hồng cầu, âm tính nitrite\n    Kết quả chẩn đoán hình ảnh chẩn đoán hình ảnh\n    - chụp x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)"
@@ -12953,9 +14233,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "E10"
+              "E10.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "tăng huyết áp",
@@ -12988,7 +14268,7 @@
             "candidates": [
               "I10"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "tăng lipid máu",
@@ -13021,7 +14301,7 @@
             "candidates": [
               "E78.5"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "béo phì",
@@ -13052,7 +14332,40 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "E65"
+              "E66.9"
+            ],
+            "link_confidence": 0.99
+          },
+          {
+            "text": "Nhiễm trùng đường tiết niệu",
+            "position": [
+              164,
+              191
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "O23.9"
             ],
             "link_confidence": 0.85
           },
@@ -13081,7 +14394,7 @@
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": true
+              "isHistorical": false
             },
             "assertion_confidence": 0.85
           },
@@ -13172,9 +14485,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "N11.1"
+              "N12"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "viêm phế quản",
@@ -13205,9 +14518,42 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "J20.6"
+              "J40"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
+          },
+          {
+            "text": "ertapenem",
+            "position": [
+              587,
+              596
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "325642"
+            ],
+            "link_confidence": 0.95
           },
           {
             "text": "đau bàn chân phải",
@@ -13519,18 +14865,27 @@
             }
           },
           {
-            "text": "phân tích nước tiểu",
+            "text": "ua (urinalysis - tổng phân tích nước tiểu)",
             "position": [
-              1055,
-              1074
+              1033,
+              1075
             ],
             "type": "TÊN_XÉT_NGHIỆM",
-            "confidence": 0.95,
-            "source": "rule",
-            "extraction_source": "rule",
-            "vote_count": 1,
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
             "voters": {
+              "qwen": 1,
               "rule": 1
+            },
+            "type_votes": {
+              "TÊN_XÉT_NGHIỆM": 1.0
             },
             "needs_review": false,
             "position_fixed": false,
@@ -13680,11 +15035,11 @@
               1329,
               1338
             ],
-            "type": "TRIỆU_CHỨNG",
+            "type": "CHẨN_ĐOÁN",
             "source": "qwen",
             "type_candidates": [
               {
-                "label": "TRIỆU_CHỨNG",
+                "label": "CHẨN_ĐOÁN",
                 "score": 0.85
               }
             ],
@@ -13701,7 +15056,11 @@
               "isFamily": false,
               "isHistorical": false
             },
-            "assertion_confidence": 0.85
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "T14.2"
+            ],
+            "link_confidence": 0.99
           },
           {
             "text": "viêm xương tủy",
@@ -13732,9 +15091,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "M86.1"
+              "M86.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "huyết khối tĩnh mạch sâu",
@@ -13759,15 +15118,15 @@
             "needs_review": false,
             "position_fixed": false,
             "assertions": {
-              "isNegated": false,
+              "isNegated": true,
               "isFamily": false,
               "isHistorical": false
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I82"
+              "I82.4"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           }
         ],
         "result_type": "list"
@@ -13790,19 +15149,19 @@
     {
       "agent": "orchestrator",
       "action": "extraction_complete",
-      "mentions": 29,
-      "ts": 1784566818.5417004
+      "mentions": 31,
+      "ts": 1784626723.683848
     },
     {
       "agent": "orchestrator",
       "action": "assertion_start",
-      "ts": 1784566818.5417151
+      "ts": 1784626723.6838684
     },
     {
       "agent": "assertion",
       "action": "start",
       "data": {
-        "mentions": 29
+        "mentions": 31
       }
     },
     {
@@ -13888,6 +15247,25 @@
         "tool": "rule_assert",
         "input": {
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: đau bàn chân phải\n    Các triệu chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn chân phải đã hoàn toàn hết\n    - cảm thấy tốt hơn\n    - Vẫn cảm thấy không vững khi đứng\n\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm xét nghiệm\n    - hct (hematocrit) 8.126.3\n    - tiểu cầu (platelets) 478\n    - hco3- (bicarbonate) 20\n    - ag (anion gap) 13\n    - bun/creatinine (ure/creatinine)\n    - glucose (đường huyết) 316\n    - lactate (acid lactat) 1.3\n    - Kết quả ua (urinalysis - tổng phân tích nước tiểu): 12 bạch cầu, không vi khuẩn, 1 hồng cầu, âm tính nitrite\n    Kết quả chẩn đoán hình ảnh chẩn đoán hình ảnh\n    - chụp x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)",
+          "start": 164,
+          "end": 191,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: đau bàn chân phải\n    Các triệu chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn chân phải đã hoàn toàn hết\n    - cảm thấy tốt hơn\n    - Vẫn cảm thấy không vững khi đứng\n\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm xét nghiệm\n    - hct (hematocrit) 8.126.3\n    - tiểu cầu (platelets) 478\n    - hco3- (bicarbonate) 20\n    - ag (anion gap) 13\n    - bun/creatinine (ure/creatinine)\n    - glucose (đường huyết) 316\n    - lactate (acid lactat) 1.3\n    - Kết quả ua (urinalysis - tổng phân tích nước tiểu): 12 bạch cầu, không vi khuẩn, 1 hồng cầu, âm tính nitrite\n    Kết quả chẩn đoán hình ảnh chẩn đoán hình ảnh\n    - chụp x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)",
           "start": 307,
           "end": 324,
           "mtype": "TRIỆU_CHỨNG"
@@ -13895,7 +15273,7 @@
         "output": {
           "isNegated": false,
           "isFamily": false,
-          "isHistorical": true
+          "isHistorical": false
         },
         "result_type": "dict"
       }
@@ -13983,6 +15361,25 @@
         "tool": "rule_assert",
         "input": {
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: đau bàn chân phải\n    Các triệu chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn chân phải đã hoàn toàn hết\n    - cảm thấy tốt hơn\n    - Vẫn cảm thấy không vững khi đứng\n\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm xét nghiệm\n    - hct (hematocrit) 8.126.3\n    - tiểu cầu (platelets) 478\n    - hco3- (bicarbonate) 20\n    - ag (anion gap) 13\n    - bun/creatinine (ure/creatinine)\n    - glucose (đường huyết) 316\n    - lactate (acid lactat) 1.3\n    - Kết quả ua (urinalysis - tổng phân tích nước tiểu): 12 bạch cầu, không vi khuẩn, 1 hồng cầu, âm tính nitrite\n    Kết quả chẩn đoán hình ảnh chẩn đoán hình ảnh\n    - chụp x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)",
+          "start": 587,
+          "end": 596,
+          "mtype": "THUỐC"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: đau bàn chân phải\n    Các triệu chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn chân phải đã hoàn toàn hết\n    - cảm thấy tốt hơn\n    - Vẫn cảm thấy không vững khi đứng\n\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm xét nghiệm\n    - hct (hematocrit) 8.126.3\n    - tiểu cầu (platelets) 478\n    - hco3- (bicarbonate) 20\n    - ag (anion gap) 13\n    - bun/creatinine (ure/creatinine)\n    - glucose (đường huyết) 316\n    - lactate (acid lactat) 1.3\n    - Kết quả ua (urinalysis - tổng phân tích nước tiểu): 12 bạch cầu, không vi khuẩn, 1 hồng cầu, âm tính nitrite\n    Kết quả chẩn đoán hình ảnh chẩn đoán hình ảnh\n    - chụp x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)",
           "start": 643,
           "end": 660,
           "mtype": "TRIỆU_CHỨNG"
@@ -14004,7 +15401,7 @@
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: đau bàn chân phải\n    Các triệu chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn chân phải đã hoàn toàn hết\n    - cảm thấy tốt hơn\n    - Vẫn cảm thấy không vững khi đứng\n\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm xét nghiệm\n    - hct (hematocrit) 8.126.3\n    - tiểu cầu (platelets) 478\n    - hco3- (bicarbonate) 20\n    - ag (anion gap) 13\n    - bun/creatinine (ure/creatinine)\n    - glucose (đường huyết) 316\n    - lactate (acid lactat) 1.3\n    - Kết quả ua (urinalysis - tổng phân tích nước tiểu): 12 bạch cầu, không vi khuẩn, 1 hồng cầu, âm tính nitrite\n    Kết quả chẩn đoán hình ảnh chẩn đoán hình ảnh\n    - chụp x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)",
           "start": 1329,
           "end": 1338,
-          "mtype": "TRIỆU_CHỨNG"
+          "mtype": "CHẨN_ĐOÁN"
         },
         "output": {
           "isNegated": true,
@@ -14045,7 +15442,7 @@
           "mtype": "CHẨN_ĐOÁN"
         },
         "output": {
-          "isNegated": false,
+          "isNegated": true,
           "isFamily": false,
           "isHistorical": false
         },
@@ -14056,25 +15453,25 @@
       "agent": "assertion",
       "action": "complete",
       "data": {
-        "processed": 29,
+        "processed": 31,
         "llm_checked": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "assertion_complete",
-      "ts": 1784566818.5426965
+      "ts": 1784626723.685298
     },
     {
       "agent": "orchestrator",
       "action": "linking_start",
-      "ts": 1784566818.5427077
+      "ts": 1784626723.685314
     },
     {
       "agent": "linking",
       "action": "start",
       "data": {
-        "mentions": 29
+        "mentions": 31
       }
     },
     {
@@ -14112,18 +15509,17 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "E10"
+              "E10.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu,"
         },
         "output": {
           "candidates": [
-            "E10"
+            "E10.9"
           ],
-          "confidence": 0.85,
-          "rationale": "Mention 'Tiểu đường loại 1 đái tháo đường' tương ứng với mã E10 (Bệnh đái tháo đường típ 1) trong ICD-10."
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -14165,7 +15561,7 @@
             "candidates": [
               "I10"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác đị"
         },
@@ -14173,8 +15569,7 @@
           "candidates": [
             "I10"
           ],
-          "confidence": 0.85,
-          "rationale": "Mention 'tăng huyết áp' phù hợp với mã I10 (Bệnh tăng huyết áp vô căn - nguyên phát), đây là mã chẩn đoán chính xác và phổ biến nhất cho tình trạng này."
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -14216,7 +15611,7 @@
             "candidates": [
               "E78.5"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh "
         },
@@ -14224,8 +15619,7 @@
           "candidates": [
             "E78.5"
           ],
-          "confidence": 0.85,
-          "rationale": "Mention 'tăng lipid máu' phù hợp với mã E78.5 (Tăng lipid máu, không xác định), đây là mã chẩn đoán chính xác nhất trong danh sách candidates."
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -14265,18 +15659,68 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "E65"
+              "E66.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: "
         },
         "output": {
           "candidates": [
-            "E65"
+            "E66.9"
+          ],
+          "confidence": 0.99
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "Nhiễm trùng đường tiết niệu",
+            "position": [
+              164,
+              191
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "O23.9"
+            ],
+            "link_confidence": 0.85
+          },
+          "context": "nh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: đau bàn chân phải\n    Các triệu ch"
+        },
+        "output": {
+          "candidates": [
+            "O23.9"
           ],
           "confidence": 0.85,
-          "rationale": "Béo phì được mã hóa bởi E65 (Bệnh béo phì khu trú Bao gồm: khối mỡ) trong danh sách candidates."
+          "rationale": "Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm được phân loại dưới mã O23.9 trong ICD-10, đại diện cho 'Nhiễm trùng đường tiết niệu - sinh dục không xác định trong thai kỳ'."
         },
         "result_type": "dict"
       }
@@ -14316,18 +15760,17 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "N11.1"
+              "N12"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "i\n    Các triệu chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập việ"
         },
         "output": {
           "candidates": [
-            "N11.1"
+            "N12"
           ],
-          "confidence": 0.85,
-          "rationale": "Viêm thận bể thận mạn tính do tắc nghẽn là mã bệnh phù hợp nhất với mention 'viêm bể thận' trong ngữ cảnh chẩn đoán."
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -14367,18 +15810,117 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "J20.6"
+              "J40"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn c"
         },
         "output": {
           "candidates": [
-            "J20.6"
+            "J40"
           ],
-          "confidence": 0.85,
-          "rationale": "Viêm phế quản cấp tính do virus hợp bào hô hấp (J20.6) là mã phù hợp nhất với mention 'viêm phế quản' trong ngữ cảnh bệnh nhân vừa nhập viện và xuất viện trong thời gian gần đây, không có thông tin chi tiết về nguyên nhân khác."
+          "confidence": 0.99
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "ertapenem",
+            "position": [
+              587,
+              596
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "325642"
+            ],
+            "link_confidence": 0.95
+          },
+          "context": "hập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn chân phải đã hoàn toàn hết\n    - cảm thấy tốt hơn\n    - Vẫn cảm thấy không vững khi đứng\n\n3.  Đ"
+        },
+        "output": {
+          "candidates": [
+            "325642"
+          ],
+          "confidence": 0.95
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "gãy xương",
+            "position": [
+              1329,
+              1338
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "T14.2"
+            ],
+            "link_confidence": 0.99
+          },
+          "context": " ảnh\n    - chụp x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)"
+        },
+        "output": {
+          "candidates": [
+            "T14.2"
+          ],
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -14418,19 +15960,17 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "M86.1"
+              "M86.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": " x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)"
         },
         "output": {
           "candidates": [
-            "M86.1"
+            "M86.9"
           ],
-          "confidence": 0.85,
-          "rationale": "Viêm xương tủy cấp tính khác (M86.1) là mã ICD-10 phù hợp nhất với tình huống được mô tả trong câu hỏi, bao gồm việc phát hiện viêm xương tủy trong quá trình chẩn đoán.",
-          "steps": 1
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -14464,24 +16004,23 @@
             "needs_review": false,
             "position_fixed": false,
             "assertions": {
-              "isNegated": false,
+              "isNegated": true,
               "isFamily": false,
               "isHistorical": false
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I82"
+              "I82.4"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "hông có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)"
         },
         "output": {
           "candidates": [
-            "I82"
+            "I82.4"
           ],
-          "confidence": 0.85,
-          "rationale": "Mention 'huyết khối tĩnh mạch sâu' phù hợp với mã I82 (Thuyên tắc và/hoặc huyết khối tĩnh mạch khác), đây là mã chẩn đoán chính xác nhất trong danh sách candidates."
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -14490,25 +16029,25 @@
       "agent": "linking",
       "action": "complete",
       "data": {
-        "linked": 8
+        "linked": 11
       }
     },
     {
       "agent": "orchestrator",
       "action": "linking_complete",
-      "linked": 8,
-      "ts": 1784566915.3877945
+      "linked": 11,
+      "ts": 1784626743.3157685
     },
     {
       "agent": "orchestrator",
       "action": "verification_start",
-      "ts": 1784566915.3878121
+      "ts": 1784626743.31579
     },
     {
       "agent": "verifier",
       "action": "start",
       "data": {
-        "mentions": 29
+        "mentions": 31
       }
     },
     {
@@ -14547,9 +16086,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E10"
+                "E10.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng huyết áp",
@@ -14582,7 +16121,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng lipid máu",
@@ -14615,7 +16154,7 @@
               "candidates": [
                 "E78.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "béo phì",
@@ -14646,7 +16185,40 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E65"
+                "E66.9"
+              ],
+              "link_confidence": 0.99
+            },
+            {
+              "text": "Nhiễm trùng đường tiết niệu",
+              "position": [
+                164,
+                191
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "O23.9"
               ],
               "link_confidence": 0.85
             },
@@ -14675,7 +16247,7 @@
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": true
+                "isHistorical": false
               },
               "assertion_confidence": 0.85
             },
@@ -14766,9 +16338,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N11.1"
+                "N12"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "viêm phế quản",
@@ -14799,9 +16371,42 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "J20.6"
+                "J40"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "ertapenem",
+              "position": [
+                587,
+                596
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "325642"
+              ],
+              "link_confidence": 0.95
             },
             {
               "text": "đau bàn chân phải",
@@ -15113,18 +16718,27 @@
               }
             },
             {
-              "text": "phân tích nước tiểu",
+              "text": "ua (urinalysis - tổng phân tích nước tiểu)",
               "position": [
-                1055,
-                1074
+                1033,
+                1075
               ],
               "type": "TÊN_XÉT_NGHIỆM",
-              "confidence": 0.95,
-              "source": "rule",
-              "extraction_source": "rule",
-              "vote_count": 1,
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
               "voters": {
+                "qwen": 1,
                 "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
               },
               "needs_review": false,
               "position_fixed": false,
@@ -15274,11 +16888,11 @@
                 1329,
                 1338
               ],
-              "type": "TRIỆU_CHỨNG",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "TRIỆU_CHỨNG",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -15295,7 +16909,11 @@
                 "isFamily": false,
                 "isHistorical": false
               },
-              "assertion_confidence": 0.85
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "T14.2"
+              ],
+              "link_confidence": 0.99
             },
             {
               "text": "viêm xương tủy",
@@ -15326,9 +16944,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "M86.1"
+                "M86.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "huyết khối tĩnh mạch sâu",
@@ -15353,21 +16971,31 @@
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
-                "isNegated": false,
+                "isNegated": true,
                 "isFamily": false,
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I82"
+                "I82.4"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính\n    - Tiểu đường loại 1 đái tháo đường\n    - tăng huyết áp\n    - tăng lipid máu, không đặc hiệu\n    - béo phì\n    - Nhiễm trùng đường tiết niệu (UTIs) tái phát nhiễm khuẩn đường tiết niệu, vị trí không xác định\n\n2.  Lịch sử bệnh hiện tại\n    Lý do nhập viện: đau bàn chân phải\n    Các triệu chứng hiện tại\n    - đau bàn chân phải\n    - mất thăng bằng khi đi lại\n    Các sự kiện trước khi nhập viện\n    - Gần đây nhập viện vì viêm bể thận và viêm phế quản\n    - Xuất viện về nhà ngày hôm qua\n    - Đang dùng một liệu trình 14 day course of ertapenem\n    Tình trạng ngay trước khi nhập viện\n    - đau bàn chân phải đã hoàn toàn hết\n    - cảm thấy tốt hơn\n    - Vẫn cảm thấy không vững khi đứng\n\n3.  Đánh giá tại bệnh viện\n    Kết quả xét nghiệm xét nghiệm\n    - hct (hematocrit) 8.126.3\n    - tiểu cầu (platelets) 478\n    - hco3- (bicarbonate) 20\n    - ag (anion gap) 13\n    - bun/creatinine (ure/creatinine)\n    - glucose (đường huyết) 316\n    - lactate (acid lactat) 1.3\n    - Kết quả ua (urinalysis - tổng phân tích nước tiểu): 12 bạch cầu, không vi khuẩn, 1 hồng cầu, âm tính nitrite\n    Kết quả chẩn đoán hình ảnh chẩn đoán hình ảnh\n    - chụp x-quang ngực cho thấy dòng picc đã đặt, không có quá trình bệnh lý tim phổi cấp tính\n    - chụp x-quang bàn chân phải không phát hiện gãy xương hoặc viêm xương tủy\n    - Bên phải âm tính với huyết khối tĩnh mạch sâu (DVT)"
         },
         "output": {
           "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
             {
               "action": "accept",
               "fixes": [],
@@ -15544,9 +17172,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E10"
+                "E10.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng huyết áp",
@@ -15579,7 +17207,7 @@
               "candidates": [
                 "I10"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng lipid máu",
@@ -15612,7 +17240,7 @@
               "candidates": [
                 "E78.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "béo phì",
@@ -15643,7 +17271,40 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E65"
+                "E66.9"
+              ],
+              "link_confidence": 0.99
+            },
+            {
+              "text": "Nhiễm trùng đường tiết niệu",
+              "position": [
+                164,
+                191
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "O23.9"
               ],
               "link_confidence": 0.85
             },
@@ -15672,7 +17333,7 @@
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": true
+                "isHistorical": false
               },
               "assertion_confidence": 0.85
             },
@@ -15763,9 +17424,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N11.1"
+                "N12"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "viêm phế quản",
@@ -15796,9 +17457,42 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "J20.6"
+                "J40"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "ertapenem",
+              "position": [
+                587,
+                596
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "325642"
+              ],
+              "link_confidence": 0.95
             },
             {
               "text": "đau bàn chân phải",
@@ -16110,18 +17804,27 @@
               }
             },
             {
-              "text": "phân tích nước tiểu",
+              "text": "ua (urinalysis - tổng phân tích nước tiểu)",
               "position": [
-                1055,
-                1074
+                1033,
+                1075
               ],
               "type": "TÊN_XÉT_NGHIỆM",
-              "confidence": 0.95,
-              "source": "rule",
-              "extraction_source": "rule",
-              "vote_count": 1,
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
               "voters": {
+                "qwen": 1,
                 "rule": 1
+              },
+              "type_votes": {
+                "TÊN_XÉT_NGHIỆM": 1.0
               },
               "needs_review": false,
               "position_fixed": false,
@@ -16271,11 +17974,11 @@
                 1329,
                 1338
               ],
-              "type": "TRIỆU_CHỨNG",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "TRIỆU_CHỨNG",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -16292,7 +17995,11 @@
                 "isFamily": false,
                 "isHistorical": false
               },
-              "assertion_confidence": 0.85
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "T14.2"
+              ],
+              "link_confidence": 0.99
             },
             {
               "text": "viêm xương tủy",
@@ -16323,9 +18030,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "M86.1"
+                "M86.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "huyết khối tĩnh mạch sâu",
@@ -16350,15 +18057,15 @@
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
-                "isNegated": false,
+                "isNegated": true,
                 "isFamily": false,
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I82"
+                "I82.4"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             }
           ],
           "dropped": 0
@@ -16370,22 +18077,22 @@
       "agent": "verifier",
       "action": "validated",
       "data": {
-        "kept": 29,
+        "kept": 31,
         "dropped": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "verification_complete",
-      "kept": 29,
-      "ts": 1784566915.8067803
+      "kept": 31,
+      "ts": 1784626744.163343
     },
     {
       "agent": "orchestrator",
       "action": "complete",
-      "total_mentions": 29,
-      "elapsed": 160.89,
-      "ts": 1784566915.8068004
+      "total_mentions": 31,
+      "elapsed": 102.47,
+      "ts": 1784626744.1633756
     }
   ]
 }

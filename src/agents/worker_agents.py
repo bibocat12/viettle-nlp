@@ -53,6 +53,8 @@ class ExtractionAgent(Agent):
                     try:
                         results[name] = future.result()
                     except Exception as e:
+                        if name == "qwen":
+                            raise RuntimeError(f"Qwen extraction failed: {e}") from e
                         errors.append(f"{name}: {e}")
                         results[name] = []
 
@@ -197,9 +199,18 @@ class AssertionAgent(Agent):
         is_indication = mtype == "TRIỆU_CHỨNG" and bool(
             re.search(r"\bđiều\s+trị\b", prefix)
         )
+        reporter_context = bool(re.search(
+            r"(?:người\s+nhà|gia\s+đình).{0,40}"
+            r"(?:nhận\s+thấy|kể\s+lại|cho\s+biết|báo|thấy)",
+            prefix,
+            flags=re.DOTALL,
+        ))
         return {
             "isNegated": any(re.search(p, prefix) for p in self.NEGATION),
-            "isFamily": any(re.search(p, prefix) for p in self.FAMILY),
+            "isFamily": (
+                not reporter_context
+                and any(re.search(p, prefix) for p in self.FAMILY)
+            ),
             "isHistorical": (
                 not is_indication and (
                     any(re.search(p, prefix) for p in self.HISTORICAL)

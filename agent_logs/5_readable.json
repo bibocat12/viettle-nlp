@@ -1,16 +1,16 @@
 {
   "file_id": "5",
-  "timestamp": 1784565999.3905523,
-  "elapsed": 74.93,
+  "timestamp": 1784707885.2128913,
+  "elapsed": 80.65,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 23,
+  "mention_count": 36,
   "stats": {
-    "total_mentions": 23,
-    "final": 23,
+    "total_mentions": 36,
+    "final": 36,
     "validation_errors": 0,
-    "elapsed": 74.93,
-    "rule": 3,
-    "qwen": 22
+    "elapsed": 80.65,
+    "rule": 5,
+    "qwen": 34
   },
   "log_summary": [
     {
@@ -141,21 +141,69 @@
     },
     {
       "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
-    },
-    {
-      "agent": "linking",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "link_entity"
-    },
-    {
-      "agent": "linking",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -202,75 +250,121 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784565999.3903797,
+      "ts": 1784707885.212707,
       "tool": null
     }
   ],
   "mentions": [
     {
-      "text": "bệnh tim mạch do xơ vữa động mạch",
+      "text": "ung thư biểu mô tế bào mật",
       "type": "CHẨN_ĐOÁN",
       "assertions": [
         "isHistorical"
       ],
       "position": [
-        57,
-        90
+        238,
+        264
       ],
       "candidates": [
-        "I25.0"
+        "C22.1"
       ]
     },
     {
-      "text": "Tăng huyết áp",
+      "text": "vô sinh",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        356,
+        363
+      ]
+    },
+    {
+      "text": "siêu âm",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        616,
+        623
+      ]
+    },
+    {
+      "text": "thưa",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        868,
+        872
+      ]
+    },
+    {
+      "text": "thuốc tránh thai",
+      "type": "THUỐC",
+      "assertions": [],
+      "position": [
+        879,
+        895
+      ],
+      "candidates": []
+    },
+    {
+      "text": "bình thường",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        908,
+        919
+      ]
+    },
+    {
+      "text": "Hội chứng buồng trứng đa nang",
       "type": "CHẨN_ĐOÁN",
-      "assertions": [
-        "isHistorical"
-      ],
+      "assertions": [],
       "position": [
-        97,
-        110
+        982,
+        1011
       ],
       "candidates": [
-        "I10"
+        "E28.2"
       ]
     },
     {
-      "text": "tăng lipid máu",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isHistorical"
-      ],
+      "text": "siêu âm",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
       "position": [
-        117,
-        131
+        1040,
+        1047
       ]
     },
     {
-      "text": "đau bụng",
+      "text": "vô sinh",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        260,
-        268
-      ]
-    },
-    {
-      "text": "đau bụng vùng thượng vị",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        387,
-        410
+        1108,
+        1115
       ]
     },
     {
       "text": "buồn nôn",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
-        417,
-        425
+        1169,
+        1177
+      ]
+    },
+    {
+      "text": "nôn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        1179,
+        1182
       ]
     },
     {
@@ -280,164 +374,253 @@
         "isNegated"
       ],
       "position": [
-        466,
-        469
+        1184,
+        1187
+      ]
+    },
+    {
+      "text": "ớn lạnh",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        1189,
+        1196
+      ]
+    },
+    {
+      "text": "dịch rò rỉ quanh ống thông",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        1203,
+        1229
+      ]
+    },
+    {
+      "text": "cholangiogram",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1250,
+        1263
+      ]
+    },
+    {
+      "text": "sinh thiết",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1478,
+        1488
+      ]
+    },
+    {
+      "text": "ung thư biểu mô tuyến",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        1605,
+        1626
+      ],
+      "candidates": [
+        "C80.1"
+      ]
+    },
+    {
+      "text": "đặt stent thành vách vĩnh viễn",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1726,
+        1756
+      ]
+    },
+    {
+      "text": "buồn nôn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        1939,
+        1947
+      ]
+    },
+    {
+      "text": "nôn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        1949,
+        1952
+      ]
+    },
+    {
+      "text": "đau ngực",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        1954,
+        1962
+      ]
+    },
+    {
+      "text": "khó thở",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        1969,
+        1976
+      ]
+    },
+    {
+      "text": "đau",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        2011,
+        2014
+      ]
+    },
+    {
+      "text": "bình thường",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        2230,
+        2241
+      ]
+    },
+    {
+      "text": "bình thường",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        2298,
+        2309
+      ]
+    },
+    {
+      "text": "buồn nôn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        2366,
+        2374
+      ]
+    },
+    {
+      "text": "nôn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        2376,
+        2379
       ]
     },
     {
       "text": "sốt",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
-        590,
-        593
+        2381,
+        2384
       ]
     },
     {
-      "text": "hạ huyết áp",
+      "text": "ớn lạnh",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
-        647,
-        658
+        2386,
+        2393
       ]
     },
     {
-      "text": "viêm gan do men",
+      "text": "cholangiogram",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        2447,
+        2460
+      ]
+    },
+    {
+      "text": "ung thư biểu mô tuyến",
       "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        787,
-        802
+        2798,
+        2819
       ],
       "candidates": [
-        "B94.2"
+        "C80.1"
       ]
     },
     {
-      "text": "bilirubin",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        934,
-        943
-      ]
-    },
-    {
-      "text": "bạch cầu",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        975,
-        983
-      ]
-    },
-    {
-      "text": "Siêu âm gan mật",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1046,
-        1061
-      ]
-    },
-    {
-      "text": "giãn đường mật",
+      "text": "đau khi sờ nắn xung quanh vị trí đặt ống dẫn",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        1083,
-        1097
+        3002,
+        3046
       ]
     },
     {
-      "text": "tắc nghẽn đường mật",
+      "text": "hít thở sâu",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        1105,
-        1124
+        3064,
+        3075
       ]
     },
     {
-      "text": "Nội soi mật tụy ngược dòng",
-      "type": "TÊN_XÉT_NGHIỆM",
+      "text": "ung thư biểu mô tuyến",
+      "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        1188,
-        1214
-      ]
-    },
-    {
-      "text": "Đặt stent đường mật",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1216,
-        1235
-      ]
-    },
-    {
-      "text": "Đặt nội khí quản",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1269,
-        1285
-      ]
-    },
-    {
-      "text": "Đặt catheter động mạch",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1292,
-        1314
-      ]
-    },
-    {
-      "text": "Đặt đường truyền tĩnh mạch ngoại vi",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1317,
-        1352
-      ]
-    },
-    {
-      "text": "levophed",
-      "type": "THUỐC",
-      "assertions": [],
-      "position": [
-        1360,
-        1368
+        3187,
+        3208
       ],
       "candidates": [
-        "227559"
+        "C80.1"
       ]
     },
     {
-      "text": "propofol",
-      "type": "THUỐC",
+      "text": "cholangiogram",
+      "type": "TÊN_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
-        1375,
-        1383
-      ],
-      "candidates": [
-        "8782"
+        3241,
+        3254
       ]
     },
     {
-      "text": "phentolamine",
-      "type": "THUỐC",
+      "text": "Đặt 3 stent thành vách vĩnh viễn",
+      "type": "TÊN_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
-        1408,
-        1420
-      ],
-      "candidates": [
-        "8153"
+        3388,
+        3420
       ]
     }
   ]

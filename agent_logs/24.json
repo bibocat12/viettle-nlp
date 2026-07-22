@@ -1,7 +1,7 @@
 {
   "file_id": "24",
-  "timestamp": 1784566237.6324344,
-  "elapsed": 26.88,
+  "timestamp": 1784626172.2319734,
+  "elapsed": 29.47,
   "model": "bibocat/qwen3-ner-grpo-final",
   "result": {
     "note_id": "24",
@@ -17,7 +17,7 @@
           73
         ],
         "candidates": [
-          "C50"
+          "C50.912"
         ]
       },
       {
@@ -31,7 +31,7 @@
           99
         ],
         "candidates": [
-          "C50"
+          "C50.912"
         ]
       },
       {
@@ -96,7 +96,9 @@
           698,
           710
         ],
-        "candidates": []
+        "candidates": [
+          "82122"
+        ]
       },
       {
         "text": "cephalexin",
@@ -156,6 +158,15 @@
         ]
       },
       {
+        "text": "không sốt",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          1032,
+          1041
+        ]
+      },
+      {
         "text": "ban đỏ",
         "type": "TRIỆU_CHỨNG",
         "assertions": [],
@@ -198,29 +209,27 @@
     "validation": {
       "is_valid": true,
       "errors": [],
-      "warnings": [
-        "[8] THUỐC has no candidates"
-      ]
+      "warnings": []
     },
     "stats": {
-      "total_mentions": 19,
-      "final": 19,
+      "total_mentions": 20,
+      "final": 20,
       "validation_errors": 0,
-      "elapsed": 26.88,
+      "elapsed": 29.47,
       "rule": 0,
-      "qwen": 20
+      "qwen": 21
     },
     "logs": [
       {
         "agent": "orchestrator",
         "action": "start",
         "text_len": 1361,
-        "ts": 1784566210.7540348
+        "ts": 1784626142.7623537
       },
       {
         "agent": "orchestrator",
         "action": "extraction_start",
-        "ts": 1784566210.7540426
+        "ts": 1784626142.7623773
       },
       {
         "agent": "extraction",
@@ -488,6 +497,22 @@
                 "extraction_source": "qwen"
               },
               {
+                "text": "không sốt",
+                "position": [
+                  1032,
+                  1041
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
                 "text": "ban đỏ",
                 "position": [
                   1154,
@@ -579,9 +604,9 @@
         "data": {
           "sources": {
             "rule": 0,
-            "qwen": 20
+            "qwen": 21
           },
-          "total": 20
+          "total": 21
         }
       },
       {
@@ -832,6 +857,22 @@
                 "extraction_source": "qwen"
               },
               {
+                "text": "không sốt",
+                "position": [
+                  1032,
+                  1041
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
                 "text": "ban đỏ",
                 "position": [
                   1154,
@@ -943,9 +984,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.912"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ung thư vú trái",
@@ -976,9 +1017,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.912"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ban đỏ",
@@ -1182,8 +1223,10 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "82122"
+              ],
+              "link_confidence": 0.99
             },
             {
               "text": "cephalexin",
@@ -1216,7 +1259,7 @@
               "candidates": [
                 "2231"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             },
             {
               "text": "ban đỏ",
@@ -1364,6 +1407,35 @@
               "assertion_confidence": 0.85
             },
             {
+              "text": "không sốt",
+              "position": [
+                1032,
+                1041
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "ban đỏ",
               "position": [
                 1154,
@@ -1486,7 +1558,7 @@
               "candidates": [
                 "11124"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             }
           ],
           "result_type": "list"
@@ -1496,7 +1568,7 @@
         "agent": "extraction",
         "action": "voted",
         "data": {
-          "merged": 19
+          "merged": 20
         }
       },
       {
@@ -1535,9 +1607,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "C50"
+                  "C50.912"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "ung thư vú trái",
@@ -1568,9 +1640,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "C50"
+                  "C50.912"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "ban đỏ",
@@ -1774,8 +1846,10 @@
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85,
-                "candidates": [],
-                "link_confidence": 0.0
+                "candidates": [
+                  "82122"
+                ],
+                "link_confidence": 0.99
               },
               {
                 "text": "cephalexin",
@@ -1808,7 +1882,7 @@
                 "candidates": [
                   "2231"
                 ],
-                "link_confidence": 0.95
+                "link_confidence": 0.99
               },
               {
                 "text": "ban đỏ",
@@ -1956,6 +2030,35 @@
                 "assertion_confidence": 0.85
               },
               {
+                "text": "không sốt",
+                "position": [
+                  1032,
+                  1041
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
                 "text": "ban đỏ",
                 "position": [
                   1154,
@@ -2078,7 +2181,7 @@
                 "candidates": [
                   "11124"
                 ],
-                "link_confidence": 0.95
+                "link_confidence": 0.99
               }
             ],
             "text": "1.  Tiền sử bệnh\n    Bệnh lý mãn tính: mới được chẩn đoán ung thư vú trái giai IIIB ung thư vú trái\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ tuyến vú trái đơn giản\n    - thủ thuật nạo hạch gác rồng bên trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: xuất hiện nhiều  ban đỏ và đau khi sờ nắn ở vết mổ\n    Triệu chứng Bắt đầu\n    - sau khi xuất viện\n    - ống dẫn lưu JP được rút vào ngày DD MM\n    - bắt đầu có hiện tượng sưng nề đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    Diễn biến bệnh\n    - tăng diện tích đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    - đến khám tại phòng khám\n    - vùng da sưng nề được chọc hút dịch, gửi đi cấy mẫu bệnh phẩm\n    - được cho về vớ đơn thuốci levafloxacin và cephalexin\n    - tái khám với triệu chứng xuất hiện  ban đỏ lan rộng kèm theo chóng mặt\n    - được chuyển đến Khoa Cấp cứu\n    - Tại thời điểm khám bệnh  bệnh nhân có các triệu chứng tương tự\n    Triệu chứng hiện tại\n    -  ban đỏ xuất hiện nhiểu ở vị trí phẫu thuật\n    - đau khi sờ nắn vùng mổ\n    - chóng mặt\n    - không sốt\n    - hiện tại chưa phát hiện các triệu chứng toàn thân khác\n3.  khám tại bệnh viện\n    Dấu hiệu lâm sàng\n    - ban đỏ ở vị trí phẫu thuật\n    - đau ấn vùng mổ\n    - không sốt\n    - chưa phát hiện các triệu chứng toàn thân khác\n    Thủ thuật đã thực hiện\n    - Đã khám tổn thương da, chọc hút dịch\n    - dùng vancomycin"
@@ -2113,9 +2216,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.912"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ung thư vú trái",
@@ -2146,9 +2249,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.912"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ban đỏ",
@@ -2352,8 +2455,10 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "82122"
+              ],
+              "link_confidence": 0.99
             },
             {
               "text": "cephalexin",
@@ -2386,7 +2491,7 @@
               "candidates": [
                 "2231"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             },
             {
               "text": "ban đỏ",
@@ -2534,6 +2639,35 @@
               "assertion_confidence": 0.85
             },
             {
+              "text": "không sốt",
+              "position": [
+                1032,
+                1041
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "ban đỏ",
               "position": [
                 1154,
@@ -2656,7 +2790,7 @@
               "candidates": [
                 "11124"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             }
           ],
           "result_type": "list"
@@ -2698,9 +2832,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "C50"
+                  "C50.912"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "ung thư vú trái",
@@ -2731,9 +2865,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "C50"
+                  "C50.912"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "ban đỏ",
@@ -2937,8 +3071,10 @@
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85,
-                "candidates": [],
-                "link_confidence": 0.0
+                "candidates": [
+                  "82122"
+                ],
+                "link_confidence": 0.99
               },
               {
                 "text": "cephalexin",
@@ -2971,7 +3107,7 @@
                 "candidates": [
                   "2231"
                 ],
-                "link_confidence": 0.95
+                "link_confidence": 0.99
               },
               {
                 "text": "ban đỏ",
@@ -3119,6 +3255,35 @@
                 "assertion_confidence": 0.85
               },
               {
+                "text": "không sốt",
+                "position": [
+                  1032,
+                  1041
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
                 "text": "ban đỏ",
                 "position": [
                   1154,
@@ -3241,7 +3406,7 @@
                 "candidates": [
                   "11124"
                 ],
-                "link_confidence": 0.95
+                "link_confidence": 0.99
               }
             ],
             "text": "1.  Tiền sử bệnh\n    Bệnh lý mãn tính: mới được chẩn đoán ung thư vú trái giai IIIB ung thư vú trái\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ tuyến vú trái đơn giản\n    - thủ thuật nạo hạch gác rồng bên trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: xuất hiện nhiều  ban đỏ và đau khi sờ nắn ở vết mổ\n    Triệu chứng Bắt đầu\n    - sau khi xuất viện\n    - ống dẫn lưu JP được rút vào ngày DD MM\n    - bắt đầu có hiện tượng sưng nề đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    Diễn biến bệnh\n    - tăng diện tích đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    - đến khám tại phòng khám\n    - vùng da sưng nề được chọc hút dịch, gửi đi cấy mẫu bệnh phẩm\n    - được cho về vớ đơn thuốci levafloxacin và cephalexin\n    - tái khám với triệu chứng xuất hiện  ban đỏ lan rộng kèm theo chóng mặt\n    - được chuyển đến Khoa Cấp cứu\n    - Tại thời điểm khám bệnh  bệnh nhân có các triệu chứng tương tự\n    Triệu chứng hiện tại\n    -  ban đỏ xuất hiện nhiểu ở vị trí phẫu thuật\n    - đau khi sờ nắn vùng mổ\n    - chóng mặt\n    - không sốt\n    - hiện tại chưa phát hiện các triệu chứng toàn thân khác\n3.  khám tại bệnh viện\n    Dấu hiệu lâm sàng\n    - ban đỏ ở vị trí phẫu thuật\n    - đau ấn vùng mổ\n    - không sốt\n    - chưa phát hiện các triệu chứng toàn thân khác\n    Thủ thuật đã thực hiện\n    - Đã khám tổn thương da, chọc hút dịch\n    - dùng vancomycin"
@@ -3276,9 +3441,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.912"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ung thư vú trái",
@@ -3309,9 +3474,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.912"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ban đỏ",
@@ -3515,8 +3680,10 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "82122"
+              ],
+              "link_confidence": 0.99
             },
             {
               "text": "cephalexin",
@@ -3549,7 +3716,7 @@
               "candidates": [
                 "2231"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             },
             {
               "text": "ban đỏ",
@@ -3697,6 +3864,35 @@
               "assertion_confidence": 0.85
             },
             {
+              "text": "không sốt",
+              "position": [
+                1032,
+                1041
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "ban đỏ",
               "position": [
                 1154,
@@ -3819,7 +4015,7 @@
               "candidates": [
                 "11124"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             }
           ],
           "result_type": "list"
@@ -3842,19 +4038,19 @@
       {
         "agent": "orchestrator",
         "action": "extraction_complete",
-        "mentions": 19,
-        "ts": 1784566224.8324227
+        "mentions": 20,
+        "ts": 1784626170.9056017
       },
       {
         "agent": "orchestrator",
         "action": "assertion_start",
-        "ts": 1784566224.832441
+        "ts": 1784626170.9056337
       },
       {
         "agent": "assertion",
         "action": "start",
         "data": {
-          "mentions": 19
+          "mentions": 20
         }
       },
       {
@@ -4149,6 +4345,25 @@
           "tool": "rule_assert",
           "input": {
             "text": "1.  Tiền sử bệnh\n    Bệnh lý mãn tính: mới được chẩn đoán ung thư vú trái giai IIIB ung thư vú trái\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ tuyến vú trái đơn giản\n    - thủ thuật nạo hạch gác rồng bên trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: xuất hiện nhiều  ban đỏ và đau khi sờ nắn ở vết mổ\n    Triệu chứng Bắt đầu\n    - sau khi xuất viện\n    - ống dẫn lưu JP được rút vào ngày DD MM\n    - bắt đầu có hiện tượng sưng nề đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    Diễn biến bệnh\n    - tăng diện tích đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    - đến khám tại phòng khám\n    - vùng da sưng nề được chọc hút dịch, gửi đi cấy mẫu bệnh phẩm\n    - được cho về vớ đơn thuốci levafloxacin và cephalexin\n    - tái khám với triệu chứng xuất hiện  ban đỏ lan rộng kèm theo chóng mặt\n    - được chuyển đến Khoa Cấp cứu\n    - Tại thời điểm khám bệnh  bệnh nhân có các triệu chứng tương tự\n    Triệu chứng hiện tại\n    -  ban đỏ xuất hiện nhiểu ở vị trí phẫu thuật\n    - đau khi sờ nắn vùng mổ\n    - chóng mặt\n    - không sốt\n    - hiện tại chưa phát hiện các triệu chứng toàn thân khác\n3.  khám tại bệnh viện\n    Dấu hiệu lâm sàng\n    - ban đỏ ở vị trí phẫu thuật\n    - đau ấn vùng mổ\n    - không sốt\n    - chưa phát hiện các triệu chứng toàn thân khác\n    Thủ thuật đã thực hiện\n    - Đã khám tổn thương da, chọc hút dịch\n    - dùng vancomycin",
+            "start": 1032,
+            "end": 1041,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    Bệnh lý mãn tính: mới được chẩn đoán ung thư vú trái giai IIIB ung thư vú trái\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ tuyến vú trái đơn giản\n    - thủ thuật nạo hạch gác rồng bên trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: xuất hiện nhiều  ban đỏ và đau khi sờ nắn ở vết mổ\n    Triệu chứng Bắt đầu\n    - sau khi xuất viện\n    - ống dẫn lưu JP được rút vào ngày DD MM\n    - bắt đầu có hiện tượng sưng nề đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    Diễn biến bệnh\n    - tăng diện tích đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    - đến khám tại phòng khám\n    - vùng da sưng nề được chọc hút dịch, gửi đi cấy mẫu bệnh phẩm\n    - được cho về vớ đơn thuốci levafloxacin và cephalexin\n    - tái khám với triệu chứng xuất hiện  ban đỏ lan rộng kèm theo chóng mặt\n    - được chuyển đến Khoa Cấp cứu\n    - Tại thời điểm khám bệnh  bệnh nhân có các triệu chứng tương tự\n    Triệu chứng hiện tại\n    -  ban đỏ xuất hiện nhiểu ở vị trí phẫu thuật\n    - đau khi sờ nắn vùng mổ\n    - chóng mặt\n    - không sốt\n    - hiện tại chưa phát hiện các triệu chứng toàn thân khác\n3.  khám tại bệnh viện\n    Dấu hiệu lâm sàng\n    - ban đỏ ở vị trí phẫu thuật\n    - đau ấn vùng mổ\n    - không sốt\n    - chưa phát hiện các triệu chứng toàn thân khác\n    Thủ thuật đã thực hiện\n    - Đã khám tổn thương da, chọc hút dịch\n    - dùng vancomycin",
             "start": 1154,
             "end": 1160,
             "mtype": "TRIỆU_CHỨNG"
@@ -4222,25 +4437,25 @@
         "agent": "assertion",
         "action": "complete",
         "data": {
-          "processed": 19,
+          "processed": 20,
           "llm_checked": 0
         }
       },
       {
         "agent": "orchestrator",
         "action": "assertion_complete",
-        "ts": 1784566224.8338497
+        "ts": 1784626170.9114456
       },
       {
         "agent": "orchestrator",
         "action": "linking_start",
-        "ts": 1784566224.833867
+        "ts": 1784626170.9114842
       },
       {
         "agent": "linking",
         "action": "start",
         "data": {
-          "mentions": 19
+          "mentions": 20
         }
       },
       {
@@ -4278,18 +4493,17 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.912"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "1.  Tiền sử bệnh\n    Bệnh lý mãn tính: mới được chẩn đoán ung thư vú trái giai IIIB ung thư vú trái\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ tuyến vú trái đơn giản\n    - thủ thuật nạo hạch gác rồng bên trái\n2.  Tiền "
           },
           "output": {
             "candidates": [
-              "C50"
+              "C50.912"
             ],
-            "confidence": 0.85,
-            "rationale": "Ung thư vú trái được mã hóa bởi C50 (U ác tính ở vú - Bao gồm: mô liên kết của vú - Loại trừ: da ở vú (C43.9))"
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -4328,14 +4542,18 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "82122"
+              ],
+              "link_confidence": 0.99
             },
             "context": "g da kèm theo ban đỏ\n    - đến khám tại phòng khám\n    - vùng da sưng nề được chọc hút dịch, gửi đi cấy mẫu bệnh phẩm\n    - được cho về vớ đơn thuốci levafloxacin và cephalexin\n    - tái khám với triệu chứng xuất hiện  ban đỏ lan rộng kèm theo chóng mặt\n    - được chuyển đến Khoa Cấp cứu\n    - Tại thời điểm khá"
           },
           "output": {
-            "candidates": [],
-            "confidence": 0.0
+            "candidates": [
+              "82122"
+            ],
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -4377,7 +4595,7 @@
               "candidates": [
                 "2231"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             },
             "context": "n đỏ\n    - đến khám tại phòng khám\n    - vùng da sưng nề được chọc hút dịch, gửi đi cấy mẫu bệnh phẩm\n    - được cho về vớ đơn thuốci levafloxacin và cephalexin\n    - tái khám với triệu chứng xuất hiện  ban đỏ lan rộng kèm theo chóng mặt\n    - được chuyển đến Khoa Cấp cứu\n    - Tại thời điểm khám bệnh  bệnh n"
           },
@@ -4385,7 +4603,7 @@
             "candidates": [
               "2231"
             ],
-            "confidence": 0.95
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -4427,7 +4645,7 @@
               "candidates": [
                 "11124"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             },
             "context": "\n    - không sốt\n    - chưa phát hiện các triệu chứng toàn thân khác\n    Thủ thuật đã thực hiện\n    - Đã khám tổn thương da, chọc hút dịch\n    - dùng vancomycin"
           },
@@ -4435,7 +4653,7 @@
             "candidates": [
               "11124"
             ],
-            "confidence": 0.95
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -4444,25 +4662,25 @@
         "agent": "linking",
         "action": "complete",
         "data": {
-          "linked": 4
+          "linked": 5
         }
       },
       {
         "agent": "orchestrator",
         "action": "linking_complete",
-        "linked": 4,
-        "ts": 1784566235.8171184
+        "linked": 5,
+        "ts": 1784626170.91177
       },
       {
         "agent": "orchestrator",
         "action": "verification_start",
-        "ts": 1784566235.8171365
+        "ts": 1784626170.911791
       },
       {
         "agent": "verifier",
         "action": "start",
         "data": {
-          "mentions": 19
+          "mentions": 20
         }
       },
       {
@@ -4501,9 +4719,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "C50"
+                  "C50.912"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "ung thư vú trái",
@@ -4534,9 +4752,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "C50"
+                  "C50.912"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "ban đỏ",
@@ -4740,8 +4958,10 @@
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85,
-                "candidates": [],
-                "link_confidence": 0.0
+                "candidates": [
+                  "82122"
+                ],
+                "link_confidence": 0.99
               },
               {
                 "text": "cephalexin",
@@ -4774,7 +4994,7 @@
                 "candidates": [
                   "2231"
                 ],
-                "link_confidence": 0.95
+                "link_confidence": 0.99
               },
               {
                 "text": "ban đỏ",
@@ -4922,6 +5142,35 @@
                 "assertion_confidence": 0.85
               },
               {
+                "text": "không sốt",
+                "position": [
+                  1032,
+                  1041
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
                 "text": "ban đỏ",
                 "position": [
                   1154,
@@ -5044,7 +5293,7 @@
                 "candidates": [
                   "11124"
                 ],
-                "link_confidence": 0.95
+                "link_confidence": 0.99
               }
             ],
             "text": "1.  Tiền sử bệnh\n    Bệnh lý mãn tính: mới được chẩn đoán ung thư vú trái giai IIIB ung thư vú trái\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ tuyến vú trái đơn giản\n    - thủ thuật nạo hạch gác rồng bên trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: xuất hiện nhiều  ban đỏ và đau khi sờ nắn ở vết mổ\n    Triệu chứng Bắt đầu\n    - sau khi xuất viện\n    - ống dẫn lưu JP được rút vào ngày DD MM\n    - bắt đầu có hiện tượng sưng nề đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    Diễn biến bệnh\n    - tăng diện tích đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    - đến khám tại phòng khám\n    - vùng da sưng nề được chọc hút dịch, gửi đi cấy mẫu bệnh phẩm\n    - được cho về vớ đơn thuốci levafloxacin và cephalexin\n    - tái khám với triệu chứng xuất hiện  ban đỏ lan rộng kèm theo chóng mặt\n    - được chuyển đến Khoa Cấp cứu\n    - Tại thời điểm khám bệnh  bệnh nhân có các triệu chứng tương tự\n    Triệu chứng hiện tại\n    -  ban đỏ xuất hiện nhiểu ở vị trí phẫu thuật\n    - đau khi sờ nắn vùng mổ\n    - chóng mặt\n    - không sốt\n    - hiện tại chưa phát hiện các triệu chứng toàn thân khác\n3.  khám tại bệnh viện\n    Dấu hiệu lâm sàng\n    - ban đỏ ở vị trí phẫu thuật\n    - đau ấn vùng mổ\n    - không sốt\n    - chưa phát hiện các triệu chứng toàn thân khác\n    Thủ thuật đã thực hiện\n    - Đã khám tổn thương da, chọc hút dịch\n    - dùng vancomycin"
@@ -5094,9 +5343,12 @@
               {
                 "action": "accept",
                 "fixes": [],
-                "warnings": [
-                  "no candidates"
-                ]
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
               },
               {
                 "action": "accept",
@@ -5179,9 +5431,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "C50"
+                  "C50.912"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "ung thư vú trái",
@@ -5212,9 +5464,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "C50"
+                  "C50.912"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "ban đỏ",
@@ -5418,8 +5670,10 @@
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85,
-                "candidates": [],
-                "link_confidence": 0.0
+                "candidates": [
+                  "82122"
+                ],
+                "link_confidence": 0.99
               },
               {
                 "text": "cephalexin",
@@ -5452,7 +5706,7 @@
                 "candidates": [
                   "2231"
                 ],
-                "link_confidence": 0.95
+                "link_confidence": 0.99
               },
               {
                 "text": "ban đỏ",
@@ -5600,6 +5854,35 @@
                 "assertion_confidence": 0.85
               },
               {
+                "text": "không sốt",
+                "position": [
+                  1032,
+                  1041
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
                 "text": "ban đỏ",
                 "position": [
                   1154,
@@ -5722,7 +6005,7 @@
                 "candidates": [
                   "11124"
                 ],
-                "link_confidence": 0.95
+                "link_confidence": 0.99
               }
             ],
             "dropped": 0
@@ -5734,22 +6017,22 @@
         "agent": "verifier",
         "action": "validated",
         "data": {
-          "kept": 19,
+          "kept": 20,
           "dropped": 0
         }
       },
       {
         "agent": "orchestrator",
         "action": "verification_complete",
-        "kept": 19,
-        "ts": 1784566237.6321929
+        "kept": 20,
+        "ts": 1784626172.231606
       },
       {
         "agent": "orchestrator",
         "action": "complete",
-        "total_mentions": 19,
-        "elapsed": 26.88,
-        "ts": 1784566237.632223
+        "total_mentions": 20,
+        "elapsed": 29.47,
+        "ts": 1784626172.2316625
       }
     ]
   },
@@ -5758,12 +6041,12 @@
       "agent": "orchestrator",
       "action": "start",
       "text_len": 1361,
-      "ts": 1784566210.7540348
+      "ts": 1784626142.7623537
     },
     {
       "agent": "orchestrator",
       "action": "extraction_start",
-      "ts": 1784566210.7540426
+      "ts": 1784626142.7623773
     },
     {
       "agent": "extraction",
@@ -6031,6 +6314,22 @@
               "extraction_source": "qwen"
             },
             {
+              "text": "không sốt",
+              "position": [
+                1032,
+                1041
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
               "text": "ban đỏ",
               "position": [
                 1154,
@@ -6122,9 +6421,9 @@
       "data": {
         "sources": {
           "rule": 0,
-          "qwen": 20
+          "qwen": 21
         },
-        "total": 20
+        "total": 21
       }
     },
     {
@@ -6375,6 +6674,22 @@
               "extraction_source": "qwen"
             },
             {
+              "text": "không sốt",
+              "position": [
+                1032,
+                1041
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
               "text": "ban đỏ",
               "position": [
                 1154,
@@ -6486,9 +6801,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "C50"
+              "C50.912"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "ung thư vú trái",
@@ -6519,9 +6834,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "C50"
+              "C50.912"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "ban đỏ",
@@ -6725,8 +7040,10 @@
               "isHistorical": false
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "82122"
+            ],
+            "link_confidence": 0.99
           },
           {
             "text": "cephalexin",
@@ -6759,7 +7076,7 @@
             "candidates": [
               "2231"
             ],
-            "link_confidence": 0.95
+            "link_confidence": 0.99
           },
           {
             "text": "ban đỏ",
@@ -6907,6 +7224,35 @@
             "assertion_confidence": 0.85
           },
           {
+            "text": "không sốt",
+            "position": [
+              1032,
+              1041
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
             "text": "ban đỏ",
             "position": [
               1154,
@@ -7029,7 +7375,7 @@
             "candidates": [
               "11124"
             ],
-            "link_confidence": 0.95
+            "link_confidence": 0.99
           }
         ],
         "result_type": "list"
@@ -7039,7 +7385,7 @@
       "agent": "extraction",
       "action": "voted",
       "data": {
-        "merged": 19
+        "merged": 20
       }
     },
     {
@@ -7078,9 +7424,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.912"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ung thư vú trái",
@@ -7111,9 +7457,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.912"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ban đỏ",
@@ -7317,8 +7663,10 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "82122"
+              ],
+              "link_confidence": 0.99
             },
             {
               "text": "cephalexin",
@@ -7351,7 +7699,7 @@
               "candidates": [
                 "2231"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             },
             {
               "text": "ban đỏ",
@@ -7499,6 +7847,35 @@
               "assertion_confidence": 0.85
             },
             {
+              "text": "không sốt",
+              "position": [
+                1032,
+                1041
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "ban đỏ",
               "position": [
                 1154,
@@ -7621,7 +7998,7 @@
               "candidates": [
                 "11124"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             }
           ],
           "text": "1.  Tiền sử bệnh\n    Bệnh lý mãn tính: mới được chẩn đoán ung thư vú trái giai IIIB ung thư vú trái\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ tuyến vú trái đơn giản\n    - thủ thuật nạo hạch gác rồng bên trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: xuất hiện nhiều  ban đỏ và đau khi sờ nắn ở vết mổ\n    Triệu chứng Bắt đầu\n    - sau khi xuất viện\n    - ống dẫn lưu JP được rút vào ngày DD MM\n    - bắt đầu có hiện tượng sưng nề đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    Diễn biến bệnh\n    - tăng diện tích đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    - đến khám tại phòng khám\n    - vùng da sưng nề được chọc hút dịch, gửi đi cấy mẫu bệnh phẩm\n    - được cho về vớ đơn thuốci levafloxacin và cephalexin\n    - tái khám với triệu chứng xuất hiện  ban đỏ lan rộng kèm theo chóng mặt\n    - được chuyển đến Khoa Cấp cứu\n    - Tại thời điểm khám bệnh  bệnh nhân có các triệu chứng tương tự\n    Triệu chứng hiện tại\n    -  ban đỏ xuất hiện nhiểu ở vị trí phẫu thuật\n    - đau khi sờ nắn vùng mổ\n    - chóng mặt\n    - không sốt\n    - hiện tại chưa phát hiện các triệu chứng toàn thân khác\n3.  khám tại bệnh viện\n    Dấu hiệu lâm sàng\n    - ban đỏ ở vị trí phẫu thuật\n    - đau ấn vùng mổ\n    - không sốt\n    - chưa phát hiện các triệu chứng toàn thân khác\n    Thủ thuật đã thực hiện\n    - Đã khám tổn thương da, chọc hút dịch\n    - dùng vancomycin"
@@ -7656,9 +8033,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "C50"
+              "C50.912"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "ung thư vú trái",
@@ -7689,9 +8066,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "C50"
+              "C50.912"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "ban đỏ",
@@ -7895,8 +8272,10 @@
               "isHistorical": false
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "82122"
+            ],
+            "link_confidence": 0.99
           },
           {
             "text": "cephalexin",
@@ -7929,7 +8308,7 @@
             "candidates": [
               "2231"
             ],
-            "link_confidence": 0.95
+            "link_confidence": 0.99
           },
           {
             "text": "ban đỏ",
@@ -8077,6 +8456,35 @@
             "assertion_confidence": 0.85
           },
           {
+            "text": "không sốt",
+            "position": [
+              1032,
+              1041
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
             "text": "ban đỏ",
             "position": [
               1154,
@@ -8199,7 +8607,7 @@
             "candidates": [
               "11124"
             ],
-            "link_confidence": 0.95
+            "link_confidence": 0.99
           }
         ],
         "result_type": "list"
@@ -8241,9 +8649,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.912"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ung thư vú trái",
@@ -8274,9 +8682,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.912"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ban đỏ",
@@ -8480,8 +8888,10 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "82122"
+              ],
+              "link_confidence": 0.99
             },
             {
               "text": "cephalexin",
@@ -8514,7 +8924,7 @@
               "candidates": [
                 "2231"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             },
             {
               "text": "ban đỏ",
@@ -8662,6 +9072,35 @@
               "assertion_confidence": 0.85
             },
             {
+              "text": "không sốt",
+              "position": [
+                1032,
+                1041
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "ban đỏ",
               "position": [
                 1154,
@@ -8784,7 +9223,7 @@
               "candidates": [
                 "11124"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             }
           ],
           "text": "1.  Tiền sử bệnh\n    Bệnh lý mãn tính: mới được chẩn đoán ung thư vú trái giai IIIB ung thư vú trái\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ tuyến vú trái đơn giản\n    - thủ thuật nạo hạch gác rồng bên trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: xuất hiện nhiều  ban đỏ và đau khi sờ nắn ở vết mổ\n    Triệu chứng Bắt đầu\n    - sau khi xuất viện\n    - ống dẫn lưu JP được rút vào ngày DD MM\n    - bắt đầu có hiện tượng sưng nề đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    Diễn biến bệnh\n    - tăng diện tích đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    - đến khám tại phòng khám\n    - vùng da sưng nề được chọc hút dịch, gửi đi cấy mẫu bệnh phẩm\n    - được cho về vớ đơn thuốci levafloxacin và cephalexin\n    - tái khám với triệu chứng xuất hiện  ban đỏ lan rộng kèm theo chóng mặt\n    - được chuyển đến Khoa Cấp cứu\n    - Tại thời điểm khám bệnh  bệnh nhân có các triệu chứng tương tự\n    Triệu chứng hiện tại\n    -  ban đỏ xuất hiện nhiểu ở vị trí phẫu thuật\n    - đau khi sờ nắn vùng mổ\n    - chóng mặt\n    - không sốt\n    - hiện tại chưa phát hiện các triệu chứng toàn thân khác\n3.  khám tại bệnh viện\n    Dấu hiệu lâm sàng\n    - ban đỏ ở vị trí phẫu thuật\n    - đau ấn vùng mổ\n    - không sốt\n    - chưa phát hiện các triệu chứng toàn thân khác\n    Thủ thuật đã thực hiện\n    - Đã khám tổn thương da, chọc hút dịch\n    - dùng vancomycin"
@@ -8819,9 +9258,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "C50"
+              "C50.912"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "ung thư vú trái",
@@ -8852,9 +9291,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "C50"
+              "C50.912"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "ban đỏ",
@@ -9058,8 +9497,10 @@
               "isHistorical": false
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "82122"
+            ],
+            "link_confidence": 0.99
           },
           {
             "text": "cephalexin",
@@ -9092,7 +9533,7 @@
             "candidates": [
               "2231"
             ],
-            "link_confidence": 0.95
+            "link_confidence": 0.99
           },
           {
             "text": "ban đỏ",
@@ -9240,6 +9681,35 @@
             "assertion_confidence": 0.85
           },
           {
+            "text": "không sốt",
+            "position": [
+              1032,
+              1041
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
             "text": "ban đỏ",
             "position": [
               1154,
@@ -9362,7 +9832,7 @@
             "candidates": [
               "11124"
             ],
-            "link_confidence": 0.95
+            "link_confidence": 0.99
           }
         ],
         "result_type": "list"
@@ -9385,19 +9855,19 @@
     {
       "agent": "orchestrator",
       "action": "extraction_complete",
-      "mentions": 19,
-      "ts": 1784566224.8324227
+      "mentions": 20,
+      "ts": 1784626170.9056017
     },
     {
       "agent": "orchestrator",
       "action": "assertion_start",
-      "ts": 1784566224.832441
+      "ts": 1784626170.9056337
     },
     {
       "agent": "assertion",
       "action": "start",
       "data": {
-        "mentions": 19
+        "mentions": 20
       }
     },
     {
@@ -9692,6 +10162,25 @@
         "tool": "rule_assert",
         "input": {
           "text": "1.  Tiền sử bệnh\n    Bệnh lý mãn tính: mới được chẩn đoán ung thư vú trái giai IIIB ung thư vú trái\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ tuyến vú trái đơn giản\n    - thủ thuật nạo hạch gác rồng bên trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: xuất hiện nhiều  ban đỏ và đau khi sờ nắn ở vết mổ\n    Triệu chứng Bắt đầu\n    - sau khi xuất viện\n    - ống dẫn lưu JP được rút vào ngày DD MM\n    - bắt đầu có hiện tượng sưng nề đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    Diễn biến bệnh\n    - tăng diện tích đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    - đến khám tại phòng khám\n    - vùng da sưng nề được chọc hút dịch, gửi đi cấy mẫu bệnh phẩm\n    - được cho về vớ đơn thuốci levafloxacin và cephalexin\n    - tái khám với triệu chứng xuất hiện  ban đỏ lan rộng kèm theo chóng mặt\n    - được chuyển đến Khoa Cấp cứu\n    - Tại thời điểm khám bệnh  bệnh nhân có các triệu chứng tương tự\n    Triệu chứng hiện tại\n    -  ban đỏ xuất hiện nhiểu ở vị trí phẫu thuật\n    - đau khi sờ nắn vùng mổ\n    - chóng mặt\n    - không sốt\n    - hiện tại chưa phát hiện các triệu chứng toàn thân khác\n3.  khám tại bệnh viện\n    Dấu hiệu lâm sàng\n    - ban đỏ ở vị trí phẫu thuật\n    - đau ấn vùng mổ\n    - không sốt\n    - chưa phát hiện các triệu chứng toàn thân khác\n    Thủ thuật đã thực hiện\n    - Đã khám tổn thương da, chọc hút dịch\n    - dùng vancomycin",
+          "start": 1032,
+          "end": 1041,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Bệnh lý mãn tính: mới được chẩn đoán ung thư vú trái giai IIIB ung thư vú trái\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ tuyến vú trái đơn giản\n    - thủ thuật nạo hạch gác rồng bên trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: xuất hiện nhiều  ban đỏ và đau khi sờ nắn ở vết mổ\n    Triệu chứng Bắt đầu\n    - sau khi xuất viện\n    - ống dẫn lưu JP được rút vào ngày DD MM\n    - bắt đầu có hiện tượng sưng nề đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    Diễn biến bệnh\n    - tăng diện tích đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    - đến khám tại phòng khám\n    - vùng da sưng nề được chọc hút dịch, gửi đi cấy mẫu bệnh phẩm\n    - được cho về vớ đơn thuốci levafloxacin và cephalexin\n    - tái khám với triệu chứng xuất hiện  ban đỏ lan rộng kèm theo chóng mặt\n    - được chuyển đến Khoa Cấp cứu\n    - Tại thời điểm khám bệnh  bệnh nhân có các triệu chứng tương tự\n    Triệu chứng hiện tại\n    -  ban đỏ xuất hiện nhiểu ở vị trí phẫu thuật\n    - đau khi sờ nắn vùng mổ\n    - chóng mặt\n    - không sốt\n    - hiện tại chưa phát hiện các triệu chứng toàn thân khác\n3.  khám tại bệnh viện\n    Dấu hiệu lâm sàng\n    - ban đỏ ở vị trí phẫu thuật\n    - đau ấn vùng mổ\n    - không sốt\n    - chưa phát hiện các triệu chứng toàn thân khác\n    Thủ thuật đã thực hiện\n    - Đã khám tổn thương da, chọc hút dịch\n    - dùng vancomycin",
           "start": 1154,
           "end": 1160,
           "mtype": "TRIỆU_CHỨNG"
@@ -9765,25 +10254,25 @@
       "agent": "assertion",
       "action": "complete",
       "data": {
-        "processed": 19,
+        "processed": 20,
         "llm_checked": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "assertion_complete",
-      "ts": 1784566224.8338497
+      "ts": 1784626170.9114456
     },
     {
       "agent": "orchestrator",
       "action": "linking_start",
-      "ts": 1784566224.833867
+      "ts": 1784626170.9114842
     },
     {
       "agent": "linking",
       "action": "start",
       "data": {
-        "mentions": 19
+        "mentions": 20
       }
     },
     {
@@ -9821,18 +10310,17 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "C50"
+              "C50.912"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "1.  Tiền sử bệnh\n    Bệnh lý mãn tính: mới được chẩn đoán ung thư vú trái giai IIIB ung thư vú trái\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ tuyến vú trái đơn giản\n    - thủ thuật nạo hạch gác rồng bên trái\n2.  Tiền "
         },
         "output": {
           "candidates": [
-            "C50"
+            "C50.912"
           ],
-          "confidence": 0.85,
-          "rationale": "Ung thư vú trái được mã hóa bởi C50 (U ác tính ở vú - Bao gồm: mô liên kết của vú - Loại trừ: da ở vú (C43.9))"
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -9871,14 +10359,18 @@
               "isHistorical": false
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "82122"
+            ],
+            "link_confidence": 0.99
           },
           "context": "g da kèm theo ban đỏ\n    - đến khám tại phòng khám\n    - vùng da sưng nề được chọc hút dịch, gửi đi cấy mẫu bệnh phẩm\n    - được cho về vớ đơn thuốci levafloxacin và cephalexin\n    - tái khám với triệu chứng xuất hiện  ban đỏ lan rộng kèm theo chóng mặt\n    - được chuyển đến Khoa Cấp cứu\n    - Tại thời điểm khá"
         },
         "output": {
-          "candidates": [],
-          "confidence": 0.0
+          "candidates": [
+            "82122"
+          ],
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -9920,7 +10412,7 @@
             "candidates": [
               "2231"
             ],
-            "link_confidence": 0.95
+            "link_confidence": 0.99
           },
           "context": "n đỏ\n    - đến khám tại phòng khám\n    - vùng da sưng nề được chọc hút dịch, gửi đi cấy mẫu bệnh phẩm\n    - được cho về vớ đơn thuốci levafloxacin và cephalexin\n    - tái khám với triệu chứng xuất hiện  ban đỏ lan rộng kèm theo chóng mặt\n    - được chuyển đến Khoa Cấp cứu\n    - Tại thời điểm khám bệnh  bệnh n"
         },
@@ -9928,7 +10420,7 @@
           "candidates": [
             "2231"
           ],
-          "confidence": 0.95
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -9970,7 +10462,7 @@
             "candidates": [
               "11124"
             ],
-            "link_confidence": 0.95
+            "link_confidence": 0.99
           },
           "context": "\n    - không sốt\n    - chưa phát hiện các triệu chứng toàn thân khác\n    Thủ thuật đã thực hiện\n    - Đã khám tổn thương da, chọc hút dịch\n    - dùng vancomycin"
         },
@@ -9978,7 +10470,7 @@
           "candidates": [
             "11124"
           ],
-          "confidence": 0.95
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -9987,25 +10479,25 @@
       "agent": "linking",
       "action": "complete",
       "data": {
-        "linked": 4
+        "linked": 5
       }
     },
     {
       "agent": "orchestrator",
       "action": "linking_complete",
-      "linked": 4,
-      "ts": 1784566235.8171184
+      "linked": 5,
+      "ts": 1784626170.91177
     },
     {
       "agent": "orchestrator",
       "action": "verification_start",
-      "ts": 1784566235.8171365
+      "ts": 1784626170.911791
     },
     {
       "agent": "verifier",
       "action": "start",
       "data": {
-        "mentions": 19
+        "mentions": 20
       }
     },
     {
@@ -10044,9 +10536,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.912"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ung thư vú trái",
@@ -10077,9 +10569,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.912"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ban đỏ",
@@ -10283,8 +10775,10 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "82122"
+              ],
+              "link_confidence": 0.99
             },
             {
               "text": "cephalexin",
@@ -10317,7 +10811,7 @@
               "candidates": [
                 "2231"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             },
             {
               "text": "ban đỏ",
@@ -10465,6 +10959,35 @@
               "assertion_confidence": 0.85
             },
             {
+              "text": "không sốt",
+              "position": [
+                1032,
+                1041
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "ban đỏ",
               "position": [
                 1154,
@@ -10587,7 +11110,7 @@
               "candidates": [
                 "11124"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             }
           ],
           "text": "1.  Tiền sử bệnh\n    Bệnh lý mãn tính: mới được chẩn đoán ung thư vú trái giai IIIB ung thư vú trái\n    Tiền sử phẫu thuật / thủ thuật\n    - cắt bỏ tuyến vú trái đơn giản\n    - thủ thuật nạo hạch gác rồng bên trái\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện: xuất hiện nhiều  ban đỏ và đau khi sờ nắn ở vết mổ\n    Triệu chứng Bắt đầu\n    - sau khi xuất viện\n    - ống dẫn lưu JP được rút vào ngày DD MM\n    - bắt đầu có hiện tượng sưng nề đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    Diễn biến bệnh\n    - tăng diện tích đau khi sờ nắn trên vùng da kèm theo ban đỏ\n    - đến khám tại phòng khám\n    - vùng da sưng nề được chọc hút dịch, gửi đi cấy mẫu bệnh phẩm\n    - được cho về vớ đơn thuốci levafloxacin và cephalexin\n    - tái khám với triệu chứng xuất hiện  ban đỏ lan rộng kèm theo chóng mặt\n    - được chuyển đến Khoa Cấp cứu\n    - Tại thời điểm khám bệnh  bệnh nhân có các triệu chứng tương tự\n    Triệu chứng hiện tại\n    -  ban đỏ xuất hiện nhiểu ở vị trí phẫu thuật\n    - đau khi sờ nắn vùng mổ\n    - chóng mặt\n    - không sốt\n    - hiện tại chưa phát hiện các triệu chứng toàn thân khác\n3.  khám tại bệnh viện\n    Dấu hiệu lâm sàng\n    - ban đỏ ở vị trí phẫu thuật\n    - đau ấn vùng mổ\n    - không sốt\n    - chưa phát hiện các triệu chứng toàn thân khác\n    Thủ thuật đã thực hiện\n    - Đã khám tổn thương da, chọc hút dịch\n    - dùng vancomycin"
@@ -10637,9 +11160,12 @@
             {
               "action": "accept",
               "fixes": [],
-              "warnings": [
-                "no candidates"
-              ]
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
             },
             {
               "action": "accept",
@@ -10722,9 +11248,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.912"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ung thư vú trái",
@@ -10755,9 +11281,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.912"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "ban đỏ",
@@ -10961,8 +11487,10 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "82122"
+              ],
+              "link_confidence": 0.99
             },
             {
               "text": "cephalexin",
@@ -10995,7 +11523,7 @@
               "candidates": [
                 "2231"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             },
             {
               "text": "ban đỏ",
@@ -11143,6 +11671,35 @@
               "assertion_confidence": 0.85
             },
             {
+              "text": "không sốt",
+              "position": [
+                1032,
+                1041
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "ban đỏ",
               "position": [
                 1154,
@@ -11265,7 +11822,7 @@
               "candidates": [
                 "11124"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             }
           ],
           "dropped": 0
@@ -11277,22 +11834,22 @@
       "agent": "verifier",
       "action": "validated",
       "data": {
-        "kept": 19,
+        "kept": 20,
         "dropped": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "verification_complete",
-      "kept": 19,
-      "ts": 1784566237.6321929
+      "kept": 20,
+      "ts": 1784626172.231606
     },
     {
       "agent": "orchestrator",
       "action": "complete",
-      "total_mentions": 19,
-      "elapsed": 26.88,
-      "ts": 1784566237.632223
+      "total_mentions": 20,
+      "elapsed": 29.47,
+      "ts": 1784626172.2316625
     }
   ]
 }

@@ -77,6 +77,23 @@ def test_drug_span_extends_through_route_frequency_and_prn():
     assert text[slice(*mentions[0]["position"])] == mentions[0]["text"]
 
 
+def test_multiscale_recall_only_adds_nonoverlapping_mentions():
+    from ner_tool import _append_nonoverlapping_mentions
+
+    primary = [{"text": "đau ngực", "position": [10, 18], "type": "TRIỆU_CHỨNG"}]
+    supplemental = [
+        {"text": "đau", "position": [10, 13], "type": "TRIỆU_CHỨNG"},
+        {"text": "suy tim", "position": [25, 32], "type": "CHẨN_ĐOÁN"},
+    ]
+
+    merged = _append_nonoverlapping_mentions(primary, supplemental)
+
+    assert [(item["text"], item["position"]) for item in merged] == [
+        ("đau ngực", [10, 18]),
+        ("suy tim", [25, 32]),
+    ]
+
+
 def test_rule_extracts_medication_indication_symptom():
     from tools import rule_extract
 
@@ -208,6 +225,32 @@ def test_assertion_rules_cover_denial_and_negative_results():
     )["isNegated"]
 
 
+def test_assertion_rules_do_not_treat_relative_reporter_as_family_history():
+    from agents.worker_agents import AssertionAgent
+    from assertion_agent import classify_assertions
+
+    agent = AssertionAgent()
+    reporter = "Gia đình nhận thấy bệnh nhân khó thở"
+    dyspnea = reporter.index("khó thở")
+    assert not agent._rule_assert(
+        reporter, dyspnea, dyspnea + len("khó thở"), "TRIỆU_CHỨNG"
+    )["isFamily"]
+    assert not classify_assertions(
+        reporter,
+        {
+            "text": "khó thở",
+            "position": [dyspnea, dyspnea + len("khó thở")],
+            "type": "TRIỆU_CHỨNG",
+        },
+    )["isFamily"]
+
+    family_history = "Mẹ bị đái tháo đường"
+    diabetes = family_history.index("đái tháo đường")
+    assert agent._rule_assert(
+        family_history, diabetes, len(family_history), "CHẨN_ĐOÁN"
+    )["isFamily"]
+
+
 def test_verifier_keeps_distinct_and_nested_spans():
     from agents import AgentContext
     from agents.worker_agents import VerifierAgent
@@ -310,6 +353,54 @@ def test_rxnorm_structured_retrieval_matches_organizer_examples():
     for mention, expected in examples.items():
         candidates = _search_rxnorm(mention, kb, top_k=5)
         assert candidates[0]["code"] == expected, (mention, candidates[:3])
+
+
+def test_vllm_client_retries_transient_generation_failure(monkeypatch):
+    import requests
+    from vllm_llm import VLLMLLM
+
+    calls = []
+
+    class Response:
+        def raise_for_status(self):
+            return None
+
+        def json(self):
+            return {"choices": [{"message": {"content": '[{"entity":"đau"}]'}}]}
+
+    def fake_post(*args, **kwargs):
+        calls.append(1)
+        if len(calls) == 1:
+            raise requests.ConnectionError("temporary reset")
+        return Response()
+
+    monkeypatch.setattr(requests, "post", fake_post)
+    monkeypatch.setattr("vllm_llm.time.sleep", lambda _: None)
+    client = VLLMLLM(max_retries=3)
+
+    assert client.generate("system", "user") == '[{"entity":"đau"}]'
+    assert len(calls) == 2
+    assert client.last_error == ""
+
+
+def test_vllm_client_raises_after_retry_exhaustion(monkeypatch):
+    import pytest
+    import requests
+    from vllm_llm import VLLMLLM
+
+    calls = []
+
+    def fail(*args, **kwargs):
+        calls.append(1)
+        raise requests.ConnectionError("backend unavailable")
+
+    monkeypatch.setattr(requests, "post", fail)
+    monkeypatch.setattr("vllm_llm.time.sleep", lambda _: None)
+    client = VLLMLLM(max_retries=3)
+
+    with pytest.raises(RuntimeError, match="failed after 3 attempts"):
+        client.generate("system", "user")
+    assert len(calls) == 3
 
 
 def test_rxnorm_retrieval_respects_intravenous_route_and_total_dose():

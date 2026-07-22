@@ -1,7 +1,7 @@
 {
   "file_id": "91",
-  "timestamp": 1784567155.1346545,
-  "elapsed": 78.5,
+  "timestamp": 1784626975.458609,
+  "elapsed": 41.19,
   "model": "bibocat/qwen3-ner-grpo-final",
   "result": {
     "note_id": "91",
@@ -31,7 +31,7 @@
           100
         ],
         "candidates": [
-          "I53.8"
+          "I51.9"
         ]
       },
       {
@@ -45,7 +45,7 @@
           110
         ],
         "candidates": [
-          "I48.3"
+          "I48.91"
         ]
       },
       {
@@ -59,18 +59,18 @@
           178
         ],
         "candidates": [
-          "N18.4"
+          "N18.5"
         ]
       },
       {
-        "text": "coumadin 3.0 mg",
+        "text": "coumadin 3.0 mg /ngày",
         "type": "THUỐC",
         "assertions": [
           "isHistorical"
         ],
         "position": [
           401,
-          416
+          422
         ],
         "candidates": [
           "855320"
@@ -106,6 +106,61 @@
         ]
       },
       {
+        "text": "đau ngực",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isNegated"
+        ],
+        "position": [
+          774,
+          782
+        ]
+      },
+      {
+        "text": "khó thở",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isNegated"
+        ],
+        "position": [
+          792,
+          799
+        ]
+      },
+      {
+        "text": "đau bụng",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isNegated"
+        ],
+        "position": [
+          809,
+          817
+        ]
+      },
+      {
+        "text": "buồn nôn",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isNegated"
+        ],
+        "position": [
+          828,
+          836
+        ]
+      },
+      {
+        "text": "nôn",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isNegated"
+        ],
+        "position": [
+          844,
+          847
+        ]
+      },
+      {
         "text": "INR dưới ngưỡng điều trị",
         "type": "KẾT_QUẢ_XÉT_NGHIỆM",
         "assertions": [],
@@ -133,24 +188,24 @@
       "warnings": []
     },
     "stats": {
-      "total_mentions": 10,
-      "final": 10,
+      "total_mentions": 15,
+      "final": 15,
       "validation_errors": 0,
-      "elapsed": 78.5,
+      "elapsed": 41.19,
       "rule": 1,
-      "qwen": 10
+      "qwen": 16
     },
     "logs": [
       {
         "agent": "orchestrator",
         "action": "start",
         "text_len": 1163,
-        "ts": 1784567076.6307154
+        "ts": 1784626934.268166
       },
       {
         "agent": "orchestrator",
         "action": "extraction_start",
-        "ts": 1784567076.630728
+        "ts": 1784626934.2681904
       },
       {
         "agent": "extraction",
@@ -254,6 +309,22 @@
                 "extraction_source": "qwen"
               },
               {
+                "text": "coumadin 3.0 mg /ngày",
+                "position": [
+                  401,
+                  422
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
                 "text": "INR dưới ngưỡng điều trị",
                 "position": [
                   462,
@@ -290,6 +361,86 @@
                 "position": [
                   752,
                   764
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đau ngực",
+                "position": [
+                  774,
+                  782
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "khó thở",
+                "position": [
+                  792,
+                  799
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đau bụng",
+                "position": [
+                  809,
+                  817
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "buồn nôn",
+                "position": [
+                  828,
+                  836
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "nôn",
+                "position": [
+                  844,
+                  847
                 ],
                 "type": "TRIỆU_CHỨNG",
                 "source": "qwen",
@@ -361,9 +512,9 @@
         "data": {
           "sources": {
             "rule": 1,
-            "qwen": 10
+            "qwen": 16
           },
-          "total": 11
+          "total": 17
         }
       },
       {
@@ -438,6 +589,22 @@
                 "extraction_source": "qwen"
               },
               {
+                "text": "coumadin 3.0 mg /ngày",
+                "position": [
+                  401,
+                  422
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
                 "text": "INR dưới ngưỡng điều trị",
                 "position": [
                   462,
@@ -474,6 +641,86 @@
                 "position": [
                   752,
                   764
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đau ngực",
+                "position": [
+                  774,
+                  782
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "khó thở",
+                "position": [
+                  792,
+                  799
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đau bụng",
+                "position": [
+                  809,
+                  817
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "buồn nôn",
+                "position": [
+                  828,
+                  836
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "nôn",
+                "position": [
+                  844,
+                  847
                 ],
                 "type": "TRIỆU_CHỨNG",
                 "source": "qwen",
@@ -578,7 +825,7 @@
               "candidates": [
                 "I33.0"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "rối loạn chức năng tâm thất phải",
@@ -609,9 +856,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I53.8"
+                "I51.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "rung nhĩ",
@@ -642,9 +889,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I48.3"
+                "I48.91"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Suy thận mạn giai V",
@@ -675,23 +922,32 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N18.4"
+                "N18.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
-              "text": "coumadin 3.0 mg",
+              "text": "coumadin 3.0 mg /ngày",
               "position": [
                 401,
-                416
+                422
               ],
               "type": "THUỐC",
-              "confidence": 0.98,
-              "source": "rule",
-              "extraction_source": "rule",
-              "vote_count": 1,
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
               "voters": {
-                "rule": 1
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "THUỐC": 1.0
               },
               "needs_review": false,
               "position_fixed": false,
@@ -704,7 +960,7 @@
               "candidates": [
                 "855320"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.95
             },
             {
               "text": "INR dưới ngưỡng điều trị",
@@ -769,6 +1025,151 @@
               "position": [
                 752,
                 764
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau ngực",
+              "position": [
+                774,
+                782
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                792,
+                799
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau bụng",
+              "position": [
+                809,
+                817
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "buồn nôn",
+              "position": [
+                828,
+                836
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nôn",
+              "position": [
+                844,
+                847
               ],
               "type": "TRIỆU_CHỨNG",
               "source": "qwen",
@@ -867,7 +1268,7 @@
         "agent": "extraction",
         "action": "voted",
         "data": {
-          "merged": 10
+          "merged": 15
         }
       },
       {
@@ -908,7 +1309,7 @@
                 "candidates": [
                   "I33.0"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "rối loạn chức năng tâm thất phải",
@@ -939,9 +1340,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I53.8"
+                  "I51.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "rung nhĩ",
@@ -972,9 +1373,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I48.3"
+                  "I48.91"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "Suy thận mạn giai V",
@@ -1005,23 +1406,32 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "N18.4"
+                  "N18.5"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
-                "text": "coumadin 3.0 mg",
+                "text": "coumadin 3.0 mg /ngày",
                 "position": [
                   401,
-                  416
+                  422
                 ],
                 "type": "THUỐC",
-                "confidence": 0.98,
-                "source": "rule",
-                "extraction_source": "rule",
-                "vote_count": 1,
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
                 "voters": {
-                  "rule": 1
+                  "rule": 1,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "THUỐC": 1.0
                 },
                 "needs_review": false,
                 "position_fixed": false,
@@ -1034,7 +1444,7 @@
                 "candidates": [
                   "855320"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.95
               },
               {
                 "text": "INR dưới ngưỡng điều trị",
@@ -1099,6 +1509,151 @@
                 "position": [
                   752,
                   764
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau ngực",
+                "position": [
+                  774,
+                  782
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "khó thở",
+                "position": [
+                  792,
+                  799
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau bụng",
+                "position": [
+                  809,
+                  817
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "buồn nôn",
+                "position": [
+                  828,
+                  836
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "nôn",
+                "position": [
+                  844,
+                  847
                 ],
                 "type": "TRIỆU_CHỨNG",
                 "source": "qwen",
@@ -1224,7 +1779,7 @@
               "candidates": [
                 "I33.0"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "rối loạn chức năng tâm thất phải",
@@ -1255,9 +1810,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I53.8"
+                "I51.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "rung nhĩ",
@@ -1288,9 +1843,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I48.3"
+                "I48.91"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Suy thận mạn giai V",
@@ -1321,23 +1876,32 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N18.4"
+                "N18.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
-              "text": "coumadin 3.0 mg",
+              "text": "coumadin 3.0 mg /ngày",
               "position": [
                 401,
-                416
+                422
               ],
               "type": "THUỐC",
-              "confidence": 0.98,
-              "source": "rule",
-              "extraction_source": "rule",
-              "vote_count": 1,
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
               "voters": {
-                "rule": 1
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "THUỐC": 1.0
               },
               "needs_review": false,
               "position_fixed": false,
@@ -1350,7 +1914,7 @@
               "candidates": [
                 "855320"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.95
             },
             {
               "text": "INR dưới ngưỡng điều trị",
@@ -1415,6 +1979,151 @@
               "position": [
                 752,
                 764
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau ngực",
+              "position": [
+                774,
+                782
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                792,
+                799
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau bụng",
+              "position": [
+                809,
+                817
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "buồn nôn",
+              "position": [
+                828,
+                836
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nôn",
+              "position": [
+                844,
+                847
               ],
               "type": "TRIỆU_CHỨNG",
               "source": "qwen",
@@ -1547,7 +2256,7 @@
                 "candidates": [
                   "I33.0"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "rối loạn chức năng tâm thất phải",
@@ -1578,9 +2287,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I53.8"
+                  "I51.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "rung nhĩ",
@@ -1611,9 +2320,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I48.3"
+                  "I48.91"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "Suy thận mạn giai V",
@@ -1644,23 +2353,32 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "N18.4"
+                  "N18.5"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
-                "text": "coumadin 3.0 mg",
+                "text": "coumadin 3.0 mg /ngày",
                 "position": [
                   401,
-                  416
+                  422
                 ],
                 "type": "THUỐC",
-                "confidence": 0.98,
-                "source": "rule",
-                "extraction_source": "rule",
-                "vote_count": 1,
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
                 "voters": {
-                  "rule": 1
+                  "rule": 1,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "THUỐC": 1.0
                 },
                 "needs_review": false,
                 "position_fixed": false,
@@ -1673,7 +2391,7 @@
                 "candidates": [
                   "855320"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.95
               },
               {
                 "text": "INR dưới ngưỡng điều trị",
@@ -1738,6 +2456,151 @@
                 "position": [
                   752,
                   764
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau ngực",
+                "position": [
+                  774,
+                  782
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "khó thở",
+                "position": [
+                  792,
+                  799
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau bụng",
+                "position": [
+                  809,
+                  817
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "buồn nôn",
+                "position": [
+                  828,
+                  836
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "nôn",
+                "position": [
+                  844,
+                  847
                 ],
                 "type": "TRIỆU_CHỨNG",
                 "source": "qwen",
@@ -1863,7 +2726,7 @@
               "candidates": [
                 "I33.0"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "rối loạn chức năng tâm thất phải",
@@ -1894,9 +2757,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I53.8"
+                "I51.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "rung nhĩ",
@@ -1927,9 +2790,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I48.3"
+                "I48.91"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Suy thận mạn giai V",
@@ -1960,23 +2823,32 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N18.4"
+                "N18.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
-              "text": "coumadin 3.0 mg",
+              "text": "coumadin 3.0 mg /ngày",
               "position": [
                 401,
-                416
+                422
               ],
               "type": "THUỐC",
-              "confidence": 0.98,
-              "source": "rule",
-              "extraction_source": "rule",
-              "vote_count": 1,
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
               "voters": {
-                "rule": 1
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "THUỐC": 1.0
               },
               "needs_review": false,
               "position_fixed": false,
@@ -1989,7 +2861,7 @@
               "candidates": [
                 "855320"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.95
             },
             {
               "text": "INR dưới ngưỡng điều trị",
@@ -2054,6 +2926,151 @@
               "position": [
                 752,
                 764
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau ngực",
+              "position": [
+                774,
+                782
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                792,
+                799
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau bụng",
+              "position": [
+                809,
+                817
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "buồn nôn",
+              "position": [
+                828,
+                836
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nôn",
+              "position": [
+                844,
+                847
               ],
               "type": "TRIỆU_CHỨNG",
               "source": "qwen",
@@ -2165,19 +3182,19 @@
       {
         "agent": "orchestrator",
         "action": "extraction_complete",
-        "mentions": 10,
-        "ts": 1784567099.1261184
+        "mentions": 15,
+        "ts": 1784626968.8863988
       },
       {
         "agent": "orchestrator",
         "action": "assertion_start",
-        "ts": 1784567099.126134
+        "ts": 1784626968.8864226
       },
       {
         "agent": "assertion",
         "action": "start",
         "data": {
-          "mentions": 10
+          "mentions": 15
         }
       },
       {
@@ -2264,7 +3281,7 @@
           "input": {
             "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay van hai lá cơ học\n    - ghép thận thất bại\n    Thuốc trước khi nhập viện: coumadin 3.0 mg /ngày\n\n2.  Bệnh sử hiện tại\nLý do vào viện:, INR dưới ngưỡng điều trị\nTheo lời bệnh nhân kể bệnh nhân xuất hiện chảy máu mũi xuất hiện khoảng 01 lần/ tuần. Khi làm xét nghiệm tại khoa chạy thận, phát hiện chỉ số đông máu dưới ngưỡng điều trị ( kết quả là INR 1.7) ,không có biểu hiện bất thường khác, vào viện\n    Khám hiện tại:\nKhông chảy máu mũi\nKhông có đau ngực\nKhông có khó thở\nKhông có đau bụng\n Không có buồn nôn, không nôn\n    Các cơ quan khác chưa phát hiện bất thường\n\n3.  Khám tại bệnh viện\n    Kết quả khám thực thể: dấu hiệu sinh tồn\n Nhiệt độ : 36.5 độ C\nMạch:  88 l/p\nHuyết áp: 120/70 mmHg\nNhịp thở: 20 l/p\nSPO2:  92 %\n    Kết quả xét nghiệm: INR dưới ngưỡng điều trị 1.7\n   Điều trị: Bắt đầu dùng heparin truyền tĩnh mạch liên tục",
             "start": 401,
-            "end": 416,
+            "end": 422,
             "mtype": "THUỐC"
           },
           "output": {
@@ -2339,6 +3356,101 @@
           "tool": "rule_assert",
           "input": {
             "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay van hai lá cơ học\n    - ghép thận thất bại\n    Thuốc trước khi nhập viện: coumadin 3.0 mg /ngày\n\n2.  Bệnh sử hiện tại\nLý do vào viện:, INR dưới ngưỡng điều trị\nTheo lời bệnh nhân kể bệnh nhân xuất hiện chảy máu mũi xuất hiện khoảng 01 lần/ tuần. Khi làm xét nghiệm tại khoa chạy thận, phát hiện chỉ số đông máu dưới ngưỡng điều trị ( kết quả là INR 1.7) ,không có biểu hiện bất thường khác, vào viện\n    Khám hiện tại:\nKhông chảy máu mũi\nKhông có đau ngực\nKhông có khó thở\nKhông có đau bụng\n Không có buồn nôn, không nôn\n    Các cơ quan khác chưa phát hiện bất thường\n\n3.  Khám tại bệnh viện\n    Kết quả khám thực thể: dấu hiệu sinh tồn\n Nhiệt độ : 36.5 độ C\nMạch:  88 l/p\nHuyết áp: 120/70 mmHg\nNhịp thở: 20 l/p\nSPO2:  92 %\n    Kết quả xét nghiệm: INR dưới ngưỡng điều trị 1.7\n   Điều trị: Bắt đầu dùng heparin truyền tĩnh mạch liên tục",
+            "start": 774,
+            "end": 782,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": true,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay van hai lá cơ học\n    - ghép thận thất bại\n    Thuốc trước khi nhập viện: coumadin 3.0 mg /ngày\n\n2.  Bệnh sử hiện tại\nLý do vào viện:, INR dưới ngưỡng điều trị\nTheo lời bệnh nhân kể bệnh nhân xuất hiện chảy máu mũi xuất hiện khoảng 01 lần/ tuần. Khi làm xét nghiệm tại khoa chạy thận, phát hiện chỉ số đông máu dưới ngưỡng điều trị ( kết quả là INR 1.7) ,không có biểu hiện bất thường khác, vào viện\n    Khám hiện tại:\nKhông chảy máu mũi\nKhông có đau ngực\nKhông có khó thở\nKhông có đau bụng\n Không có buồn nôn, không nôn\n    Các cơ quan khác chưa phát hiện bất thường\n\n3.  Khám tại bệnh viện\n    Kết quả khám thực thể: dấu hiệu sinh tồn\n Nhiệt độ : 36.5 độ C\nMạch:  88 l/p\nHuyết áp: 120/70 mmHg\nNhịp thở: 20 l/p\nSPO2:  92 %\n    Kết quả xét nghiệm: INR dưới ngưỡng điều trị 1.7\n   Điều trị: Bắt đầu dùng heparin truyền tĩnh mạch liên tục",
+            "start": 792,
+            "end": 799,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": true,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay van hai lá cơ học\n    - ghép thận thất bại\n    Thuốc trước khi nhập viện: coumadin 3.0 mg /ngày\n\n2.  Bệnh sử hiện tại\nLý do vào viện:, INR dưới ngưỡng điều trị\nTheo lời bệnh nhân kể bệnh nhân xuất hiện chảy máu mũi xuất hiện khoảng 01 lần/ tuần. Khi làm xét nghiệm tại khoa chạy thận, phát hiện chỉ số đông máu dưới ngưỡng điều trị ( kết quả là INR 1.7) ,không có biểu hiện bất thường khác, vào viện\n    Khám hiện tại:\nKhông chảy máu mũi\nKhông có đau ngực\nKhông có khó thở\nKhông có đau bụng\n Không có buồn nôn, không nôn\n    Các cơ quan khác chưa phát hiện bất thường\n\n3.  Khám tại bệnh viện\n    Kết quả khám thực thể: dấu hiệu sinh tồn\n Nhiệt độ : 36.5 độ C\nMạch:  88 l/p\nHuyết áp: 120/70 mmHg\nNhịp thở: 20 l/p\nSPO2:  92 %\n    Kết quả xét nghiệm: INR dưới ngưỡng điều trị 1.7\n   Điều trị: Bắt đầu dùng heparin truyền tĩnh mạch liên tục",
+            "start": 809,
+            "end": 817,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": true,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay van hai lá cơ học\n    - ghép thận thất bại\n    Thuốc trước khi nhập viện: coumadin 3.0 mg /ngày\n\n2.  Bệnh sử hiện tại\nLý do vào viện:, INR dưới ngưỡng điều trị\nTheo lời bệnh nhân kể bệnh nhân xuất hiện chảy máu mũi xuất hiện khoảng 01 lần/ tuần. Khi làm xét nghiệm tại khoa chạy thận, phát hiện chỉ số đông máu dưới ngưỡng điều trị ( kết quả là INR 1.7) ,không có biểu hiện bất thường khác, vào viện\n    Khám hiện tại:\nKhông chảy máu mũi\nKhông có đau ngực\nKhông có khó thở\nKhông có đau bụng\n Không có buồn nôn, không nôn\n    Các cơ quan khác chưa phát hiện bất thường\n\n3.  Khám tại bệnh viện\n    Kết quả khám thực thể: dấu hiệu sinh tồn\n Nhiệt độ : 36.5 độ C\nMạch:  88 l/p\nHuyết áp: 120/70 mmHg\nNhịp thở: 20 l/p\nSPO2:  92 %\n    Kết quả xét nghiệm: INR dưới ngưỡng điều trị 1.7\n   Điều trị: Bắt đầu dùng heparin truyền tĩnh mạch liên tục",
+            "start": 828,
+            "end": 836,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": true,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay van hai lá cơ học\n    - ghép thận thất bại\n    Thuốc trước khi nhập viện: coumadin 3.0 mg /ngày\n\n2.  Bệnh sử hiện tại\nLý do vào viện:, INR dưới ngưỡng điều trị\nTheo lời bệnh nhân kể bệnh nhân xuất hiện chảy máu mũi xuất hiện khoảng 01 lần/ tuần. Khi làm xét nghiệm tại khoa chạy thận, phát hiện chỉ số đông máu dưới ngưỡng điều trị ( kết quả là INR 1.7) ,không có biểu hiện bất thường khác, vào viện\n    Khám hiện tại:\nKhông chảy máu mũi\nKhông có đau ngực\nKhông có khó thở\nKhông có đau bụng\n Không có buồn nôn, không nôn\n    Các cơ quan khác chưa phát hiện bất thường\n\n3.  Khám tại bệnh viện\n    Kết quả khám thực thể: dấu hiệu sinh tồn\n Nhiệt độ : 36.5 độ C\nMạch:  88 l/p\nHuyết áp: 120/70 mmHg\nNhịp thở: 20 l/p\nSPO2:  92 %\n    Kết quả xét nghiệm: INR dưới ngưỡng điều trị 1.7\n   Điều trị: Bắt đầu dùng heparin truyền tĩnh mạch liên tục",
+            "start": 844,
+            "end": 847,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": true,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay van hai lá cơ học\n    - ghép thận thất bại\n    Thuốc trước khi nhập viện: coumadin 3.0 mg /ngày\n\n2.  Bệnh sử hiện tại\nLý do vào viện:, INR dưới ngưỡng điều trị\nTheo lời bệnh nhân kể bệnh nhân xuất hiện chảy máu mũi xuất hiện khoảng 01 lần/ tuần. Khi làm xét nghiệm tại khoa chạy thận, phát hiện chỉ số đông máu dưới ngưỡng điều trị ( kết quả là INR 1.7) ,không có biểu hiện bất thường khác, vào viện\n    Khám hiện tại:\nKhông chảy máu mũi\nKhông có đau ngực\nKhông có khó thở\nKhông có đau bụng\n Không có buồn nôn, không nôn\n    Các cơ quan khác chưa phát hiện bất thường\n\n3.  Khám tại bệnh viện\n    Kết quả khám thực thể: dấu hiệu sinh tồn\n Nhiệt độ : 36.5 độ C\nMạch:  88 l/p\nHuyết áp: 120/70 mmHg\nNhịp thở: 20 l/p\nSPO2:  92 %\n    Kết quả xét nghiệm: INR dưới ngưỡng điều trị 1.7\n   Điều trị: Bắt đầu dùng heparin truyền tĩnh mạch liên tục",
             "start": 1130,
             "end": 1163,
             "mtype": "THUỐC"
@@ -2355,25 +3467,25 @@
         "agent": "assertion",
         "action": "complete",
         "data": {
-          "processed": 10,
+          "processed": 15,
           "llm_checked": 0
         }
       },
       {
         "agent": "orchestrator",
         "action": "assertion_complete",
-        "ts": 1784567099.1268346
+        "ts": 1784626968.888204
       },
       {
         "agent": "orchestrator",
         "action": "linking_start",
-        "ts": 1784567099.1268435
+        "ts": 1784626968.888232
       },
       {
         "agent": "linking",
         "action": "start",
         "data": {
-          "mentions": 10
+          "mentions": 15
         }
       },
       {
@@ -2413,7 +3525,7 @@
               "candidates": [
                 "I33.0"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các "
           },
@@ -2421,8 +3533,7 @@
             "candidates": [
               "I33.0"
             ],
-            "confidence": 0.85,
-            "rationale": "Viêm nội tâm mạc cấp và/hoặc bán cấp là mã ICD-10 phù hợp nhất với mention 'Viêm nội tâm mạc' trong ngữ cảnh chẩn đoán. Mã I33.0 đặc biệt phù hợp vì nó mô tả viêm nội tâm mạc cấp và/hoặc bán cấp, không phân biệt nguyên nhân, phù hợp với thông tin chung trong bệnh án."
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -2462,18 +3573,17 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I53.8"
+                "I51.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi"
           },
           "output": {
             "candidates": [
-              "I53.8"
+              "I51.9"
             ],
-            "confidence": 0.85,
-            "rationale": "Rối loạn chức năng tâm thất phải được phân loại dưới mã I53.8 (Rối loạn chức năng tâm thất khác) trong ICD-10."
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -2513,18 +3623,17 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I48.3"
+                "I48.91"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi ghép thận"
           },
           "output": {
             "candidates": [
-              "I48.3"
+              "I48.91"
             ],
-            "confidence": 0.85,
-            "rationale": "Mention 'rung nhĩ' được ghi nhận trong context, và mã I48.3 (Rung nhĩ mạn tính) là mã phù hợp nhất trong danh sách candidates."
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -2564,18 +3673,17 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N18.4"
+                "N18.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay v"
           },
           "output": {
             "candidates": [
-              "N18.4"
+              "N18.5"
             ],
-            "confidence": 0.85,
-            "rationale": "Mention 'Suy thận mạn giai V' tương ứng với mã N18.4 (Bệnh thận mạn tính, giai đoạn 4) trong ICD-10."
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -2587,18 +3695,27 @@
           "tool": "link_entity",
           "input": {
             "mention": {
-              "text": "coumadin 3.0 mg",
+              "text": "coumadin 3.0 mg /ngày",
               "position": [
                 401,
-                416
+                422
               ],
               "type": "THUỐC",
-              "confidence": 0.98,
-              "source": "rule",
-              "extraction_source": "rule",
-              "vote_count": 1,
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
               "voters": {
-                "rule": 1
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "THUỐC": 1.0
               },
               "needs_review": false,
               "position_fixed": false,
@@ -2611,16 +3728,15 @@
               "candidates": [
                 "855320"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.95
             },
-            "context": "ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay van hai lá cơ học\n    - ghép thận thất bại\n    Thuốc trước khi nhập viện: coumadin 3.0 mg /ngày\n\n2.  Bệnh sử hiện tại\nLý do vào viện:, INR dưới ngưỡng điều trị\nTheo lời bệnh nhân kể bệnh nhân xuất hiện chảy máu mũi xuất hiện khoảng 01 lần/"
+            "context": "ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay van hai lá cơ học\n    - ghép thận thất bại\n    Thuốc trước khi nhập viện: coumadin 3.0 mg /ngày\n\n2.  Bệnh sử hiện tại\nLý do vào viện:, INR dưới ngưỡng điều trị\nTheo lời bệnh nhân kể bệnh nhân xuất hiện chảy máu mũi xuất hiện khoảng 01 lần/ tuần."
           },
           "output": {
             "candidates": [
               "855320"
             ],
-            "confidence": 0.85,
-            "rationale": "Mention 'coumadin 3.0 mg' tương ứng với 'warfarin sodium 3 MG Oral Tablet [Coumadin]' trong danh sách candidates."
+            "confidence": 0.95
           },
           "result_type": "dict"
         }
@@ -2687,18 +3803,18 @@
         "agent": "orchestrator",
         "action": "linking_complete",
         "linked": 6,
-        "ts": 1784567154.9880524
+        "ts": 1784626974.0044174
       },
       {
         "agent": "orchestrator",
         "action": "verification_start",
-        "ts": 1784567154.988074
+        "ts": 1784626974.004443
       },
       {
         "agent": "verifier",
         "action": "start",
         "data": {
-          "mentions": 10
+          "mentions": 15
         }
       },
       {
@@ -2739,7 +3855,7 @@
                 "candidates": [
                   "I33.0"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "rối loạn chức năng tâm thất phải",
@@ -2770,9 +3886,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I53.8"
+                  "I51.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "rung nhĩ",
@@ -2803,9 +3919,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I48.3"
+                  "I48.91"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "Suy thận mạn giai V",
@@ -2836,23 +3952,32 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "N18.4"
+                  "N18.5"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
-                "text": "coumadin 3.0 mg",
+                "text": "coumadin 3.0 mg /ngày",
                 "position": [
                   401,
-                  416
+                  422
                 ],
                 "type": "THUỐC",
-                "confidence": 0.98,
-                "source": "rule",
-                "extraction_source": "rule",
-                "vote_count": 1,
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
                 "voters": {
-                  "rule": 1
+                  "rule": 1,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "THUỐC": 1.0
                 },
                 "needs_review": false,
                 "position_fixed": false,
@@ -2865,7 +3990,7 @@
                 "candidates": [
                   "855320"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.95
               },
               {
                 "text": "INR dưới ngưỡng điều trị",
@@ -2930,6 +4055,151 @@
                 "position": [
                   752,
                   764
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau ngực",
+                "position": [
+                  774,
+                  782
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "khó thở",
+                "position": [
+                  792,
+                  799
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau bụng",
+                "position": [
+                  809,
+                  817
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "buồn nôn",
+                "position": [
+                  828,
+                  836
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "nôn",
+                "position": [
+                  844,
+                  847
                 ],
                 "type": "TRIỆU_CHỨNG",
                 "source": "qwen",
@@ -3074,6 +4344,31 @@
                 "action": "accept",
                 "fixes": [],
                 "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
               }
             ],
             "final_predictions": [
@@ -3108,7 +4403,7 @@
                 "candidates": [
                   "I33.0"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "rối loạn chức năng tâm thất phải",
@@ -3139,9 +4434,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I53.8"
+                  "I51.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "rung nhĩ",
@@ -3172,9 +4467,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I48.3"
+                  "I48.91"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "Suy thận mạn giai V",
@@ -3205,23 +4500,32 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "N18.4"
+                  "N18.5"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
-                "text": "coumadin 3.0 mg",
+                "text": "coumadin 3.0 mg /ngày",
                 "position": [
                   401,
-                  416
+                  422
                 ],
                 "type": "THUỐC",
-                "confidence": 0.98,
-                "source": "rule",
-                "extraction_source": "rule",
-                "vote_count": 1,
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.8
+                  }
+                ],
+                "confidence": 0.8,
+                "vote_count": 2,
+                "max_type_votes": 2,
                 "voters": {
-                  "rule": 1
+                  "rule": 1,
+                  "qwen": 1
+                },
+                "type_votes": {
+                  "THUỐC": 1.0
                 },
                 "needs_review": false,
                 "position_fixed": false,
@@ -3234,7 +4538,7 @@
                 "candidates": [
                   "855320"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.95
               },
               {
                 "text": "INR dưới ngưỡng điều trị",
@@ -3299,6 +4603,151 @@
                 "position": [
                   752,
                   764
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau ngực",
+                "position": [
+                  774,
+                  782
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "khó thở",
+                "position": [
+                  792,
+                  799
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "đau bụng",
+                "position": [
+                  809,
+                  817
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "buồn nôn",
+                "position": [
+                  828,
+                  836
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "nôn",
+                "position": [
+                  844,
+                  847
                 ],
                 "type": "TRIỆU_CHỨNG",
                 "source": "qwen",
@@ -3399,22 +4848,22 @@
         "agent": "verifier",
         "action": "validated",
         "data": {
-          "kept": 10,
+          "kept": 15,
           "dropped": 0
         }
       },
       {
         "agent": "orchestrator",
         "action": "verification_complete",
-        "kept": 10,
-        "ts": 1784567155.1345322
+        "kept": 15,
+        "ts": 1784626975.4583695
       },
       {
         "agent": "orchestrator",
         "action": "complete",
-        "total_mentions": 10,
-        "elapsed": 78.5,
-        "ts": 1784567155.1345544
+        "total_mentions": 15,
+        "elapsed": 41.19,
+        "ts": 1784626975.4584043
       }
     ]
   },
@@ -3423,12 +4872,12 @@
       "agent": "orchestrator",
       "action": "start",
       "text_len": 1163,
-      "ts": 1784567076.6307154
+      "ts": 1784626934.268166
     },
     {
       "agent": "orchestrator",
       "action": "extraction_start",
-      "ts": 1784567076.630728
+      "ts": 1784626934.2681904
     },
     {
       "agent": "extraction",
@@ -3532,6 +4981,22 @@
               "extraction_source": "qwen"
             },
             {
+              "text": "coumadin 3.0 mg /ngày",
+              "position": [
+                401,
+                422
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
               "text": "INR dưới ngưỡng điều trị",
               "position": [
                 462,
@@ -3568,6 +5033,86 @@
               "position": [
                 752,
                 764
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau ngực",
+              "position": [
+                774,
+                782
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                792,
+                799
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau bụng",
+              "position": [
+                809,
+                817
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "buồn nôn",
+              "position": [
+                828,
+                836
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "nôn",
+              "position": [
+                844,
+                847
               ],
               "type": "TRIỆU_CHỨNG",
               "source": "qwen",
@@ -3639,9 +5184,9 @@
       "data": {
         "sources": {
           "rule": 1,
-          "qwen": 10
+          "qwen": 16
         },
-        "total": 11
+        "total": 17
       }
     },
     {
@@ -3716,6 +5261,22 @@
               "extraction_source": "qwen"
             },
             {
+              "text": "coumadin 3.0 mg /ngày",
+              "position": [
+                401,
+                422
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
               "text": "INR dưới ngưỡng điều trị",
               "position": [
                 462,
@@ -3752,6 +5313,86 @@
               "position": [
                 752,
                 764
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau ngực",
+              "position": [
+                774,
+                782
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                792,
+                799
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau bụng",
+              "position": [
+                809,
+                817
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "buồn nôn",
+              "position": [
+                828,
+                836
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "nôn",
+              "position": [
+                844,
+                847
               ],
               "type": "TRIỆU_CHỨNG",
               "source": "qwen",
@@ -3856,7 +5497,7 @@
             "candidates": [
               "I33.0"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "rối loạn chức năng tâm thất phải",
@@ -3887,9 +5528,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I53.8"
+              "I51.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "rung nhĩ",
@@ -3920,9 +5561,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I48.3"
+              "I48.91"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "Suy thận mạn giai V",
@@ -3953,23 +5594,32 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "N18.4"
+              "N18.5"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
-            "text": "coumadin 3.0 mg",
+            "text": "coumadin 3.0 mg /ngày",
             "position": [
               401,
-              416
+              422
             ],
             "type": "THUỐC",
-            "confidence": 0.98,
-            "source": "rule",
-            "extraction_source": "rule",
-            "vote_count": 1,
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
             "voters": {
-              "rule": 1
+              "rule": 1,
+              "qwen": 1
+            },
+            "type_votes": {
+              "THUỐC": 1.0
             },
             "needs_review": false,
             "position_fixed": false,
@@ -3982,7 +5632,7 @@
             "candidates": [
               "855320"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.95
           },
           {
             "text": "INR dưới ngưỡng điều trị",
@@ -4047,6 +5697,151 @@
             "position": [
               752,
               764
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau ngực",
+            "position": [
+              774,
+              782
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "khó thở",
+            "position": [
+              792,
+              799
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau bụng",
+            "position": [
+              809,
+              817
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "buồn nôn",
+            "position": [
+              828,
+              836
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "nôn",
+            "position": [
+              844,
+              847
             ],
             "type": "TRIỆU_CHỨNG",
             "source": "qwen",
@@ -4145,7 +5940,7 @@
       "agent": "extraction",
       "action": "voted",
       "data": {
-        "merged": 10
+        "merged": 15
       }
     },
     {
@@ -4186,7 +5981,7 @@
               "candidates": [
                 "I33.0"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "rối loạn chức năng tâm thất phải",
@@ -4217,9 +6012,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I53.8"
+                "I51.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "rung nhĩ",
@@ -4250,9 +6045,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I48.3"
+                "I48.91"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Suy thận mạn giai V",
@@ -4283,23 +6078,32 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N18.4"
+                "N18.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
-              "text": "coumadin 3.0 mg",
+              "text": "coumadin 3.0 mg /ngày",
               "position": [
                 401,
-                416
+                422
               ],
               "type": "THUỐC",
-              "confidence": 0.98,
-              "source": "rule",
-              "extraction_source": "rule",
-              "vote_count": 1,
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
               "voters": {
-                "rule": 1
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "THUỐC": 1.0
               },
               "needs_review": false,
               "position_fixed": false,
@@ -4312,7 +6116,7 @@
               "candidates": [
                 "855320"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.95
             },
             {
               "text": "INR dưới ngưỡng điều trị",
@@ -4377,6 +6181,151 @@
               "position": [
                 752,
                 764
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau ngực",
+              "position": [
+                774,
+                782
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                792,
+                799
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau bụng",
+              "position": [
+                809,
+                817
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "buồn nôn",
+              "position": [
+                828,
+                836
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nôn",
+              "position": [
+                844,
+                847
               ],
               "type": "TRIỆU_CHỨNG",
               "source": "qwen",
@@ -4502,7 +6451,7 @@
             "candidates": [
               "I33.0"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "rối loạn chức năng tâm thất phải",
@@ -4533,9 +6482,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I53.8"
+              "I51.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "rung nhĩ",
@@ -4566,9 +6515,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I48.3"
+              "I48.91"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "Suy thận mạn giai V",
@@ -4599,23 +6548,32 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "N18.4"
+              "N18.5"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
-            "text": "coumadin 3.0 mg",
+            "text": "coumadin 3.0 mg /ngày",
             "position": [
               401,
-              416
+              422
             ],
             "type": "THUỐC",
-            "confidence": 0.98,
-            "source": "rule",
-            "extraction_source": "rule",
-            "vote_count": 1,
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
             "voters": {
-              "rule": 1
+              "rule": 1,
+              "qwen": 1
+            },
+            "type_votes": {
+              "THUỐC": 1.0
             },
             "needs_review": false,
             "position_fixed": false,
@@ -4628,7 +6586,7 @@
             "candidates": [
               "855320"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.95
           },
           {
             "text": "INR dưới ngưỡng điều trị",
@@ -4693,6 +6651,151 @@
             "position": [
               752,
               764
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau ngực",
+            "position": [
+              774,
+              782
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "khó thở",
+            "position": [
+              792,
+              799
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau bụng",
+            "position": [
+              809,
+              817
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "buồn nôn",
+            "position": [
+              828,
+              836
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "nôn",
+            "position": [
+              844,
+              847
             ],
             "type": "TRIỆU_CHỨNG",
             "source": "qwen",
@@ -4825,7 +6928,7 @@
               "candidates": [
                 "I33.0"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "rối loạn chức năng tâm thất phải",
@@ -4856,9 +6959,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I53.8"
+                "I51.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "rung nhĩ",
@@ -4889,9 +6992,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I48.3"
+                "I48.91"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Suy thận mạn giai V",
@@ -4922,23 +7025,32 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N18.4"
+                "N18.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
-              "text": "coumadin 3.0 mg",
+              "text": "coumadin 3.0 mg /ngày",
               "position": [
                 401,
-                416
+                422
               ],
               "type": "THUỐC",
-              "confidence": 0.98,
-              "source": "rule",
-              "extraction_source": "rule",
-              "vote_count": 1,
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
               "voters": {
-                "rule": 1
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "THUỐC": 1.0
               },
               "needs_review": false,
               "position_fixed": false,
@@ -4951,7 +7063,7 @@
               "candidates": [
                 "855320"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.95
             },
             {
               "text": "INR dưới ngưỡng điều trị",
@@ -5016,6 +7128,151 @@
               "position": [
                 752,
                 764
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau ngực",
+              "position": [
+                774,
+                782
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                792,
+                799
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau bụng",
+              "position": [
+                809,
+                817
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "buồn nôn",
+              "position": [
+                828,
+                836
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nôn",
+              "position": [
+                844,
+                847
               ],
               "type": "TRIỆU_CHỨNG",
               "source": "qwen",
@@ -5141,7 +7398,7 @@
             "candidates": [
               "I33.0"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "rối loạn chức năng tâm thất phải",
@@ -5172,9 +7429,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I53.8"
+              "I51.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "rung nhĩ",
@@ -5205,9 +7462,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I48.3"
+              "I48.91"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "Suy thận mạn giai V",
@@ -5238,23 +7495,32 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "N18.4"
+              "N18.5"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
-            "text": "coumadin 3.0 mg",
+            "text": "coumadin 3.0 mg /ngày",
             "position": [
               401,
-              416
+              422
             ],
             "type": "THUỐC",
-            "confidence": 0.98,
-            "source": "rule",
-            "extraction_source": "rule",
-            "vote_count": 1,
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
             "voters": {
-              "rule": 1
+              "rule": 1,
+              "qwen": 1
+            },
+            "type_votes": {
+              "THUỐC": 1.0
             },
             "needs_review": false,
             "position_fixed": false,
@@ -5267,7 +7533,7 @@
             "candidates": [
               "855320"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.95
           },
           {
             "text": "INR dưới ngưỡng điều trị",
@@ -5332,6 +7598,151 @@
             "position": [
               752,
               764
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau ngực",
+            "position": [
+              774,
+              782
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "khó thở",
+            "position": [
+              792,
+              799
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "đau bụng",
+            "position": [
+              809,
+              817
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "buồn nôn",
+            "position": [
+              828,
+              836
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "nôn",
+            "position": [
+              844,
+              847
             ],
             "type": "TRIỆU_CHỨNG",
             "source": "qwen",
@@ -5443,19 +7854,19 @@
     {
       "agent": "orchestrator",
       "action": "extraction_complete",
-      "mentions": 10,
-      "ts": 1784567099.1261184
+      "mentions": 15,
+      "ts": 1784626968.8863988
     },
     {
       "agent": "orchestrator",
       "action": "assertion_start",
-      "ts": 1784567099.126134
+      "ts": 1784626968.8864226
     },
     {
       "agent": "assertion",
       "action": "start",
       "data": {
-        "mentions": 10
+        "mentions": 15
       }
     },
     {
@@ -5542,7 +7953,7 @@
         "input": {
           "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay van hai lá cơ học\n    - ghép thận thất bại\n    Thuốc trước khi nhập viện: coumadin 3.0 mg /ngày\n\n2.  Bệnh sử hiện tại\nLý do vào viện:, INR dưới ngưỡng điều trị\nTheo lời bệnh nhân kể bệnh nhân xuất hiện chảy máu mũi xuất hiện khoảng 01 lần/ tuần. Khi làm xét nghiệm tại khoa chạy thận, phát hiện chỉ số đông máu dưới ngưỡng điều trị ( kết quả là INR 1.7) ,không có biểu hiện bất thường khác, vào viện\n    Khám hiện tại:\nKhông chảy máu mũi\nKhông có đau ngực\nKhông có khó thở\nKhông có đau bụng\n Không có buồn nôn, không nôn\n    Các cơ quan khác chưa phát hiện bất thường\n\n3.  Khám tại bệnh viện\n    Kết quả khám thực thể: dấu hiệu sinh tồn\n Nhiệt độ : 36.5 độ C\nMạch:  88 l/p\nHuyết áp: 120/70 mmHg\nNhịp thở: 20 l/p\nSPO2:  92 %\n    Kết quả xét nghiệm: INR dưới ngưỡng điều trị 1.7\n   Điều trị: Bắt đầu dùng heparin truyền tĩnh mạch liên tục",
           "start": 401,
-          "end": 416,
+          "end": 422,
           "mtype": "THUỐC"
         },
         "output": {
@@ -5617,6 +8028,101 @@
         "tool": "rule_assert",
         "input": {
           "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay van hai lá cơ học\n    - ghép thận thất bại\n    Thuốc trước khi nhập viện: coumadin 3.0 mg /ngày\n\n2.  Bệnh sử hiện tại\nLý do vào viện:, INR dưới ngưỡng điều trị\nTheo lời bệnh nhân kể bệnh nhân xuất hiện chảy máu mũi xuất hiện khoảng 01 lần/ tuần. Khi làm xét nghiệm tại khoa chạy thận, phát hiện chỉ số đông máu dưới ngưỡng điều trị ( kết quả là INR 1.7) ,không có biểu hiện bất thường khác, vào viện\n    Khám hiện tại:\nKhông chảy máu mũi\nKhông có đau ngực\nKhông có khó thở\nKhông có đau bụng\n Không có buồn nôn, không nôn\n    Các cơ quan khác chưa phát hiện bất thường\n\n3.  Khám tại bệnh viện\n    Kết quả khám thực thể: dấu hiệu sinh tồn\n Nhiệt độ : 36.5 độ C\nMạch:  88 l/p\nHuyết áp: 120/70 mmHg\nNhịp thở: 20 l/p\nSPO2:  92 %\n    Kết quả xét nghiệm: INR dưới ngưỡng điều trị 1.7\n   Điều trị: Bắt đầu dùng heparin truyền tĩnh mạch liên tục",
+          "start": 774,
+          "end": 782,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": true,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay van hai lá cơ học\n    - ghép thận thất bại\n    Thuốc trước khi nhập viện: coumadin 3.0 mg /ngày\n\n2.  Bệnh sử hiện tại\nLý do vào viện:, INR dưới ngưỡng điều trị\nTheo lời bệnh nhân kể bệnh nhân xuất hiện chảy máu mũi xuất hiện khoảng 01 lần/ tuần. Khi làm xét nghiệm tại khoa chạy thận, phát hiện chỉ số đông máu dưới ngưỡng điều trị ( kết quả là INR 1.7) ,không có biểu hiện bất thường khác, vào viện\n    Khám hiện tại:\nKhông chảy máu mũi\nKhông có đau ngực\nKhông có khó thở\nKhông có đau bụng\n Không có buồn nôn, không nôn\n    Các cơ quan khác chưa phát hiện bất thường\n\n3.  Khám tại bệnh viện\n    Kết quả khám thực thể: dấu hiệu sinh tồn\n Nhiệt độ : 36.5 độ C\nMạch:  88 l/p\nHuyết áp: 120/70 mmHg\nNhịp thở: 20 l/p\nSPO2:  92 %\n    Kết quả xét nghiệm: INR dưới ngưỡng điều trị 1.7\n   Điều trị: Bắt đầu dùng heparin truyền tĩnh mạch liên tục",
+          "start": 792,
+          "end": 799,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": true,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay van hai lá cơ học\n    - ghép thận thất bại\n    Thuốc trước khi nhập viện: coumadin 3.0 mg /ngày\n\n2.  Bệnh sử hiện tại\nLý do vào viện:, INR dưới ngưỡng điều trị\nTheo lời bệnh nhân kể bệnh nhân xuất hiện chảy máu mũi xuất hiện khoảng 01 lần/ tuần. Khi làm xét nghiệm tại khoa chạy thận, phát hiện chỉ số đông máu dưới ngưỡng điều trị ( kết quả là INR 1.7) ,không có biểu hiện bất thường khác, vào viện\n    Khám hiện tại:\nKhông chảy máu mũi\nKhông có đau ngực\nKhông có khó thở\nKhông có đau bụng\n Không có buồn nôn, không nôn\n    Các cơ quan khác chưa phát hiện bất thường\n\n3.  Khám tại bệnh viện\n    Kết quả khám thực thể: dấu hiệu sinh tồn\n Nhiệt độ : 36.5 độ C\nMạch:  88 l/p\nHuyết áp: 120/70 mmHg\nNhịp thở: 20 l/p\nSPO2:  92 %\n    Kết quả xét nghiệm: INR dưới ngưỡng điều trị 1.7\n   Điều trị: Bắt đầu dùng heparin truyền tĩnh mạch liên tục",
+          "start": 809,
+          "end": 817,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": true,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay van hai lá cơ học\n    - ghép thận thất bại\n    Thuốc trước khi nhập viện: coumadin 3.0 mg /ngày\n\n2.  Bệnh sử hiện tại\nLý do vào viện:, INR dưới ngưỡng điều trị\nTheo lời bệnh nhân kể bệnh nhân xuất hiện chảy máu mũi xuất hiện khoảng 01 lần/ tuần. Khi làm xét nghiệm tại khoa chạy thận, phát hiện chỉ số đông máu dưới ngưỡng điều trị ( kết quả là INR 1.7) ,không có biểu hiện bất thường khác, vào viện\n    Khám hiện tại:\nKhông chảy máu mũi\nKhông có đau ngực\nKhông có khó thở\nKhông có đau bụng\n Không có buồn nôn, không nôn\n    Các cơ quan khác chưa phát hiện bất thường\n\n3.  Khám tại bệnh viện\n    Kết quả khám thực thể: dấu hiệu sinh tồn\n Nhiệt độ : 36.5 độ C\nMạch:  88 l/p\nHuyết áp: 120/70 mmHg\nNhịp thở: 20 l/p\nSPO2:  92 %\n    Kết quả xét nghiệm: INR dưới ngưỡng điều trị 1.7\n   Điều trị: Bắt đầu dùng heparin truyền tĩnh mạch liên tục",
+          "start": 828,
+          "end": 836,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": true,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay van hai lá cơ học\n    - ghép thận thất bại\n    Thuốc trước khi nhập viện: coumadin 3.0 mg /ngày\n\n2.  Bệnh sử hiện tại\nLý do vào viện:, INR dưới ngưỡng điều trị\nTheo lời bệnh nhân kể bệnh nhân xuất hiện chảy máu mũi xuất hiện khoảng 01 lần/ tuần. Khi làm xét nghiệm tại khoa chạy thận, phát hiện chỉ số đông máu dưới ngưỡng điều trị ( kết quả là INR 1.7) ,không có biểu hiện bất thường khác, vào viện\n    Khám hiện tại:\nKhông chảy máu mũi\nKhông có đau ngực\nKhông có khó thở\nKhông có đau bụng\n Không có buồn nôn, không nôn\n    Các cơ quan khác chưa phát hiện bất thường\n\n3.  Khám tại bệnh viện\n    Kết quả khám thực thể: dấu hiệu sinh tồn\n Nhiệt độ : 36.5 độ C\nMạch:  88 l/p\nHuyết áp: 120/70 mmHg\nNhịp thở: 20 l/p\nSPO2:  92 %\n    Kết quả xét nghiệm: INR dưới ngưỡng điều trị 1.7\n   Điều trị: Bắt đầu dùng heparin truyền tĩnh mạch liên tục",
+          "start": 844,
+          "end": 847,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": true,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay van hai lá cơ học\n    - ghép thận thất bại\n    Thuốc trước khi nhập viện: coumadin 3.0 mg /ngày\n\n2.  Bệnh sử hiện tại\nLý do vào viện:, INR dưới ngưỡng điều trị\nTheo lời bệnh nhân kể bệnh nhân xuất hiện chảy máu mũi xuất hiện khoảng 01 lần/ tuần. Khi làm xét nghiệm tại khoa chạy thận, phát hiện chỉ số đông máu dưới ngưỡng điều trị ( kết quả là INR 1.7) ,không có biểu hiện bất thường khác, vào viện\n    Khám hiện tại:\nKhông chảy máu mũi\nKhông có đau ngực\nKhông có khó thở\nKhông có đau bụng\n Không có buồn nôn, không nôn\n    Các cơ quan khác chưa phát hiện bất thường\n\n3.  Khám tại bệnh viện\n    Kết quả khám thực thể: dấu hiệu sinh tồn\n Nhiệt độ : 36.5 độ C\nMạch:  88 l/p\nHuyết áp: 120/70 mmHg\nNhịp thở: 20 l/p\nSPO2:  92 %\n    Kết quả xét nghiệm: INR dưới ngưỡng điều trị 1.7\n   Điều trị: Bắt đầu dùng heparin truyền tĩnh mạch liên tục",
           "start": 1130,
           "end": 1163,
           "mtype": "THUỐC"
@@ -5633,25 +8139,25 @@
       "agent": "assertion",
       "action": "complete",
       "data": {
-        "processed": 10,
+        "processed": 15,
         "llm_checked": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "assertion_complete",
-      "ts": 1784567099.1268346
+      "ts": 1784626968.888204
     },
     {
       "agent": "orchestrator",
       "action": "linking_start",
-      "ts": 1784567099.1268435
+      "ts": 1784626968.888232
     },
     {
       "agent": "linking",
       "action": "start",
       "data": {
-        "mentions": 10
+        "mentions": 15
       }
     },
     {
@@ -5691,7 +8197,7 @@
             "candidates": [
               "I33.0"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các "
         },
@@ -5699,8 +8205,7 @@
           "candidates": [
             "I33.0"
           ],
-          "confidence": 0.85,
-          "rationale": "Viêm nội tâm mạc cấp và/hoặc bán cấp là mã ICD-10 phù hợp nhất với mention 'Viêm nội tâm mạc' trong ngữ cảnh chẩn đoán. Mã I33.0 đặc biệt phù hợp vì nó mô tả viêm nội tâm mạc cấp và/hoặc bán cấp, không phân biệt nguyên nhân, phù hợp với thông tin chung trong bệnh án."
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -5740,18 +8245,17 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I53.8"
+              "I51.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi"
         },
         "output": {
           "candidates": [
-            "I53.8"
+            "I51.9"
           ],
-          "confidence": 0.85,
-          "rationale": "Rối loạn chức năng tâm thất phải được phân loại dưới mã I53.8 (Rối loạn chức năng tâm thất khác) trong ICD-10."
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -5791,18 +8295,17 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I48.3"
+              "I48.91"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi ghép thận"
         },
         "output": {
           "candidates": [
-            "I48.3"
+            "I48.91"
           ],
-          "confidence": 0.85,
-          "rationale": "Mention 'rung nhĩ' được ghi nhận trong context, và mã I48.3 (Rung nhĩ mạn tính) là mã phù hợp nhất trong danh sách candidates."
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -5842,18 +8345,17 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "N18.4"
+              "N18.5"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "sử bệnh\n    Các bệnh lý mãn tính\n    - Viêm nội tâm mạc  , rối loạn chức năng tâm thất phải, rung nhĩ\nsau Phẫu thuật thay van tim hai lá cơ học\n    - Suy thận mạn giai V đang chạy thận nhân tạo chu kì các ngày thứ 2, thứ 6, chủ nhật, sau khi ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay v"
         },
         "output": {
           "candidates": [
-            "N18.4"
+            "N18.5"
           ],
-          "confidence": 0.85,
-          "rationale": "Mention 'Suy thận mạn giai V' tương ứng với mã N18.4 (Bệnh thận mạn tính, giai đoạn 4) trong ICD-10."
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -5865,18 +8367,27 @@
         "tool": "link_entity",
         "input": {
           "mention": {
-            "text": "coumadin 3.0 mg",
+            "text": "coumadin 3.0 mg /ngày",
             "position": [
               401,
-              416
+              422
             ],
             "type": "THUỐC",
-            "confidence": 0.98,
-            "source": "rule",
-            "extraction_source": "rule",
-            "vote_count": 1,
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.8
+              }
+            ],
+            "confidence": 0.8,
+            "vote_count": 2,
+            "max_type_votes": 2,
             "voters": {
-              "rule": 1
+              "rule": 1,
+              "qwen": 1
+            },
+            "type_votes": {
+              "THUỐC": 1.0
             },
             "needs_review": false,
             "position_fixed": false,
@@ -5889,16 +8400,15 @@
             "candidates": [
               "855320"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.95
           },
-          "context": "ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay van hai lá cơ học\n    - ghép thận thất bại\n    Thuốc trước khi nhập viện: coumadin 3.0 mg /ngày\n\n2.  Bệnh sử hiện tại\nLý do vào viện:, INR dưới ngưỡng điều trị\nTheo lời bệnh nhân kể bệnh nhân xuất hiện chảy máu mũi xuất hiện khoảng 01 lần/"
+          "context": "ghép thận thất bại\n    Tiền sử phẫu thuật / thủ thuật\n    - Phẫu thuật thay van hai lá cơ học\n    - ghép thận thất bại\n    Thuốc trước khi nhập viện: coumadin 3.0 mg /ngày\n\n2.  Bệnh sử hiện tại\nLý do vào viện:, INR dưới ngưỡng điều trị\nTheo lời bệnh nhân kể bệnh nhân xuất hiện chảy máu mũi xuất hiện khoảng 01 lần/ tuần."
         },
         "output": {
           "candidates": [
             "855320"
           ],
-          "confidence": 0.85,
-          "rationale": "Mention 'coumadin 3.0 mg' tương ứng với 'warfarin sodium 3 MG Oral Tablet [Coumadin]' trong danh sách candidates."
+          "confidence": 0.95
         },
         "result_type": "dict"
       }
@@ -5965,18 +8475,18 @@
       "agent": "orchestrator",
       "action": "linking_complete",
       "linked": 6,
-      "ts": 1784567154.9880524
+      "ts": 1784626974.0044174
     },
     {
       "agent": "orchestrator",
       "action": "verification_start",
-      "ts": 1784567154.988074
+      "ts": 1784626974.004443
     },
     {
       "agent": "verifier",
       "action": "start",
       "data": {
-        "mentions": 10
+        "mentions": 15
       }
     },
     {
@@ -6017,7 +8527,7 @@
               "candidates": [
                 "I33.0"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "rối loạn chức năng tâm thất phải",
@@ -6048,9 +8558,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I53.8"
+                "I51.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "rung nhĩ",
@@ -6081,9 +8591,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I48.3"
+                "I48.91"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Suy thận mạn giai V",
@@ -6114,23 +8624,32 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N18.4"
+                "N18.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
-              "text": "coumadin 3.0 mg",
+              "text": "coumadin 3.0 mg /ngày",
               "position": [
                 401,
-                416
+                422
               ],
               "type": "THUỐC",
-              "confidence": 0.98,
-              "source": "rule",
-              "extraction_source": "rule",
-              "vote_count": 1,
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
               "voters": {
-                "rule": 1
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "THUỐC": 1.0
               },
               "needs_review": false,
               "position_fixed": false,
@@ -6143,7 +8662,7 @@
               "candidates": [
                 "855320"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.95
             },
             {
               "text": "INR dưới ngưỡng điều trị",
@@ -6208,6 +8727,151 @@
               "position": [
                 752,
                 764
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau ngực",
+              "position": [
+                774,
+                782
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                792,
+                799
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau bụng",
+              "position": [
+                809,
+                817
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "buồn nôn",
+              "position": [
+                828,
+                836
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nôn",
+              "position": [
+                844,
+                847
               ],
               "type": "TRIỆU_CHỨNG",
               "source": "qwen",
@@ -6352,6 +9016,31 @@
               "action": "accept",
               "fixes": [],
               "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
             }
           ],
           "final_predictions": [
@@ -6386,7 +9075,7 @@
               "candidates": [
                 "I33.0"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "rối loạn chức năng tâm thất phải",
@@ -6417,9 +9106,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I53.8"
+                "I51.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "rung nhĩ",
@@ -6450,9 +9139,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I48.3"
+                "I48.91"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Suy thận mạn giai V",
@@ -6483,23 +9172,32 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "N18.4"
+                "N18.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
-              "text": "coumadin 3.0 mg",
+              "text": "coumadin 3.0 mg /ngày",
               "position": [
                 401,
-                416
+                422
               ],
               "type": "THUỐC",
-              "confidence": 0.98,
-              "source": "rule",
-              "extraction_source": "rule",
-              "vote_count": 1,
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.8
+                }
+              ],
+              "confidence": 0.8,
+              "vote_count": 2,
+              "max_type_votes": 2,
               "voters": {
-                "rule": 1
+                "rule": 1,
+                "qwen": 1
+              },
+              "type_votes": {
+                "THUỐC": 1.0
               },
               "needs_review": false,
               "position_fixed": false,
@@ -6512,7 +9210,7 @@
               "candidates": [
                 "855320"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.95
             },
             {
               "text": "INR dưới ngưỡng điều trị",
@@ -6577,6 +9275,151 @@
               "position": [
                 752,
                 764
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau ngực",
+              "position": [
+                774,
+                782
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "khó thở",
+              "position": [
+                792,
+                799
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "đau bụng",
+              "position": [
+                809,
+                817
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "buồn nôn",
+              "position": [
+                828,
+                836
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "nôn",
+              "position": [
+                844,
+                847
               ],
               "type": "TRIỆU_CHỨNG",
               "source": "qwen",
@@ -6677,22 +9520,22 @@
       "agent": "verifier",
       "action": "validated",
       "data": {
-        "kept": 10,
+        "kept": 15,
         "dropped": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "verification_complete",
-      "kept": 10,
-      "ts": 1784567155.1345322
+      "kept": 15,
+      "ts": 1784626975.4583695
     },
     {
       "agent": "orchestrator",
       "action": "complete",
-      "total_mentions": 10,
-      "elapsed": 78.5,
-      "ts": 1784567155.1345544
+      "total_mentions": 15,
+      "elapsed": 41.19,
+      "ts": 1784626975.4584043
     }
   ]
 }

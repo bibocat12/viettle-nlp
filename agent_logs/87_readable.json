@@ -1,14 +1,14 @@
 {
   "file_id": "87",
-  "timestamp": 1784567063.0024555,
-  "elapsed": 37.67,
+  "timestamp": 1784626963.6534355,
+  "elapsed": 77.44,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 13,
+  "mention_count": 12,
   "stats": {
-    "total_mentions": 13,
-    "final": 13,
+    "total_mentions": 12,
+    "final": 12,
     "validation_errors": 0,
-    "elapsed": 37.67,
+    "elapsed": 77.44,
     "rule": 1,
     "qwen": 12
   },
@@ -123,15 +123,27 @@
     },
     {
       "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -160,31 +172,23 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784567063.0023031,
+      "ts": 1784626963.6531835,
       "tool": null
     }
   ],
   "mentions": [
     {
-      "text": "tự tử",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isHistorical"
-      ],
-      "position": [
-        41,
-        46
-      ]
-    },
-    {
       "text": "trầm cảm",
-      "type": "TRIỆU_CHỨNG",
+      "type": "CHẨN_ĐOÁN",
       "assertions": [
         "isHistorical"
       ],
       "position": [
         108,
         116
+      ],
+      "candidates": [
+        "F32.9"
       ]
     },
     {
@@ -198,7 +202,7 @@
         135
       ],
       "candidates": [
-        "F41.3"
+        "F41.9"
       ]
     },
     {
@@ -211,20 +215,9 @@
       ]
     },
     {
-      "text": "tự tử",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        202,
-        207
-      ]
-    },
-    {
       "text": "sốc",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isFamily"
-      ],
+      "assertions": [],
       "position": [
         263,
         266
@@ -233,21 +226,19 @@
     {
       "text": "buồn chán",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isFamily"
-      ],
+      "assertions": [],
       "position": [
         314,
         323
       ]
     },
     {
-      "text": "tự tử",
+      "text": "hút cần sa",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        427,
-        432
+        341,
+        351
       ]
     },
     {
@@ -261,24 +252,16 @@
     },
     {
       "text": "trầm cảm",
-      "type": "TRIỆU_CHỨNG",
+      "type": "CHẨN_ĐOÁN",
       "assertions": [
         "isNegated"
       ],
       "position": [
         555,
         563
-      ]
-    },
-    {
-      "text": "tự tử",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
       ],
-      "position": [
-        602,
-        607
+      "candidates": [
+        "F32.9"
       ]
     },
     {
@@ -291,12 +274,34 @@
       ]
     },
     {
+      "text": "kháng sinh tĩnh mạch",
+      "type": "THUỐC",
+      "assertions": [],
+      "position": [
+        943,
+        963
+      ],
+      "candidates": []
+    },
+    {
       "text": "và lắp chân giả",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
         985,
         1000
+      ]
+    },
+    {
+      "text": "suy nghĩ tích cực",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        1011,
+        1028
+      ],
+      "candidates": [
+        "R57.1"
       ]
     }
   ]

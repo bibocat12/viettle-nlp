@@ -1,7 +1,7 @@
 {
   "file_id": "94",
-  "timestamp": 1784567157.7401466,
-  "elapsed": 32.4,
+  "timestamp": 1784627002.6010375,
+  "elapsed": 36.33,
   "model": "bibocat/qwen3-ner-grpo-final",
   "result": {
     "note_id": "94",
@@ -17,7 +17,33 @@
           76
         ],
         "candidates": [
-          "C50"
+          "C50.9"
+        ]
+      },
+      {
+        "text": "weekly taxol",
+        "type": "THUỐC",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          98,
+          110
+        ],
+        "candidates": []
+      },
+      {
+        "text": "fulvestrant",
+        "type": "THUỐC",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          114,
+          125
+        ],
+        "candidates": [
+          "282357"
         ]
       },
       {
@@ -48,6 +74,15 @@
         ]
       },
       {
+        "text": "đau bụng",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          413,
+          421
+        ]
+      },
+      {
         "text": "buồn nôn",
         "type": "TRIỆU_CHỨNG",
         "assertions": [],
@@ -63,6 +98,15 @@
         "position": [
           461,
           464
+        ]
+      },
+      {
+        "text": "Đau bụng",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          559,
+          567
         ]
       },
       {
@@ -108,6 +152,15 @@
         ]
       },
       {
+        "text": "đau",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          796,
+          799
+        ]
+      },
+      {
         "text": "morphineoral",
         "type": "THUỐC",
         "assertions": [],
@@ -130,32 +183,43 @@
         "candidates": [
           "6470"
         ]
+      },
+      {
+        "text": "đau",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          842,
+          845
+        ]
       }
     ],
     "validation": {
       "is_valid": true,
       "errors": [],
-      "warnings": []
+      "warnings": [
+        "[1] THUỐC has no candidates"
+      ]
     },
     "stats": {
-      "total_mentions": 12,
-      "final": 12,
+      "total_mentions": 18,
+      "final": 18,
       "validation_errors": 0,
-      "elapsed": 32.4,
+      "elapsed": 36.33,
       "rule": 0,
-      "qwen": 15
+      "qwen": 21
     },
     "logs": [
       {
         "agent": "orchestrator",
         "action": "start",
         "text_len": 887,
-        "ts": 1784567125.341597
+        "ts": 1784626966.2669861
       },
       {
         "agent": "orchestrator",
         "action": "extraction_start",
-        "ts": 1784567125.3416126
+        "ts": 1784626966.2670128
       },
       {
         "agent": "extraction",
@@ -199,6 +263,38 @@
                 "extraction_source": "qwen"
               },
               {
+                "text": "weekly taxol",
+                "position": [
+                  98,
+                  110
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "fulvestrant",
+                "position": [
+                  114,
+                  125
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
                 "text": "đau bụng vùng hạ sườn phải",
                 "position": [
                   181,
@@ -263,6 +359,22 @@
                 "extraction_source": "qwen"
               },
               {
+                "text": "đau bụng",
+                "position": [
+                  413,
+                  421
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
                 "text": "buồn nôn",
                 "position": [
                   451,
@@ -299,6 +411,22 @@
                 "position": [
                   461,
                   464
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Đau bụng",
+                "position": [
+                  559,
+                  567
                 ],
                 "type": "TRIỆU_CHỨNG",
                 "source": "qwen",
@@ -391,6 +519,22 @@
                 "extraction_source": "qwen"
               },
               {
+                "text": "đau",
+                "position": [
+                  796,
+                  799
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
                 "text": "morphineoral",
                 "position": [
                   812,
@@ -421,6 +565,22 @@
                   }
                 ],
                 "extraction_source": "qwen"
+              },
+              {
+                "text": "đau",
+                "position": [
+                  842,
+                  845
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
               }
             ],
             "errors": []
@@ -434,9 +594,9 @@
         "data": {
           "sources": {
             "rule": 0,
-            "qwen": 15
+            "qwen": 21
           },
-          "total": 15
+          "total": 21
         }
       },
       {
@@ -463,6 +623,38 @@
                 "extraction_source": "qwen"
               },
               {
+                "text": "weekly taxol",
+                "position": [
+                  98,
+                  110
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "fulvestrant",
+                "position": [
+                  114,
+                  125
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
                 "text": "đau bụng vùng hạ sườn phải",
                 "position": [
                   181,
@@ -527,6 +719,22 @@
                 "extraction_source": "qwen"
               },
               {
+                "text": "đau bụng",
+                "position": [
+                  413,
+                  421
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
                 "text": "buồn nôn",
                 "position": [
                   451,
@@ -563,6 +771,22 @@
                 "position": [
                   461,
                   464
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Đau bụng",
+                "position": [
+                  559,
+                  567
                 ],
                 "type": "TRIỆU_CHỨNG",
                 "source": "qwen",
@@ -655,6 +879,22 @@
                 "extraction_source": "qwen"
               },
               {
+                "text": "đau",
+                "position": [
+                  796,
+                  799
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
                 "text": "morphineoral",
                 "position": [
                   812,
@@ -681,6 +921,22 @@
                 "type_candidates": [
                   {
                     "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "đau",
+                "position": [
+                  842,
+                  845
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
                     "score": 0.85
                   }
                 ],
@@ -718,9 +974,73 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "weekly taxol",
+              "position": [
+                98,
+                110
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "fulvestrant",
+              "position": [
+                114,
+                125
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "282357"
+              ],
+              "link_confidence": 0.95
             },
             {
               "text": "đau bụng vùng hạ sườn phải",
@@ -812,6 +1132,35 @@
               "assertion_confidence": 0.85
             },
             {
+              "text": "đau bụng",
+              "position": [
+                413,
+                421
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "buồn nôn",
               "position": [
                 451,
@@ -847,6 +1196,35 @@
               "position": [
                 461,
                 464
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Đau bụng",
+              "position": [
+                559,
+                567
               ],
               "type": "TRIỆU_CHỨNG",
               "source": "qwen",
@@ -998,6 +1376,35 @@
               "link_confidence": 0.85
             },
             {
+              "text": "đau",
+              "position": [
+                796,
+                799
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "morphineoral",
               "position": [
                 812,
@@ -1062,6 +1469,35 @@
                 "6470"
               ],
               "link_confidence": 0.95
+            },
+            {
+              "text": "đau",
+              "position": [
+                842,
+                845
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
           "result_type": "list"
@@ -1071,7 +1507,7 @@
         "agent": "extraction",
         "action": "voted",
         "data": {
-          "merged": 12
+          "merged": 18
         }
       },
       {
@@ -1110,9 +1546,73 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "C50"
+                  "C50.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
+              },
+              {
+                "text": "weekly taxol",
+                "position": [
+                  98,
+                  110
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [],
+                "link_confidence": 0.0
+              },
+              {
+                "text": "fulvestrant",
+                "position": [
+                  114,
+                  125
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "282357"
+                ],
+                "link_confidence": 0.95
               },
               {
                 "text": "đau bụng vùng hạ sườn phải",
@@ -1204,6 +1704,35 @@
                 "assertion_confidence": 0.85
               },
               {
+                "text": "đau bụng",
+                "position": [
+                  413,
+                  421
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
                 "text": "buồn nôn",
                 "position": [
                   451,
@@ -1239,6 +1768,35 @@
                 "position": [
                   461,
                   464
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "Đau bụng",
+                "position": [
+                  559,
+                  567
                 ],
                 "type": "TRIỆU_CHỨNG",
                 "source": "qwen",
@@ -1390,6 +1948,35 @@
                 "link_confidence": 0.85
               },
               {
+                "text": "đau",
+                "position": [
+                  796,
+                  799
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
                 "text": "morphineoral",
                 "position": [
                   812,
@@ -1454,6 +2041,35 @@
                   "6470"
                 ],
                 "link_confidence": 0.95
+              },
+              {
+                "text": "đau",
+                "position": [
+                  842,
+                  845
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
               }
             ],
             "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n"
@@ -1488,9 +2104,73 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "weekly taxol",
+              "position": [
+                98,
+                110
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "fulvestrant",
+              "position": [
+                114,
+                125
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "282357"
+              ],
+              "link_confidence": 0.95
             },
             {
               "text": "đau bụng vùng hạ sườn phải",
@@ -1582,6 +2262,35 @@
               "assertion_confidence": 0.85
             },
             {
+              "text": "đau bụng",
+              "position": [
+                413,
+                421
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "buồn nôn",
               "position": [
                 451,
@@ -1617,6 +2326,35 @@
               "position": [
                 461,
                 464
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Đau bụng",
+              "position": [
+                559,
+                567
               ],
               "type": "TRIỆU_CHỨNG",
               "source": "qwen",
@@ -1768,6 +2506,35 @@
               "link_confidence": 0.85
             },
             {
+              "text": "đau",
+              "position": [
+                796,
+                799
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "morphineoral",
               "position": [
                 812,
@@ -1832,6 +2599,35 @@
                 "6470"
               ],
               "link_confidence": 0.95
+            },
+            {
+              "text": "đau",
+              "position": [
+                842,
+                845
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
           "result_type": "list"
@@ -1873,9 +2669,73 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "C50"
+                  "C50.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
+              },
+              {
+                "text": "weekly taxol",
+                "position": [
+                  98,
+                  110
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [],
+                "link_confidence": 0.0
+              },
+              {
+                "text": "fulvestrant",
+                "position": [
+                  114,
+                  125
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "282357"
+                ],
+                "link_confidence": 0.95
               },
               {
                 "text": "đau bụng vùng hạ sườn phải",
@@ -1967,6 +2827,35 @@
                 "assertion_confidence": 0.85
               },
               {
+                "text": "đau bụng",
+                "position": [
+                  413,
+                  421
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
                 "text": "buồn nôn",
                 "position": [
                   451,
@@ -2002,6 +2891,35 @@
                 "position": [
                   461,
                   464
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "Đau bụng",
+                "position": [
+                  559,
+                  567
                 ],
                 "type": "TRIỆU_CHỨNG",
                 "source": "qwen",
@@ -2153,6 +3071,35 @@
                 "link_confidence": 0.85
               },
               {
+                "text": "đau",
+                "position": [
+                  796,
+                  799
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
                 "text": "morphineoral",
                 "position": [
                   812,
@@ -2217,6 +3164,35 @@
                   "6470"
                 ],
                 "link_confidence": 0.95
+              },
+              {
+                "text": "đau",
+                "position": [
+                  842,
+                  845
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
               }
             ],
             "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n"
@@ -2251,9 +3227,73 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "weekly taxol",
+              "position": [
+                98,
+                110
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "fulvestrant",
+              "position": [
+                114,
+                125
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "282357"
+              ],
+              "link_confidence": 0.95
             },
             {
               "text": "đau bụng vùng hạ sườn phải",
@@ -2345,6 +3385,35 @@
               "assertion_confidence": 0.85
             },
             {
+              "text": "đau bụng",
+              "position": [
+                413,
+                421
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "buồn nôn",
               "position": [
                 451,
@@ -2380,6 +3449,35 @@
               "position": [
                 461,
                 464
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Đau bụng",
+              "position": [
+                559,
+                567
               ],
               "type": "TRIỆU_CHỨNG",
               "source": "qwen",
@@ -2531,6 +3629,35 @@
               "link_confidence": 0.85
             },
             {
+              "text": "đau",
+              "position": [
+                796,
+                799
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "morphineoral",
               "position": [
                 812,
@@ -2595,6 +3722,35 @@
                 "6470"
               ],
               "link_confidence": 0.95
+            },
+            {
+              "text": "đau",
+              "position": [
+                842,
+                845
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
           "result_type": "list"
@@ -2617,19 +3773,19 @@
       {
         "agent": "orchestrator",
         "action": "extraction_complete",
-        "mentions": 12,
-        "ts": 1784567138.5675123
+        "mentions": 18,
+        "ts": 1784626991.1102302
       },
       {
         "agent": "orchestrator",
         "action": "assertion_start",
-        "ts": 1784567138.5675335
+        "ts": 1784626991.110246
       },
       {
         "agent": "assertion",
         "action": "start",
         "data": {
-          "mentions": 12
+          "mentions": 18
         }
       },
       {
@@ -2642,6 +3798,44 @@
             "start": 49,
             "end": 76,
             "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n",
+            "start": 98,
+            "end": 110,
+            "mtype": "THUỐC"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n",
+            "start": 114,
+            "end": 125,
+            "mtype": "THUỐC"
           },
           "output": {
             "isNegated": false,
@@ -2715,6 +3909,25 @@
           "tool": "rule_assert",
           "input": {
             "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n",
+            "start": 413,
+            "end": 421,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n",
             "start": 451,
             "end": 459,
             "mtype": "TRIỆU_CHỨNG"
@@ -2736,6 +3949,25 @@
             "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n",
             "start": 461,
             "end": 464,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n",
+            "start": 559,
+            "end": 567,
             "mtype": "TRIỆU_CHỨNG"
           },
           "output": {
@@ -2829,6 +4061,25 @@
           "tool": "rule_assert",
           "input": {
             "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n",
+            "start": 796,
+            "end": 799,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n",
             "start": 812,
             "end": 824,
             "mtype": "THUỐC"
@@ -2862,27 +4113,46 @@
       },
       {
         "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n",
+            "start": 842,
+            "end": 845,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
         "action": "complete",
         "data": {
-          "processed": 12,
+          "processed": 18,
           "llm_checked": 0
         }
       },
       {
         "agent": "orchestrator",
         "action": "assertion_complete",
-        "ts": 1784567138.568671
+        "ts": 1784626991.1120546
       },
       {
         "agent": "orchestrator",
         "action": "linking_start",
-        "ts": 1784567138.5686889
+        "ts": 1784626991.1120687
       },
       {
         "agent": "linking",
         "action": "start",
         "data": {
-          "mentions": 12
+          "mentions": 18
         }
       },
       {
@@ -2920,18 +4190,113 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n   "
           },
           "output": {
             "candidates": [
-              "C50"
+              "C50.9"
             ],
-            "confidence": 0.85,
-            "rationale": "Mention 'Ung thư vú di căn ER+/HER2−' trực tiếp chỉ ra chẩn đoán ung thư vú, mã C50 là mã chính xác nhất trong danh sách cho ung thư vú, bao gồm cả các trường hợp di căn."
+            "confidence": 0.99
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "weekly taxol",
+              "position": [
+                98,
+                110
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hô"
+          },
+          "output": {
+            "candidates": [],
+            "confidence": 0.0
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "fulvestrant",
+              "position": [
+                114,
+                125
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "282357"
+              ],
+              "link_confidence": 0.95
+            },
+            "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân"
+          },
+          "output": {
+            "candidates": [
+              "282357"
+            ],
+            "confidence": 0.95
           },
           "result_type": "dict"
         }
@@ -3142,25 +4507,25 @@
         "agent": "linking",
         "action": "complete",
         "data": {
-          "linked": 5
+          "linked": 6
         }
       },
       {
         "agent": "orchestrator",
         "action": "linking_complete",
-        "linked": 5,
-        "ts": 1784567157.57037
+        "linked": 6,
+        "ts": 1784626999.217152
       },
       {
         "agent": "orchestrator",
         "action": "verification_start",
-        "ts": 1784567157.570392
+        "ts": 1784626999.2171774
       },
       {
         "agent": "verifier",
         "action": "start",
         "data": {
-          "mentions": 12
+          "mentions": 18
         }
       },
       {
@@ -3199,9 +4564,73 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "C50"
+                  "C50.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
+              },
+              {
+                "text": "weekly taxol",
+                "position": [
+                  98,
+                  110
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [],
+                "link_confidence": 0.0
+              },
+              {
+                "text": "fulvestrant",
+                "position": [
+                  114,
+                  125
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "282357"
+                ],
+                "link_confidence": 0.95
               },
               {
                 "text": "đau bụng vùng hạ sườn phải",
@@ -3293,6 +4722,35 @@
                 "assertion_confidence": 0.85
               },
               {
+                "text": "đau bụng",
+                "position": [
+                  413,
+                  421
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
                 "text": "buồn nôn",
                 "position": [
                   451,
@@ -3328,6 +4786,35 @@
                 "position": [
                   461,
                   464
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "Đau bụng",
+                "position": [
+                  559,
+                  567
                 ],
                 "type": "TRIỆU_CHỨNG",
                 "source": "qwen",
@@ -3479,6 +4966,35 @@
                 "link_confidence": 0.85
               },
               {
+                "text": "đau",
+                "position": [
+                  796,
+                  799
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
                 "text": "morphineoral",
                 "position": [
                   812,
@@ -3543,12 +5059,73 @@
                   "6470"
                 ],
                 "link_confidence": 0.95
+              },
+              {
+                "text": "đau",
+                "position": [
+                  842,
+                  845
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
               }
             ],
             "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n"
           },
           "output": {
             "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": [
+                  "no candidates"
+                ]
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
               {
                 "action": "accept",
                 "fixes": [],
@@ -3640,9 +5217,73 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "C50"
+                  "C50.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
+              },
+              {
+                "text": "weekly taxol",
+                "position": [
+                  98,
+                  110
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [],
+                "link_confidence": 0.0
+              },
+              {
+                "text": "fulvestrant",
+                "position": [
+                  114,
+                  125
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "282357"
+                ],
+                "link_confidence": 0.95
               },
               {
                 "text": "đau bụng vùng hạ sườn phải",
@@ -3734,6 +5375,35 @@
                 "assertion_confidence": 0.85
               },
               {
+                "text": "đau bụng",
+                "position": [
+                  413,
+                  421
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
                 "text": "buồn nôn",
                 "position": [
                   451,
@@ -3769,6 +5439,35 @@
                 "position": [
                   461,
                   464
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "Đau bụng",
+                "position": [
+                  559,
+                  567
                 ],
                 "type": "TRIỆU_CHỨNG",
                 "source": "qwen",
@@ -3920,6 +5619,35 @@
                 "link_confidence": 0.85
               },
               {
+                "text": "đau",
+                "position": [
+                  796,
+                  799
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
                 "text": "morphineoral",
                 "position": [
                   812,
@@ -3984,6 +5712,35 @@
                   "6470"
                 ],
                 "link_confidence": 0.95
+              },
+              {
+                "text": "đau",
+                "position": [
+                  842,
+                  845
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
               }
             ],
             "dropped": 0
@@ -3995,22 +5752,22 @@
         "agent": "verifier",
         "action": "validated",
         "data": {
-          "kept": 12,
+          "kept": 18,
           "dropped": 0
         }
       },
       {
         "agent": "orchestrator",
         "action": "verification_complete",
-        "kept": 12,
-        "ts": 1784567157.7400873
+        "kept": 18,
+        "ts": 1784627002.600659
       },
       {
         "agent": "orchestrator",
         "action": "complete",
-        "total_mentions": 12,
-        "elapsed": 32.4,
-        "ts": 1784567157.7400987
+        "total_mentions": 18,
+        "elapsed": 36.33,
+        "ts": 1784627002.600698
       }
     ]
   },
@@ -4019,12 +5776,12 @@
       "agent": "orchestrator",
       "action": "start",
       "text_len": 887,
-      "ts": 1784567125.341597
+      "ts": 1784626966.2669861
     },
     {
       "agent": "orchestrator",
       "action": "extraction_start",
-      "ts": 1784567125.3416126
+      "ts": 1784626966.2670128
     },
     {
       "agent": "extraction",
@@ -4068,6 +5825,38 @@
               "extraction_source": "qwen"
             },
             {
+              "text": "weekly taxol",
+              "position": [
+                98,
+                110
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "fulvestrant",
+              "position": [
+                114,
+                125
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
               "text": "đau bụng vùng hạ sườn phải",
               "position": [
                 181,
@@ -4132,6 +5921,22 @@
               "extraction_source": "qwen"
             },
             {
+              "text": "đau bụng",
+              "position": [
+                413,
+                421
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
               "text": "buồn nôn",
               "position": [
                 451,
@@ -4168,6 +5973,22 @@
               "position": [
                 461,
                 464
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Đau bụng",
+              "position": [
+                559,
+                567
               ],
               "type": "TRIỆU_CHỨNG",
               "source": "qwen",
@@ -4260,6 +6081,22 @@
               "extraction_source": "qwen"
             },
             {
+              "text": "đau",
+              "position": [
+                796,
+                799
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
               "text": "morphineoral",
               "position": [
                 812,
@@ -4290,6 +6127,22 @@
                 }
               ],
               "extraction_source": "qwen"
+            },
+            {
+              "text": "đau",
+              "position": [
+                842,
+                845
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
             }
           ],
           "errors": []
@@ -4303,9 +6156,9 @@
       "data": {
         "sources": {
           "rule": 0,
-          "qwen": 15
+          "qwen": 21
         },
-        "total": 15
+        "total": 21
       }
     },
     {
@@ -4332,6 +6185,38 @@
               "extraction_source": "qwen"
             },
             {
+              "text": "weekly taxol",
+              "position": [
+                98,
+                110
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "fulvestrant",
+              "position": [
+                114,
+                125
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
               "text": "đau bụng vùng hạ sườn phải",
               "position": [
                 181,
@@ -4396,6 +6281,22 @@
               "extraction_source": "qwen"
             },
             {
+              "text": "đau bụng",
+              "position": [
+                413,
+                421
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
               "text": "buồn nôn",
               "position": [
                 451,
@@ -4432,6 +6333,22 @@
               "position": [
                 461,
                 464
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Đau bụng",
+              "position": [
+                559,
+                567
               ],
               "type": "TRIỆU_CHỨNG",
               "source": "qwen",
@@ -4524,6 +6441,22 @@
               "extraction_source": "qwen"
             },
             {
+              "text": "đau",
+              "position": [
+                796,
+                799
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
               "text": "morphineoral",
               "position": [
                 812,
@@ -4550,6 +6483,22 @@
               "type_candidates": [
                 {
                   "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "đau",
+              "position": [
+                842,
+                845
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
                   "score": 0.85
                 }
               ],
@@ -4587,9 +6536,73 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "C50"
+              "C50.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
+          },
+          {
+            "text": "weekly taxol",
+            "position": [
+              98,
+              110
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "fulvestrant",
+            "position": [
+              114,
+              125
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "282357"
+            ],
+            "link_confidence": 0.95
           },
           {
             "text": "đau bụng vùng hạ sườn phải",
@@ -4681,6 +6694,35 @@
             "assertion_confidence": 0.85
           },
           {
+            "text": "đau bụng",
+            "position": [
+              413,
+              421
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
             "text": "buồn nôn",
             "position": [
               451,
@@ -4716,6 +6758,35 @@
             "position": [
               461,
               464
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "Đau bụng",
+            "position": [
+              559,
+              567
             ],
             "type": "TRIỆU_CHỨNG",
             "source": "qwen",
@@ -4867,6 +6938,35 @@
             "link_confidence": 0.85
           },
           {
+            "text": "đau",
+            "position": [
+              796,
+              799
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
             "text": "morphineoral",
             "position": [
               812,
@@ -4931,6 +7031,35 @@
               "6470"
             ],
             "link_confidence": 0.95
+          },
+          {
+            "text": "đau",
+            "position": [
+              842,
+              845
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
           }
         ],
         "result_type": "list"
@@ -4940,7 +7069,7 @@
       "agent": "extraction",
       "action": "voted",
       "data": {
-        "merged": 12
+        "merged": 18
       }
     },
     {
@@ -4979,9 +7108,73 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "weekly taxol",
+              "position": [
+                98,
+                110
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "fulvestrant",
+              "position": [
+                114,
+                125
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "282357"
+              ],
+              "link_confidence": 0.95
             },
             {
               "text": "đau bụng vùng hạ sườn phải",
@@ -5073,6 +7266,35 @@
               "assertion_confidence": 0.85
             },
             {
+              "text": "đau bụng",
+              "position": [
+                413,
+                421
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "buồn nôn",
               "position": [
                 451,
@@ -5108,6 +7330,35 @@
               "position": [
                 461,
                 464
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Đau bụng",
+              "position": [
+                559,
+                567
               ],
               "type": "TRIỆU_CHỨNG",
               "source": "qwen",
@@ -5259,6 +7510,35 @@
               "link_confidence": 0.85
             },
             {
+              "text": "đau",
+              "position": [
+                796,
+                799
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "morphineoral",
               "position": [
                 812,
@@ -5323,6 +7603,35 @@
                 "6470"
               ],
               "link_confidence": 0.95
+            },
+            {
+              "text": "đau",
+              "position": [
+                842,
+                845
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n"
@@ -5357,9 +7666,73 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "C50"
+              "C50.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
+          },
+          {
+            "text": "weekly taxol",
+            "position": [
+              98,
+              110
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "fulvestrant",
+            "position": [
+              114,
+              125
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "282357"
+            ],
+            "link_confidence": 0.95
           },
           {
             "text": "đau bụng vùng hạ sườn phải",
@@ -5451,6 +7824,35 @@
             "assertion_confidence": 0.85
           },
           {
+            "text": "đau bụng",
+            "position": [
+              413,
+              421
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
             "text": "buồn nôn",
             "position": [
               451,
@@ -5486,6 +7888,35 @@
             "position": [
               461,
               464
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "Đau bụng",
+            "position": [
+              559,
+              567
             ],
             "type": "TRIỆU_CHỨNG",
             "source": "qwen",
@@ -5637,6 +8068,35 @@
             "link_confidence": 0.85
           },
           {
+            "text": "đau",
+            "position": [
+              796,
+              799
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
             "text": "morphineoral",
             "position": [
               812,
@@ -5701,6 +8161,35 @@
               "6470"
             ],
             "link_confidence": 0.95
+          },
+          {
+            "text": "đau",
+            "position": [
+              842,
+              845
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
           }
         ],
         "result_type": "list"
@@ -5742,9 +8231,73 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "weekly taxol",
+              "position": [
+                98,
+                110
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "fulvestrant",
+              "position": [
+                114,
+                125
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "282357"
+              ],
+              "link_confidence": 0.95
             },
             {
               "text": "đau bụng vùng hạ sườn phải",
@@ -5836,6 +8389,35 @@
               "assertion_confidence": 0.85
             },
             {
+              "text": "đau bụng",
+              "position": [
+                413,
+                421
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "buồn nôn",
               "position": [
                 451,
@@ -5871,6 +8453,35 @@
               "position": [
                 461,
                 464
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Đau bụng",
+              "position": [
+                559,
+                567
               ],
               "type": "TRIỆU_CHỨNG",
               "source": "qwen",
@@ -6022,6 +8633,35 @@
               "link_confidence": 0.85
             },
             {
+              "text": "đau",
+              "position": [
+                796,
+                799
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "morphineoral",
               "position": [
                 812,
@@ -6086,6 +8726,35 @@
                 "6470"
               ],
               "link_confidence": 0.95
+            },
+            {
+              "text": "đau",
+              "position": [
+                842,
+                845
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n"
@@ -6120,9 +8789,73 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "C50"
+              "C50.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
+          },
+          {
+            "text": "weekly taxol",
+            "position": [
+              98,
+              110
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          {
+            "text": "fulvestrant",
+            "position": [
+              114,
+              125
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "282357"
+            ],
+            "link_confidence": 0.95
           },
           {
             "text": "đau bụng vùng hạ sườn phải",
@@ -6214,6 +8947,35 @@
             "assertion_confidence": 0.85
           },
           {
+            "text": "đau bụng",
+            "position": [
+              413,
+              421
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
             "text": "buồn nôn",
             "position": [
               451,
@@ -6249,6 +9011,35 @@
             "position": [
               461,
               464
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "Đau bụng",
+            "position": [
+              559,
+              567
             ],
             "type": "TRIỆU_CHỨNG",
             "source": "qwen",
@@ -6400,6 +9191,35 @@
             "link_confidence": 0.85
           },
           {
+            "text": "đau",
+            "position": [
+              796,
+              799
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
             "text": "morphineoral",
             "position": [
               812,
@@ -6464,6 +9284,35 @@
               "6470"
             ],
             "link_confidence": 0.95
+          },
+          {
+            "text": "đau",
+            "position": [
+              842,
+              845
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
           }
         ],
         "result_type": "list"
@@ -6486,19 +9335,19 @@
     {
       "agent": "orchestrator",
       "action": "extraction_complete",
-      "mentions": 12,
-      "ts": 1784567138.5675123
+      "mentions": 18,
+      "ts": 1784626991.1102302
     },
     {
       "agent": "orchestrator",
       "action": "assertion_start",
-      "ts": 1784567138.5675335
+      "ts": 1784626991.110246
     },
     {
       "agent": "assertion",
       "action": "start",
       "data": {
-        "mentions": 12
+        "mentions": 18
       }
     },
     {
@@ -6511,6 +9360,44 @@
           "start": 49,
           "end": 76,
           "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n",
+          "start": 98,
+          "end": 110,
+          "mtype": "THUỐC"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n",
+          "start": 114,
+          "end": 125,
+          "mtype": "THUỐC"
         },
         "output": {
           "isNegated": false,
@@ -6584,6 +9471,25 @@
         "tool": "rule_assert",
         "input": {
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n",
+          "start": 413,
+          "end": 421,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n",
           "start": 451,
           "end": 459,
           "mtype": "TRIỆU_CHỨNG"
@@ -6605,6 +9511,25 @@
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n",
           "start": 461,
           "end": 464,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n",
+          "start": 559,
+          "end": 567,
           "mtype": "TRIỆU_CHỨNG"
         },
         "output": {
@@ -6698,6 +9623,25 @@
         "tool": "rule_assert",
         "input": {
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n",
+          "start": 796,
+          "end": 799,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n",
           "start": 812,
           "end": 824,
           "mtype": "THUỐC"
@@ -6731,27 +9675,46 @@
     },
     {
       "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n",
+          "start": 842,
+          "end": 845,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
       "action": "complete",
       "data": {
-        "processed": 12,
+        "processed": 18,
         "llm_checked": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "assertion_complete",
-      "ts": 1784567138.568671
+      "ts": 1784626991.1120546
     },
     {
       "agent": "orchestrator",
       "action": "linking_start",
-      "ts": 1784567138.5686889
+      "ts": 1784626991.1120687
     },
     {
       "agent": "linking",
       "action": "start",
       "data": {
-        "mentions": 12
+        "mentions": 18
       }
     },
     {
@@ -6789,18 +9752,113 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "C50"
+              "C50.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n   "
         },
         "output": {
           "candidates": [
-            "C50"
+            "C50.9"
           ],
-          "confidence": 0.85,
-          "rationale": "Mention 'Ung thư vú di căn ER+/HER2−' trực tiếp chỉ ra chẩn đoán ung thư vú, mã C50 là mã chính xác nhất trong danh sách cho ung thư vú, bao gồm cả các trường hợp di căn."
+          "confidence": 0.99
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "weekly taxol",
+            "position": [
+              98,
+              110
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hô"
+        },
+        "output": {
+          "candidates": [],
+          "confidence": 0.0
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "fulvestrant",
+            "position": [
+              114,
+              125
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "282357"
+            ],
+            "link_confidence": 0.95
+          },
+          "context": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân"
+        },
+        "output": {
+          "candidates": [
+            "282357"
+          ],
+          "confidence": 0.95
         },
         "result_type": "dict"
       }
@@ -7011,25 +10069,25 @@
       "agent": "linking",
       "action": "complete",
       "data": {
-        "linked": 5
+        "linked": 6
       }
     },
     {
       "agent": "orchestrator",
       "action": "linking_complete",
-      "linked": 5,
-      "ts": 1784567157.57037
+      "linked": 6,
+      "ts": 1784626999.217152
     },
     {
       "agent": "orchestrator",
       "action": "verification_start",
-      "ts": 1784567157.570392
+      "ts": 1784626999.2171774
     },
     {
       "agent": "verifier",
       "action": "start",
       "data": {
-        "mentions": 12
+        "mentions": 18
       }
     },
     {
@@ -7068,9 +10126,73 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "weekly taxol",
+              "position": [
+                98,
+                110
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "fulvestrant",
+              "position": [
+                114,
+                125
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "282357"
+              ],
+              "link_confidence": 0.95
             },
             {
               "text": "đau bụng vùng hạ sườn phải",
@@ -7162,6 +10284,35 @@
               "assertion_confidence": 0.85
             },
             {
+              "text": "đau bụng",
+              "position": [
+                413,
+                421
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "buồn nôn",
               "position": [
                 451,
@@ -7197,6 +10348,35 @@
               "position": [
                 461,
                 464
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Đau bụng",
+              "position": [
+                559,
+                567
               ],
               "type": "TRIỆU_CHỨNG",
               "source": "qwen",
@@ -7348,6 +10528,35 @@
               "link_confidence": 0.85
             },
             {
+              "text": "đau",
+              "position": [
+                796,
+                799
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "morphineoral",
               "position": [
                 812,
@@ -7412,12 +10621,73 @@
                 "6470"
               ],
               "link_confidence": 0.95
+            },
+            {
+              "text": "đau",
+              "position": [
+                842,
+                845
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
           "text": "1.  Tiền sử bệnh nội khoa\n    Các bệnh mãn tính: Ung thư vú di căn ER+/HER2−\n    đang dùng thuốc  weekly taxol\nvà fulvestrant để điều trị\n\n2.  Bệnh sử hiện tại\n    Lý do nhập viện: đau bụng vùng hạ sườn phải ngày càng tăng\n    Theo lời bệnh nhân kể, từ ngày hôm qua bệnh nhân đột ngột xuất hiện đau bụng hạ sườn phải, buồn nôn, nôn kèm theo đi ngoài phân lỏng, toàn nước,  không nhầy máu. Sáng cùng ngày vào viện đau bụng tăng lên , VAS 7/10 kèm theo buồn nôn, nôn nhiều, chưa xử trí thuốc gì, vào viện.\nTình trạng lúc vào:\nNgười bệnh tỉnh\nDa niêm mạc hồngi\n Đau bụng hạ sườn phải\n Buồn nôn, nôn ra thức ăn và dịch dạ dày, không có máu \nKhám thấy\nHuyết áp:130/76 mmHg\nMạch: 93 l/p\nNhiệt độ : 36.3 độ C\nNhịp thở: 14 l/p \nSPO2: 99 %\n   Điều trị tại bệnh viện:\n    - compazine và alevenhưng vẫn còn đau\n    - Uống  morphineoral và  lorazepam đỡ đau  (có thể ngủ\n\n3.  Đánh giá tại bệnh viện\n"
         },
         "output": {
           "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": [
+                "no candidates"
+              ]
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
             {
               "action": "accept",
               "fixes": [],
@@ -7509,9 +10779,73 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "C50"
+                "C50.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "weekly taxol",
+              "position": [
+                98,
+                110
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            {
+              "text": "fulvestrant",
+              "position": [
+                114,
+                125
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "282357"
+              ],
+              "link_confidence": 0.95
             },
             {
               "text": "đau bụng vùng hạ sườn phải",
@@ -7603,6 +10937,35 @@
               "assertion_confidence": 0.85
             },
             {
+              "text": "đau bụng",
+              "position": [
+                413,
+                421
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "buồn nôn",
               "position": [
                 451,
@@ -7638,6 +11001,35 @@
               "position": [
                 461,
                 464
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "Đau bụng",
+              "position": [
+                559,
+                567
               ],
               "type": "TRIỆU_CHỨNG",
               "source": "qwen",
@@ -7789,6 +11181,35 @@
               "link_confidence": 0.85
             },
             {
+              "text": "đau",
+              "position": [
+                796,
+                799
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
               "text": "morphineoral",
               "position": [
                 812,
@@ -7853,6 +11274,35 @@
                 "6470"
               ],
               "link_confidence": 0.95
+            },
+            {
+              "text": "đau",
+              "position": [
+                842,
+                845
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
           "dropped": 0
@@ -7864,22 +11314,22 @@
       "agent": "verifier",
       "action": "validated",
       "data": {
-        "kept": 12,
+        "kept": 18,
         "dropped": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "verification_complete",
-      "kept": 12,
-      "ts": 1784567157.7400873
+      "kept": 18,
+      "ts": 1784627002.600659
     },
     {
       "agent": "orchestrator",
       "action": "complete",
-      "total_mentions": 12,
-      "elapsed": 32.4,
-      "ts": 1784567157.7400987
+      "total_mentions": 18,
+      "elapsed": 36.33,
+      "ts": 1784627002.600698
     }
   ]
 }

@@ -1,16 +1,16 @@
 {
   "file_id": "47",
-  "timestamp": 1784566578.0964444,
-  "elapsed": 40.46,
+  "timestamp": 1784626481.379438,
+  "elapsed": 33.27,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 27,
+  "mention_count": 35,
   "stats": {
-    "total_mentions": 27,
-    "final": 27,
+    "total_mentions": 35,
+    "final": 35,
     "validation_errors": 0,
-    "elapsed": 40.46,
+    "elapsed": 33.27,
     "rule": 4,
-    "qwen": 26
+    "qwen": 36
   },
   "log_summary": [
     {
@@ -165,9 +165,39 @@
     },
     {
       "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -202,7 +232,7 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784566578.096156,
+      "ts": 1784626481.3757002,
       "tool": null
     }
   ],
@@ -251,7 +281,9 @@
     {
       "text": "buồn nôn",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         733,
         741
@@ -260,7 +292,9 @@
     {
       "text": "nôn",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         743,
         746
@@ -269,7 +303,9 @@
     {
       "text": "sốt",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         748,
         751
@@ -278,10 +314,32 @@
     {
       "text": "ớn lạnh",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         753,
         760
+      ]
+    },
+    {
+      "text": "dịch rò rỉ quanh ống thông",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        767,
+        793
+      ]
+    },
+    {
+      "text": "cholangiogram",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        814,
+        827
       ]
     },
     {
@@ -294,6 +352,15 @@
       ]
     },
     {
+      "text": "sinh thiết",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1042,
+        1052
+      ]
+    },
+    {
       "text": "ung thư biểu mô tuyến",
       "type": "CHẨN_ĐOÁN",
       "assertions": [],
@@ -302,7 +369,7 @@
         1190
       ],
       "candidates": [
-        "C50"
+        "C80.1"
       ]
     },
     {
@@ -315,9 +382,21 @@
       ]
     },
     {
+      "text": "đặt 3 stent thành vách vĩnh viễn",
+      "type": "THUỐC",
+      "assertions": [],
+      "position": [
+        1342,
+        1374
+      ],
+      "candidates": []
+    },
+    {
       "text": "buồn nôn",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         1503,
         1511
@@ -326,7 +405,9 @@
     {
       "text": "nôn",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         1513,
         1516
@@ -335,7 +416,9 @@
     {
       "text": "đau ngực",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         1518,
         1526
@@ -344,34 +427,58 @@
     {
       "text": "khó thở",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         1533,
         1540
       ]
     },
     {
-      "text": "bình thường",
+      "text": "đau",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1575,
+        1578
+      ]
+    },
+    {
+      "text": "ăn uống bình thường",
       "type": "KẾT_QUẢ_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
-        1794,
+        1786,
         1805
       ]
     },
     {
-      "text": "bình thường",
+      "text": "cân nặng đã cải thiện",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        1807,
+        1828
+      ]
+    },
+    {
+      "text": "trở lại các hoạt động hàng ngày bình thường",
       "type": "KẾT_QUẢ_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
-        1862,
+        1830,
         1873
       ]
     },
     {
       "text": "buồn nôn",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         1930,
         1938
@@ -380,7 +487,9 @@
     {
       "text": "nôn",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         1940,
         1943
@@ -389,7 +498,9 @@
     {
       "text": "sốt",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         1945,
         1948
@@ -398,7 +509,9 @@
     {
       "text": "ớn lạnh",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         1950,
         1957
@@ -431,7 +544,16 @@
         2383
       ],
       "candidates": [
-        "C50"
+        "C80.1"
+      ]
+    },
+    {
+      "text": "đặt stent thành vách vĩnh viễn",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        2483,
+        2513
       ]
     },
     {
@@ -452,7 +574,16 @@
         2772
       ],
       "candidates": [
-        "C50"
+        "C80.1"
+      ]
+    },
+    {
+      "text": "cholangiogram",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        2805,
+        2818
       ]
     },
     {

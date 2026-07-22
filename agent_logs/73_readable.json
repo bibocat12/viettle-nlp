@@ -1,16 +1,16 @@
 {
   "file_id": "73",
-  "timestamp": 1784566943.5113556,
-  "elapsed": 66.05,
+  "timestamp": 1784626769.1578636,
+  "elapsed": 54.3,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 25,
+  "mention_count": 28,
   "stats": {
-    "total_mentions": 25,
-    "final": 25,
+    "total_mentions": 28,
+    "final": 28,
     "validation_errors": 0,
-    "elapsed": 66.05,
+    "elapsed": 54.3,
     "rule": 6,
-    "qwen": 25
+    "qwen": 28
   },
   "log_summary": [
     {
@@ -201,9 +201,21 @@
     },
     {
       "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -298,7 +310,7 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784566943.5112383,
+      "ts": 1784626769.1576211,
       "tool": null
     }
   ],
@@ -436,7 +448,7 @@
         502
       ],
       "candidates": [
-        "I25.0"
+        "I25.1"
       ]
     },
     {
@@ -450,7 +462,25 @@
         537
       ],
       "candidates": [
-        "I25.0"
+        "I25.1"
+      ]
+    },
+    {
+      "text": "phẫu thuật bắc cầu chủ động mạch vành",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        542,
+        579
+      ]
+    },
+    {
+      "text": "Phẫu thuật bắc cầu chủ động mạch vành",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        671,
+        708
       ]
     },
     {
@@ -493,6 +523,20 @@
       ],
       "candidates": [
         "32968"
+      ]
+    },
+    {
+      "text": "Đột quỵ",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        837,
+        844
+      ],
+      "candidates": [
+        "I69.4"
       ]
     },
     {

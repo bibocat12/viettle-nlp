@@ -98,6 +98,20 @@ def _llm_classify(text: str, mention: dict, llm) -> Optional[Dict]:
     return None
 
 
+def _relative_is_reporter(text_lower: str, start: int) -> bool:
+    """Return true when a relative is only the source of patient information."""
+    prefix = text_lower[max(0, start - 120):start]
+    boundary = max(prefix.rfind(token) for token in ("\n", ".", ";"))
+    if boundary >= 0:
+        prefix = prefix[boundary + 1:]
+    return bool(re.search(
+        r"(?:người\s+nhà|gia\s+đình).{0,40}"
+        r"(?:nhận\s+thấy|kể\s+lại|cho\s+biết|báo|thấy)",
+        prefix,
+        flags=re.DOTALL,
+    ))
+
+
 def classify_assertions(text: str, mention: dict, llm=None) -> dict:
     """Classify assertions for a single mention.
 
@@ -111,11 +125,16 @@ def classify_assertions(text: str, mention: dict, llm=None) -> dict:
     if mtype in ("CHẨN_ĐOÁN", "THUỐC", "TRIỆU_CHỨNG"):
         llm_result = _llm_classify(text, mention, llm)
         if llm_result:
+            if _relative_is_reporter(text_lower, start):
+                llm_result["isFamily"] = False
             return llm_result
 
     # Phase 2: Rule-based fallback
     is_negated = _check_pattern(text_lower, start, end, NEGATION_PATTERNS)
-    is_family = _check_pattern(text_lower, start, end, FAMILY_PATTERNS)
+    is_family = (
+        not _relative_is_reporter(text_lower, start)
+        and _check_pattern(text_lower, start, end, FAMILY_PATTERNS)
+    )
     is_historical = _check_pattern(text_lower, start, end, HISTORICAL_PATTERNS)
 
     return {

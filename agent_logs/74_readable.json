@@ -1,16 +1,16 @@
 {
   "file_id": "74",
-  "timestamp": 1784566953.4547043,
-  "elapsed": 68.51,
+  "timestamp": 1784626852.0972972,
+  "elapsed": 122.82,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 24,
+  "mention_count": 31,
   "stats": {
-    "total_mentions": 24,
-    "final": 24,
+    "total_mentions": 31,
+    "final": 31,
     "validation_errors": 0,
-    "elapsed": 68.51,
+    "elapsed": 122.82,
     "rule": 5,
-    "qwen": 23
+    "qwen": 30
   },
   "log_summary": [
     {
@@ -183,9 +183,45 @@
     },
     {
       "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -232,11 +268,22 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784566953.4545605,
+      "ts": 1784626852.0968761,
       "tool": null
     }
   ],
   "mentions": [
+    {
+      "text": "sp TLH",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        53,
+        59
+      ]
+    },
     {
       "text": "cipro",
       "type": "THUỐC",
@@ -265,20 +312,34 @@
     {
       "text": "đau bụng dưới",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isHistorical"
-      ],
+      "assertions": [],
       "position": [
         360,
         373
       ]
     },
     {
+      "text": "Đau",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        480,
+        483
+      ]
+    },
+    {
+      "text": "đau",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        599,
+        602
+      ]
+    },
+    {
       "text": "iv morphineiv morphine and toradol",
       "type": "THUỐC",
-      "assertions": [
-        "isHistorical"
-      ],
+      "assertions": [],
       "position": [
         634,
         668
@@ -321,6 +382,18 @@
       "position": [
         761,
         782
+      ]
+    },
+    {
+      "text": "nhiễm khuẩn đường tiết niệu, vị trí không xác định",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        895,
+        945
+      ],
+      "candidates": [
+        "A49.9"
       ]
     },
     {
@@ -404,9 +477,22 @@
       ]
     },
     {
+      "text": "tiểu gấp",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        1305,
+        1313
+      ]
+    },
+    {
       "text": "đau ngực",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         1372,
         1380
@@ -415,7 +501,9 @@
     {
       "text": "khó thở",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         1382,
         1389
@@ -424,7 +512,9 @@
     {
       "text": "buồn nôn",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         1396,
         1404
@@ -433,7 +523,9 @@
     {
       "text": "nôn mửa",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         1406,
         1413
@@ -442,7 +534,9 @@
     {
       "text": "chảy máu âm đạo",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         1420,
         1435
@@ -458,12 +552,30 @@
       ]
     },
     {
+      "text": "12",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1550,
+        1552
+      ]
+    },
+    {
       "text": "chụp cắt lớp vi tính (ct) bụng và chậu",
       "type": "TÊN_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
         1597,
         1635
+      ]
+    },
+    {
+      "text": "khoang chứa dịch phức tạp lớn kích thước 12x9x9cm",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1649,
+        1698
       ]
     },
     {
@@ -475,7 +587,7 @@
         1773
       ],
       "candidates": [
-        "K61.2"
+        "L02.91"
       ]
     }
   ]

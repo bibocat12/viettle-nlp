@@ -447,6 +447,59 @@ def add_nonoverlapping_reviewed_diagnoses(records: dict[int, list[dict]]) -> Cou
     return stats
 
 
+def remove_reporter_as_family_assertions(records: dict[int, list[dict]]) -> Counter:
+    """Do not treat a relative who reports symptoms as the affected family member."""
+    stats = Counter()
+    reporter_pattern = re.compile(
+        r"(?:người\s+nhà|gia\s+đình).{0,40}"
+        r"(?:nhận\s+thấy|kể\s+lại|cho\s+biết|báo|thấy)",
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    for index, entities in records.items():
+        source = (ROOT / "input" / f"{index}.txt").read_text(encoding="utf-8")
+        for entity in entities:
+            assertions = entity.get("assertions", [])
+            if "isFamily" not in assertions:
+                continue
+            start = entity["position"][0]
+            context = source[max(0, start - 100):start]
+            if not reporter_pattern.search(context):
+                continue
+            entity["assertions"] = [
+                assertion for assertion in assertions if assertion != "isFamily"
+            ]
+            stats["reporter_family_assertion_removed"] += 1
+    return stats
+
+
+def add_safe_uncovered_result_mentions(records: dict[int, list[dict]]) -> Counter:
+    """Restore reviewed lab-result phrases only when no prediction overlaps them."""
+    stats = Counter()
+    aliases = ("hạ huyết áp", "tăng men gan")
+    for index, entities in records.items():
+        source = (ROOT / "input" / f"{index}.txt").read_text(encoding="utf-8")
+        for alias in aliases:
+            for match in re.finditer(
+                rf"(?<!\w){re.escape(alias)}(?!\w)", source, flags=re.IGNORECASE
+            ):
+                start, end = match.span()
+                if any(
+                    min(end, entity["position"][1])
+                    > max(start, entity["position"][0])
+                    for entity in entities
+                ):
+                    continue
+                entities.append({
+                    "text": source[start:end],
+                    "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+                    "assertions": [],
+                    "position": [start, end],
+                })
+                stats["safe_result_added"] += 1
+        entities.sort(key=lambda item: (item["position"][0], item["position"][1]))
+    return stats
+
+
 def _validate(records: dict[int, list[dict]]) -> None:
     errors = []
     for index, entities in records.items():
@@ -553,6 +606,28 @@ def main() -> int:
     full_round4 = copy.deepcopy(type_precision_v3)
     full_round4_stats = type_precision_v3_stats + split_concatenated_drugs(full_round4)
     variants["lb14_full_round4"] = (full_round4, full_round4_stats)
+
+    family_source_fix = copy.deepcopy(type_precision_v3)
+    family_source_fix_stats = type_precision_v3_stats + remove_reporter_as_family_assertions(
+        family_source_fix
+    )
+    variants["lb15_family_source_fix"] = (family_source_fix, family_source_fix_stats)
+
+    pure_recall = copy.deepcopy(family_source_fix)
+    pure_recall_stats = family_source_fix_stats + add_nonoverlapping_reviewed_diagnoses(
+        pure_recall
+    )
+    variants["lb16_pure_recall"] = (pure_recall, pure_recall_stats)
+
+    safe_result_recall = copy.deepcopy(family_source_fix)
+    safe_result_recall_stats = (
+        family_source_fix_stats
+        + add_safe_uncovered_result_mentions(safe_result_recall)
+    )
+    variants["lb17_safe_result_recall"] = (
+        safe_result_recall,
+        safe_result_recall_stats,
+    )
 
     manifest_path = args.destination / "manifest.json"
     if manifest_path.exists():

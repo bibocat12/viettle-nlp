@@ -1,7 +1,7 @@
 {
   "file_id": "77",
-  "timestamp": 1784566958.4215243,
-  "elapsed": 28.79,
+  "timestamp": 1784626847.5143974,
+  "elapsed": 78.34,
   "model": "bibocat/qwen3-ner-grpo-final",
   "result": {
     "note_id": "77",
@@ -29,6 +29,43 @@
         ],
         "candidates": [
           "202585"
+        ]
+      },
+      {
+        "text": "đặt nội khí quản",
+        "type": "TÊN_XÉT_NGHIỆM",
+        "assertions": [],
+        "position": [
+          73,
+          89
+        ]
+      },
+      {
+        "text": "Rối loạn cảm xúc",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          195,
+          211
+        ],
+        "candidates": [
+          "F39"
+        ]
+      },
+      {
+        "text": "Rối loạn lưỡng cực",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          219,
+          237
+        ],
+        "candidates": [
+          "F31"
         ]
       },
       {
@@ -82,6 +119,15 @@
         ],
         "candidates": [
           "352990"
+        ]
+      },
+      {
+        "text": "Lạm dụng chất kích thích, chất gây nghiện opioid",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          567,
+          615
         ]
       },
       {
@@ -199,6 +245,15 @@
           1121,
           1170
         ]
+      },
+      {
+        "text": "chăm sóc tâm thần",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          1202,
+          1219
+        ]
       }
     ],
     "validation": {
@@ -207,24 +262,24 @@
       "warnings": []
     },
     "stats": {
-      "total_mentions": 18,
-      "final": 18,
+      "total_mentions": 23,
+      "final": 23,
       "validation_errors": 0,
-      "elapsed": 28.79,
+      "elapsed": 78.34,
       "rule": 0,
-      "qwen": 21
+      "qwen": 24
     },
     "logs": [
       {
         "agent": "orchestrator",
         "action": "start",
         "text_len": 1232,
-        "ts": 1784566929.6267173
+        "ts": 1784626769.179257
       },
       {
         "agent": "orchestrator",
         "action": "extraction_start",
-        "ts": 1784566929.6267323
+        "ts": 1784626769.179289
       },
       {
         "agent": "extraction",
@@ -284,16 +339,48 @@
                 "extraction_source": "qwen"
               },
               {
-                "text": "clonidine",
+                "text": "đặt nội khí quản",
                 "position": [
-                  54,
-                  63
+                  73,
+                  89
                 ],
-                "type": "THUỐC",
+                "type": "TÊN_XÉT_NGHIỆM",
                 "source": "qwen",
                 "type_candidates": [
                   {
-                    "label": "THUỐC",
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Rối loạn cảm xúc",
+                "position": [
+                  195,
+                  211
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Rối loạn lưỡng cực",
+                "position": [
+                  219,
+                  237
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
                     "score": 0.85
                   }
                 ],
@@ -334,22 +421,6 @@
               {
                 "text": "clonidine",
                 "position": [
-                  368,
-                  377
-                ],
-                "type": "THUỐC",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "THUỐC",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen"
-              },
-              {
-                "text": "clonidine",
-                "position": [
                   398,
                   407
                 ],
@@ -374,6 +445,22 @@
                 "type_candidates": [
                   {
                     "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Lạm dụng chất kích thích, chất gây nghiện opioid",
+                "position": [
+                  567,
+                  615
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
                     "score": 0.85
                   }
                 ],
@@ -586,6 +673,22 @@
                   }
                 ],
                 "extraction_source": "qwen"
+              },
+              {
+                "text": "chăm sóc tâm thần",
+                "position": [
+                  1202,
+                  1219
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
               }
             ],
             "errors": []
@@ -599,9 +702,9 @@
         "data": {
           "sources": {
             "rule": 0,
-            "qwen": 21
+            "qwen": 24
           },
-          "total": 21
+          "total": 24
         }
       },
       {
@@ -644,16 +747,48 @@
                 "extraction_source": "qwen"
               },
               {
-                "text": "clonidine",
+                "text": "đặt nội khí quản",
                 "position": [
-                  54,
-                  63
+                  73,
+                  89
                 ],
-                "type": "THUỐC",
+                "type": "TÊN_XÉT_NGHIỆM",
                 "source": "qwen",
                 "type_candidates": [
                   {
-                    "label": "THUỐC",
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Rối loạn cảm xúc",
+                "position": [
+                  195,
+                  211
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Rối loạn lưỡng cực",
+                "position": [
+                  219,
+                  237
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
                     "score": 0.85
                   }
                 ],
@@ -694,22 +829,6 @@
               {
                 "text": "clonidine",
                 "position": [
-                  368,
-                  377
-                ],
-                "type": "THUỐC",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "THUỐC",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen"
-              },
-              {
-                "text": "clonidine",
-                "position": [
                   398,
                   407
                 ],
@@ -734,6 +853,22 @@
                 "type_candidates": [
                   {
                     "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "Lạm dụng chất kích thích, chất gây nghiện opioid",
+                "position": [
+                  567,
+                  615
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
                     "score": 0.85
                   }
                 ],
@@ -936,6 +1071,22 @@
                 "position": [
                   1121,
                   1170
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "chăm sóc tâm thần",
+                "position": [
+                  1202,
+                  1219
                 ],
                 "type": "TRIỆU_CHỨNG",
                 "source": "qwen",
@@ -986,21 +1137,19 @@
                 63
               ],
               "type": "THUỐC",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "THUỐC",
-                  "score": 0.5
+                  "score": 0.85
                 }
               ],
-              "confidence": 0.5,
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "max_type_votes": 1,
               "voters": {
-                "qwen": 2
+                "qwen": 1
               },
-              "type_votes": {
-                "THUỐC": 0.45
-              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -1011,6 +1160,100 @@
               "assertion_confidence": 0.85,
               "candidates": [
                 "202585"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đặt nội khí quản",
+              "position": [
+                73,
+                89
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Rối loạn cảm xúc",
+              "position": [
+                195,
+                211
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "F39"
+              ],
+              "link_confidence": 0.99
+            },
+            {
+              "text": "Rối loạn lưỡng cực",
+              "position": [
+                219,
+                237
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "F31"
               ],
               "link_confidence": 0.85
             },
@@ -1050,21 +1293,19 @@
                 377
               ],
               "type": "THUỐC",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "THUỐC",
-                  "score": 0.5
+                  "score": 0.85
                 }
               ],
-              "confidence": 0.5,
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "max_type_votes": 1,
               "voters": {
-                "qwen": 2
+                "qwen": 1
               },
-              "type_votes": {
-                "THUỐC": 0.45
-              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -1109,7 +1350,7 @@
               "candidates": [
                 "2599"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             },
             {
               "text": "suboxone",
@@ -1143,6 +1384,35 @@
                 "352990"
               ],
               "link_confidence": 0.95
+            },
+            {
+              "text": "Lạm dụng chất kích thích, chất gây nghiện opioid",
+              "position": [
+                567,
+                615
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             },
             {
               "text": "tự tử",
@@ -1504,6 +1774,35 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85
+            },
+            {
+              "text": "chăm sóc tâm thần",
+              "position": [
+                1202,
+                1219
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
           "result_type": "list"
@@ -1513,7 +1812,7 @@
         "agent": "extraction",
         "action": "voted",
         "data": {
-          "merged": 18
+          "merged": 23
         }
       },
       {
@@ -1559,21 +1858,19 @@
                   63
                 ],
                 "type": "THUỐC",
+                "source": "qwen",
                 "type_candidates": [
                   {
                     "label": "THUỐC",
-                    "score": 0.5
+                    "score": 0.85
                   }
                 ],
-                "confidence": 0.5,
+                "extraction_source": "qwen",
                 "vote_count": 1,
-                "max_type_votes": 1,
                 "voters": {
-                  "qwen": 2
+                  "qwen": 1
                 },
-                "type_votes": {
-                  "THUỐC": 0.45
-                },
+                "confidence": 0.5,
                 "needs_review": false,
                 "position_fixed": false,
                 "assertions": {
@@ -1584,6 +1881,100 @@
                 "assertion_confidence": 0.85,
                 "candidates": [
                   "202585"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đặt nội khí quản",
+                "position": [
+                  73,
+                  89
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "Rối loạn cảm xúc",
+                "position": [
+                  195,
+                  211
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "F39"
+                ],
+                "link_confidence": 0.99
+              },
+              {
+                "text": "Rối loạn lưỡng cực",
+                "position": [
+                  219,
+                  237
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "F31"
                 ],
                 "link_confidence": 0.85
               },
@@ -1623,21 +2014,19 @@
                   377
                 ],
                 "type": "THUỐC",
+                "source": "qwen",
                 "type_candidates": [
                   {
                     "label": "THUỐC",
-                    "score": 0.5
+                    "score": 0.85
                   }
                 ],
-                "confidence": 0.5,
+                "extraction_source": "qwen",
                 "vote_count": 1,
-                "max_type_votes": 1,
                 "voters": {
-                  "qwen": 2
+                  "qwen": 1
                 },
-                "type_votes": {
-                  "THUỐC": 0.45
-                },
+                "confidence": 0.5,
                 "needs_review": false,
                 "position_fixed": false,
                 "assertions": {
@@ -1682,7 +2071,7 @@
                 "candidates": [
                   "2599"
                 ],
-                "link_confidence": 0.95
+                "link_confidence": 0.99
               },
               {
                 "text": "suboxone",
@@ -1716,6 +2105,35 @@
                   "352990"
                 ],
                 "link_confidence": 0.95
+              },
+              {
+                "text": "Lạm dụng chất kích thích, chất gây nghiện opioid",
+                "position": [
+                  567,
+                  615
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
               },
               {
                 "text": "tự tử",
@@ -2077,6 +2495,35 @@
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85
+              },
+              {
+                "text": "chăm sóc tâm thần",
+                "position": [
+                  1202,
+                  1219
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
               }
             ],
             "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối loạn cảm xúc \n    - Rối loạn lưỡng cực\n    - rối loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - klonopinclonidine (được kê đơn)\n    - clonidine (mua trên đường phố)\n    - suboxone (bắt đầu 3 tuần trước), không dùng đều 5-6 ngày, dừng thuốc trước nhập viện 01 ngày\n    Các yếu tố nguy cơ liên quan\n    - Lạm dụng chất kích thích, chất gây nghiện opioid\n2.   Bệnh sử hiện tại\n    Lý do nhập viện:i ý định tự tử và ý nghĩ tự bắn vào đầu\n   Theo lời kể bệnh nhân bị trầm cảm ngày càng nặng , vài tháng trước có các giai đoạn giống hưng cảm  biểu hiện bằng tăng hoạt động và giảm nhu cầu ngủ 3-4 ngày, trong vài tuần nay và có ý định tự tử.  Thuốc kê đơn không dùng đều đặn x5-6 ngày, bắt đầu dùng suboxone 3 tuần trước vì rẻ hơn, dừng dùng suboxone ngày hôm qua\n    Triệu chứng khi vào viện\n    - ý nghĩ tự tử, có nghĩ tự bắn vào đầu\n    - lo âu\nhoảng sợ\n    - hoang tưởng như đang chiếm khí oxy của người khác\n Điều trị\n    - Hiện đang được chăm sóc tâm thần bởi bác sĩ\n\n"
@@ -2118,21 +2565,19 @@
                 63
               ],
               "type": "THUỐC",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "THUỐC",
-                  "score": 0.5
+                  "score": 0.85
                 }
               ],
-              "confidence": 0.5,
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "max_type_votes": 1,
               "voters": {
-                "qwen": 2
+                "qwen": 1
               },
-              "type_votes": {
-                "THUỐC": 0.45
-              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -2143,6 +2588,100 @@
               "assertion_confidence": 0.85,
               "candidates": [
                 "202585"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đặt nội khí quản",
+              "position": [
+                73,
+                89
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Rối loạn cảm xúc",
+              "position": [
+                195,
+                211
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "F39"
+              ],
+              "link_confidence": 0.99
+            },
+            {
+              "text": "Rối loạn lưỡng cực",
+              "position": [
+                219,
+                237
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "F31"
               ],
               "link_confidence": 0.85
             },
@@ -2182,21 +2721,19 @@
                 377
               ],
               "type": "THUỐC",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "THUỐC",
-                  "score": 0.5
+                  "score": 0.85
                 }
               ],
-              "confidence": 0.5,
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "max_type_votes": 1,
               "voters": {
-                "qwen": 2
+                "qwen": 1
               },
-              "type_votes": {
-                "THUỐC": 0.45
-              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -2241,7 +2778,7 @@
               "candidates": [
                 "2599"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             },
             {
               "text": "suboxone",
@@ -2275,6 +2812,35 @@
                 "352990"
               ],
               "link_confidence": 0.95
+            },
+            {
+              "text": "Lạm dụng chất kích thích, chất gây nghiện opioid",
+              "position": [
+                567,
+                615
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             },
             {
               "text": "tự tử",
@@ -2628,6 +3194,35 @@
               "type_votes": {
                 "TRIỆU_CHỨNG": 0.45
               },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "chăm sóc tâm thần",
+              "position": [
+                1202,
+                1219
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -2684,21 +3279,19 @@
                   63
                 ],
                 "type": "THUỐC",
+                "source": "qwen",
                 "type_candidates": [
                   {
                     "label": "THUỐC",
-                    "score": 0.5
+                    "score": 0.85
                   }
                 ],
-                "confidence": 0.5,
+                "extraction_source": "qwen",
                 "vote_count": 1,
-                "max_type_votes": 1,
                 "voters": {
-                  "qwen": 2
+                  "qwen": 1
                 },
-                "type_votes": {
-                  "THUỐC": 0.45
-                },
+                "confidence": 0.5,
                 "needs_review": false,
                 "position_fixed": false,
                 "assertions": {
@@ -2709,6 +3302,100 @@
                 "assertion_confidence": 0.85,
                 "candidates": [
                   "202585"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đặt nội khí quản",
+                "position": [
+                  73,
+                  89
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "Rối loạn cảm xúc",
+                "position": [
+                  195,
+                  211
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "F39"
+                ],
+                "link_confidence": 0.99
+              },
+              {
+                "text": "Rối loạn lưỡng cực",
+                "position": [
+                  219,
+                  237
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "F31"
                 ],
                 "link_confidence": 0.85
               },
@@ -2748,21 +3435,19 @@
                   377
                 ],
                 "type": "THUỐC",
+                "source": "qwen",
                 "type_candidates": [
                   {
                     "label": "THUỐC",
-                    "score": 0.5
+                    "score": 0.85
                   }
                 ],
-                "confidence": 0.5,
+                "extraction_source": "qwen",
                 "vote_count": 1,
-                "max_type_votes": 1,
                 "voters": {
-                  "qwen": 2
+                  "qwen": 1
                 },
-                "type_votes": {
-                  "THUỐC": 0.45
-                },
+                "confidence": 0.5,
                 "needs_review": false,
                 "position_fixed": false,
                 "assertions": {
@@ -2807,7 +3492,7 @@
                 "candidates": [
                   "2599"
                 ],
-                "link_confidence": 0.95
+                "link_confidence": 0.99
               },
               {
                 "text": "suboxone",
@@ -2841,6 +3526,35 @@
                   "352990"
                 ],
                 "link_confidence": 0.95
+              },
+              {
+                "text": "Lạm dụng chất kích thích, chất gây nghiện opioid",
+                "position": [
+                  567,
+                  615
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
               },
               {
                 "text": "tự tử",
@@ -3202,6 +3916,35 @@
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85
+              },
+              {
+                "text": "chăm sóc tâm thần",
+                "position": [
+                  1202,
+                  1219
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
               }
             ],
             "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối loạn cảm xúc \n    - Rối loạn lưỡng cực\n    - rối loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - klonopinclonidine (được kê đơn)\n    - clonidine (mua trên đường phố)\n    - suboxone (bắt đầu 3 tuần trước), không dùng đều 5-6 ngày, dừng thuốc trước nhập viện 01 ngày\n    Các yếu tố nguy cơ liên quan\n    - Lạm dụng chất kích thích, chất gây nghiện opioid\n2.   Bệnh sử hiện tại\n    Lý do nhập viện:i ý định tự tử và ý nghĩ tự bắn vào đầu\n   Theo lời kể bệnh nhân bị trầm cảm ngày càng nặng , vài tháng trước có các giai đoạn giống hưng cảm  biểu hiện bằng tăng hoạt động và giảm nhu cầu ngủ 3-4 ngày, trong vài tuần nay và có ý định tự tử.  Thuốc kê đơn không dùng đều đặn x5-6 ngày, bắt đầu dùng suboxone 3 tuần trước vì rẻ hơn, dừng dùng suboxone ngày hôm qua\n    Triệu chứng khi vào viện\n    - ý nghĩ tự tử, có nghĩ tự bắn vào đầu\n    - lo âu\nhoảng sợ\n    - hoang tưởng như đang chiếm khí oxy của người khác\n Điều trị\n    - Hiện đang được chăm sóc tâm thần bởi bác sĩ\n\n"
@@ -3243,21 +3986,19 @@
                 63
               ],
               "type": "THUỐC",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "THUỐC",
-                  "score": 0.5
+                  "score": 0.85
                 }
               ],
-              "confidence": 0.5,
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "max_type_votes": 1,
               "voters": {
-                "qwen": 2
+                "qwen": 1
               },
-              "type_votes": {
-                "THUỐC": 0.45
-              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -3268,6 +4009,100 @@
               "assertion_confidence": 0.85,
               "candidates": [
                 "202585"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đặt nội khí quản",
+              "position": [
+                73,
+                89
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Rối loạn cảm xúc",
+              "position": [
+                195,
+                211
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "F39"
+              ],
+              "link_confidence": 0.99
+            },
+            {
+              "text": "Rối loạn lưỡng cực",
+              "position": [
+                219,
+                237
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "F31"
               ],
               "link_confidence": 0.85
             },
@@ -3307,21 +4142,19 @@
                 377
               ],
               "type": "THUỐC",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "THUỐC",
-                  "score": 0.5
+                  "score": 0.85
                 }
               ],
-              "confidence": 0.5,
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "max_type_votes": 1,
               "voters": {
-                "qwen": 2
+                "qwen": 1
               },
-              "type_votes": {
-                "THUỐC": 0.45
-              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -3366,7 +4199,7 @@
               "candidates": [
                 "2599"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             },
             {
               "text": "suboxone",
@@ -3400,6 +4233,35 @@
                 "352990"
               ],
               "link_confidence": 0.95
+            },
+            {
+              "text": "Lạm dụng chất kích thích, chất gây nghiện opioid",
+              "position": [
+                567,
+                615
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             },
             {
               "text": "tự tử",
@@ -3761,6 +4623,35 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85
+            },
+            {
+              "text": "chăm sóc tâm thần",
+              "position": [
+                1202,
+                1219
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
           "result_type": "list"
@@ -3783,19 +4674,19 @@
       {
         "agent": "orchestrator",
         "action": "extraction_complete",
-        "mentions": 18,
-        "ts": 1784566943.4754522
+        "mentions": 23,
+        "ts": 1784626795.9708757
       },
       {
         "agent": "orchestrator",
         "action": "assertion_start",
-        "ts": 1784566943.4754655
+        "ts": 1784626795.970909
       },
       {
         "agent": "assertion",
         "action": "start",
         "data": {
-          "mentions": 18
+          "mentions": 23
         }
       },
       {
@@ -3827,6 +4718,44 @@
             "start": 46,
             "end": 63,
             "mtype": "THUỐC"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối loạn cảm xúc \n    - Rối loạn lưỡng cực\n    - rối loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - klonopinclonidine (được kê đơn)\n    - clonidine (mua trên đường phố)\n    - suboxone (bắt đầu 3 tuần trước), không dùng đều 5-6 ngày, dừng thuốc trước nhập viện 01 ngày\n    Các yếu tố nguy cơ liên quan\n    - Lạm dụng chất kích thích, chất gây nghiện opioid\n2.   Bệnh sử hiện tại\n    Lý do nhập viện:i ý định tự tử và ý nghĩ tự bắn vào đầu\n   Theo lời kể bệnh nhân bị trầm cảm ngày càng nặng , vài tháng trước có các giai đoạn giống hưng cảm  biểu hiện bằng tăng hoạt động và giảm nhu cầu ngủ 3-4 ngày, trong vài tuần nay và có ý định tự tử.  Thuốc kê đơn không dùng đều đặn x5-6 ngày, bắt đầu dùng suboxone 3 tuần trước vì rẻ hơn, dừng dùng suboxone ngày hôm qua\n    Triệu chứng khi vào viện\n    - ý nghĩ tự tử, có nghĩ tự bắn vào đầu\n    - lo âu\nhoảng sợ\n    - hoang tưởng như đang chiếm khí oxy của người khác\n Điều trị\n    - Hiện đang được chăm sóc tâm thần bởi bác sĩ\n\n",
+            "start": 195,
+            "end": 211,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối loạn cảm xúc \n    - Rối loạn lưỡng cực\n    - rối loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - klonopinclonidine (được kê đơn)\n    - clonidine (mua trên đường phố)\n    - suboxone (bắt đầu 3 tuần trước), không dùng đều 5-6 ngày, dừng thuốc trước nhập viện 01 ngày\n    Các yếu tố nguy cơ liên quan\n    - Lạm dụng chất kích thích, chất gây nghiện opioid\n2.   Bệnh sử hiện tại\n    Lý do nhập viện:i ý định tự tử và ý nghĩ tự bắn vào đầu\n   Theo lời kể bệnh nhân bị trầm cảm ngày càng nặng , vài tháng trước có các giai đoạn giống hưng cảm  biểu hiện bằng tăng hoạt động và giảm nhu cầu ngủ 3-4 ngày, trong vài tuần nay và có ý định tự tử.  Thuốc kê đơn không dùng đều đặn x5-6 ngày, bắt đầu dùng suboxone 3 tuần trước vì rẻ hơn, dừng dùng suboxone ngày hôm qua\n    Triệu chứng khi vào viện\n    - ý nghĩ tự tử, có nghĩ tự bắn vào đầu\n    - lo âu\nhoảng sợ\n    - hoang tưởng như đang chiếm khí oxy của người khác\n Điều trị\n    - Hiện đang được chăm sóc tâm thần bởi bác sĩ\n\n",
+            "start": 219,
+            "end": 237,
+            "mtype": "CHẨN_ĐOÁN"
           },
           "output": {
             "isNegated": false,
@@ -3908,6 +4837,25 @@
             "isNegated": false,
             "isFamily": false,
             "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối loạn cảm xúc \n    - Rối loạn lưỡng cực\n    - rối loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - klonopinclonidine (được kê đơn)\n    - clonidine (mua trên đường phố)\n    - suboxone (bắt đầu 3 tuần trước), không dùng đều 5-6 ngày, dừng thuốc trước nhập viện 01 ngày\n    Các yếu tố nguy cơ liên quan\n    - Lạm dụng chất kích thích, chất gây nghiện opioid\n2.   Bệnh sử hiện tại\n    Lý do nhập viện:i ý định tự tử và ý nghĩ tự bắn vào đầu\n   Theo lời kể bệnh nhân bị trầm cảm ngày càng nặng , vài tháng trước có các giai đoạn giống hưng cảm  biểu hiện bằng tăng hoạt động và giảm nhu cầu ngủ 3-4 ngày, trong vài tuần nay và có ý định tự tử.  Thuốc kê đơn không dùng đều đặn x5-6 ngày, bắt đầu dùng suboxone 3 tuần trước vì rẻ hơn, dừng dùng suboxone ngày hôm qua\n    Triệu chứng khi vào viện\n    - ý nghĩ tự tử, có nghĩ tự bắn vào đầu\n    - lo âu\nhoảng sợ\n    - hoang tưởng như đang chiếm khí oxy của người khác\n Điều trị\n    - Hiện đang được chăm sóc tâm thần bởi bác sĩ\n\n",
+            "start": 567,
+            "end": 615,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
           },
           "result_type": "dict"
         }
@@ -4142,27 +5090,46 @@
       },
       {
         "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối loạn cảm xúc \n    - Rối loạn lưỡng cực\n    - rối loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - klonopinclonidine (được kê đơn)\n    - clonidine (mua trên đường phố)\n    - suboxone (bắt đầu 3 tuần trước), không dùng đều 5-6 ngày, dừng thuốc trước nhập viện 01 ngày\n    Các yếu tố nguy cơ liên quan\n    - Lạm dụng chất kích thích, chất gây nghiện opioid\n2.   Bệnh sử hiện tại\n    Lý do nhập viện:i ý định tự tử và ý nghĩ tự bắn vào đầu\n   Theo lời kể bệnh nhân bị trầm cảm ngày càng nặng , vài tháng trước có các giai đoạn giống hưng cảm  biểu hiện bằng tăng hoạt động và giảm nhu cầu ngủ 3-4 ngày, trong vài tuần nay và có ý định tự tử.  Thuốc kê đơn không dùng đều đặn x5-6 ngày, bắt đầu dùng suboxone 3 tuần trước vì rẻ hơn, dừng dùng suboxone ngày hôm qua\n    Triệu chứng khi vào viện\n    - ý nghĩ tự tử, có nghĩ tự bắn vào đầu\n    - lo âu\nhoảng sợ\n    - hoang tưởng như đang chiếm khí oxy của người khác\n Điều trị\n    - Hiện đang được chăm sóc tâm thần bởi bác sĩ\n\n",
+            "start": 1202,
+            "end": 1219,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
         "action": "complete",
         "data": {
-          "processed": 18,
+          "processed": 23,
           "llm_checked": 0
         }
       },
       {
         "agent": "orchestrator",
         "action": "assertion_complete",
-        "ts": 1784566943.4768853
+        "ts": 1784626795.9769654
       },
       {
         "agent": "orchestrator",
         "action": "linking_start",
-        "ts": 1784566943.4768956
+        "ts": 1784626795.977002
       },
       {
         "agent": "linking",
         "action": "start",
         "data": {
-          "mentions": 18
+          "mentions": 23
         }
       },
       {
@@ -4178,21 +5145,19 @@
                 63
               ],
               "type": "THUỐC",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "THUỐC",
-                  "score": 0.5
+                  "score": 0.85
                 }
               ],
-              "confidence": 0.5,
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "max_type_votes": 1,
               "voters": {
-                "qwen": 2
+                "qwen": 1
               },
-              "type_votes": {
-                "THUỐC": 0.45
-              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -4214,6 +5179,107 @@
             ],
             "confidence": 0.85,
             "rationale": "Mention 'klonopinclonidine' là tên thương mại của Klonopin, và mã 202585 là mã RxNorm chính xác cho thuốc này. Mã 2599 chỉ là clonidine, không phải klonopinclonidine."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "Rối loạn cảm xúc",
+              "position": [
+                195,
+                211
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "F39"
+              ],
+              "link_confidence": 0.99
+            },
+            "context": " klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối loạn cảm xúc \n    - Rối loạn lưỡng cực\n    - rối loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - k"
+          },
+          "output": {
+            "candidates": [
+              "F39"
+            ],
+            "confidence": 0.99
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "Rối loạn lưỡng cực",
+              "position": [
+                219,
+                237
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "F31"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": "trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối loạn cảm xúc \n    - Rối loạn lưỡng cực\n    - rối loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - klonopinclonidine (được kê "
+          },
+          "output": {
+            "candidates": [
+              "F31"
+            ],
+            "confidence": 0.85,
+            "rationale": "Rối loạn lưỡng cực là một rối loạn cảm xúc, và mã F31 trong ICD-10 chính xác phản ánh tình trạng này."
           },
           "result_type": "dict"
         }
@@ -4255,7 +5321,7 @@
               "candidates": [
                 "2599"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             },
             "context": "loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - klonopinclonidine (được kê đơn)\n    - clonidine (mua trên đường phố)\n    - suboxone (bắt đầu 3 tuần trước), không dùng đều 5-6 ngày, dừng thuốc trước nhập viện 01 ngày\n    Các yếu tố nguy cơ liên q"
           },
@@ -4263,7 +5329,7 @@
             "candidates": [
               "2599"
             ],
-            "confidence": 0.95
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -4322,25 +5388,25 @@
         "agent": "linking",
         "action": "complete",
         "data": {
-          "linked": 6
+          "linked": 8
         }
       },
       {
         "agent": "orchestrator",
         "action": "linking_complete",
-        "linked": 6,
-        "ts": 1784566949.2346342
+        "linked": 8,
+        "ts": 1784626838.5099142
       },
       {
         "agent": "orchestrator",
         "action": "verification_start",
-        "ts": 1784566949.2346475
+        "ts": 1784626838.5107336
       },
       {
         "agent": "verifier",
         "action": "start",
         "data": {
-          "mentions": 18
+          "mentions": 23
         }
       },
       {
@@ -4386,21 +5452,19 @@
                   63
                 ],
                 "type": "THUỐC",
+                "source": "qwen",
                 "type_candidates": [
                   {
                     "label": "THUỐC",
-                    "score": 0.5
+                    "score": 0.85
                   }
                 ],
-                "confidence": 0.5,
+                "extraction_source": "qwen",
                 "vote_count": 1,
-                "max_type_votes": 1,
                 "voters": {
-                  "qwen": 2
+                  "qwen": 1
                 },
-                "type_votes": {
-                  "THUỐC": 0.45
-                },
+                "confidence": 0.5,
                 "needs_review": false,
                 "position_fixed": false,
                 "assertions": {
@@ -4411,6 +5475,100 @@
                 "assertion_confidence": 0.85,
                 "candidates": [
                   "202585"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đặt nội khí quản",
+                "position": [
+                  73,
+                  89
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "Rối loạn cảm xúc",
+                "position": [
+                  195,
+                  211
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "F39"
+                ],
+                "link_confidence": 0.99
+              },
+              {
+                "text": "Rối loạn lưỡng cực",
+                "position": [
+                  219,
+                  237
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "F31"
                 ],
                 "link_confidence": 0.85
               },
@@ -4450,21 +5608,19 @@
                   377
                 ],
                 "type": "THUỐC",
+                "source": "qwen",
                 "type_candidates": [
                   {
                     "label": "THUỐC",
-                    "score": 0.5
+                    "score": 0.85
                   }
                 ],
-                "confidence": 0.5,
+                "extraction_source": "qwen",
                 "vote_count": 1,
-                "max_type_votes": 1,
                 "voters": {
-                  "qwen": 2
+                  "qwen": 1
                 },
-                "type_votes": {
-                  "THUỐC": 0.45
-                },
+                "confidence": 0.5,
                 "needs_review": false,
                 "position_fixed": false,
                 "assertions": {
@@ -4509,7 +5665,7 @@
                 "candidates": [
                   "2599"
                 ],
-                "link_confidence": 0.95
+                "link_confidence": 0.99
               },
               {
                 "text": "suboxone",
@@ -4543,6 +5699,35 @@
                   "352990"
                 ],
                 "link_confidence": 0.95
+              },
+              {
+                "text": "Lạm dụng chất kích thích, chất gây nghiện opioid",
+                "position": [
+                  567,
+                  615
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
               },
               {
                 "text": "tự tử",
@@ -4904,12 +6089,61 @@
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85
+              },
+              {
+                "text": "chăm sóc tâm thần",
+                "position": [
+                  1202,
+                  1219
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
               }
             ],
             "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối loạn cảm xúc \n    - Rối loạn lưỡng cực\n    - rối loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - klonopinclonidine (được kê đơn)\n    - clonidine (mua trên đường phố)\n    - suboxone (bắt đầu 3 tuần trước), không dùng đều 5-6 ngày, dừng thuốc trước nhập viện 01 ngày\n    Các yếu tố nguy cơ liên quan\n    - Lạm dụng chất kích thích, chất gây nghiện opioid\n2.   Bệnh sử hiện tại\n    Lý do nhập viện:i ý định tự tử và ý nghĩ tự bắn vào đầu\n   Theo lời kể bệnh nhân bị trầm cảm ngày càng nặng , vài tháng trước có các giai đoạn giống hưng cảm  biểu hiện bằng tăng hoạt động và giảm nhu cầu ngủ 3-4 ngày, trong vài tuần nay và có ý định tự tử.  Thuốc kê đơn không dùng đều đặn x5-6 ngày, bắt đầu dùng suboxone 3 tuần trước vì rẻ hơn, dừng dùng suboxone ngày hôm qua\n    Triệu chứng khi vào viện\n    - ý nghĩ tự tử, có nghĩ tự bắn vào đầu\n    - lo âu\nhoảng sợ\n    - hoang tưởng như đang chiếm khí oxy của người khác\n Điều trị\n    - Hiện đang được chăm sóc tâm thần bởi bác sĩ\n\n"
           },
           "output": {
             "actions": [
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
+              },
               {
                 "action": "accept",
                 "fixes": [],
@@ -4998,6 +6232,11 @@
                 "action": "accept",
                 "fixes": [],
                 "warnings": []
+              },
+              {
+                "action": "accept",
+                "fixes": [],
+                "warnings": []
               }
             ],
             "final_predictions": [
@@ -5037,21 +6276,19 @@
                   63
                 ],
                 "type": "THUỐC",
+                "source": "qwen",
                 "type_candidates": [
                   {
                     "label": "THUỐC",
-                    "score": 0.5
+                    "score": 0.85
                   }
                 ],
-                "confidence": 0.5,
+                "extraction_source": "qwen",
                 "vote_count": 1,
-                "max_type_votes": 1,
                 "voters": {
-                  "qwen": 2
+                  "qwen": 1
                 },
-                "type_votes": {
-                  "THUỐC": 0.45
-                },
+                "confidence": 0.5,
                 "needs_review": false,
                 "position_fixed": false,
                 "assertions": {
@@ -5062,6 +6299,100 @@
                 "assertion_confidence": 0.85,
                 "candidates": [
                   "202585"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "đặt nội khí quản",
+                "position": [
+                  73,
+                  89
+                ],
+                "type": "TÊN_XÉT_NGHIỆM",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TÊN_XÉT_NGHIỆM",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                }
+              },
+              {
+                "text": "Rối loạn cảm xúc",
+                "position": [
+                  195,
+                  211
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "F39"
+                ],
+                "link_confidence": 0.99
+              },
+              {
+                "text": "Rối loạn lưỡng cực",
+                "position": [
+                  219,
+                  237
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "F31"
                 ],
                 "link_confidence": 0.85
               },
@@ -5101,21 +6432,19 @@
                   377
                 ],
                 "type": "THUỐC",
+                "source": "qwen",
                 "type_candidates": [
                   {
                     "label": "THUỐC",
-                    "score": 0.5
+                    "score": 0.85
                   }
                 ],
-                "confidence": 0.5,
+                "extraction_source": "qwen",
                 "vote_count": 1,
-                "max_type_votes": 1,
                 "voters": {
-                  "qwen": 2
+                  "qwen": 1
                 },
-                "type_votes": {
-                  "THUỐC": 0.45
-                },
+                "confidence": 0.5,
                 "needs_review": false,
                 "position_fixed": false,
                 "assertions": {
@@ -5160,7 +6489,7 @@
                 "candidates": [
                   "2599"
                 ],
-                "link_confidence": 0.95
+                "link_confidence": 0.99
               },
               {
                 "text": "suboxone",
@@ -5194,6 +6523,35 @@
                   "352990"
                 ],
                 "link_confidence": 0.95
+              },
+              {
+                "text": "Lạm dụng chất kích thích, chất gây nghiện opioid",
+                "position": [
+                  567,
+                  615
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
               },
               {
                 "text": "tự tử",
@@ -5555,6 +6913,35 @@
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85
+              },
+              {
+                "text": "chăm sóc tâm thần",
+                "position": [
+                  1202,
+                  1219
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "TRIỆU_CHỨNG",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
               }
             ],
             "dropped": 0
@@ -5566,22 +6953,22 @@
         "agent": "verifier",
         "action": "validated",
         "data": {
-          "kept": 18,
+          "kept": 23,
           "dropped": 0
         }
       },
       {
         "agent": "orchestrator",
         "action": "verification_complete",
-        "kept": 18,
-        "ts": 1784566958.4213662
+        "kept": 23,
+        "ts": 1784626847.5141783
       },
       {
         "agent": "orchestrator",
         "action": "complete",
-        "total_mentions": 18,
-        "elapsed": 28.79,
-        "ts": 1784566958.421387
+        "total_mentions": 23,
+        "elapsed": 78.33,
+        "ts": 1784626847.5142078
       }
     ]
   },
@@ -5590,12 +6977,12 @@
       "agent": "orchestrator",
       "action": "start",
       "text_len": 1232,
-      "ts": 1784566929.6267173
+      "ts": 1784626769.179257
     },
     {
       "agent": "orchestrator",
       "action": "extraction_start",
-      "ts": 1784566929.6267323
+      "ts": 1784626769.179289
     },
     {
       "agent": "extraction",
@@ -5655,16 +7042,48 @@
               "extraction_source": "qwen"
             },
             {
-              "text": "clonidine",
+              "text": "đặt nội khí quản",
               "position": [
-                54,
-                63
+                73,
+                89
               ],
-              "type": "THUỐC",
+              "type": "TÊN_XÉT_NGHIỆM",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "THUỐC",
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Rối loạn cảm xúc",
+              "position": [
+                195,
+                211
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Rối loạn lưỡng cực",
+              "position": [
+                219,
+                237
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -5705,22 +7124,6 @@
             {
               "text": "clonidine",
               "position": [
-                368,
-                377
-              ],
-              "type": "THUỐC",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "THUỐC",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen"
-            },
-            {
-              "text": "clonidine",
-              "position": [
                 398,
                 407
               ],
@@ -5745,6 +7148,22 @@
               "type_candidates": [
                 {
                   "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Lạm dụng chất kích thích, chất gây nghiện opioid",
+              "position": [
+                567,
+                615
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
                   "score": 0.85
                 }
               ],
@@ -5957,6 +7376,22 @@
                 }
               ],
               "extraction_source": "qwen"
+            },
+            {
+              "text": "chăm sóc tâm thần",
+              "position": [
+                1202,
+                1219
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
             }
           ],
           "errors": []
@@ -5970,9 +7405,9 @@
       "data": {
         "sources": {
           "rule": 0,
-          "qwen": 21
+          "qwen": 24
         },
-        "total": 21
+        "total": 24
       }
     },
     {
@@ -6015,16 +7450,48 @@
               "extraction_source": "qwen"
             },
             {
-              "text": "clonidine",
+              "text": "đặt nội khí quản",
               "position": [
-                54,
-                63
+                73,
+                89
               ],
-              "type": "THUỐC",
+              "type": "TÊN_XÉT_NGHIỆM",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "THUỐC",
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Rối loạn cảm xúc",
+              "position": [
+                195,
+                211
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Rối loạn lưỡng cực",
+              "position": [
+                219,
+                237
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -6065,22 +7532,6 @@
             {
               "text": "clonidine",
               "position": [
-                368,
-                377
-              ],
-              "type": "THUỐC",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "THUỐC",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen"
-            },
-            {
-              "text": "clonidine",
-              "position": [
                 398,
                 407
               ],
@@ -6105,6 +7556,22 @@
               "type_candidates": [
                 {
                   "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "Lạm dụng chất kích thích, chất gây nghiện opioid",
+              "position": [
+                567,
+                615
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
                   "score": 0.85
                 }
               ],
@@ -6307,6 +7774,22 @@
               "position": [
                 1121,
                 1170
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "chăm sóc tâm thần",
+              "position": [
+                1202,
+                1219
               ],
               "type": "TRIỆU_CHỨNG",
               "source": "qwen",
@@ -6357,21 +7840,19 @@
               63
             ],
             "type": "THUỐC",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "THUỐC",
-                "score": 0.5
+                "score": 0.85
               }
             ],
-            "confidence": 0.5,
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "max_type_votes": 1,
             "voters": {
-              "qwen": 2
+              "qwen": 1
             },
-            "type_votes": {
-              "THUỐC": 0.45
-            },
+            "confidence": 0.5,
             "needs_review": false,
             "position_fixed": false,
             "assertions": {
@@ -6382,6 +7863,100 @@
             "assertion_confidence": 0.85,
             "candidates": [
               "202585"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "đặt nội khí quản",
+            "position": [
+              73,
+              89
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "Rối loạn cảm xúc",
+            "position": [
+              195,
+              211
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "F39"
+            ],
+            "link_confidence": 0.99
+          },
+          {
+            "text": "Rối loạn lưỡng cực",
+            "position": [
+              219,
+              237
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "F31"
             ],
             "link_confidence": 0.85
           },
@@ -6421,21 +7996,19 @@
               377
             ],
             "type": "THUỐC",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "THUỐC",
-                "score": 0.5
+                "score": 0.85
               }
             ],
-            "confidence": 0.5,
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "max_type_votes": 1,
             "voters": {
-              "qwen": 2
+              "qwen": 1
             },
-            "type_votes": {
-              "THUỐC": 0.45
-            },
+            "confidence": 0.5,
             "needs_review": false,
             "position_fixed": false,
             "assertions": {
@@ -6480,7 +8053,7 @@
             "candidates": [
               "2599"
             ],
-            "link_confidence": 0.95
+            "link_confidence": 0.99
           },
           {
             "text": "suboxone",
@@ -6514,6 +8087,35 @@
               "352990"
             ],
             "link_confidence": 0.95
+          },
+          {
+            "text": "Lạm dụng chất kích thích, chất gây nghiện opioid",
+            "position": [
+              567,
+              615
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
           },
           {
             "text": "tự tử",
@@ -6875,6 +8477,35 @@
               "isHistorical": false
             },
             "assertion_confidence": 0.85
+          },
+          {
+            "text": "chăm sóc tâm thần",
+            "position": [
+              1202,
+              1219
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
           }
         ],
         "result_type": "list"
@@ -6884,7 +8515,7 @@
       "agent": "extraction",
       "action": "voted",
       "data": {
-        "merged": 18
+        "merged": 23
       }
     },
     {
@@ -6930,21 +8561,19 @@
                 63
               ],
               "type": "THUỐC",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "THUỐC",
-                  "score": 0.5
+                  "score": 0.85
                 }
               ],
-              "confidence": 0.5,
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "max_type_votes": 1,
               "voters": {
-                "qwen": 2
+                "qwen": 1
               },
-              "type_votes": {
-                "THUỐC": 0.45
-              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -6955,6 +8584,100 @@
               "assertion_confidence": 0.85,
               "candidates": [
                 "202585"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đặt nội khí quản",
+              "position": [
+                73,
+                89
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Rối loạn cảm xúc",
+              "position": [
+                195,
+                211
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "F39"
+              ],
+              "link_confidence": 0.99
+            },
+            {
+              "text": "Rối loạn lưỡng cực",
+              "position": [
+                219,
+                237
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "F31"
               ],
               "link_confidence": 0.85
             },
@@ -6994,21 +8717,19 @@
                 377
               ],
               "type": "THUỐC",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "THUỐC",
-                  "score": 0.5
+                  "score": 0.85
                 }
               ],
-              "confidence": 0.5,
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "max_type_votes": 1,
               "voters": {
-                "qwen": 2
+                "qwen": 1
               },
-              "type_votes": {
-                "THUỐC": 0.45
-              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -7053,7 +8774,7 @@
               "candidates": [
                 "2599"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             },
             {
               "text": "suboxone",
@@ -7087,6 +8808,35 @@
                 "352990"
               ],
               "link_confidence": 0.95
+            },
+            {
+              "text": "Lạm dụng chất kích thích, chất gây nghiện opioid",
+              "position": [
+                567,
+                615
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             },
             {
               "text": "tự tử",
@@ -7448,6 +9198,35 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85
+            },
+            {
+              "text": "chăm sóc tâm thần",
+              "position": [
+                1202,
+                1219
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
           "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối loạn cảm xúc \n    - Rối loạn lưỡng cực\n    - rối loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - klonopinclonidine (được kê đơn)\n    - clonidine (mua trên đường phố)\n    - suboxone (bắt đầu 3 tuần trước), không dùng đều 5-6 ngày, dừng thuốc trước nhập viện 01 ngày\n    Các yếu tố nguy cơ liên quan\n    - Lạm dụng chất kích thích, chất gây nghiện opioid\n2.   Bệnh sử hiện tại\n    Lý do nhập viện:i ý định tự tử và ý nghĩ tự bắn vào đầu\n   Theo lời kể bệnh nhân bị trầm cảm ngày càng nặng , vài tháng trước có các giai đoạn giống hưng cảm  biểu hiện bằng tăng hoạt động và giảm nhu cầu ngủ 3-4 ngày, trong vài tuần nay và có ý định tự tử.  Thuốc kê đơn không dùng đều đặn x5-6 ngày, bắt đầu dùng suboxone 3 tuần trước vì rẻ hơn, dừng dùng suboxone ngày hôm qua\n    Triệu chứng khi vào viện\n    - ý nghĩ tự tử, có nghĩ tự bắn vào đầu\n    - lo âu\nhoảng sợ\n    - hoang tưởng như đang chiếm khí oxy của người khác\n Điều trị\n    - Hiện đang được chăm sóc tâm thần bởi bác sĩ\n\n"
@@ -7489,21 +9268,19 @@
               63
             ],
             "type": "THUỐC",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "THUỐC",
-                "score": 0.5
+                "score": 0.85
               }
             ],
-            "confidence": 0.5,
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "max_type_votes": 1,
             "voters": {
-              "qwen": 2
+              "qwen": 1
             },
-            "type_votes": {
-              "THUỐC": 0.45
-            },
+            "confidence": 0.5,
             "needs_review": false,
             "position_fixed": false,
             "assertions": {
@@ -7514,6 +9291,100 @@
             "assertion_confidence": 0.85,
             "candidates": [
               "202585"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "đặt nội khí quản",
+            "position": [
+              73,
+              89
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "Rối loạn cảm xúc",
+            "position": [
+              195,
+              211
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "F39"
+            ],
+            "link_confidence": 0.99
+          },
+          {
+            "text": "Rối loạn lưỡng cực",
+            "position": [
+              219,
+              237
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "F31"
             ],
             "link_confidence": 0.85
           },
@@ -7553,21 +9424,19 @@
               377
             ],
             "type": "THUỐC",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "THUỐC",
-                "score": 0.5
+                "score": 0.85
               }
             ],
-            "confidence": 0.5,
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "max_type_votes": 1,
             "voters": {
-              "qwen": 2
+              "qwen": 1
             },
-            "type_votes": {
-              "THUỐC": 0.45
-            },
+            "confidence": 0.5,
             "needs_review": false,
             "position_fixed": false,
             "assertions": {
@@ -7612,7 +9481,7 @@
             "candidates": [
               "2599"
             ],
-            "link_confidence": 0.95
+            "link_confidence": 0.99
           },
           {
             "text": "suboxone",
@@ -7646,6 +9515,35 @@
               "352990"
             ],
             "link_confidence": 0.95
+          },
+          {
+            "text": "Lạm dụng chất kích thích, chất gây nghiện opioid",
+            "position": [
+              567,
+              615
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
           },
           {
             "text": "tự tử",
@@ -7999,6 +9897,35 @@
             "type_votes": {
               "TRIỆU_CHỨNG": 0.45
             },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "chăm sóc tâm thần",
+            "position": [
+              1202,
+              1219
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
             "needs_review": false,
             "position_fixed": false,
             "assertions": {
@@ -8055,21 +9982,19 @@
                 63
               ],
               "type": "THUỐC",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "THUỐC",
-                  "score": 0.5
+                  "score": 0.85
                 }
               ],
-              "confidence": 0.5,
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "max_type_votes": 1,
               "voters": {
-                "qwen": 2
+                "qwen": 1
               },
-              "type_votes": {
-                "THUỐC": 0.45
-              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -8080,6 +10005,100 @@
               "assertion_confidence": 0.85,
               "candidates": [
                 "202585"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đặt nội khí quản",
+              "position": [
+                73,
+                89
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Rối loạn cảm xúc",
+              "position": [
+                195,
+                211
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "F39"
+              ],
+              "link_confidence": 0.99
+            },
+            {
+              "text": "Rối loạn lưỡng cực",
+              "position": [
+                219,
+                237
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "F31"
               ],
               "link_confidence": 0.85
             },
@@ -8119,21 +10138,19 @@
                 377
               ],
               "type": "THUỐC",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "THUỐC",
-                  "score": 0.5
+                  "score": 0.85
                 }
               ],
-              "confidence": 0.5,
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "max_type_votes": 1,
               "voters": {
-                "qwen": 2
+                "qwen": 1
               },
-              "type_votes": {
-                "THUỐC": 0.45
-              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -8178,7 +10195,7 @@
               "candidates": [
                 "2599"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             },
             {
               "text": "suboxone",
@@ -8212,6 +10229,35 @@
                 "352990"
               ],
               "link_confidence": 0.95
+            },
+            {
+              "text": "Lạm dụng chất kích thích, chất gây nghiện opioid",
+              "position": [
+                567,
+                615
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             },
             {
               "text": "tự tử",
@@ -8573,6 +10619,35 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85
+            },
+            {
+              "text": "chăm sóc tâm thần",
+              "position": [
+                1202,
+                1219
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
           "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối loạn cảm xúc \n    - Rối loạn lưỡng cực\n    - rối loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - klonopinclonidine (được kê đơn)\n    - clonidine (mua trên đường phố)\n    - suboxone (bắt đầu 3 tuần trước), không dùng đều 5-6 ngày, dừng thuốc trước nhập viện 01 ngày\n    Các yếu tố nguy cơ liên quan\n    - Lạm dụng chất kích thích, chất gây nghiện opioid\n2.   Bệnh sử hiện tại\n    Lý do nhập viện:i ý định tự tử và ý nghĩ tự bắn vào đầu\n   Theo lời kể bệnh nhân bị trầm cảm ngày càng nặng , vài tháng trước có các giai đoạn giống hưng cảm  biểu hiện bằng tăng hoạt động và giảm nhu cầu ngủ 3-4 ngày, trong vài tuần nay và có ý định tự tử.  Thuốc kê đơn không dùng đều đặn x5-6 ngày, bắt đầu dùng suboxone 3 tuần trước vì rẻ hơn, dừng dùng suboxone ngày hôm qua\n    Triệu chứng khi vào viện\n    - ý nghĩ tự tử, có nghĩ tự bắn vào đầu\n    - lo âu\nhoảng sợ\n    - hoang tưởng như đang chiếm khí oxy của người khác\n Điều trị\n    - Hiện đang được chăm sóc tâm thần bởi bác sĩ\n\n"
@@ -8614,21 +10689,19 @@
               63
             ],
             "type": "THUỐC",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "THUỐC",
-                "score": 0.5
+                "score": 0.85
               }
             ],
-            "confidence": 0.5,
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "max_type_votes": 1,
             "voters": {
-              "qwen": 2
+              "qwen": 1
             },
-            "type_votes": {
-              "THUỐC": 0.45
-            },
+            "confidence": 0.5,
             "needs_review": false,
             "position_fixed": false,
             "assertions": {
@@ -8639,6 +10712,100 @@
             "assertion_confidence": 0.85,
             "candidates": [
               "202585"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "đặt nội khí quản",
+            "position": [
+              73,
+              89
+            ],
+            "type": "TÊN_XÉT_NGHIỆM",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TÊN_XÉT_NGHIỆM",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            }
+          },
+          {
+            "text": "Rối loạn cảm xúc",
+            "position": [
+              195,
+              211
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "F39"
+            ],
+            "link_confidence": 0.99
+          },
+          {
+            "text": "Rối loạn lưỡng cực",
+            "position": [
+              219,
+              237
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "F31"
             ],
             "link_confidence": 0.85
           },
@@ -8678,21 +10845,19 @@
               377
             ],
             "type": "THUỐC",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "THUỐC",
-                "score": 0.5
+                "score": 0.85
               }
             ],
-            "confidence": 0.5,
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "max_type_votes": 1,
             "voters": {
-              "qwen": 2
+              "qwen": 1
             },
-            "type_votes": {
-              "THUỐC": 0.45
-            },
+            "confidence": 0.5,
             "needs_review": false,
             "position_fixed": false,
             "assertions": {
@@ -8737,7 +10902,7 @@
             "candidates": [
               "2599"
             ],
-            "link_confidence": 0.95
+            "link_confidence": 0.99
           },
           {
             "text": "suboxone",
@@ -8771,6 +10936,35 @@
               "352990"
             ],
             "link_confidence": 0.95
+          },
+          {
+            "text": "Lạm dụng chất kích thích, chất gây nghiện opioid",
+            "position": [
+              567,
+              615
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
           },
           {
             "text": "tự tử",
@@ -9132,6 +11326,35 @@
               "isHistorical": false
             },
             "assertion_confidence": 0.85
+          },
+          {
+            "text": "chăm sóc tâm thần",
+            "position": [
+              1202,
+              1219
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "TRIỆU_CHỨNG",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
           }
         ],
         "result_type": "list"
@@ -9154,19 +11377,19 @@
     {
       "agent": "orchestrator",
       "action": "extraction_complete",
-      "mentions": 18,
-      "ts": 1784566943.4754522
+      "mentions": 23,
+      "ts": 1784626795.9708757
     },
     {
       "agent": "orchestrator",
       "action": "assertion_start",
-      "ts": 1784566943.4754655
+      "ts": 1784626795.970909
     },
     {
       "agent": "assertion",
       "action": "start",
       "data": {
-        "mentions": 18
+        "mentions": 23
       }
     },
     {
@@ -9198,6 +11421,44 @@
           "start": 46,
           "end": 63,
           "mtype": "THUỐC"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối loạn cảm xúc \n    - Rối loạn lưỡng cực\n    - rối loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - klonopinclonidine (được kê đơn)\n    - clonidine (mua trên đường phố)\n    - suboxone (bắt đầu 3 tuần trước), không dùng đều 5-6 ngày, dừng thuốc trước nhập viện 01 ngày\n    Các yếu tố nguy cơ liên quan\n    - Lạm dụng chất kích thích, chất gây nghiện opioid\n2.   Bệnh sử hiện tại\n    Lý do nhập viện:i ý định tự tử và ý nghĩ tự bắn vào đầu\n   Theo lời kể bệnh nhân bị trầm cảm ngày càng nặng , vài tháng trước có các giai đoạn giống hưng cảm  biểu hiện bằng tăng hoạt động và giảm nhu cầu ngủ 3-4 ngày, trong vài tuần nay và có ý định tự tử.  Thuốc kê đơn không dùng đều đặn x5-6 ngày, bắt đầu dùng suboxone 3 tuần trước vì rẻ hơn, dừng dùng suboxone ngày hôm qua\n    Triệu chứng khi vào viện\n    - ý nghĩ tự tử, có nghĩ tự bắn vào đầu\n    - lo âu\nhoảng sợ\n    - hoang tưởng như đang chiếm khí oxy của người khác\n Điều trị\n    - Hiện đang được chăm sóc tâm thần bởi bác sĩ\n\n",
+          "start": 195,
+          "end": 211,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối loạn cảm xúc \n    - Rối loạn lưỡng cực\n    - rối loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - klonopinclonidine (được kê đơn)\n    - clonidine (mua trên đường phố)\n    - suboxone (bắt đầu 3 tuần trước), không dùng đều 5-6 ngày, dừng thuốc trước nhập viện 01 ngày\n    Các yếu tố nguy cơ liên quan\n    - Lạm dụng chất kích thích, chất gây nghiện opioid\n2.   Bệnh sử hiện tại\n    Lý do nhập viện:i ý định tự tử và ý nghĩ tự bắn vào đầu\n   Theo lời kể bệnh nhân bị trầm cảm ngày càng nặng , vài tháng trước có các giai đoạn giống hưng cảm  biểu hiện bằng tăng hoạt động và giảm nhu cầu ngủ 3-4 ngày, trong vài tuần nay và có ý định tự tử.  Thuốc kê đơn không dùng đều đặn x5-6 ngày, bắt đầu dùng suboxone 3 tuần trước vì rẻ hơn, dừng dùng suboxone ngày hôm qua\n    Triệu chứng khi vào viện\n    - ý nghĩ tự tử, có nghĩ tự bắn vào đầu\n    - lo âu\nhoảng sợ\n    - hoang tưởng như đang chiếm khí oxy của người khác\n Điều trị\n    - Hiện đang được chăm sóc tâm thần bởi bác sĩ\n\n",
+          "start": 219,
+          "end": 237,
+          "mtype": "CHẨN_ĐOÁN"
         },
         "output": {
           "isNegated": false,
@@ -9279,6 +11540,25 @@
           "isNegated": false,
           "isFamily": false,
           "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối loạn cảm xúc \n    - Rối loạn lưỡng cực\n    - rối loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - klonopinclonidine (được kê đơn)\n    - clonidine (mua trên đường phố)\n    - suboxone (bắt đầu 3 tuần trước), không dùng đều 5-6 ngày, dừng thuốc trước nhập viện 01 ngày\n    Các yếu tố nguy cơ liên quan\n    - Lạm dụng chất kích thích, chất gây nghiện opioid\n2.   Bệnh sử hiện tại\n    Lý do nhập viện:i ý định tự tử và ý nghĩ tự bắn vào đầu\n   Theo lời kể bệnh nhân bị trầm cảm ngày càng nặng , vài tháng trước có các giai đoạn giống hưng cảm  biểu hiện bằng tăng hoạt động và giảm nhu cầu ngủ 3-4 ngày, trong vài tuần nay và có ý định tự tử.  Thuốc kê đơn không dùng đều đặn x5-6 ngày, bắt đầu dùng suboxone 3 tuần trước vì rẻ hơn, dừng dùng suboxone ngày hôm qua\n    Triệu chứng khi vào viện\n    - ý nghĩ tự tử, có nghĩ tự bắn vào đầu\n    - lo âu\nhoảng sợ\n    - hoang tưởng như đang chiếm khí oxy của người khác\n Điều trị\n    - Hiện đang được chăm sóc tâm thần bởi bác sĩ\n\n",
+          "start": 567,
+          "end": 615,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
         },
         "result_type": "dict"
       }
@@ -9513,27 +11793,46 @@
     },
     {
       "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối loạn cảm xúc \n    - Rối loạn lưỡng cực\n    - rối loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - klonopinclonidine (được kê đơn)\n    - clonidine (mua trên đường phố)\n    - suboxone (bắt đầu 3 tuần trước), không dùng đều 5-6 ngày, dừng thuốc trước nhập viện 01 ngày\n    Các yếu tố nguy cơ liên quan\n    - Lạm dụng chất kích thích, chất gây nghiện opioid\n2.   Bệnh sử hiện tại\n    Lý do nhập viện:i ý định tự tử và ý nghĩ tự bắn vào đầu\n   Theo lời kể bệnh nhân bị trầm cảm ngày càng nặng , vài tháng trước có các giai đoạn giống hưng cảm  biểu hiện bằng tăng hoạt động và giảm nhu cầu ngủ 3-4 ngày, trong vài tuần nay và có ý định tự tử.  Thuốc kê đơn không dùng đều đặn x5-6 ngày, bắt đầu dùng suboxone 3 tuần trước vì rẻ hơn, dừng dùng suboxone ngày hôm qua\n    Triệu chứng khi vào viện\n    - ý nghĩ tự tử, có nghĩ tự bắn vào đầu\n    - lo âu\nhoảng sợ\n    - hoang tưởng như đang chiếm khí oxy của người khác\n Điều trị\n    - Hiện đang được chăm sóc tâm thần bởi bác sĩ\n\n",
+          "start": 1202,
+          "end": 1219,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
       "action": "complete",
       "data": {
-        "processed": 18,
+        "processed": 23,
         "llm_checked": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "assertion_complete",
-      "ts": 1784566943.4768853
+      "ts": 1784626795.9769654
     },
     {
       "agent": "orchestrator",
       "action": "linking_start",
-      "ts": 1784566943.4768956
+      "ts": 1784626795.977002
     },
     {
       "agent": "linking",
       "action": "start",
       "data": {
-        "mentions": 18
+        "mentions": 23
       }
     },
     {
@@ -9549,21 +11848,19 @@
               63
             ],
             "type": "THUỐC",
+            "source": "qwen",
             "type_candidates": [
               {
                 "label": "THUỐC",
-                "score": 0.5
+                "score": 0.85
               }
             ],
-            "confidence": 0.5,
+            "extraction_source": "qwen",
             "vote_count": 1,
-            "max_type_votes": 1,
             "voters": {
-              "qwen": 2
+              "qwen": 1
             },
-            "type_votes": {
-              "THUỐC": 0.45
-            },
+            "confidence": 0.5,
             "needs_review": false,
             "position_fixed": false,
             "assertions": {
@@ -9585,6 +11882,107 @@
           ],
           "confidence": 0.85,
           "rationale": "Mention 'klonopinclonidine' là tên thương mại của Klonopin, và mã 202585 là mã RxNorm chính xác cho thuốc này. Mã 2599 chỉ là clonidine, không phải klonopinclonidine."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "Rối loạn cảm xúc",
+            "position": [
+              195,
+              211
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "F39"
+            ],
+            "link_confidence": 0.99
+          },
+          "context": " klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối loạn cảm xúc \n    - Rối loạn lưỡng cực\n    - rối loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - k"
+        },
+        "output": {
+          "candidates": [
+            "F39"
+          ],
+          "confidence": 0.99
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "Rối loạn lưỡng cực",
+            "position": [
+              219,
+              237
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "F31"
+            ],
+            "link_confidence": 0.85
+          },
+          "context": "trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối loạn cảm xúc \n    - Rối loạn lưỡng cực\n    - rối loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - klonopinclonidine (được kê "
+        },
+        "output": {
+          "candidates": [
+            "F31"
+          ],
+          "confidence": 0.85,
+          "rationale": "Rối loạn lưỡng cực là một rối loạn cảm xúc, và mã F31 trong ICD-10 chính xác phản ánh tình trạng này."
         },
         "result_type": "dict"
       }
@@ -9626,7 +12024,7 @@
             "candidates": [
               "2599"
             ],
-            "link_confidence": 0.95
+            "link_confidence": 0.99
           },
           "context": "loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - klonopinclonidine (được kê đơn)\n    - clonidine (mua trên đường phố)\n    - suboxone (bắt đầu 3 tuần trước), không dùng đều 5-6 ngày, dừng thuốc trước nhập viện 01 ngày\n    Các yếu tố nguy cơ liên q"
         },
@@ -9634,7 +12032,7 @@
           "candidates": [
             "2599"
           ],
-          "confidence": 0.95
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -9693,25 +12091,25 @@
       "agent": "linking",
       "action": "complete",
       "data": {
-        "linked": 6
+        "linked": 8
       }
     },
     {
       "agent": "orchestrator",
       "action": "linking_complete",
-      "linked": 6,
-      "ts": 1784566949.2346342
+      "linked": 8,
+      "ts": 1784626838.5099142
     },
     {
       "agent": "orchestrator",
       "action": "verification_start",
-      "ts": 1784566949.2346475
+      "ts": 1784626838.5107336
     },
     {
       "agent": "verifier",
       "action": "start",
       "data": {
-        "mentions": 18
+        "mentions": 23
       }
     },
     {
@@ -9757,21 +12155,19 @@
                 63
               ],
               "type": "THUỐC",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "THUỐC",
-                  "score": 0.5
+                  "score": 0.85
                 }
               ],
-              "confidence": 0.5,
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "max_type_votes": 1,
               "voters": {
-                "qwen": 2
+                "qwen": 1
               },
-              "type_votes": {
-                "THUỐC": 0.45
-              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -9782,6 +12178,100 @@
               "assertion_confidence": 0.85,
               "candidates": [
                 "202585"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đặt nội khí quản",
+              "position": [
+                73,
+                89
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Rối loạn cảm xúc",
+              "position": [
+                195,
+                211
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "F39"
+              ],
+              "link_confidence": 0.99
+            },
+            {
+              "text": "Rối loạn lưỡng cực",
+              "position": [
+                219,
+                237
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "F31"
               ],
               "link_confidence": 0.85
             },
@@ -9821,21 +12311,19 @@
                 377
               ],
               "type": "THUỐC",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "THUỐC",
-                  "score": 0.5
+                  "score": 0.85
                 }
               ],
-              "confidence": 0.5,
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "max_type_votes": 1,
               "voters": {
-                "qwen": 2
+                "qwen": 1
               },
-              "type_votes": {
-                "THUỐC": 0.45
-              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -9880,7 +12368,7 @@
               "candidates": [
                 "2599"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             },
             {
               "text": "suboxone",
@@ -9914,6 +12402,35 @@
                 "352990"
               ],
               "link_confidence": 0.95
+            },
+            {
+              "text": "Lạm dụng chất kích thích, chất gây nghiện opioid",
+              "position": [
+                567,
+                615
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             },
             {
               "text": "tự tử",
@@ -10275,12 +12792,61 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85
+            },
+            {
+              "text": "chăm sóc tâm thần",
+              "position": [
+                1202,
+                1219
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
           "text": "1.  Tiền sử bệnh\n    - 2 lần tự tửdo quá liều klonopinclonidine điều trị đặt nội khí quản tại khoa Hồi sức tích cực\n  - Mẹ Đã tử vong trong lần nhập viện gần đây nhất\n    Các bệnh mãn tính\n    - Rối loạn cảm xúc \n    - Rối loạn lưỡng cực\n    - rối loạn lo âu\n    Thuốc đã điều trị trước khi nhập viện lần này\n    - Thuốc kê đơn (tên không được chỉ định)\n    - klonopinclonidine (được kê đơn)\n    - clonidine (mua trên đường phố)\n    - suboxone (bắt đầu 3 tuần trước), không dùng đều 5-6 ngày, dừng thuốc trước nhập viện 01 ngày\n    Các yếu tố nguy cơ liên quan\n    - Lạm dụng chất kích thích, chất gây nghiện opioid\n2.   Bệnh sử hiện tại\n    Lý do nhập viện:i ý định tự tử và ý nghĩ tự bắn vào đầu\n   Theo lời kể bệnh nhân bị trầm cảm ngày càng nặng , vài tháng trước có các giai đoạn giống hưng cảm  biểu hiện bằng tăng hoạt động và giảm nhu cầu ngủ 3-4 ngày, trong vài tuần nay và có ý định tự tử.  Thuốc kê đơn không dùng đều đặn x5-6 ngày, bắt đầu dùng suboxone 3 tuần trước vì rẻ hơn, dừng dùng suboxone ngày hôm qua\n    Triệu chứng khi vào viện\n    - ý nghĩ tự tử, có nghĩ tự bắn vào đầu\n    - lo âu\nhoảng sợ\n    - hoang tưởng như đang chiếm khí oxy của người khác\n Điều trị\n    - Hiện đang được chăm sóc tâm thần bởi bác sĩ\n\n"
         },
         "output": {
           "actions": [
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
+            },
             {
               "action": "accept",
               "fixes": [],
@@ -10369,6 +12935,11 @@
               "action": "accept",
               "fixes": [],
               "warnings": []
+            },
+            {
+              "action": "accept",
+              "fixes": [],
+              "warnings": []
             }
           ],
           "final_predictions": [
@@ -10408,21 +12979,19 @@
                 63
               ],
               "type": "THUỐC",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "THUỐC",
-                  "score": 0.5
+                  "score": 0.85
                 }
               ],
-              "confidence": 0.5,
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "max_type_votes": 1,
               "voters": {
-                "qwen": 2
+                "qwen": 1
               },
-              "type_votes": {
-                "THUỐC": 0.45
-              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -10433,6 +13002,100 @@
               "assertion_confidence": 0.85,
               "candidates": [
                 "202585"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "đặt nội khí quản",
+              "position": [
+                73,
+                89
+              ],
+              "type": "TÊN_XÉT_NGHIỆM",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TÊN_XÉT_NGHIỆM",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              }
+            },
+            {
+              "text": "Rối loạn cảm xúc",
+              "position": [
+                195,
+                211
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "F39"
+              ],
+              "link_confidence": 0.99
+            },
+            {
+              "text": "Rối loạn lưỡng cực",
+              "position": [
+                219,
+                237
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "F31"
               ],
               "link_confidence": 0.85
             },
@@ -10472,21 +13135,19 @@
                 377
               ],
               "type": "THUỐC",
+              "source": "qwen",
               "type_candidates": [
                 {
                   "label": "THUỐC",
-                  "score": 0.5
+                  "score": 0.85
                 }
               ],
-              "confidence": 0.5,
+              "extraction_source": "qwen",
               "vote_count": 1,
-              "max_type_votes": 1,
               "voters": {
-                "qwen": 2
+                "qwen": 1
               },
-              "type_votes": {
-                "THUỐC": 0.45
-              },
+              "confidence": 0.5,
               "needs_review": false,
               "position_fixed": false,
               "assertions": {
@@ -10531,7 +13192,7 @@
               "candidates": [
                 "2599"
               ],
-              "link_confidence": 0.95
+              "link_confidence": 0.99
             },
             {
               "text": "suboxone",
@@ -10565,6 +13226,35 @@
                 "352990"
               ],
               "link_confidence": 0.95
+            },
+            {
+              "text": "Lạm dụng chất kích thích, chất gây nghiện opioid",
+              "position": [
+                567,
+                615
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             },
             {
               "text": "tự tử",
@@ -10926,6 +13616,35 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85
+            },
+            {
+              "text": "chăm sóc tâm thần",
+              "position": [
+                1202,
+                1219
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "TRIỆU_CHỨNG",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
           "dropped": 0
@@ -10937,22 +13656,22 @@
       "agent": "verifier",
       "action": "validated",
       "data": {
-        "kept": 18,
+        "kept": 23,
         "dropped": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "verification_complete",
-      "kept": 18,
-      "ts": 1784566958.4213662
+      "kept": 23,
+      "ts": 1784626847.5141783
     },
     {
       "agent": "orchestrator",
       "action": "complete",
-      "total_mentions": 18,
-      "elapsed": 28.79,
-      "ts": 1784566958.421387
+      "total_mentions": 23,
+      "elapsed": 78.33,
+      "ts": 1784626847.5142078
     }
   ]
 }

@@ -1,16 +1,16 @@
 {
   "file_id": "27",
-  "timestamp": 1784566277.2324727,
-  "elapsed": 28.69,
+  "timestamp": 1784626221.5889843,
+  "elapsed": 45.64,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 17,
+  "mention_count": 25,
   "stats": {
-    "total_mentions": 17,
-    "final": 17,
+    "total_mentions": 25,
+    "final": 25,
     "validation_errors": 0,
-    "elapsed": 28.69,
+    "elapsed": 45.64,
     "rule": 1,
-    "qwen": 17
+    "qwen": 25
   },
   "log_summary": [
     {
@@ -153,9 +153,39 @@
     },
     {
       "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -202,7 +232,7 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784566277.232374,
+      "ts": 1784626221.5888157,
       "tool": null
     }
   ],
@@ -219,6 +249,48 @@
       ],
       "candidates": [
         "I10"
+      ]
+    },
+    {
+      "text": "Ung thư đại tràng",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        146,
+        163
+      ],
+      "candidates": [
+        "C18.9"
+      ]
+    },
+    {
+      "text": "Thuyên tắc phổi",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        178,
+        193
+      ],
+      "candidates": [
+        "I26.99"
+      ]
+    },
+    {
+      "text": "Thuyên tắc phổi",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        222,
+        237
+      ],
+      "candidates": [
+        "I26.99"
       ]
     },
     {
@@ -246,6 +318,26 @@
       "position": [
         470,
         495
+      ]
+    },
+    {
+      "text": "ho",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        511,
+        513
+      ]
+    },
+    {
+      "text": "đau ngực",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        568,
+        576
       ]
     },
     {
@@ -282,6 +374,28 @@
       ]
     },
     {
+      "text": "nhịp nhanh",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        766,
+        776
+      ]
+    },
+    {
+      "text": "đau ngực",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        789,
+        797
+      ]
+    },
+    {
       "text": "khó nuốt",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
@@ -311,7 +425,7 @@
         1073
       ],
       "candidates": [
-        "866427"
+        "866508"
       ]
     },
     {
@@ -325,7 +439,7 @@
     },
     {
       "text": "hr 88",
-      "type": "TRIỆU_CHỨNG",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
         1149,
@@ -334,7 +448,7 @@
     },
     {
       "text": "bp 13482",
-      "type": "TRIỆU_CHỨNG",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
         1155,
@@ -343,7 +457,7 @@
     },
     {
       "text": "rr 14",
-      "type": "TRIỆU_CHỨNG",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
         1164,
@@ -352,7 +466,7 @@
     },
     {
       "text": "spo2 100ra",
-      "type": "TRIỆU_CHỨNG",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
         1170,
@@ -361,7 +475,7 @@
     },
     {
       "text": "hr 140",
-      "type": "TRIỆU_CHỨNG",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
         1203,
@@ -378,6 +492,15 @@
       ],
       "candidates": [
         "6918"
+      ]
+    },
+    {
+      "text": "khỏe",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1344,
+        1348
       ]
     }
   ]

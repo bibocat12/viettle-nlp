@@ -1,16 +1,16 @@
 {
   "file_id": "49",
-  "timestamp": 1784566574.9663398,
-  "elapsed": 33.11,
+  "timestamp": 1784626502.1993027,
+  "elapsed": 30.33,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 17,
+  "mention_count": 23,
   "stats": {
-    "total_mentions": 17,
-    "final": 17,
+    "total_mentions": 23,
+    "final": 23,
     "validation_errors": 0,
-    "elapsed": 33.11,
+    "elapsed": 30.33,
     "rule": 1,
-    "qwen": 16
+    "qwen": 22
   },
   "log_summary": [
     {
@@ -153,9 +153,45 @@
     },
     {
       "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -190,7 +226,7 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784566574.9662533,
+      "ts": 1784626502.198936,
       "tool": null
     }
   ],
@@ -241,6 +277,15 @@
       ]
     },
     {
+      "text": "đau nhiều khi  giao hợp",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        518,
+        541
+      ]
+    },
+    {
       "text": "ra huyết âm đạo lượng ít",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
@@ -250,12 +295,30 @@
       ]
     },
     {
+      "text": "Cảm giác có khối sa lồi ra âm đạo",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        601,
+        634
+      ]
+    },
+    {
       "text": "căng tức vùng âm đạo",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
         644,
         664
+      ]
+    },
+    {
+      "text": "Tiểu dắt",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        666,
+        674
       ]
     },
     {
@@ -304,12 +367,30 @@
       ]
     },
     {
+      "text": "gắn vòng pessary",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        886,
+        902
+      ]
+    },
+    {
       "text": "các triệu chứng",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
         915,
         930
+      ]
+    },
+    {
+      "text": "Vòng pessary bị rơi ra",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        934,
+        956
       ]
     },
     {
@@ -326,10 +407,26 @@
     {
       "text": "tiểu máu",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
         1166,
         1174
+      ]
+    },
+    {
+      "text": "nhiễm khuẩn đường tiết niệu",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        1184,
+        1211
+      ],
+      "candidates": [
+        "N39.0"
       ]
     },
     {
@@ -343,7 +440,7 @@
         1252
       ],
       "candidates": [
-        "N20"
+        "N20.0"
       ]
     },
     {
@@ -357,7 +454,7 @@
         1273
       ],
       "candidates": [
-        "N11.1"
+        "N12"
       ]
     }
   ]

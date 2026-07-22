@@ -75,8 +75,15 @@ def main():
                         help="Model ID exposed by vLLM")
     parser.add_argument("--gpu", action="store_true", help="Use GPU if available (only for local model)")
     parser.add_argument("--parallel", "-p", type=int, default=1, help="Parallel workers for batch processing")
+    parser.add_argument(
+        "--multiscale",
+        action="store_true",
+        help="Add non-overlapping recall proposals from smaller 500-character chunks",
+    )
     parser.add_argument("--verbose", "-v", action="store_true", help="Show detailed logs")
     args = parser.parse_args()
+    if args.multiscale:
+        os.environ["NER_MULTISCALE"] = "1"
 
     input_path = Path(args.input)
     if not input_path.exists():

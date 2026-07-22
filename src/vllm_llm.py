@@ -3,6 +3,7 @@
 import json
 import os
 import sys
+import time
 from typing import Any, Optional
 
 import requests
@@ -21,11 +22,13 @@ class VLLMLLM:
         model: Optional[str] = None,
         api_key: Optional[str] = None,
         timeout: int = 120,
+        max_retries: int = 3,
     ):
         self.base_url = (base_url or os.getenv("VLLM_BASE_URL") or DEFAULT_BASE_URL).rstrip("/")
         self.model = model or os.getenv("VLLM_MODEL") or DEFAULT_MODEL
         self.api_key = api_key if api_key is not None else os.getenv("VLLM_API_KEY", "")
         self.timeout = timeout
+        self.max_retries = max(1, max_retries)
         self.last_error = ""
 
     @property
@@ -68,21 +71,33 @@ class VLLMLLM:
             "max_tokens": max_tokens,
             "chat_template_kwargs": {"enable_thinking": False},
         }
-        try:
-            response = requests.post(
-                f"{self.base_url}/chat/completions",
-                json=payload,
-                headers=self._headers(),
-                timeout=self.timeout,
-            )
-            response.raise_for_status()
-            data = response.json()
-            self.last_error = ""
-            return (data["choices"][0]["message"].get("content") or "").strip()
-        except Exception as exc:
-            self.last_error = str(exc)
-            print(f"vLLM request failed: {exc}", file=sys.stderr)
-            return ""
+        for attempt in range(1, self.max_retries + 1):
+            try:
+                response = requests.post(
+                    f"{self.base_url}/chat/completions",
+                    json=payload,
+                    headers=self._headers(),
+                    timeout=self.timeout,
+                )
+                response.raise_for_status()
+                data = response.json()
+                content = (data["choices"][0]["message"].get("content") or "").strip()
+                if not content:
+                    raise ValueError("vLLM returned an empty completion")
+                self.last_error = ""
+                return content
+            except Exception as exc:
+                self.last_error = str(exc)
+                if attempt < self.max_retries:
+                    time.sleep(0.5 * attempt)
+                    continue
+                print(
+                    f"vLLM request failed after {self.max_retries} attempts: {exc}",
+                    file=sys.stderr,
+                )
+        raise RuntimeError(
+            f"vLLM generation failed after {self.max_retries} attempts: {self.last_error}"
+        )
 
     @staticmethod
     def parse_json(response: str) -> Any:

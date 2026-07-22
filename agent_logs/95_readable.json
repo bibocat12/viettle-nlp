@@ -1,16 +1,16 @@
 {
   "file_id": "95",
-  "timestamp": 1784567136.6012642,
-  "elapsed": 8.04,
+  "timestamp": 1784626992.015406,
+  "elapsed": 16.55,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 8,
+  "mention_count": 10,
   "stats": {
-    "total_mentions": 8,
-    "final": 8,
+    "total_mentions": 10,
+    "final": 10,
     "validation_errors": 0,
-    "elapsed": 8.04,
+    "elapsed": 16.55,
     "rule": 1,
-    "qwen": 7
+    "qwen": 10
   },
   "log_summary": [
     {
@@ -93,6 +93,18 @@
     },
     {
       "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
@@ -118,7 +130,7 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784567136.6011992,
+      "ts": 1784626992.0152879,
       "tool": null
     }
   ],
@@ -137,9 +149,7 @@
     {
       "text": "đau âm ỉ vùng quanh rốn",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isHistorical"
-      ],
+      "assertions": [],
       "position": [
         120,
         143
@@ -148,9 +158,7 @@
     {
       "text": "đau bụng",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isHistorical"
-      ],
+      "assertions": [],
       "position": [
         207,
         215
@@ -159,9 +167,7 @@
     {
       "text": "đau âm ỉ vùng quanh rốn",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isHistorical"
-      ],
+      "assertions": [],
       "position": [
         376,
         399
@@ -170,20 +176,40 @@
     {
       "text": "buồn nôn",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isHistorical"
-      ],
+      "assertions": [],
       "position": [
         430,
         438
       ]
     },
     {
-      "text": "bình thường",
+      "text": "sốt",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        466,
+        469
+      ]
+    },
+    {
+      "text": "ớn lạnh",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        478,
+        485
+      ]
+    },
+    {
+      "text": "Đại tiện bình thường",
       "type": "KẾT_QUẢ_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
-        501,
+        492,
         512
       ]
     },
@@ -191,8 +217,7 @@
       "text": "đau ngực",
       "type": "TRIỆU_CHỨNG",
       "assertions": [
-        "isNegated",
-        "isHistorical"
+        "isNegated"
       ],
       "position": [
         544,
@@ -203,8 +228,7 @@
       "text": "khó thở",
       "type": "TRIỆU_CHỨNG",
       "assertions": [
-        "isNegated",
-        "isHistorical"
+        "isNegated"
       ],
       "position": [
         565,

@@ -1,16 +1,16 @@
 {
   "file_id": "30",
-  "timestamp": 1784566306.9924045,
-  "elapsed": 49.57,
+  "timestamp": 1784626277.883321,
+  "elapsed": 76.32,
   "model": "bibocat/qwen3-ner-grpo-final",
   "mention_count": 20,
   "stats": {
     "total_mentions": 20,
     "final": 20,
     "validation_errors": 0,
-    "elapsed": 49.57,
+    "elapsed": 76.32,
     "rule": 4,
-    "qwen": 18
+    "qwen": 20
   },
   "log_summary": [
     {
@@ -207,6 +207,12 @@
     },
     {
       "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
       "action": "complete",
       "ts": null,
       "tool": null
@@ -226,7 +232,7 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784566306.9922457,
+      "ts": 1784626277.8831027,
       "tool": null
     }
   ],
@@ -299,21 +305,24 @@
       ]
     },
     {
-      "text": "ảo giác",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "text": "Thuốc giảm đau",
+      "type": "THUỐC",
+      "assertions": [
+        "isHistorical"
+      ],
       "position": [
-        363,
-        370
-      ]
+        293,
+        307
+      ],
+      "candidates": []
     },
     {
       "text": "ảo giác",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        451,
-        458
+        363,
+        370
       ]
     },
     {

@@ -1,16 +1,16 @@
 {
   "file_id": "18",
-  "timestamp": 1784566135.3280866,
-  "elapsed": 42.62,
+  "timestamp": 1784626088.0338204,
+  "elapsed": 49.47,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 9,
+  "mention_count": 12,
   "stats": {
-    "total_mentions": 9,
-    "final": 9,
+    "total_mentions": 12,
+    "final": 12,
     "validation_errors": 0,
-    "elapsed": 42.62,
+    "elapsed": 49.47,
     "rule": 4,
-    "qwen": 9
+    "qwen": 12
   },
   "log_summary": [
     {
@@ -93,9 +93,33 @@
     },
     {
       "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -130,7 +154,7 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784566135.3279986,
+      "ts": 1784626088.0336652,
       "tool": null
     }
   ],
@@ -146,7 +170,7 @@
         108
       ],
       "candidates": [
-        "I80.2"
+        "I82.402"
       ]
     },
     {
@@ -201,6 +225,38 @@
       "position": [
         486,
         527
+      ]
+    },
+    {
+      "text": "tắc mạch phổi",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        555,
+        568
+      ]
+    },
+    {
+      "text": "tắc mạch phổi",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        605,
+        618
+      ]
+    },
+    {
+      "text": "bóc tách động mạch chủ Stanford loại B",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        641,
+        679
+      ],
+      "candidates": [
+        "I71.0"
       ]
     },
     {

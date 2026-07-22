@@ -1,7 +1,7 @@
 {
   "file_id": "76",
-  "timestamp": 1784566993.397511,
-  "elapsed": 77.58,
+  "timestamp": 1784626826.4182432,
+  "elapsed": 65.03,
   "model": "bibocat/qwen3-ner-grpo-final",
   "result": {
     "note_id": "76",
@@ -17,7 +17,7 @@
           62
         ],
         "candidates": [
-          "E14"
+          "E11.9"
         ]
       },
       {
@@ -45,7 +45,7 @@
           110
         ],
         "candidates": [
-          "I25.0"
+          "I25.1"
         ]
       },
       {
@@ -59,8 +59,34 @@
           133
         ],
         "candidates": [
-          "I21.4"
+          "I21.9"
         ]
+      },
+      {
+        "text": "plavix",
+        "type": "THUỐC",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          355,
+          361
+        ],
+        "candidates": [
+          "174742"
+        ]
+      },
+      {
+        "text": "nitrates",
+        "type": "THUỐC",
+        "assertions": [
+          "isHistorical"
+        ],
+        "position": [
+          373,
+          381
+        ],
+        "candidates": []
       },
       {
         "text": "đau ngực",
@@ -80,18 +106,6 @@
         "position": [
           463,
           471
-        ]
-      },
-      {
-        "text": "nitro",
-        "type": "THUỐC",
-        "assertions": [],
-        "position": [
-          631,
-          636
-        ],
-        "candidates": [
-          "202525"
         ]
       },
       {
@@ -260,27 +274,29 @@
     "validation": {
       "is_valid": true,
       "errors": [],
-      "warnings": []
+      "warnings": [
+        "[5] THUỐC has no candidates"
+      ]
     },
     "stats": {
-      "total_mentions": 24,
-      "final": 24,
+      "total_mentions": 25,
+      "final": 25,
       "validation_errors": 0,
-      "elapsed": 77.58,
+      "elapsed": 65.03,
       "rule": 5,
-      "qwen": 25
+      "qwen": 26
     },
     "logs": [
       {
         "agent": "orchestrator",
         "action": "start",
         "text_len": 1255,
-        "ts": 1784566915.8188505
+        "ts": 1784626761.3859794
       },
       {
         "agent": "orchestrator",
         "action": "extraction_start",
-        "ts": 1784566915.81886
+        "ts": 1784626761.3859982
       },
       {
         "agent": "extraction",
@@ -428,6 +444,38 @@
                 "extraction_source": "qwen"
               },
               {
+                "text": "plavix",
+                "position": [
+                  355,
+                  361
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "nitrates",
+                "position": [
+                  373,
+                  381
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
                 "text": "đau ngực",
                 "position": [
                   386,
@@ -454,22 +502,6 @@
                 "type_candidates": [
                   {
                     "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen"
-              },
-              {
-                "text": "nitro",
-                "position": [
-                  631,
-                  636
-                ],
-                "type": "THUỐC",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "THUỐC",
                     "score": 0.85
                   }
                 ],
@@ -775,9 +807,9 @@
         "data": {
           "sources": {
             "rule": 5,
-            "qwen": 25
+            "qwen": 26
           },
-          "total": 30
+          "total": 31
         }
       },
       {
@@ -852,6 +884,38 @@
                 "extraction_source": "qwen"
               },
               {
+                "text": "plavix",
+                "position": [
+                  355,
+                  361
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
+                "text": "nitrates",
+                "position": [
+                  373,
+                  381
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen"
+              },
+              {
                 "text": "đau ngực",
                 "position": [
                   386,
@@ -878,22 +942,6 @@
                 "type_candidates": [
                   {
                     "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen"
-              },
-              {
-                "text": "nitro",
-                "position": [
-                  631,
-                  636
-                ],
-                "type": "THUỐC",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "THUỐC",
                     "score": 0.85
                   }
                 ],
@@ -1274,9 +1322,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E14"
+                "E11.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng lipid máu",
@@ -1309,7 +1357,7 @@
               "candidates": [
                 "E78.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "bệnh động mạch vành",
@@ -1340,9 +1388,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I25.0"
+                "I25.1"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Nhồi máu cơ tim",
@@ -1373,9 +1421,73 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I21.4"
+                "I21.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "plavix",
+              "position": [
+                355,
+                361
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "174742"
+              ],
+              "link_confidence": 0.95
+            },
+            {
+              "text": "nitrates",
+              "position": [
+                373,
+                381
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
             },
             {
               "text": "đau ngực",
@@ -1434,39 +1546,6 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85
-            },
-            {
-              "text": "nitro",
-              "position": [
-                631,
-                636
-              ],
-              "type": "THUỐC",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "THUỐC",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85,
-              "candidates": [
-                "202525"
-              ],
-              "link_confidence": 0.85
             },
             {
               "text": "vã mồ hôi",
@@ -1992,7 +2071,7 @@
         "agent": "extraction",
         "action": "voted",
         "data": {
-          "merged": 24
+          "merged": 25
         }
       },
       {
@@ -2031,9 +2110,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "E14"
+                  "E11.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "tăng lipid máu",
@@ -2066,7 +2145,7 @@
                 "candidates": [
                   "E78.5"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "bệnh động mạch vành",
@@ -2097,9 +2176,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I25.0"
+                  "I25.1"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "Nhồi máu cơ tim",
@@ -2130,9 +2209,73 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I21.4"
+                  "I21.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
+              },
+              {
+                "text": "plavix",
+                "position": [
+                  355,
+                  361
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "174742"
+                ],
+                "link_confidence": 0.95
+              },
+              {
+                "text": "nitrates",
+                "position": [
+                  373,
+                  381
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [],
+                "link_confidence": 0.0
               },
               {
                 "text": "đau ngực",
@@ -2191,39 +2334,6 @@
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85
-              },
-              {
-                "text": "nitro",
-                "position": [
-                  631,
-                  636
-                ],
-                "type": "THUỐC",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "THUỐC",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": false
-                },
-                "assertion_confidence": 0.85,
-                "candidates": [
-                  "202525"
-                ],
-                "link_confidence": 0.85
               },
               {
                 "text": "vã mồ hôi",
@@ -2774,9 +2884,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E14"
+                "E11.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng lipid máu",
@@ -2809,7 +2919,7 @@
               "candidates": [
                 "E78.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "bệnh động mạch vành",
@@ -2840,9 +2950,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I25.0"
+                "I25.1"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Nhồi máu cơ tim",
@@ -2873,9 +2983,73 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I21.4"
+                "I21.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "plavix",
+              "position": [
+                355,
+                361
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "174742"
+              ],
+              "link_confidence": 0.95
+            },
+            {
+              "text": "nitrates",
+              "position": [
+                373,
+                381
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
             },
             {
               "text": "đau ngực",
@@ -2934,39 +3108,6 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85
-            },
-            {
-              "text": "nitro",
-              "position": [
-                631,
-                636
-              ],
-              "type": "THUỐC",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "THUỐC",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85,
-              "candidates": [
-                "202525"
-              ],
-              "link_confidence": 0.85
             },
             {
               "text": "vã mồ hôi",
@@ -3524,9 +3665,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "E14"
+                  "E11.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "tăng lipid máu",
@@ -3559,7 +3700,7 @@
                 "candidates": [
                   "E78.5"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "bệnh động mạch vành",
@@ -3590,9 +3731,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I25.0"
+                  "I25.1"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "Nhồi máu cơ tim",
@@ -3623,9 +3764,73 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I21.4"
+                  "I21.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
+              },
+              {
+                "text": "plavix",
+                "position": [
+                  355,
+                  361
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "174742"
+                ],
+                "link_confidence": 0.95
+              },
+              {
+                "text": "nitrates",
+                "position": [
+                  373,
+                  381
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [],
+                "link_confidence": 0.0
               },
               {
                 "text": "đau ngực",
@@ -3684,39 +3889,6 @@
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85
-              },
-              {
-                "text": "nitro",
-                "position": [
-                  631,
-                  636
-                ],
-                "type": "THUỐC",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "THUỐC",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": false
-                },
-                "assertion_confidence": 0.85,
-                "candidates": [
-                  "202525"
-                ],
-                "link_confidence": 0.85
               },
               {
                 "text": "vã mồ hôi",
@@ -4267,9 +4439,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E14"
+                "E11.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng lipid máu",
@@ -4302,7 +4474,7 @@
               "candidates": [
                 "E78.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "bệnh động mạch vành",
@@ -4333,9 +4505,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I25.0"
+                "I25.1"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Nhồi máu cơ tim",
@@ -4366,9 +4538,73 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I21.4"
+                "I21.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "plavix",
+              "position": [
+                355,
+                361
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "174742"
+              ],
+              "link_confidence": 0.95
+            },
+            {
+              "text": "nitrates",
+              "position": [
+                373,
+                381
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
             },
             {
               "text": "đau ngực",
@@ -4427,39 +4663,6 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85
-            },
-            {
-              "text": "nitro",
-              "position": [
-                631,
-                636
-              ],
-              "type": "THUỐC",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "THUỐC",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85,
-              "candidates": [
-                "202525"
-              ],
-              "link_confidence": 0.85
             },
             {
               "text": "vã mồ hôi",
@@ -4998,19 +5201,19 @@
       {
         "agent": "orchestrator",
         "action": "extraction_complete",
-        "mentions": 24,
-        "ts": 1784566943.4098914
+        "mentions": 25,
+        "ts": 1784626811.7860467
       },
       {
         "agent": "orchestrator",
         "action": "assertion_start",
-        "ts": 1784566943.4099047
+        "ts": 1784626811.7860763
       },
       {
         "agent": "assertion",
         "action": "start",
         "data": {
-          "mentions": 24
+          "mentions": 25
         }
       },
       {
@@ -5096,6 +5299,44 @@
           "tool": "rule_assert",
           "input": {
             "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường\n    - tăng lipid máu\n    -  bệnh động mạch vành\n    -  Nhồi máu cơ tim\n    Tiền sử phẫu thuật / thủ thuật\n    - đã từng âm tính thử nghiệm gắng sức\n    - Thông tim trái cho thấy mạch vành không có tổn thương hẹp đáng kể, chỉ ghi nhận mảng xơ vữa nhẹ.\n    Thuốc dùng trước khi nhập viện\n    - plavix\n    - dùng nitrateskhi  đau ngực\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện:  đột ngột xuất hiện đau ngực sau xương ức\n    Theo lời bệnh nhân kể bệnh nhân đang ngủ đột ngột xuất hiện đau ngữc dữ dội sau xương ức, khiến bệnh tỉnh dậy, đau kiểu bóp nghẹt.  Đã uống 9 nitroglycerin và cải thiện sau khoảng 1,5 giờ đau liên tục. Sau đó đỡ đi ngủ lại xuất hiện cơn đau thứ 2, vã mồ hôi , nhập viện tại phòng cấp cứu.\n   Khám thấy:\n    - Đau ngực dữ dội sau xương ức, đau kiểu bóp nghẹt, lan lên hàm và cánh tay trái, VAS 7/10, đau trong 1.5h liên lục\n    - khó thở\n    - vã mồ hôi\n    - buồn nôn\n    - nôn\n    - tiêu chảy\nXử trí \n- bắt đầu dùng heparin\nđau ngực giảm sau khi dùng nitro và dilaudid 3mg  \n    Kết quả xét nghiệm:\n    - troponin là 0.03\n    - creatinine là  2.0 -> 3.2\n    - k (kali) là 5.4\n    - phosphate là 5.6\n    Kết quả chẩn đoán hình ảnh: điện tâm đồ (ekg) là bình thường\n\n",
+            "start": 355,
+            "end": 361,
+            "mtype": "THUỐC"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường\n    - tăng lipid máu\n    -  bệnh động mạch vành\n    -  Nhồi máu cơ tim\n    Tiền sử phẫu thuật / thủ thuật\n    - đã từng âm tính thử nghiệm gắng sức\n    - Thông tim trái cho thấy mạch vành không có tổn thương hẹp đáng kể, chỉ ghi nhận mảng xơ vữa nhẹ.\n    Thuốc dùng trước khi nhập viện\n    - plavix\n    - dùng nitrateskhi  đau ngực\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện:  đột ngột xuất hiện đau ngực sau xương ức\n    Theo lời bệnh nhân kể bệnh nhân đang ngủ đột ngột xuất hiện đau ngữc dữ dội sau xương ức, khiến bệnh tỉnh dậy, đau kiểu bóp nghẹt.  Đã uống 9 nitroglycerin và cải thiện sau khoảng 1,5 giờ đau liên tục. Sau đó đỡ đi ngủ lại xuất hiện cơn đau thứ 2, vã mồ hôi , nhập viện tại phòng cấp cứu.\n   Khám thấy:\n    - Đau ngực dữ dội sau xương ức, đau kiểu bóp nghẹt, lan lên hàm và cánh tay trái, VAS 7/10, đau trong 1.5h liên lục\n    - khó thở\n    - vã mồ hôi\n    - buồn nôn\n    - nôn\n    - tiêu chảy\nXử trí \n- bắt đầu dùng heparin\nđau ngực giảm sau khi dùng nitro và dilaudid 3mg  \n    Kết quả xét nghiệm:\n    - troponin là 0.03\n    - creatinine là  2.0 -> 3.2\n    - k (kali) là 5.4\n    - phosphate là 5.6\n    Kết quả chẩn đoán hình ảnh: điện tâm đồ (ekg) là bình thường\n\n",
+            "start": 373,
+            "end": 381,
+            "mtype": "THUỐC"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": true
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường\n    - tăng lipid máu\n    -  bệnh động mạch vành\n    -  Nhồi máu cơ tim\n    Tiền sử phẫu thuật / thủ thuật\n    - đã từng âm tính thử nghiệm gắng sức\n    - Thông tim trái cho thấy mạch vành không có tổn thương hẹp đáng kể, chỉ ghi nhận mảng xơ vữa nhẹ.\n    Thuốc dùng trước khi nhập viện\n    - plavix\n    - dùng nitrateskhi  đau ngực\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện:  đột ngột xuất hiện đau ngực sau xương ức\n    Theo lời bệnh nhân kể bệnh nhân đang ngủ đột ngột xuất hiện đau ngữc dữ dội sau xương ức, khiến bệnh tỉnh dậy, đau kiểu bóp nghẹt.  Đã uống 9 nitroglycerin và cải thiện sau khoảng 1,5 giờ đau liên tục. Sau đó đỡ đi ngủ lại xuất hiện cơn đau thứ 2, vã mồ hôi , nhập viện tại phòng cấp cứu.\n   Khám thấy:\n    - Đau ngực dữ dội sau xương ức, đau kiểu bóp nghẹt, lan lên hàm và cánh tay trái, VAS 7/10, đau trong 1.5h liên lục\n    - khó thở\n    - vã mồ hôi\n    - buồn nôn\n    - nôn\n    - tiêu chảy\nXử trí \n- bắt đầu dùng heparin\nđau ngực giảm sau khi dùng nitro và dilaudid 3mg  \n    Kết quả xét nghiệm:\n    - troponin là 0.03\n    - creatinine là  2.0 -> 3.2\n    - k (kali) là 5.4\n    - phosphate là 5.6\n    Kết quả chẩn đoán hình ảnh: điện tâm đồ (ekg) là bình thường\n\n",
             "start": 386,
             "end": 394,
             "mtype": "TRIỆU_CHỨNG"
@@ -5118,25 +5359,6 @@
             "start": 463,
             "end": 471,
             "mtype": "TRIỆU_CHỨNG"
-          },
-          "output": {
-            "isNegated": false,
-            "isFamily": false,
-            "isHistorical": false
-          },
-          "result_type": "dict"
-        }
-      },
-      {
-        "agent": "assertion",
-        "action": "tool_call",
-        "data": {
-          "tool": "rule_assert",
-          "input": {
-            "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường\n    - tăng lipid máu\n    -  bệnh động mạch vành\n    -  Nhồi máu cơ tim\n    Tiền sử phẫu thuật / thủ thuật\n    - đã từng âm tính thử nghiệm gắng sức\n    - Thông tim trái cho thấy mạch vành không có tổn thương hẹp đáng kể, chỉ ghi nhận mảng xơ vữa nhẹ.\n    Thuốc dùng trước khi nhập viện\n    - plavix\n    - dùng nitrateskhi  đau ngực\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện:  đột ngột xuất hiện đau ngực sau xương ức\n    Theo lời bệnh nhân kể bệnh nhân đang ngủ đột ngột xuất hiện đau ngữc dữ dội sau xương ức, khiến bệnh tỉnh dậy, đau kiểu bóp nghẹt.  Đã uống 9 nitroglycerin và cải thiện sau khoảng 1,5 giờ đau liên tục. Sau đó đỡ đi ngủ lại xuất hiện cơn đau thứ 2, vã mồ hôi , nhập viện tại phòng cấp cứu.\n   Khám thấy:\n    - Đau ngực dữ dội sau xương ức, đau kiểu bóp nghẹt, lan lên hàm và cánh tay trái, VAS 7/10, đau trong 1.5h liên lục\n    - khó thở\n    - vã mồ hôi\n    - buồn nôn\n    - nôn\n    - tiêu chảy\nXử trí \n- bắt đầu dùng heparin\nđau ngực giảm sau khi dùng nitro và dilaudid 3mg  \n    Kết quả xét nghiệm:\n    - troponin là 0.03\n    - creatinine là  2.0 -> 3.2\n    - k (kali) là 5.4\n    - phosphate là 5.6\n    Kết quả chẩn đoán hình ảnh: điện tâm đồ (ekg) là bình thường\n\n",
-            "start": 631,
-            "end": 636,
-            "mtype": "THUỐC"
           },
           "output": {
             "isNegated": false,
@@ -5359,25 +5581,25 @@
         "agent": "assertion",
         "action": "complete",
         "data": {
-          "processed": 24,
+          "processed": 25,
           "llm_checked": 0
         }
       },
       {
         "agent": "orchestrator",
         "action": "assertion_complete",
-        "ts": 1784566943.4111133
+        "ts": 1784626811.809427
       },
       {
         "agent": "orchestrator",
         "action": "linking_start",
-        "ts": 1784566943.4111238
+        "ts": 1784626811.8094664
       },
       {
         "agent": "linking",
         "action": "start",
         "data": {
-          "mentions": 24
+          "mentions": 25
         }
       },
       {
@@ -5415,18 +5637,17 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E14"
+                "E11.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường\n    - tăng lipid máu\n    -  bệnh động mạch vành\n    -  Nhồi máu cơ tim\n    Tiền sử phẫu thuật / thủ thuật\n    - đã từng âm tính thử nghiệm gắng sức\n "
           },
           "output": {
             "candidates": [
-              "E14"
+              "E11.9"
             ],
-            "confidence": 0.85,
-            "rationale": "Mention 'Đái tháo đường' không kèm thêm thông tin về loại (type 1, type 2) hoặc biến chứng, nên mã E14 (Đái tháo đường không xác định) là phù hợp nhất."
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -5468,7 +5689,7 @@
               "candidates": [
                 "E78.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường\n    - tăng lipid máu\n    -  bệnh động mạch vành\n    -  Nhồi máu cơ tim\n    Tiền sử phẫu thuật / thủ thuật\n    - đã từng âm tính thử nghiệm gắng sức\n    - Thông tim trái c"
           },
@@ -5476,8 +5697,7 @@
             "candidates": [
               "E78.5"
             ],
-            "confidence": 0.85,
-            "rationale": "Mention 'tăng lipid máu' phù hợp với mã E78.5 (Tăng lipid máu, không xác định), đây là mã chẩn đoán chính xác và phù hợp nhất trong danh sách candidates."
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -5517,18 +5737,17 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I25.0"
+                "I25.1"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường\n    - tăng lipid máu\n    -  bệnh động mạch vành\n    -  Nhồi máu cơ tim\n    Tiền sử phẫu thuật / thủ thuật\n    - đã từng âm tính thử nghiệm gắng sức\n    - Thông tim trái cho thấy mạch vành không có "
           },
           "output": {
             "candidates": [
-              "I25.0"
+              "I25.1"
             ],
-            "confidence": 0.85,
-            "rationale": "Bệnh động mạch vành là mã ICD-10 chính xác nhất cho mention 'bệnh động mạch vành'. Mã I25.0 được sử dụng để chỉ bệnh tim mạch do xơ vữa động mạch vành, phù hợp với ngữ cảnh chẩn đoán."
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -5568,18 +5787,17 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I21.4"
+                "I21.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường\n    - tăng lipid máu\n    -  bệnh động mạch vành\n    -  Nhồi máu cơ tim\n    Tiền sử phẫu thuật / thủ thuật\n    - đã từng âm tính thử nghiệm gắng sức\n    - Thông tim trái cho thấy mạch vành không có tổn thương hẹp đáng kể,"
           },
           "output": {
             "candidates": [
-              "I21.4"
+              "I21.9"
             ],
-            "confidence": 0.85,
-            "rationale": "Mention 'Nhồi máu cơ tim' trực tiếp khớp với mã I21.4: 'Nhồi máu cơ tim dưới nội tâm mạc cấp tính' trong danh sách candidates."
+            "confidence": 0.99
           },
           "result_type": "dict"
         }
@@ -5591,10 +5809,10 @@
           "tool": "link_entity",
           "input": {
             "mention": {
-              "text": "nitro",
+              "text": "plavix",
               "position": [
-                631,
-                636
+                355,
+                361
               ],
               "type": "THUỐC",
               "source": "qwen",
@@ -5615,22 +5833,67 @@
               "assertions": {
                 "isNegated": false,
                 "isFamily": false,
-                "isHistorical": false
+                "isHistorical": true
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "202525"
+                "174742"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.95
             },
-            "context": " ức\n    Theo lời bệnh nhân kể bệnh nhân đang ngủ đột ngột xuất hiện đau ngữc dữ dội sau xương ức, khiến bệnh tỉnh dậy, đau kiểu bóp nghẹt.  Đã uống 9 nitroglycerin và cải thiện sau khoảng 1,5 giờ đau liên tục. Sau đó đỡ đi ngủ lại xuất hiện cơn đau thứ 2, vã mồ hôi , nhập viện tại phòng cấp cứu.\n   Khám "
+            "context": "g sức\n    - Thông tim trái cho thấy mạch vành không có tổn thương hẹp đáng kể, chỉ ghi nhận mảng xơ vữa nhẹ.\n    Thuốc dùng trước khi nhập viện\n    - plavix\n    - dùng nitrateskhi  đau ngực\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện:  đột ngột xuất hiện đau ngực sau xương ức\n    Theo lời bệnh nhân kể "
           },
           "output": {
             "candidates": [
-              "202525"
+              "174742"
             ],
-            "confidence": 0.85,
-            "rationale": "Mention 'nitro' kết hợp với bối cảnh đau ngực dữ dội, có thể là triệu chứng của bệnh tim mạch. Trong các candidates, 'Nitrostat' (202525) là thuốc nitroglycerin, một loại thuốc thường được sử dụng để điều trị cơn đau thắt ngực và các triệu chứng của bệnh tim mạch. Đây là lựa chọn phù hợp nhất với thông tin được cung cấp."
+            "confidence": 0.95
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
+              "text": "nitrates",
+              "position": [
+                373,
+                381
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
+            },
+            "context": "tim trái cho thấy mạch vành không có tổn thương hẹp đáng kể, chỉ ghi nhận mảng xơ vữa nhẹ.\n    Thuốc dùng trước khi nhập viện\n    - plavix\n    - dùng nitrateskhi  đau ngực\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện:  đột ngột xuất hiện đau ngực sau xương ức\n    Theo lời bệnh nhân kể bệnh nhân đang ngủ đ"
+          },
+          "output": {
+            "candidates": [],
+            "confidence": 0.0
           },
           "result_type": "dict"
         }
@@ -5692,6 +5955,57 @@
           "tool": "link_entity",
           "input": {
             "mention": {
+              "text": "nitro",
+              "position": [
+                1041,
+                1046
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "202525"
+              ],
+              "link_confidence": 0.85
+            },
+            "context": " trong 1.5h liên lục\n    - khó thở\n    - vã mồ hôi\n    - buồn nôn\n    - nôn\n    - tiêu chảy\nXử trí \n- bắt đầu dùng heparin\nđau ngực giảm sau khi dùng nitro và dilaudid 3mg  \n    Kết quả xét nghiệm:\n    - troponin là 0.03\n    - creatinine là  2.0 -> 3.2\n    - k (kali) là 5.4\n    - phosphate là 5.6\n    Kết"
+          },
+          "output": {
+            "candidates": [
+              "202525"
+            ],
+            "confidence": 0.85,
+            "rationale": "Mention 'nitro' kết hợp với các triệu chứng như đau ngực, khó thở, buồn nôn, nôn, tiêu chảy, gợi ý sử dụng nitroglycerin (Nitrostat). Mã 202525 là Nitrostat, phù hợp với thông tin trong context."
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "linking",
+        "action": "tool_call",
+        "data": {
+          "tool": "link_entity",
+          "input": {
+            "mention": {
               "text": "dilaudid 3mg",
               "position": [
                 1050,
@@ -5734,7 +6048,7 @@
               "1872269"
             ],
             "confidence": 0.85,
-            "rationale": "Mention 'dilaudid 3mg' chỉ định liều 3mg, tương ứng với mã 1872269 (1 ML hydromorphone hydrochloride 2 MG/ML Prefilled Syringe [Dilaudid]) có chứa thành phần và liều lượng phù hợp."
+            "rationale": "Mention 'dilaudid 3mg' chỉ định liều 3mg, tương ứng với mã 1872269 (1 ML hydromorphone hydrochloride 2 MG/ML Prefilled Syringe [Dilaudid]) có chứa thành phần hoạt chất và liều lượng phù hợp."
           },
           "result_type": "dict"
         }
@@ -5750,18 +6064,18 @@
         "agent": "orchestrator",
         "action": "linking_complete",
         "linked": 8,
-        "ts": 1784566993.0617568
+        "ts": 1784626825.6190755
       },
       {
         "agent": "orchestrator",
         "action": "verification_start",
-        "ts": 1784566993.0617766
+        "ts": 1784626825.619169
       },
       {
         "agent": "verifier",
         "action": "start",
         "data": {
-          "mentions": 24
+          "mentions": 25
         }
       },
       {
@@ -5800,9 +6114,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "E14"
+                  "E11.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "tăng lipid máu",
@@ -5835,7 +6149,7 @@
                 "candidates": [
                   "E78.5"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "bệnh động mạch vành",
@@ -5866,9 +6180,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I25.0"
+                  "I25.1"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "Nhồi máu cơ tim",
@@ -5899,9 +6213,73 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I21.4"
+                  "I21.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
+              },
+              {
+                "text": "plavix",
+                "position": [
+                  355,
+                  361
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "174742"
+                ],
+                "link_confidence": 0.95
+              },
+              {
+                "text": "nitrates",
+                "position": [
+                  373,
+                  381
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [],
+                "link_confidence": 0.0
               },
               {
                 "text": "đau ngực",
@@ -5960,39 +6338,6 @@
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85
-              },
-              {
-                "text": "nitro",
-                "position": [
-                  631,
-                  636
-                ],
-                "type": "THUỐC",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "THUỐC",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": false
-                },
-                "assertion_confidence": 0.85,
-                "candidates": [
-                  "202525"
-                ],
-                "link_confidence": 0.85
               },
               {
                 "text": "vã mồ hôi",
@@ -6543,6 +6888,13 @@
               {
                 "action": "accept",
                 "fixes": [],
+                "warnings": [
+                  "no candidates"
+                ]
+              },
+              {
+                "action": "accept",
+                "fixes": [],
                 "warnings": []
               },
               {
@@ -6666,9 +7018,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "E14"
+                  "E11.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "tăng lipid máu",
@@ -6701,7 +7053,7 @@
                 "candidates": [
                   "E78.5"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "bệnh động mạch vành",
@@ -6732,9 +7084,9 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I25.0"
+                  "I25.1"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
               },
               {
                 "text": "Nhồi máu cơ tim",
@@ -6765,9 +7117,73 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I21.4"
+                  "I21.9"
                 ],
-                "link_confidence": 0.85
+                "link_confidence": 0.99
+              },
+              {
+                "text": "plavix",
+                "position": [
+                  355,
+                  361
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "174742"
+                ],
+                "link_confidence": 0.95
+              },
+              {
+                "text": "nitrates",
+                "position": [
+                  373,
+                  381
+                ],
+                "type": "THUỐC",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "THUỐC",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": true
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [],
+                "link_confidence": 0.0
               },
               {
                 "text": "đau ngực",
@@ -6826,39 +7242,6 @@
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85
-              },
-              {
-                "text": "nitro",
-                "position": [
-                  631,
-                  636
-                ],
-                "type": "THUỐC",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "THUỐC",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": false
-                },
-                "assertion_confidence": 0.85,
-                "candidates": [
-                  "202525"
-                ],
-                "link_confidence": 0.85
               },
               {
                 "text": "vã mồ hôi",
@@ -7386,22 +7769,22 @@
         "agent": "verifier",
         "action": "validated",
         "data": {
-          "kept": 24,
+          "kept": 25,
           "dropped": 0
         }
       },
       {
         "agent": "orchestrator",
         "action": "verification_complete",
-        "kept": 24,
-        "ts": 1784566993.3973904
+        "kept": 25,
+        "ts": 1784626826.4174497
       },
       {
         "agent": "orchestrator",
         "action": "complete",
-        "total_mentions": 24,
-        "elapsed": 77.58,
-        "ts": 1784566993.3974068
+        "total_mentions": 25,
+        "elapsed": 65.03,
+        "ts": 1784626826.4175284
       }
     ]
   },
@@ -7410,12 +7793,12 @@
       "agent": "orchestrator",
       "action": "start",
       "text_len": 1255,
-      "ts": 1784566915.8188505
+      "ts": 1784626761.3859794
     },
     {
       "agent": "orchestrator",
       "action": "extraction_start",
-      "ts": 1784566915.81886
+      "ts": 1784626761.3859982
     },
     {
       "agent": "extraction",
@@ -7563,6 +7946,38 @@
               "extraction_source": "qwen"
             },
             {
+              "text": "plavix",
+              "position": [
+                355,
+                361
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "nitrates",
+              "position": [
+                373,
+                381
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
               "text": "đau ngực",
               "position": [
                 386,
@@ -7589,22 +8004,6 @@
               "type_candidates": [
                 {
                   "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen"
-            },
-            {
-              "text": "nitro",
-              "position": [
-                631,
-                636
-              ],
-              "type": "THUỐC",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "THUỐC",
                   "score": 0.85
                 }
               ],
@@ -7910,9 +8309,9 @@
       "data": {
         "sources": {
           "rule": 5,
-          "qwen": 25
+          "qwen": 26
         },
-        "total": 30
+        "total": 31
       }
     },
     {
@@ -7987,6 +8386,38 @@
               "extraction_source": "qwen"
             },
             {
+              "text": "plavix",
+              "position": [
+                355,
+                361
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
+              "text": "nitrates",
+              "position": [
+                373,
+                381
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen"
+            },
+            {
               "text": "đau ngực",
               "position": [
                 386,
@@ -8013,22 +8444,6 @@
               "type_candidates": [
                 {
                   "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen"
-            },
-            {
-              "text": "nitro",
-              "position": [
-                631,
-                636
-              ],
-              "type": "THUỐC",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "THUỐC",
                   "score": 0.85
                 }
               ],
@@ -8409,9 +8824,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "E14"
+              "E11.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "tăng lipid máu",
@@ -8444,7 +8859,7 @@
             "candidates": [
               "E78.5"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "bệnh động mạch vành",
@@ -8475,9 +8890,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I25.0"
+              "I25.1"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "Nhồi máu cơ tim",
@@ -8508,9 +8923,73 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I21.4"
+              "I21.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
+          },
+          {
+            "text": "plavix",
+            "position": [
+              355,
+              361
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "174742"
+            ],
+            "link_confidence": 0.95
+          },
+          {
+            "text": "nitrates",
+            "position": [
+              373,
+              381
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
           },
           {
             "text": "đau ngực",
@@ -8569,39 +9048,6 @@
               "isHistorical": false
             },
             "assertion_confidence": 0.85
-          },
-          {
-            "text": "nitro",
-            "position": [
-              631,
-              636
-            ],
-            "type": "THUỐC",
-            "source": "qwen",
-            "type_candidates": [
-              {
-                "label": "THUỐC",
-                "score": 0.85
-              }
-            ],
-            "extraction_source": "qwen",
-            "vote_count": 1,
-            "voters": {
-              "qwen": 1
-            },
-            "confidence": 0.5,
-            "needs_review": false,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": false
-            },
-            "assertion_confidence": 0.85,
-            "candidates": [
-              "202525"
-            ],
-            "link_confidence": 0.85
           },
           {
             "text": "vã mồ hôi",
@@ -9127,7 +9573,7 @@
       "agent": "extraction",
       "action": "voted",
       "data": {
-        "merged": 24
+        "merged": 25
       }
     },
     {
@@ -9166,9 +9612,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E14"
+                "E11.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng lipid máu",
@@ -9201,7 +9647,7 @@
               "candidates": [
                 "E78.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "bệnh động mạch vành",
@@ -9232,9 +9678,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I25.0"
+                "I25.1"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Nhồi máu cơ tim",
@@ -9265,9 +9711,73 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I21.4"
+                "I21.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "plavix",
+              "position": [
+                355,
+                361
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "174742"
+              ],
+              "link_confidence": 0.95
+            },
+            {
+              "text": "nitrates",
+              "position": [
+                373,
+                381
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
             },
             {
               "text": "đau ngực",
@@ -9326,39 +9836,6 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85
-            },
-            {
-              "text": "nitro",
-              "position": [
-                631,
-                636
-              ],
-              "type": "THUỐC",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "THUỐC",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85,
-              "candidates": [
-                "202525"
-              ],
-              "link_confidence": 0.85
             },
             {
               "text": "vã mồ hôi",
@@ -9909,9 +10386,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "E14"
+              "E11.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "tăng lipid máu",
@@ -9944,7 +10421,7 @@
             "candidates": [
               "E78.5"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "bệnh động mạch vành",
@@ -9975,9 +10452,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I25.0"
+              "I25.1"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "Nhồi máu cơ tim",
@@ -10008,9 +10485,73 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I21.4"
+              "I21.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
+          },
+          {
+            "text": "plavix",
+            "position": [
+              355,
+              361
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "174742"
+            ],
+            "link_confidence": 0.95
+          },
+          {
+            "text": "nitrates",
+            "position": [
+              373,
+              381
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
           },
           {
             "text": "đau ngực",
@@ -10069,39 +10610,6 @@
               "isHistorical": false
             },
             "assertion_confidence": 0.85
-          },
-          {
-            "text": "nitro",
-            "position": [
-              631,
-              636
-            ],
-            "type": "THUỐC",
-            "source": "qwen",
-            "type_candidates": [
-              {
-                "label": "THUỐC",
-                "score": 0.85
-              }
-            ],
-            "extraction_source": "qwen",
-            "vote_count": 1,
-            "voters": {
-              "qwen": 1
-            },
-            "confidence": 0.5,
-            "needs_review": false,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": false
-            },
-            "assertion_confidence": 0.85,
-            "candidates": [
-              "202525"
-            ],
-            "link_confidence": 0.85
           },
           {
             "text": "vã mồ hôi",
@@ -10659,9 +11167,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E14"
+                "E11.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng lipid máu",
@@ -10694,7 +11202,7 @@
               "candidates": [
                 "E78.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "bệnh động mạch vành",
@@ -10725,9 +11233,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I25.0"
+                "I25.1"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Nhồi máu cơ tim",
@@ -10758,9 +11266,73 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I21.4"
+                "I21.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "plavix",
+              "position": [
+                355,
+                361
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "174742"
+              ],
+              "link_confidence": 0.95
+            },
+            {
+              "text": "nitrates",
+              "position": [
+                373,
+                381
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
             },
             {
               "text": "đau ngực",
@@ -10819,39 +11391,6 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85
-            },
-            {
-              "text": "nitro",
-              "position": [
-                631,
-                636
-              ],
-              "type": "THUỐC",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "THUỐC",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85,
-              "candidates": [
-                "202525"
-              ],
-              "link_confidence": 0.85
             },
             {
               "text": "vã mồ hôi",
@@ -11402,9 +11941,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "E14"
+              "E11.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "tăng lipid máu",
@@ -11437,7 +11976,7 @@
             "candidates": [
               "E78.5"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "bệnh động mạch vành",
@@ -11468,9 +12007,9 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I25.0"
+              "I25.1"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           {
             "text": "Nhồi máu cơ tim",
@@ -11501,9 +12040,73 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I21.4"
+              "I21.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
+          },
+          {
+            "text": "plavix",
+            "position": [
+              355,
+              361
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "174742"
+            ],
+            "link_confidence": 0.95
+          },
+          {
+            "text": "nitrates",
+            "position": [
+              373,
+              381
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
           },
           {
             "text": "đau ngực",
@@ -11562,39 +12165,6 @@
               "isHistorical": false
             },
             "assertion_confidence": 0.85
-          },
-          {
-            "text": "nitro",
-            "position": [
-              631,
-              636
-            ],
-            "type": "THUỐC",
-            "source": "qwen",
-            "type_candidates": [
-              {
-                "label": "THUỐC",
-                "score": 0.85
-              }
-            ],
-            "extraction_source": "qwen",
-            "vote_count": 1,
-            "voters": {
-              "qwen": 1
-            },
-            "confidence": 0.5,
-            "needs_review": false,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": false
-            },
-            "assertion_confidence": 0.85,
-            "candidates": [
-              "202525"
-            ],
-            "link_confidence": 0.85
           },
           {
             "text": "vã mồ hôi",
@@ -12133,19 +12703,19 @@
     {
       "agent": "orchestrator",
       "action": "extraction_complete",
-      "mentions": 24,
-      "ts": 1784566943.4098914
+      "mentions": 25,
+      "ts": 1784626811.7860467
     },
     {
       "agent": "orchestrator",
       "action": "assertion_start",
-      "ts": 1784566943.4099047
+      "ts": 1784626811.7860763
     },
     {
       "agent": "assertion",
       "action": "start",
       "data": {
-        "mentions": 24
+        "mentions": 25
       }
     },
     {
@@ -12231,6 +12801,44 @@
         "tool": "rule_assert",
         "input": {
           "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường\n    - tăng lipid máu\n    -  bệnh động mạch vành\n    -  Nhồi máu cơ tim\n    Tiền sử phẫu thuật / thủ thuật\n    - đã từng âm tính thử nghiệm gắng sức\n    - Thông tim trái cho thấy mạch vành không có tổn thương hẹp đáng kể, chỉ ghi nhận mảng xơ vữa nhẹ.\n    Thuốc dùng trước khi nhập viện\n    - plavix\n    - dùng nitrateskhi  đau ngực\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện:  đột ngột xuất hiện đau ngực sau xương ức\n    Theo lời bệnh nhân kể bệnh nhân đang ngủ đột ngột xuất hiện đau ngữc dữ dội sau xương ức, khiến bệnh tỉnh dậy, đau kiểu bóp nghẹt.  Đã uống 9 nitroglycerin và cải thiện sau khoảng 1,5 giờ đau liên tục. Sau đó đỡ đi ngủ lại xuất hiện cơn đau thứ 2, vã mồ hôi , nhập viện tại phòng cấp cứu.\n   Khám thấy:\n    - Đau ngực dữ dội sau xương ức, đau kiểu bóp nghẹt, lan lên hàm và cánh tay trái, VAS 7/10, đau trong 1.5h liên lục\n    - khó thở\n    - vã mồ hôi\n    - buồn nôn\n    - nôn\n    - tiêu chảy\nXử trí \n- bắt đầu dùng heparin\nđau ngực giảm sau khi dùng nitro và dilaudid 3mg  \n    Kết quả xét nghiệm:\n    - troponin là 0.03\n    - creatinine là  2.0 -> 3.2\n    - k (kali) là 5.4\n    - phosphate là 5.6\n    Kết quả chẩn đoán hình ảnh: điện tâm đồ (ekg) là bình thường\n\n",
+          "start": 355,
+          "end": 361,
+          "mtype": "THUỐC"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường\n    - tăng lipid máu\n    -  bệnh động mạch vành\n    -  Nhồi máu cơ tim\n    Tiền sử phẫu thuật / thủ thuật\n    - đã từng âm tính thử nghiệm gắng sức\n    - Thông tim trái cho thấy mạch vành không có tổn thương hẹp đáng kể, chỉ ghi nhận mảng xơ vữa nhẹ.\n    Thuốc dùng trước khi nhập viện\n    - plavix\n    - dùng nitrateskhi  đau ngực\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện:  đột ngột xuất hiện đau ngực sau xương ức\n    Theo lời bệnh nhân kể bệnh nhân đang ngủ đột ngột xuất hiện đau ngữc dữ dội sau xương ức, khiến bệnh tỉnh dậy, đau kiểu bóp nghẹt.  Đã uống 9 nitroglycerin và cải thiện sau khoảng 1,5 giờ đau liên tục. Sau đó đỡ đi ngủ lại xuất hiện cơn đau thứ 2, vã mồ hôi , nhập viện tại phòng cấp cứu.\n   Khám thấy:\n    - Đau ngực dữ dội sau xương ức, đau kiểu bóp nghẹt, lan lên hàm và cánh tay trái, VAS 7/10, đau trong 1.5h liên lục\n    - khó thở\n    - vã mồ hôi\n    - buồn nôn\n    - nôn\n    - tiêu chảy\nXử trí \n- bắt đầu dùng heparin\nđau ngực giảm sau khi dùng nitro và dilaudid 3mg  \n    Kết quả xét nghiệm:\n    - troponin là 0.03\n    - creatinine là  2.0 -> 3.2\n    - k (kali) là 5.4\n    - phosphate là 5.6\n    Kết quả chẩn đoán hình ảnh: điện tâm đồ (ekg) là bình thường\n\n",
+          "start": 373,
+          "end": 381,
+          "mtype": "THUỐC"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": true
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường\n    - tăng lipid máu\n    -  bệnh động mạch vành\n    -  Nhồi máu cơ tim\n    Tiền sử phẫu thuật / thủ thuật\n    - đã từng âm tính thử nghiệm gắng sức\n    - Thông tim trái cho thấy mạch vành không có tổn thương hẹp đáng kể, chỉ ghi nhận mảng xơ vữa nhẹ.\n    Thuốc dùng trước khi nhập viện\n    - plavix\n    - dùng nitrateskhi  đau ngực\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện:  đột ngột xuất hiện đau ngực sau xương ức\n    Theo lời bệnh nhân kể bệnh nhân đang ngủ đột ngột xuất hiện đau ngữc dữ dội sau xương ức, khiến bệnh tỉnh dậy, đau kiểu bóp nghẹt.  Đã uống 9 nitroglycerin và cải thiện sau khoảng 1,5 giờ đau liên tục. Sau đó đỡ đi ngủ lại xuất hiện cơn đau thứ 2, vã mồ hôi , nhập viện tại phòng cấp cứu.\n   Khám thấy:\n    - Đau ngực dữ dội sau xương ức, đau kiểu bóp nghẹt, lan lên hàm và cánh tay trái, VAS 7/10, đau trong 1.5h liên lục\n    - khó thở\n    - vã mồ hôi\n    - buồn nôn\n    - nôn\n    - tiêu chảy\nXử trí \n- bắt đầu dùng heparin\nđau ngực giảm sau khi dùng nitro và dilaudid 3mg  \n    Kết quả xét nghiệm:\n    - troponin là 0.03\n    - creatinine là  2.0 -> 3.2\n    - k (kali) là 5.4\n    - phosphate là 5.6\n    Kết quả chẩn đoán hình ảnh: điện tâm đồ (ekg) là bình thường\n\n",
           "start": 386,
           "end": 394,
           "mtype": "TRIỆU_CHỨNG"
@@ -12253,25 +12861,6 @@
           "start": 463,
           "end": 471,
           "mtype": "TRIỆU_CHỨNG"
-        },
-        "output": {
-          "isNegated": false,
-          "isFamily": false,
-          "isHistorical": false
-        },
-        "result_type": "dict"
-      }
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "data": {
-        "tool": "rule_assert",
-        "input": {
-          "text": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường\n    - tăng lipid máu\n    -  bệnh động mạch vành\n    -  Nhồi máu cơ tim\n    Tiền sử phẫu thuật / thủ thuật\n    - đã từng âm tính thử nghiệm gắng sức\n    - Thông tim trái cho thấy mạch vành không có tổn thương hẹp đáng kể, chỉ ghi nhận mảng xơ vữa nhẹ.\n    Thuốc dùng trước khi nhập viện\n    - plavix\n    - dùng nitrateskhi  đau ngực\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện:  đột ngột xuất hiện đau ngực sau xương ức\n    Theo lời bệnh nhân kể bệnh nhân đang ngủ đột ngột xuất hiện đau ngữc dữ dội sau xương ức, khiến bệnh tỉnh dậy, đau kiểu bóp nghẹt.  Đã uống 9 nitroglycerin và cải thiện sau khoảng 1,5 giờ đau liên tục. Sau đó đỡ đi ngủ lại xuất hiện cơn đau thứ 2, vã mồ hôi , nhập viện tại phòng cấp cứu.\n   Khám thấy:\n    - Đau ngực dữ dội sau xương ức, đau kiểu bóp nghẹt, lan lên hàm và cánh tay trái, VAS 7/10, đau trong 1.5h liên lục\n    - khó thở\n    - vã mồ hôi\n    - buồn nôn\n    - nôn\n    - tiêu chảy\nXử trí \n- bắt đầu dùng heparin\nđau ngực giảm sau khi dùng nitro và dilaudid 3mg  \n    Kết quả xét nghiệm:\n    - troponin là 0.03\n    - creatinine là  2.0 -> 3.2\n    - k (kali) là 5.4\n    - phosphate là 5.6\n    Kết quả chẩn đoán hình ảnh: điện tâm đồ (ekg) là bình thường\n\n",
-          "start": 631,
-          "end": 636,
-          "mtype": "THUỐC"
         },
         "output": {
           "isNegated": false,
@@ -12494,25 +13083,25 @@
       "agent": "assertion",
       "action": "complete",
       "data": {
-        "processed": 24,
+        "processed": 25,
         "llm_checked": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "assertion_complete",
-      "ts": 1784566943.4111133
+      "ts": 1784626811.809427
     },
     {
       "agent": "orchestrator",
       "action": "linking_start",
-      "ts": 1784566943.4111238
+      "ts": 1784626811.8094664
     },
     {
       "agent": "linking",
       "action": "start",
       "data": {
-        "mentions": 24
+        "mentions": 25
       }
     },
     {
@@ -12550,18 +13139,17 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "E14"
+              "E11.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường\n    - tăng lipid máu\n    -  bệnh động mạch vành\n    -  Nhồi máu cơ tim\n    Tiền sử phẫu thuật / thủ thuật\n    - đã từng âm tính thử nghiệm gắng sức\n "
         },
         "output": {
           "candidates": [
-            "E14"
+            "E11.9"
           ],
-          "confidence": 0.85,
-          "rationale": "Mention 'Đái tháo đường' không kèm thêm thông tin về loại (type 1, type 2) hoặc biến chứng, nên mã E14 (Đái tháo đường không xác định) là phù hợp nhất."
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -12603,7 +13191,7 @@
             "candidates": [
               "E78.5"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường\n    - tăng lipid máu\n    -  bệnh động mạch vành\n    -  Nhồi máu cơ tim\n    Tiền sử phẫu thuật / thủ thuật\n    - đã từng âm tính thử nghiệm gắng sức\n    - Thông tim trái c"
         },
@@ -12611,8 +13199,7 @@
           "candidates": [
             "E78.5"
           ],
-          "confidence": 0.85,
-          "rationale": "Mention 'tăng lipid máu' phù hợp với mã E78.5 (Tăng lipid máu, không xác định), đây là mã chẩn đoán chính xác và phù hợp nhất trong danh sách candidates."
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -12652,18 +13239,17 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I25.0"
+              "I25.1"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường\n    - tăng lipid máu\n    -  bệnh động mạch vành\n    -  Nhồi máu cơ tim\n    Tiền sử phẫu thuật / thủ thuật\n    - đã từng âm tính thử nghiệm gắng sức\n    - Thông tim trái cho thấy mạch vành không có "
         },
         "output": {
           "candidates": [
-            "I25.0"
+            "I25.1"
           ],
-          "confidence": 0.85,
-          "rationale": "Bệnh động mạch vành là mã ICD-10 chính xác nhất cho mention 'bệnh động mạch vành'. Mã I25.0 được sử dụng để chỉ bệnh tim mạch do xơ vữa động mạch vành, phù hợp với ngữ cảnh chẩn đoán."
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -12703,18 +13289,17 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I21.4"
+              "I21.9"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.99
           },
           "context": "1.  Tiền sử bệnh\n    Các bệnh lý mãn tính\n    - Đái tháo đường\n    - tăng lipid máu\n    -  bệnh động mạch vành\n    -  Nhồi máu cơ tim\n    Tiền sử phẫu thuật / thủ thuật\n    - đã từng âm tính thử nghiệm gắng sức\n    - Thông tim trái cho thấy mạch vành không có tổn thương hẹp đáng kể,"
         },
         "output": {
           "candidates": [
-            "I21.4"
+            "I21.9"
           ],
-          "confidence": 0.85,
-          "rationale": "Mention 'Nhồi máu cơ tim' trực tiếp khớp với mã I21.4: 'Nhồi máu cơ tim dưới nội tâm mạc cấp tính' trong danh sách candidates."
+          "confidence": 0.99
         },
         "result_type": "dict"
       }
@@ -12726,10 +13311,10 @@
         "tool": "link_entity",
         "input": {
           "mention": {
-            "text": "nitro",
+            "text": "plavix",
             "position": [
-              631,
-              636
+              355,
+              361
             ],
             "type": "THUỐC",
             "source": "qwen",
@@ -12750,22 +13335,67 @@
             "assertions": {
               "isNegated": false,
               "isFamily": false,
-              "isHistorical": false
+              "isHistorical": true
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "202525"
+              "174742"
             ],
-            "link_confidence": 0.85
+            "link_confidence": 0.95
           },
-          "context": " ức\n    Theo lời bệnh nhân kể bệnh nhân đang ngủ đột ngột xuất hiện đau ngữc dữ dội sau xương ức, khiến bệnh tỉnh dậy, đau kiểu bóp nghẹt.  Đã uống 9 nitroglycerin và cải thiện sau khoảng 1,5 giờ đau liên tục. Sau đó đỡ đi ngủ lại xuất hiện cơn đau thứ 2, vã mồ hôi , nhập viện tại phòng cấp cứu.\n   Khám "
+          "context": "g sức\n    - Thông tim trái cho thấy mạch vành không có tổn thương hẹp đáng kể, chỉ ghi nhận mảng xơ vữa nhẹ.\n    Thuốc dùng trước khi nhập viện\n    - plavix\n    - dùng nitrateskhi  đau ngực\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện:  đột ngột xuất hiện đau ngực sau xương ức\n    Theo lời bệnh nhân kể "
         },
         "output": {
           "candidates": [
-            "202525"
+            "174742"
           ],
-          "confidence": 0.85,
-          "rationale": "Mention 'nitro' kết hợp với bối cảnh đau ngực dữ dội, có thể là triệu chứng của bệnh tim mạch. Trong các candidates, 'Nitrostat' (202525) là thuốc nitroglycerin, một loại thuốc thường được sử dụng để điều trị cơn đau thắt ngực và các triệu chứng của bệnh tim mạch. Đây là lựa chọn phù hợp nhất với thông tin được cung cấp."
+          "confidence": 0.95
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
+            "text": "nitrates",
+            "position": [
+              373,
+              381
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": true
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [],
+            "link_confidence": 0.0
+          },
+          "context": "tim trái cho thấy mạch vành không có tổn thương hẹp đáng kể, chỉ ghi nhận mảng xơ vữa nhẹ.\n    Thuốc dùng trước khi nhập viện\n    - plavix\n    - dùng nitrateskhi  đau ngực\n\n2.  Tiền sử bệnh hiện tại\n    Lý do nhập viện:  đột ngột xuất hiện đau ngực sau xương ức\n    Theo lời bệnh nhân kể bệnh nhân đang ngủ đ"
+        },
+        "output": {
+          "candidates": [],
+          "confidence": 0.0
         },
         "result_type": "dict"
       }
@@ -12827,6 +13457,57 @@
         "tool": "link_entity",
         "input": {
           "mention": {
+            "text": "nitro",
+            "position": [
+              1041,
+              1046
+            ],
+            "type": "THUỐC",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "THUỐC",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "202525"
+            ],
+            "link_confidence": 0.85
+          },
+          "context": " trong 1.5h liên lục\n    - khó thở\n    - vã mồ hôi\n    - buồn nôn\n    - nôn\n    - tiêu chảy\nXử trí \n- bắt đầu dùng heparin\nđau ngực giảm sau khi dùng nitro và dilaudid 3mg  \n    Kết quả xét nghiệm:\n    - troponin là 0.03\n    - creatinine là  2.0 -> 3.2\n    - k (kali) là 5.4\n    - phosphate là 5.6\n    Kết"
+        },
+        "output": {
+          "candidates": [
+            "202525"
+          ],
+          "confidence": 0.85,
+          "rationale": "Mention 'nitro' kết hợp với các triệu chứng như đau ngực, khó thở, buồn nôn, nôn, tiêu chảy, gợi ý sử dụng nitroglycerin (Nitrostat). Mã 202525 là Nitrostat, phù hợp với thông tin trong context."
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "data": {
+        "tool": "link_entity",
+        "input": {
+          "mention": {
             "text": "dilaudid 3mg",
             "position": [
               1050,
@@ -12869,7 +13550,7 @@
             "1872269"
           ],
           "confidence": 0.85,
-          "rationale": "Mention 'dilaudid 3mg' chỉ định liều 3mg, tương ứng với mã 1872269 (1 ML hydromorphone hydrochloride 2 MG/ML Prefilled Syringe [Dilaudid]) có chứa thành phần và liều lượng phù hợp."
+          "rationale": "Mention 'dilaudid 3mg' chỉ định liều 3mg, tương ứng với mã 1872269 (1 ML hydromorphone hydrochloride 2 MG/ML Prefilled Syringe [Dilaudid]) có chứa thành phần hoạt chất và liều lượng phù hợp."
         },
         "result_type": "dict"
       }
@@ -12885,18 +13566,18 @@
       "agent": "orchestrator",
       "action": "linking_complete",
       "linked": 8,
-      "ts": 1784566993.0617568
+      "ts": 1784626825.6190755
     },
     {
       "agent": "orchestrator",
       "action": "verification_start",
-      "ts": 1784566993.0617766
+      "ts": 1784626825.619169
     },
     {
       "agent": "verifier",
       "action": "start",
       "data": {
-        "mentions": 24
+        "mentions": 25
       }
     },
     {
@@ -12935,9 +13616,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E14"
+                "E11.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng lipid máu",
@@ -12970,7 +13651,7 @@
               "candidates": [
                 "E78.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "bệnh động mạch vành",
@@ -13001,9 +13682,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I25.0"
+                "I25.1"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Nhồi máu cơ tim",
@@ -13034,9 +13715,73 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I21.4"
+                "I21.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "plavix",
+              "position": [
+                355,
+                361
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "174742"
+              ],
+              "link_confidence": 0.95
+            },
+            {
+              "text": "nitrates",
+              "position": [
+                373,
+                381
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
             },
             {
               "text": "đau ngực",
@@ -13095,39 +13840,6 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85
-            },
-            {
-              "text": "nitro",
-              "position": [
-                631,
-                636
-              ],
-              "type": "THUỐC",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "THUỐC",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85,
-              "candidates": [
-                "202525"
-              ],
-              "link_confidence": 0.85
             },
             {
               "text": "vã mồ hôi",
@@ -13678,6 +14390,13 @@
             {
               "action": "accept",
               "fixes": [],
+              "warnings": [
+                "no candidates"
+              ]
+            },
+            {
+              "action": "accept",
+              "fixes": [],
               "warnings": []
             },
             {
@@ -13801,9 +14520,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "E14"
+                "E11.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "tăng lipid máu",
@@ -13836,7 +14555,7 @@
               "candidates": [
                 "E78.5"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "bệnh động mạch vành",
@@ -13867,9 +14586,9 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I25.0"
+                "I25.1"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
             },
             {
               "text": "Nhồi máu cơ tim",
@@ -13900,9 +14619,73 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I21.4"
+                "I21.9"
               ],
-              "link_confidence": 0.85
+              "link_confidence": 0.99
+            },
+            {
+              "text": "plavix",
+              "position": [
+                355,
+                361
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "174742"
+              ],
+              "link_confidence": 0.95
+            },
+            {
+              "text": "nitrates",
+              "position": [
+                373,
+                381
+              ],
+              "type": "THUỐC",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "THUỐC",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": true
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [],
+              "link_confidence": 0.0
             },
             {
               "text": "đau ngực",
@@ -13961,39 +14744,6 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85
-            },
-            {
-              "text": "nitro",
-              "position": [
-                631,
-                636
-              ],
-              "type": "THUỐC",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "THUỐC",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85,
-              "candidates": [
-                "202525"
-              ],
-              "link_confidence": 0.85
             },
             {
               "text": "vã mồ hôi",
@@ -14521,22 +15271,22 @@
       "agent": "verifier",
       "action": "validated",
       "data": {
-        "kept": 24,
+        "kept": 25,
         "dropped": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "verification_complete",
-      "kept": 24,
-      "ts": 1784566993.3973904
+      "kept": 25,
+      "ts": 1784626826.4174497
     },
     {
       "agent": "orchestrator",
       "action": "complete",
-      "total_mentions": 24,
-      "elapsed": 77.58,
-      "ts": 1784566993.3974068
+      "total_mentions": 25,
+      "elapsed": 65.03,
+      "ts": 1784626826.4175284
     }
   ]
 }

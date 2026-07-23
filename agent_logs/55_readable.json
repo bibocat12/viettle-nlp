@@ -1,16 +1,16 @@
 {
   "file_id": "55",
-  "timestamp": 1784626527.0716646,
-  "elapsed": 6.74,
+  "timestamp": 1784708845.3146207,
+  "elapsed": 28.37,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 4,
+  "mention_count": 18,
   "stats": {
-    "total_mentions": 4,
-    "final": 4,
+    "total_mentions": 18,
+    "final": 18,
     "validation_errors": 0,
-    "elapsed": 6.74,
-    "rule": 0,
-    "qwen": 4
+    "elapsed": 28.37,
+    "rule": 4,
+    "qwen": 14
   },
   "log_summary": [
     {
@@ -75,9 +75,63 @@
     },
     {
       "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -100,45 +154,185 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784626527.071518,
+      "ts": 1784708845.3144,
       "tool": null
     }
   ],
   "mentions": [
     {
-      "text": "sốt",
+      "text": "hồi hợp",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        42,
-        45
+        197,
+        204
       ]
     },
     {
-      "text": "đau quanh vết mổ",
+      "text": "rợn người",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        47,
-        63
+        215,
+        224
       ]
     },
     {
-      "text": "sốt",
-      "type": "TRIỆU_CHỨNG",
+      "text": "bình thường",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
-        87,
-        90
+        275,
+        286
       ]
     },
     {
-      "text": "đau quanh vết mổ",
+      "text": "rợn người",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        93,
-        109
+        436,
+        445
+      ]
+    },
+    {
+      "text": "hồi hộp",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        447,
+        454
+      ]
+    },
+    {
+      "text": "tim đập rất mạnh",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        470,
+        486
+      ]
+    },
+    {
+      "text": "bình thường",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        543,
+        554
+      ]
+    },
+    {
+      "text": "tăng HA",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        692,
+        699
+      ]
+    },
+    {
+      "text": "huyết áp",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        806,
+        814
+      ]
+    },
+    {
+      "text": "bình thường",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        837,
+        848
+      ]
+    },
+    {
+      "text": "tăng huyết áp",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        956,
+        969
+      ],
+      "candidates": [
+        "I10"
+      ]
+    },
+    {
+      "text": "u ác của tuyến tiền liệt",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        976,
+        1000
+      ],
+      "candidates": [
+        "C61"
+      ]
+    },
+    {
+      "text": "Phẫu thuật cắt bỏ u dây thần kinh số VIII",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1072,
+        1113
+      ]
+    },
+    {
+      "text": "Đặt shunt động tĩnh mạch (AVF)",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1121,
+        1151
+      ]
+    },
+    {
+      "text": "Sinh thiết tuyến tiền liệt",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1179,
+        1205
+      ]
+    },
+    {
+      "text": "mệt mỏi",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1249,
+        1256
+      ]
+    },
+    {
+      "text": "mất trí nhớ chi tiết",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1258,
+        1278
+      ]
+    },
+    {
+      "text": "bình thường",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1437,
+        1448
       ]
     }
   ]

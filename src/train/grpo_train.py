@@ -16,7 +16,7 @@ Usage:
         --epochs 2
 """
 
-import argparse, json, logging, os, re, sys, warnings
+import argparse, inspect, json, logging, os, re, sys, warnings
 from pathlib import Path
 
 import torch
@@ -203,7 +203,7 @@ def compute_reward(completion: str, ground_truth: list, reference_text: str = ""
 
 # ── GRPO trainer wrapper ─────────────────────────────────────────────────
 
-def make_reward_fn(entity_map: dict):
+def make_reward_fn(entity_map: dict, reward_version: str = "v2"):
     """Return a reward function compatible with GRPOTrainer.
 
     GRPOTrainer calls reward_func(completions, **kwargs) where each completion
@@ -213,6 +213,21 @@ def make_reward_fn(entity_map: dict):
     **kwargs contains dataset columns ('idx', 'gt_entities', etc).
     """
     def reward_fn(completions, **kwargs):
+        if reward_version == "v2":
+            project_root = Path(__file__).resolve().parents[2]
+            if str(project_root) not in sys.path:
+                sys.path.insert(0, str(project_root))
+            from scripts.reward_v2 import parse_completion, score_entities
+
+            scores = []
+            indices = kwargs.get("idx", None)
+            for i, completion in enumerate(completions):
+                idx = indices[i] if indices else i
+                scores.append(score_entities(
+                    parse_completion(completion), entity_map.get(idx, [])
+                )["score"])
+            return scores
+
         scores = []
         indices = kwargs.get("idx", None)
         for i, completion in enumerate(completions):
@@ -244,27 +259,30 @@ def format_prompt(example, tokenizer):
 
 def main():
     parser = argparse.ArgumentParser(description="Unsloth GRPO Training")
-    parser.add_argument("--model", default="PeterPaker123/Qwen2.5-7B-Vietnamese-Medical-NER-GRPO")
+    parser.add_argument("--model", default="bibocat/qwen3-ner-grpo-final")
     parser.add_argument("--local-model-path", default=None)
-    parser.add_argument("--dataset", default="data_train/grpo_combined.jsonl")
+    parser.add_argument("--dataset", default="data_train/grpo_v2/full_train.jsonl")
     parser.add_argument("--output", default="models/qwen-ner-grpo-v1")
     parser.add_argument("--max_samples", type=int, default=None)
     parser.add_argument("--epochs", type=int, default=2)
     parser.add_argument("--lora_r", type=int, default=16)
     parser.add_argument("--lora-path", default=None)
-    parser.add_argument("--max_seq_length", type=int, default=4096)
+    parser.add_argument("--max_seq_length", type=int, default=2048,
+                        help="Prompt+completion context. 2048 is sufficient for grpo_v2 and is faster than 4096.")
     parser.add_argument("--batch_size", type=int, default=4)
     parser.add_argument("--grad_accum", type=int, default=4)
     parser.add_argument("--learning_rate", type=float, default=5e-5)
     parser.add_argument("--logging_steps", type=int, default=10)
     parser.add_argument("--num_generations", type=int, default=4,
                         help="Completions per prompt (default=4). Lower=faster but less stable.")
-    parser.add_argument("--max_new_tokens", type=int, default=128,
-                        help="Max new tokens per generation (default=128).")
+    parser.add_argument("--max_new_tokens", type=int, default=512,
+                        help="Max new tokens per generation (default=512).")
+    parser.add_argument("--reward-version", choices=["v1", "v2"], default="v2",
+                        help="v2 uses span-aware alignment and supervision masks.")
     parser.add_argument("--resume-from-checkpoint", type=str, default=None,
                         help="Path to a checkpoint directory to resume from.")
-    parser.add_argument("--save-steps", type=int, default=100,
-                        help="Save checkpoint every N steps (default=100, frequent for GRPO).")
+    parser.add_argument("--save-steps", type=int, default=500,
+                        help="Save checkpoint every N steps (default=500; lower values add I/O overhead).")
     parser.add_argument("--save-total-limit", type=int, default=3,
                         help="Keep only the N most recent checkpoints.")
     parser.add_argument("--sft-beta", type=float, default=0.0,
@@ -366,16 +384,28 @@ def main():
         dataloader_num_workers=2,
         dataloader_pin_memory=True,
         dataloader_prefetch_factor=4,
+        # Older TRL versions ignored the CLI max_new_tokens value. These
+        # bounds keep rollouts short and prevent runaway JSON generations.
+        max_prompt_length=min(args.max_seq_length, 1024),
+        max_completion_length=args.max_new_tokens,
     )
     if args.sft_beta > 0:
         grpo_kwargs["sft_beta"] = args.sft_beta
+
+    # Unsloth supports multiple TRL releases. Filter optional fields so the
+    # same trainer remains runnable across those releases.
+    supported_config = set(inspect.signature(GRPOConfig).parameters)
+    dropped_config = sorted(set(grpo_kwargs) - supported_config)
+    grpo_kwargs = {key: value for key, value in grpo_kwargs.items() if key in supported_config}
+    if dropped_config:
+        print(f"INFO: TRL ignored unsupported config fields: {', '.join(dropped_config)}")
 
     try:
         trainer = GRPOTrainer(
             model=model,
             processing_class=tokenizer,
             args=GRPOConfig(**grpo_kwargs),
-            reward_funcs=make_reward_fn(entity_map),
+            reward_funcs=make_reward_fn(entity_map, args.reward_version),
             train_dataset=dataset,
         )
     except TypeError as e:
@@ -385,7 +415,7 @@ def main():
             trainer = GRPOTrainer(
                 model=model, processing_class=tokenizer,
                 args=GRPOConfig(**grpo_kwargs),
-                reward_funcs=make_reward_fn(entity_map),
+                reward_funcs=make_reward_fn(entity_map, args.reward_version),
                 train_dataset=dataset,
             )
         else:

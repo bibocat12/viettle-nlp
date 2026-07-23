@@ -1,16 +1,16 @@
 {
   "file_id": "23",
-  "timestamp": 1784626219.7220411,
-  "elapsed": 99.88,
+  "timestamp": 1784708256.4871619,
+  "elapsed": 35.41,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 36,
+  "mention_count": 25,
   "stats": {
-    "total_mentions": 36,
-    "final": 36,
+    "total_mentions": 25,
+    "final": 25,
     "validation_errors": 0,
-    "elapsed": 99.88,
-    "rule": 5,
-    "qwen": 34
+    "elapsed": 35.41,
+    "rule": 4,
+    "qwen": 22
   },
   "log_summary": [
     {
@@ -189,69 +189,9 @@
     },
     {
       "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
-    },
-    {
-      "agent": "linking",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "link_entity"
-    },
-    {
-      "agent": "linking",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "link_entity"
-    },
-    {
-      "agent": "linking",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "link_entity"
-    },
-    {
-      "agent": "linking",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "link_entity"
-    },
-    {
-      "agent": "linking",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -298,159 +238,82 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784626219.7217717,
+      "ts": 1784708256.4870207,
       "tool": null
     }
   ],
   "mentions": [
     {
-      "text": "Bệnh tim mạch do xơ vữa động mạch",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [],
-      "position": [
-        21,
-        54
-      ],
-      "candidates": [
-        "I25.1"
-      ]
-    },
-    {
-      "text": "ăng huyết áp",
+      "text": "Mất ngủ",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isHistorical"
+      ],
       "position": [
-        56,
-        68
+        303,
+        310
       ]
     },
     {
-      "text": "Rối loạn lipid máu",
+      "text": "rối loạn lo âu",
       "type": "CHẨN_ĐOÁN",
-      "assertions": [],
+      "assertions": [
+        "isHistorical"
+      ],
       "position": [
-        69,
-        87
+        438,
+        452
       ],
       "candidates": [
-        "E78.5"
+        "F41.9"
       ]
     },
     {
-      "text": "Đái tháo đường",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [],
-      "position": [
-        89,
-        103
-      ],
-      "candidates": [
-        "E11.9"
-      ]
-    },
-    {
-      "text": "rối loạn ý thức",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [],
-      "position": [
-        136,
-        151
-      ],
-      "candidates": [
-        "R41.82"
-      ]
-    },
-    {
-      "text": "co giật",
+      "text": "trầm cảm",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isHistorical"
+      ],
       "position": [
-        177,
-        184
+        453,
+        461
       ]
     },
     {
-      "text": "xuất huyết dưới nhện",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [],
+      "text": "stress",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isHistorical"
+      ],
       "position": [
-        253,
-        273
+        463,
+        469
+      ]
+    },
+    {
+      "text": "phù hợp",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated",
+        "isFamily"
+      ],
+      "position": [
+        761,
+        768
+      ]
+    },
+    {
+      "text": "tăng nhãn áp",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        848,
+        860
       ],
       "candidates": [
-        "I60.9"
-      ]
-    },
-    {
-      "text": "Chụp cắt lớp vi tính sọ não",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        275,
-        302
-      ]
-    },
-    {
-      "text": "xuất huyết dưới nhện",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [],
-      "position": [
-        317,
-        337
-      ],
-      "candidates": [
-        "I60.9"
-      ]
-    },
-    {
-      "text": "bầm dập nhu mô vùng trán phải",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        354,
-        383
-      ]
-    },
-    {
-      "text": "trán - thái dương phải",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        387,
-        409
-      ]
-    },
-    {
-      "text": "nang màng nhện",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [],
-      "position": [
-        484,
-        498
-      ],
-      "candidates": [
-        "G93"
-      ]
-    },
-    {
-      "text": "tụ dịch/tụ máu dưới màng cứng mạn tính",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [],
-      "position": [
-        504,
-        542
-      ],
-      "candidates": [
-        "G93.1"
-      ]
-    },
-    {
-      "text": "CT",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        558,
-        560
+        "H40.9"
       ]
     },
     {
@@ -458,205 +321,185 @@
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        711,
-        718
+        1047,
+        1054
       ]
     },
     {
-      "text": "Chụp kiểm tra",
-      "type": "TÊN_XÉT_NGHIỆM",
+      "text": "mờ mắt",
+      "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        729,
-        742
+        1072,
+        1078
       ]
     },
     {
-      "text": "chụp CT",
-      "type": "TÊN_XÉT_NGHIỆM",
+      "text": "não úng tuỷ",
+      "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        862,
-        869
+        1190,
+        1201
+      ],
+      "candidates": [
+        "G91"
+      ]
+    },
+    {
+      "text": "não úng thủy",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        1312,
+        1324
+      ],
+      "candidates": [
+        "G91.9"
       ]
     },
     {
       "text": "đau đầu",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isHistorical"
+      ],
       "position": [
-        1001,
-        1008
+        1344,
+        1351
       ]
     },
     {
-      "text": "tê bì nửa mặt phải",
+      "text": "chứng đau đầu",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        1056,
-        1074
+        1447,
+        1460
       ]
     },
     {
-      "text": "bình thường",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1195,
-        1206
-      ]
-    },
-    {
-      "text": "mất định hướng",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        1376,
-        1390
-      ]
-    },
-    {
-      "text": "đi lại không vững",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        1392,
-        1409
-      ]
-    },
-    {
-      "text": "ngất",
+      "text": "phù gai thị",
       "type": "TRIỆU_CHỨNG",
       "assertions": [
         "isNegated"
       ],
       "position": [
-        1421,
-        1425
+        1536,
+        1547
       ]
     },
     {
-      "text": "Tê bì vùng trán phải, da đầu phải và nửa mặt phải",
+      "text": "mờ mắt",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        2077,
-        2126
+        1581,
+        1587
       ]
     },
     {
-      "text": "rối loạn ý thức thoáng qua",
+      "text": "đau đầu",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1705,
+        1712
+      ]
+    },
+    {
+      "text": "đau đầu",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1755,
+        1762
+      ]
+    },
+    {
+      "text": "đau đầu",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1838,
+        1845
+      ]
+    },
+    {
+      "text": "nhìn mờ",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1887,
+        1894
+      ]
+    },
+    {
+      "text": "đau đầu",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1958,
+        1965
+      ]
+    },
+    {
+      "text": "phù gai thị",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        2126,
+        2137
+      ]
+    },
+    {
+      "text": "Phù gai thị",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        2216,
+        2227
+      ]
+    },
+    {
+      "text": "Tăng nhãn áp",
       "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        2132,
-        2158
+        2331,
+        2343
       ],
       "candidates": [
-        "R40.4"
+        "H40.9"
       ]
     },
     {
-      "text": "Mất định hướng",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        2159,
-        2173
-      ]
-    },
-    {
-      "text": "Mất thăng bằng",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        2175,
-        2189
-      ]
-    },
-    {
-      "text": "Gần ngất",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        2190,
-        2198
-      ]
-    },
-    {
-      "text": "mất định hướng",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        2360,
-        2374
-      ]
-    },
-    {
-      "text": "đi lại không vững",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        2378,
-        2395
-      ]
-    },
-    {
-      "text": "kích thích nhẹ",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        2442,
-        2456
-      ]
-    },
-    {
-      "text": "ngửa đầu ra sau",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        2458,
-        2473
-      ]
-    },
-    {
-      "text": "nhắm mắt",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        2477,
-        2485
-      ]
-    },
-    {
-      "text": "CT sọ não",
+      "text": "chụp cắt lớp vi tính",
       "type": "TÊN_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
-        2581,
-        2590
+        2351,
+        2371
       ]
     },
     {
-      "text": "xuất huyết dưới nhện vùng trán phải",
-      "type": "CHẨN_ĐOÁN",
+      "text": "ct",
+      "type": "TÊN_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
-        2609,
-        2644
-      ],
-      "candidates": [
-        "I60.9"
+        2373,
+        2375
       ]
     },
     {
-      "text": "Bầm dập nhu mô vùng trán phải",
+      "text": "Phù gai thị",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        2645,
-        2674
+        2422,
+        2433
       ]
     }
   ]

@@ -1,16 +1,16 @@
 {
   "file_id": "32",
-  "timestamp": 1784626274.1997173,
-  "elapsed": 54.45,
+  "timestamp": 1784708521.0920563,
+  "elapsed": 119.98,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 39,
+  "mention_count": 36,
   "stats": {
-    "total_mentions": 39,
-    "final": 39,
+    "total_mentions": 36,
+    "final": 36,
     "validation_errors": 0,
-    "elapsed": 54.45,
-    "rule": 5,
-    "qwen": 37
+    "elapsed": 119.98,
+    "rule": 7,
+    "qwen": 31
   },
   "log_summary": [
     {
@@ -243,27 +243,21 @@
     },
     {
       "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -340,27 +334,78 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784626274.1994896,
+      "ts": 1784708521.091809,
       "tool": null
     }
   ],
   "mentions": [
     {
-      "text": "ho",
-      "type": "TRIỆU_CHỨNG",
+      "text": "Rối loạn chuyển hóa tinh bột (amyloidosis)",
+      "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        43,
-        45
+        29,
+        71
+      ],
+      "candidates": [
+        "E88.9"
+      ]
+    },
+    {
+      "text": "protein",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        381,
+        388
+      ]
+    },
+    {
+      "text": "protein",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        442,
+        449
+      ]
+    },
+    {
+      "text": "protein",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        521,
+        528
+      ]
+    },
+    {
+      "text": "protein",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        660,
+        667
       ]
     },
     {
       "text": "bạch cầu",
-      "type": "TÊN_XÉT_NGHIỆM",
+      "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        51,
-        59
+        770,
+        778
+      ]
+    },
+    {
+      "text": "gleevec",
+      "type": "THUỐC",
+      "assertions": [],
+      "position": [
+        807,
+        814
+      ],
+      "candidates": [
+        "282386"
       ]
     },
     {
@@ -368,11 +413,20 @@
       "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        80,
-        93
+        821,
+        834
       ],
       "candidates": [
         "I10"
+      ]
+    },
+    {
+      "text": "tăng lipid máu",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        841,
+        855
       ]
     },
     {
@@ -380,32 +434,32 @@
       "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        96,
-        116
+        878,
+        898
       ],
       "candidates": [
         "E11.9"
       ]
     },
     {
-      "text": "ho",
+      "text": "hẹp ống sống",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        119,
-        121
+        905,
+        917
       ]
     },
     {
-      "text": "Rung nhĩ kèm đáp ứng thất nhanh",
+      "text": "Giả gout",
       "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        122,
-        153
+        924,
+        932
       ],
       "candidates": [
-        "I48.91"
+        "M11.2"
       ]
     },
     {
@@ -413,331 +467,243 @@
       "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        156,
-        169
+        939,
+        952
       ],
       "candidates": [
         "N18.9"
       ]
     },
     {
-      "text": "Khó thở",
+      "text": "tăng sản tuyến tiền liệt",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        222,
-        229
+        987,
+        1011
       ]
     },
     {
-      "text": "nghẹt ngực",
+      "text": "ngã",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        343,
-        353
+        1028,
+        1031
       ]
     },
     {
-      "text": "sốt",
+      "text": "Ngã",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        358,
-        361
+        1040,
+        1043
       ]
     },
     {
-      "text": "sốt",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
-      ],
-      "position": [
-        414,
-        417
-      ]
-    },
-    {
-      "text": "nghẹt ngực",
+      "text": "ảo giác",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        435,
-        445
+        1050,
+        1057
       ]
     },
     {
-      "text": "khó thở",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        504,
-        511
-      ]
-    },
-    {
-      "text": "sốt",
-      "type": "TRIỆU_CHỨNG",
+      "text": "gleevec",
+      "type": "THUỐC",
       "assertions": [
         "isHistorical"
       ],
       "position": [
-        640,
-        643
-      ]
-    },
-    {
-      "text": "đau vai",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isHistorical"
+        1089,
+        1096
       ],
-      "position": [
-        647,
-        654
+      "candidates": [
+        "282386"
       ]
     },
     {
-      "text": "đó",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        676,
-        678
-      ]
-    },
-    {
-      "text": "suy hô hấp",
+      "text": "suy kiệt",
       "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        700,
-        710
+        1195,
+        1203
       ],
       "candidates": [
-        "J96.9"
+        "R64"
       ]
     },
     {
-      "text": "tăng huyết áp",
+      "text": "ảo giác",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1231,
+        1238
+      ]
+    },
+    {
+      "text": "Lú lẫn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1254,
+        1260
+      ]
+    },
+    {
+      "text": "ảo giác",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1369,
+        1376
+      ]
+    },
+    {
+      "text": "Lú lẫn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1401,
+        1407
+      ]
+    },
+    {
+      "text": "yếu cơ",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1447,
+        1453
+      ]
+    },
+    {
+      "text": "suy kiệt",
       "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        715,
-        728
+        1516,
+        1524
       ],
       "candidates": [
-        "I10"
+        "R64"
       ]
     },
     {
-      "text": "Siêu âm mạch máu chi trên",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1116,
-        1141
-      ]
-    },
-    {
-      "text": "khò khè",
+      "text": "ảo giác",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        1382,
-        1389
+        1531,
+        1538
       ]
     },
     {
-      "text": "ho",
+      "text": "Lú lẫn",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        1393,
-        1395
+        1545,
+        1551
       ]
     },
     {
-      "text": "khí dung albuterol 2 lần",
-      "type": "THUỐC",
+      "text": "Ăn uống kém",
+      "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        1456,
-        1480
+        1558,
+        1569
+      ]
+    },
+    {
+      "text": "nôn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1581,
+        1584
+      ]
+    },
+    {
+      "text": "Nôn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1592,
+        1595
+      ]
+    },
+    {
+      "text": "amyloidosis chuỗi nhẹ",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        1642,
+        1663
       ],
       "candidates": [
-        "435"
+        "C88.2"
       ]
     },
     {
-      "text": "guaifenesin",
-      "type": "THUỐC",
+      "text": "amyloidosis tự miễn dịch",
+      "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        1487,
-        1498
+        1678,
+        1702
       ],
       "candidates": [
-        "5032"
+        "D84.8"
       ]
     },
     {
-      "text": "furosemide 40 mg",
-      "type": "THUỐC",
+      "text": "amyloidosis di truyền hoặc gia đình",
+      "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        1502,
-        1518
+        1717,
+        1752
       ],
       "candidates": [
-        "313988"
+        "E85.0"
       ]
     },
     {
-      "text": "Khó thở",
-      "type": "TRIỆU_CHỨNG",
+      "text": "thoái hóa tinh bột",
+      "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        1651,
-        1658
-      ]
-    },
-    {
-      "text": "Nghẹt ngực",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        1691,
-        1701
-      ]
-    },
-    {
-      "text": "Ho",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        1711,
-        1713
-      ]
-    },
-    {
-      "text": "Khò khè",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        1714,
-        1721
-      ]
-    },
-    {
-      "text": "Phù ngoại vi",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        1722,
-        1734
-      ]
-    },
-    {
-      "text": "sốt",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isHistorical"
+        1758,
+        1776
       ],
-      "position": [
-        1775,
-        1778
+      "candidates": [
+        "E85"
       ]
     },
     {
-      "text": "ho",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        1869,
-        1871
-      ]
-    },
-    {
-      "text": "khò khè",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        1875,
-        1882
-      ]
-    },
-    {
-      "text": "nghẹt ngực",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        1985,
-        1995
-      ]
-    },
-    {
-      "text": "khó thở",
+      "text": "tận gốc amyloidosis",
       "type": "TRIỆU_CHỨNG",
       "assertions": [
         "isNegated"
       ],
       "position": [
-        2048,
-        2055
+        1883,
+        1902
       ]
     },
     {
-      "text": "ho",
+      "text": "phù hợp",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
-      ],
-      "position": [
-        2074,
-        2076
-      ]
-    },
-    {
-      "text": "Siêu âm mạch máu chi trên",
-      "type": "TÊN_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
-        2199,
-        2224
-      ]
-    },
-    {
-      "text": "huyết khối",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
-      ],
-      "position": [
-        2240,
-        2250
-      ]
-    },
-    {
-      "text": "Xạ hình thông khí – tưới máu phổi",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        2252,
-        2285
-      ]
-    },
-    {
-      "text": "thuyên tắc phổi",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [],
-      "position": [
-        2309,
-        2324
-      ],
-      "candidates": [
-        "I26.99"
+        2191,
+        2198
       ]
     }
   ]

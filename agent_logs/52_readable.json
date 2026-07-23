@@ -1,16 +1,16 @@
 {
   "file_id": "52",
-  "timestamp": 1784626518.9645693,
-  "elapsed": 18.4,
+  "timestamp": 1784708816.9369242,
+  "elapsed": 51.69,
   "model": "bibocat/qwen3-ner-grpo-final",
   "mention_count": 10,
   "stats": {
     "total_mentions": 10,
     "final": 10,
     "validation_errors": 0,
-    "elapsed": 18.4,
-    "rule": 0,
-    "qwen": 10
+    "elapsed": 51.69,
+    "rule": 1,
+    "qwen": 9
   },
   "log_summary": [
     {
@@ -93,9 +93,39 @@
     },
     {
       "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -124,102 +154,118 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784626518.9643538,
+      "ts": 1784708816.9368598,
       "tool": null
     }
   ],
   "mentions": [
     {
-      "text": "run rẩy",
+      "text": "nổi các dấu mề đay",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        401,
-        408
+        73,
+        91
       ]
     },
     {
-      "text": "sốt",
+      "text": "ngứa",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        413,
-        416
+        102,
+        106
       ]
     },
     {
-      "text": "sốt",
+      "text": "ngứa",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        426,
-        429
+        188,
+        192
       ]
     },
     {
-      "text": "sốt",
+      "text": "dị ứng do thời tiết hay thức ăn",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isNegated"
+      ],
       "position": [
-        493,
-        496
+        357,
+        388
       ]
     },
     {
-      "text": "áp xe",
-      "type": "TRIỆU_CHỨNG",
+      "text": "MÀY ĐAY VÔ CĂN",
+      "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        536,
-        541
-      ]
-    },
-    {
-      "text": "Augmentin",
-      "type": "THUỐC",
-      "assertions": [],
-      "position": [
-        630,
-        639
+        733,
+        747
       ],
       "candidates": [
-        "151392"
+        "L51"
       ]
     },
     {
-      "text": "mrcp",
-      "type": "TÊN_XÉT_NGHIỆM",
+      "text": "MÀY ĐAY MẠN TÍNH",
+      "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        798,
-        802
+        830,
+        846
+      ],
+      "candidates": [
+        "J32.2"
       ]
     },
     {
-      "text": "chụp cộng hưởng từ mật tụy",
-      "type": "TÊN_XÉT_NGHIỆM",
+      "text": "mày đay vô căn",
+      "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        804,
-        830
+        1314,
+        1328
+      ],
+      "candidates": [
+        "L51"
       ]
     },
     {
-      "text": "nang tụy nhỏ",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "text": "Mày đay vô căn",
+      "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        847,
-        859
+        1426,
+        1440
+      ],
+      "candidates": [
+        "L51"
       ]
     },
     {
-      "text": "ba stent mật kim loại",
+      "text": "triệu chứng",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        866,
-        887
+        1538,
+        1549
+      ]
+    },
+    {
+      "text": "klonopinclonidine",
+      "type": "THUỐC",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        1597,
+        1614
+      ],
+      "candidates": [
+        "202585"
       ]
     }
   ]

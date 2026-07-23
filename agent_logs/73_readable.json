@@ -1,16 +1,16 @@
 {
   "file_id": "73",
-  "timestamp": 1784626769.1578636,
-  "elapsed": 54.3,
+  "timestamp": 1784709752.9254766,
+  "elapsed": 363.06,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 28,
+  "mention_count": 29,
   "stats": {
-    "total_mentions": 28,
-    "final": 28,
+    "total_mentions": 29,
+    "final": 29,
     "validation_errors": 0,
-    "elapsed": 54.3,
-    "rule": 6,
-    "qwen": 28
+    "elapsed": 363.06,
+    "rule": 3,
+    "qwen": 30
   },
   "log_summary": [
     {
@@ -48,6 +48,30 @@
       "action": "tool_call",
       "ts": null,
       "tool": "fix_positions"
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "llm_verify"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
     },
     {
       "agent": "assertion",
@@ -210,36 +234,6 @@
       "action": "complete",
       "ts": null,
       "tool": null
-    },
-    {
-      "agent": "linking",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "link_entity"
-    },
-    {
-      "agent": "linking",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "link_entity"
-    },
-    {
-      "agent": "linking",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "link_entity"
-    },
-    {
-      "agent": "linking",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "link_entity"
-    },
-    {
-      "agent": "linking",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -310,364 +304,304 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784626769.1576211,
+      "ts": 1784709752.9252708,
       "tool": null
     }
   ],
   "mentions": [
     {
-      "text": "đau ngực",
+      "text": "Viêm loét đại tràng",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        57,
+        76
+      ],
+      "candidates": [
+        "K51.9"
+      ]
+    },
+    {
+      "text": "Bệnh gan do rượu",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        114,
+        130
+      ],
+      "candidates": [
+        "K70.9"
+      ]
+    },
+    {
+      "text": "ăn uống kém",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isHistorical"
-      ],
+      "assertions": [],
       "position": [
-        71,
-        79
+        408,
+        419
       ]
     },
     {
-      "text": "đau ngực",
+      "text": "buồn nôn",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isHistorical"
-      ],
+      "assertions": [],
       "position": [
-        81,
-        89
+        423,
+        431
       ]
     },
     {
-      "text": "tăng huyết áp",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [
-        "isHistorical"
-      ],
+      "text": "đau bụng/khó chịu vùng bụng",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
       "position": [
-        193,
-        206
-      ],
-      "candidates": [
-        "I10"
+        438,
+        465
       ]
     },
     {
-      "text": "Tăng huyết áp",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [
-        "isHistorical"
-      ],
+      "text": "buồn nôn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
       "position": [
-        229,
-        242
-      ],
-      "candidates": [
-        "I10"
+        519,
+        527
       ]
     },
     {
-      "text": "tăng lipid máu, không đặc hiệu",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [
-        "isHistorical"
-      ],
+      "text": "nôn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
       "position": [
-        250,
-        280
-      ],
-      "candidates": [
-        "E78.5"
-      ]
-    },
-    {
-      "text": "tăng lipid máu, không đặc hiệu",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [
-        "isNegated",
-        "isHistorical"
-      ],
-      "position": [
-        282,
-        312
-      ],
-      "candidates": [
-        "E78.5"
-      ]
-    },
-    {
-      "text": "Đái tháo đường típ 2",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [
-        "isHistorical"
-      ],
-      "position": [
-        343,
-        363
-      ],
-      "candidates": [
-        "E11.9"
-      ]
-    },
-    {
-      "text": "bệnh phổi tắc nghẽn mạn tính, không xác định",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [
-        "isHistorical"
-      ],
-      "position": [
-        371,
-        415
-      ],
-      "candidates": [
-        "J44.9"
-      ]
-    },
-    {
-      "text": "bệnh phổi tắc nghẽn mạn tính, không xác định",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [
-        "isNegated",
-        "isHistorical"
-      ],
-      "position": [
-        417,
-        461
-      ],
-      "candidates": [
-        "J44.9"
-      ]
-    },
-    {
-      "text": "bệnh tim mạch do xơ vữa động mạch",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [
-        "isHistorical"
-      ],
-      "position": [
-        469,
-        502
-      ],
-      "candidates": [
-        "I25.1"
-      ]
-    },
-    {
-      "text": "bệnh tim mạch do xơ vữa động mạch",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [
-        "isHistorical"
-      ],
-      "position": [
-        504,
+        534,
         537
-      ],
-      "candidates": [
-        "I25.1"
       ]
     },
     {
-      "text": "phẫu thuật bắc cầu chủ động mạch vành",
-      "type": "TÊN_XÉT_NGHIỆM",
+      "text": "sốt",
+      "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        542,
-        579
+        557,
+        560
       ]
     },
     {
-      "text": "Phẫu thuật bắc cầu chủ động mạch vành",
-      "type": "TÊN_XÉT_NGHIỆM",
+      "text": "run rẩy",
+      "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        671,
-        708
+        564,
+        571
       ]
     },
     {
-      "text": "aspirin 81mg",
-      "type": "THUỐC",
-      "assertions": [
-        "isHistorical"
-      ],
+      "text": "mất cảm giác ngon miệng",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
       "position": [
-        760,
-        772
-      ],
-      "candidates": [
-        "243670"
+        578,
+        601
       ]
     },
     {
-      "text": "clopidogrel",
-      "type": "THUỐC",
-      "assertions": [
-        "isHistorical"
-      ],
+      "text": "chán ăn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
       "position": [
-        787,
-        798
-      ],
-      "candidates": [
-        "32968"
+        602,
+        609
       ]
     },
     {
-      "text": "clopidogrel",
-      "type": "THUỐC",
-      "assertions": [
-        "isHistorical"
-      ],
-      "position": [
-        822,
-        833
-      ],
-      "candidates": [
-        "32968"
-      ]
-    },
-    {
-      "text": "Đột quỵ",
+      "text": "suy nhược",
       "type": "CHẨN_ĐOÁN",
-      "assertions": [
-        "isHistorical"
-      ],
+      "assertions": [],
       "position": [
-        837,
-        844
+        616,
+        625
       ],
       "candidates": [
-        "I69.4"
+        "R53"
       ]
     },
     {
-      "text": "metoprolol succinate 100mg daily",
-      "type": "THUỐC",
-      "assertions": [
-        "isHistorical"
-      ],
+      "text": "Toàn trạng suy kiệt",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
       "position": [
-        860,
-        892
+        633,
+        652
       ],
       "candidates": [
-        "866412"
+        "X57"
       ]
     },
     {
-      "text": "lasix 40mg daily",
-      "type": "THUỐC",
-      "assertions": [
-        "isHistorical"
-      ],
-      "position": [
-        911,
-        927
-      ],
-      "candidates": [
-        "200809"
-      ]
-    },
-    {
-      "text": "atorvastatin 80mg daily",
-      "type": "THUỐC",
-      "assertions": [
-        "isHistorical"
-      ],
-      "position": [
-        946,
-        969
-      ],
-      "candidates": [
-        "259255"
-      ]
-    },
-    {
-      "text": "lisinopril 2.5mg daily",
-      "type": "THUỐC",
-      "assertions": [
-        "isHistorical"
-      ],
-      "position": [
-        986,
-        1008
-      ],
-      "candidates": [
-        "311353"
-      ]
-    },
-    {
-      "text": "ranexa 500mg daily",
-      "type": "THUỐC",
-      "assertions": [
-        "isHistorical"
-      ],
-      "position": [
-        1025,
-        1043
-      ],
-      "candidates": [
-        "860738"
-      ]
-    },
-    {
-      "text": "đau ngực",
+      "text": "nước tiểu",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        1103,
-        1111
+        670,
+        679
       ]
     },
     {
-      "text": "đau ngực",
-      "type": "TRIỆU_CHỨNG",
+      "text": "còn 300 ml",
+      "type": "THUỐC",
       "assertions": [],
       "position": [
-        1315,
-        1323
-      ]
+        697,
+        707
+      ],
+      "candidates": []
     },
     {
-      "text": "đau ngực",
-      "type": "TRIỆU_CHỨNG",
+      "text": "Bệnh amyloidosis di truyền hoặc gia đình",
+      "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        1410,
-        1418
+        862,
+        902
+      ],
+      "candidates": [
+        "E85.0"
       ]
     },
     {
-      "text": "đau ngực",
+      "text": "Bệnh thoái hóa tinh bột",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        903,
+        926
+      ],
+      "candidates": [
+        "E85.2"
+      ]
+    },
+    {
+      "text": "tận gốc amyloidosis",
       "type": "TRIỆU_CHỨNG",
       "assertions": [
         "isNegated"
       ],
       "position": [
-        1573,
-        1581
+        1033,
+        1052
       ]
     },
     {
-      "text": "khó thở",
+      "text": "nôn",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
-      ],
+      "assertions": [],
       "position": [
-        1583,
-        1590
+        1211,
+        1214
       ]
     },
     {
-      "text": "đánh trống ngực",
+      "text": "sốt",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
-      ],
+      "assertions": [],
       "position": [
-        1592,
-        1607
+        1257,
+        1260
       ]
+    },
+    {
+      "text": "run rẩy",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1264,
+        1271
+      ]
+    },
+    {
+      "text": "mất cảm giác ngon miệng/chán ăn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1273,
+        1304
+      ]
+    },
+    {
+      "text": "suy nhược",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        1306,
+        1315
+      ],
+      "candidates": [
+        "R53"
+      ]
+    },
+    {
+      "text": "toàn trạng suy kiệt",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        1317,
+        1336
+      ],
+      "candidates": [
+        "X57"
+      ]
+    },
+    {
+      "text": "thiểu niệu",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1338,
+        1348
+      ]
+    },
+    {
+      "text": "chảy dịch từ lỗ dò",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1350,
+        1368
+      ]
+    },
+    {
+      "text": "buồn nôn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1435,
+        1443
+      ]
+    },
+    {
+      "text": "thuốc giảm đau opioid",
+      "type": "THUỐC",
+      "assertions": [],
+      "position": [
+        1477,
+        1498
+      ],
+      "candidates": []
+    },
+    {
+      "text": "thuốc giảm đau opioid",
+      "type": "THUỐC",
+      "assertions": [],
+      "position": [
+        1511,
+        1532
+      ],
+      "candidates": []
     }
   ]
 }

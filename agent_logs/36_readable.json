@@ -1,16 +1,16 @@
 {
   "file_id": "36",
-  "timestamp": 1784626364.0448875,
-  "elapsed": 89.82,
+  "timestamp": 1784708594.4721029,
+  "elapsed": 102.48,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 43,
+  "mention_count": 36,
   "stats": {
-    "total_mentions": 43,
-    "final": 43,
+    "total_mentions": 36,
+    "final": 36,
     "validation_errors": 0,
-    "elapsed": 89.82,
-    "rule": 21,
-    "qwen": 38
+    "elapsed": 102.48,
+    "rule": 18,
+    "qwen": 32
   },
   "log_summary": [
     {
@@ -48,6 +48,30 @@
       "action": "tool_call",
       "ts": null,
       "tool": "fix_positions"
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "llm_verify"
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "llm_verify"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
     },
     {
       "agent": "assertion",
@@ -168,6 +192,18 @@
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -232,454 +268,368 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784626364.0444386,
+      "ts": 1784708594.4718456,
       "tool": null
     }
   ],
   "mentions": [
     {
-      "text": "Bệnh thận đa nang",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [
-        "isHistorical"
-      ],
-      "position": [
-        41,
-        58
-      ],
-      "candidates": [
-        "Q61.3"
-      ]
-    },
-    {
-      "text": "Bệnh thận đa nang",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [
-        "isHistorical"
-      ],
-      "position": [
-        68,
-        85
-      ],
-      "candidates": [
-        "Q61.3"
-      ]
-    },
-    {
-      "text": "phẫu thuật tái tạo niệu quản trái",
-      "type": "TÊN_XÉT_NGHIỆM",
+      "text": "nặng mặt",
+      "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        127,
-        160
+        42,
+        50
       ]
     },
     {
-      "text": "azathioprine",
-      "type": "THUỐC",
-      "assertions": [
-        "isHistorical"
-      ],
+      "text": "tức nặng 2 chi dưới",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
       "position": [
-        208,
-        220
+        52,
+        71
+      ]
+    },
+    {
+      "text": "tiểu ít",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        73,
+        80
+      ]
+    },
+    {
+      "text": "Hội chứng thận hư",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        187,
+        204
       ],
       "candidates": [
-        "1256"
+        "N04.0"
       ]
     },
     {
-      "text": "prograf",
-      "type": "THUỐC",
-      "assertions": [
-        "isHistorical"
-      ],
+      "text": "Phù",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
       "position": [
-        233,
-        240
-      ],
-      "candidates": [
-        "196463"
+        212,
+        215
       ]
     },
     {
-      "text": "from 5mg bid",
-      "type": "THUỐC",
-      "assertions": [
-        "isHistorical"
-      ],
+      "text": "phù",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
       "position": [
-        257,
-        269
-      ],
-      "candidates": [
-        "1296666"
+        308,
+        311
       ]
     },
     {
-      "text": "cellcept",
-      "type": "THUỐC",
-      "assertions": [
-        "isHistorical"
-      ],
-      "position": [
-        294,
-        302
-      ],
-      "candidates": [
-        "152633"
-      ]
-    },
-    {
-      "text": "cellcept",
-      "type": "THUỐC",
-      "assertions": [
-        "isHistorical"
-      ],
+      "text": "phù",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
       "position": [
         324,
-        332
-      ],
-      "candidates": [
-        "152633"
+        327
       ]
     },
     {
-      "text": "Suy thận",
+      "text": "phù",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        381,
+        384
+      ]
+    },
+    {
+      "text": "phù",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        408,
+        411
+      ]
+    },
+    {
+      "text": "phù",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        421,
+        424
+      ]
+    },
+    {
+      "text": "Protein niệu 24h",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        448,
+        464
+      ]
+    },
+    {
+      "text": "Protein",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        473,
+        480
+      ]
+    },
+    {
+      "text": "Protein",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        488,
+        495
+      ]
+    },
+    {
+      "text": "Albumin",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        505,
+        512
+      ]
+    },
+    {
+      "text": "Tổn thương cầu thận mạn tính",
       "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        386,
-        394
+        557,
+        585
       ],
       "candidates": [
-        "N19"
+        "N18"
       ]
     },
     {
-      "text": "creatinine  tăng cao",
+      "text": "Xét nghiệm nước tiểu protein",
       "type": "TÊN_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
-        457,
-        477
+        630,
+        658
       ]
     },
     {
-      "text": "creatinine",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        514,
-        524
-      ]
-    },
-    {
-      "text": "creatinine",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        573,
-        583
-      ]
-    },
-    {
-      "text": "tiêu chảy",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        626,
-        635
-      ]
-    },
-    {
-      "text": "cellcept",
-      "type": "THUỐC",
-      "assertions": [],
-      "position": [
-        653,
-        661
-      ],
-      "candidates": [
-        "152633"
-      ]
-    },
-    {
-      "text": "Tăng creatinine",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        687,
-        702
-      ]
-    },
-    {
-      "text": "prograf",
-      "type": "THUỐC",
-      "assertions": [],
-      "position": [
-        893,
-        900
-      ],
-      "candidates": [
-        "196463"
-      ]
-    },
-    {
-      "text": "from 5mg bid",
-      "type": "THUỐC",
-      "assertions": [],
-      "position": [
-        916,
-        928
-      ],
-      "candidates": [
-        "1296666"
-      ]
-    },
-    {
-      "text": "creatinine",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        953,
-        963
-      ]
-    },
-    {
-      "text": "siêu âm thận",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1024,
-        1036
-      ]
-    },
-    {
-      "text": "bình thường",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1063,
-        1074
-      ]
-    },
-    {
-      "text": "sinh thiết ghép thận",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1088,
-        1108
-      ]
-    },
-    {
-      "text": "creatinine",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1179,
-        1189
-      ]
-    },
-    {
-      "text": "Suy thận",
+      "text": "viêm cầu thận",
       "type": "CHẨN_ĐOÁN",
-      "assertions": [],
-      "position": [
-        1271,
-        1279
-      ],
-      "candidates": [
-        "N19"
-      ]
-    },
-    {
-      "text": "tiêu chảy",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        1358,
-        1367
-      ]
-    },
-    {
-      "text": "pcr dương tính với virus bk",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1419,
-        1446
-      ]
-    },
-    {
-      "text": "from 5mg bid",
-      "type": "THUỐC",
-      "assertions": [],
-      "position": [
-        1492,
-        1504
-      ],
-      "candidates": [
-        "1296666"
-      ]
-    },
-    {
-      "text": "siêu âm thận",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1529,
-        1541
-      ]
-    },
-    {
-      "text": "kháng trở",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        1558,
-        1567
-      ]
-    },
-    {
-      "text": "bình thường",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1568,
-        1579
-      ]
-    },
-    {
-      "text": "sinh thiết ghép thận",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1593,
-        1613
-      ]
-    },
-    {
-      "text": "creatinine 5.1",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1736,
-        1750
-      ]
-    },
-    {
-      "text": "k 5.8",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1752,
-        1757
-      ]
-    },
-    {
-      "text": "sinh thiết thận",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1834,
-        1849
-      ]
-    },
-    {
-      "text": "creatinine 5.1",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1936,
-        1950
-      ]
-    },
-    {
-      "text": "k 5.8",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1963,
-        1968
-      ]
-    },
-    {
-      "text": "pcr dương tính với virus bk",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1981,
-        2008
-      ]
-    },
-    {
-      "text": "siêu âm thận",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        2045,
-        2057
-      ]
-    },
-    {
-      "text": "bình thường",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        2084,
-        2095
-      ]
-    },
-    {
-      "text": "Sinh thiết thận",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        2139,
-        2154
-      ]
-    },
-    {
-      "text": "Sinh thiết thận",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        2191,
-        2206
-      ]
-    },
-    {
-      "text": "Bệnh lý thận do BK",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [],
-      "position": [
-        2282,
-        2300
-      ],
-      "candidates": [
-        "N14.0"
-      ]
-    },
-    {
-      "text": "đào thải",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        2324,
-        2332
-      ]
-    },
-    {
-      "text": "đào thải kháng thể hữu hình cấp tính",
-      "type": "TRIỆU_CHỨNG",
       "assertions": [
         "isNegated"
       ],
       "position": [
-        2365,
-        2401
+        777,
+        790
+      ],
+      "candidates": [
+        "N03.0"
+      ]
+    },
+    {
+      "text": "Ure",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        818,
+        821
+      ]
+    },
+    {
+      "text": "Điện giải",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        919,
+        928
+      ]
+    },
+    {
+      "text": "Viêm cầu thận mạn - Hội chứng thận hư",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        1102,
+        1139
+      ],
+      "candidates": [
+        "N04.7"
+      ]
+    },
+    {
+      "text": "protein niệu 24h",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1281,
+        1297
+      ]
+    },
+    {
+      "text": "protein máu",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1299,
+        1310
+      ]
+    },
+    {
+      "text": "albumin máu",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1312,
+        1323
+      ]
+    },
+    {
+      "text": "điện giải đồ",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1325,
+        1337
+      ]
+    },
+    {
+      "text": "protein",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1396,
+        1403
+      ]
+    },
+    {
+      "text": "CT",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1505,
+        1507
+      ]
+    },
+    {
+      "text": "phù",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1561,
+        1564
+      ]
+    },
+    {
+      "text": "tăng lipid máu",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1566,
+        1580
+      ]
+    },
+    {
+      "text": "protein",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1592,
+        1599
+      ]
+    },
+    {
+      "text": "Medrol 16mg x 3 viên",
+      "type": "THUỐC",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        1642,
+        1662
+      ],
+      "candidates": [
+        "207138"
+      ]
+    },
+    {
+      "text": "Omez 20mg x 1 viên",
+      "type": "THUỐC",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        1697,
+        1715
+      ],
+      "candidates": []
+    },
+    {
+      "text": "Furosemid 40 mg x 1 viên",
+      "type": "THUỐC",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        1741,
+        1765
+      ],
+      "candidates": [
+        "313988"
+      ]
+    },
+    {
+      "text": "đau vùng hạ sườn phải",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1908,
+        1929
+      ]
+    },
+    {
+      "text": "siêu âm",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1972,
+        1979
+      ]
+    },
+    {
+      "text": "sỏi mật",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        1989,
+        1996
+      ],
+      "candidates": [
+        "K80.2"
+      ]
+    },
+    {
+      "text": "Zestril 10mg x 1 viên",
+      "type": "THUỐC",
+      "assertions": [],
+      "position": [
+        2007,
+        2028
+      ],
+      "candidates": [
+        "104377"
       ]
     }
   ]

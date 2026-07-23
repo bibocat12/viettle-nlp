@@ -1,111 +1,105 @@
 {
   "file_id": "83",
-  "timestamp": 1784626860.5493608,
-  "elapsed": 16.49,
+  "timestamp": 1784709810.584262,
+  "elapsed": 41.67,
   "model": "bibocat/qwen3-ner-grpo-final",
   "result": {
     "note_id": "83",
     "mentions": [
       {
-        "text": "khó thở",
-        "type": "TRIỆU_CHỨNG",
-        "assertions": [
-          "isHistorical"
+        "text": "MÀY đay VÔ CĂN",
+        "type": "CHẨN_ĐOÁN",
+        "assertions": [],
+        "position": [
+          170,
+          184
         ],
-        "position": [
-          59,
-          66
+        "candidates": [
+          "L51"
         ]
       },
       {
-        "text": "Khó thở",
-        "type": "TRIỆU_CHỨNG",
-        "assertions": [],
-        "position": [
-          190,
-          197
-        ]
-      },
-      {
-        "text": "siêu âm tim",
-        "type": "TÊN_XÉT_NGHIỆM",
-        "assertions": [],
-        "position": [
-          247,
-          258
-        ]
-      },
-      {
-        "text": "hở van hai lá nặng",
+        "text": "MÀY đay MẠN",
         "type": "CHẨN_ĐOÁN",
         "assertions": [],
         "position": [
           268,
-          286
+          279
         ],
         "candidates": [
-          "I34.0"
+          "L51"
         ]
       },
       {
-        "text": "Chụp động mạch vành",
-        "type": "TÊN_XÉT_NGHIỆM",
+        "text": "mày đay vô căn",
+        "type": "CHẨN_ĐOÁN",
         "assertions": [],
         "position": [
-          289,
-          308
-        ]
-      },
-      {
-        "text": "lợi tiểu",
-        "type": "THUỐC",
-        "assertions": [],
-        "position": [
-          364,
-          372
+          747,
+          761
         ],
-        "candidates": []
+        "candidates": [
+          "L51"
+        ]
+      },
+      {
+        "text": "phải dài và liên tục",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [],
+        "position": [
+          913,
+          933
+        ]
+      },
+      {
+        "text": "tốt nhất",
+        "type": "TRIỆU_CHỨNG",
+        "assertions": [
+          "isNegated"
+        ],
+        "position": [
+          1450,
+          1458
+        ]
       }
     ],
     "validation": {
       "is_valid": true,
       "errors": [],
-      "warnings": [
-        "[5] THUỐC has no candidates"
-      ]
+      "warnings": []
     },
     "stats": {
-      "total_mentions": 6,
-      "final": 6,
+      "total_mentions": 5,
+      "final": 5,
       "validation_errors": 0,
-      "elapsed": 16.49,
-      "rule": 1,
-      "qwen": 6
+      "elapsed": 41.67,
+      "rule": 2,
+      "qwen": 3
     },
     "logs": [
       {
         "agent": "orchestrator",
         "action": "start",
-        "text_len": 414,
-        "ts": 1784626844.0590763
+        "text_len": 1485,
+        "ts": 1784709768.9162083
       },
       {
         "agent": "orchestrator",
         "action": "extraction_start",
-        "ts": 1784626844.0590918
+        "ts": 1784709768.9162245
       },
       {
         "agent": "extraction",
         "action": "start",
         "data": {
-          "text_len": 414
+          "text_len": 1485
         }
       },
       {
         "agent": "extraction",
         "action": "preprocessed",
         "data": {
-          "normalized_len": 414
+          "normalized_len": 1485
         }
       },
       {
@@ -114,17 +108,28 @@
         "data": {
           "tool": "parallel_extract",
           "input": {
-            "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở khi gắng sức\nCận lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n"
+            "text": "    - nhiều lần cố gắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát trên kính hiển thị vi quang học thông thường cần xem trên kính hiển thị vi điện tử. Các tế bào cột sống tăng lượng hạ bì với các mức độ thoát ra khác nhau cũng được quan sát. Quảng cáo quảng cáo thiết bị thương mại miễn phí dịch sinh học không tìm thấy hình ảnh giảm phức tạp, bổ sung hay sợi fibrin. Đối với bệnh lý mày đay vô căn, để lâu thường không có biến chứng gì nặng, chủ yếu bệnh làm ảnh hưởng tới chất lượng cuộc sống. Bạn đay vô căn hộ là một bệnh mạn tính, việc điều trị phải dài và liên tục. Quá giá trị chỉ là giấy chứng nhận. Điều trị phụ thuộc vào mức độ nghiêm trọng và nền tảng có liên kết. Cần lưu ý cân bằng giữa hiệu quả kiểm soát triệu chứng và những tác hại gây độc của liệu pháp điều trị. *************** có thể hệ sau không gây buồn ngủ là đơn hàng đầu sau đó đến *************** có thể hệ 1, ********* bậc thấp cách ngày hoặc hàng ngày và giảm dần chậm 2,5 – 5mg mỗi 2-3 tuần. Nếu không được hỗ trợ hoặc chống chỉ định, xin bạn hãy đến gặp bác sĩ chuyên khoa da liễu để có phương pháp điều trị tốt nhất. Cảm ơn bạn đã gửi câu hỏi"
           },
           "output": {
             "rule": [
               {
-                "text": "siêu âm tim",
+                "text": "phải dài và liên tục",
                 "position": [
-                  247,
-                  258
+                  913,
+                  933
                 ],
-                "type": "TÊN_XÉT_NGHIỆM",
+                "type": "TRIỆU_CHỨNG",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "tốt nhất",
+                "position": [
+                  1450,
+                  1458
+                ],
+                "type": "TRIỆU_CHỨNG",
                 "confidence": 0.95,
                 "source": "rule",
                 "extraction_source": "rule"
@@ -132,58 +137,10 @@
             ],
             "qwen": [
               {
-                "text": "khó thở",
+                "text": "MÀY đay VÔ CĂN",
                 "position": [
-                  59,
-                  66
-                ],
-                "type": "TRIỆU_CHỨNG",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen"
-              },
-              {
-                "text": "Khó thở",
-                "position": [
-                  190,
-                  197
-                ],
-                "type": "TRIỆU_CHỨNG",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen"
-              },
-              {
-                "text": "siêu âm tim",
-                "position": [
-                  247,
-                  258
-                ],
-                "type": "TÊN_XÉT_NGHIỆM",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TÊN_XÉT_NGHIỆM",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen"
-              },
-              {
-                "text": "hở van hai lá nặng",
-                "position": [
-                  268,
-                  286
+                  170,
+                  184
                 ],
                 "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
@@ -196,32 +153,32 @@
                 "extraction_source": "qwen"
               },
               {
-                "text": "Chụp động mạch vành",
+                "text": "MÀY đay MẠN",
                 "position": [
-                  289,
-                  308
+                  268,
+                  279
                 ],
-                "type": "TÊN_XÉT_NGHIỆM",
+                "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
                 "type_candidates": [
                   {
-                    "label": "TÊN_XÉT_NGHIỆM",
+                    "label": "CHẨN_ĐOÁN",
                     "score": 0.85
                   }
                 ],
                 "extraction_source": "qwen"
               },
               {
-                "text": "lợi tiểu",
+                "text": "mày đay vô căn",
                 "position": [
-                  364,
-                  372
+                  747,
+                  761
                 ],
-                "type": "THUỐC",
+                "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
                 "type_candidates": [
                   {
-                    "label": "THUỐC",
+                    "label": "CHẨN_ĐOÁN",
                     "score": 0.85
                   }
                 ],
@@ -238,10 +195,10 @@
         "action": "extracted",
         "data": {
           "sources": {
-            "rule": 1,
-            "qwen": 6
+            "rule": 2,
+            "qwen": 3
           },
-          "total": 7
+          "total": 5
         }
       },
       {
@@ -252,58 +209,10 @@
           "input": {
             "all_mentions": [
               {
-                "text": "khó thở",
+                "text": "MÀY đay VÔ CĂN",
                 "position": [
-                  59,
-                  66
-                ],
-                "type": "TRIỆU_CHỨNG",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen"
-              },
-              {
-                "text": "Khó thở",
-                "position": [
-                  190,
-                  197
-                ],
-                "type": "TRIỆU_CHỨNG",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen"
-              },
-              {
-                "text": "siêu âm tim",
-                "position": [
-                  247,
-                  258
-                ],
-                "type": "TÊN_XÉT_NGHIỆM",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TÊN_XÉT_NGHIỆM",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen"
-              },
-              {
-                "text": "hở van hai lá nặng",
-                "position": [
-                  268,
-                  286
+                  170,
+                  184
                 ],
                 "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
@@ -316,44 +225,55 @@
                 "extraction_source": "qwen"
               },
               {
-                "text": "Chụp động mạch vành",
+                "text": "MÀY đay MẠN",
                 "position": [
-                  289,
-                  308
+                  268,
+                  279
                 ],
-                "type": "TÊN_XÉT_NGHIỆM",
+                "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
                 "type_candidates": [
                   {
-                    "label": "TÊN_XÉT_NGHIỆM",
+                    "label": "CHẨN_ĐOÁN",
                     "score": 0.85
                   }
                 ],
                 "extraction_source": "qwen"
               },
               {
-                "text": "lợi tiểu",
+                "text": "mày đay vô căn",
                 "position": [
-                  364,
-                  372
+                  747,
+                  761
                 ],
-                "type": "THUỐC",
+                "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
                 "type_candidates": [
                   {
-                    "label": "THUỐC",
+                    "label": "CHẨN_ĐOÁN",
                     "score": 0.85
                   }
                 ],
                 "extraction_source": "qwen"
               },
               {
-                "text": "siêu âm tim",
+                "text": "phải dài và liên tục",
                 "position": [
-                  247,
-                  258
+                  913,
+                  933
                 ],
-                "type": "TÊN_XÉT_NGHIỆM",
+                "type": "TRIỆU_CHỨNG",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule"
+              },
+              {
+                "text": "tốt nhất",
+                "position": [
+                  1450,
+                  1458
+                ],
+                "type": "TRIỆU_CHỨNG",
                 "confidence": 0.95,
                 "source": "rule",
                 "extraction_source": "rule"
@@ -362,99 +282,10 @@
           },
           "output": [
             {
-              "text": "khó thở",
+              "text": "MÀY đay VÔ CĂN",
               "position": [
-                59,
-                66
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.85
-            },
-            {
-              "text": "Khó thở",
-              "position": [
-                190,
-                197
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85
-            },
-            {
-              "text": "siêu âm tim",
-              "position": [
-                247,
-                258
-              ],
-              "type": "TÊN_XÉT_NGHIỆM",
-              "type_candidates": [
-                {
-                  "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.8
-                }
-              ],
-              "confidence": 0.8,
-              "vote_count": 2,
-              "max_type_votes": 2,
-              "voters": {
-                "qwen": 1,
-                "rule": 1
-              },
-              "type_votes": {
-                "TÊN_XÉT_NGHIỆM": 1.0
-              },
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              }
-            },
-            {
-              "text": "hở van hai lá nặng",
-              "position": [
-                268,
-                286
+                170,
+                184
               ],
               "type": "CHẨN_ĐOÁN",
               "source": "qwen",
@@ -479,49 +310,21 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I34.0"
+                "L51"
               ],
-              "link_confidence": 0.99
+              "link_confidence": 0.85
             },
             {
-              "text": "Chụp động mạch vành",
+              "text": "MÀY đay MẠN",
               "position": [
-                289,
-                308
+                268,
+                279
               ],
-              "type": "TÊN_XÉT_NGHIỆM",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              }
-            },
-            {
-              "text": "lợi tiểu",
-              "position": [
-                364,
-                372
-              ],
-              "type": "THUỐC",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "THUỐC",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -539,8 +342,89 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "L51"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "mày đay vô căn",
+              "position": [
+                747,
+                761
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "L51"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "phải dài và liên tục",
+              "position": [
+                913,
+                933
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tốt nhất",
+              "position": [
+                1450,
+                1458
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
           "result_type": "list"
@@ -550,7 +434,7 @@
         "agent": "extraction",
         "action": "voted",
         "data": {
-          "merged": 6
+          "merged": 5
         }
       },
       {
@@ -561,99 +445,10 @@
           "input": {
             "merged": [
               {
-                "text": "khó thở",
+                "text": "MÀY đay VÔ CĂN",
                 "position": [
-                  59,
-                  66
-                ],
-                "type": "TRIỆU_CHỨNG",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": true
-                },
-                "assertion_confidence": 0.85
-              },
-              {
-                "text": "Khó thở",
-                "position": [
-                  190,
-                  197
-                ],
-                "type": "TRIỆU_CHỨNG",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": false
-                },
-                "assertion_confidence": 0.85
-              },
-              {
-                "text": "siêu âm tim",
-                "position": [
-                  247,
-                  258
-                ],
-                "type": "TÊN_XÉT_NGHIỆM",
-                "type_candidates": [
-                  {
-                    "label": "TÊN_XÉT_NGHIỆM",
-                    "score": 0.8
-                  }
-                ],
-                "confidence": 0.8,
-                "vote_count": 2,
-                "max_type_votes": 2,
-                "voters": {
-                  "qwen": 1,
-                  "rule": 1
-                },
-                "type_votes": {
-                  "TÊN_XÉT_NGHIỆM": 1.0
-                },
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": false
-                }
-              },
-              {
-                "text": "hở van hai lá nặng",
-                "position": [
-                  268,
-                  286
+                  170,
+                  184
                 ],
                 "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
@@ -678,49 +473,21 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I34.0"
+                  "L51"
                 ],
-                "link_confidence": 0.99
+                "link_confidence": 0.85
               },
               {
-                "text": "Chụp động mạch vành",
+                "text": "MÀY đay MẠN",
                 "position": [
-                  289,
-                  308
+                  268,
+                  279
                 ],
-                "type": "TÊN_XÉT_NGHIỆM",
+                "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
                 "type_candidates": [
                   {
-                    "label": "TÊN_XÉT_NGHIỆM",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": false
-                }
-              },
-              {
-                "text": "lợi tiểu",
-                "position": [
-                  364,
-                  372
-                ],
-                "type": "THUỐC",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "THUỐC",
+                    "label": "CHẨN_ĐOÁN",
                     "score": 0.85
                   }
                 ],
@@ -738,107 +505,99 @@
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85,
-                "candidates": [],
-                "link_confidence": 0.0
+                "candidates": [
+                  "L51"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "mày đay vô căn",
+                "position": [
+                  747,
+                  761
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "L51"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "phải dài và liên tục",
+                "position": [
+                  913,
+                  933
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "tốt nhất",
+                "position": [
+                  1450,
+                  1458
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
               }
             ],
-            "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở khi gắng sức\nCận lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n"
+            "text": "    - nhiều lần cố gắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát trên kính hiển thị vi quang học thông thường cần xem trên kính hiển thị vi điện tử. Các tế bào cột sống tăng lượng hạ bì với các mức độ thoát ra khác nhau cũng được quan sát. Quảng cáo quảng cáo thiết bị thương mại miễn phí dịch sinh học không tìm thấy hình ảnh giảm phức tạp, bổ sung hay sợi fibrin. Đối với bệnh lý mày đay vô căn, để lâu thường không có biến chứng gì nặng, chủ yếu bệnh làm ảnh hưởng tới chất lượng cuộc sống. Bạn đay vô căn hộ là một bệnh mạn tính, việc điều trị phải dài và liên tục. Quá giá trị chỉ là giấy chứng nhận. Điều trị phụ thuộc vào mức độ nghiêm trọng và nền tảng có liên kết. Cần lưu ý cân bằng giữa hiệu quả kiểm soát triệu chứng và những tác hại gây độc của liệu pháp điều trị. *************** có thể hệ sau không gây buồn ngủ là đơn hàng đầu sau đó đến *************** có thể hệ 1, ********* bậc thấp cách ngày hoặc hàng ngày và giảm dần chậm 2,5 – 5mg mỗi 2-3 tuần. Nếu không được hỗ trợ hoặc chống chỉ định, xin bạn hãy đến gặp bác sĩ chuyên khoa da liễu để có phương pháp điều trị tốt nhất. Cảm ơn bạn đã gửi câu hỏi"
           },
           "output": [
             {
-              "text": "khó thở",
+              "text": "MÀY đay VÔ CĂN",
               "position": [
-                59,
-                66
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.85
-            },
-            {
-              "text": "Khó thở",
-              "position": [
-                190,
-                197
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85
-            },
-            {
-              "text": "siêu âm tim",
-              "position": [
-                247,
-                258
-              ],
-              "type": "TÊN_XÉT_NGHIỆM",
-              "type_candidates": [
-                {
-                  "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.8
-                }
-              ],
-              "confidence": 0.8,
-              "vote_count": 2,
-              "max_type_votes": 2,
-              "voters": {
-                "qwen": 1,
-                "rule": 1
-              },
-              "type_votes": {
-                "TÊN_XÉT_NGHIỆM": 1.0
-              },
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              }
-            },
-            {
-              "text": "hở van hai lá nặng",
-              "position": [
-                268,
-                286
+                170,
+                184
               ],
               "type": "CHẨN_ĐOÁN",
               "source": "qwen",
@@ -863,49 +622,21 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I34.0"
+                "L51"
               ],
-              "link_confidence": 0.99
+              "link_confidence": 0.85
             },
             {
-              "text": "Chụp động mạch vành",
+              "text": "MÀY đay MẠN",
               "position": [
-                289,
-                308
+                268,
+                279
               ],
-              "type": "TÊN_XÉT_NGHIỆM",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              }
-            },
-            {
-              "text": "lợi tiểu",
-              "position": [
-                364,
-                372
-              ],
-              "type": "THUỐC",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "THUỐC",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -923,8 +654,89 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "L51"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "mày đay vô căn",
+              "position": [
+                747,
+                761
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "L51"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "phải dài và liên tục",
+              "position": [
+                913,
+                933
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tốt nhất",
+              "position": [
+                1450,
+                1458
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
           "result_type": "list"
@@ -938,99 +750,10 @@
           "input": {
             "mentions": [
               {
-                "text": "khó thở",
+                "text": "MÀY đay VÔ CĂN",
                 "position": [
-                  59,
-                  66
-                ],
-                "type": "TRIỆU_CHỨNG",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": true
-                },
-                "assertion_confidence": 0.85
-              },
-              {
-                "text": "Khó thở",
-                "position": [
-                  190,
-                  197
-                ],
-                "type": "TRIỆU_CHỨNG",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": false
-                },
-                "assertion_confidence": 0.85
-              },
-              {
-                "text": "siêu âm tim",
-                "position": [
-                  247,
-                  258
-                ],
-                "type": "TÊN_XÉT_NGHIỆM",
-                "type_candidates": [
-                  {
-                    "label": "TÊN_XÉT_NGHIỆM",
-                    "score": 0.8
-                  }
-                ],
-                "confidence": 0.8,
-                "vote_count": 2,
-                "max_type_votes": 2,
-                "voters": {
-                  "qwen": 1,
-                  "rule": 1
-                },
-                "type_votes": {
-                  "TÊN_XÉT_NGHIỆM": 1.0
-                },
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": false
-                }
-              },
-              {
-                "text": "hở van hai lá nặng",
-                "position": [
-                  268,
-                  286
+                  170,
+                  184
                 ],
                 "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
@@ -1055,49 +778,21 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I34.0"
+                  "L51"
                 ],
-                "link_confidence": 0.99
+                "link_confidence": 0.85
               },
               {
-                "text": "Chụp động mạch vành",
+                "text": "MÀY đay MẠN",
                 "position": [
-                  289,
-                  308
+                  268,
+                  279
                 ],
-                "type": "TÊN_XÉT_NGHIỆM",
+                "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
                 "type_candidates": [
                   {
-                    "label": "TÊN_XÉT_NGHIỆM",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": false
-                }
-              },
-              {
-                "text": "lợi tiểu",
-                "position": [
-                  364,
-                  372
-                ],
-                "type": "THUỐC",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "THUỐC",
+                    "label": "CHẨN_ĐOÁN",
                     "score": 0.85
                   }
                 ],
@@ -1115,107 +810,99 @@
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85,
-                "candidates": [],
-                "link_confidence": 0.0
+                "candidates": [
+                  "L51"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "mày đay vô căn",
+                "position": [
+                  747,
+                  761
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "L51"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "phải dài và liên tục",
+                "position": [
+                  913,
+                  933
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "tốt nhất",
+                "position": [
+                  1450,
+                  1458
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
               }
             ],
-            "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở khi gắng sức\nCận lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n"
+            "text": "    - nhiều lần cố gắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát trên kính hiển thị vi quang học thông thường cần xem trên kính hiển thị vi điện tử. Các tế bào cột sống tăng lượng hạ bì với các mức độ thoát ra khác nhau cũng được quan sát. Quảng cáo quảng cáo thiết bị thương mại miễn phí dịch sinh học không tìm thấy hình ảnh giảm phức tạp, bổ sung hay sợi fibrin. Đối với bệnh lý mày đay vô căn, để lâu thường không có biến chứng gì nặng, chủ yếu bệnh làm ảnh hưởng tới chất lượng cuộc sống. Bạn đay vô căn hộ là một bệnh mạn tính, việc điều trị phải dài và liên tục. Quá giá trị chỉ là giấy chứng nhận. Điều trị phụ thuộc vào mức độ nghiêm trọng và nền tảng có liên kết. Cần lưu ý cân bằng giữa hiệu quả kiểm soát triệu chứng và những tác hại gây độc của liệu pháp điều trị. *************** có thể hệ sau không gây buồn ngủ là đơn hàng đầu sau đó đến *************** có thể hệ 1, ********* bậc thấp cách ngày hoặc hàng ngày và giảm dần chậm 2,5 – 5mg mỗi 2-3 tuần. Nếu không được hỗ trợ hoặc chống chỉ định, xin bạn hãy đến gặp bác sĩ chuyên khoa da liễu để có phương pháp điều trị tốt nhất. Cảm ơn bạn đã gửi câu hỏi"
           },
           "output": [
             {
-              "text": "khó thở",
+              "text": "MÀY đay VÔ CĂN",
               "position": [
-                59,
-                66
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.85
-            },
-            {
-              "text": "Khó thở",
-              "position": [
-                190,
-                197
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85
-            },
-            {
-              "text": "siêu âm tim",
-              "position": [
-                247,
-                258
-              ],
-              "type": "TÊN_XÉT_NGHIỆM",
-              "type_candidates": [
-                {
-                  "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.8
-                }
-              ],
-              "confidence": 0.8,
-              "vote_count": 2,
-              "max_type_votes": 2,
-              "voters": {
-                "qwen": 1,
-                "rule": 1
-              },
-              "type_votes": {
-                "TÊN_XÉT_NGHIỆM": 1.0
-              },
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              }
-            },
-            {
-              "text": "hở van hai lá nặng",
-              "position": [
-                268,
-                286
+                170,
+                184
               ],
               "type": "CHẨN_ĐOÁN",
               "source": "qwen",
@@ -1240,49 +927,21 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I34.0"
+                "L51"
               ],
-              "link_confidence": 0.99
+              "link_confidence": 0.85
             },
             {
-              "text": "Chụp động mạch vành",
+              "text": "MÀY đay MẠN",
               "position": [
-                289,
-                308
+                268,
+                279
               ],
-              "type": "TÊN_XÉT_NGHIỆM",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              }
-            },
-            {
-              "text": "lợi tiểu",
-              "position": [
-                364,
-                372
-              ],
-              "type": "THUỐC",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "THUỐC",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -1300,8 +959,89 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "L51"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "mày đay vô căn",
+              "position": [
+                747,
+                761
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "L51"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "phải dài và liên tục",
+              "position": [
+                913,
+                933
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tốt nhất",
+              "position": [
+                1450,
+                1458
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
           "result_type": "list"
@@ -1324,19 +1064,19 @@
       {
         "agent": "orchestrator",
         "action": "extraction_complete",
-        "mentions": 6,
-        "ts": 1784626860.394092
+        "mentions": 5,
+        "ts": 1784709779.5778897
       },
       {
         "agent": "orchestrator",
         "action": "assertion_start",
-        "ts": 1784626860.394109
+        "ts": 1784709779.577907
       },
       {
         "agent": "assertion",
         "action": "start",
         "data": {
-          "mentions": 6
+          "mentions": 5
         }
       },
       {
@@ -1345,47 +1085,9 @@
         "data": {
           "tool": "rule_assert",
           "input": {
-            "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở khi gắng sức\nCận lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n",
-            "start": 59,
-            "end": 66,
-            "mtype": "TRIỆU_CHỨNG"
-          },
-          "output": {
-            "isNegated": false,
-            "isFamily": false,
-            "isHistorical": true
-          },
-          "result_type": "dict"
-        }
-      },
-      {
-        "agent": "assertion",
-        "action": "tool_call",
-        "data": {
-          "tool": "rule_assert",
-          "input": {
-            "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở khi gắng sức\nCận lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n",
-            "start": 190,
-            "end": 197,
-            "mtype": "TRIỆU_CHỨNG"
-          },
-          "output": {
-            "isNegated": false,
-            "isFamily": false,
-            "isHistorical": false
-          },
-          "result_type": "dict"
-        }
-      },
-      {
-        "agent": "assertion",
-        "action": "tool_call",
-        "data": {
-          "tool": "rule_assert",
-          "input": {
-            "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở khi gắng sức\nCận lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n",
-            "start": 268,
-            "end": 286,
+            "text": "    - nhiều lần cố gắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát trên kính hiển thị vi quang học thông thường cần xem trên kính hiển thị vi điện tử. Các tế bào cột sống tăng lượng hạ bì với các mức độ thoát ra khác nhau cũng được quan sát. Quảng cáo quảng cáo thiết bị thương mại miễn phí dịch sinh học không tìm thấy hình ảnh giảm phức tạp, bổ sung hay sợi fibrin. Đối với bệnh lý mày đay vô căn, để lâu thường không có biến chứng gì nặng, chủ yếu bệnh làm ảnh hưởng tới chất lượng cuộc sống. Bạn đay vô căn hộ là một bệnh mạn tính, việc điều trị phải dài và liên tục. Quá giá trị chỉ là giấy chứng nhận. Điều trị phụ thuộc vào mức độ nghiêm trọng và nền tảng có liên kết. Cần lưu ý cân bằng giữa hiệu quả kiểm soát triệu chứng và những tác hại gây độc của liệu pháp điều trị. *************** có thể hệ sau không gây buồn ngủ là đơn hàng đầu sau đó đến *************** có thể hệ 1, ********* bậc thấp cách ngày hoặc hàng ngày và giảm dần chậm 2,5 – 5mg mỗi 2-3 tuần. Nếu không được hỗ trợ hoặc chống chỉ định, xin bạn hãy đến gặp bác sĩ chuyên khoa da liễu để có phương pháp điều trị tốt nhất. Cảm ơn bạn đã gửi câu hỏi",
+            "start": 170,
+            "end": 184,
             "mtype": "CHẨN_ĐOÁN"
           },
           "output": {
@@ -1402,10 +1104,10 @@
         "data": {
           "tool": "rule_assert",
           "input": {
-            "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở khi gắng sức\nCận lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n",
-            "start": 364,
-            "end": 372,
-            "mtype": "THUỐC"
+            "text": "    - nhiều lần cố gắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát trên kính hiển thị vi quang học thông thường cần xem trên kính hiển thị vi điện tử. Các tế bào cột sống tăng lượng hạ bì với các mức độ thoát ra khác nhau cũng được quan sát. Quảng cáo quảng cáo thiết bị thương mại miễn phí dịch sinh học không tìm thấy hình ảnh giảm phức tạp, bổ sung hay sợi fibrin. Đối với bệnh lý mày đay vô căn, để lâu thường không có biến chứng gì nặng, chủ yếu bệnh làm ảnh hưởng tới chất lượng cuộc sống. Bạn đay vô căn hộ là một bệnh mạn tính, việc điều trị phải dài và liên tục. Quá giá trị chỉ là giấy chứng nhận. Điều trị phụ thuộc vào mức độ nghiêm trọng và nền tảng có liên kết. Cần lưu ý cân bằng giữa hiệu quả kiểm soát triệu chứng và những tác hại gây độc của liệu pháp điều trị. *************** có thể hệ sau không gây buồn ngủ là đơn hàng đầu sau đó đến *************** có thể hệ 1, ********* bậc thấp cách ngày hoặc hàng ngày và giảm dần chậm 2,5 – 5mg mỗi 2-3 tuần. Nếu không được hỗ trợ hoặc chống chỉ định, xin bạn hãy đến gặp bác sĩ chuyên khoa da liễu để có phương pháp điều trị tốt nhất. Cảm ơn bạn đã gửi câu hỏi",
+            "start": 268,
+            "end": 279,
+            "mtype": "CHẨN_ĐOÁN"
           },
           "output": {
             "isNegated": false,
@@ -1417,27 +1119,84 @@
       },
       {
         "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "    - nhiều lần cố gắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát trên kính hiển thị vi quang học thông thường cần xem trên kính hiển thị vi điện tử. Các tế bào cột sống tăng lượng hạ bì với các mức độ thoát ra khác nhau cũng được quan sát. Quảng cáo quảng cáo thiết bị thương mại miễn phí dịch sinh học không tìm thấy hình ảnh giảm phức tạp, bổ sung hay sợi fibrin. Đối với bệnh lý mày đay vô căn, để lâu thường không có biến chứng gì nặng, chủ yếu bệnh làm ảnh hưởng tới chất lượng cuộc sống. Bạn đay vô căn hộ là một bệnh mạn tính, việc điều trị phải dài và liên tục. Quá giá trị chỉ là giấy chứng nhận. Điều trị phụ thuộc vào mức độ nghiêm trọng và nền tảng có liên kết. Cần lưu ý cân bằng giữa hiệu quả kiểm soát triệu chứng và những tác hại gây độc của liệu pháp điều trị. *************** có thể hệ sau không gây buồn ngủ là đơn hàng đầu sau đó đến *************** có thể hệ 1, ********* bậc thấp cách ngày hoặc hàng ngày và giảm dần chậm 2,5 – 5mg mỗi 2-3 tuần. Nếu không được hỗ trợ hoặc chống chỉ định, xin bạn hãy đến gặp bác sĩ chuyên khoa da liễu để có phương pháp điều trị tốt nhất. Cảm ơn bạn đã gửi câu hỏi",
+            "start": 747,
+            "end": 761,
+            "mtype": "CHẨN_ĐOÁN"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "    - nhiều lần cố gắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát trên kính hiển thị vi quang học thông thường cần xem trên kính hiển thị vi điện tử. Các tế bào cột sống tăng lượng hạ bì với các mức độ thoát ra khác nhau cũng được quan sát. Quảng cáo quảng cáo thiết bị thương mại miễn phí dịch sinh học không tìm thấy hình ảnh giảm phức tạp, bổ sung hay sợi fibrin. Đối với bệnh lý mày đay vô căn, để lâu thường không có biến chứng gì nặng, chủ yếu bệnh làm ảnh hưởng tới chất lượng cuộc sống. Bạn đay vô căn hộ là một bệnh mạn tính, việc điều trị phải dài và liên tục. Quá giá trị chỉ là giấy chứng nhận. Điều trị phụ thuộc vào mức độ nghiêm trọng và nền tảng có liên kết. Cần lưu ý cân bằng giữa hiệu quả kiểm soát triệu chứng và những tác hại gây độc của liệu pháp điều trị. *************** có thể hệ sau không gây buồn ngủ là đơn hàng đầu sau đó đến *************** có thể hệ 1, ********* bậc thấp cách ngày hoặc hàng ngày và giảm dần chậm 2,5 – 5mg mỗi 2-3 tuần. Nếu không được hỗ trợ hoặc chống chỉ định, xin bạn hãy đến gặp bác sĩ chuyên khoa da liễu để có phương pháp điều trị tốt nhất. Cảm ơn bạn đã gửi câu hỏi",
+            "start": 913,
+            "end": 933,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": false,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
+        "action": "tool_call",
+        "data": {
+          "tool": "rule_assert",
+          "input": {
+            "text": "    - nhiều lần cố gắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát trên kính hiển thị vi quang học thông thường cần xem trên kính hiển thị vi điện tử. Các tế bào cột sống tăng lượng hạ bì với các mức độ thoát ra khác nhau cũng được quan sát. Quảng cáo quảng cáo thiết bị thương mại miễn phí dịch sinh học không tìm thấy hình ảnh giảm phức tạp, bổ sung hay sợi fibrin. Đối với bệnh lý mày đay vô căn, để lâu thường không có biến chứng gì nặng, chủ yếu bệnh làm ảnh hưởng tới chất lượng cuộc sống. Bạn đay vô căn hộ là một bệnh mạn tính, việc điều trị phải dài và liên tục. Quá giá trị chỉ là giấy chứng nhận. Điều trị phụ thuộc vào mức độ nghiêm trọng và nền tảng có liên kết. Cần lưu ý cân bằng giữa hiệu quả kiểm soát triệu chứng và những tác hại gây độc của liệu pháp điều trị. *************** có thể hệ sau không gây buồn ngủ là đơn hàng đầu sau đó đến *************** có thể hệ 1, ********* bậc thấp cách ngày hoặc hàng ngày và giảm dần chậm 2,5 – 5mg mỗi 2-3 tuần. Nếu không được hỗ trợ hoặc chống chỉ định, xin bạn hãy đến gặp bác sĩ chuyên khoa da liễu để có phương pháp điều trị tốt nhất. Cảm ơn bạn đã gửi câu hỏi",
+            "start": 1450,
+            "end": 1458,
+            "mtype": "TRIỆU_CHỨNG"
+          },
+          "output": {
+            "isNegated": true,
+            "isFamily": false,
+            "isHistorical": false
+          },
+          "result_type": "dict"
+        }
+      },
+      {
+        "agent": "assertion",
         "action": "complete",
         "data": {
-          "processed": 6,
+          "processed": 5,
           "llm_checked": 0
         }
       },
       {
         "agent": "orchestrator",
         "action": "assertion_complete",
-        "ts": 1784626860.394604
+        "ts": 1784709779.578536
       },
       {
         "agent": "orchestrator",
         "action": "linking_start",
-        "ts": 1784626860.394615
+        "ts": 1784709779.5785453
       },
       {
         "agent": "linking",
         "action": "start",
         "data": {
-          "mentions": 6
+          "mentions": 5
         }
       },
       {
@@ -1447,10 +1206,10 @@
           "tool": "link_entity",
           "input": {
             "mention": {
-              "text": "hở van hai lá nặng",
+              "text": "MÀY đay VÔ CĂN",
               "position": [
-                268,
-                286
+                170,
+                184
               ],
               "type": "CHẨN_ĐOÁN",
               "source": "qwen",
@@ -1475,17 +1234,18 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I34.0"
+                "L51"
               ],
-              "link_confidence": 0.99
+              "link_confidence": 0.85
             },
-            "context": ". Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở khi gắng sức\nCận lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n"
+            "context": "ắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập "
           },
           "output": {
             "candidates": [
-              "I34.0"
+              "L51"
             ],
-            "confidence": 0.99
+            "confidence": 0.85,
+            "rationale": "Mày đay vô căn là một dạng bệnh mày đay không có nguyên nhân rõ ràng, mã L51 được sử dụng để chỉ tình trạng này trong ICD-10."
           },
           "result_type": "dict"
         }
@@ -1497,16 +1257,16 @@
           "tool": "link_entity",
           "input": {
             "mention": {
-              "text": "lợi tiểu",
+              "text": "MÀY đay MẠN",
               "position": [
-                364,
-                372
+                268,
+                279
               ],
-              "type": "THUỐC",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "THUỐC",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -1524,14 +1284,19 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "L51"
+              ],
+              "link_confidence": 0.85
             },
-            "context": " lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n"
+            "context": " như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát"
           },
           "output": {
-            "candidates": [],
-            "confidence": 0.0
+            "candidates": [
+              "L51"
+            ],
+            "confidence": 0.85,
+            "rationale": "Mày đay mạn tính được mã hóa bởi L51 trong ICD-10, phù hợp với mention 'MÀY đay MẠN'."
           },
           "result_type": "dict"
         }
@@ -1540,25 +1305,25 @@
         "agent": "linking",
         "action": "complete",
         "data": {
-          "linked": 1
+          "linked": 3
         }
       },
       {
         "agent": "orchestrator",
         "action": "linking_complete",
-        "linked": 1,
-        "ts": 1784626860.4384568
+        "linked": 3,
+        "ts": 1784709809.1036243
       },
       {
         "agent": "orchestrator",
         "action": "verification_start",
-        "ts": 1784626860.4384823
+        "ts": 1784709809.103647
       },
       {
         "agent": "verifier",
         "action": "start",
         "data": {
-          "mentions": 6
+          "mentions": 5
         }
       },
       {
@@ -1569,99 +1334,10 @@
           "input": {
             "mentions": [
               {
-                "text": "khó thở",
+                "text": "MÀY đay VÔ CĂN",
                 "position": [
-                  59,
-                  66
-                ],
-                "type": "TRIỆU_CHỨNG",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": true
-                },
-                "assertion_confidence": 0.85
-              },
-              {
-                "text": "Khó thở",
-                "position": [
-                  190,
-                  197
-                ],
-                "type": "TRIỆU_CHỨNG",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": false
-                },
-                "assertion_confidence": 0.85
-              },
-              {
-                "text": "siêu âm tim",
-                "position": [
-                  247,
-                  258
-                ],
-                "type": "TÊN_XÉT_NGHIỆM",
-                "type_candidates": [
-                  {
-                    "label": "TÊN_XÉT_NGHIỆM",
-                    "score": 0.8
-                  }
-                ],
-                "confidence": 0.8,
-                "vote_count": 2,
-                "max_type_votes": 2,
-                "voters": {
-                  "qwen": 1,
-                  "rule": 1
-                },
-                "type_votes": {
-                  "TÊN_XÉT_NGHIỆM": 1.0
-                },
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": false
-                }
-              },
-              {
-                "text": "hở van hai lá nặng",
-                "position": [
-                  268,
-                  286
+                  170,
+                  184
                 ],
                 "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
@@ -1686,49 +1362,21 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I34.0"
+                  "L51"
                 ],
-                "link_confidence": 0.99
+                "link_confidence": 0.85
               },
               {
-                "text": "Chụp động mạch vành",
+                "text": "MÀY đay MẠN",
                 "position": [
-                  289,
-                  308
+                  268,
+                  279
                 ],
-                "type": "TÊN_XÉT_NGHIỆM",
+                "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
                 "type_candidates": [
                   {
-                    "label": "TÊN_XÉT_NGHIỆM",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": false
-                }
-              },
-              {
-                "text": "lợi tiểu",
-                "position": [
-                  364,
-                  372
-                ],
-                "type": "THUỐC",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "THUỐC",
+                    "label": "CHẨN_ĐOÁN",
                     "score": 0.85
                   }
                 ],
@@ -1746,11 +1394,92 @@
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85,
-                "candidates": [],
-                "link_confidence": 0.0
+                "candidates": [
+                  "L51"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "mày đay vô căn",
+                "position": [
+                  747,
+                  761
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "L51"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "phải dài và liên tục",
+                "position": [
+                  913,
+                  933
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "tốt nhất",
+                "position": [
+                  1450,
+                  1458
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
               }
             ],
-            "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở khi gắng sức\nCận lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n"
+            "text": "    - nhiều lần cố gắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát trên kính hiển thị vi quang học thông thường cần xem trên kính hiển thị vi điện tử. Các tế bào cột sống tăng lượng hạ bì với các mức độ thoát ra khác nhau cũng được quan sát. Quảng cáo quảng cáo thiết bị thương mại miễn phí dịch sinh học không tìm thấy hình ảnh giảm phức tạp, bổ sung hay sợi fibrin. Đối với bệnh lý mày đay vô căn, để lâu thường không có biến chứng gì nặng, chủ yếu bệnh làm ảnh hưởng tới chất lượng cuộc sống. Bạn đay vô căn hộ là một bệnh mạn tính, việc điều trị phải dài và liên tục. Quá giá trị chỉ là giấy chứng nhận. Điều trị phụ thuộc vào mức độ nghiêm trọng và nền tảng có liên kết. Cần lưu ý cân bằng giữa hiệu quả kiểm soát triệu chứng và những tác hại gây độc của liệu pháp điều trị. *************** có thể hệ sau không gây buồn ngủ là đơn hàng đầu sau đó đến *************** có thể hệ 1, ********* bậc thấp cách ngày hoặc hàng ngày và giảm dần chậm 2,5 – 5mg mỗi 2-3 tuần. Nếu không được hỗ trợ hoặc chống chỉ định, xin bạn hãy đến gặp bác sĩ chuyên khoa da liễu để có phương pháp điều trị tốt nhất. Cảm ơn bạn đã gửi câu hỏi"
           },
           "output": {
             "actions": [
@@ -1778,110 +1507,14 @@
                 "action": "accept",
                 "fixes": [],
                 "warnings": []
-              },
-              {
-                "action": "accept",
-                "fixes": [],
-                "warnings": [
-                  "no candidates"
-                ]
               }
             ],
             "final_predictions": [
               {
-                "text": "khó thở",
+                "text": "MÀY đay VÔ CĂN",
                 "position": [
-                  59,
-                  66
-                ],
-                "type": "TRIỆU_CHỨNG",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": true
-                },
-                "assertion_confidence": 0.85
-              },
-              {
-                "text": "Khó thở",
-                "position": [
-                  190,
-                  197
-                ],
-                "type": "TRIỆU_CHỨNG",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "TRIỆU_CHỨNG",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": false
-                },
-                "assertion_confidence": 0.85
-              },
-              {
-                "text": "siêu âm tim",
-                "position": [
-                  247,
-                  258
-                ],
-                "type": "TÊN_XÉT_NGHIỆM",
-                "type_candidates": [
-                  {
-                    "label": "TÊN_XÉT_NGHIỆM",
-                    "score": 0.8
-                  }
-                ],
-                "confidence": 0.8,
-                "vote_count": 2,
-                "max_type_votes": 2,
-                "voters": {
-                  "qwen": 1,
-                  "rule": 1
-                },
-                "type_votes": {
-                  "TÊN_XÉT_NGHIỆM": 1.0
-                },
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": false
-                }
-              },
-              {
-                "text": "hở van hai lá nặng",
-                "position": [
-                  268,
-                  286
+                  170,
+                  184
                 ],
                 "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
@@ -1906,49 +1539,21 @@
                 },
                 "assertion_confidence": 0.85,
                 "candidates": [
-                  "I34.0"
+                  "L51"
                 ],
-                "link_confidence": 0.99
+                "link_confidence": 0.85
               },
               {
-                "text": "Chụp động mạch vành",
+                "text": "MÀY đay MẠN",
                 "position": [
-                  289,
-                  308
+                  268,
+                  279
                 ],
-                "type": "TÊN_XÉT_NGHIỆM",
+                "type": "CHẨN_ĐOÁN",
                 "source": "qwen",
                 "type_candidates": [
                   {
-                    "label": "TÊN_XÉT_NGHIỆM",
-                    "score": 0.85
-                  }
-                ],
-                "extraction_source": "qwen",
-                "vote_count": 1,
-                "voters": {
-                  "qwen": 1
-                },
-                "confidence": 0.5,
-                "needs_review": false,
-                "position_fixed": false,
-                "assertions": {
-                  "isNegated": false,
-                  "isFamily": false,
-                  "isHistorical": false
-                }
-              },
-              {
-                "text": "lợi tiểu",
-                "position": [
-                  364,
-                  372
-                ],
-                "type": "THUỐC",
-                "source": "qwen",
-                "type_candidates": [
-                  {
-                    "label": "THUỐC",
+                    "label": "CHẨN_ĐOÁN",
                     "score": 0.85
                   }
                 ],
@@ -1966,8 +1571,89 @@
                   "isHistorical": false
                 },
                 "assertion_confidence": 0.85,
-                "candidates": [],
-                "link_confidence": 0.0
+                "candidates": [
+                  "L51"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "mày đay vô căn",
+                "position": [
+                  747,
+                  761
+                ],
+                "type": "CHẨN_ĐOÁN",
+                "source": "qwen",
+                "type_candidates": [
+                  {
+                    "label": "CHẨN_ĐOÁN",
+                    "score": 0.85
+                  }
+                ],
+                "extraction_source": "qwen",
+                "vote_count": 1,
+                "voters": {
+                  "qwen": 1
+                },
+                "confidence": 0.5,
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85,
+                "candidates": [
+                  "L51"
+                ],
+                "link_confidence": 0.85
+              },
+              {
+                "text": "phải dài và liên tục",
+                "position": [
+                  913,
+                  933
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": false,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
+              },
+              {
+                "text": "tốt nhất",
+                "position": [
+                  1450,
+                  1458
+                ],
+                "type": "TRIỆU_CHỨNG",
+                "confidence": 0.95,
+                "source": "rule",
+                "extraction_source": "rule",
+                "vote_count": 1,
+                "voters": {
+                  "rule": 1
+                },
+                "needs_review": false,
+                "position_fixed": false,
+                "assertions": {
+                  "isNegated": true,
+                  "isFamily": false,
+                  "isHistorical": false
+                },
+                "assertion_confidence": 0.85
               }
             ],
             "dropped": 0
@@ -1979,22 +1665,22 @@
         "agent": "verifier",
         "action": "validated",
         "data": {
-          "kept": 6,
+          "kept": 5,
           "dropped": 0
         }
       },
       {
         "agent": "orchestrator",
         "action": "verification_complete",
-        "kept": 6,
-        "ts": 1784626860.5491886
+        "kept": 5,
+        "ts": 1784709810.5841417
       },
       {
         "agent": "orchestrator",
         "action": "complete",
-        "total_mentions": 6,
-        "elapsed": 16.49,
-        "ts": 1784626860.549224
+        "total_mentions": 5,
+        "elapsed": 41.67,
+        "ts": 1784709810.5841694
       }
     ]
   },
@@ -2002,26 +1688,26 @@
     {
       "agent": "orchestrator",
       "action": "start",
-      "text_len": 414,
-      "ts": 1784626844.0590763
+      "text_len": 1485,
+      "ts": 1784709768.9162083
     },
     {
       "agent": "orchestrator",
       "action": "extraction_start",
-      "ts": 1784626844.0590918
+      "ts": 1784709768.9162245
     },
     {
       "agent": "extraction",
       "action": "start",
       "data": {
-        "text_len": 414
+        "text_len": 1485
       }
     },
     {
       "agent": "extraction",
       "action": "preprocessed",
       "data": {
-        "normalized_len": 414
+        "normalized_len": 1485
       }
     },
     {
@@ -2030,17 +1716,28 @@
       "data": {
         "tool": "parallel_extract",
         "input": {
-          "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở khi gắng sức\nCận lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n"
+          "text": "    - nhiều lần cố gắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát trên kính hiển thị vi quang học thông thường cần xem trên kính hiển thị vi điện tử. Các tế bào cột sống tăng lượng hạ bì với các mức độ thoát ra khác nhau cũng được quan sát. Quảng cáo quảng cáo thiết bị thương mại miễn phí dịch sinh học không tìm thấy hình ảnh giảm phức tạp, bổ sung hay sợi fibrin. Đối với bệnh lý mày đay vô căn, để lâu thường không có biến chứng gì nặng, chủ yếu bệnh làm ảnh hưởng tới chất lượng cuộc sống. Bạn đay vô căn hộ là một bệnh mạn tính, việc điều trị phải dài và liên tục. Quá giá trị chỉ là giấy chứng nhận. Điều trị phụ thuộc vào mức độ nghiêm trọng và nền tảng có liên kết. Cần lưu ý cân bằng giữa hiệu quả kiểm soát triệu chứng và những tác hại gây độc của liệu pháp điều trị. *************** có thể hệ sau không gây buồn ngủ là đơn hàng đầu sau đó đến *************** có thể hệ 1, ********* bậc thấp cách ngày hoặc hàng ngày và giảm dần chậm 2,5 – 5mg mỗi 2-3 tuần. Nếu không được hỗ trợ hoặc chống chỉ định, xin bạn hãy đến gặp bác sĩ chuyên khoa da liễu để có phương pháp điều trị tốt nhất. Cảm ơn bạn đã gửi câu hỏi"
         },
         "output": {
           "rule": [
             {
-              "text": "siêu âm tim",
+              "text": "phải dài và liên tục",
               "position": [
-                247,
-                258
+                913,
+                933
               ],
-              "type": "TÊN_XÉT_NGHIỆM",
+              "type": "TRIỆU_CHỨNG",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "tốt nhất",
+              "position": [
+                1450,
+                1458
+              ],
+              "type": "TRIỆU_CHỨNG",
               "confidence": 0.95,
               "source": "rule",
               "extraction_source": "rule"
@@ -2048,58 +1745,10 @@
           ],
           "qwen": [
             {
-              "text": "khó thở",
+              "text": "MÀY đay VÔ CĂN",
               "position": [
-                59,
-                66
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen"
-            },
-            {
-              "text": "Khó thở",
-              "position": [
-                190,
-                197
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen"
-            },
-            {
-              "text": "siêu âm tim",
-              "position": [
-                247,
-                258
-              ],
-              "type": "TÊN_XÉT_NGHIỆM",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen"
-            },
-            {
-              "text": "hở van hai lá nặng",
-              "position": [
-                268,
-                286
+                170,
+                184
               ],
               "type": "CHẨN_ĐOÁN",
               "source": "qwen",
@@ -2112,32 +1761,32 @@
               "extraction_source": "qwen"
             },
             {
-              "text": "Chụp động mạch vành",
+              "text": "MÀY đay MẠN",
               "position": [
-                289,
-                308
+                268,
+                279
               ],
-              "type": "TÊN_XÉT_NGHIỆM",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "TÊN_XÉT_NGHIỆM",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
               "extraction_source": "qwen"
             },
             {
-              "text": "lợi tiểu",
+              "text": "mày đay vô căn",
               "position": [
-                364,
-                372
+                747,
+                761
               ],
-              "type": "THUỐC",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "THUỐC",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -2154,10 +1803,10 @@
       "action": "extracted",
       "data": {
         "sources": {
-          "rule": 1,
-          "qwen": 6
+          "rule": 2,
+          "qwen": 3
         },
-        "total": 7
+        "total": 5
       }
     },
     {
@@ -2168,58 +1817,10 @@
         "input": {
           "all_mentions": [
             {
-              "text": "khó thở",
+              "text": "MÀY đay VÔ CĂN",
               "position": [
-                59,
-                66
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen"
-            },
-            {
-              "text": "Khó thở",
-              "position": [
-                190,
-                197
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen"
-            },
-            {
-              "text": "siêu âm tim",
-              "position": [
-                247,
-                258
-              ],
-              "type": "TÊN_XÉT_NGHIỆM",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen"
-            },
-            {
-              "text": "hở van hai lá nặng",
-              "position": [
-                268,
-                286
+                170,
+                184
               ],
               "type": "CHẨN_ĐOÁN",
               "source": "qwen",
@@ -2232,44 +1833,55 @@
               "extraction_source": "qwen"
             },
             {
-              "text": "Chụp động mạch vành",
+              "text": "MÀY đay MẠN",
               "position": [
-                289,
-                308
+                268,
+                279
               ],
-              "type": "TÊN_XÉT_NGHIỆM",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "TÊN_XÉT_NGHIỆM",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
               "extraction_source": "qwen"
             },
             {
-              "text": "lợi tiểu",
+              "text": "mày đay vô căn",
               "position": [
-                364,
-                372
+                747,
+                761
               ],
-              "type": "THUỐC",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "THUỐC",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
               "extraction_source": "qwen"
             },
             {
-              "text": "siêu âm tim",
+              "text": "phải dài và liên tục",
               "position": [
-                247,
-                258
+                913,
+                933
               ],
-              "type": "TÊN_XÉT_NGHIỆM",
+              "type": "TRIỆU_CHỨNG",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule"
+            },
+            {
+              "text": "tốt nhất",
+              "position": [
+                1450,
+                1458
+              ],
+              "type": "TRIỆU_CHỨNG",
               "confidence": 0.95,
               "source": "rule",
               "extraction_source": "rule"
@@ -2278,99 +1890,10 @@
         },
         "output": [
           {
-            "text": "khó thở",
+            "text": "MÀY đay VÔ CĂN",
             "position": [
-              59,
-              66
-            ],
-            "type": "TRIỆU_CHỨNG",
-            "source": "qwen",
-            "type_candidates": [
-              {
-                "label": "TRIỆU_CHỨNG",
-                "score": 0.85
-              }
-            ],
-            "extraction_source": "qwen",
-            "vote_count": 1,
-            "voters": {
-              "qwen": 1
-            },
-            "confidence": 0.5,
-            "needs_review": false,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": true
-            },
-            "assertion_confidence": 0.85
-          },
-          {
-            "text": "Khó thở",
-            "position": [
-              190,
-              197
-            ],
-            "type": "TRIỆU_CHỨNG",
-            "source": "qwen",
-            "type_candidates": [
-              {
-                "label": "TRIỆU_CHỨNG",
-                "score": 0.85
-              }
-            ],
-            "extraction_source": "qwen",
-            "vote_count": 1,
-            "voters": {
-              "qwen": 1
-            },
-            "confidence": 0.5,
-            "needs_review": false,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": false
-            },
-            "assertion_confidence": 0.85
-          },
-          {
-            "text": "siêu âm tim",
-            "position": [
-              247,
-              258
-            ],
-            "type": "TÊN_XÉT_NGHIỆM",
-            "type_candidates": [
-              {
-                "label": "TÊN_XÉT_NGHIỆM",
-                "score": 0.8
-              }
-            ],
-            "confidence": 0.8,
-            "vote_count": 2,
-            "max_type_votes": 2,
-            "voters": {
-              "qwen": 1,
-              "rule": 1
-            },
-            "type_votes": {
-              "TÊN_XÉT_NGHIỆM": 1.0
-            },
-            "needs_review": false,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": false
-            }
-          },
-          {
-            "text": "hở van hai lá nặng",
-            "position": [
-              268,
-              286
+              170,
+              184
             ],
             "type": "CHẨN_ĐOÁN",
             "source": "qwen",
@@ -2395,49 +1918,21 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I34.0"
+              "L51"
             ],
-            "link_confidence": 0.99
+            "link_confidence": 0.85
           },
           {
-            "text": "Chụp động mạch vành",
+            "text": "MÀY đay MẠN",
             "position": [
-              289,
-              308
+              268,
+              279
             ],
-            "type": "TÊN_XÉT_NGHIỆM",
+            "type": "CHẨN_ĐOÁN",
             "source": "qwen",
             "type_candidates": [
               {
-                "label": "TÊN_XÉT_NGHIỆM",
-                "score": 0.85
-              }
-            ],
-            "extraction_source": "qwen",
-            "vote_count": 1,
-            "voters": {
-              "qwen": 1
-            },
-            "confidence": 0.5,
-            "needs_review": false,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": false
-            }
-          },
-          {
-            "text": "lợi tiểu",
-            "position": [
-              364,
-              372
-            ],
-            "type": "THUỐC",
-            "source": "qwen",
-            "type_candidates": [
-              {
-                "label": "THUỐC",
+                "label": "CHẨN_ĐOÁN",
                 "score": 0.85
               }
             ],
@@ -2455,8 +1950,89 @@
               "isHistorical": false
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "L51"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "mày đay vô căn",
+            "position": [
+              747,
+              761
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "L51"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "phải dài và liên tục",
+            "position": [
+              913,
+              933
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "tốt nhất",
+            "position": [
+              1450,
+              1458
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
           }
         ],
         "result_type": "list"
@@ -2466,7 +2042,7 @@
       "agent": "extraction",
       "action": "voted",
       "data": {
-        "merged": 6
+        "merged": 5
       }
     },
     {
@@ -2477,99 +2053,10 @@
         "input": {
           "merged": [
             {
-              "text": "khó thở",
+              "text": "MÀY đay VÔ CĂN",
               "position": [
-                59,
-                66
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.85
-            },
-            {
-              "text": "Khó thở",
-              "position": [
-                190,
-                197
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85
-            },
-            {
-              "text": "siêu âm tim",
-              "position": [
-                247,
-                258
-              ],
-              "type": "TÊN_XÉT_NGHIỆM",
-              "type_candidates": [
-                {
-                  "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.8
-                }
-              ],
-              "confidence": 0.8,
-              "vote_count": 2,
-              "max_type_votes": 2,
-              "voters": {
-                "qwen": 1,
-                "rule": 1
-              },
-              "type_votes": {
-                "TÊN_XÉT_NGHIỆM": 1.0
-              },
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              }
-            },
-            {
-              "text": "hở van hai lá nặng",
-              "position": [
-                268,
-                286
+                170,
+                184
               ],
               "type": "CHẨN_ĐOÁN",
               "source": "qwen",
@@ -2594,49 +2081,21 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I34.0"
+                "L51"
               ],
-              "link_confidence": 0.99
+              "link_confidence": 0.85
             },
             {
-              "text": "Chụp động mạch vành",
+              "text": "MÀY đay MẠN",
               "position": [
-                289,
-                308
+                268,
+                279
               ],
-              "type": "TÊN_XÉT_NGHIỆM",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              }
-            },
-            {
-              "text": "lợi tiểu",
-              "position": [
-                364,
-                372
-              ],
-              "type": "THUỐC",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "THUỐC",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -2654,107 +2113,99 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "L51"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "mày đay vô căn",
+              "position": [
+                747,
+                761
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "L51"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "phải dài và liên tục",
+              "position": [
+                913,
+                933
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tốt nhất",
+              "position": [
+                1450,
+                1458
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
-          "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở khi gắng sức\nCận lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n"
+          "text": "    - nhiều lần cố gắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát trên kính hiển thị vi quang học thông thường cần xem trên kính hiển thị vi điện tử. Các tế bào cột sống tăng lượng hạ bì với các mức độ thoát ra khác nhau cũng được quan sát. Quảng cáo quảng cáo thiết bị thương mại miễn phí dịch sinh học không tìm thấy hình ảnh giảm phức tạp, bổ sung hay sợi fibrin. Đối với bệnh lý mày đay vô căn, để lâu thường không có biến chứng gì nặng, chủ yếu bệnh làm ảnh hưởng tới chất lượng cuộc sống. Bạn đay vô căn hộ là một bệnh mạn tính, việc điều trị phải dài và liên tục. Quá giá trị chỉ là giấy chứng nhận. Điều trị phụ thuộc vào mức độ nghiêm trọng và nền tảng có liên kết. Cần lưu ý cân bằng giữa hiệu quả kiểm soát triệu chứng và những tác hại gây độc của liệu pháp điều trị. *************** có thể hệ sau không gây buồn ngủ là đơn hàng đầu sau đó đến *************** có thể hệ 1, ********* bậc thấp cách ngày hoặc hàng ngày và giảm dần chậm 2,5 – 5mg mỗi 2-3 tuần. Nếu không được hỗ trợ hoặc chống chỉ định, xin bạn hãy đến gặp bác sĩ chuyên khoa da liễu để có phương pháp điều trị tốt nhất. Cảm ơn bạn đã gửi câu hỏi"
         },
         "output": [
           {
-            "text": "khó thở",
+            "text": "MÀY đay VÔ CĂN",
             "position": [
-              59,
-              66
-            ],
-            "type": "TRIỆU_CHỨNG",
-            "source": "qwen",
-            "type_candidates": [
-              {
-                "label": "TRIỆU_CHỨNG",
-                "score": 0.85
-              }
-            ],
-            "extraction_source": "qwen",
-            "vote_count": 1,
-            "voters": {
-              "qwen": 1
-            },
-            "confidence": 0.5,
-            "needs_review": false,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": true
-            },
-            "assertion_confidence": 0.85
-          },
-          {
-            "text": "Khó thở",
-            "position": [
-              190,
-              197
-            ],
-            "type": "TRIỆU_CHỨNG",
-            "source": "qwen",
-            "type_candidates": [
-              {
-                "label": "TRIỆU_CHỨNG",
-                "score": 0.85
-              }
-            ],
-            "extraction_source": "qwen",
-            "vote_count": 1,
-            "voters": {
-              "qwen": 1
-            },
-            "confidence": 0.5,
-            "needs_review": false,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": false
-            },
-            "assertion_confidence": 0.85
-          },
-          {
-            "text": "siêu âm tim",
-            "position": [
-              247,
-              258
-            ],
-            "type": "TÊN_XÉT_NGHIỆM",
-            "type_candidates": [
-              {
-                "label": "TÊN_XÉT_NGHIỆM",
-                "score": 0.8
-              }
-            ],
-            "confidence": 0.8,
-            "vote_count": 2,
-            "max_type_votes": 2,
-            "voters": {
-              "qwen": 1,
-              "rule": 1
-            },
-            "type_votes": {
-              "TÊN_XÉT_NGHIỆM": 1.0
-            },
-            "needs_review": false,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": false
-            }
-          },
-          {
-            "text": "hở van hai lá nặng",
-            "position": [
-              268,
-              286
+              170,
+              184
             ],
             "type": "CHẨN_ĐOÁN",
             "source": "qwen",
@@ -2779,49 +2230,21 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I34.0"
+              "L51"
             ],
-            "link_confidence": 0.99
+            "link_confidence": 0.85
           },
           {
-            "text": "Chụp động mạch vành",
+            "text": "MÀY đay MẠN",
             "position": [
-              289,
-              308
+              268,
+              279
             ],
-            "type": "TÊN_XÉT_NGHIỆM",
+            "type": "CHẨN_ĐOÁN",
             "source": "qwen",
             "type_candidates": [
               {
-                "label": "TÊN_XÉT_NGHIỆM",
-                "score": 0.85
-              }
-            ],
-            "extraction_source": "qwen",
-            "vote_count": 1,
-            "voters": {
-              "qwen": 1
-            },
-            "confidence": 0.5,
-            "needs_review": false,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": false
-            }
-          },
-          {
-            "text": "lợi tiểu",
-            "position": [
-              364,
-              372
-            ],
-            "type": "THUỐC",
-            "source": "qwen",
-            "type_candidates": [
-              {
-                "label": "THUỐC",
+                "label": "CHẨN_ĐOÁN",
                 "score": 0.85
               }
             ],
@@ -2839,8 +2262,89 @@
               "isHistorical": false
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "L51"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "mày đay vô căn",
+            "position": [
+              747,
+              761
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "L51"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "phải dài và liên tục",
+            "position": [
+              913,
+              933
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "tốt nhất",
+            "position": [
+              1450,
+              1458
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
           }
         ],
         "result_type": "list"
@@ -2854,99 +2358,10 @@
         "input": {
           "mentions": [
             {
-              "text": "khó thở",
+              "text": "MÀY đay VÔ CĂN",
               "position": [
-                59,
-                66
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.85
-            },
-            {
-              "text": "Khó thở",
-              "position": [
-                190,
-                197
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85
-            },
-            {
-              "text": "siêu âm tim",
-              "position": [
-                247,
-                258
-              ],
-              "type": "TÊN_XÉT_NGHIỆM",
-              "type_candidates": [
-                {
-                  "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.8
-                }
-              ],
-              "confidence": 0.8,
-              "vote_count": 2,
-              "max_type_votes": 2,
-              "voters": {
-                "qwen": 1,
-                "rule": 1
-              },
-              "type_votes": {
-                "TÊN_XÉT_NGHIỆM": 1.0
-              },
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              }
-            },
-            {
-              "text": "hở van hai lá nặng",
-              "position": [
-                268,
-                286
+                170,
+                184
               ],
               "type": "CHẨN_ĐOÁN",
               "source": "qwen",
@@ -2971,49 +2386,21 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I34.0"
+                "L51"
               ],
-              "link_confidence": 0.99
+              "link_confidence": 0.85
             },
             {
-              "text": "Chụp động mạch vành",
+              "text": "MÀY đay MẠN",
               "position": [
-                289,
-                308
+                268,
+                279
               ],
-              "type": "TÊN_XÉT_NGHIỆM",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              }
-            },
-            {
-              "text": "lợi tiểu",
-              "position": [
-                364,
-                372
-              ],
-              "type": "THUỐC",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "THUỐC",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -3031,107 +2418,99 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "L51"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "mày đay vô căn",
+              "position": [
+                747,
+                761
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "L51"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "phải dài và liên tục",
+              "position": [
+                913,
+                933
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tốt nhất",
+              "position": [
+                1450,
+                1458
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
-          "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở khi gắng sức\nCận lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n"
+          "text": "    - nhiều lần cố gắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát trên kính hiển thị vi quang học thông thường cần xem trên kính hiển thị vi điện tử. Các tế bào cột sống tăng lượng hạ bì với các mức độ thoát ra khác nhau cũng được quan sát. Quảng cáo quảng cáo thiết bị thương mại miễn phí dịch sinh học không tìm thấy hình ảnh giảm phức tạp, bổ sung hay sợi fibrin. Đối với bệnh lý mày đay vô căn, để lâu thường không có biến chứng gì nặng, chủ yếu bệnh làm ảnh hưởng tới chất lượng cuộc sống. Bạn đay vô căn hộ là một bệnh mạn tính, việc điều trị phải dài và liên tục. Quá giá trị chỉ là giấy chứng nhận. Điều trị phụ thuộc vào mức độ nghiêm trọng và nền tảng có liên kết. Cần lưu ý cân bằng giữa hiệu quả kiểm soát triệu chứng và những tác hại gây độc của liệu pháp điều trị. *************** có thể hệ sau không gây buồn ngủ là đơn hàng đầu sau đó đến *************** có thể hệ 1, ********* bậc thấp cách ngày hoặc hàng ngày và giảm dần chậm 2,5 – 5mg mỗi 2-3 tuần. Nếu không được hỗ trợ hoặc chống chỉ định, xin bạn hãy đến gặp bác sĩ chuyên khoa da liễu để có phương pháp điều trị tốt nhất. Cảm ơn bạn đã gửi câu hỏi"
         },
         "output": [
           {
-            "text": "khó thở",
+            "text": "MÀY đay VÔ CĂN",
             "position": [
-              59,
-              66
-            ],
-            "type": "TRIỆU_CHỨNG",
-            "source": "qwen",
-            "type_candidates": [
-              {
-                "label": "TRIỆU_CHỨNG",
-                "score": 0.85
-              }
-            ],
-            "extraction_source": "qwen",
-            "vote_count": 1,
-            "voters": {
-              "qwen": 1
-            },
-            "confidence": 0.5,
-            "needs_review": false,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": true
-            },
-            "assertion_confidence": 0.85
-          },
-          {
-            "text": "Khó thở",
-            "position": [
-              190,
-              197
-            ],
-            "type": "TRIỆU_CHỨNG",
-            "source": "qwen",
-            "type_candidates": [
-              {
-                "label": "TRIỆU_CHỨNG",
-                "score": 0.85
-              }
-            ],
-            "extraction_source": "qwen",
-            "vote_count": 1,
-            "voters": {
-              "qwen": 1
-            },
-            "confidence": 0.5,
-            "needs_review": false,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": false
-            },
-            "assertion_confidence": 0.85
-          },
-          {
-            "text": "siêu âm tim",
-            "position": [
-              247,
-              258
-            ],
-            "type": "TÊN_XÉT_NGHIỆM",
-            "type_candidates": [
-              {
-                "label": "TÊN_XÉT_NGHIỆM",
-                "score": 0.8
-              }
-            ],
-            "confidence": 0.8,
-            "vote_count": 2,
-            "max_type_votes": 2,
-            "voters": {
-              "qwen": 1,
-              "rule": 1
-            },
-            "type_votes": {
-              "TÊN_XÉT_NGHIỆM": 1.0
-            },
-            "needs_review": false,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": false
-            }
-          },
-          {
-            "text": "hở van hai lá nặng",
-            "position": [
-              268,
-              286
+              170,
+              184
             ],
             "type": "CHẨN_ĐOÁN",
             "source": "qwen",
@@ -3156,49 +2535,21 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I34.0"
+              "L51"
             ],
-            "link_confidence": 0.99
+            "link_confidence": 0.85
           },
           {
-            "text": "Chụp động mạch vành",
+            "text": "MÀY đay MẠN",
             "position": [
-              289,
-              308
+              268,
+              279
             ],
-            "type": "TÊN_XÉT_NGHIỆM",
+            "type": "CHẨN_ĐOÁN",
             "source": "qwen",
             "type_candidates": [
               {
-                "label": "TÊN_XÉT_NGHIỆM",
-                "score": 0.85
-              }
-            ],
-            "extraction_source": "qwen",
-            "vote_count": 1,
-            "voters": {
-              "qwen": 1
-            },
-            "confidence": 0.5,
-            "needs_review": false,
-            "position_fixed": false,
-            "assertions": {
-              "isNegated": false,
-              "isFamily": false,
-              "isHistorical": false
-            }
-          },
-          {
-            "text": "lợi tiểu",
-            "position": [
-              364,
-              372
-            ],
-            "type": "THUỐC",
-            "source": "qwen",
-            "type_candidates": [
-              {
-                "label": "THUỐC",
+                "label": "CHẨN_ĐOÁN",
                 "score": 0.85
               }
             ],
@@ -3216,8 +2567,89 @@
               "isHistorical": false
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "L51"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "mày đay vô căn",
+            "position": [
+              747,
+              761
+            ],
+            "type": "CHẨN_ĐOÁN",
+            "source": "qwen",
+            "type_candidates": [
+              {
+                "label": "CHẨN_ĐOÁN",
+                "score": 0.85
+              }
+            ],
+            "extraction_source": "qwen",
+            "vote_count": 1,
+            "voters": {
+              "qwen": 1
+            },
+            "confidence": 0.5,
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85,
+            "candidates": [
+              "L51"
+            ],
+            "link_confidence": 0.85
+          },
+          {
+            "text": "phải dài và liên tục",
+            "position": [
+              913,
+              933
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": false,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
+          },
+          {
+            "text": "tốt nhất",
+            "position": [
+              1450,
+              1458
+            ],
+            "type": "TRIỆU_CHỨNG",
+            "confidence": 0.95,
+            "source": "rule",
+            "extraction_source": "rule",
+            "vote_count": 1,
+            "voters": {
+              "rule": 1
+            },
+            "needs_review": false,
+            "position_fixed": false,
+            "assertions": {
+              "isNegated": true,
+              "isFamily": false,
+              "isHistorical": false
+            },
+            "assertion_confidence": 0.85
           }
         ],
         "result_type": "list"
@@ -3240,19 +2672,19 @@
     {
       "agent": "orchestrator",
       "action": "extraction_complete",
-      "mentions": 6,
-      "ts": 1784626860.394092
+      "mentions": 5,
+      "ts": 1784709779.5778897
     },
     {
       "agent": "orchestrator",
       "action": "assertion_start",
-      "ts": 1784626860.394109
+      "ts": 1784709779.577907
     },
     {
       "agent": "assertion",
       "action": "start",
       "data": {
-        "mentions": 6
+        "mentions": 5
       }
     },
     {
@@ -3261,47 +2693,9 @@
       "data": {
         "tool": "rule_assert",
         "input": {
-          "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở khi gắng sức\nCận lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n",
-          "start": 59,
-          "end": 66,
-          "mtype": "TRIỆU_CHỨNG"
-        },
-        "output": {
-          "isNegated": false,
-          "isFamily": false,
-          "isHistorical": true
-        },
-        "result_type": "dict"
-      }
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "data": {
-        "tool": "rule_assert",
-        "input": {
-          "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở khi gắng sức\nCận lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n",
-          "start": 190,
-          "end": 197,
-          "mtype": "TRIỆU_CHỨNG"
-        },
-        "output": {
-          "isNegated": false,
-          "isFamily": false,
-          "isHistorical": false
-        },
-        "result_type": "dict"
-      }
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "data": {
-        "tool": "rule_assert",
-        "input": {
-          "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở khi gắng sức\nCận lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n",
-          "start": 268,
-          "end": 286,
+          "text": "    - nhiều lần cố gắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát trên kính hiển thị vi quang học thông thường cần xem trên kính hiển thị vi điện tử. Các tế bào cột sống tăng lượng hạ bì với các mức độ thoát ra khác nhau cũng được quan sát. Quảng cáo quảng cáo thiết bị thương mại miễn phí dịch sinh học không tìm thấy hình ảnh giảm phức tạp, bổ sung hay sợi fibrin. Đối với bệnh lý mày đay vô căn, để lâu thường không có biến chứng gì nặng, chủ yếu bệnh làm ảnh hưởng tới chất lượng cuộc sống. Bạn đay vô căn hộ là một bệnh mạn tính, việc điều trị phải dài và liên tục. Quá giá trị chỉ là giấy chứng nhận. Điều trị phụ thuộc vào mức độ nghiêm trọng và nền tảng có liên kết. Cần lưu ý cân bằng giữa hiệu quả kiểm soát triệu chứng và những tác hại gây độc của liệu pháp điều trị. *************** có thể hệ sau không gây buồn ngủ là đơn hàng đầu sau đó đến *************** có thể hệ 1, ********* bậc thấp cách ngày hoặc hàng ngày và giảm dần chậm 2,5 – 5mg mỗi 2-3 tuần. Nếu không được hỗ trợ hoặc chống chỉ định, xin bạn hãy đến gặp bác sĩ chuyên khoa da liễu để có phương pháp điều trị tốt nhất. Cảm ơn bạn đã gửi câu hỏi",
+          "start": 170,
+          "end": 184,
           "mtype": "CHẨN_ĐOÁN"
         },
         "output": {
@@ -3318,10 +2712,10 @@
       "data": {
         "tool": "rule_assert",
         "input": {
-          "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở khi gắng sức\nCận lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n",
-          "start": 364,
-          "end": 372,
-          "mtype": "THUỐC"
+          "text": "    - nhiều lần cố gắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát trên kính hiển thị vi quang học thông thường cần xem trên kính hiển thị vi điện tử. Các tế bào cột sống tăng lượng hạ bì với các mức độ thoát ra khác nhau cũng được quan sát. Quảng cáo quảng cáo thiết bị thương mại miễn phí dịch sinh học không tìm thấy hình ảnh giảm phức tạp, bổ sung hay sợi fibrin. Đối với bệnh lý mày đay vô căn, để lâu thường không có biến chứng gì nặng, chủ yếu bệnh làm ảnh hưởng tới chất lượng cuộc sống. Bạn đay vô căn hộ là một bệnh mạn tính, việc điều trị phải dài và liên tục. Quá giá trị chỉ là giấy chứng nhận. Điều trị phụ thuộc vào mức độ nghiêm trọng và nền tảng có liên kết. Cần lưu ý cân bằng giữa hiệu quả kiểm soát triệu chứng và những tác hại gây độc của liệu pháp điều trị. *************** có thể hệ sau không gây buồn ngủ là đơn hàng đầu sau đó đến *************** có thể hệ 1, ********* bậc thấp cách ngày hoặc hàng ngày và giảm dần chậm 2,5 – 5mg mỗi 2-3 tuần. Nếu không được hỗ trợ hoặc chống chỉ định, xin bạn hãy đến gặp bác sĩ chuyên khoa da liễu để có phương pháp điều trị tốt nhất. Cảm ơn bạn đã gửi câu hỏi",
+          "start": 268,
+          "end": 279,
+          "mtype": "CHẨN_ĐOÁN"
         },
         "output": {
           "isNegated": false,
@@ -3333,27 +2727,84 @@
     },
     {
       "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "    - nhiều lần cố gắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát trên kính hiển thị vi quang học thông thường cần xem trên kính hiển thị vi điện tử. Các tế bào cột sống tăng lượng hạ bì với các mức độ thoát ra khác nhau cũng được quan sát. Quảng cáo quảng cáo thiết bị thương mại miễn phí dịch sinh học không tìm thấy hình ảnh giảm phức tạp, bổ sung hay sợi fibrin. Đối với bệnh lý mày đay vô căn, để lâu thường không có biến chứng gì nặng, chủ yếu bệnh làm ảnh hưởng tới chất lượng cuộc sống. Bạn đay vô căn hộ là một bệnh mạn tính, việc điều trị phải dài và liên tục. Quá giá trị chỉ là giấy chứng nhận. Điều trị phụ thuộc vào mức độ nghiêm trọng và nền tảng có liên kết. Cần lưu ý cân bằng giữa hiệu quả kiểm soát triệu chứng và những tác hại gây độc của liệu pháp điều trị. *************** có thể hệ sau không gây buồn ngủ là đơn hàng đầu sau đó đến *************** có thể hệ 1, ********* bậc thấp cách ngày hoặc hàng ngày và giảm dần chậm 2,5 – 5mg mỗi 2-3 tuần. Nếu không được hỗ trợ hoặc chống chỉ định, xin bạn hãy đến gặp bác sĩ chuyên khoa da liễu để có phương pháp điều trị tốt nhất. Cảm ơn bạn đã gửi câu hỏi",
+          "start": 747,
+          "end": 761,
+          "mtype": "CHẨN_ĐOÁN"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "    - nhiều lần cố gắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát trên kính hiển thị vi quang học thông thường cần xem trên kính hiển thị vi điện tử. Các tế bào cột sống tăng lượng hạ bì với các mức độ thoát ra khác nhau cũng được quan sát. Quảng cáo quảng cáo thiết bị thương mại miễn phí dịch sinh học không tìm thấy hình ảnh giảm phức tạp, bổ sung hay sợi fibrin. Đối với bệnh lý mày đay vô căn, để lâu thường không có biến chứng gì nặng, chủ yếu bệnh làm ảnh hưởng tới chất lượng cuộc sống. Bạn đay vô căn hộ là một bệnh mạn tính, việc điều trị phải dài và liên tục. Quá giá trị chỉ là giấy chứng nhận. Điều trị phụ thuộc vào mức độ nghiêm trọng và nền tảng có liên kết. Cần lưu ý cân bằng giữa hiệu quả kiểm soát triệu chứng và những tác hại gây độc của liệu pháp điều trị. *************** có thể hệ sau không gây buồn ngủ là đơn hàng đầu sau đó đến *************** có thể hệ 1, ********* bậc thấp cách ngày hoặc hàng ngày và giảm dần chậm 2,5 – 5mg mỗi 2-3 tuần. Nếu không được hỗ trợ hoặc chống chỉ định, xin bạn hãy đến gặp bác sĩ chuyên khoa da liễu để có phương pháp điều trị tốt nhất. Cảm ơn bạn đã gửi câu hỏi",
+          "start": 913,
+          "end": 933,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": false,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "data": {
+        "tool": "rule_assert",
+        "input": {
+          "text": "    - nhiều lần cố gắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát trên kính hiển thị vi quang học thông thường cần xem trên kính hiển thị vi điện tử. Các tế bào cột sống tăng lượng hạ bì với các mức độ thoát ra khác nhau cũng được quan sát. Quảng cáo quảng cáo thiết bị thương mại miễn phí dịch sinh học không tìm thấy hình ảnh giảm phức tạp, bổ sung hay sợi fibrin. Đối với bệnh lý mày đay vô căn, để lâu thường không có biến chứng gì nặng, chủ yếu bệnh làm ảnh hưởng tới chất lượng cuộc sống. Bạn đay vô căn hộ là một bệnh mạn tính, việc điều trị phải dài và liên tục. Quá giá trị chỉ là giấy chứng nhận. Điều trị phụ thuộc vào mức độ nghiêm trọng và nền tảng có liên kết. Cần lưu ý cân bằng giữa hiệu quả kiểm soát triệu chứng và những tác hại gây độc của liệu pháp điều trị. *************** có thể hệ sau không gây buồn ngủ là đơn hàng đầu sau đó đến *************** có thể hệ 1, ********* bậc thấp cách ngày hoặc hàng ngày và giảm dần chậm 2,5 – 5mg mỗi 2-3 tuần. Nếu không được hỗ trợ hoặc chống chỉ định, xin bạn hãy đến gặp bác sĩ chuyên khoa da liễu để có phương pháp điều trị tốt nhất. Cảm ơn bạn đã gửi câu hỏi",
+          "start": 1450,
+          "end": 1458,
+          "mtype": "TRIỆU_CHỨNG"
+        },
+        "output": {
+          "isNegated": true,
+          "isFamily": false,
+          "isHistorical": false
+        },
+        "result_type": "dict"
+      }
+    },
+    {
+      "agent": "assertion",
       "action": "complete",
       "data": {
-        "processed": 6,
+        "processed": 5,
         "llm_checked": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "assertion_complete",
-      "ts": 1784626860.394604
+      "ts": 1784709779.578536
     },
     {
       "agent": "orchestrator",
       "action": "linking_start",
-      "ts": 1784626860.394615
+      "ts": 1784709779.5785453
     },
     {
       "agent": "linking",
       "action": "start",
       "data": {
-        "mentions": 6
+        "mentions": 5
       }
     },
     {
@@ -3363,10 +2814,10 @@
         "tool": "link_entity",
         "input": {
           "mention": {
-            "text": "hở van hai lá nặng",
+            "text": "MÀY đay VÔ CĂN",
             "position": [
-              268,
-              286
+              170,
+              184
             ],
             "type": "CHẨN_ĐOÁN",
             "source": "qwen",
@@ -3391,17 +2842,18 @@
             },
             "assertion_confidence": 0.85,
             "candidates": [
-              "I34.0"
+              "L51"
             ],
-            "link_confidence": 0.99
+            "link_confidence": 0.85
           },
-          "context": ". Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở khi gắng sức\nCận lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n"
+          "context": "ắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập "
         },
         "output": {
           "candidates": [
-            "I34.0"
+            "L51"
           ],
-          "confidence": 0.99
+          "confidence": 0.85,
+          "rationale": "Mày đay vô căn là một dạng bệnh mày đay không có nguyên nhân rõ ràng, mã L51 được sử dụng để chỉ tình trạng này trong ICD-10."
         },
         "result_type": "dict"
       }
@@ -3413,16 +2865,16 @@
         "tool": "link_entity",
         "input": {
           "mention": {
-            "text": "lợi tiểu",
+            "text": "MÀY đay MẠN",
             "position": [
-              364,
-              372
+              268,
+              279
             ],
-            "type": "THUỐC",
+            "type": "CHẨN_ĐOÁN",
             "source": "qwen",
             "type_candidates": [
               {
-                "label": "THUỐC",
+                "label": "CHẨN_ĐOÁN",
                 "score": 0.85
               }
             ],
@@ -3440,14 +2892,19 @@
               "isHistorical": false
             },
             "assertion_confidence": 0.85,
-            "candidates": [],
-            "link_confidence": 0.0
+            "candidates": [
+              "L51"
+            ],
+            "link_confidence": 0.85
           },
-          "context": " lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n"
+          "context": " như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát"
         },
         "output": {
-          "candidates": [],
-          "confidence": 0.0
+          "candidates": [
+            "L51"
+          ],
+          "confidence": 0.85,
+          "rationale": "Mày đay mạn tính được mã hóa bởi L51 trong ICD-10, phù hợp với mention 'MÀY đay MẠN'."
         },
         "result_type": "dict"
       }
@@ -3456,25 +2913,25 @@
       "agent": "linking",
       "action": "complete",
       "data": {
-        "linked": 1
+        "linked": 3
       }
     },
     {
       "agent": "orchestrator",
       "action": "linking_complete",
-      "linked": 1,
-      "ts": 1784626860.4384568
+      "linked": 3,
+      "ts": 1784709809.1036243
     },
     {
       "agent": "orchestrator",
       "action": "verification_start",
-      "ts": 1784626860.4384823
+      "ts": 1784709809.103647
     },
     {
       "agent": "verifier",
       "action": "start",
       "data": {
-        "mentions": 6
+        "mentions": 5
       }
     },
     {
@@ -3485,99 +2942,10 @@
         "input": {
           "mentions": [
             {
-              "text": "khó thở",
+              "text": "MÀY đay VÔ CĂN",
               "position": [
-                59,
-                66
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.85
-            },
-            {
-              "text": "Khó thở",
-              "position": [
-                190,
-                197
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85
-            },
-            {
-              "text": "siêu âm tim",
-              "position": [
-                247,
-                258
-              ],
-              "type": "TÊN_XÉT_NGHIỆM",
-              "type_candidates": [
-                {
-                  "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.8
-                }
-              ],
-              "confidence": 0.8,
-              "vote_count": 2,
-              "max_type_votes": 2,
-              "voters": {
-                "qwen": 1,
-                "rule": 1
-              },
-              "type_votes": {
-                "TÊN_XÉT_NGHIỆM": 1.0
-              },
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              }
-            },
-            {
-              "text": "hở van hai lá nặng",
-              "position": [
-                268,
-                286
+                170,
+                184
               ],
               "type": "CHẨN_ĐOÁN",
               "source": "qwen",
@@ -3602,49 +2970,21 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I34.0"
+                "L51"
               ],
-              "link_confidence": 0.99
+              "link_confidence": 0.85
             },
             {
-              "text": "Chụp động mạch vành",
+              "text": "MÀY đay MẠN",
               "position": [
-                289,
-                308
+                268,
+                279
               ],
-              "type": "TÊN_XÉT_NGHIỆM",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              }
-            },
-            {
-              "text": "lợi tiểu",
-              "position": [
-                364,
-                372
-              ],
-              "type": "THUỐC",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "THUỐC",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -3662,11 +3002,92 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "L51"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "mày đay vô căn",
+              "position": [
+                747,
+                761
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "L51"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "phải dài và liên tục",
+              "position": [
+                913,
+                933
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tốt nhất",
+              "position": [
+                1450,
+                1458
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
-          "text": "2. Bệnh sử hiện tại\nKhoảng vài tuần trước đây bệnh nhân có khó thở khi gắng sức. Đã nhập viện tại bệnh viện tuyến dưới. Sau đó không đỡ chuyển viện \nTình trạng lúc vào viện: \nBệnh nhân tỉnh\nKhó thở khi gắng sức\nCận lâm sàng:\nChẩn đoán hình ảnh\n-  siêu âm tim cho thấy hở van hai lá nặng\n- Chụp động mạch vành cho thấy không có bệnh động mạch vành \nĐiều trị:\n Dùng lợi tiểu, có cải thiện cải thiện triệu chứng tốt\n\n"
+          "text": "    - nhiều lần cố gắng giảm cân và tăng cân trở lại\nCâu trả lời của bác sĩ: Chào bạn,mình xin trả lời câu hỏi của bạn như sau Như bạn đã mô tả, trường hợp này bạn thuộc MÀY đay VÔ CĂN. Chúng tôi không tìm được nguyên nhân gây bệnh. Đây là tình trạng hay gặp nhất của MÀY đay MẠN. Tổ thương mô bệnh học chủ yếu là tình trạng xâm nhập của tế bào một nhân kết hợp với bạch huyết T và đại thực bào. Các loại tiền thưởng khó quan sát trên kính hiển thị vi quang học thông thường cần xem trên kính hiển thị vi điện tử. Các tế bào cột sống tăng lượng hạ bì với các mức độ thoát ra khác nhau cũng được quan sát. Quảng cáo quảng cáo thiết bị thương mại miễn phí dịch sinh học không tìm thấy hình ảnh giảm phức tạp, bổ sung hay sợi fibrin. Đối với bệnh lý mày đay vô căn, để lâu thường không có biến chứng gì nặng, chủ yếu bệnh làm ảnh hưởng tới chất lượng cuộc sống. Bạn đay vô căn hộ là một bệnh mạn tính, việc điều trị phải dài và liên tục. Quá giá trị chỉ là giấy chứng nhận. Điều trị phụ thuộc vào mức độ nghiêm trọng và nền tảng có liên kết. Cần lưu ý cân bằng giữa hiệu quả kiểm soát triệu chứng và những tác hại gây độc của liệu pháp điều trị. *************** có thể hệ sau không gây buồn ngủ là đơn hàng đầu sau đó đến *************** có thể hệ 1, ********* bậc thấp cách ngày hoặc hàng ngày và giảm dần chậm 2,5 – 5mg mỗi 2-3 tuần. Nếu không được hỗ trợ hoặc chống chỉ định, xin bạn hãy đến gặp bác sĩ chuyên khoa da liễu để có phương pháp điều trị tốt nhất. Cảm ơn bạn đã gửi câu hỏi"
         },
         "output": {
           "actions": [
@@ -3694,110 +3115,14 @@
               "action": "accept",
               "fixes": [],
               "warnings": []
-            },
-            {
-              "action": "accept",
-              "fixes": [],
-              "warnings": [
-                "no candidates"
-              ]
             }
           ],
           "final_predictions": [
             {
-              "text": "khó thở",
+              "text": "MÀY đay VÔ CĂN",
               "position": [
-                59,
-                66
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": true
-              },
-              "assertion_confidence": 0.85
-            },
-            {
-              "text": "Khó thở",
-              "position": [
-                190,
-                197
-              ],
-              "type": "TRIỆU_CHỨNG",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "TRIỆU_CHỨNG",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              },
-              "assertion_confidence": 0.85
-            },
-            {
-              "text": "siêu âm tim",
-              "position": [
-                247,
-                258
-              ],
-              "type": "TÊN_XÉT_NGHIỆM",
-              "type_candidates": [
-                {
-                  "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.8
-                }
-              ],
-              "confidence": 0.8,
-              "vote_count": 2,
-              "max_type_votes": 2,
-              "voters": {
-                "qwen": 1,
-                "rule": 1
-              },
-              "type_votes": {
-                "TÊN_XÉT_NGHIỆM": 1.0
-              },
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              }
-            },
-            {
-              "text": "hở van hai lá nặng",
-              "position": [
-                268,
-                286
+                170,
+                184
               ],
               "type": "CHẨN_ĐOÁN",
               "source": "qwen",
@@ -3822,49 +3147,21 @@
               },
               "assertion_confidence": 0.85,
               "candidates": [
-                "I34.0"
+                "L51"
               ],
-              "link_confidence": 0.99
+              "link_confidence": 0.85
             },
             {
-              "text": "Chụp động mạch vành",
+              "text": "MÀY đay MẠN",
               "position": [
-                289,
-                308
+                268,
+                279
               ],
-              "type": "TÊN_XÉT_NGHIỆM",
+              "type": "CHẨN_ĐOÁN",
               "source": "qwen",
               "type_candidates": [
                 {
-                  "label": "TÊN_XÉT_NGHIỆM",
-                  "score": 0.85
-                }
-              ],
-              "extraction_source": "qwen",
-              "vote_count": 1,
-              "voters": {
-                "qwen": 1
-              },
-              "confidence": 0.5,
-              "needs_review": false,
-              "position_fixed": false,
-              "assertions": {
-                "isNegated": false,
-                "isFamily": false,
-                "isHistorical": false
-              }
-            },
-            {
-              "text": "lợi tiểu",
-              "position": [
-                364,
-                372
-              ],
-              "type": "THUỐC",
-              "source": "qwen",
-              "type_candidates": [
-                {
-                  "label": "THUỐC",
+                  "label": "CHẨN_ĐOÁN",
                   "score": 0.85
                 }
               ],
@@ -3882,8 +3179,89 @@
                 "isHistorical": false
               },
               "assertion_confidence": 0.85,
-              "candidates": [],
-              "link_confidence": 0.0
+              "candidates": [
+                "L51"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "mày đay vô căn",
+              "position": [
+                747,
+                761
+              ],
+              "type": "CHẨN_ĐOÁN",
+              "source": "qwen",
+              "type_candidates": [
+                {
+                  "label": "CHẨN_ĐOÁN",
+                  "score": 0.85
+                }
+              ],
+              "extraction_source": "qwen",
+              "vote_count": 1,
+              "voters": {
+                "qwen": 1
+              },
+              "confidence": 0.5,
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85,
+              "candidates": [
+                "L51"
+              ],
+              "link_confidence": 0.85
+            },
+            {
+              "text": "phải dài và liên tục",
+              "position": [
+                913,
+                933
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": false,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
+            },
+            {
+              "text": "tốt nhất",
+              "position": [
+                1450,
+                1458
+              ],
+              "type": "TRIỆU_CHỨNG",
+              "confidence": 0.95,
+              "source": "rule",
+              "extraction_source": "rule",
+              "vote_count": 1,
+              "voters": {
+                "rule": 1
+              },
+              "needs_review": false,
+              "position_fixed": false,
+              "assertions": {
+                "isNegated": true,
+                "isFamily": false,
+                "isHistorical": false
+              },
+              "assertion_confidence": 0.85
             }
           ],
           "dropped": 0
@@ -3895,22 +3273,22 @@
       "agent": "verifier",
       "action": "validated",
       "data": {
-        "kept": 6,
+        "kept": 5,
         "dropped": 0
       }
     },
     {
       "agent": "orchestrator",
       "action": "verification_complete",
-      "kept": 6,
-      "ts": 1784626860.5491886
+      "kept": 5,
+      "ts": 1784709810.5841417
     },
     {
       "agent": "orchestrator",
       "action": "complete",
-      "total_mentions": 6,
-      "elapsed": 16.49,
-      "ts": 1784626860.549224
+      "total_mentions": 5,
+      "elapsed": 41.67,
+      "ts": 1784709810.5841694
     }
   ]
 }

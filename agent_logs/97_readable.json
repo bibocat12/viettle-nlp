@@ -1,16 +1,16 @@
 {
   "file_id": "97",
-  "timestamp": 1784627076.32028,
-  "elapsed": 92.18,
+  "timestamp": 1784710025.3870656,
+  "elapsed": 65.89,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 29,
+  "mention_count": 22,
   "stats": {
-    "total_mentions": 29,
-    "final": 29,
+    "total_mentions": 22,
+    "final": 22,
     "validation_errors": 0,
-    "elapsed": 92.18,
-    "rule": 9,
-    "qwen": 27
+    "elapsed": 65.89,
+    "rule": 2,
+    "qwen": 23
   },
   "log_summary": [
     {
@@ -50,6 +50,30 @@
       "tool": "fix_positions"
     },
     {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "llm_verify"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
       "agent": "assertion",
       "action": "tool_call",
       "ts": null,
@@ -138,6 +162,12 @@
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -172,284 +202,225 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784627076.3190873,
+      "ts": 1784710025.386779,
       "tool": null
     }
   ],
   "mentions": [
     {
-      "text": "viêm tủy xương",
+      "text": "u ác của tuyến tiền liệt",
       "type": "CHẨN_ĐOÁN",
       "assertions": [
         "isHistorical"
       ],
       "position": [
-        52,
-        66
+        114,
+        138
       ],
       "candidates": [
-        "M86.9"
+        "C61"
       ]
     },
     {
-      "text": "bàng quang thần kinh",
-      "type": "CHẨN_ĐOÁN",
+      "text": "Phẫu thuật cắt bỏ u dây thần kinh số VIII",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        210,
+        251
+      ]
+    },
+    {
+      "text": "Đặt shunt động tĩnh mạch (AVF)",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        259,
+        289
+      ]
+    },
+    {
+      "text": "Sinh thiết tuyến tiền liệt",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        317,
+        343
+      ]
+    },
+    {
+      "text": "mệt mỏi",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        387,
+        394
+      ]
+    },
+    {
+      "text": "mất trí nhớ chi tiết",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        396,
+        416
+      ]
+    },
+    {
+      "text": "mệt mỏi",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        448,
+        455
+      ]
+    },
+    {
+      "text": "ăn không ngon miệng",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        463,
+        482
+      ]
+    },
+    {
+      "text": "ngứa da toàn thân",
+      "type": "TRIỆU_CHỨNG",
       "assertions": [
-        "isHistorical"
+        "isNegated"
       ],
-      "position": [
-        70,
-        90
-      ],
-      "candidates": [
-        "N31.9"
-      ]
-    },
-    {
-      "text": "biến đổi ý thức",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        166,
-        181
-      ]
-    },
-    {
-      "text": "hạ thân nhiệt",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        191,
-        204
-      ]
-    },
-    {
-      "text": "hạ huyết áp",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        208,
-        219
-      ]
-    },
-    {
-      "text": "biến đổi ý thức",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isHistorical"
-      ],
-      "position": [
-        378,
-        393
-      ]
-    },
-    {
-      "text": "hạ thân nhiệt",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isHistorical"
-      ],
-      "position": [
-        395,
-        408
-      ]
-    },
-    {
-      "text": "hạ huyết áp",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        410,
-        421
-      ]
-    },
-    {
-      "text": "biến đổi ý thức",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
       "position": [
         484,
-        499
+        501
       ]
     },
     {
-      "text": "hạ thân nhiệt",
+      "text": "mất trí nhớ chi tiết",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        512,
+        532
+      ]
+    },
+    {
+      "text": "khó thở",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        534,
+        541
+      ]
+    },
+    {
+      "text": "buồn nôn",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        506,
-        519
+        568,
+        576
       ]
     },
     {
-      "text": "hạ huyết áp",
+      "text": "nôn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        581,
+        584
+      ]
+    },
+    {
+      "text": "Mệt mỏi",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        628,
+        635
+      ]
+    },
+    {
+      "text": "Ăn không ngon miệng",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        648,
+        667
+      ]
+    },
+    {
+      "text": "Ngứa da toàn thân",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        674,
+        691
+      ]
+    },
+    {
+      "text": "mất trí nhớ chi tiết",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        704,
+        724
+      ]
+    },
+    {
+      "text": "bệnh trĩ",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        831,
+        839
+      ],
+      "candidates": [
+        "K64.8"
+      ]
+    },
+    {
+      "text": "************ uống 1-2 viên x2 sáng chiều",
+      "type": "THUỐC",
+      "assertions": [],
+      "position": [
+        906,
+        946
+      ],
+      "candidates": []
+    },
+    {
+      "text": "Ure tăng từ 69 lên 91 mg/dl ( 24.6 -32.5 mmol/l)",
       "type": "KẾT_QUẢ_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
-        526,
-        537
+        949,
+        997
       ]
     },
     {
-      "text": "đau toàn thân",
-      "type": "TRIỆU_CHỨNG",
+      "text": "u ác của tuyến tiền liệt",
+      "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        544,
-        557
+        1145,
+        1169
+      ],
+      "candidates": [
+        "C61"
       ]
     },
     {
-      "text": "đau ngực",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        567,
-        575
-      ]
-    },
-    {
-      "text": "đau bụng",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        586,
-        594
-      ]
-    },
-    {
-      "text": "hạ huyết áp",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        646,
-        657
-      ]
-    },
-    {
-      "text": "hạ thân nhiệt",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        664,
-        677
-      ]
-    },
-    {
-      "text": "kali là 6.6 mmol/l",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        730,
-        748
-      ]
-    },
-    {
-      "text": "creatinin là 1.9 mmol/l",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        755,
-        778
-      ]
-    },
-    {
-      "text": "tiểu cầu",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        785,
-        793
-      ]
-    },
-    {
-      "text": "bạch cầu",
+      "text": "chạy thận nhân tạo (HD)",
       "type": "TÊN_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
-        810,
-        818
-      ]
-    },
-    {
-      "text": "phân tích nước tiểu",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        842,
-        861
-      ]
-    },
-    {
-      "text": "chụp x-quang ngực",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        947,
-        964
-      ]
-    },
-    {
-      "text": "chụp x-quang ngực",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1024,
-        1041
-      ]
-    },
-    {
-      "text": "Đặt sonde bàng quang",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1088,
-        1108
-      ]
-    },
-    {
-      "text": "nước tiểu",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1141,
-        1150
-      ]
-    },
-    {
-      "text": "điện tâm đồ",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1179,
-        1190
-      ]
-    },
-    {
-      "text": "nhịp chậm xoang",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1200,
-        1215
-      ]
-    },
-    {
-      "text": "đường huyết",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        1219,
-        1230
-      ]
-    },
-    {
-      "text": "đường huyết",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        1238,
-        1249
+        1291,
+        1314
       ]
     }
   ]

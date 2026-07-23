@@ -1,16 +1,16 @@
 {
   "file_id": "12",
-  "timestamp": 1784626038.5455768,
-  "elapsed": 61.89,
+  "timestamp": 1784708106.1346955,
+  "elapsed": 85.7,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 25,
+  "mention_count": 27,
   "stats": {
-    "total_mentions": 25,
-    "final": 25,
+    "total_mentions": 27,
+    "final": 27,
     "validation_errors": 0,
-    "elapsed": 61.89,
-    "rule": 1,
-    "qwen": 27
+    "elapsed": 85.7,
+    "rule": 5,
+    "qwen": 26
   },
   "log_summary": [
     {
@@ -48,6 +48,30 @@
       "action": "tool_call",
       "ts": null,
       "tool": "fix_positions"
+    },
+    {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "llm_verify"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
     },
     {
       "agent": "assertion",
@@ -180,6 +204,30 @@
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -232,257 +280,302 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784626038.5452616,
+      "ts": 1784708106.1345963,
       "tool": null
     }
   ],
   "mentions": [
     {
-      "text": "U Sacoit tổn thương chủ yếu tại tim",
+      "text": "Bệnh phổi kẽ",
       "type": "CHẨN_ĐOÁN",
       "assertions": [
         "isHistorical"
       ],
       "position": [
-        48,
-        83
+        44,
+        56
       ],
       "candidates": [
-        "S26.8"
+        "J84.9"
       ]
     },
     {
-      "text": "ho",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        133,
-        135
-      ]
-    },
-    {
-      "text": "ho ra máu cỡ đồng xu x3 đêm qua",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        156,
-        187
-      ]
-    },
-    {
-      "text": "ho",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        230,
-        232
-      ]
-    },
-    {
-      "text": "ho",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        247,
-        249
-      ]
-    },
-    {
-      "text": "ho",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        321,
-        323
-      ]
-    },
-    {
-      "text": "mệt mỏi",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        327,
-        334
-      ]
-    },
-    {
-      "text": "ho",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        372,
-        374
-      ]
-    },
-    {
-      "text": "sốt",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        461,
-        464
-      ]
-    },
-    {
-      "text": "ho",
+      "text": "corticoid liều cao kéo dài",
       "type": "TRIỆU_CHỨNG",
       "assertions": [
-        "isNegated"
+        "isHistorical"
       ],
       "position": [
-        506,
-        508
+        68,
+        94
       ]
     },
     {
-      "text": "ho",
+      "text": "Thở oxy tại nhà",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        102,
+        117
+      ]
+    },
+    {
+      "text": "protein",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        155,
+        162
+      ]
+    },
+    {
+      "text": "béo phì",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        170,
+        177
+      ]
+    },
+    {
+      "text": "Tăng huyết áp nguyên phát",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        184,
+        209
+      ],
+      "candidates": [
+        "I10"
+      ]
+    },
+    {
+      "text": "Corticoid liều cao kéo dài",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        317,
+        343
+      ]
+    },
+    {
+      "text": "Thở oxy tại nhà",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        350,
+        365
+      ]
+    },
+    {
+      "text": "ct",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        384,
+        386
+      ]
+    },
+    {
+      "text": "doxycycline",
+      "type": "THUỐC",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        430,
+        441
+      ],
+      "candidates": [
+        "3640"
+      ]
+    },
+    {
+      "text": "Suy giảm miễn dịch",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        478,
+        496
+      ],
+      "candidates": [
+        "D83.8"
+      ]
+    },
+    {
+      "text": "tổn thương vùng âm hộ",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        562,
-        564
+        584,
+        605
       ]
     },
     {
-      "text": "mệt mỏi",
+      "text": "tổn thương vùng âm hộ",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        571,
-        578
+        682,
+        703
       ]
     },
     {
-      "text": "ho ra máu cỡ đồng xu x3 đêm qua",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        585,
-        616
-      ]
-    },
-    {
-      "text": "Đờm pha màu hồng",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        623,
-        639
-      ]
-    },
-    {
-      "text": "fever",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        646,
-        651
-      ]
-    },
-    {
-      "text": "sốt",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        663,
-        666
-      ]
-    },
-    {
-      "text": "Đau bụng  âm ỉ  trong tháng qua",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        685,
-        716
-      ]
-    },
-    {
-      "text": "levofloxacin",
+      "text": "khám và tăng liều cotrimoxazol",
       "type": "THUỐC",
       "assertions": [],
       "position": [
-        876,
-        888
+        903,
+        933
       ],
       "candidates": [
-        "82122"
+        "220466"
       ]
     },
     {
-      "text": "tylenol",
+      "text": "doxycyclin",
       "type": "THUỐC",
       "assertions": [],
       "position": [
-        975,
-        982
+        953,
+        963
       ],
       "candidates": [
-        "202433"
+        "3640"
       ]
     },
     {
-      "text": "công thức máu",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1035,
-        1048
-      ]
-    },
-    {
-      "text": "11.3",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1068,
-        1072
-      ]
-    },
-    {
-      "text": "chụp x-quang ngực",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1105,
-        1122
-      ]
-    },
-    {
-      "text": "viêm phổi",
+      "text": "viêm mô tế bào",
       "type": "CHẨN_ĐOÁN",
-      "assertions": [
-        "isNegated"
-      ],
+      "assertions": [],
       "position": [
-        1139,
-        1148
+        976,
+        990
       ],
       "candidates": [
-        "J18.9"
+        "L03.90"
       ]
     },
     {
-      "text": "phù phổi",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [
-        "isNegated"
-      ],
+      "text": "ban đỏ",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
       "position": [
-        1154,
-        1162
-      ],
-      "candidates": [
-        "J81.0"
+        1008,
+        1014
       ]
     },
     {
-      "text": "Lấy mẫu cấy máu",
+      "text": "đau",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1150,
+        1153
+      ]
+    },
+    {
+      "text": "tiếp",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1303,
+        1307
+      ]
+    },
+    {
+      "text": "tổn thương vùng âm hộ và mông bên phải",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1344,
+        1382
+      ]
+    },
+    {
+      "text": "Tổn thương cực kỳ đau đớn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1389,
+        1414
+      ]
+    },
+    {
+      "text": "Lan đến mông bên phải",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1479,
+        1500
+      ]
+    },
+    {
+      "text": "phẫu thuật tạo hình vành tai",
       "type": "TÊN_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
-        1195,
-        1210
+        2093,
+        2121
+      ]
+    },
+    {
+      "text": "ct",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        2520,
+        2522
+      ]
+    },
+    {
+      "text": "Viêm mô tế bào",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        2539,
+        2553
+      ],
+      "candidates": [
+        "L03.90"
+      ]
+    },
+    {
+      "text": "Nhiễm virus Herpes simplex (HSV)",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        2760,
+        2792
+      ],
+      "candidates": [
+        "B00.9"
+      ]
+    },
+    {
+      "text": "Bệnh thủy đậu/Zona",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        2798,
+        2816
+      ],
+      "candidates": [
+        "B01.9"
       ]
     }
   ]

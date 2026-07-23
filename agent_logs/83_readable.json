@@ -1,16 +1,16 @@
 {
   "file_id": "83",
-  "timestamp": 1784626860.5493608,
-  "elapsed": 16.49,
+  "timestamp": 1784709810.584262,
+  "elapsed": 41.67,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 6,
+  "mention_count": 5,
   "stats": {
-    "total_mentions": 6,
-    "final": 6,
+    "total_mentions": 5,
+    "final": 5,
     "validation_errors": 0,
-    "elapsed": 16.49,
-    "rule": 1,
-    "qwen": 6
+    "elapsed": 41.67,
+    "rule": 2,
+    "qwen": 3
   },
   "log_summary": [
     {
@@ -75,6 +75,12 @@
     },
     {
       "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
@@ -112,70 +118,66 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784626860.549224,
+      "ts": 1784709810.5841694,
       "tool": null
     }
   ],
   "mentions": [
     {
-      "text": "khó thở",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isHistorical"
+      "text": "MÀY đay VÔ CĂN",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        170,
+        184
       ],
-      "position": [
-        59,
-        66
+      "candidates": [
+        "L51"
       ]
     },
     {
-      "text": "Khó thở",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        190,
-        197
-      ]
-    },
-    {
-      "text": "siêu âm tim",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        247,
-        258
-      ]
-    },
-    {
-      "text": "hở van hai lá nặng",
+      "text": "MÀY đay MẠN",
       "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
         268,
-        286
+        279
       ],
       "candidates": [
-        "I34.0"
+        "L51"
       ]
     },
     {
-      "text": "Chụp động mạch vành",
-      "type": "TÊN_XÉT_NGHIỆM",
+      "text": "mày đay vô căn",
+      "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        289,
-        308
-      ]
-    },
-    {
-      "text": "lợi tiểu",
-      "type": "THUỐC",
-      "assertions": [],
-      "position": [
-        364,
-        372
+        747,
+        761
       ],
-      "candidates": []
+      "candidates": [
+        "L51"
+      ]
+    },
+    {
+      "text": "phải dài và liên tục",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        913,
+        933
+      ]
+    },
+    {
+      "text": "tốt nhất",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        1450,
+        1458
+      ]
     }
   ]
 }

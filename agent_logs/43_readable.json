@@ -1,16 +1,16 @@
 {
   "file_id": "43",
-  "timestamp": 1784626429.7298758,
-  "elapsed": 42.88,
+  "timestamp": 1784708674.891427,
+  "elapsed": 60.6,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 23,
+  "mention_count": 22,
   "stats": {
-    "total_mentions": 23,
-    "final": 23,
+    "total_mentions": 22,
+    "final": 22,
     "validation_errors": 0,
-    "elapsed": 42.88,
+    "elapsed": 60.6,
     "rule": 4,
-    "qwen": 25
+    "qwen": 21
   },
   "log_summary": [
     {
@@ -50,6 +50,60 @@
       "tool": "fix_positions"
     },
     {
+      "agent": "extraction",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "llm_verify"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
       "agent": "assertion",
       "action": "tool_call",
       "ts": null,
@@ -132,6 +186,24 @@
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -166,246 +238,252 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784626429.729551,
+      "ts": 1784708674.8912594,
       "tool": null
     }
   ],
   "mentions": [
     {
-      "text": "nhiễm trùng tụ cầu",
+      "text": "bạch cầu",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        62,
+        70
+      ]
+    },
+    {
+      "text": "tăng cholesterol máu đơn thuần",
       "type": "CHẨN_ĐOÁN",
       "assertions": [
         "isHistorical"
       ],
       "position": [
-        94,
-        112
+        95,
+        125
       ],
       "candidates": [
-        "A49.0"
+        "E78.0"
       ]
     },
     {
-      "text": "cảm giác như vòi nước",
+      "text": "tăng huyết áp",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        132,
+        145
+      ],
+      "candidates": [
+        "I10"
+      ]
+    },
+    {
+      "text": "gleevec",
+      "type": "THUỐC",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        190,
+        197
+      ],
+      "candidates": [
+        "282386"
+      ]
+    },
+    {
+      "text": "allopurinol",
+      "type": "THUỐC",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        239,
+        250
+      ],
+      "candidates": [
+        "519"
+      ]
+    },
+    {
+      "text": "Thuốc giảm đau",
+      "type": "THUỐC",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        293,
+        307
+      ],
+      "candidates": []
+    },
+    {
+      "text": "ảo giác",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        219,
-        240
+        363,
+        370
       ]
     },
     {
-      "text": "cảm giác như bị xịt nước",
+      "text": "nhiễm khuẩn đường tiết niệu",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        267,
-        291
+        515,
+        542
       ]
     },
     {
-      "text": "siêu âm tim",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        426,
-        437
-      ]
-    },
-    {
-      "text": "hẹp van động mạch chủ nghiêm trọng",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [],
-      "position": [
-        447,
-        481
-      ],
-      "candidates": [
-        "I35.0"
-      ]
-    },
-    {
-      "text": "phẫu thuật thay van động mạch chủ",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        539,
-        572
-      ]
-    },
-    {
-      "text": "siêu âm tim",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        628,
-        639
-      ]
-    },
-    {
-      "text": "hẹp van động mạch chủ nghiêm trọng",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [],
-      "position": [
-        669,
-        703
-      ],
-      "candidates": [
-        "I35.0"
-      ]
-    },
-    {
-      "text": "thông tim trái",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        777,
-        791
-      ]
-    },
-    {
-      "text": "hẹp gây hạn chế dòng chảy",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        807,
-        832
-      ]
-    },
-    {
-      "text": "khó thở",
+      "text": "nhiễm khuẩn đường tiết niệu",
       "type": "TRIỆU_CHỨNG",
       "assertions": [
         "isNegated"
       ],
       "position": [
-        977,
-        984
+        664,
+        691
       ]
     },
     {
-      "text": "đau ngực",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
-      ],
-      "position": [
-        986,
-        994
-      ]
-    },
-    {
-      "text": "khó thở khi nằm",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
-      ],
-      "position": [
-        996,
-        1011
-      ]
-    },
-    {
-      "text": "khó thở khi ngủ",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
-      ],
-      "position": [
-        1013,
-        1028
-      ]
-    },
-    {
-      "text": "ngất xỉu",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
-      ],
-      "position": [
-        1034,
-        1042
-      ]
-    },
-    {
-      "text": "siêu âm tim",
-      "type": "TÊN_XÉT_NGHIỆM",
+      "text": "gleevec",
+      "type": "THUỐC",
       "assertions": [],
       "position": [
-        1191,
-        1202
-      ]
-    },
-    {
-      "text": "hẹp van động mạch chủ nghiêm trọng",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [],
-      "position": [
-        1212,
-        1246
+        751,
+        758
       ],
       "candidates": [
-        "I35.0"
+        "282386"
       ]
     },
     {
-      "text": "siêu âm tim",
-      "type": "TÊN_XÉT_NGHIỆM",
+      "text": "allopurinol",
+      "type": "THUỐC",
       "assertions": [],
       "position": [
-        1253,
-        1264
-      ]
-    },
-    {
-      "text": "hẹp van động mạch chủ nghiêm trọng",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [],
-      "position": [
-        1294,
-        1328
+        797,
+        808
       ],
       "candidates": [
-        "I35.0"
+        "519"
       ]
     },
     {
-      "text": "chụp tim mạch",
+      "text": "ảo giác",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        847,
+        854
+      ]
+    },
+    {
+      "text": "ảo giác",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        919,
+        926
+      ]
+    },
+    {
+      "text": "Ảo giác",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1076,
+        1083
+      ]
+    },
+    {
+      "text": "hoang tưởng",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1131,
+        1142
+      ]
+    },
+    {
+      "text": "lo sợ",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1143,
+        1148
+      ]
+    },
+    {
+      "text": "đi cầu phân sống",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        1252,
+        1268
+      ]
+    },
+    {
+      "text": "đi cầu phân sống",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        1396,
+        1412
+      ]
+    },
+    {
+      "text": "protein",
       "type": "TÊN_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
-        1362,
-        1375
-      ]
-    },
-    {
-      "text": "LHC",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1382,
-        1385
-      ]
-    },
-    {
-      "text": "hẹp van động mạch chủ nghiêm trọng",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [],
-      "position": [
-        1423,
+        1450,
         1457
-      ],
-      "candidates": [
-        "I35.0"
       ]
     },
     {
-      "text": "LHC",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "text": "gleevec",
+      "type": "THUỐC",
       "assertions": [],
       "position": [
-        1464,
-        1467
+        1743,
+        1750
+      ],
+      "candidates": [
+        "282386"
+      ]
+    },
+    {
+      "text": "allopurinol",
+      "type": "THUỐC",
+      "assertions": [],
+      "position": [
+        1788,
+        1799
+      ],
+      "candidates": [
+        "519"
+      ]
+    },
+    {
+      "text": "ảo giác",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        1872,
+        1879
       ]
     }
   ]

@@ -1,16 +1,16 @@
 {
   "file_id": "95",
-  "timestamp": 1784626992.015406,
-  "elapsed": 16.55,
+  "timestamp": 1784709977.293791,
+  "elapsed": 66.43,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 10,
+  "mention_count": 15,
   "stats": {
-    "total_mentions": 10,
-    "final": 10,
+    "total_mentions": 15,
+    "final": 15,
     "validation_errors": 0,
-    "elapsed": 16.55,
-    "rule": 1,
-    "qwen": 10
+    "elapsed": 66.43,
+    "rule": 2,
+    "qwen": 13
   },
   "log_summary": [
     {
@@ -105,9 +105,81 @@
     },
     {
       "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "rule_assert"
+    },
+    {
+      "agent": "assertion",
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -130,109 +202,173 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784626992.0152879,
+      "ts": 1784709977.2936587,
       "tool": null
     }
   ],
   "mentions": [
     {
-      "text": "đau bụng",
+      "text": "bệnh gút",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        64,
+        72
+      ],
+      "candidates": [
+        "M10.4"
+      ]
+    },
+    {
+      "text": "đau",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        115,
+        118
+      ]
+    },
+    {
+      "text": "bệnhgout",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        396,
+        404
+      ],
+      "candidates": [
+        "M10.9"
+      ]
+    },
+    {
+      "text": "thường xuyên",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated"
+      ],
+      "position": [
+        433,
+        445
+      ]
+    },
+    {
+      "text": "ct",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        660,
+        662
+      ]
+    },
+    {
+      "text": "sưng",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        788,
+        792
+      ]
+    },
+    {
+      "text": "tấy đỏ",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        794,
+        800
+      ]
+    },
+    {
+      "text": "gout cấp",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        1076,
+        1084
+      ],
+      "candidates": [
+        "M10.4"
+      ]
+    },
+    {
+      "text": "ho đái tháo đường",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        1162,
+        1179
+      ],
+      "candidates": [
+        "E11"
+      ]
+    },
+    {
+      "text": "tăng huyết áp",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        1186,
+        1199
+      ],
+      "candidates": [
+        "I10"
+      ]
+    },
+    {
+      "text": "béo phì",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1206,
+        1213
+      ]
+    },
+    {
+      "text": "ngưng thở khi ngủ do tắc nghẽn",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1220,
+        1250
+      ]
+    },
+    {
+      "text": "tylenol",
+      "type": "THUỐC",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        1287,
+        1294
+      ],
+      "candidates": [
+        "202433"
+      ]
+    },
+    {
+      "text": "mucinex d",
+      "type": "THUỐC",
+      "assertions": [
+        "isHistorical"
+      ],
+      "position": [
+        1301,
+        1310
+      ],
+      "candidates": [
+        "352777"
+      ]
+    },
+    {
+      "text": "tiêu chảy",
       "type": "TRIỆU_CHỨNG",
       "assertions": [
         "isHistorical"
       ],
       "position": [
-        51,
-        59
-      ]
-    },
-    {
-      "text": "đau âm ỉ vùng quanh rốn",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        120,
-        143
-      ]
-    },
-    {
-      "text": "đau bụng",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        207,
-        215
-      ]
-    },
-    {
-      "text": "đau âm ỉ vùng quanh rốn",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        376,
-        399
-      ]
-    },
-    {
-      "text": "buồn nôn",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        430,
-        438
-      ]
-    },
-    {
-      "text": "sốt",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
-      ],
-      "position": [
-        466,
-        469
-      ]
-    },
-    {
-      "text": "ớn lạnh",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
-      ],
-      "position": [
-        478,
-        485
-      ]
-    },
-    {
-      "text": "Đại tiện bình thường",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        492,
-        512
-      ]
-    },
-    {
-      "text": "đau ngực",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
-      ],
-      "position": [
-        544,
-        552
-      ]
-    },
-    {
-      "text": "khó thở",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
-      ],
-      "position": [
-        565,
-        572
+        1330,
+        1339
       ]
     }
   ]

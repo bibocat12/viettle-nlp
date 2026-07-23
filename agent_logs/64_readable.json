@@ -1,16 +1,16 @@
 {
   "file_id": "64",
-  "timestamp": 1784626666.162674,
-  "elapsed": 38.87,
+  "timestamp": 1784708981.1074169,
+  "elapsed": 34.03,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 25,
+  "mention_count": 18,
   "stats": {
-    "total_mentions": 25,
-    "final": 25,
+    "total_mentions": 18,
+    "final": 18,
     "validation_errors": 0,
-    "elapsed": 38.87,
-    "rule": 5,
-    "qwen": 22
+    "elapsed": 34.03,
+    "rule": 1,
+    "qwen": 17
   },
   "log_summary": [
     {
@@ -48,36 +48,6 @@
       "action": "tool_call",
       "ts": null,
       "tool": "fix_positions"
-    },
-    {
-      "agent": "extraction",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "llm_verify"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
     },
     {
       "agent": "assertion",
@@ -186,6 +156,18 @@
       "action": "complete",
       "ts": null,
       "tool": null
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
     },
     {
       "agent": "linking",
@@ -238,271 +220,200 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784626666.1624467,
+      "ts": 1784708981.1071916,
       "tool": null
     }
   ],
   "mentions": [
     {
-      "text": "viêm túi mật",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        109,
-        121
-      ]
-    },
-    {
-      "text": "percocet",
-      "type": "THUỐC",
-      "assertions": [
-        "isHistorical"
-      ],
-      "position": [
-        273,
-        281
-      ],
-      "candidates": [
-        "42844"
-      ]
-    },
-    {
-      "text": "chụp cắt lớp vi tính",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        303,
-        323
-      ]
-    },
-    {
-      "text": "viêm túi mật",
+      "text": "bệnh động mạch vành",
       "type": "CHẨN_ĐOÁN",
       "assertions": [
-        "isHistorical"
+        "isFamily"
       ],
       "position": [
-        359,
-        371
+        62,
+        81
       ],
       "candidates": [
-        "K81.9"
+        "I25.1"
       ]
     },
     {
-      "text": "bệnh túi thừa của cả ruột non và đại tràng",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [
-        "isHistorical"
-      ],
+      "text": "Vastarel",
+      "type": "THUỐC",
+      "assertions": [],
       "position": [
-        436,
-        478
+        129,
+        137
       ],
-      "candidates": [
-        "K57.5"
-      ]
+      "candidates": []
     },
     {
-      "text": "táo bón",
+      "text": "run tay",
       "type": "TRIỆU_CHỨNG",
       "assertions": [
-        "isHistorical"
+        "isFamily"
       ],
       "position": [
-        508,
-        515
+        203,
+        210
       ]
     },
     {
-      "text": "percocet",
+      "text": "Vastarel",
       "type": "THUỐC",
       "assertions": [
-        "isHistorical"
+        "isFamily"
       ],
       "position": [
-        582,
-        590
+        243,
+        251
+      ],
+      "candidates": []
+    },
+    {
+      "text": "bệnh Graves",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        283,
+        294
       ],
       "candidates": [
-        "42844"
+        "E05.0"
       ]
     },
     {
-      "text": "đau vùng hạ vị bên phải và hạ vị bên trái",
-      "type": "TRIỆU_CHỨNG",
+      "text": "tăng lipid máu",
+      "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        662,
-        703
+        301,
+        315
+      ],
+      "candidates": [
+        "E78.5"
       ]
     },
     {
-      "text": "đau bụng",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        741,
-        749
-      ]
-    },
-    {
-      "text": "đau vùng hạ vị bên phải và hạ vị bên trái",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        830,
-        871
-      ]
-    },
-    {
-      "text": "táo bón",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        878,
-        885
-      ]
-    },
-    {
-      "text": "đổ mồ hôi qua đêm",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        919,
-        936
-      ]
-    },
-    {
-      "text": "sốt",
+      "text": "run tay",
       "type": "TRIỆU_CHỨNG",
       "assertions": [
-        "isNegated"
+        "isFamily"
       ],
       "position": [
-        958,
+        417,
+        424
+      ]
+    },
+    {
+      "text": "trimetazidine",
+      "type": "THUỐC",
+      "assertions": [],
+      "position": [
+        518,
+        531
+      ],
+      "candidates": [
+        "10826"
+      ]
+    },
+    {
+      "text": "bình thường",
+      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        599,
+        610
+      ]
+    },
+    {
+      "text": "run tay",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [
+        "isNegated",
+        "isFamily"
+      ],
+      "position": [
+        725,
+        732
+      ]
+    },
+    {
+      "text": "Nitramyl 2,5 mg/viên",
+      "type": "THUỐC",
+      "assertions": [],
+      "position": [
+        810,
+        830
+      ],
+      "candidates": []
+    },
+    {
+      "text": "đau thắt ngực",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        948,
         961
+      ]
+    },
+    {
+      "text": "bệnh mạch vành",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        969,
+        983
+      ],
+      "candidates": [
+        "I25.0"
+      ]
+    },
+    {
+      "text": "đau đầu",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1201,
+        1208
       ]
     },
     {
       "text": "chóng mặt",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
-      ],
-      "position": [
-        974,
-        983
-      ]
-    },
-    {
-      "text": "hoa mắt",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
-      ],
-      "position": [
-        996,
-        1003
-      ]
-    },
-    {
-      "text": "bình thường",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
-        1018,
-        1029
+        1210,
+        1219
       ]
     },
     {
-      "text": "đau RLQLLQ",
+      "text": "buồn nôn",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        1099,
-        1109
+        1221,
+        1229
       ]
     },
     {
-      "text": "đổ mồ hôi",
+      "text": "đỏ mặt",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        1206,
-        1215
+        1231,
+        1237
       ]
     },
     {
-      "text": "ciproflagyl",
-      "type": "THUỐC",
-      "assertions": [],
-      "position": [
-        1262,
-        1273
-      ],
-      "candidates": [
-        "203563"
-      ]
-    },
-    {
-      "text": "đau",
+      "text": "tụt huyết áp thế đứng",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        1315,
-        1318
-      ]
-    },
-    {
-      "text": "percocet",
-      "type": "THUỐC",
-      "assertions": [],
-      "position": [
-        1400,
-        1408
-      ],
-      "candidates": [
-        "42844"
-      ]
-    },
-    {
-      "text": "bình thường",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1490,
-        1501
-      ]
-    },
-    {
-      "text": "đổ mồ hôi",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        1572,
-        1581
-      ]
-    },
-    {
-      "text": "chụp cắt lớp vi tính",
-      "type": "TÊN_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        1662,
-        1682
-      ]
-    },
-    {
-      "text": "viêm túi mật không biến chứng",
-      "type": "CHẨN_ĐOÁN",
-      "assertions": [],
-      "position": [
-        1718,
-        1747
-      ],
-      "candidates": [
-        "K81.9"
+        1251,
+        1272
       ]
     }
   ]

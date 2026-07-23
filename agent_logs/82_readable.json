@@ -1,16 +1,16 @@
 {
   "file_id": "82",
-  "timestamp": 1784626895.135444,
-  "elapsed": 60.41,
+  "timestamp": 1784709804.0905445,
+  "elapsed": 45.13,
   "model": "bibocat/qwen3-ner-grpo-final",
-  "mention_count": 22,
+  "mention_count": 18,
   "stats": {
-    "total_mentions": 22,
-    "final": 22,
+    "total_mentions": 18,
+    "final": 18,
     "validation_errors": 0,
-    "elapsed": 60.41,
-    "rule": 4,
-    "qwen": 25
+    "elapsed": 45.13,
+    "rule": 1,
+    "qwen": 17
   },
   "log_summary": [
     {
@@ -48,30 +48,6 @@
       "action": "tool_call",
       "ts": null,
       "tool": "fix_positions"
-    },
-    {
-      "agent": "extraction",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "llm_verify"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
-    },
-    {
-      "agent": "assertion",
-      "action": "tool_call",
-      "ts": null,
-      "tool": "rule_assert"
     },
     {
       "agent": "assertion",
@@ -177,6 +153,18 @@
     },
     {
       "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
+      "action": "tool_call",
+      "ts": null,
+      "tool": "link_entity"
+    },
+    {
+      "agent": "linking",
       "action": "complete",
       "ts": null,
       "tool": null
@@ -196,92 +184,47 @@
     {
       "agent": "orchestrator",
       "action": "complete",
-      "ts": 1784626895.1349056,
+      "ts": 1784709804.0903606,
       "tool": null
     }
   ],
   "mentions": [
     {
-      "text": "u ác của tuyến tiền liệt",
-      "type": "CHẨN_ĐOÁN",
+      "text": "đau đầu gối",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        77,
+        88
+      ]
+    },
+    {
+      "text": "đau vùng hạ sườn phải",
+      "type": "TRIỆU_CHỨNG",
       "assertions": [
         "isHistorical"
       ],
       "position": [
-        114,
-        138
-      ],
-      "candidates": [
-        "C61"
+        206,
+        227
       ]
     },
     {
-      "text": "mệt mỏi",
+      "text": "đau vùng hạ sườn phải",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        387,
-        394
+        315,
+        336
       ]
     },
     {
-      "text": "mất trí nhớ chi tiết",
+      "text": "chướng bụng",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        396,
-        416
-      ]
-    },
-    {
-      "text": "mệt mỏi",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        448,
-        455
-      ]
-    },
-    {
-      "text": "ăn không ngon miệng",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        463,
-        482
-      ]
-    },
-    {
-      "text": "ngứa da toàn thân",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
-      ],
-      "position": [
-        484,
-        501
-      ]
-    },
-    {
-      "text": "mất trí nhớ chi tiết",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
-      ],
-      "position": [
-        512,
-        532
-      ]
-    },
-    {
-      "text": "khó thở khi gắng sức",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [
-        "isNegated"
-      ],
-      "position": [
-        534,
-        554
+        342,
+        353
       ]
     },
     {
@@ -289,128 +232,136 @@
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        568,
-        576
+        357,
+        365
       ]
     },
     {
-      "text": "nôn",
+      "text": "đau lưng",
       "type": "TRIỆU_CHỨNG",
-      "assertions": [],
+      "assertions": [
+        "isHistorical"
+      ],
       "position": [
-        581,
-        584
+        442,
+        450
       ]
     },
     {
-      "text": "Mệt mỏi",
+      "text": "Đau bụng",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        628,
-        635
+        551,
+        559
       ]
     },
     {
-      "text": "Ăn không ngon miệng",
+      "text": "chướng bụng",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        648,
-        667
+        632,
+        643
       ]
     },
     {
-      "text": "Ngứa da toàn thân",
+      "text": "buồn nôn",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        674,
-        691
+        676,
+        684
       ]
     },
     {
-      "text": "mất trí nhớ chi tiết",
+      "text": "đau lưng",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        704,
-        724
-      ]
-    },
-    {
-      "text": "khó thở khi gắng sức",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        731,
+        743,
         751
       ]
     },
     {
-      "text": "buồn nôn",
+      "text": "đau bụng",
       "type": "TRIỆU_CHỨNG",
       "assertions": [],
       "position": [
-        759,
-        767
+        871,
+        879
       ]
     },
     {
-      "text": "nôn",
-      "type": "TRIỆU_CHỨNG",
-      "assertions": [],
-      "position": [
-        771,
-        774
-      ]
-    },
-    {
-      "text": "creatinine tăng từ 5.2 lên 6.3 mg/dl",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        823,
-        859
-      ]
-    },
-    {
-      "text": "Ure tăng từ 69 lên 91 mg/dl ( 24.6 -32.5 mmol/l)",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        885,
-        933
-      ]
-    },
-    {
-      "text": "photpho 8.4",
-      "type": "KẾT_QUẢ_XÉT_NGHIỆM",
-      "assertions": [],
-      "position": [
-        953,
-        964
-      ]
-    },
-    {
-      "text": "u ác của tuyến tiền liệt",
+      "text": "amyloidosis",
       "type": "CHẨN_ĐOÁN",
       "assertions": [],
       "position": [
-        1081,
-        1105
+        963,
+        974
       ],
       "candidates": [
-        "C61"
+        "E85.3"
       ]
     },
     {
-      "text": "chạy thận nhân tạo (HD)",
+      "text": "phù hợp",
+      "type": "TRIỆU_CHỨNG",
+      "assertions": [],
+      "position": [
+        1118,
+        1125
+      ]
+    },
+    {
+      "text": "Nội soi thực quản - dạ dày - tá tràng",
       "type": "TÊN_XÉT_NGHIỆM",
       "assertions": [],
       "position": [
-        1227,
-        1250
+        1157,
+        1194
+      ]
+    },
+    {
+      "text": "viêm dạ dày",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        1196,
+        1207
+      ],
+      "candidates": [
+        "K29.7"
+      ]
+    },
+    {
+      "text": "sỏi đoạn cuối ống mật chủ",
+      "type": "CHẨN_ĐOÁN",
+      "assertions": [],
+      "position": [
+        1233,
+        1258
+      ],
+      "candidates": [
+        "K80.5"
+      ]
+    },
+    {
+      "text": "Nội soi mật tụy ngược dòng",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1288,
+        1314
+      ]
+    },
+    {
+      "text": "chụp cộng hưởng từ mật tụy tụi mật",
+      "type": "TÊN_XÉT_NGHIỆM",
+      "assertions": [],
+      "position": [
+        1411,
+        1445
       ]
     }
   ]

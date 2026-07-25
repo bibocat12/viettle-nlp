@@ -9,7 +9,7 @@ from typing import Any, Optional
 import requests
 
 
-DEFAULT_MODEL = "bibocat/qwen3-ner-grpo-final"
+DEFAULT_MODEL = "bibocat/qwen3-ner-grpo-v2-merged"
 DEFAULT_BASE_URL = "http://localhost:8000/v1"
 
 
@@ -22,7 +22,7 @@ class VLLMLLM:
         model: Optional[str] = None,
         api_key: Optional[str] = None,
         timeout: int = 120,
-        max_retries: int = 3,
+        max_retries: int = 2,
     ):
         self.base_url = (base_url or os.getenv("VLLM_BASE_URL") or DEFAULT_BASE_URL).rstrip("/")
         self.model = model or os.getenv("VLLM_MODEL") or DEFAULT_MODEL
@@ -60,7 +60,20 @@ class VLLMLLM:
             self.last_error = str(exc)
             return False
 
-    def generate(self, system_prompt: str, user_prompt: str, max_tokens: int = 512) -> str:
+    def generate(
+        self,
+        system_prompt: str,
+        user_prompt: str,
+        max_tokens: int = 512,
+        response_format: Optional[dict] = None,
+    ) -> str:
+        """Generate one completion, optionally constrained by vLLM JSON Schema.
+
+        ``response_format`` is deliberately passed through unchanged.  This keeps
+        the adapter compatible with the OpenAI-compatible vLLM endpoint while
+        allowing callers that do not need structured output to keep using the
+        lightweight text interface.
+        """
         payload = {
             "model": self.model,
             "messages": [
@@ -71,6 +84,8 @@ class VLLMLLM:
             "max_tokens": max_tokens,
             "chat_template_kwargs": {"enable_thinking": False},
         }
+        if response_format is not None:
+            payload["response_format"] = response_format
         for attempt in range(1, self.max_retries + 1):
             try:
                 response = requests.post(
@@ -89,7 +104,9 @@ class VLLMLLM:
             except Exception as exc:
                 self.last_error = str(exc)
                 if attempt < self.max_retries:
-                    time.sleep(0.5 * attempt)
+                    # Back off 1s, then 2s by default.  A failed chunk is
+                    # isolated by the fusion runner, so do not retry forever.
+                    time.sleep(float(attempt))
                     continue
                 print(
                     f"vLLM request failed after {self.max_retries} attempts: {exc}",
@@ -115,8 +132,26 @@ class VLLMLLM:
                 continue
         return {}
 
-    def generate_json(self, system_prompt: str, user_prompt: str, max_tokens: int = 512) -> Any:
-        return self.parse_json(self.generate(system_prompt, user_prompt, max_tokens))
+    def generate_json(
+        self,
+        system_prompt: str,
+        user_prompt: str,
+        max_tokens: int = 512,
+        schema: Optional[dict] = None,
+    ) -> Any:
+        response_format = None
+        if schema is not None:
+            response_format = {
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "medical_entity_proposals",
+                    "strict": True,
+                    "schema": schema,
+                },
+            }
+        return self.parse_json(
+            self.generate(system_prompt, user_prompt, max_tokens, response_format=response_format)
+        )
 
 
 _vllm_instance: Optional[VLLMLLM] = None

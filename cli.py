@@ -8,7 +8,7 @@ Usage:
 
   # Recommended: self-hosted Qwen3 GRPO through vLLM
   python3 cli.py input/1.txt --llm vllm \
-    --served-model bibocat/qwen3-ner-grpo-final
+    --served-model bibocat/qwen3-ner-grpo-v2-merged
 
   # Process single file with local model on GPU
   python3 cli.py input/1.txt --llm local --gpu
@@ -71,8 +71,22 @@ def main():
                              "Default: ./models")
     parser.add_argument("--base-url", default=os.getenv("VLLM_BASE_URL", "http://localhost:8000/v1"),
                         help="vLLM OpenAI-compatible base URL")
-    parser.add_argument("--served-model", default=os.getenv("VLLM_MODEL", "bibocat/qwen3-ner-grpo-final"),
+    parser.add_argument("--served-model", default=os.getenv("VLLM_MODEL", "bibocat/qwen3-ner-grpo-v2-merged"),
                         help="Model ID exposed by vLLM")
+    parser.add_argument(
+        "--strategy", choices=["pipeline", "grpo-v2-fusion"], default="pipeline",
+        help="Processing strategy; grpo-v2-fusion preserves an anchor submission and adds safe consensus proposals",
+    )
+    parser.add_argument("--anchor-zip", default=None,
+                        help="Fixed baseline ZIP required by --strategy grpo-v2-fusion")
+    parser.add_argument("--passes", type=int, choices=[1, 3, 7], default=3,
+                        help="Extraction passes used by grpo-v2-fusion (default: 3)")
+    parser.add_argument("--resume", action="store_true",
+                        help="Reuse cached chunk responses and completed fusion records")
+    parser.add_argument("--validation", default=None,
+                        help="Optional GRPO-v2 JSONL validation split used to calibrate fusion/link thresholds")
+    parser.add_argument("--limit", type=int, default=None,
+                        help="Process only the first N numbered files (useful for a smoke run)")
     parser.add_argument("--gpu", action="store_true", help="Use GPU if available (only for local model)")
     parser.add_argument("--parallel", "-p", type=int, default=1, help="Parallel workers for batch processing")
     parser.add_argument(
@@ -89,6 +103,31 @@ def main():
     if not input_path.exists():
         print(f"Error: {input_path} not found")
         sys.exit(1)
+
+    if args.strategy == "grpo-v2-fusion":
+        if args.llm != "vllm":
+            parser.error("--strategy grpo-v2-fusion requires --llm vllm")
+        if not args.anchor_zip:
+            parser.error("--strategy grpo-v2-fusion requires --anchor-zip")
+        anchor_zip = Path(args.anchor_zip)
+        if not anchor_zip.exists():
+            parser.error(f"anchor ZIP not found: {anchor_zip}")
+        output_dir = Path(args.output) if args.output else Path("lb4_grpo_v2_fusion/output")
+        from grpo_v2_fusion import run_fusion_batch
+        result = run_fusion_batch(
+            input_path=input_path,
+            output_dir=output_dir,
+            anchor_zip=anchor_zip,
+            base_url=args.base_url,
+            model=args.served_model,
+            workers=args.parallel,
+            passes=args.passes,
+            resume=args.resume,
+            validation_path=Path(args.validation) if args.validation else None,
+            limit=args.limit,
+        )
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
 
     # Setup device
     device = setup_device(args.gpu)

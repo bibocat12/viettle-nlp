@@ -13,7 +13,7 @@ Input .txt
   │   ├── KẾT_QUẢ_XÉT_NGHIỆM (lab values): numeric results, "bình thường"
   │   ├── CHẨN_ĐOÁN (diagnoses): "chẩn đoán:", "bệnh chính:"
   │   └── TRIỆU_CHỨNG (symptoms): clinical symptom keywords
-  ├── bibocat/qwen3-ner-grpo-final through local vLLM
+  ├── bibocat/qwen3-ner-grpo-v2-merged through local vLLM
   ├── Exact span alignment + rules/Qwen voting
   ├── Scoped assertion rules (negation, family, historical)
   ├── ICD-10 / RxNorm retrieve → rerank → top-1
@@ -37,8 +37,18 @@ source .venv/bin/activate
 # Recommended competition pipeline with the self-hosted Qwen3 GRPO model
 python3 cli.py input/ --llm vllm \
   --base-url http://localhost:8000/v1 \
-  --served-model bibocat/qwen3-ner-grpo-final \
+  --served-model bibocat/qwen3-ner-grpo-v2-merged \
   --output output
+
+# Safe score-first upgrade: preserve the fixed lb3 anchor, run three schema-only
+# passes, and package only output/1.json … output/100.json.
+python3 cli.py input_turn2_vong1/input --llm vllm \
+  --base-url http://localhost:8000/v1 \
+  --served-model bibocat/qwen3-ner-grpo-v2-merged \
+  --strategy grpo-v2-fusion \
+  --anchor-zip input_turn2_vong1/lb3_base_qwen/output.zip \
+  --passes 3 --parallel 2 --resume \
+  --output input_turn2_vong1/lb4_grpo_v2_fusion/output
 
 # Fail on schema/offset/package errors, then create output.zip
 python3 scripts/build_submission.py --check-only
@@ -115,6 +125,7 @@ Each input file produces a JSON array of extracted mentions:
 | File | Purpose |
 |---|---|
 | `src/vllm_llm.py` | OpenAI-compatible client pinned to the Qwen3 GRPO checkpoint |
+| `src/grpo_v2_fusion.py` | Anchored three-pass Qwen3-v2 fusion, cache/resume, audit and final ZIP validation |
 | `src/ner_tool.py` | Chunked NER and deterministic source-text span alignment |
 | `src/voting.py` | Qwen/rule merge, atomic span and type resolution |
 | `src/agents/worker_agents.py` | Extraction, assertion, linking, and verification workers |
@@ -130,7 +141,7 @@ Each input file produces a JSON array of extracted mentions:
 | `database-stuff/RXNORM.ttl` | RxNorm ontology (2.8M lines RDF), English drug names + relationships |
 | `database-stuff/ICDO.csv` | ICD-10 codes with English names (6K codes, 900+ with ICD-10 mapping) |
 | `database-stuff/06-byt-kem.pdf` | Vietnamese MoH ICD-10 code list (1271 pages), Vietnamese disease names |
-| `bibocat/qwen3-ner-grpo-final` | Self-hosted NER/reasoning checkpoint served by vLLM |
+| `bibocat/qwen3-ner-grpo-v2-merged` | Self-hosted NER proposal checkpoint served by vLLM |
 | `models/vipubmed-deberta-base/` | Vietnamese biomedical DeBERTa (768M params) |
 
 ## Validation Snapshot

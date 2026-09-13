@@ -148,8 +148,8 @@ def main():
     llm = None
     if args.llm == "vllm":
         print(f"Connecting to vLLM model {args.served_model} at {args.base_url}...")
-        from vllm_llm import get_vllm_llm
-        llm = get_vllm_llm(base_url=args.base_url, model=args.served_model)
+        from vllm_llm import VLLMLLM
+        llm = VLLMLLM(base_url=args.base_url, model=args.served_model, timeout=300, max_retries=2)
         if not llm.is_available():
             print(f"  vLLM unavailable: {llm.last_error}")
             sys.exit(2)

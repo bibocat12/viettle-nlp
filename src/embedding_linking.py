@@ -153,9 +153,13 @@ def _build_rxnorm_index(kb):
     codes, names = [], []
     for cui, info in kb.rxnorm_concepts.items():
         name = info.get("prefLabel", "")
+        alt_labels = [a for a in info.get("altLabels", []) if a and a != name]
         if name:
             codes.append(cui)
             names.append(name)
+        for alt in alt_labels[:3]:
+            codes.append(cui)
+            names.append(alt)
     _rxnorm_codes = codes
     _rxnorm_names = names
     _rxnorm_embeddings = _encode(names)

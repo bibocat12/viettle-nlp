@@ -172,15 +172,32 @@ class AssertionAgent(Agent):
         prefix = text_lower[ctx_start:start]
 
         # Assertion cues cannot cross a clause/bullet boundary or an explicit
-        # contrast such as "nhưng".
-        boundary = max(prefix.rfind(token) for token in ("\n", ".", ";"))
+        # contrast such as "nhưng" — but a newline that follows a negation
+        # pattern is a bulleted list continuation, not a true boundary.
+        boundary = max(prefix.rfind(token) for token in (".", ";"))
+        nl_boundary = prefix.rfind("\n")
+        if nl_boundary >= 0:
+            before_nl = prefix[:nl_boundary]
+            after_nl = prefix[nl_boundary + 1:]
+            if not re.search(
+                r"\b(?:không|chưa|phủ nhận|không thấy|không có|không ghi nhận|âm tính)\b",
+                before_nl,
+            ):
+                boundary = max(boundary, nl_boundary)
         if boundary >= 0:
             prefix = prefix[boundary + 1:]
         contrast = list(re.finditer(r"\b(?:nhưng|tuy nhiên|song)\b", prefix))
         if contrast:
             prefix = prefix[contrast[-1].end():]
 
-        before = text_lower[max(0, start - 1200):start]
+        before = text_lower[max(0, start - 600):start]
+        # Do not allow historical detection to leap across explicit
+        # current-section markers that appear AFTER the last historical marker.
+        current_boundaries = [
+            "bệnh sử hiện tại", "lý do nhập viện",
+            "chẩn đoán hiện tại", "tình trạng hiện tại",
+            "đánh giá", "kết quả xét nghiệm", "siêu âm",
+        ]
         historical_markers = (
             "thuốc trước khi nhập viện", "thuốc trước nhập viện",
             "tiền sử bệnh nội khoa", "tiền sử bệnh\n",
@@ -196,6 +213,13 @@ class AssertionAgent(Agent):
         )
         last_historical = max((before.rfind(marker) for marker in historical_markers), default=-1)
         last_current = max((before.rfind(marker) for marker in current_markers), default=-1)
+        # If a current-section marker appears AFTER the last historical marker,
+        # reset the historical flag — the entity is in the current section.
+        last_current_boundary = max(
+            (before.rfind(marker) for marker in current_boundaries), default=-1
+        )
+        if last_current_boundary > last_historical and last_current_boundary >= 0:
+            last_historical = -1
         is_indication = mtype == "TRIỆU_CHỨNG" and bool(
             re.search(r"\bđiều\s+trị\b", prefix)
         )
@@ -247,11 +271,25 @@ Trả về JSON: {"isNegated": bool, "isFamily": bool, "isHistorical": bool,
                 text=ctx.normalized, start=m["position"][0], end=m["position"][1],
                 mtype=m.get("type", ""))
 
-            # The selected checkpoint is optimized for NER, not assertion
-            # classification. Explicit section/clause rules are more stable
-            # and avoid systematic historical over-labeling.
             m["assertions"] = rule_assert
-            m["assertion_confidence"] = m.get("assertions", {}).get("confidence", 0.85)
+            m["assertion_confidence"] = 0.85
+
+            # Augment with LLM for complex assertion types where rules are weak
+            if self.llm and m.get("type") in ("CHẨN_ĐOÁN", "TRIỆU_CHỨNG"):
+                try:
+                    start, end = m["position"]
+                    context = ctx.normalized[max(0, start - 400):min(len(ctx.normalized), end + 100)]
+                    llm_assert = self.call_tool("llm_assert",
+                        mention=m.get("text", ""), mtype=m.get("type", ""), context=context)
+                    if isinstance(llm_assert, dict):
+                        if llm_assert.get("isNegated"):
+                            m["assertions"]["isNegated"] = True
+                            m["assertion_confidence"] = max(m["assertion_confidence"], llm_assert.get("confidence", 0.9))
+                        if llm_assert.get("isHistorical"):
+                            m["assertions"]["isHistorical"] = True
+                            m["assertion_confidence"] = max(m["assertion_confidence"], llm_assert.get("confidence", 0.9))
+                except Exception:
+                    pass
 
         self.log("complete", {"processed": len(ctx.mentions), "llm_checked": sum(1 for m in ctx.mentions if m.get("assertions", {}).get("reason"))})
         return ctx

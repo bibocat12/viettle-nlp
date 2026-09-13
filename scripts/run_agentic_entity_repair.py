@@ -18,6 +18,7 @@ sys.path[:0] = [str(ROOT), str(ROOT / "src"), str(ROOT / "scripts")]
 from build_submission import validate_submission
 from grpo_v2_fusion import _strict_assertions
 from kb import KnowledgeBase
+from medical_web_search import MedicalWebSearch
 from run_agentic_repair import REVIEW_ITEM_SCHEMA, apply_reviews, review_request
 from tools import validate_output
 from vllm_llm import VLLMLLM
@@ -32,6 +33,7 @@ def main() -> int:
     parser.add_argument("--model", default="bibocat/qwen3-ner-grpo-v2-merged")
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--web-grounding", action="store_true", help="Add cached RxNav/NCBI MeSH evidence; never emits web-only codes")
     args = parser.parse_args()
 
     client = VLLMLLM(base_url=args.base_url, model=args.model, timeout=120, max_retries=2)
@@ -40,6 +42,7 @@ def main() -> int:
     kb = KnowledgeBase(); kb.load()
     args.output.mkdir(parents=True, exist_ok=True)
     run_dir = args.output.parent; cache_dir = run_dir / "cache"; audit_path = run_dir / "audit.jsonl"
+    web = MedicalWebSearch(run_dir / "web_cache") if args.web_grounding else None
     lock = threading.Lock()
 
     def process(record: int) -> tuple[int, int, int]:
@@ -59,6 +62,15 @@ def main() -> int:
                 "Chỉ trả một JSON array, mỗi input id tối đa một object.",
                 "Chỉ trả một JSON object cho input id này.",
             )
+            if web is not None:
+                if original["type"] == "THUỐC":
+                    evidence = web.drug(original["text"], allowed_zero.get(0, set()))
+                elif original["type"] == "CHẨN_ĐOÁN":
+                    evidence = web.diagnosis(original["text"])
+                else:
+                    evidence = []
+                if evidence:
+                    user += "\nPublic terminology evidence (not a code authority): " + json.dumps(evidence, ensure_ascii=False)
             reviewed += 1
             cache_path = cache_dir / str(record) / f"{index}.jsonl"
             response = None

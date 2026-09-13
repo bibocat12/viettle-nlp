@@ -1,5 +1,7 @@
 # Vietnamese Medical NER Pipeline
 
+**Competition score: 34.8828** (ViMedNer shared task)
+
 Clinical information extraction system for Vietnamese free-text medical records. Extracts medical concepts, assigns types, infers assertions, and maps to ICD-10 / RxNorm ontologies.
 
 ## Architecture
@@ -27,6 +29,32 @@ Input .txt
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+```
+
+## Models
+
+The NER proposal model is hosted on Hugging Face:
+
+| Model | HF Repo | Size | Role |
+|---|---|---|---|
+| **Qwen3-GRPO-v2** | [`bibocat/qwen3-ner-grpo-v2-merged`](https://huggingface.co/bibocat/qwen3-ner-grpo-v2-merged) | 8.2B params | NER extraction (high recall) |
+| **ViPubMedDeBERTa** | local `models/vipubmed-deberta-base/` | 768M params | Embedding reranking for ICD-10/RxNorm |
+
+### Download via HF CLI
+
+```bash
+# Install hf CLI (replaces deprecated huggingface-cli)
+curl -LsSf https://hf.co/cli/install.sh | bash -s
+
+# Authenticate
+export HF_TOKEN=hf_...
+hf auth login
+
+# Download the NER model (~16 GB, 4 shards)
+hf download bibocat/qwen3-ner-grpo-v2-merged --local-dir ./models/qwen3-ner-grpo-v2-merged
+
+# Download ViPubMedDeBERTa embeddings model
+hf download models/vipubmed-deberta-base --local-dir ./models/vipubmed-deberta-base
 ```
 
 ## Usage
@@ -141,7 +169,7 @@ Each input file produces a JSON array of extracted mentions:
 | `database-stuff/RXNORM.ttl` | RxNorm ontology (2.8M lines RDF), English drug names + relationships |
 | `database-stuff/ICDO.csv` | ICD-10 codes with English names (6K codes, 900+ with ICD-10 mapping) |
 | `database-stuff/06-byt-kem.pdf` | Vietnamese MoH ICD-10 code list (1271 pages), Vietnamese disease names |
-| `bibocat/qwen3-ner-grpo-v2-merged` | Self-hosted NER proposal checkpoint served by vLLM |
+| [`bibocat/qwen3-ner-grpo-v2-merged`](https://huggingface.co/bibocat/qwen3-ner-grpo-v2-merged) | Self-hosted NER proposal checkpoint served by vLLM |
 | `models/vipubmed-deberta-base/` | Vietnamese biomedical DeBERTa (768M params) |
 
 ## Validation Snapshot
@@ -167,7 +195,7 @@ viettle-nlp/
 ├── input/                  # 100 Vietnamese clinical text files
 ├── outputs/                # Generated JSON outputs
 ├── models/
-│   ├── Qwen2.5-7B-Vietnamese-Medical-NER-GRPO/
+│   ├── qwen3-ner-grpo-v2-merged/   # downloaded from HF bibocat/qwen3-ner-grpo-v2-merged
 │   └── vipubmed-deberta-base/
 ├── database-stuff/
 │   ├── RXNORM.ttl

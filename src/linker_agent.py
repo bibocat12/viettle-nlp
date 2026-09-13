@@ -56,43 +56,39 @@ def _reviewed_rxnorm_code(mention_text: str) -> Optional[str]:
 
 
 def _search_icd10(mention_text: str, kb, top_k: int = 15) -> list:
-    """Hybrid substring + normalized token/character retrieval."""
-    def normalize(value: str) -> str:
-        value = unicodedata.normalize("NFD", value.lower())
-        value = "".join(char for char in value if unicodedata.category(char) != "Mn")
-        value = value.replace("ung thu", "u ac tinh")
-        value = value.replace("phoi khong te bao nho", "phoi")
-        value = re.sub(r"\b(?:benh|cua|khong xac dinh|khac|bao gom|loai tru)\b", " ", value)
-        return re.sub(r"[^a-z0-9]+", " ", value).strip()
+    """Hybrid substring + normalized token/character retrieval with diacritics preserved."""
+    def normalize_for_scoring(value: str) -> str:
+        value = value.lower().strip()
+        value = re.sub(r"\b(?:bệnh|của|không xác định|khác|bao gồm|loại trừ)\b", " ", value)
+        return re.sub(r"\s+", " ", value).strip()
 
-    query = normalize(mention_text)
-    query_tokens = set(query.split())
     scored = {}
+    mention_norm = normalize_for_scoring(mention_text)
 
     for result in kb.search_icd10(mention_text, top_k=max(top_k, 30)):
         scored[result["code"]] = {
             "code": result["code"],
             "name": result.get("name", ""),
-            "score": 0.45 + 0.35 * result.get("score", 0),
+            "score": 0.40 + 0.30 * result.get("score", 0),
         }
 
     for code, info in getattr(kb, "icd10", {}).items():
-        display_name = info.get("vietnamese_name", "") or info.get("english_name", "")
-        searchable_name = " ".join(filter(None, (
-            info.get("vietnamese_name", ""), info.get("english_name", ""),
-        )))
-        if not searchable_name:
+        vi_name = info.get("vietnamese_name", "") or info.get("english_name", "")
+        en_name = info.get("english_name", "")
+        full_name = f"{vi_name} {en_name}" if en_name and en_name != vi_name else vi_name
+        if not vi_name:
             continue
-        normalized_name = normalize(searchable_name.split(" - ", 1)[0])
-        name_tokens = set(normalized_name.split())
-        if not normalized_name or not query_tokens or not name_tokens:
+        norm_name = normalize_for_scoring(full_name.split(" - ", 1)[0])
+        if not norm_name or not mention_norm:
             continue
-        token_dice = 2 * len(query_tokens & name_tokens) / (len(query_tokens) + len(name_tokens))
-        char_ratio = SequenceMatcher(None, query, normalized_name[:max(len(query) * 2, 20)]).ratio()
-        containment = 1.0 if query in normalized_name else 0.0
+        mention_tokens = set(mention_norm.split())
+        name_tokens = set(norm_name.split())
+        token_dice = 2 * len(mention_tokens & name_tokens) / (len(mention_tokens) + len(name_tokens)) if mention_tokens and name_tokens else 0
+        char_ratio = SequenceMatcher(None, mention_norm, norm_name[:max(len(mention_norm) * 2, 20)]).ratio()
+        containment = 1.0 if mention_norm in norm_name else 0.0
         score = 0.55 * token_dice + 0.35 * char_ratio + 0.10 * containment
         previous = scored.get(code)
-        candidate = {"code": code, "name": display_name, "score": score}
+        candidate = {"code": code, "name": vi_name, "score": score}
         if previous is None or candidate["score"] > previous["score"]:
             scored[code] = candidate
 
@@ -323,19 +319,27 @@ def _search_rxnorm(mention_text: str, kb, top_k: int = 15) -> list:
 
 def _embedding_rerank(mention_text: str, mtype: str, candidates: list, kb) -> list:
     try:
-        from embedding_linking import rerank_icd10, rerank_rxnorm
+        from embedding_linking import rerank_icd10, rerank_rxnorm, search_rxnorm_embedding
     except ImportError:
         return candidates[:5]
     if not candidates:
         return []
     if mtype == "CHẨN_ĐOÁN":
         results = rerank_icd10(mention_text, [{"code": c["code"]} for c in candidates], kb, top_k=5)
-        # Merge original names
         lookup = {c["code"]: c["name"] for c in candidates}
         return [{"code": r["code"], "name": lookup.get(r["code"], r.get("label", "")), "score": r["score"]} for r in results]
     elif mtype == "THUỐC":
-        # Semantic embeddings are weak at exact strength/dose-form matching.
-        return candidates[:5]
+        if candidates:
+            results = rerank_rxnorm(mention_text, [{"rxcui": c["code"]} for c in candidates], kb, top_k=5)
+            lookup = {c["code"]: c["name"] for c in candidates}
+            return [{"code": r["rxcui"], "name": lookup.get(r["rxcui"], r.get("label", "")), "score": r["score"]} for r in results]
+        # Fallback: full KB embedding search when fuzzy returns nothing
+        try:
+            emb_results = search_rxnorm_embedding(mention_text, kb, top_k=5)
+            return [{"code": r["rxcui"], "name": r.get("name", ""), "score": r["score"]} for r in emb_results]
+        except Exception:
+            pass
+        return []
     return candidates[:5]
 
 
@@ -373,7 +377,16 @@ def link_candidates(mention: dict, context: str, kb, llm=None, max_steps: int = 
             combined.append(candidate)
         top = combined[:12]
     else:
-        top = reranked[:5] if reranked else candidates[:3]
+        # Prefer reranked results; fall back to fuzzy if reranking empty
+        top = reranked[:5] if reranked else candidates[:5]
+        # If all retrieval failed, try full KB embedding search as last resort
+        if not top:
+            try:
+                from embedding_linking import search_rxnorm_embedding
+                emb = search_rxnorm_embedding(text, kb, top_k=5)
+                top = [{"code": r["rxcui"], "name": r.get("name", ""), "score": r["score"]} for r in emb]
+            except Exception:
+                pass
 
     # Exact ingredient + strength + route matches are deterministic and more
     # reliable than an LLM choice between near-identical RxNorm products.

@@ -2,6 +2,7 @@
 
 import json
 import os
+import re
 import sys
 import time
 from typing import Any, Optional
@@ -115,6 +116,87 @@ class VLLMLLM:
         raise RuntimeError(
             f"vLLM generation failed after {self.max_retries} attempts: {self.last_error}"
         )
+
+    TOOL_CALL_RE = re.compile(
+        r"<tool_call>\s*(\{.*?\})\s*</tool_call>", re.DOTALL
+    )
+
+    def generate_with_tools(
+        self,
+        messages: list[dict],
+        tools: Optional[list[dict]] = None,
+        max_tokens: int = 1024,
+    ) -> dict:
+        """Send a chat request with optional tool definitions.
+
+        Returns the full response *message* dict (with ``content`` and
+        optionally ``tool_calls``).  The caller is responsible for executing
+        any tool calls and continuing the conversation loop.
+        """
+        payload = {
+            "model": self.model,
+            "messages": messages,
+            "temperature": 0.0,
+            "max_tokens": max_tokens,
+            "chat_template_kwargs": {"enable_thinking": False},
+            "tool_choice": "auto",
+        }
+        if tools is not None:
+            payload["tools"] = tools
+        for attempt in range(1, self.max_retries + 1):
+            try:
+                response = requests.post(
+                    f"{self.base_url}/chat/completions",
+                    json=payload,
+                    headers=self._headers(),
+                    timeout=self.timeout,
+                )
+                response.raise_for_status()
+                data = response.json()
+                message = data["choices"][0]["message"]
+                # Some vLLM versions do not parse tool calls from Qwen's
+                # <tool_call> blocks.  Fall back to manual extraction.
+                if tools and not message.get("tool_calls"):
+                    parsed = self._parse_tool_calls(message.get("content", ""))
+                    if parsed:
+                        message["tool_calls"] = parsed
+                        message["content"] = None
+                self.last_error = ""
+                return message
+            except Exception as exc:
+                self.last_error = str(exc)
+                if attempt < self.max_retries:
+                    time.sleep(float(attempt))
+                    continue
+                print(
+                    f"vLLM tool-call request failed after {self.max_retries} attempts: {exc}",
+                    file=sys.stderr,
+                )
+        raise RuntimeError(
+            f"vLLM tool-call generation failed after {self.max_retries} attempts: {self.last_error}"
+        )
+
+    def _parse_tool_calls(self, content: str) -> Optional[list[dict]]:
+        """Extract tool calls from Qwen <tool_call> blocks in content."""
+        if not content:
+            return None
+        calls = []
+        for match in self.TOOL_CALL_RE.finditer(content):
+            try:
+                obj = json.loads(match.group(1))
+                name = obj.get("name", "")
+                arguments = obj.get("arguments", {})
+                calls.append({
+                    "id": f"call_{len(calls)}",
+                    "type": "function",
+                    "function": {
+                        "name": name,
+                        "arguments": json.dumps(arguments, ensure_ascii=False),
+                    },
+                })
+            except (json.JSONDecodeError, TypeError):
+                continue
+        return calls or None
 
     @staticmethod
     def parse_json(response: str) -> Any:

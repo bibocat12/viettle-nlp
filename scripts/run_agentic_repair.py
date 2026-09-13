@@ -17,6 +17,8 @@ import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
+import requests as http_requests
+
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
@@ -44,6 +46,68 @@ REVIEW_ITEM_SCHEMA = {
     "additionalProperties": False,
 }
 REVIEW_SCHEMA = {"type": "array", "items": REVIEW_ITEM_SCHEMA}
+
+WEBFETCH_TOOL = {
+    "type": "function",
+    "function": {
+        "name": "webfetch",
+        "description": "Fetch content from a URL to verify or look up medical knowledge not in the local KB.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "description": "The URL to fetch",
+                },
+            },
+            "required": ["url"],
+            "additionalProperties": False,
+        },
+        "strict": True,
+    },
+}
+
+
+def _run_review_loop(
+    client: VLLMLLM,
+    system: str,
+    user: str,
+    max_tool_rounds: int = 3,
+) -> object:
+    messages = [
+        {"role": "system", "content": system},
+        {"role": "user", "content": user},
+    ]
+    for _ in range(max_tool_rounds):
+        try:
+            msg = client.generate_with_tools(messages, tools=[WEBFETCH_TOOL])
+        except Exception:
+            return client.generate_json(system, user, max_tokens=1024, schema=REVIEW_SCHEMA)
+        if msg.get("tool_calls"):
+            for tc in msg["tool_calls"]:
+                if tc["function"]["name"] == "webfetch":
+                    args = json.loads(tc["function"]["arguments"])
+                    url = args.get("url", "")
+                    try:
+                        resp = http_requests.get(url, timeout=15)
+                        result = resp.text[:6000]
+                    except Exception as e:
+                        result = f"Error fetching {url}: {e}"
+                    messages.append({
+                        "role": "assistant",
+                        "content": None,
+                        "tool_calls": [tc],
+                    })
+                    messages.append({
+                        "role": "tool",
+                        "tool_call_id": tc["id"],
+                        "content": result[:4000],
+                    })
+            continue
+        content = (msg.get("content") or "").strip()
+        if content:
+            return client.parse_json(content)
+    return client.generate_json(system, user, max_tokens=1024, schema=REVIEW_SCHEMA)
 
 
 def code_exists(code: str, mtype: str, kb: KnowledgeBase) -> bool:
@@ -181,7 +245,7 @@ def main() -> int:
         else:
             system, user, allowed = review_request(text, entities, kb)
             try:
-                response = client.generate_json(system, user, max_tokens=1024, schema=REVIEW_SCHEMA)
+                response = _run_review_loop(client, system, user)
             except Exception as exc:
                 response = {"reviews": []}
                 with lock:

@@ -1,6 +1,8 @@
 # Vietnamese Medical NER Pipeline
 
-**Competition score: 34.8828** (ViMedNer shared task)
+**[Viettel AI Race 2026 — Bài 2: Ontological Reasoning in Medical Knowledge Retrieval](https://competition.viettel.vn/contests/medical-2026)**
+
+**Competition score: 34.8828**
 
 Clinical information extraction system for Vietnamese free-text medical records. Extracts medical concepts, assigns types, infers assertions, and maps to ICD-10 / RxNorm ontologies.
 
